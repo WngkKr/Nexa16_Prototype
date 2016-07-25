@@ -13,52 +13,103 @@
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
     </context:component-scan>
 
-    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
-        <property name="webBindingInitializer">
-            <bean class="egovframework.example.cmmn.web.EgovBindingInitializer"/>
-        </property>
-    </bean>
-    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
-        <property name="interceptors">
-            <list>
-                <ref bean="localeChangeInterceptor" />
-            </list>
-        </property>
+    <!-- nexacro config -->
+    <bean id="nexacroInterceptor" class="com.nexacro.spring.servlet.NexacroInterceptor"/>
+    
+    <!-- nexacro method argument resolver -->
+    <bean id="nexacroMethodArgumentResolver" class="com.nexacro.spring.resolve.NexacroMethodArgumentResolver" />
+    
+    <!-- <bean id="beanNameViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver" p:order="0"/>  -->
+    <bean id="nexacroView" class="com.nexacro.spring.view.NexacroView" >
+        <property name="defaultContentType" value="PlatformXml" />
+        <property name="defaultCharset" value="UTF-8" />
     </bean>
     
-    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
-    <!-- 쿠키를 이용한 Locale 이용시 <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver"/> -->
-    <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-        <property name="paramName" value="language" />
+    <bean id="nexacroFileView" class="com.nexacro.spring.view.NexacroFileView" />
+    
+    <!-- nexacro method return value handler -->
+    <bean id="nexacroMethodReturnValueHandler" class="com.nexacro.spring.resolve.NexacroHandlerMethodReturnValueHandler" >
+        <!-- <property name="view" value="nexacroView" />  -->
+        <property name="view" ref="nexacroView" />
+        <property name="fileView" ref="nexacroFileView" />
     </bean>
-
-    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
-        <property name="defaultErrorView" value="cmmn/egovError"/>
-        <property name="exceptionMappings">
+    
+    <!-- nexacro exception resolver -->
+    <bean id="exceptionResolver" class="com.nexacro.spring.resolve.NexacroMappingExceptionResolver" p:order="1">
+        <property name="view" ref="nexacroView" />   
+        <property name="shouldLogStackTrace" value="true" />   
+        <property name="shouldSendStackTrace" value="true" />
+        <!-- shouldSendStackTrace 가 false 일 경우 nexacro platform으로 전송되는 에러메시지  -->
+        <!-- <property name="defaultErrorMsg" value="An Error Occured. check the ErrorCode for detail of error infomation" /> -->
+        <property name="defaultErrorMsg" value="fail.common.msg" />
+        <property name="messageSource" ref="messageSource" />   
+    </bean>   
+    
+     <!-- XENI (nexacro) Request Mapping -->
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+    <bean id="xeniUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping" p:order="0">
+        <!-- 
+        <property name="interceptors">
+            <list>
+            </list>
+        </property>
+         -->
+        <property name="mappings">
             <props>
-                <prop key="org.springframework.dao.DataAccessException">cmmn/dataAccessFailure</prop>
-                <prop key="org.springframework.transaction.TransactionException">cmmn/transactionFailure</prop>
-                <prop key="egovframework.rte.fdl.cmmn.exception.EgovBizException">cmmn/egovError</prop>
-                <prop key="org.springframework.security.AccessDeniedException">cmmn/egovError</prop>
+                <prop key="/XExportImport.do">xeniWrappingController</prop>
             </props>
         </property>
     </bean>
-
-    <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" p:order="1"
-	    p:viewClass="org.springframework.web.servlet.view.JstlView"
-	    p:prefix="/WEB-INF/jsp/egovframework/example/" p:suffix=".jsp"/>
-
-    <!-- For Pagination Tag -->
-    <bean id="imageRenderer" class="egovframework.example.cmmn.web.EgovImgPaginationRenderer"/>
-
-    <bean id="paginationManager" class="egovframework.rte.ptl.mvc.tags.ui.pagination.DefaultPaginationManager">
-        <property name="rendererType">
-            <map>
-                <entry key="image" value-ref="imageRenderer"/>
-            </map>
+    
+    <bean id="xeniWrappingController"
+        class="org.springframework.web.servlet.mvc.ServletWrappingController">
+        <property name="servletClass">
+            <value>com.nexacro.xeni.services.GridExportImportServlet</value>
         </property>
     </bean>
-	<!-- /For Pagination Tag -->
+    <!-- nexacro config finish -->
 
-    <mvc:view-controller path="/cmmn/validator.do" view-name="cmmn/validator"/>
+	<!-- HandlerMappings 선언 시작 (org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping) -->
+	   <!-- set interceptor of AnnotationHandlerMapping
+       - @MVC 개발을 하려면 RequestMappingHandlerMapping(3.1 이상)을 사용해야 한다. 단, jdk 1.5 이상의 개발환경이어야 한다.
+       - jdk 1.5이상의 개발환경이라면, BeanNameUrlHandlerMapping과 함께 RequestMappingHandlerMapping(3.1 이상)도 
+       - 기본 HandlerMapping이다. 따라서 빈 설정 파일에 별도로 선언해주지 않아도 된다. (단, 다른 HandlerMapping과 함께 사용한다면 선언해주어야 한다.) 
+     -->
+ 	<!-- Session 검사를 하지 않는 URL처리를 위한 HandlerMapping -->
+    <bean id="annotationMapper" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" p:order="1">
+        <property name="interceptors">
+            <list>
+                <ref bean="nexacroInterceptor" />
+            </list>
+        </property>
+    </bean>   
+	<!-- HandlerMappings 선언 끝 -->
+
+    <!--
+		- This bean processes annotated handler methods, applying Application-specific PropertyEditors
+		- for request parameter binding. It overrides the default AnnotationMethodHandlerAdapter.
+	-->
+	<bean class="com.nexacro.spring.resolve.NexacroRequestMappingHandlerAdapter">
+		<property name="customArgumentResolvers">
+			<list>
+				<!-- regist Nexacro Argument Resolvers.. -->
+            	<ref bean="nexacroMethodArgumentResolver"/>
+			</list>
+		</property>
+		<property name="customReturnValueHandlers">
+            <list>
+                <!-- regist Nexacro Return Value Handler.. -->
+                <ref bean="nexacroMethodReturnValueHandler"/>
+            </list>
+        </property>
+        <property name="webBindingInitializer">
+            <bean class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">
+                <property name="conversionService" ref="conversionService" />
+                <!-- TODO 아래 내용에 대해 검토하자. -->
+                <!-- <property name="validator" ref="validator" /> -->
+                <!-- <property name="propertyEditorRegistrar" ref="propertyEditorRegistrar" />  -->
+            </bean>
+        </property>
+	</bean>
+	
 </beans>
