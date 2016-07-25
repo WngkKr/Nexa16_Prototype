@@ -112,4 +112,9 @@
         </property>
 	</bean>
 	
+	<bean id="conversionService"
+          class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+          <!--  <property name="converters"></property><property name="formatters"></property> -->
+    </bean>
+	
 </beans>

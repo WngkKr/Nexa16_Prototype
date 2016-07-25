@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-        http://www.springframework.org/schema/jdbc  http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd">
-	
-	<jdbc:embedded-database id="dataSource" type="HSQL">
-		<jdbc:script location= "classpath:/db/sampledb.sql"/>
-	</jdbc:embedded-database>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:jee="http://www.springframework.org/schema/jee"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd"> 
     
-    <!-- hsql
+   <!-- hsql 메모리 DBMS :  JDBC 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="net.sf.log4jdbc.DriverSpy"/>
-        <property name="url" value="jdbc:log4jdbc:hsqldb:hsql://localhost/sampledb"/>
+         
+        <property name="driverClassName" value="core.log.jdbc.driver.HSQLDriver"/>
+        <property name="url" value="'jdbc:log4'jdbc:hsqldb:hsql://localhost:9001/sampledb"/>
         <property name="username" value="sa"/>
-    </bean>
-    -->  
-    
-    <!-- Mysql  
-    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://127.0.0.1:3306/example" />
-        <property name="username" value="user"/>
-        <property name="password" value="password"/>
+        
+        <property name="driverClassName" value="${jdbcs.hsql.class}"/>
+        <property name="url" value="${jdbcs.hsql.url}"/>
+        <property name="username" value="${jdbcs.hsql.user}"/>
     </bean>
     -->
+    
+    <!-- MriaDB  -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="org.mariadb.jdbc.Driver"/>
+        <property name="url" value="jdbc:mariadb://127.0.0.1:3306/nexa16DB" />
+        <property name="username" value="nexauser"/>
+        <property name="password" value="nexapassword"/>
+    </bean>
+   
     
     <!-- oracle
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
