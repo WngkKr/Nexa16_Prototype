@@ -583,6 +583,13 @@
 			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/nexacro-xeni-1.1.jar
 			</systemPath>
 		</dependency>
+		
+		<!-- Oreilly -->
+		<dependency>
+          <groupId>servlets.com</groupId>
+          <artifactId>cos</artifactId>
+          <version>05Nov2002</version>
+      </dependency> 
 
     </dependencies>
     
