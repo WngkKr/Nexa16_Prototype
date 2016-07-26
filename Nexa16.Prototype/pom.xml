@@ -556,6 +556,14 @@
 			<version>4.3.2.Final</version>
 		</dependency>
 		
+		<!-- nexacroplatform CORE 
+		<dependency>
+			<groupId>com.nexacro.spring</groupId>
+			<artifactId>nexacro-core</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		-->
+		
 		<!-- nexacroplatform X-API -->
 		<dependency>
 			<groupId>com.nexacro.xapi</groupId>
@@ -566,7 +574,7 @@
 			</systemPath>
 		</dependency>
 		
-				<!-- XENI API -->
+		<!-- XENI API -->
 		<dependency>
 			<groupId>com.nexacro.xeni</groupId>
 			<artifactId>xeniapi</artifactId>
