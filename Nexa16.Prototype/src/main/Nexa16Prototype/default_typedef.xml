@@ -41,8 +41,6 @@
     <Service prefixid="IMG" type="file" url="./IMG/" version="0" communicationversion="0"/>
     <Service prefixid="FONT" type="file" url="./FONT/" version="0" communicationversion="0"/>
     <Service prefixid="CSS" type="css" url="./CSS/" version="0" communicationversion="0"/>
-    <Service prefixid="TEMP" type="form" url="./Temp/" version="0" communicationversion="0"/>
-    <Service prefixid="Sample_DesignGuide" type="form" url="./Sample/" version="0" communicationversion="0"/>
     <Service prefixid="ChartSample" type="form" url="./ChartSample/" version="0" communicationversion="0"/>
     <Service prefixid="SAM" type="form" url="./SAM/" version="0" communicationversion="0"/>
     <Service prefixid="Base" type="form" url="./Base/" version="0" communicationversion="0"/>
