@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="STIC_Temp01" classname="STIC_Temp01" left="0" top="0" width="1400" height="700" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Static id="Static42" taborder="8" text="여백" left="1370" top="0" width="30" height="700" cssclass="sta_WF_GuideLine"/>
+        <Static id="Static04" taborder="9" text="여백" left="0" top="0" width="30" height="700" cssclass="sta_WF_GuideLine"/>
+        <PopupDiv id="PopupDiv00" text="PopupDiv00" positionstep="0" left="1230" bottom="40" height="660" right="1400"/>
+        <Button id="btnReport03" taborder="17" text="출력" top="10" right="30" width="55" height="25" userRW="Y"/>
+        <Button id="btnExcel00" taborder="18" text="엑셀" top="10" right="95" width="55" height="25" userRW="Y"/>
+        <Grid id="Grid01" taborder="23" tabstop="false" binddataset="ds_grd_tree" useinputpanel="false" autofittype="col" treeuseline="false" treeusecheckbox="false" treeinitstatus="expand,null" left="30" top="102" width="260" height="598">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="223"/>
+              </Columns>
+              <Rows>
+                <Row size="30" band="head"/>
+                <Row size="30"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="caption"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="tree" edittype="tree" text="bind:caption" treelevel="bind:level"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid00" taborder="25" binddataset="Dataset00" useinputpanel="false" autofittype="col" left="301" top="135" width="1070" height="523" cssclass="sta_WF_GuideLine">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="30" band="head"/>
+                <Row size="30"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="no"/>
+                <Cell col="1" text="시작"/>
+                <Cell col="2" text="둘"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:no"/>
+                <Cell col="1" text="bind:시작"/>
+                <Cell col="2" text="bind:둘"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static06" taborder="35" text="3depth title" cssclass="sta_WF_Title3" left="301" top="101" width="238" height="26"/>
+        <Static id="Static05" taborder="36" text="2depth title" onclick="Static05_onclick" cssclass="sta_WF_Title2" left="30" top="5" width="238" height="35" style="background:transparent;border:0 solid #808080ff ;padding:0 0 0 0;align:left middle;font:23 arial;"/>
+        <Div id="divSearch04" taborder="37" left="30" top="43" width="1340" height="42" scrollbars="none" cssclass="div_WF_SearchBar01">
+          <Layouts>
+            <Layout width="868" height="93">
+              <Button id="btnFind" taborder="120" cssclass="btn_WF_srcS" left="290" top="8" width="20" height="25"/>
+              <Combo id="Combo00" taborder="121" displaynulltext="Combo" left="394" top="8" width="145" height="25"/>
+              <Static id="sta_Fund00" taborder="122" text="필수입력" cssclass="sta_SA_labelP" left="330" top="8" width="64" height="25" style="border:0 solid #808080 ;" ustext="Fund"/>
+              <Edit id="edt_Fund00" taborder="123" displaynulltext="가나다라" left="95" top="8" width="193" height="25"/>
+              <Static id="sta_Fund" taborder="124" text="Edit" cssclass="sta_SA_label" left="21" top="8" width="37" height="25" style="border:0 solid #808080 ;" ustext="Fund"/>
+              <CheckBox id="CheckBox01" taborder="125" text="퇴사자포함" left="563" top="11" width="147" height="19"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="no" type="STRING" size="256"/>
+          <Column id="시작" type="STRING" size="256"/>
+          <Column id="둘" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="no">001</Col>
+            <Col id="시작">1</Col>
+            <Col id="둘">2</Col>
+          </Row>
+          <Row>
+            <Col id="no">002</Col>
+            <Col id="시작">3</Col>
+            <Col id="둘">4</Col>
+          </Row>
+          <Row>
+            <Col id="no">003</Col>
+            <Col id="시작">5</Col>
+            <Col id="둘"/>
+          </Row>
+          <Row>
+            <Col id="no">004</Col>
+            <Col id="시작">01</Col>
+            <Col id="둘">08</Col>
+          </Row>
+          <Row>
+            <Col id="no">005</Col>
+            <Col id="시작">02</Col>
+            <Col id="둘">09</Col>
+          </Row>
+          <Row>
+            <Col id="no">006</Col>
+            <Col id="시작">03</Col>
+            <Col id="둘">10</Col>
+          </Row>
+          <Row>
+            <Col id="no">007</Col>
+            <Col id="시작">04</Col>
+            <Col id="둘">11</Col>
+          </Row>
+          <Row>
+            <Col id="no">008</Col>
+            <Col id="시작">05</Col>
+            <Col id="둘">12</Col>
+          </Row>
+          <Row>
+            <Col id="no">009</Col>
+            <Col id="시작">06</Col>
+            <Col id="둘">13</Col>
+          </Row>
+          <Row>
+            <Col id="no">010</Col>
+            <Col id="시작">07</Col>
+            <Col id="둘">14</Col>
+          </Row>
+          <Row>
+            <Col id="no">011</Col>
+            <Col id="시작">08</Col>
+            <Col id="둘">15</Col>
+          </Row>
+          <Row>
+            <Col id="no">012</Col>
+            <Col id="시작">09</Col>
+            <Col id="둘">16</Col>
+          </Row>
+          <Row>
+            <Col id="no">013</Col>
+            <Col id="시작">10</Col>
+            <Col id="둘">17</Col>
+          </Row>
+          <Row>
+            <Col id="no">014</Col>
+            <Col id="시작">11</Col>
+            <Col id="둘">18</Col>
+          </Row>
+          <Row>
+            <Col id="no">015</Col>
+            <Col id="시작">12</Col>
+            <Col id="둘">19</Col>
+          </Row>
+          <Row>
+            <Col id="no">016</Col>
+            <Col id="시작">13</Col>
+            <Col id="둘">20</Col>
+          </Row>
+          <Row>
+            <Col id="no">017</Col>
+            <Col id="시작">14</Col>
+            <Col id="둘">21</Col>
+          </Row>
+          <Row>
+            <Col id="no">018</Col>
+            <Col id="시작">15</Col>
+            <Col id="둘">22</Col>
+          </Row>
+          <Row>
+            <Col id="no">019</Col>
+            <Col id="시작">16</Col>
+            <Col id="둘">23</Col>
+          </Row>
+          <Row>
+            <Col id="no">020</Col>
+            <Col id="시작">17</Col>
+            <Col id="둘">24</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_grd_tree" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="id" type="STRING" size="256"/>
+          <Column id="caption" type="STRING" size="256"/>
+          <Column id="level" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="id">1</Col>
+            <Col id="caption">style</Col>
+            <Col id="level">0</Col>
+          </Row>
+          <Row>
+            <Col id="id">2</Col>
+            <Col id="caption">border</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">3</Col>
+            <Col id="caption">background</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">4</Col>
+            <Col id="caption">gradation</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">5</Col>
+            <Col id="caption">font</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">6</Col>
+            <Col id="caption">Component</Col>
+            <Col id="level">0</Col>
+          </Row>
+          <Row>
+            <Col id="id">7</Col>
+            <Col id="caption">TEXT</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">8</Col>
+            <Col id="caption">Static</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">9</Col>
+            <Col id="caption">Edit</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">10</Col>
+            <Col id="caption">MaskEdit</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">11</Col>
+            <Col id="caption">TextArea</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">12</Col>
+            <Col id="caption">BUTTON</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">13</Col>
+            <Col id="caption">Spin</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">14</Col>
+            <Col id="caption">CheckBox</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">15</Col>
+            <Col id="caption">LIST</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">16</Col>
+            <Col id="caption">ListBox</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">17</Col>
+            <Col id="caption">Combo</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">18</Col>
+            <Col id="caption">Menu</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">19</Col>
+            <Col id="caption">DATE</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">20</Col>
+            <Col id="caption">Calendar</Col>
+            <Col id="level">2</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="" propid="" datasetid="Dataset00" columnid=""/>
+    </Bind>
+    <Script type="xscript5.0"><![CDATA[
+this.Tab03_tabpage1_Static05_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+	
+}
+
+this.Div00_Static00_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+	
+}
+
+this.Edit00_oneditclick = function(obj:Edit,  e:nexacro.EditClickEventInfo)
+{
+	
+}
+
+this.Static04_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+	
+}
+]]></Script>
+  </Form>
+</FDL>

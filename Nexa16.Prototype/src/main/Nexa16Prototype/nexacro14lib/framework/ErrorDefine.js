@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -50,23 +50,26 @@ if (this.nexacro) {
 			"comm_fail_loaddetail" : ["로딩하는 중에 에러가 발생하였습니다. 주소가 정확한지 확인하고 다시 시도하십시오. 경로 [", "%0", "] HTTP 에러코드 [", "%1", "]"], 
 			"comm_cancel_byuser" : ["사용자에 의해 통신이 중지 되었습니다. [", "%0", "]"], 
 			"comm_stop_transaction_byesc" : ["Transaction이 Esc Key에 의해 중단됩니다.  ( 표준이 아닙니다. )"], 
-			"comm_http_400" : ["클라이언트의 잘못된 요청으로 처리할 수 없습니다.\n 주소가 정확한지 확인하고 다시 시도하십시오.  "], 
-			"comm_http_404" : ["요청한 경로에서 문서를 찾을 수 없습니다.\n 주소가 정확한지 확인하고 다시 시도하십시오. "], 
-			"comm_http_405" : ["사이트에서 페이지를 표시할 수 없습니다.  "], 
-			"comm_http_500" : ["내부서버 오류입니다.   "], 
-			"comm_http_503" : ["외부 서비스가 죽었거나 현재 멈춤 상태 입니다.  "], 
-			"comm_http_499" : ["요청 오류입니다.    "], 
-			"comm_http_599" : ["서버 에러입니다.   "], 
-			"comm_http_401" : ["서버에 로그온 하려는 요청사항이 서버에 들어있는 권한과 맞지 않습니다.    "], 
-			"comm_http_402" : ["예약되어 있습니다.   "], 
-			"comm_http_403" : ["브라우저가 접근한 디렉토리에 가용한 디폴트 페이지가 없습니다.   "], 
-			"comm_http_406" : ["받아들일 수 없는 요청입니다.  "], 
-			"comm_http_407" : ["Proxy 인증이 필요합니다.   "], 
-			"comm_http_408" : ["요청시간이 지났습니다. "], 
 			"comm_http_301" : ["요청한 URI가 새 URI로 변경되었습니다."], 
 			"comm_http_302" : ["요청한 URI가 일시적으로 변경되었습니다."], 
 			"comm_http_305" : ["요청한 자원은 반드시 Proxy Location을 사용하여 접근해야 합니다."], 
 			"comm_http_307" : ["요청한 URI가 일시적으로 변경되었습니다."], 
+			"comm_http_400" : ["클라이언트의 잘못된 요청으로 처리할 수 없습니다.\n 주소가 정확한지 확인하고 다시 시도하십시오.  "], 
+			"comm_http_401" : ["서버에 로그온 하려는 요청사항이 서버에 들어있는 권한과 맞지 않습니다.    "], 
+			"comm_http_402" : ["예약되어 있습니다.   "], 
+			"comm_http_403" : ["브라우저가 접근한 디렉토리에 가용한 디폴트 페이지가 없습니다.   "], 
+			"comm_http_404" : ["요청한 경로에서 문서를 찾을 수 없습니다.\n 주소가 정확한지 확인하고 다시 시도하십시오. "], 
+			"comm_http_405" : ["사이트에서 페이지를 표시할 수 없습니다.  "], 
+			"comm_http_406" : ["받아들일 수 없는 요청입니다.  "], 
+			"comm_http_407" : ["Proxy 인증이 필요합니다.   "], 
+			"comm_http_408" : ["요청시간이 지났습니다. "], 
+			"comm_http_500" : ["내부서버 오류입니다.   "], 
+			"comm_http_503" : ["외부 서비스가 죽었거나 현재 멈춤 상태 입니다.  "], 
+			"comm_http_499" : ["요청 오류입니다.    "], 
+			"comm_http_599" : ["서버 에러입니다.   "], 
+
+			"comm_https_500" : ["SSL VerifyCert 에 실패하였습니다."], 
+			"comm_https_501" : ["SSL ProxyInfo 가 변경되었거나 GetProxyInfo 에 실패하였습니다."], 
 
 			"script_error" : ["스크립트 오류입니다.[", "%[0]", "] "], 
 
@@ -107,7 +110,8 @@ if (this.nexacro) {
 			"object_push_fail_adui" : ["X-PUSH 서버로 유저 topic 정보 등록요청(reqisterUser)이 실패했습니다."], 
 			"object_push_fail_unui" : ["X-PUSH 서버로 유저 topic 정보 등록해제(unregisterUser)요청이 실패했습니다."], 
 			"object_push_fail_msgc" : ["미수신 메시지 정보요청을 실패했습니다."], 
-			"msg_accessibility_emptyline" : ["빈줄"]
+			"msg_accessibility_emptyline" : ["빈줄"], 
+			"msg_accessibility_emptyframe" : ["빈 프레임"]
 		}, 
 		"en" : 
 			{
@@ -145,23 +149,26 @@ if (this.nexacro) {
 			"comm_fail_loaddetail" : ["[", "%0", "] loading has been failed due to following http or socket error code [", "%1", "] "], 
 			"comm_cancel_byuser" : ["canceled communication by user. [", "%0", "]"], 
 			"comm_stop_transaction_byesc" : ["stop Transaction by esc key. ( no standard ) "], 
-			"comm_http_400" : ["Unintelligible Request.  "], 
-			"comm_http_404" : ["failed to find the file in appropriate path. "], 
-			"comm_http_405" : ["Server does not support requested method.  "], 
-			"comm_http_500" : ["Internal Server Error.  "], 
-			"comm_http_503" : ["Service unavailable.  "], 
-			"comm_http_499" : ["Request Error.    "], 
-			"comm_http_599" : ["Server Error.   "], 
-			"comm_http_401" : ["Unauthorized.    "], 
-			"comm_http_402" : ["Payment Required.  "], 
-			"comm_http_403" : ["Forbidden.   "], 
-			"comm_http_406" : ["Not Acceptable.  "], 
-			"comm_http_407" : ["Proxy authentication required  "], 
-			"comm_http_408" : ["Request timeout. "], 
 			"comm_http_301" : ["Moved Permanently."], 
 			"comm_http_302" : ["The requested resource resides temporarily under a different URI."], 
 			"comm_http_305" : ["The requested resource MUST be accessed through the proxy given by the Location field."], 
 			"comm_http_307" : ["The requested resource resides temporarily under a different URI."], 
+			"comm_http_400" : ["Unintelligible Request.  "], 
+			"comm_http_401" : ["Unauthorized.    "], 
+			"comm_http_402" : ["Payment Required.  "], 
+			"comm_http_403" : ["Forbidden.   "], 
+			"comm_http_404" : ["failed to find the file in appropriate path. "], 
+			"comm_http_405" : ["Server does not support requested method.  "], 
+			"comm_http_406" : ["Not Acceptable.  "], 
+			"comm_http_407" : ["Proxy authentication required  "], 
+			"comm_http_408" : ["Request timeout. "], 
+			"comm_http_500" : ["Internal Server Error.  "], 
+			"comm_http_503" : ["Service unavailable.  "], 
+			"comm_http_499" : ["Request Error.    "], 
+			"comm_http_599" : ["Server Error.   "], 
+
+			"comm_https_500" : ["SSL VerifyCert failed."], 
+			"comm_https_501" : ["SSL ProxyInfo changed or GetProxyInfo failed."], 
 
 			"script_error" : ["script error.[", "%[0]", "] "], 
 
@@ -197,7 +204,8 @@ if (this.nexacro) {
 			"object_push_fail_protocol_version" : ["The information on the message format version does not match."], 
 			"object_push_fail_rect" : ["The response to the reliable message has failed to be transmitted."], 
 			"object_push_fail_reqd" : ["Request for undelivered messages has failed."], 
-			"msg_accessibility_emptyline" : ["empty line"]
+			"msg_accessibility_emptyline" : ["empty line"], 
+			"msg_accessibility_emptyframe" : ["empty frame"]
 		}, 
 		"ja" : 
 			{
@@ -235,23 +243,26 @@ if (this.nexacro) {
 			"comm_fail_loaddetail" : ["ローディング中にエラーが発生しました。パスを確認してください。パス [", "%0", "] HTTP エラーコード [", "%1", "]"], 
 			"comm_cancel_byuser" : ["ユーザーにより通信がキャンセルされました。[", "%0", "]"], 
 			"comm_stop_transaction_byesc" : ["TransactionがEsc Keyにより中止されます。( 標準ではありません。)"], 
-			"comm_http_400" : ["クライアントの不正なリクエストのため、処理することができません。\n アドレスが正しいことを確認して、再試行してください。"], 
-			"comm_http_404" : ["リクエストされたパスでドキュメントが見つけられません。\n アドレスが正しいことを確認して、再試行してください。"], 
-			"comm_http_405" : ["サイトでページを表示することができません。"], 
-			"comm_http_500" : ["内部サーバーエラーです。 "], 
-			"comm_http_503" : ["外部サービスが起動しないか、現在停止状態です。"], 
-			"comm_http_499" : ["リクエストエラーです。"], 
-			"comm_http_599" : ["サーバーエラーです。"], 
-			"comm_http_401" : ["サーバーにログオンするためのリクエストが、サーバーに設定されている権限と一致しません。"], 
-			"comm_http_402" : ["予約されています。"], 
-			"comm_http_403" : ["ブラウザがアクセスしたディレクトリに利用可能なデフォルトページがありません。"], 
-			"comm_http_406" : ["許可されていないリクエストです。"], 
-			"comm_http_407" : ["プロキシ認証が必要になります。"], 
-			"comm_http_408" : ["リクエスト時間が経ちました。"], 
 			"comm_http_301" : ["リクエストされたURIが新しいURIに変更されました。"], 
 			"comm_http_302" : ["リクエストされたURIが一時的に変更されました。"], 
 			"comm_http_305" : ["リクエストされたリソースは、必ずProxy Locationを使用してアクセスする必要があります。"], 
 			"comm_http_307" : ["リクエストされたURIが一時的に変更されました。"], 
+			"comm_http_400" : ["クライアントの不正なリクエストのため、処理することができません。\n アドレスが正しいことを確認して、再試行してください。"], 
+			"comm_http_401" : ["サーバーにログオンするためのリクエストが、サーバーに設定されている権限と一致しません。"], 
+			"comm_http_402" : ["予約されています。"], 
+			"comm_http_403" : ["ブラウザがアクセスしたディレクトリに利用可能なデフォルトページがありません。"], 
+			"comm_http_404" : ["リクエストされたパスでドキュメントが見つけられません。\n アドレスが正しいことを確認して、再試行してください。"], 
+			"comm_http_405" : ["サイトでページを表示することができません。"], 
+			"comm_http_406" : ["許可されていないリクエストです。"], 
+			"comm_http_407" : ["プロキシ認証が必要になります。"], 
+			"comm_http_408" : ["リクエスト時間が経ちました。"], 
+			"comm_http_500" : ["内部サーバーエラーです。 "], 
+			"comm_http_503" : ["外部サービスが起動しないか、現在停止状態です。"], 
+			"comm_http_499" : ["リクエストエラーです。"], 
+			"comm_http_599" : ["サーバーエラーです。"], 
+
+			"comm_https_500" : ["SSL VerifyCertに失敗しました。"], 
+			"comm_https_501" : ["SSL ProxyInfoは変更またはGetProxyInfoに失敗しました。"], 
 
 			"script_error" : ["スクリプトエラーです。[", "%[0]", "] "], 
 
@@ -289,7 +300,8 @@ if (this.nexacro) {
 			"object_push_fail_reqd" : ["未受信メッセージの要求に失敗しました。"], 
 			"object_push_fail_reqd" : ["미수신 메시지 요청을 실패했습니다."], 
 
-			"msg_accessibility_emptyline" : ["空行"]
+			"msg_accessibility_emptyline" : ["空行"], 
+			"msg_accessibility_emptyframe" : ["空のフレーム"]
 		}
 	};
 }

@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -356,6 +356,7 @@ if (!nexacro.Plugin) {
 	_pPlugin.set_windowed = function (v) {
 		this.windowed = nexacro._toBoolean(v);
 	};
+
 	_pPlugin.on_apply_windowed = function () {
 		var elem = this._obj_elem;
 		if (elem) {
@@ -370,6 +371,7 @@ if (!nexacro.Plugin) {
 		this.popupstyle = nexacro._toBoolean(v);
 		this.on_apply_popupstyle();
 	};
+
 	_pPlugin.on_apply_popupstyle = function () {
 		var elem = this._obj_elem;
 		if (elem) {
@@ -410,6 +412,10 @@ if (!nexacro.Plugin) {
 		else {
 			var obj_elem = this._obj_elem;
 			if (obj_elem) {
+				if (propId.toLowerCase() == "movie") {
+					obj_elem.setElementPluginSrc(val);
+					obj_elem.setElementPluginMIMEType("application/x-shockwave-flash");
+				}
 				obj_elem.setElementParam(propId, val);
 			}
 			else {

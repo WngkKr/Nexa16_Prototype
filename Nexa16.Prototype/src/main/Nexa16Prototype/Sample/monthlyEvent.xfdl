@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="Calendar_Div_Sub" classname="Script_String_Quote" inheritanceid="" position="absolute" titletext="업무 일정관리/월중행사" left="0" top="0" width="1400" height="700" style="padding:0 30 0 30;">
+    <Layouts>
+      <Layout>
+        <Static id="Static18" taborder="6" text="     월중행사" onclick="Static05_onclick" cssclass="sta_WF_title1" left="30" top="7" width="238" height="30" style="background:transparent URL('IMG::h1.png');align:left middle;font:15 arial;"/>
+        <Div id="Div00" taborder="7" left="30" top="50" width="1340" height="45" style="border:1 solid #b1b1b1ff ;">
+          <Layouts>
+            <Layout>
+              <Static id="Static01" taborder="56" text="구분" cssclass="sta_WF_label" left="29" top="12" width="54" height="18" style="border:0 none #808080ff ;"/>
+              <Static id="Static00" taborder="57" text="년월" onclick="Div00_Static00_onclick" cssclass="sta_WF_label" left="267" top="12" width="54" height="18"/>
+              <Combo id="Combo01" taborder="58" text="전체" innerdataset="ds_cmb_emp" codecolumn="emp_cd" datacolumn="kor_nm" index="0" left="87" top="9" width="149" height="25"/>
+              <Calendar id="Calendar00" taborder="59" value="20160401" dateformat="yyyy-MM" editformat="yyyy-MM" oneditclick="Div00_Calendar00_oneditclick" left="24.82%" top="9" right="63.25%" height="25"/>
+              <Static id="Static15" taborder="63" text="9" visible="false" left="0" top="0" width="664" height="9" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;"/>
+              <Static id="Static17" taborder="64" text="30" visible="false" left="0" top="9" width="30" height="25" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;"/>
+              <Static id="Static18" taborder="65" text="30" visible="false" left="236" top="9" width="30" height="25" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;"/>
+              <Static id="Static21" taborder="66" text="13" visible="false" left="324" top="9" width="13" height="26" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;"/>
+              <Static id="Static16" taborder="68" text="9" visible="false" left="0" top="34" width="664" height="9" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="Button01" taborder="9" text="저장" top="11" right="102" width="65" height="23"/>
+        <Button id="Button02" taborder="10" text="삭제" top="11" right="173" width="65" height="23"/>
+        <Button id="Button03" taborder="11" text="수정" top="11" right="244" width="65" height="23"/>
+        <Button id="Button04" taborder="12" text="신규" top="11" right="315" width="65" height="23"/>
+        <Button id="Button05" taborder="13" text="조회" top="11" right="386" width="65" height="23"/>
+        <Static id="Static04" taborder="19" text="20" visible="false" left="0" top="11" width="30" height="673" style="background:chartreuse;"/>
+        <Static id="Static01" taborder="20" text="h7" visible="false" left="0" top="0" width="1220" height="7" style="background:chartreuse;align:center middle;"/>
+        <Static id="Static05" taborder="21" text="h13" visible="false" left="20" top="37" width="1180" height="13" style="background:chartreuse;align:center middle;"/>
+        <Static id="Static14" taborder="22" text="h13" visible="false" left="24" top="95" width="1180" height="13" style="background:#7fff00ee;color:darkred;align:center middle;"/>
+        <Static id="Static42" taborder="25" text="20" visible="false" left="1370" top="11" width="30" height="673" style="background:chartreuse;"/>
+        <Tab id="Tab00" taborder="26" left="30" top="108" height="593" tabindex="0" scrollbars="autoboth" width="1340">
+          <Tabpages>
+            <Tabpage id="tabpage1" text="달력보기" url="TEMP::month2.xfdl" scrollbars="autovert"/>
+            <Tabpage id="tabpage2" text="상세보기"/>
+          </Tabpages>
+        </Tab>
+        <Button id="Button00" taborder="27" text="출력" top="11" right="31" width="65" height="23"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.0"><![CDATA[
+this.fv_nYear;
+this.fv_nMonth;
+this.fv_nDay;
+this.fv_nFirstDay = -1;
+
+this.fn_setMonthDiv = function(nYear,nMonth)
+{
+	this.fv_nYear  = nYear;
+	this.fv_nMonth = nMonth;
+	var objDate = new Date();
+	objDate.setFullYear(nYear, nMonth-1, 1);
+	this.fv_nFirstDay = objDate.getDay();
+	objDate.setFullYear(nYear, nMonth, 0);
+	
+	var lastDate = objDate.getDate();	
+	var objToday = new Date();
+	var nJudge = false;
+	var nToday = 0;
+	
+	if (objToday.getYear()*100+objToday.getMonth()+1 == this.fv_nYear*100+this.fv_nMonth)
+	{
+		nToday = objToday.getDate();
+	}
+	else if (objToday.getYear()*100+objToday.getMonth()+1 > this.fv_nYear*100+this.fv_nMonth)
+	{
+		nToday = 100;
+	}
+	else
+	{
+		nToday = -1;
+	}
+	
+	this.fv_nDay = -99;
+	
+	var i;
+	for (i = 0; i < this.fv_nFirstDay; i++) 
+	{
+		var objDiv = this.components["div_date0"+i];
+		objDiv.sta_date.set_text("");
+		this.fn_cleanDiv(objDiv);
+		objDiv.sta_text.style.set_opacity("0");
+	}
+
+	i = 1;
+	while (i <= lastDate)
+	{
+		var objDiv = this.components["div_date"+Math.floor((i+this.fv_nFirstDay-1)/7)+""+((i+this.fv_nFirstDay-1)%7)];
+		objDiv.sta_date.set_text(""+i);
+		this.fn_cleanDiv(objDiv);
+		if (i == nToday) 
+		{
+			objDiv.sta_text.style.set_opacity("100");
+		}
+		else if (i < nToday) 
+		{
+			objDiv.sta_text.style.set_opacity("50");
+		}
+		else  
+		{
+			objDiv.sta_text.style.set_opacity("70");
+		}
+		i++;		
+	}
+	
+	var fulldate = 42 - this.fv_nFirstDay;
+	while (i <= fulldate)  
+	{
+		var objDiv = this.components["div_date"+Math.floor((i+this.fv_nFirstDay-1)/7)+""+((i+this.fv_nFirstDay-1)%7)];
+		objDiv.sta_date.set_text("");
+		this.fn_cleanDiv(objDiv);
+		objDiv.sta_text.style.set_opacity("0");
+		i++;
+	}
+}
+
+this.fn_cleanDiv = function(objDiv)
+{
+	objDiv.style.set_border("border:1px none #70a1ca");
+	objDiv.style.set_background("#f3f6fe");
+	objDiv.sta_text.set_text("");
+}
+
+this.fn_selectDate = function(nDate)
+{
+	var objNewDiv = this.fn_getDayDiv(nDate);
+	if (this.fv_nDay != nDate && objNewDiv != null)
+	{
+		var objOldDiv = this.fn_getDayDiv(this.fv_nDay);
+		if (objOldDiv != null)
+		{
+			objOldDiv.style.set_border("border:1px none #70a1ca");
+			objOldDiv.style.set_background("#f3f6fe");
+		}
+
+		objNewDiv.style.set_border("border:1px solid #70a1ca");
+		objNewDiv.style.set_background("#e1ebf7");		
+		this.fv_nDay = nDate;
+		return true;
+	}
+	return false;
+}
+
+this.fn_getDayDiv = function(nDate)
+{
+	if (nDate < 1)
+	{
+		return null;
+	}
+	var date = new Date();
+	date.setFullYear(this.fv_nYear, this.fv_nMonth, 0);
+	var lastDate = date.getDate();
+	if (nDate >  lastDate)
+	{
+		return null;
+	}
+
+	var objDiv = this.components["div_date"+Math.floor((nDate*1+this.fv_nFirstDay-1)/7)+""+((nDate*1+this.fv_nFirstDay-1)%7)];
+	return objDiv;
+}
+
+/*  onclick  */
+this.date_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+	var objDiv = null;
+	if (obj instanceof Div)
+	{
+		objDiv = obj;
+	}
+	else if (obj instanceof Static)
+	{
+		objDiv = obj.parent;
+	}
+	var divIndex = objDiv.name.substr(8)*1;
+	var nDay = Math.floor(divIndex/10)*7 + divIndex%10 - this.fv_nFirstDay + 1;
+	var objParent = this.parent;
+	objParent.fn_ondayClick(nDay);
+}
+
+this.sta_month_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+	
+}
+
+this.Div00_Button01_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	
+}
+]]></Script>
+  </Form>
+</FDL>

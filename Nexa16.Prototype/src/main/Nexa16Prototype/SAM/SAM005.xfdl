@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="SAM005" classname="STICeditor" left="0" top="0" width="1024" height="768" titletext="DEXT5 에디터 샘플" onload="SAM_DEXT5editor_onload">
+    <Layouts>
+      <Layout>
+        <WebBroswer id="WebBroswer00" left="0" top="272" taborder="0" right="0" bottom="0" onloadcompleted="WebBroswer00_onloadcompleted"/>
+        <Button id="btn_set" taborder="1" text="set" left="360" top="8" width="120" height="50" onclick="btn_set_onclick"/>
+        <Button id="btn_get" taborder="2" text="get" left="488" top="8" width="120" height="50" onclick="btn_get_onclick"/>
+        <Grid id="Grid00" taborder="3" binddataset="dsContents" useinputpanel="false" oncellclick="Grid00_oncellclick" left="31" top="80" height="184" autofittype="col" right="385">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="55"/>
+                <Column size="481"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="idx"/>
+                <Cell col="1" text="contents"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:idx"/>
+                <Cell col="1" text="bind:contents"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <TextArea id="txt_html" taborder="4" wordwrap="char" top="80" right="0" width="323" height="184"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsContents" preload="true" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" onrowposchanged="dsContents_onrowposchanged">
+        <ColumnInfo>
+          <Column id="idx" type="STRING" size="256"/>
+          <Column id="contents" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="idx">1</Col>
+            <Col id="contents">&lt;a href='"http://www.miplatform.co.kr'&gt;투비소프트 고객지원센터 입니다.&lt;/a&gt;</Col>
+          </Row>
+          <Row>
+            <Col id="idx">2</Col>
+            <Col id="contents">DEXT5 Editor 테스트</Col>
+          </Row>
+          <Row>
+            <Col id="contents">&lt;h1&gt;DEXT5 Editor!&lt;/h1&gt;&lt;p&gt;I&amp;#39;m an instance of &lt;a href="http://www.dext5.com/page/index.aspx"&gt;DEXT5 Editor&lt;/a&gt;.&lt;/p&gt;</Col>
+            <Col id="idx">3</Col>
+          </Row>
+          <Row>
+            <Col id="idx">4</Col>
+            <Col id="contents">&lt;h1 style="font-family: 굴림; line-height: normal;"&gt;DEXT5 Editor!&lt;/h1&gt;&lt;p style="font-family: 굴림; font-size: 16px; line-height: 19.2px; margin-top: 0px; margin-bottom: 0px;"&gt;I'm an instance of &lt;a href="http://www.dext5.com/page/index.aspx"&gt;DEXT5 Editor&lt;/a&gt;.&lt;/p&gt;</Col>
+          </Row>
+          <Row>
+            <Col id="contents">&lt;p style="font-family: 굴림; font-size: 16px; line-height: 19.2px; margin-top: 0px; margin-bottom: 0px;"&gt;lasjd;kfj&lt;/p&gt;&lt;p style="font-family: 굴림; font-size: 16px; line-height: 19.2px; margin-top: 0px; margin-bottom: 0px;"&gt;]as'dl;f;a&lt;/p&gt;&lt;p style="font-family: 굴림; font-size: 16px; line-height: 19.2px; margin-top: 0px; margin-bottom: 0px;"&gt;a&lt;/p&gt;&lt;p style="font-family: 굴림; font-size: 16px; line-height: 19.2px; margin-top: 0px; margin-bottom: 0px;"&gt;sd&lt;/p&gt;&lt;p style="font-family: 굴림; font-size: 16px; line-height: 19.2px; margin-top: 0px; margin-bottom: 0px;"&gt;f&lt;/p&gt;&lt;p style="font-family: 굴림; font-size: 16px; line-height: 19.2px; margin-top: 0px; margin-bottom: 0px;"&gt;asd&lt;/p&gt;&lt;p style="font-family: 굴림; font-size: 16px; line-height: 19.2px; margin-top: 0px; margin-bottom: 0px;"&gt;f&lt;/p&gt;&lt;p style="font-family: 굴림; font-size: 16px; line-height: 19.2px; margin-top: 0px; margin-bottom: 0px;"&gt;asd&lt;/p&gt;&lt;p style="font-family: 굴림; font-size: 16px; line-height: 19.2px; margin-top: 0px; margin-bottom: 0px;"&gt;fs&lt;/p&gt;&lt;p style="font-family: 굴림; font-size: 16px; line-height: 19.2px; margin-top: 0px; margin-bottom: 0px;"&gt;da&lt;/p&gt;&lt;p style="font-family: 굴림; font-size: 16px; line-height: 19.2px; margin-top: 0px; margin-bottom: 0px;"&gt;fd&lt;/p&gt;&lt;p style="font-family: 굴림; font-size: 16px; line-height: 19.2px; margin-top: 0px; margin-bottom: 0px;"&gt;&amp;nbsp;&lt;/p&gt;</Col>
+            <Col id="idx">5</Col>
+          </Row>
+          <Row>
+            <Col id="contents">alskjdfldafs
+lskjdk
+
+asdf</Col>
+            <Col id="idx">6</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[/**
+*  인트라넷 고도화[Lexpeed3]구축 사업
+*
+*  @MenuPath       
+*  @FileName       SAM005.xfdl
+*  @Creator        송원창
+*  @CreateDate     2016.04.15
+*  @LastModifier   
+*  @LastModifyDate 
+*  @Version        1.0
+*  @Outline        DEXT5 에디터 샘플
+*  @Desction       
+*
+*
+************** 소스 수정 이력 *************************************************
+*    date          Modifier            Description
+*******************************************************************************
+*  2016.04.20      송원창              클래스 최초 생성
+*******************************************************************************
+*/
+/*----------------------------------------------------------------------------------------------
+ * 공통 라이브러리 INCLUDE 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+//include "LIB::LIB_COMMON.xjs";  	// 공통 js
+/*----------------------------------------------------------------------------------------------
+ * FORM 변수 선언 영역
+----------------------------------------------------------------------------------------------*/
+this.DEXT5Editor; 	// DEXT5editor
+
+/*----------------------------------------------------------------------------------------------
+ * FORM EVENT 영역
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  화면 로드시 이벤트
+ */
+this.SAM_DEXT5editor_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	//공통초기화 필수
+	this.gfn_initForm(obj);
+	
+	this.WebBroswer00.set_url("http://localhost:8080/dext5editor/sample/editor.html");
+}
+
+/*----------------------------------------------------------------------------------------------
+ * 공통기능 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * TRANSACTION 및 CallBack 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  Push 수신 여부 저장 서비스 callback
+ * @param sTrId  	   - service ID
+ * @param nErrorCode   - error CODE
+ * @param sErrorMsg    - error MESSAGE
+ * @return       N/A
+ */
+this.fn_callback = function(sTrId, nErrorCode, sErrorMsg)
+{
+	trace("sTrId: " + sTrId + " " + "nErrorCode: " + nErrorCode + " " +  "sErrorMsg: " + sErrorMsg);
+	
+	if ( nErrorCode < 0 ) return;
+	
+	switch(sTrId)
+	{
+		case "retrieveEmp":
+			trace(this.ds_output.saveXML());
+			break;
+		
+		default:
+			 break;
+	}
+}
+
+/*----------------------------------------------------------------------------------------------
+ * 각 COMPONENT 별 EVENT 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  웹브라우저 컴포넌트 onload 완료시 event
+ * @return       N/A
+ */
+this.WebBroswer00_onloadcompleted = function(obj:WebBroswer, e:nexacro.WebLoadCompEventInfo)
+{
+	this.DEXT5Editor = this.WebBroswer00.getProperty("document").getProperty("all");
+}
+
+/**
+ * @description  에디터에 데이터 전송
+ * @return       N/A
+ */
+this.btn_set_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var contents = this.txt_html.value;
+	this.fn_setWebEditor(contents);
+}
+
+/**
+ * @description  에디터에 데이터 가져오기
+ * @return       N/A
+ */
+this.btn_get_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var contents = this.fn_getWebEditor();
+	this.txt_html.set_value(contents);
+}
+
+/**
+ * @description  그리드 셀 클릭
+ * @return       N/A
+ */
+this.Grid00_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	var strValue = this.dsContents.getColumn(this.dsContents.rowposition, "contents");
+	
+	//this.fn_setWebEditor(strValue);
+	this.txt_html.set_value(strValue);
+}
+
+
+/*----------------------------------------------------------------------------------------------
+ * 사용자 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description	웹에디터의 html 값 설정하기
+ * @return       N/A
+ */
+this.fn_setWebEditor = function(strValue)
+{
+	this.DEXT5Editor.getProperty("txtTestValue1").setProperty("value", strValue);
+	
+	this.DEXT5Editor.getProperty("btnValue1").callMethod("click");
+}
+
+/**
+ * @description	웹에디터의 html 값 가져오기
+ * @return       N/A
+ */
+this.fn_getWebEditor = function(strValue)
+{
+	this.DEXT5Editor.getProperty("btnValue2").callMethod("click");
+	var contents = this.DEXT5Editor.getProperty("txtTestValue1").getProperty("value");
+	
+	return contents;
+}]]></Script>
+  </Form>
+</FDL>

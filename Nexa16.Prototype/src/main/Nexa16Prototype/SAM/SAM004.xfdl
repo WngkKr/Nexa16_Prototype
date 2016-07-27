@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="SAM004" classname="SAM_updownload" left="0" top="0" width="1024" height="768" titletext="DEXT5 업로드 샘플" onload="SAM_DEXT5upload_onload">
+    <Layouts>
+      <Layout>
+        <WebBroswer id="WebBroswer00" left="0" top="225" taborder="0" onloadcompleted="WebBroswer00_onloadcompleted" onusernotify="WebBroswer00_onusernotify" height="205" right="0"/>
+        <Button id="btn_add" taborder="1" text="파일추가" left="8" top="15" width="96" height="50" onclick="btn_add_onclick"/>
+        <Button id="btn_transfer" taborder="2" text="전송하기" left="114" top="15" width="96" height="50" onclick="btn_transfer_onclick"/>
+        <Button id="btn_delall" taborder="3" text="전체삭제" left="326" top="15" width="96" height="50" onclick="btn_delall_onclick"/>
+        <Button id="btn_del" taborder="4" text="항목삭제" left="220" top="15" width="96" height="50" onclick="btn_del_onclick"/>
+        <Grid id="Grid00" taborder="5" binddataset="ds_filelist" useinputpanel="false" left="482" top="12" height="188" cellsizingtype="col" autofittype="col" right="0">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="44"/>
+                <Column size="109"/>
+                <Column size="235"/>
+                <Column size="97"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="no"/>
+                <Cell col="1" text="filename"/>
+                <Cell col="2" text="url"/>
+                <Cell col="3" text="filesize"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:no"/>
+                <Cell col="1" text="bind:filename"/>
+                <Cell col="2" style="align:left middle;" text="bind:url"/>
+                <Cell col="3" text="bind:filesize"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <TextArea id="txt_html" taborder="6" wordwrap="char" left="7" top="73" height="123" width="470" visible="false"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_filelist">
+        <ColumnInfo>
+          <Column id="no" type="STRING" size="256"/>
+          <Column id="filename" type="STRING" size="256"/>
+          <Column id="url" type="STRING" size="256"/>
+          <Column id="filesize" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="no">1</Col>
+            <Col id="filename">전경사진.jpg</Col>
+            <Col id="url">http://localhost:8080/sample/images/Panorama/ViewPhotos.jpg</Col>
+            <Col id="filesize">87325</Col>
+          </Row>
+          <Row>
+            <Col id="no">2</Col>
+            <Col id="filename">풍경이미지.bmp</Col>
+            <Col id="url">http://localhost:8080/sample/images/Scenery/image/CreativeImages.bmp</Col>
+            <Col id="filesize">2359350</Col>
+          </Row>
+          <Row>
+            <Col id="no">3</Col>
+            <Col id="filename">dext5_logo.png</Col>
+            <Col id="url">http://www.dext5.com/page/images/dext5_logo.png</Col>
+            <Col id="filesize">2232</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[/**
+*  인트라넷 고도화[Lexpeed3]구축 사업
+*
+*  @MenuPath       
+*  @FileName       SAM004.xfdl
+*  @Creator        송원창
+*  @CreateDate     2016.04.15
+*  @LastModifier   
+*  @LastModifyDate 
+*  @Version        1.0
+*  @Outline        DEXT5 업로드 샘플
+*  @Desction       
+*
+*
+************** 소스 수정 이력 *************************************************
+*    date          Modifier            Description
+*******************************************************************************
+*  2016.04.20      송원창              클래스 최초 생성
+*******************************************************************************
+*/
+/*----------------------------------------------------------------------------------------------
+ * 공통 라이브러리 INCLUDE 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+//include "LIB::LIB_COMMON.xjs";  	// 공통 js
+/*----------------------------------------------------------------------------------------------
+ * FORM 변수 선언 영역
+----------------------------------------------------------------------------------------------*/
+this.DEXT5upload; 	// 
+
+/*----------------------------------------------------------------------------------------------
+ * FORM EVENT 영역
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  화면 로드시 이벤트
+ */
+this.SAM_DEXT5upload_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	//공통초기화 필수
+	this.gfn_initForm(obj);
+	
+	this.WebBroswer00.set_url("http://localhost:8080/dext5upload/sample/upload.html");
+}
+
+/*----------------------------------------------------------------------------------------------
+ * 공통기능 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * TRANSACTION 및 CallBack 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  Push 수신 여부 저장 서비스 callback
+ * @param sTrId  	   - service ID
+ * @param nErrorCode   - error CODE
+ * @param sErrorMsg    - error MESSAGE
+ * @return       N/A
+ */
+this.fn_callback = function(sTrId, nErrorCode, sErrorMsg)
+{
+	trace("sTrId: " + sTrId + " " + "nErrorCode: " + nErrorCode + " " +  "sErrorMsg: " + sErrorMsg);
+	
+	if ( nErrorCode < 0 ) return;
+	
+	switch(sTrId)
+	{
+		case "retrieveEmp":
+			trace(this.ds_output.saveXML());
+			break;
+		
+		default:
+			 break;
+	}
+}
+
+/*----------------------------------------------------------------------------------------------
+ * 각 COMPONENT 별 EVENT 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  웹브라우저 컴포넌트 onload 완료시 event
+ * @return       N/A
+ */
+this.WebBroswer00_onloadcompleted = function(obj:WebBroswer, e:nexacro.WebLoadCompEventInfo)
+{
+	this.DEXT5upload = this.WebBroswer00.getProperty("document").getProperty("all");
+	
+	//this.WebBroswer00.getProperty("document").getProperty("body").setProperty("scroll", "no");
+}
+
+/**
+ * @description	파일 추가
+ * @return       N/A
+ */
+this.btn_add_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.DEXT5upload.getProperty("btn_add").callMethod("click");
+}
+
+/**
+ * @description	파일 전송
+ * @return       N/A
+ */
+this.btn_transfer_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.DEXT5upload.getProperty("btn_transfer").callMethod("click");
+}
+
+/**
+ * @description	항목 삭제
+ * @return       N/A
+ */
+this.btn_del_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.DEXT5upload.getProperty("btn_del").callMethod("click");
+}
+
+/**
+ * @description	전체 삭제
+ * @return       N/A
+ */
+this.btn_delall_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.DEXT5upload.getProperty("btn_delall").callMethod("click");
+}
+
+//웹브라우저 화면에서 메소드 호출
+this.WebBroswer00_onusernotify = function(obj:WebBroswer, e:nexacro.WebTitleChangeEventInfo)
+{
+	//trace("nexacro : " + e.userdata);
+	var downloadList = JSON.parse(e.userdata);
+	//trace("JSON.parse : " + downloadList);
+	
+	this.txt_html.set_value(e.userdata);
+		
+	var nRow;
+	for(var key in downloadList)
+	{
+		nRow = this.ds_filelist.addRow();
+		this.ds_filelist.setColumn(nRow, "no", nRow);
+		this.ds_filelist.setColumn(nRow, "filename", downloadList[key].originalName);
+		this.ds_filelist.setColumn(nRow, "url", 	 downloadList[key].uploadPath);
+		this.ds_filelist.setColumn(nRow, "filesize", downloadList[key].size);
+	}
+}
+
+/*----------------------------------------------------------------------------------------------
+ * 사용자 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+this.fn_ds = function()
+{
+}
+
+
+]]></Script>
+  </Form>
+</FDL>

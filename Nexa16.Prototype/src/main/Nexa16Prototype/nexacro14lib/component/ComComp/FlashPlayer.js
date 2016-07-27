@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -51,7 +51,6 @@ if (!nexacro.FlashPlayer) {
 		var obj_elem = this._obj_elem;
 		if (obj_elem) {
 			obj_elem.component = this;
-			this.on_apply_codebase();
 
 			var params = this._params;
 			var param_cnt = params.length;
@@ -59,19 +58,23 @@ if (!nexacro.FlashPlayer) {
 				obj_elem.setElementParam(params.get_id(i), params.get_item(i));
 			}
 
-			obj_elem.setElementPluginSrc(this.movie);
-			if (this.codebase == "") {
-				this.codebase = "http://fpdownload.adobe.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0";
-				obj_elem.setElementCodebase(this.codebase);
+			if (nexacro.Browser == "IE" || nexacro.Browser == "Runtime") {
+				this.on_apply_codebase();
+				obj_elem.setElementPluginSrc(this.movie);
+				if (this.codebase == "") {
+					this.codebase = "http://fpdownload.adobe.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0";
+					obj_elem.setElementCodebase(this.codebase);
+				}
+				if (this.mimetype == "") {
+					this.mimetype = "application/x-shockwave-flash";
+					obj_elem.setElementMIMEType(this.mimetype);
+					obj_elem.setElementPluginMIMEType(this.mimetype);
+				}
+				obj_elem.setElementPluginPage("http://www.adobe.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash");
+				obj_elem.setElementClassId("{d27cdb6e-ae6d-11cf-96b8-444553540000}");
 			}
-			if (this.mimetype == "") {
-				this.mimetype = "application/x-shockwave-flash";
-				obj_elem.setElementMIMEType(this.mimetype);
-				obj_elem.setElementPluginMIMEType(this.mimetype);
-			}
-			obj_elem.setElementPluginPage("http://www.adobe.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash");
 			obj_elem.setElementParam("WMode", "Transparent");
-			obj_elem.setElementClassId("{d27cdb6e-ae6d-11cf-96b8-444553540000}");
+
 			obj_elem.create();
 			obj_elem.setElementVisible(this.visible);
 			this.on_apply_movie();
@@ -121,6 +124,7 @@ if (!nexacro.FlashPlayer) {
 		this.mimetype = v;
 		this.on_apply_mimetype();
 	};
+
 	_pFlash.on_apply_mimetype = function () {
 		var elem = this._obj_elem;
 		if (elem) {
@@ -135,6 +139,7 @@ if (!nexacro.FlashPlayer) {
 		this.codebase = v;
 		this.on_apply_codebase();
 	};
+
 	_pFlash.on_apply_codebase = function () {
 		var elem = this._obj_elem;
 		if (elem) {
@@ -150,16 +155,19 @@ if (!nexacro.FlashPlayer) {
 		if (url.substring(0, 4).toLowerCase() == "url(") {
 			url = url.substring(5, url.length - 2);
 		}
+
 		var url = application._getServiceLocation(url, this._getRefFormBaseUrl());
 
 		this.movie = url;
 		this.on_apply_movie();
 	};
+
 	_pFlash.on_apply_movie = function () {
 		var elem = this._obj_elem;
 		if (elem) {
 			var movie = this.movie;
 			if (movie) {
+				elem.setElementData(movie);
 				elem.setElementParam("Movie", movie);
 			}
 		}

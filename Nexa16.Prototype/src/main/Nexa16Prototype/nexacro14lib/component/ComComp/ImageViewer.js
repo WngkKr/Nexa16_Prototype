@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -81,6 +81,11 @@ if (!nexacro.ImageViewer) {
 			curstyle.font = font;
 			this.on_apply_style_font(font);
 		}
+		var letterspace = this.on_find_CurrentStyle_letterspace(pseudo);
+		if (curstyle.letterspace != letterspace) {
+			curstyle.letterspace = letterspace;
+			this.on_apply_style_letterspace(letterspace);
+		}
 		var color = this.on_find_CurrentStyle_color(pseudo);
 		if (curstyle.color != color) {
 			curstyle.color = color;
@@ -137,6 +142,7 @@ if (!nexacro.ImageViewer) {
 				text_elem.setElementColor(this.currentstyle.color);
 				text_elem.setElementFont(this.currentstyle.font);
 				text_elem.setElementAlignXY(halign, valign);
+				text_elem.setElementLetterSpace(this.currentstyle.letterspace);
 
 				text_elem = halign = valign = null;
 			}
@@ -265,6 +271,7 @@ if (!nexacro.ImageViewer) {
 				text_elem.setElementColor(this.currentstyle.color);
 				text_elem.setElementFont(this.currentstyle.font);
 				text_elem.setElementAlignXY(halign, valign);
+				text_elem.setElementLetterSpace(this.currentstyle.letterspace);
 
 				text_elem.create();
 				text_elem = halign = valign = null;
@@ -435,6 +442,7 @@ if (!nexacro.ImageViewer) {
 			else {
 				var img_type = this._img_type;
 				val = val.toString();
+
 				if (img_type == "url") {
 					if (val.substring(0, 4).toLowerCase() == "url(") {
 						val = val.substring(5, val.length - 2);
@@ -444,7 +452,10 @@ if (!nexacro.ImageViewer) {
 
 					if (val == url) {
 						img_elem.setElementVisible(true);
-						img_elem.setElementImageUrl(url);
+						img_elem.setElementImageUrl(val);
+					}
+					else {
+						nexacro._releaseImageUrl(url);
 					}
 				}
 				else {
@@ -480,7 +491,7 @@ if (!nexacro.ImageViewer) {
 				img_elem.create();
 			}
 
-			var image_size = nexacro._getImageSize(val, this._on_loadImg, this);
+			var image_size = nexacro._getImageSize(val, this._on_loadImg, this, undefined, image.toString());
 			if (image_size) {
 				this._prewidth = image_size.width;
 				this._preheight = image_size.height;

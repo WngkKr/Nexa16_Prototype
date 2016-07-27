@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -27,9 +27,9 @@ if (!nexacro.Button) {
 	eval(nexacro._createAlignAttributeEvalStr("_pButtonStyle", "imagealign"));
 
 	_pButtonStyle.__custom_emptyObject = function () {
-		this.image = null;
 		this.imagealign = null;
 	};
+
 	_pButtonStyle.__get_custom_style_value = function () {
 		var val = "";
 		if (this.image && !this.image._is_empty) {
@@ -40,7 +40,6 @@ if (!nexacro.Button) {
 		}
 		return val;
 	};
-
 
 	nexacro.Button_CurrentStyle = function () {
 		nexacro.CurrentStyle.call(this);
@@ -97,36 +96,35 @@ if (!nexacro.Button) {
 			curstyle.font = font;
 			this.on_apply_style_font(font);
 		}
+
+		var letterspace = this.on_find_CurrentStyle_letterspace(pseudo);
+		if (curstyle.letterspace != letterspace) {
+			curstyle.letterspace = letterspace;
+			this.on_apply_style_letterspace(letterspace);
+		}
+
 		var color = this.on_find_CurrentStyle_color(pseudo);
 		if (curstyle.color != color) {
 			curstyle.color = color;
 			this.on_apply_style_color(color);
 		}
 
-		var image = this.on_find_CurrentStyle_image(pseudo);
-		if (image) {
-			var align = this.on_find_CurrentStyle_align(pseudo);
-			var imagealign = this.on_find_CurrentStyle_imagealign(pseudo);
+		var align = this.on_find_CurrentStyle_align(pseudo);
+		if (align != curstyle.align) {
 			curstyle.align = align;
-			curstyle.imagealign = imagealign;
-			if (image != curstyle.image) {
-				curstyle.image = image;
-				this._load_image(image);
-			}
-			else {
-				this._updateElementPositions(align, imagealign);
-			}
+			this.on_apply_style_align(align);
 		}
-		else {
-			if (curstyle.image) {
-				curstyle.image = null;
-				this._load_image(null);
-			}
-			var align = this.on_find_CurrentStyle_align(pseudo);
-			if (align != curstyle.align) {
-				curstyle.align = align;
-				this.on_apply_style_align(align);
-			}
+
+		var image = this.on_find_CurrentStyle_image(pseudo);
+		if (curstyle.image != image) {
+			curstyle.image = image;
+			this.on_apply_style_image(image);
+		}
+
+		var imagealign = this.on_find_CurrentStyle_imagealign(pseudo);
+		if (imagealign != curstyle.imagealign) {
+			curstyle.imagealign = imagealign;
+			this.on_apply_style_imagealign(imagealign);
 		}
 
 		var rtlimagemirroring = this.on_find_CurrentStyle_rtlimagemirroring(pseudo);
@@ -147,6 +145,7 @@ if (!nexacro.Button) {
 	_pButton.on_find_CurrentStyle_image = function (pseudo) {
 		return this._find_pseudo_obj("image", pseudo);
 	};
+
 	_pButton.on_find_CurrentStyle_imagealign = function (pseudo) {
 		var align = this._find_pseudo_obj("imagealign", pseudo, "align");
 		return (align) ? align : nexacro.Button._default_image_align;
@@ -187,20 +186,13 @@ if (!nexacro.Button) {
 
 	_pButton.on_apply_style_align = function (align) {
 		if (this._text_elem && align) {
-			if (this._img_elem && this.currentstyle.imagealign) {
-				this._updateElementPositions(align, this.currentstyle.imagealign);
-			}
-			else {
-				var halign = (align.halign == "" ? "center" : align._halign);
-				var valign = (align.valign == "" ? "middle" : align._valign);
-				this._text_elem.setElementAlignXY(halign, valign);
-				nexacro._updateTextElementPositions(this);
-			}
+			this._updateElementPositions(align, this.currentstyle.imagealign);
 		}
 	};
 
 	_pButton.on_apply_style_image = function (image) {
-		this._load_image(this.currentstyle.image);
+		this._load_image(image);
+		this._updateElementPositions(this.currentstyle.align, this.currentstyle.imagealign);
 	};
 
 	_pButton.on_apply_style_imagealign = function (imagealign) {
@@ -222,9 +214,11 @@ if (!nexacro.Button) {
 				text_elem.setElementFont(curstyle.font);
 				text_elem.setElementColor(curstyle.color);
 				text_elem.setElementAlignXY(halign, valign);
+				text_elem.setElementLetterSpace(curstyle.letterspace);
 				this._text_elem = text_elem;
 				text_elem = null;
 			}
+
 			if (curstyle.image) {
 				this._load_image(curstyle.image);
 			}
@@ -261,7 +255,7 @@ if (!nexacro.Button) {
 		control_elem = null;
 		this._preloadImage();
 	};
-	if (nexacro.Browser == "IE" && nexacro.BrowserVersion >= 10) {
+	if (nexacro.Browser == "Edge" || nexacro.Browser == "IE" && nexacro.BrowserVersion >= 10) {
 		_pButton._preloadImage = function () {
 			var pseudoarr = ["mouseover", "disabled", "focused", "pushed", "selected"];
 			var pseudoarr_len = pseudoarr.length;
@@ -275,7 +269,7 @@ if (!nexacro.Button) {
 					val = nexacro._getImageLocation(val, this._getRefFormBaseUrl());
 
 					nexacro._getImageSize(val, function () {
-					}, this);
+					}, this, undefined, image);
 				}
 			}
 		};
@@ -319,22 +313,14 @@ if (!nexacro.Button) {
 	_pButton.on_change_containerRect = function (width, height) {
 		var textElem = this._text_elem;
 		var imgElem = this._img_elem;
+		var curstyle = this.currentstyle;
 		if (textElem) {
 			textElem.setElementSize(width, height);
-			if (imgElem) {
-				this._updateElementPositions(this.currentstyle.align, this.currentstyle.imagealign);
-			}
-			else {
-				nexacro._updateTextElementPositions(this);
-			}
-		}
-		else if (imgElem) {
-			this._updateElementPositions(this.currentstyle.align, this.currentstyle.imagealign);
 		}
 
+		this._updateElementPositions(curstyle.align, curstyle.imagealign);
 		this.on_apply_custom_pseudo(this._pseudo);
 	};
-
 
 
 	_pButton._getDlgCode = function (keycode, altKey, ctrlKey, shiftKey) {
@@ -349,13 +335,13 @@ if (!nexacro.Button) {
 
 	_pButton._img_load_completed = function (imgurl) {
 		var curstyle = this.currentstyle;
-		var cur_imgalign = curstyle.imagealign ? curstyle.imagealign : this.on_find_CurrentStyle_imagealign(this._pseudo);
+		var cur_imagealign = curstyle.imagealign ? curstyle.imagealign : this.on_find_CurrentStyle_imagealign(this._pseudo);
 
-		curstyle.imagalign = cur_imgalign;
-		this._updateElementPositions(curstyle.align, cur_imgalign);
+		curstyle.imagealign = cur_imagealign;
+		this._updateElementPositions(curstyle.align, cur_imagealign);
 		this._img_elem.setElementImageUrl(imgurl);
 
-		cur_imgalign = null;
+		cur_imagealign = null;
 		curstyle = null;
 	};
 
@@ -377,7 +363,7 @@ if (!nexacro.Button) {
 
 	_pButton._load_image = function (image) {
 		var control_elem = this._control_element;
-		if (control_elem && image) {
+		if (control_elem) {
 			var val = image ? image._value : "";
 			if (val) {
 				val = nexacro._getURIValue(val);
@@ -393,7 +379,7 @@ if (!nexacro.Button) {
 				}
 
 				this._lastest_imgurl = val;
-				var size = nexacro._getImageSize(val, this._on_loadImg, this);
+				var size = nexacro._getImageSize(val, this._on_loadImg, this, undefined, (image ? image._value : ""));
 				if (size) {
 					this._image_width = size.width;
 					this._image_height = size.height;
@@ -420,213 +406,184 @@ if (!nexacro.Button) {
 		}
 	};
 	_pButton._updateElementPositions = function (align, imagealign) {
-		if (!this._is_created_contents) {
+		if (!this._is_created_contents || !align) {
 			return;
 		}
 
 		var textElem = this._text_elem;
 		var imgElem = this._img_elem;
-		if (textElem && imgElem && align && imagealign) {
-			var client_width = this._client_width;
-			var client_height = this._client_height;
 
-			var halign = (align.halign == "" ? "center" : align.halign);
-			var valign = (align.valign == "" ? "middle" : align.valign);
+		var client_width = this._client_width;
+		var client_height = this._client_height;
 
+		var halign = (align.halign == "") ? "center" : align.halign;
+		var valign = (align.valign == "") ? "middle" : align.valign;
+
+		if (imgElem && imagealign) {
 			var img_halign = imagealign.halign;
 			var img_valign = imagealign.valign;
 
-			var tw, th;
-			if (this._text_width < 0) {
-				var font = this.currentstyle.font || nexacro.Component._default_font;
-				var size = nexacro._getTextSize(this.text, font);
-				tw = this._text_width = size[0];
+			var imgpos_x, imgpos_y;
+			var imgw = this._image_width;
+			var imgh = this._image_height;
+
+			if (textElem) {
+				var tw, th, textpos_x, textpos_y, pos;
+				var font = this.on_find_CurrentStyle_font(this._pseudo);
+				var letterspace = this.on_find_CurrentStyle_letterspace(this._pseudo);
+				var size = nexacro._getTextSize(letterspace, this.text, font);
+
+				tw = this._text_width = (size[0] < 0) ? 0 : size[0];
 				th = this._text_height = size[1];
+
+				switch (img_halign) {
+					case "lefttext":
+						if (halign == "left") {
+							pos = 0;
+						}
+						else if (halign == "right") {
+							pos = client_width - tw - imgw;
+						}
+						else {
+							pos = ((client_width - tw - imgw) / 2) | 0;
+						}
+						pos = pos < 0 ? 0 : pos;
+						imgpos_x = pos;
+						pos += imgw;
+						textpos_x = pos;
+						halign = "left";
+						break;
+					case "righttext":
+						if (halign == "left") {
+							pos = 0;
+						}
+						else if (halign == "right") {
+							pos = client_width - tw - imgw;
+						}
+						else {
+							pos = ((client_width - tw - imgw) / 2) | 0;
+						}
+						pos = pos < 0 ? 0 : pos;
+						textpos_x = pos;
+						pos += tw;
+						imgpos_x = pos;
+						halign = "left";
+						break;
+					case "left":
+						imgpos_x = 0;
+						textpos_x = 0;
+						break;
+					case "right":
+						pos = client_width - imgw;
+						imgpos_x = pos;
+						textpos_x = 0;
+						break;
+					default:
+						pos = ((client_width - imgw) / 2) | 0;
+						imgpos_x = pos;
+						textpos_x = 0;
+						break;
+				}
+				switch (img_valign) {
+					case "toptext":
+						if (valign == "top") {
+							pos = 0;
+						}
+						else if (valign == "bottom") {
+							pos = client_height - th - imgh;
+						}
+						else {
+							pos = ((client_height - th - imgh) / 2) | 0;
+						}
+						imgpos_y = pos;
+						pos += imgh;
+						textpos_y = pos;
+						valign = "top";
+						break;
+					case "bottomtext":
+						if (valign == "top") {
+							pos = 0;
+						}
+						else if (valign == "bottom") {
+							pos = client_height - th - imgh;
+						}
+						else {
+							pos = ((client_height - th - imgh) / 2) | 0;
+						}
+						textpos_y = pos;
+						pos += th;
+						imgpos_y = pos;
+						valign = "top";
+						break;
+					case "top":
+						imgpos_y = 0;
+						textpos_y = 0;
+						break;
+					case "bottom":
+						pos = client_height - imgh;
+						imgpos_y = pos;
+						textpos_y = 0;
+						break;
+					default:
+						pos = ((client_height - imgh) / 2) | 0;
+						imgpos_y = pos;
+						textpos_y = 0;
+						break;
+				}
+
+				textpos_x = textpos_x < 0 ? 0 : textpos_x;
+				textpos_y = textpos_y < 0 ? 0 : textpos_y;
+
+				textElem.setElementAlignXY(halign, valign);
+				textElem.setElementPaddingXY(textpos_x, textpos_y, 0, 0);
 			}
 			else {
-				tw = this._text_width;
-				th = this._text_height;
-			}
-
-			var imgw = this._image_width;
-			var imgh = this._image_height;
-
-			var pos;
-			var imgpos_x, imgpos_y;
-			var textpos_x, textpos_y;
-			switch (img_halign) {
-				case "lefttext":
-					if (halign == "left") {
-						pos = 0;
-					}
-					else if (halign == "right") {
-						pos = client_width - tw - imgw;
-					}
-					else {
-						pos = ((client_width - tw - imgw) / 2) | 0;
-					}
-					imgpos_x = pos;
-					pos += imgw;
-					textpos_x = pos;
-					halign = "left";
-					break;
-				case "righttext":
-					if (halign == "left") {
-						pos = 0;
-					}
-					else if (halign == "right") {
-						pos = client_width - tw - imgw;
-					}
-					else {
-						pos = ((client_width - tw - imgw) / 2) | 0;
-					}
-					textpos_x = pos;
-					pos += tw;
-					imgpos_x = pos;
-					halign = "left";
-					break;
-				case "left":
-					imgpos_x = 0;
-					textpos_x = 0;
-					break;
-				case "right":
-					pos = client_width - imgw;
-					imgpos_x = pos;
-					textpos_x = 0;
-					break;
-				default:
-					pos = ((client_width - imgw) / 2) | 0;
-					imgpos_x = pos;
-					textpos_x = 0;
-					break;
-			}
-			switch (img_valign) {
-				case "toptext":
-					if (valign == "top") {
-						pos = 0;
-					}
-					else if (valign == "bottom") {
-						pos = client_height - th - imgh;
-					}
-					else {
-						pos = ((client_height - th - imgh) / 2) | 0;
-					}
-					imgpos_y = pos;
-					pos += imgh;
-					textpos_y = pos;
-					valign = "top";
-					break;
-				case "bottomtext":
-					if (valign == "top") {
-						pos = 0;
-					}
-					else if (valign == "bottom") {
-						pos = client_height - th - imgh;
-					}
-					else {
-						pos = ((client_height - th - imgh) / 2) | 0;
-					}
-					textpos_y = pos;
-					pos += th;
-					imgpos_y = pos;
-					valign = "top";
-					break;
-				case "top":
-					imgpos_y = 0;
-					textpos_y = 0;
-					break;
-				case "bottom":
-					pos = client_height - imgh;
-					imgpos_y = pos;
-					textpos_y = 0;
-					break;
-				default:
-					pos = ((client_height - imgh) / 2) | 0;
-					imgpos_y = pos;
-					textpos_y = 0;
-					break;
-			}
-
-			textpos_x = textpos_x < 0 ? 0 : textpos_x;
-			textpos_y = textpos_y < 0 ? 0 : textpos_y;
-
-			imgpos_x = this._convertLeftForRtlLayout(imgpos_x, imgw);
-
-			imgElem.setElementPosition(imgpos_x, imgpos_y);
-			imgElem.setElementSize(imgw, imgh);
-
-			textElem.setElementAlignXY(halign, valign);
-			textElem.setElementPaddingXY(textpos_x, textpos_y, 0, 0);
-		}
-		else if (textElem && align) {
-			var halign = (align.halign == "" ? "center" : align._halign);
-			var valign = (align.valign == "" ? "middle" : align._valign);
-			textElem.setElementAlignXY(halign, valign);
-		}
-		else if (imgElem && imagealign) {
-			var client_width = this._client_width;
-			var client_height = this._client_height;
-
-			var halign = "center";
-			var valign = "middle";
-			if (align) {
-				halign = align.halign == "" ? "center" : align.halign;
-				valign = align.valign == "" ? "middle" : align.valign;
-			}
-
-			var img_halign = imagealign.halign;
-			var img_valign = imagealign.valign;
-
-			var imgw = this._image_width;
-			var imgh = this._image_height;
-
-			var pos;
-			var imgpos_x, imgpos_y;
-			switch (img_halign) {
-				case "lefttext":
-				case "righttext":
-					if (halign == "left") {
+				switch (img_halign) {
+					case "lefttext":
+					case "righttext":
+						if (halign == "left") {
+							imgpos_x = 0;
+						}
+						else if (halign == "right") {
+							imgpos_x = client_width - imgw;
+						}
+						else {
+							imgpos_x = ((client_width - imgw) / 2) | 0;
+						}
+						break;
+					case "left":
 						imgpos_x = 0;
-					}
-					else if (halign == "right") {
+						break;
+					case "right":
 						imgpos_x = client_width - imgw;
-					}
-					else {
+						break;
+					default:
 						imgpos_x = ((client_width - imgw) / 2) | 0;
-					}
-					break;
-				case "left":
-					imgpos_x = 0;
-					break;
-				case "right":
-					imgpos_x = client_width - imgw;
-					break;
-				default:
-					imgpos_x = ((client_width - imgw) / 2) | 0;
-					break;
-			}
-			switch (img_valign) {
-				case "toptext":
-				case "bottomtext":
-					if (valign == "top") {
+						break;
+				}
+				switch (img_valign) {
+					case "toptext":
+					case "bottomtext":
+						if (valign == "top") {
+							imgpos_y = 0;
+						}
+						else if (valign == "bottom") {
+							imgpos_y = client_height - imgh;
+						}
+						else {
+							imgpos_y = ((client_height - imgh) / 2) | 0;
+						}
+						break;
+					case "top":
 						imgpos_y = 0;
-					}
-					else if (valign == "bottom") {
+						break;
+					case "bottom":
 						imgpos_y = client_height - imgh;
-					}
-					else {
+						break;
+					default:
 						imgpos_y = ((client_height - imgh) / 2) | 0;
-					}
-					break;
-				case "top":
-					imgpos_y = 0;
-					break;
-				case "bottom":
-					imgpos_y = client_height - imgh;
-					break;
-				default:
-					imgpos_y = ((client_height - imgh) / 2) | 0;
-					break;
+						break;
+				}
 			}
 
 			imgpos_x = this._convertLeftForRtlLayout(imgpos_x, imgw);
@@ -634,6 +591,12 @@ if (!nexacro.Button) {
 			imgElem.setElementPosition(imgpos_x, imgpos_y);
 			imgElem.setElementSize(imgw, imgh);
 		}
+		else if (textElem) {
+			textElem.setElementAlignXY(halign, valign);
+			textElem.setElementPaddingXY(0, 0, 0, 0);
+			nexacro._updateTextElementPositions(this);
+		}
+
 		textElem = null;
 		imgElem = null;
 	};
@@ -663,6 +626,7 @@ if (!nexacro.Button) {
 				text_elem.setElementColor(curstyle.color);
 				text_elem.setElementFont(curstyle.font);
 				text_elem.setElementAlignXY(halign, valign);
+				text_elem.setElementLetterSpace(curstyle.letterspace);
 
 				if (this._is_created) {
 					text_elem.create();
@@ -720,12 +684,7 @@ if (!nexacro.Button) {
 				this._text_height = 0;
 			}
 
-			if (this._img_elem) {
-				this._updateElementPositions(curstyle.align, curstyle.imagealign);
-			}
-			else {
-				nexacro._updateTextElementPositions(this);
-			}
+			this._updateElementPositions(curstyle.align, curstyle.imagealign);
 
 			text_elem = null;
 			curstyle = null;
@@ -743,12 +702,9 @@ if (!nexacro.Button) {
 
 		if (control_element) {
 			control_element.setElementRtlDirection(_rtldirection);
+			this._updateElementPositions(this.currentstyle.align, this.currentstyle.imagealign);
 			if (this._img_elem) {
-				this._updateElementPositions(this.currentstyle.align, this.currentstyle.imagealign);
 				this._img_elem.setElementImageMirror(null, true);
-			}
-			else {
-				nexacro._updateTextElementPositions(this);
 			}
 		}
 	};
@@ -810,6 +766,17 @@ if (!nexacro.Button) {
 				}
 			}
 		}
+
+		if (key_code == 13 || key_code == 32) {
+			if (this._apply_pushed_pseudo) {
+				this._is_push = false;
+				if (this._is_pushed_area) {
+					this._stat_change("notpush", "normal");
+					this._is_pushed_area = false;
+				}
+			}
+		}
+
 		this._cur_ldown_elem = null;
 
 		this._is_hotkey_click = false;
@@ -822,6 +789,17 @@ if (!nexacro.Button) {
 		var ret = nexacro.Component.prototype.on_fire_sys_onkeydown.call(this, key_code, alt_key, ctrl_key, shift_key, from_comp, from_refer_comp);
 		var window = this._getWindow();
 		this._cur_ldown_elem = window._cur_ldown_elem || window._keydown_element;
+
+		if (key_code == 13 || key_code == 32) {
+			if (from_refer_comp === this) {
+				if (this._apply_pushed_pseudo) {
+					this._stat_change("push", "pushed");
+					this._is_pushed_area = true;
+					this._is_push = true;
+				}
+			}
+		}
+
 		return ret;
 	};
 
@@ -908,6 +886,7 @@ if (!nexacro.Button) {
 	_pImageButton.on_update_style_image = function () {
 		this.on_apply_style_image(this.currentstyle.image = this.on_find_CurrentStyle_image(this._pseudo));
 	};
+
 	_pImageButton.on_update_style_imagealign = function () {
 		this.on_apply_style_imagealign(this.currentstyle.imagealign = this.on_find_CurrentStyle_imagealign(this._pseudo));
 	};
@@ -994,9 +973,6 @@ if (!nexacro.Button) {
 		if (imgElem) {
 			var val = image ? image._value : "";
 			if (val) {
-				val = nexacro._getURIValue(val);
-
-				val = nexacro._getImageLocation(val, this._getRefFormBaseUrl());
 				imgElem.setElementImageUrl(val);
 			}
 			else {
@@ -1162,6 +1138,11 @@ if (!nexacro.Button) {
 				enable = false;
 				break;
 			}
+
+			if (form.parent && !form.parent._is_application && form._getWindow() != form.parent._getWindow()) {
+				break;
+			}
+
 			form = form.parent;
 		}
 		if (this._setEnable(enable)) {

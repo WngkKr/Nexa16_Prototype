@@ -1,0 +1,49 @@
+﻿
+Static.sta_label
+{
+	align			: right middle;
+	color			: #333333ff;
+	font			: bold 12 gulim;
+	padding			: 0 3 0 0;
+}
+Tab
+{
+	accessibility		: ;
+	background		: #ffffffff ;
+	border			: 1 solid #c0c6c3ff ;
+	bordertype		: normal 0 0;
+	buttonbackground	: #e5e4e4ff;
+	buttonborder		: 1 solid #bbb9b9ff;
+	buttonbordertype	: normal 0 0;
+	buttongradation		: ;
+	buttonpadding		: 5 10 5 10;
+	color			: #333333ff;
+	cursor			: ;
+	focusborder		: ;
+	font			: 9 gulim;
+	gradation		: ;
+	opacity			: ;
+	padding			: ;
+	shadow			: ;
+	showextrabutton		: ;
+	stepalign		: ;
+	stepshowtype		: ;
+}
+Tab:mouseover
+{
+	buttonpadding		: 5 10 5 10;	
+	font			: underline 9 gulim;
+}
+Tab:selected,Tab:focused
+{
+	buttonbackground	: #5d5858ff;
+	buttonborder		: 1 solid #413c3cff;
+	buttonbordertype	: normal 0 0;
+	buttonpadding		: 5 0 5 0;
+	color			: #ffffffff;
+	font			: bold 9 gulim;
+}
+Tab:disabled
+{
+	color			: #9e9d9dff;
+}

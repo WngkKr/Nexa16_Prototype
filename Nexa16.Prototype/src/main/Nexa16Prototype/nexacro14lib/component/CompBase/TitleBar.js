@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -104,6 +104,11 @@ if (!nexacro.TitleBar) {
 			curstyle.font = font;
 			this.on_apply_style_font(font);
 		}
+		var letterspace = this.on_find_CurrentStyle_letterspace(pseudo);
+		if (curstyle.letterspace != letterspace) {
+			curstyle.letterspace = letterspace;
+			this.on_apply_style_letterspace(letterspace);
+		}
 		var color = this.on_find_CurrentStyle_color(pseudo);
 		if (curstyle.color != color) {
 			curstyle.color = color;
@@ -165,7 +170,7 @@ if (!nexacro.TitleBar) {
 				icon = this.currentstyle.icon;
 			}
 
-			var iconsize = nexacro._getImageSize(icon.value, this._on_loadicon, this, this._getRefFormBaseUrl());
+			var iconsize = nexacro._getImageSize(icon.value, this._on_loadicon, this, this._getRefFormBaseUrl(), undefined, icon.value);
 			if (iconsize) {
 				if ((iconsize.width > 0) && (iconsize.height > 0)) {
 					this._iconwidth = iconsize.width;
@@ -234,6 +239,7 @@ if (!nexacro.TitleBar) {
 			textElem.setElementAlign(curstyle.align ? curstyle.align : nexacro.TitleBar._default_align);
 			textElem.setElementFont(curstyle.font);
 			textElem.setElementColor(curstyle.color);
+			textElem.setElementLetterSpace(curstyle.letterspace);
 
 			var minBtn = this.minbutton = new nexacro.ImageButtonCtrl("minbutton", "absolute", 0, 0, 0, 0, null, null, this);
 			var maxBtn = this.maxbutton = new nexacro.ImageButtonCtrl("maxbutton", "absolute", 0, 0, 0, 0, null, null, this);
@@ -267,7 +273,7 @@ if (!nexacro.TitleBar) {
 					iconElem.setElementImageUrl(icon.value);
 				}
 
-				var iconsize = nexacro._getImageSize(val, this._on_loadicon, this, this._getRefFormBaseUrl());
+				var iconsize = nexacro._getImageSize(val, this._on_loadicon, this, this._getRefFormBaseUrl(), icon._value);
 				if (iconsize) {
 					if ((iconsize.width > 0) && (iconsize.height > 0)) {
 						this._iconwidth = iconsize.width;
@@ -403,13 +409,13 @@ if (!nexacro.TitleBar) {
 		}
 	};
 
-	_pTitleBar._on_movetrack = function (x, y, dragdata) {
+	_pTitleBar._on_movetrack = function (x, y, dragdata, windowX, windowY) {
 		if (!this._is_alive) {
 			return;
 		}
 		var ownerframe = this.getOwnerFrame();
 		if (ownerframe) {
-			ownerframe._on_titlebar_movetrack(x, y, dragdata);
+			ownerframe._on_titlebar_movetrack(x, y, dragdata, windowX, windowY);
 		}
 	};
 
@@ -755,6 +761,20 @@ if (!nexacro.TitleBar) {
 		}
 	};
 
+	_pTitleBar.on_apply_custom_class = function () {
+		if (this.minbutton) {
+			this.minbutton.on_apply_prop_class();
+		}
+		if (this.maxbutton) {
+			this.maxbutton.on_apply_prop_class();
+		}
+		if (this.normalbutton) {
+			this.normalbutton.on_apply_prop_class();
+		}
+		if (this.closebutton) {
+			this.closebutton.on_apply_prop_class();
+		}
+	};
 	delete _pTitleBar;
 
 

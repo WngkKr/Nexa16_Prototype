@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="Component02" classname="Component02" left="0" top="0" width="1024" height="768" titletext="콤보, 리스트, 라디오,체크박스 캘린더">
+    <Layouts>
+      <Layout>
+        <Static id="Static37" taborder="0" left="124" top="498" right="0" height="363" style="background:#ffffffff;border:1 solid #c6c6c5ff ;align:center middle;font:Tahoma,9,bold antialias;"/>
+        <Static id="Static09" taborder="43" text="Combo" left="0" top="2" width="125" height="125" style="background:#ebeff2ff;border:1 solid #ced5dfff ;color:#667f92ff;align:center middle;font:bold 9 Dotum;"/>
+        <Static id="Static11" taborder="44" left="124" top="2" right="0" height="125" style="background:#ffffffff;border:1 solid #c6c6c5ff ;align:center middle;font:Tahoma,9,bold antialias;"/>
+        <Combo id="Combo00" taborder="45" codecolumn="codecolumn" datacolumn="datacolumn" displayrowcount="5" left="139" top="38" width="150" height="25" style="font:11 dotum;">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">0</Col>
+                <Col id="datacolumn">Edit</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">1</Col>
+                <Col id="datacolumn">MaskEdit</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">2</Col>
+                <Col id="datacolumn">Combo</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">3</Col>
+                <Col id="datacolumn">TextArea</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Combo id="Combo01" taborder="46" innerdataset="DsList" codecolumn="No" datacolumn="context" displayrowcount="10" enable="false" left="304" top="38" width="150" height="25"/>
+        <Combo id="Combo02" taborder="47" readonly="true" innerdataset="DsList" codecolumn="No" datacolumn="context" displayrowcount="10" cssclass="input_readonly" left="476" top="38" width="150" height="25"/>
+        <Static id="Static16" taborder="48" text="enabled" left="141" top="15" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <Static id="Static19" taborder="49" text="disabled" left="304" top="15" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <Static id="Static72" taborder="50" text="type = dropdown (default)" left="143" top="68" width="150" height="15" style="border:0 solid #808080 ;color:#999999ff;font:8 Tahoma;"/>
+        <Combo id="Combo03" taborder="51" codecolumn="codecolumn" datacolumn="datacolumn" displayrowcount="5" left="139" top="89" width="150" height="25">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">0</Col>
+                <Col id="datacolumn">Edit</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">1</Col>
+                <Col id="datacolumn">MaskEdit</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">2</Col>
+                <Col id="datacolumn">Combo</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">3</Col>
+                <Col id="datacolumn">TextArea</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Combo id="Combo04" taborder="52" codecolumn="codecolumn" datacolumn="datacolumn" type="search" displayrowcount="5" left="304" top="89" width="150" height="25">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">0</Col>
+                <Col id="datacolumn">Edit</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">1</Col>
+                <Col id="datacolumn">MaskEdit</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">2</Col>
+                <Col id="datacolumn">Combo</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">3</Col>
+                <Col id="datacolumn">TextArea</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Combo id="Combo05" taborder="53" codecolumn="codecolumn" datacolumn="datacolumn" type="filter" displayrowcount="5" left="476" top="89" width="150" height="25">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">0</Col>
+                <Col id="datacolumn">Edit</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">1</Col>
+                <Col id="datacolumn">MaskEdit</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">2</Col>
+                <Col id="datacolumn">Combo</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">3</Col>
+                <Col id="datacolumn">TextArea</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Static id="Static73" taborder="54" text="type = search" left="304" top="68" width="150" height="15" style="border:0 solid #808080 ;color:#999999ff;font:8 Tahoma;"/>
+        <Static id="Static74" taborder="55" text="type = filter" left="476" top="68" width="150" height="15" style="border:0 solid #808080 ;color:#999999ff;font:8 Tahoma;"/>
+        <Static id="Static27" taborder="56" text="readonly" left="477" top="14" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <Static id="Static32" taborder="57" text="ListBox" onclick="Static10_onclick" left="0" top="126" width="125" height="157" style="background:#ebeff2ff;border:1 solid #ced5dfff ;color:#667f92ff;align:center middle;font:bold 9 Dotum;"/>
+        <Static id="Static33" taborder="58" left="124" top="126" right="0" height="157" style="background:#ffffffff;border:1 solid #c6c6c5ff ;align:center middle;font:Tahoma,9,bold antialias;"/>
+        <Static id="Static34" taborder="59" text="enabled" left="144" top="138" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <ListBox id="ListBox00" taborder="60" codecolumn="codecolumn" datacolumn="datacolumn" left="142" top="163" width="148" height="100">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">0</Col>
+                <Col id="datacolumn">Edit</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">1</Col>
+                <Col id="datacolumn">MaskEdit</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">2</Col>
+                <Col id="datacolumn">TextArea</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">3</Col>
+                <Col id="datacolumn">Combo</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">4</Col>
+                <Col id="datacolumn">Spin</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">5</Col>
+                <Col id="datacolumn">CheckBox</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </ListBox>
+        <Static id="Static35" taborder="61" text="disabled" left="308" top="138" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <ListBox id="ListBox01" taborder="62" codecolumn="codecolumn" datacolumn="datacolumn" enable="false" left="308" top="163" width="148" height="100">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">0</Col>
+                <Col id="datacolumn">Edit</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">1</Col>
+                <Col id="datacolumn">MaskEdit</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">2</Col>
+                <Col id="datacolumn">TextArea</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">3</Col>
+                <Col id="datacolumn">Combo</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">4</Col>
+                <Col id="datacolumn">Spin</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">5</Col>
+                <Col id="datacolumn">CheckBox</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </ListBox>
+        <Static id="Static50" taborder="71" left="141" top="530" width="100" height="40" style="border:0 none #808080ff,1 dotted #b1c0cbff;"/>
+        <Calendar id="Calendar04" taborder="72" value="20140713" type="monthonly" dateformat="yyyy-MM-dd" oneditclick="Calendar04_oneditclick" left="139" top="634" width="168" height="186" style="popupbackground:@gradation;background:#ffffffff;"/>
+        <Static id="Static51" taborder="73" left="662" top="568" width="215" height="32" style="border:0 none #808080ff,1 dotted #b1c0cbff;"/>
+        <Static id="Static52" taborder="74" left="124" top="282" right="0" height="110" style="background:#ffffffff;border:1 solid #c6c6c5ff ;align:center middle;font:Tahoma,9,bold antialias;"/>
+        <Static id="Static53" taborder="75" left="124" top="391" right="0" height="108" style="background:#ffffffff;border:1 solid #c6c6c5ff ;align:center middle;font:Tahoma,9,bold antialias;"/>
+        <Static id="Static55" taborder="76" text="Calendar" onclick="Static10_onclick" left="0" top="498" width="125" height="363" style="background:#ebeff2ff;border:1 solid #ced5dfff ;color:#667f92ff;align:center middle;font:bold 9 Dotum;"/>
+        <Static id="Static56" taborder="77" text="enabled" left="147" top="512" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <Static id="Static57" taborder="78" text="disabled" left="306" top="512" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <Calendar id="Calendar01" taborder="79" value="20131225" dateformat="yyyy-MM-dd" enable="false" left="305" top="533" width="100" height="25"/>
+        <Calendar id="Calendar02" taborder="80" value="20131225" type="spin" dateformat="yyyy-MM-dd" left="141" top="585" width="100" height="25" style="background:#ffffffff URL('theme://images/bg_edit.png') repeat-x left top;"/>
+        <Calendar id="Calendar03" taborder="81" value="20140713" dateformat="yyyy-MM-dd" left="141" top="533" width="100" height="25" oneditclick="Calendar03_oneditclick"/>
+        <Calendar id="Calendar00" taborder="82" value="20131225" type="spin" dateformat="yyyy-MM-dd" enable="false" left="305" top="585" width="100" height="25"/>
+        <Static id="Static59" taborder="83" text="CheckBox" left="0" top="391" width="125" height="108" style="background:#ebeff2ff;border:1 solid #ced5dfff ;color:#667f92ff;align:center middle;font:bold 9 Dotum;"/>
+        <CheckBox id="CheckBox00" taborder="84" text="CheckBox 1" value="true" left="147" top="436" width="130" height="20"/>
+        <CheckBox id="CheckBox01" taborder="85" text="CheckBox 2" left="147" top="459" width="130" height="20"/>
+        <CheckBox id="CheckBox02" taborder="86" text="CheckBox 1" value="true" enable="false" left="304" top="436" width="130" height="20"/>
+        <CheckBox id="CheckBox03" taborder="87" text="CheckBox 2" enable="false" left="304" top="459" width="130" height="20"/>
+        <Static id="Static60" taborder="88" text="enabled" left="142" top="405" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <Static id="Static61" taborder="89" text="disabled" left="306" top="405" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <Static id="Static62" taborder="90" text="Radio" left="0" top="282" width="125" height="110" style="background:#ebeff2ff;border:1 solid #ced5dfff ;color:#667f92ff;align:center middle;font:bold 9 Dotum;"/>
+        <Radio id="Radio00" taborder="91" columncount="2" index="1" codecolumn="codecolumn" datacolumn="datacolumn" value="1" left="139" top="329" width="149" height="45">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">0</Col>
+                <Col id="datacolumn">Radio1</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">1</Col>
+                <Col id="datacolumn">Radio2</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Static id="Static63" taborder="92" text="enabled" left="142" top="302" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <Static id="Static64" taborder="93" text="disabled" left="306" top="302" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <Static id="Static65" taborder="94" text="* Appearance columncount = &quot;2&quot;" cssclass="sta_WF_Info_Orange" left="641" top="292" width="216" height="30" style="border:0 solid #808080 ;"/>
+        <Calendar id="Calendar05" taborder="95" value="20131225" type="spin" dateformat="yyyy-MM-dd" cssclass="input_readonly" left="451" top="584" width="100" height="25"/>
+        <Calendar id="Calendar06" taborder="96" value="20140113" readonly="true" dateformat="yyyy-MM-dd" cssclass="input_readonly" left="451" top="532" width="100" height="25" oneditclick="Calendar06_oneditclick"/>
+        <Static id="Static66" taborder="97" text="readonly" left="451" top="512" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <Radio id="Radio01" taborder="98" columncount="2" index="1" codecolumn="codecolumn" datacolumn="datacolumn" value="1" enable="false" left="299" top="329" width="149" height="45">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">0</Col>
+                <Col id="datacolumn">Radio1</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">1</Col>
+                <Col id="datacolumn">Radio2</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Radio id="Radio02" taborder="99" columncount="2" index="1" codecolumn="codecolumn" datacolumn="datacolumn" value="1" readonly="true" cssclass="input_readonly" left="464" top="329" width="149" height="45">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">0</Col>
+                <Col id="datacolumn">Radio1</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">1</Col>
+                <Col id="datacolumn">Radio2</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <CheckBox id="CheckBox04" taborder="100" text="CheckBox 1" value="true" readonly="true" cssclass="input_readonly" left="464" top="436" width="130" height="20"/>
+        <CheckBox id="CheckBox05" taborder="101" text="CheckBox 2" readonly="true" cssclass="input_readonly" left="464" top="459" width="130" height="20"/>
+        <Static id="Static67" taborder="102" text="readonly" left="463" top="302" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <Static id="Static68" taborder="103" text="readonly" left="463" top="405" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <Static id="Static70" taborder="108" text="최소10" left="187" top="370" width="35" height="15" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static71" taborder="109" left="196" top="332" width="17" height="33" style="border:0 none #808080ff,1 dotted #b1c0cbff;"/>
+        <Static id="Static77" taborder="112" text="조회기간(년)" left="663" top="536" width="70" height="25" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <Calendar id="Calendar07" taborder="113" value="20140713" dateformat="yyyy-MM-dd" left="662" top="565" width="100" height="25" oneditclick="Calendar07_oneditclick" style="background:#ffffffff;"/>
+        <Static id="Static78" taborder="114" text="~" left="762" top="565" width="15" height="25" style="border:0 solid #808080 ;align:center middle;"/>
+        <Calendar id="Calendar11" taborder="115" value="20140713" dateformat="yyyy-MM-dd" left="777" top="565" width="100" height="25"/>
+        <Static id="Static80" taborder="117" text="W100" left="173" top="564" width="55" height="20" style="border:0 solid #808080ff ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static97" taborder="118" text="W185" left="743" top="533" width="40" height="25" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static82" taborder="120" text="W215" left="756" top="598" width="40" height="15" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static84" taborder="122" left="241" top="533" width="24" height="25" style="border:1 dotted #b1c0cbff,0 none #808080;"/>
+        <Static id="Static85" taborder="123" text="H25" left="243" top="536" width="22" height="25" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Button id="Button17" taborder="144" cssclass="btn_WF_calDrop" left="422" top="720" width="20" height="25"/>
+        <MaskEdit id="MaskEdit04" taborder="145" value="1233-12-12" type="string" mask="####-##-##" maskchar="-" left="322" top="720" width="95" height="25" style="align:left middle;"/>
+        <Static id="Static00" taborder="160" text="필수" left="660" top="15" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;" cssclass="Combo"/>
+        <Combo id="Combo06" taborder="161" codecolumn="codecolumn" datacolumn="datacolumn" displayrowcount="5" left="658" top="38" width="150" height="25" style="font:11 dotum;" cssclass="cbo_WF_Essential">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">0</Col>
+                <Col id="datacolumn">Edit</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">1</Col>
+                <Col id="datacolumn">MaskEdit</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">2</Col>
+                <Col id="datacolumn">Combo</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">3</Col>
+                <Col id="datacolumn">TextArea</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+this.Calendar07_oneditclick = function(obj:Calendar,  e:nexacro.EditClickEventInfo)
+{
+	
+}
+
+this.Calendar06_oneditclick = function(obj:Calendar,  e:nexacro.EditClickEventInfo)
+{
+	
+}
+
+this.Calendar03_oneditclick = function(obj:Calendar,  e:nexacro.EditClickEventInfo)
+{
+	
+}
+]]></Script>
+  </Form>
+</FDL>

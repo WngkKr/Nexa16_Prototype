@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="UCCP_MSG" left="0" top="0" width="416" height="180" scrollbars="none" style="color:#999999ff;" onload="form_onload" ontimer="UCCP_MSG_ontimer" cssclass="frm_POPUP_BG" titletext="경고창 가이드">
+    <Layouts>
+      <Layout>
+        <TextArea id="txt_msg" taborder="4" readonly="true" left="93" top="51" height="87" width="308" wordwrap="char" cssclass="txt_WF_MSG" style="align:left middle;"/>
+        <Button id="btn_0" taborder="12" text="btn_0" left="179" top="141" height="24" visible="false" width="54" onclick="btn_onclick" cssclass="btn_WF_PageControl"/>
+        <Button id="btn_1" taborder="13" text="btn_1" onclick="btn_onclick" left="235" top="141" height="24" visible="false" width="54" cssclass="btn_WF_PageControl"/>
+        <Button id="btn_2" taborder="14" text="btn_2" onclick="btn_onclick" left="291" top="141" height="24" positionstep="0" visible="false" width="54" cssclass="btn_WF_PageControl"/>
+        <ImageViewer id="img_icon" taborder="15" tabstop="false" left="15" top="46" height="63" width="67" cssclass="alert_default"/>
+        <Static id="Static02" taborder="18" text="W&#13;&#10;15" visible="false" left="401" top="0" width="15" style="background:green;align:center;opacity:30;" bottom="0"/>
+        <Static id="Static03" taborder="19" text="H15" visible="false" left="0" top="165" style="background:green;align:center middle;opacity:30;" right="0" height="15"/>
+        <ImageViewer id="img_icon00" taborder="20" tabstop="false" cssclass="alert_error" left="455" top="15" width="67" height="63" visible="false"/>
+        <ImageViewer id="img_icon01" taborder="21" tabstop="false" cssclass="alert_information" visible="false" left="527" top="15" width="67" height="63"/>
+        <ImageViewer id="img_icon02" taborder="22" tabstop="false" cssclass="alert_question" visible="false" left="599" top="15" width="67" height="63"/>
+        <ImageViewer id="img_icon03" taborder="23" tabstop="false" cssclass="alert_warning" visible="false" left="671" top="15" width="67" height="63"/>
+        <Button id="btn_3" taborder="24" text="btn_3" onclick="btn_onclick" cssclass="btn_WF_PageControl" visible="false" left="347" top="141" width="54" height="24"/>
+        <ImageViewer id="ImageViewer00" taborder="25" left="456" top="137" width="67" height="63" cssclass="alert_information"/>
+        <Button id="btn_close1" taborder="26" cssclass="btn_POP_AlertClose" top="8" width="20" height="20" right="15" onclick="gfn_close"/>
+        <Static id="Static92" taborder="27" text="H30" visible="false" left="0" top="36" width="415" height="15" style="background:green;align:center middle;opacity:30;"/>
+        <Static id="Static00" taborder="28" text="W&#13;&#10;15" visible="false" left="0" top="0" width="15" style="background:green;align:center;opacity:30;" bottom="0"/>
+        <Static id="Static07" taborder="29" text="Title" cssclass="sta_POP_tit2" left="0" top="5" width="331" height="26"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.0"><![CDATA[/**
+*  인트라넷 고도화[Lexpeed3]구축 사업
+*
+*  @MenuPath 
+*  @FileName UCCP_MSG
+*  @Creator 송원창
+*  @CreateDate 2016.04.18
+*  @LastModifier 
+*  @LastModifyDate 
+*  @Version 1.0
+*  @Outline 공통 메시지창
+*  @Desction 
+* 			1) ALERT, CONFIRM 창 공통
+*      		2) 
+* 
+* 
+************** 소스 수정 이력 *************************************************
+*    date          Modifier            Description
+*******************************************************************************
+*  2016.04.18      송원창             최초 생성 
+*******************************************************************************
+*/
+ 
+ 
+/*----------------------------------------------------------------------------------------------
+ * 공통 라이브러리 INCLUDE 영역
+----------------------------------------------------------------------------------------------*/
+//include "LIB::LIB_COMMON.xjs";  	// 공통 js
+
+
+/*----------------------------------------------------------------------------------------------
+ * FORM 변수 선언 영역
+----------------------------------------------------------------------------------------------*/
+this.fv_arrayButton;
+
+
+/*----------------------------------------------------------------------------------------------
+ * FORM EVENT 영역
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description	화면 로드시 이벤트
+ */
+this.form_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	// Form Load 시 공통 기능 처리
+	this.gfn_initForm(obj);
+
+    // 리턴값 clear 
+    application.GV_POPRTN = null;
+	
+	// Type
+	if (!this.gfn_isNull(this.parent.fa_strType))
+	{
+		this.fv_sType = this.parent.fa_strType;
+    }
+    
+	// Title
+	if (!this.gfn_isNull(this.parent.fa_strTitle))
+	{
+        this.set_titletext(this.parent.fa_strTitle);
+    }
+    
+	// Icon
+	if (!this.gfn_isNull(this.parent.fa_strIconImageId))
+	{
+        //this.img_icon.set_cssclass(this.parent.fa_strIconImageId);
+        this.img_icon.style.set_background("#ffffffff URL('IMG::img_sta_alertError.png') stretch");
+    }
+
+	// 메시지
+	if(!this.gfn_isNull(this.parent.fa_strStatus))
+	{
+		if(!this.gfn_isNull(this.parent.fa_strCause))
+		{
+            this.txt_msg.set_value(this.parent.fa_strStatus + "\n\n" + this.parent.fa_strCause);
+		}
+		else
+		{
+			this.txt_msg.set_value(this.parent.fa_strStatus);
+		}
+    }
+    else
+    {
+		this.txt_msg.set_value(this.parent.fa_strCause);
+    }
+    
+    // 버튼 타입
+	if (!this.gfn_isNull(this.parent.fa_strButtonType))
+	{
+        this.fv_arrayButton = this.gfn_split(this.parent.fa_strButtonType,",");
+    }
+
+    // 자동클로즈 여부처리에 따라 3초후 자동으로 메세지가 Close되도록 처리한다.
+    if( this.parent.fa_bCloseFlag == true )
+    {
+        this.addEventHandler
+        (
+            "ontimer", 
+            function(obj, e)
+            {
+                this.killTimer(e.timerid);
+                this.close();
+            },
+            this
+        );
+        this.setTimer(1092, 5000);
+    }
+
+	// 버튼 설정
+	this.fn_setBtn();
+}
+
+/*----------------------------------------------------------------------------------------------
+ * 사용자 FUNCTION 영역
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description	Type별 버튼 설정
+ */
+this.fn_setBtn = function()
+{
+    //팝업리턴값 default set
+	this.gfn_setVariable("MSG_POPUP_RETURN_VALUE_", "NO");
+
+	for (var i = 0; i < this.fv_arrayButton.length; i++) 
+	{
+		var objButton = this.components["btn_" + i];
+		objButton.set_visible(true);
+
+		// 버튼 Title 설정
+		switch(this.fv_arrayButton[i])
+		{
+			case "ABORT":
+				objButton.set_text("포기");
+				break;
+			case "RETRY":
+				objButton.set_text("재시도");
+				objButton.setFocus();
+				break;
+			case "IGNORE":
+				objButton.set_text("무시");
+				break;
+			case "OK":
+				objButton.set_text("확인");
+				//objButton.set_cssclass("btn_commit_confirm");
+				objButton.setFocus();
+				break;
+			case "CANCEL":
+				objButton.set_text("취소");
+				this.gfn_setVariable("MSG_POPUP_RETURN_VALUE_", "CANCEL");
+				//objButton.set_cssclass("btn_commit_confirm");
+				break;
+			case "YES":
+				objButton.set_text("예");
+				//objButton.set_cssclass("btn_commit_confirm");
+				objButton.setFocus();
+				break;
+			case "NO":
+				objButton.set_text("아니오");
+				this.gfn_setVariable("MSG_POPUP_RETURN_VALUE_", "NO");
+
+				//objButton.set_cssclass("btn_commit_confirm");
+				break;
+		}		
+	}
+	
+	// 버튼의 위치 조정
+	var nbtnCount = this.fv_arrayButton.length;	
+	if(nbtnCount == 1)
+	{
+		this.btn_0.set_left(346);
+	}
+	else if(nbtnCount == 2)
+	{		
+		this.btn_0.set_left(290);
+		this.btn_1.set_left(346);
+	}
+	else if(nbtnCount == 3)
+	{
+		this.btn_0.set_left(234);
+		this.btn_1.set_left(290);
+		this.btn_2.set_left(346);
+	}
+	else
+	{		
+		this.btn_0.set_left(178);
+		this.btn_1.set_left(234);
+		this.btn_2.set_left(290);
+		this.btn_3.set_left(346);
+	}
+}
+
+/*----------------------------------------------------------------------------------------------
+ * COMPONENT EVENT 영역
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description	버튼 Click시 
+ */
+this.btn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var sbtnName = this.gfn_right(obj.name,1);
+	var rtnVal   = this.fv_arrayButton[parseInt(sbtnName)];
+
+	this.gfn_setVariable("MSG_POPUP_RETURN_VALUE_", rtnVal);
+	this.close();
+}
+
+
+this.UCCP_MSG_ontimer = function(obj:Form, e:nexacro.TimerEventInfo)
+{
+	this.killTimer(e.timerid);
+	if(e.timerid == 77) {
+ 			var own = this.getOwnerFrame();
+ 			
+ 			own.move(own.left - 1, own.top ,417, 178);
+ 			own.set_visible(true);
+ 			
+ 			//own.move(100, 100 ,415, 178);
+// 		var own = this.getOwnerFrame();
+// 		own.style.set_align("center middle");
+//		alert(1);
+	}
+	
+}]]></Script>
+  </Form>
+</FDL>

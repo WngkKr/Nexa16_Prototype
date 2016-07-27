@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -1704,6 +1704,8 @@ if (!nexacro.Decimal) {
 	};
 
 	_pDecimal._getFormattedStringValue = function (value, decimal_point, thousands_sep, grouping, frac_digits, use_fraction_digits) {
+		var hi = this.hi;
+		var lo = this.lo;
 		var value_string = value.abs().toString().split(".");
 		var integer_string = value_string[0];
 		var decimal_string = value_string[1];
@@ -1767,6 +1769,8 @@ if (!nexacro.Decimal) {
 			locale_string = locale_string + decimal_point + decimal_string;
 		}
 
+		this.hi = hi;
+		this.lo = lo;
 		return locale_string;
 	};
 	delete _pDecimal;
@@ -2506,8 +2510,8 @@ if (!nexacro.BindableValue) {
 			str = v.toString();
 		}
 
-		if (v != this._value) {
-			if (v == "") {
+		if (v !== this._value) {
+			if (v === "") {
 				this._value = this._default;
 				this._bindtype = 0;
 			}
@@ -2520,6 +2524,11 @@ if (!nexacro.BindableValue) {
 					if (tag == "EXPR" && chk == "(") {
 						str = str.substr(0, 4) + ":" + str.substr(4);
 					}
+					else if (chk != ":") {
+						this._value = v;
+						return;
+					}
+
 					var expr = str.substr(4).trim();
 					if (tag == "BIND") {
 						this._bindtype = 1;

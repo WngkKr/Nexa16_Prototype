@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -144,12 +144,18 @@ if (!nexacro.ProgressBar) {
 		var barcolor = this.on_find_CurrentStyle_barColor(pseudo);
 		var bargradation = this.on_find_CurrentStyle_barGradation(pseudo);
 		var font = this.on_find_CurrentStyle_font(pseudo);
+		var letterspace = this.on_find_CurrentStyle_letterspace(pseudo);
 		var color = this.on_find_CurrentStyle_color(pseudo);
 		var align = this.on_find_CurrentStyle_align(pseudo);
 
 		if (curstyle.font != font) {
 			curstyle.font = font;
 			this.on_apply_style_font(font);
+		}
+
+		if (curstyle.letterspace != letterspace) {
+			curstyle.letterspace = letterspace;
+			this.on_apply_style_letterspace(letterspace);
 		}
 
 		if (curstyle.color != color) {
@@ -297,7 +303,7 @@ if (!nexacro.ProgressBar) {
 			return;
 		}
 		var imgurl = this._get_img_fullurl(startimage);
-		var size = nexacro._getImageSize(imgurl, this._on_start_img, this);
+		var size = nexacro._getImageSize(imgurl, this._on_start_img, this, undefined, startimage);
 		if (size != null) {
 			this.start_img_width = size.width;
 			this.start_img_url = imgurl;
@@ -310,7 +316,7 @@ if (!nexacro.ProgressBar) {
 			return;
 		}
 		var imgurl = this._get_img_fullurl(progressimage);
-		var size = nexacro._getImageSize(imgurl, this._on_progress_img, this);
+		var size = nexacro._getImageSize(imgurl, this._on_progress_img, this, undefined, progressimage);
 		if (size != null) {
 			this.progress_img_width = size.width;
 			this.progress_img_url = imgurl;
@@ -323,7 +329,7 @@ if (!nexacro.ProgressBar) {
 			return;
 		}
 		var imgurl = this._get_img_fullurl(endimage);
-		var size = nexacro._getImageSize(imgurl, this._on_end_img, this);
+		var size = nexacro._getImageSize(imgurl, this._on_end_img, this, undefined, endimage);
 		if (size != null) {
 			this.end_img_width = size.width;
 			this.end_img_url = imgurl;
@@ -407,6 +413,7 @@ if (!nexacro.ProgressBar) {
 				text_elem.setElementColor(this.on_find_CurrentStyle_color(this._pseudo));
 				text_elem.setElementFont(this.on_find_CurrentStyle_font(this._pseudo));
 				text_elem.setElementAlignXY(align.halign ? align._halign : "center", align.valign ? align._valign : "middle");
+				text_elem.setElementLetterSpace(this.currentstyle.letterspace);
 			}
 
 			var curBartype = this.on_find_CurrentStyle_bartype(this._pseudo);
@@ -507,6 +514,7 @@ if (!nexacro.ProgressBar) {
 				text_elem.setElementColor(this.currentstyle.color);
 				text_elem.setElementFont(this.currentstyle.font);
 				text_elem.setElementAlignXY(align.halign ? align._halign : "center", align.valign ? align._valign : "middle");
+				text_elem.setElementLetterSpace(this.currentstyle.letterspace);
 
 				text_elem.create();
 			}
@@ -821,6 +829,7 @@ if (!nexacro.ProgressBar) {
 			text_elem.setElementColor(this.currentstyle.color);
 			text_elem.setElementFont(this.currentstyle.font);
 			text_elem.setElementAlignXY(halign, valign);
+			text_elem.setElementLetterSpace(this.currentstyle.letterspace);
 
 			if (text_elem) {
 				text_elem.create();
@@ -1050,6 +1059,7 @@ if (!nexacro.ProgressBar) {
 				text_elem.setElementColor(this.currentstyle.color);
 				text_elem.setElementFont(this.currentstyle.font);
 				text_elem.setElementAlignXY(halign, valign);
+				text_elem.setElementLetterSpace(this.currentstyle.letterspace);
 
 				if (text_elem) {
 					text_elem.create();

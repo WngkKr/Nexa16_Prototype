@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -16,13 +16,15 @@ if (nexacro.Browser != "Runtime") {
 		nexacro._init_platform_HTML5 = true;
 		nexacro.isTouchInteraction = (nexacro.Browser == "MobileSafari" || nexacro.OS == "Android" || nexacro.OS == "iOS" || nexacro.OS == "Windows Phone");
 		nexacro.SupportOrientation = ((typeof window.orientation != 'undefined') && ('onorientationchange' in window));
-		nexacro.SupportTouch = ("ontouchstart" in window || window.navigator.msPointerEnabled);
+		nexacro.SupportTouch = ("ontouchstart" in window || (window.navigator.msPointerEnabled && (window.navigator.maxTouchPoints > 1)));
 		nexacro.SupportAnimationFrame = (window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame) ? true : false;
 		nexacro._resize_popup_inbound = true;
 
 		nexacro._custom_node_id = null;
 
-		if (nexacro.Browser == "IE") {
+		nexacro._deactivate = false;
+
+		if (nexacro.Browser == "Edge" || nexacro.Browser == "IE") {
 			nexacro._createSysEvent_ForwardFuncs = function (_cur_win) {
 				_cur_win._is_capture = false;
 				_cur_win._syshandler_onmousedown_forward = function (evt) {
@@ -34,7 +36,7 @@ if (nexacro.Browser != "Runtime") {
 						return;
 					}
 					var elem = nexacro.__findParentElement(evt.srcElement);
-					if (evt.button == (application._is_attach_childframe ? nexacro_HTMLSysEvent[id].MOUSE_LBUTTON : nexacro_HTMLSysEvent.MOUSE_LBUTTON) && !_cur_win._is_capture && !(elem instanceof nexacro.InputElement)) {
+					if (nexacro.Browser != "Edge" && evt.button == (application._is_attach_childframe ? nexacro_HTMLSysEvent[id].MOUSE_LBUTTON : nexacro_HTMLSysEvent.MOUSE_LBUTTON) && !_cur_win._is_capture && !(elem instanceof nexacro.InputElement)) {
 						var body = id ? _cur_win.document.getElementById(id) : _cur_win.document.body;
 						body.setCapture(false);
 						nexacro._observeSysEvent(body, "losecapture", "onlosecapture", _cur_win._syshandler_onlosecapture_forward);
@@ -47,7 +49,7 @@ if (nexacro.Browser != "Runtime") {
 				};
 
 				_cur_win._syshandler_onmouseup_forward = function (evt) {
-					evt = _cur_win.event;
+					evt = _cur_win.event ? _cur_win.event : evt;
 					var id = nexacro._getEvtId(evt);
 					if (!nexacro.__getWindowHandleEnable(_cur_win, id)) {
 						nexacro._stopSysEvent(evt);
@@ -131,6 +133,12 @@ if (nexacro.Browser != "Runtime") {
 					evt2.changedTouches.push(touch);
 					evt = evt2;
 
+					var elem = nexacro.__findParentElement(evt.srcElement);
+					if ((elem instanceof nexacro.InputElement) && elem.enable) {
+						elem._is_input_touchstart = true;
+						elem._on_sys_touchstart();
+					}
+
 					var htmlSysEvent = nexacro._getHtmlSysEvent(_cur_win.nexacro_HTMLSysEvent, id);
 					return nexacro._syshandler_ontouchstart(htmlSysEvent, evt.srcElement, evt, orgevt);
 				};
@@ -163,6 +171,11 @@ if (nexacro.Browser != "Runtime") {
 
 					evt2.changedTouches.push(touch);
 					evt = evt2;
+
+					var elem = nexacro.__findParentElement(evt.srcElement);
+					if ((elem instanceof nexacro.InputElement) && elem.enable) {
+						elem._on_sys_touchend();
+					}
 
 					var htmlSysEvent = nexacro._getHtmlSysEvent(_cur_win.nexacro_HTMLSysEvent, id);
 					return nexacro._syshandler_ontouchend(htmlSysEvent, evt.srcElement, evt, orgevt);
@@ -534,11 +547,19 @@ if (nexacro.Browser != "Runtime") {
 				_cur_win._syshandler_ontouchstart_forward = function (evt) {
 					var id = nexacro._getEvtId(evt);
 					var elem = nexacro.__findParentElement(evt.target);
+					var htmlSysEvent = nexacro._getHtmlSysEvent(_cur_win.nexacro_HTMLSysEvent, id);
+					var win = nexacro._findWindow(htmlSysEvent._win_win, htmlSysEvent._custom_node_id);
+					var comp = win.findComponent(elem, 0, 0);
+
 					if ((elem instanceof nexacro.InputElement) && elem.enable) {
 						elem._is_input_touchstart = true;
 						elem._on_sys_touchstart();
 					}
-					var htmlSysEvent = nexacro._getHtmlSysEvent(_cur_win.nexacro_HTMLSysEvent, id);
+					else if (comp[0] && (comp[0]._edit_base_api || comp[0]._input_element)) {
+						var inputelem = comp[0]._input_element;
+						inputelem._is_input_touchstart = true;
+						inputelem._on_sys_touchstart();
+					}
 					return nexacro._syshandler_ontouchstart(htmlSysEvent, evt.target, evt);
 				};
 				_cur_win._syshandler_ontouchend_forward = function (evt) {
@@ -664,6 +685,8 @@ if (nexacro.Browser != "Runtime") {
 					return nexacro._syshandler_onactivate(htmlSysEvent, evt);
 				};
 				_cur_win._syshandler_ondeactivate_forward = function (evt) {
+					nexacro._deactivate = true;
+
 					var id = nexacro._getEvtId(evt);
 					var htmlSysEvent = nexacro._getHtmlSysEvent(_cur_win.nexacro_HTMLSysEvent, id);
 					return nexacro._syshandler_ondeactivate(htmlSysEvent, evt);
@@ -771,13 +794,20 @@ if (nexacro.Browser != "Runtime") {
 					var htmlSysEvent = nexacro._getHtmlSysEvent(_cur_win.nexacro_HTMLSysEvent, id);
 					return nexacro._syshandler_onorientationchange(htmlSysEvent, evt);
 				};
-
 				_cur_win._syshandler_onmove_forward = function (evt) {
 					try {
 						var oldX = _cur_win._old_screenx;
 						var oldY = _cur_win._old_screeny;
 
 						if (oldX != _cur_win.screenX || oldY != _cur_win.screenY) {
+							if (nexacro._deactivate) {
+								_cur_win._old_screenx = _cur_win.screenX;
+								_cur_win._old_screeny = _cur_win.screenY;
+
+								nexacro._deactivate = false;
+								return;
+							}
+
 							_cur_win._old_screenx = _cur_win.screenX;
 							_cur_win._old_screeny = _cur_win.screenY;
 
@@ -894,7 +924,7 @@ if (nexacro.Browser != "Runtime") {
 			_pHTMLSysEvent.MOUSE_RBUTTON = 2;
 		}
 
-		if (nexacro.Browser == "IE") {
+		if (nexacro.Browser == "Edge" || nexacro.Browser == "IE") {
 			_pHTMLSysEvent._initDocEventHandler = function () {
 				var _cur_win = this._cur_win;
 				var _cur_doc = this._cur_doc;
@@ -903,10 +933,18 @@ if (nexacro.Browser != "Runtime") {
 				nexacro._observeSysEvent(body, "mouseup", "onmouseup", this._syshandler_onmouseup_forward);
 				nexacro._observeSysEvent(body, "mousemove", "onmousemove", this._syshandler_onmousemove_forward);
 				if (nexacro.SupportTouch) {
-					nexacro._observeSysEvent(_cur_win, "MSPointerDown", "ontouchstart", this._syshandler_ontouchstart_forward);
-					nexacro._observeSysEvent(_cur_win, "MSPointerUp", "ontouchend", this._syshandler_ontouchend_forward);
-					nexacro._observeSysEvent(_cur_win, "MSPointerMove", "ontouchmove", this._syshandler_ontouchmove_forward);
-					nexacro._observeSysEvent(_cur_win, "MSPointerCancel", "ontouchcancel", this._syshandler_ontouchcancel_forward);
+					if (nexacro.Browser == "Edge") {
+						nexacro._observeSysEvent(_cur_win, "pointerdown", "ontouchstart", this._syshandler_ontouchstart_forward);
+						nexacro._observeSysEvent(_cur_win, "pointerup", "ontouchend", this._syshandler_ontouchend_forward);
+						nexacro._observeSysEvent(_cur_win, "pointermove", "ontouchmove", this._syshandler_ontouchmove_forward);
+						nexacro._observeSysEvent(_cur_win, "pointercancel", "ontouchcancel", this._syshandler_ontouchcancel_forward);
+					}
+					else {
+						nexacro._observeSysEvent(_cur_win, "MSPointerDown", "ontouchstart", this._syshandler_ontouchstart_forward);
+						nexacro._observeSysEvent(_cur_win, "MSPointerUp", "ontouchend", this._syshandler_ontouchend_forward);
+						nexacro._observeSysEvent(_cur_win, "MSPointerMove", "ontouchmove", this._syshandler_ontouchmove_forward);
+						nexacro._observeSysEvent(_cur_win, "MSPointerCancel", "ontouchcancel", this._syshandler_ontouchcancel_forward);
+					}
 				}
 				nexacro._observeSysEvent(body, "dblclick", "ondblclick", this._syshandler_ondblclick_forward);
 				nexacro._observeSysEvent(body, "mouseover", "onmouseover", this._syshandler_onmouseover_forward);
@@ -944,10 +982,18 @@ if (nexacro.Browser != "Runtime") {
 				nexacro._stopSysObserving(body, "mouseup", "onmouseup", this._syshandler_onmouseup_forward);
 				nexacro._stopSysObserving(body, "mousemove", "onmousemove", this._syshandler_onmousemove_forward);
 				if (nexacro.SupportTouch) {
-					nexacro._stopSysObserving(_cur_win, "MSPointerDown", "ontouchstart", this._syshandler_ontouchstart_forward);
-					nexacro._stopSysObserving(_cur_win, "MSPointerUp", "ontouchend", this._syshandler_ontouchend_forward);
-					nexacro._stopSysObserving(_cur_win, "MSPointerMove", "ontouchmove", this._syshandler_ontouchmove_forward);
-					nexacro._stopSysObserving(_cur_win, "MSPointerCancel", "ontouchcancel", this._syshandler_ontouchcancel_forward);
+					if (nexacro.Browser == "Edge") {
+						nexacro._stopSysObserving(_cur_win, "pointerdown", "ontouchstart", this._syshandler_ontouchstart_forward);
+						nexacro._stopSysObserving(_cur_win, "pointerup", "ontouchend", this._syshandler_ontouchend_forward);
+						nexacro._stopSysObserving(_cur_win, "pointermove", "ontouchmove", this._syshandler_ontouchmove_forward);
+						nexacro._stopSysObserving(_cur_win, "pointercancel", "ontouchcancel", this._syshandler_ontouchcancel_forward);
+					}
+					else {
+						nexacro._stopSysObserving(_cur_win, "MSPointerDown", "ontouchstart", this._syshandler_ontouchstart_forward);
+						nexacro._stopSysObserving(_cur_win, "MSPointerUp", "ontouchend", this._syshandler_ontouchend_forward);
+						nexacro._stopSysObserving(_cur_win, "MSPointerMove", "ontouchmove", this._syshandler_ontouchmove_forward);
+						nexacro._stopSysObserving(_cur_win, "MSPointerCancel", "ontouchcancel", this._syshandler_ontouchcancel_forward);
+					}
 				}
 				nexacro._stopSysObserving(body, "dblclick", "ondblclick", this._syshandler_ondblclick_forward);
 				nexacro._stopSysObserving(body, "mouseover", "onmouseover", this._syshandler_onmouseover_forward);
@@ -1145,14 +1191,19 @@ if (nexacro.Browser != "Runtime") {
 		nexacro.__getRealWindowHandle = function (_cur_win) {
 			var _cur_nexacro = _cur_win.nexacro;
 			var p = _cur_win;
-			while (true) {
-				if (p.parent && p != p.parent && p.parent.nexacro && p.parent.nexacro == _cur_nexacro) {
-					p = p.parent;
-				}
-				else {
-					break;
+			try {
+				while (true) {
+					if (p.parent && p != p.parent && p.parent.nexacro && p.parent.nexacro == _cur_nexacro) {
+						p = p.parent;
+					}
+					else {
+						break;
+					}
 				}
 			}
+			catch (e) {
+			}
+
 			return p;
 		};
 
@@ -1223,7 +1274,7 @@ if (nexacro.Browser != "Runtime") {
 			_cur_win.__clearGC = null;
 			_cur_win.__destroyGC = null;
 
-			if (application._is_attach_childframe) {
+			if (application && application._is_attach_childframe) {
 				var htmlsysevent = _cur_win.nexacro_HTMLSysEvent;
 				htmlsysevent.delete_item(id);
 				if (htmlsysevent && htmlsysevent.length == 0) {
@@ -1239,6 +1290,7 @@ if (nexacro.Browser != "Runtime") {
 			nexacro._initHTMLSysEvent(_cur_win, _cur_doc);
 			nexacro._prepareManagerFrame();
 			nexacro._initializeGlobalObjects(_cur_win);
+			application._RegisterClass(_cur_win);
 		};
 
 		nexacro._createPopupFrame = function (_cur_win, urlparams) {
@@ -1250,6 +1302,8 @@ if (nexacro.Browser != "Runtime") {
 			if (parent_win) {
 				parent_win.addChild(_win);
 			}
+
+			nexacro.__setViewportScale();
 
 			var childframe = new nexacro.ChildFrame(name);
 			childframe._showModeless(name, _win);
@@ -1305,7 +1359,7 @@ if (nexacro.Browser != "Runtime") {
 			}, 500);
 		};
 
-		if (nexacro.Browser == "IE") {
+		if (nexacro.Browser == "Edge" || nexacro.Browser == "IE") {
 			nexacro._syshandler_onmousedown = function (_sysEvent, node, evt) {
 				var id = _sysEvent._custom_node_id;
 				var win = nexacro._findWindow(_sysEvent._win_win, id);
@@ -2134,7 +2188,7 @@ if (nexacro.Browser != "Runtime") {
 				var elem = nexacro.__findParentElement(node);
 				if (win && elem) {
 					var ret = win._on_sys_contextmenu(elem);
-					if (!ret || (win.frame._is_popup_frame && node.tagName != "INPUT" && node.tagName != "IMG")) {
+					if (!ret) {
 						ret = nexacro._stopSysEvent(evt);
 					}
 					else {
@@ -2195,7 +2249,7 @@ if (nexacro.Browser != "Runtime") {
 				 + "</body>\n"
 				 + "</html>";
 		}
-		else if (nexacro.Browser == "IE" && nexacro.BrowserVersion >= 9) {
+		else if (nexacro.Browser == "Edge" || nexacro.Browser == "IE" && nexacro.BrowserVersion >= 9) {
 			nexacro._doc_init_html = "<html lang=\"" + nexacro.BrowserLang.substr(0, 2) + "\">\n"
 				 + "<head>\n"
 				 + "</head>\n"
@@ -2264,8 +2318,11 @@ if (nexacro.Browser != "Runtime") {
 		else if (nexacro.Browser == "IE" && nexacro.BrowserVersion == 9) {
 			nexacro._doc_head_style = "";
 		}
-		else if (nexacro.Browser == "IE" && nexacro.BrowserVersion >= 10) {
-			nexacro._doc_head_style = "input::-ms-clear { display: none; }\n"
+		else if (nexacro.Browser == "Edge" || nexacro.Browser == "IE" && nexacro.BrowserVersion >= 10) {
+			nexacro._doc_head_style = " body { \n"
+				 + "touch-action: none;\n"
+				 + "}\n"
+				 + "input::-ms-clear { display: none; }\n"
 				 + "input::-ms-reveal { display: none; }\n";
 		}
 		else if (nexacro.isTouchInteraction) {
@@ -2435,7 +2492,7 @@ if (nexacro.Browser != "Runtime") {
 			return _win_handle;
 		};
 
-		nexacro._createModalWindowHandle = function (parent_win, target_win, name, left, top, width, height, resizable, layered, lockmode) {
+		nexacro._createModalWindowHandle = function (parent_win, target_win, name, left, top, width, height, resizable, layered, lockmode, delayedCreate) {
 		};
 
 		nexacro._createModalAsyncWindowHandle = function (parent_win, target_win, name, left, top, width, height, resizable, layered, lockmode) {
@@ -2582,7 +2639,7 @@ if (nexacro.Browser != "Runtime") {
 				return application._is_attach_childframe ? _win_handle.document.getElementById(id).mozInnerScreenY : _win_handle.mozInnerScreenY;
 			};
 		}
-		else if (nexacro.Browser == "IE") {
+		else if (nexacro.Browser == "Edge" || nexacro.Browser == "IE") {
 			nexacro._getWindowHandlePosX = function (_win_handle, id) {
 				return application._is_attach_childframe ? _win_handle.document.getElementById(id).screenLeft : _win_handle.screenLeft;
 			};
@@ -2670,7 +2727,7 @@ if (nexacro.Browser != "Runtime") {
 				return _win_handle.document.documentElement.offsetHeight;
 			};
 		}
-		else if (nexacro.Browser == "IE") {
+		else if (nexacro.Browser == "Edge" || nexacro.Browser == "IE") {
 			nexacro._getWindowHandleClientWidth = function (_win_handle, id) {
 				if (application._is_attach_childframe) {
 					return _win_handle.document.getElementById(id).clientWidth;
@@ -2684,7 +2741,7 @@ if (nexacro.Browser != "Runtime") {
 				return _win_handle.innerHeight;
 			};
 		}
-		else if (nexacro.Browser == "iOS" && nexacro.Browser == "MobileSafari") {
+		else if (nexacro.OS == "iOS" && nexacro.Browser == "MobileSafari") {
 			nexacro._getWindowHandleClientWidth = function (_win_handle, id) {
 				if (application._is_attach_childframe) {
 					return _win_handle.document.getElementById(id).clientWidth;
@@ -3239,7 +3296,7 @@ if (nexacro.Browser != "Runtime") {
 			return _doc.body;
 		};
 
-		if (nexacro.Browser == "IE") {
+		if (nexacro.Browser == "Edge" || nexacro.Browser == "IE") {
 			nexacro.__getRootWindowHandleOfPopupWindow = function (_handle) {
 				var _doc = (_handle.ownerDocument || _handle.document);
 				return _doc.parentWindow;
@@ -3312,6 +3369,12 @@ if (nexacro.Browser != "Runtime") {
 				handle_style.width = (w | 0) + "px";
 				handle_style.height = (h | 0) + "px";
 			}
+		};
+
+		nexacro._createVirtualWindowHandle = function () {
+		};
+
+		nexacro._closeVirtualWindowHandle = function () {
 		};
 
 		nexacro._blockScript = function () {
@@ -3611,20 +3674,20 @@ if (nexacro.Browser != "Runtime") {
 		};
 
 		nexacro._deleteTraceLogFile = nexacro._emptyFn;
-		nexacro._writeTraceLog = function (msgtype, message, bsystemlog, loglevel) {
+		nexacro._writeTraceLog = function (msglevel, message, bsystemlog, loglevel) {
 			var data;
 			data = (bsystemlog == true) ? "S" : "U";
 
-			if (loglevel == 0) {
+			if (msglevel == 0) {
 				data += "F";
 			}
-			else if (loglevel == 1) {
+			else if (msglevel == 1) {
 				data += "E";
 			}
-			else if (loglevel == 2) {
+			else if (msglevel == 2) {
 				data += "W";
 			}
-			else if (loglevel == 3) {
+			else if (msglevel == 3) {
 				data += "I";
 			}
 			else {
@@ -3654,6 +3717,8 @@ if (nexacro.Browser != "Runtime") {
 				nexacro.Device.exit();
 			}
 		};
+
+		nexacro._setUseHttpKeepAlive = nexacro._emptyFn;
 
 		nexacro._setHttpTimeout = function (v) {
 			var timeout = nexacro._parseInt(v);
@@ -3942,6 +4007,7 @@ if (nexacro.Browser != "Runtime") {
 		nexacro._setTrayTooltipHandle = nexacro._emptyFn;
 		nexacro._showTrayBalloonTipHandle = nexacro._emptyFn;
 		nexacro._createTrayPopupMenuHandle = nexacro._emptyFn;
+		nexacro._destroyTrayPopupMenuHandle = nexacro._emptyFn;
 		nexacro._setTrayPopupMenuItemHandle = nexacro._emptyFn;
 		nexacro._displayTrayPopupMenuHandle = nexacro._emptyFn;
 

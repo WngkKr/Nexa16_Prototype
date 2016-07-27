@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -225,7 +225,7 @@ if (!nexacro.Grid) {
 		this._styles = cellinfo._styles;
 		this._expand_width = 0;
 		this._subComp = null;
-		this._selected = false;
+		this.selected = false;
 		this._text_elem = null;
 		this._curDisplayType = "";
 		this._curEditDisplay = "";
@@ -278,6 +278,12 @@ if (!nexacro.Grid) {
 			this.on_apply_style_font(font);
 		}
 
+		var letterspace = this.on_find_CurrentStyle_letterspace(pseudo);
+		if (curstyle.letterspace != letterspace) {
+			curstyle.letterspace = letterspace;
+			this.on_apply_style_letterspace(letterspace);
+		}
+
 		var color = this.on_find_CurrentStyle_color(pseudo);
 		if (curstyle.color != color) {
 			curstyle.color = color;
@@ -297,6 +303,18 @@ if (!nexacro.Grid) {
 		}
 
 		this._display_text = this._getDisplayText();
+		this.on_apply_prop_tooltip();
+
+		var subComp = this._subComp;
+		if (subComp && this._ReasonRefresh != 1) {
+			subComp._control_pseudo = "";
+			subComp._contents_pseudo = "";
+			subComp._updateAll();
+		}
+
+		if (this._expandCtrl) {
+			this._expandCtrl._updateAll();
+		}
 
 		if (this._is_created && (grid._mouseovercell == this || this._row_cells_update_pseudo == true)) {
 			if (!grid._ReasonRefresh) {
@@ -327,7 +345,7 @@ if (!nexacro.Grid) {
 		if (this._refobj && !this._isSubCell) {
 			var odd = (this._rowidx >= 0) ? (this._rowidx % 2) : false, grid = this._grid, datarow = grid._getDataRow(this._rowidx);
 
-			return this._refobj._query_pseudo_background(datarow, odd, this._isSelected(), pseudo);
+			return this._refobj._query_pseudo_background(datarow, odd, this._is_Selected(), pseudo);
 		}
 		return null;
 	};
@@ -336,7 +354,8 @@ if (!nexacro.Grid) {
 		var cell = this;
 
 		if (this._refobj && !this._isSubCell) {
-			var suppressborder = cell._getSuppressInfo().border_proc;
+			var suppinfo = cell._getSuppressInfo();
+			var suppressborder = (suppinfo) ? suppinfo.border_proc : 0;
 
 
 			if (this._getDisplayRowIdx() == this._grid._getDispRowCnt() - 1) {
@@ -345,7 +364,7 @@ if (!nexacro.Grid) {
 
 			var grid = this._grid, datarow = grid._getDataRow(this._rowidx);
 
-			var border = this._refobj._query_pseudo_border(datarow, this._isSelected(), pseudo, suppressborder);
+			var border = this._refobj._query_pseudo_border(datarow, this._is_Selected(), pseudo, suppressborder);
 
 
 			var remove = grid._checkFakeMerge(this._refobj, datarow);
@@ -383,7 +402,7 @@ if (!nexacro.Grid) {
 		if (this._refobj && !this._isSubCell) {
 			var odd = (this._rowidx >= 0) ? (this._rowidx % 2) : false, grid = this._grid, datarow = grid._getDataRow(this._rowidx);
 
-			return this._refobj._query_pseudo_gradation(datarow, odd, this._isSelected(), pseudo);
+			return this._refobj._query_pseudo_gradation(datarow, odd, this._is_Selected(), pseudo);
 		}
 		return null;
 	};
@@ -430,7 +449,16 @@ if (!nexacro.Grid) {
 		if (this._refobj) {
 			var grid = this._grid, datarow = grid._getDataRow(this._rowidx);
 
-			return this._refobj._query_pseudo_font(datarow, this._isSelected(), pseudo);
+			return this._refobj._query_pseudo_font(datarow, this._is_Selected(), pseudo);
+		}
+		return null;
+	};
+
+	_pGridCell.on_find_CurrentStyle_letterspace = function (pseudo) {
+		if (this._refobj) {
+			var grid = this._grid, datarow = grid._getDataRow(this._rowidx);
+
+			return this._refobj._query_pseudo_letterspace(datarow, this._is_Selected(), pseudo);
 		}
 		return null;
 	};
@@ -446,7 +474,7 @@ if (!nexacro.Grid) {
 			var grid = this._grid;
 			var datarow = grid._getDataRow(this._rowidx);
 
-			return this._refobj._query_pseudo_color(datarow, odd, cell._selected, pseudo);
+			return this._refobj._query_pseudo_color(datarow, odd, cell.selected, pseudo);
 		}
 		return null;
 	};
@@ -498,16 +526,14 @@ if (!nexacro.Grid) {
 				this.on_apply_style_font(curstyle.font);
 			}
 
+			if (curstyle && curstyle.letterspace) {
+				this.on_apply_style_letterspace(curstyle.letterspace);
+			}
+
 			if (nexacro._enableaccessibility) {
 				var accessibility = this.on_find_CurrentStyle_accessibility(this._pseudo);
 				if (accessibility && accessibility.enable && !this._grid._accept_focus) {
 					this._grid._accept_focus = true;
-				}
-
-				if (nexacro._accessibilitytype == 4) {
-					var label = this._getAccessibilityMakeAddLabel();
-					label = label + " " + this._getCellAccessibilityLabel();
-					this._setAccessibilityLabel(label);
 				}
 			}
 		}
@@ -621,11 +647,15 @@ if (!nexacro.Grid) {
 	};
 
 	_pGridCell._on_last_lbuttonup = function () {
-		this.parent._on_last_lbuttonup();
+		if (this.parent) {
+			this.parent._on_last_lbuttonup();
+		}
 	};
 
 	_pGridCell._on_last_keyup = function () {
-		this.parent._on_last_keyup();
+		if (this.parent) {
+			this.parent._on_last_keyup();
+		}
 	};
 
 	_pGridCell._on_killfocus = function (new_focus, new_ref_focus) {
@@ -641,7 +671,7 @@ if (!nexacro.Grid) {
 	};
 
 
-	_pGridCell._getAccessibilityLabel = function (accessibility) {
+	_pGridCell._getAccessibilityLabel = function (accessibility, is_no_make) {
 		var label = nexacro.Component.prototype._getAccessibilityLabel.call(this, accessibility);
 
 		if (!label && this.subcells.length > 0) {
@@ -658,6 +688,15 @@ if (!nexacro.Grid) {
 			}
 		}
 
+		if (nexacro._accessibilitytype == 4 && this._is_created && !is_no_make) {
+			var tmp_label = this._getAccessibilityMakeAddLabel();
+			if (accessibility) {
+				if (accessibility._bindexpr && accessibility._bindexpr.length > 0) {
+					label = this._refobj._getAttrValue(accessibility, this._rowidx);
+				}
+			}
+			label = tmp_label + " " + label;
+		}
 		return label;
 	};
 
@@ -677,7 +716,7 @@ if (!nexacro.Grid) {
 			tmp_label = this._getAccessibilityMakeAddLabel();
 
 			tmp_label += " " + this._getCellAccessibilityLabel();
-			this._setAccessibilityStatSelected(this._selected);
+			this._setAccessibilityStatSelected(this.selected);
 
 
 			this._setAccessibilityLabel(tmp_label);
@@ -700,7 +739,7 @@ if (!nexacro.Grid) {
 				bind_value = cellinfo._getAttrValue(accessibility, this._rowidx);
 				accessibility._setValue(bind_value);
 			}
-			tmpLabel = this._getAccessibilityLabel(accessibility);
+			tmpLabel = this._getAccessibilityLabel(accessibility, true);
 		}
 
 
@@ -767,7 +806,7 @@ if (!nexacro.Grid) {
 						accessibility._setValue(leftLabel);
 					}
 
-					label = cells[i]._getAccessibilityLabel(accessibility);
+					label = cells[i]._getAccessibilityLabel(accessibility, true);
 					if (cellinfo._row <= curCellinfo._row && curCellinfo._row <= (cellinfo._row + cellinfo._rowspan - 1)) {
 						if (leftLabel) {
 							leftLabel += " " + label;
@@ -796,7 +835,7 @@ if (!nexacro.Grid) {
 							accessibility._setValue(headband);
 						}
 
-						label = cells[i]._getAccessibilityLabel(accessibility);
+						label = cells[i]._getAccessibilityLabel(accessibility, true);
 						if (cellinfo._col <= curCellinfo._col && curCellinfo._col <= (cellinfo._colspan + cellinfo._col - 1)) {
 							if (headLabel) {
 								headLabel = headLabel + " " + label;
@@ -873,7 +912,7 @@ if (!nexacro.Grid) {
 		var label = this._getAccessibilityMakeAddLabel();
 		label += " " + this._getCellAccessibilityLabel();
 		this._setAccessibilityLabel(label);
-		return nexacro.Component.prototype._setAccessibilityNotifyEvent.call(this, direction);
+		return nexacro.Component.prototype._setAccessibilityNotifyEvent.call(this, (direction && direction > 0) ? 0 : 1);
 	};
 
 	_pGridCell._resetScrollPos = function (target_comp, left, top, right, bottom, focus_direction) {
@@ -881,6 +920,14 @@ if (!nexacro.Grid) {
 		if (grid) {
 			grid._hideEditor();
 			this.parent._showfull(this);
+			if (nexacro._enableaccessibility && nexacro._accessibilitytype == 5 && grid._scrollbars == 0) {
+				var row = this.parent;
+				if (row) {
+					top = row._adjust_top;
+				}
+				bottom = top + this._adjust_height;
+				nexacro.Component.prototype._resetScrollPos.call(this, target_comp, left, top, right, bottom, focus_direction);
+			}
 		}
 	};
 
@@ -892,14 +939,19 @@ if (!nexacro.Grid) {
 			var datarow = this._grid._getDataRow(this._rowidx);
 			var displaytype = cellinfo._getAttrValue(cellinfo.displaytype, datarow);
 
+			var strtext = nexacro._toString(this._display_text);
+			if (strtext && strtext.indexOf("\r") != -1) {
+				strtext = strtext.replace(/\r/g, "");
+			}
+
 			if (displaytype == "decoratetext") {
 				text_elem.decoration = null;
-				text_elem.setElementDecorateText(this._display_text);
+				text_elem.setElementDecorateText(strtext);
 			}
 			else {
 				text_elem.decoration = "";
 				text_elem.text = null;
-				text_elem.setElementText(this._display_text);
+				text_elem.setElementText(strtext);
 			}
 		}
 	};
@@ -919,6 +971,13 @@ if (!nexacro.Grid) {
 		var text_elem = this._text_elem;
 		if (text_elem) {
 			text_elem.setElementFont(font);
+		}
+	};
+
+	_pGridCell.on_apply_style_letterspace = function (letterspace) {
+		var text_elem = this._text_elem;
+		if (text_elem) {
+			text_elem.setElementLetterSpace(letterspace);
 		}
 	};
 
@@ -1004,7 +1063,7 @@ if (!nexacro.Grid) {
 			if (!upelem) {
 				this._is_real_upelem = upelem;
 			}
-			if (nexacro.Browser == "IE" && !is_inGridElem) {
+			if ((nexacro.Browser == "Edge" || nexacro.Browser == "IE") && !is_inGridElem) {
 				if (grid._showEditing && canvasX >= 0 && canvasX < this._adjust_width && canvasY >= 0 && canvasY < this._adjust_height) {
 					grid._lastmouseentercell = this;
 					this._clickcall = true;
@@ -1056,7 +1115,7 @@ if (!nexacro.Grid) {
 				grid._mouseovercell = this;
 			}
 
-			if (nexacro.Browser == "IE") {
+			if (nexacro.Browser == "Edge" || nexacro.Browser == "IE") {
 				this.on_apply_custom_pseudo("mouseover");
 			}
 
@@ -1387,12 +1446,6 @@ if (!nexacro.Grid) {
 		if (!alreadyclick) {
 			if (target && target.row == datarow && target.cell == cellinfo._cellidx) {
 				cell.on_fire_onclick(button, altKey, ctrlKey, shiftKey, screenX, screenY, canvasX, canvasY, clientX, clientY, obj, from_refer_comp, "treebutton", true);
-				if (cell._is_alive == false) {
-					if (!grid._after_recreate_contents_all) {
-						grid._after_recreate_contents_all = [true, true, true, true];
-					}
-					cell._on_last_lbuttonup();
-				}
 				grid._treetarget = null;
 			}
 			else {
@@ -1488,7 +1541,7 @@ if (!nexacro.Grid) {
 		}
 
 		var clickitem = "";
-		var size = nexacro._getTextSize2(text, comp.currentstyle.font);
+		var size = nexacro._getTextSize2(comp.currentstyle.letterspace, text, comp.currentstyle.font);
 		var clientXY = comp._getClientXY(canvasX, canvasY);
 		var halign, valign;
 		var include = false;
@@ -1538,22 +1591,24 @@ if (!nexacro.Grid) {
 
 	_pGridCell._clickitem = "";
 	_pGridCell._on_click = function (elem, button, alt_key, ctrl_key, shift_key, canvasX, canvasY, screenX, screenY) {
-		if (elem instanceof nexacro.ControlElement) {
-			this._clickitem = "border";
-		}
-		else if (elem instanceof nexacro.TextBoxElement) {
-			var halign, valign;
-
-			if (elem.align) {
-				halign = elem.align._halign;
-				valign = elem.align._valign;
+		if (!this._hideInner) {
+			if (elem instanceof nexacro.ControlElement) {
+				this._clickitem = "border";
 			}
-			else if (elem.halign && elem.valign) {
-				halign = elem.halign;
-				valign = elem.valign;
-			}
+			else if (elem instanceof nexacro.TextBoxElement) {
+				var halign, valign;
 
-			this._clickitem = this._getClickItem(halign, valign, canvasX, canvasY, elem.text, this);
+				if (elem.align) {
+					halign = elem.align._halign;
+					valign = elem.align._valign;
+				}
+				else if (elem.halign && elem.valign) {
+					halign = elem.halign;
+					valign = elem.valign;
+				}
+
+				this._clickitem = this._getClickItem(halign, valign, canvasX, canvasY, elem.text, this);
+			}
 		}
 
 		var retn = nexacro.Component.prototype._on_click.call(this, elem, button, alt_key, ctrl_key, shift_key, canvasX, canvasY, screenX, screenY);
@@ -1601,7 +1656,7 @@ if (!nexacro.Grid) {
 
 		if (this._band) {
 			this._is_clickproc = true;
-			if (nexacro.Browser == "IE") {
+			if (nexacro.Browser == "Edge" || nexacro.Browser == "IE") {
 				if (!(this._grid.onlbuttondown && this._grid.onlbuttondown.defaultprevented == true) || (this._grid.onlbuttonup && this._grid.onlbuttonup.defaultprevented == true)) {
 					if (!this._grid._showEditing) {
 						this._setFocus(false);
@@ -1671,7 +1726,7 @@ if (!nexacro.Grid) {
 		}
 
 		if (this._band) {
-			nexacro._fireBeforeDblclick(this, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, from_comp, from_refer_comp);
+			nexacro._fireBeforeDblclick(from_refer_comp, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, from_comp, from_refer_comp);
 
 			if (clickitem == undefined) {
 				clickitem = "";
@@ -1742,11 +1797,19 @@ if (!nexacro.Grid) {
 	_pGridCell._hideInnerElement = function () {
 		this.getElement().setContainerVisible(false);
 		this._hideInner = true;
+
+		if (this._expandCtrl) {
+			this._expandCtrl.set_visible(false);
+		}
 	};
 
 	_pGridCell._showInnerElement = function () {
 		this.getElement().setContainerVisible(true);
 		this._hideInner = false;
+
+		if (this._expandCtrl) {
+			this._expandCtrl.set_visible(true);
+		}
 	};
 
 	_pGridCell._createDisplayer = function (displayType) {
@@ -1986,6 +2049,10 @@ if (!nexacro.Grid) {
 	};
 
 	_pGridCell._updateAll = function (pseudo, onlycontents) {
+		if (!this._is_alive) {
+			return;
+		}
+
 		this._rowidx = this.parent._rowidx;
 
 		var control_elem = this.getElement();
@@ -1996,7 +2063,7 @@ if (!nexacro.Grid) {
 
 			var grid = this._grid;
 			var show = this._disp_show = this._updateDisplayer();
-
+			var cellinfo = this._refobj;
 			var datarow = grid._getDataRow(this._rowidx);
 
 			if (grid._currentCellRow >= 0) {
@@ -2040,21 +2107,21 @@ if (!nexacro.Grid) {
 				}
 			}
 			else {
-				if (grid._is_use_suppress) {
-					if (this._band.id == "body" && this._refobj.suppressalign.indexOf("over") > 0) {
+				if (grid._is_use_suppress && cellinfo._getSuppress(datarow) != 0) {
+					if (this._band.id == "body" && cellinfo.suppressalign.indexOf("over") > 0) {
 						this._hideInnerElement();
 					}
 					else {
 						if (show) {
 							var suppinfo = this._getSuppressInfo();
-							this._text_proc = suppinfo.text_proc;
-							this._border_proc = suppinfo.border_proc;
 
-							if (suppinfo.text_proc != 0) {
-								this._hideInnerElement();
-							}
-							else {
-								this._showInnerElement();
+							if (suppinfo) {
+								if (suppinfo.text_proc != 0) {
+									this._hideInnerElement();
+								}
+								else {
+									this._showInnerElement();
+								}
 							}
 						}
 					}
@@ -2071,8 +2138,8 @@ if (!nexacro.Grid) {
 			}
 
 			if (grid._isFakeCell(datarow) == false) {
-				if (this._refobj._getSuppress(datarow) == 0) {
-					var remove = grid._checkFakeMerge(this._refobj, datarow);
+				if (cellinfo._getSuppress(datarow) == 0) {
+					var remove = grid._checkFakeMerge(cellinfo, datarow);
 
 					if (remove) {
 						this._hideInnerElement();
@@ -2082,17 +2149,32 @@ if (!nexacro.Grid) {
 					}
 				}
 			}
-
-			if (nexacro._enableaccessibility && nexacro._accessibilitytype == 4 && this._is_created) {
-				var label = this._getAccessibilityMakeAddLabel();
-				label = label + " " + this._getCellAccessibilityLabel();
-				this._setAccessibilityLabel(label);
-			}
 		}
 	};
 
 	_pGridCell._getSuppressInfo = function () {
-		return this._refobj._getSuppressInfo(this._getDisplayRowIdx());
+		var grid = this._grid;
+		var row2;
+
+		if (grid._fixed_rowcnt > 0) {
+			if (grid._fixed_endrow >= this._rowidx) {
+				row2 = grid._fixed_startrow;
+			}
+			else {
+				row2 = grid._toprowpos[0] - (grid._fixed_rowcnt - grid._fixed_startrow);
+			}
+		}
+		else {
+			row2 = grid._toprowpos[0];
+		}
+
+		var row = this._rowidx - row2;
+
+		if (this._rowidx >= 0 && row < 0) {
+			return null;
+		}
+
+		return this._refobj._getSuppressInfo(row);
 	};
 
 	_pGridCell._getAvailableRect = function () {
@@ -2368,9 +2450,9 @@ if (!nexacro.Grid) {
 
 		if (expand_ctrl) {
 			var left = expand_ctrl.left;
-			var top = this._client_top;
+			var top = 0;
 			var width = expand_ctrl.width;
-			var height = rc.height;
+			var height = this._adjust_height;
 
 			expand_ctrl._applysetPosition(left, top, width, height);
 		}
@@ -2384,17 +2466,12 @@ if (!nexacro.Grid) {
 		return this._rowidx - this._grid._getBodyBegRowPos(this._rowidx);
 	};
 
-	_pGridCell._isSelected = function () {
-		return (this._selected && this._grid.useselcolor);
+	_pGridCell._is_Selected = function () {
+		return (this.selected && this._grid.useselcolor);
 	};
 
 	_pGridCell._getResultPseudo = function (status, pseudo) {
-		if (this._isSelected()) {
-			pseudo = "selected";
-		}
-		else {
-			pseudo = nexacro.Component._status_table[status + "_" + pseudo];
-		}
+		pseudo = nexacro.Component._status_table[status + "_" + pseudo];
 
 		var grid = this._grid;
 
@@ -2413,14 +2490,8 @@ if (!nexacro.Grid) {
 			pseudo = "normal";
 		}
 		else {
-			if (grid.useselcolor == false && this._selected) {
-				if (grid._mouseovercell == this) {
-					pseudo = "mouseover";
-				}
-			}
-
 			var mouseRowPos = grid._mouseRowPos;
-			if (mouseRowPos == datarow && pseudo == "normal" && this._isSelected() == false) {
+			if (mouseRowPos == datarow && pseudo == "normal") {
 				pseudo = "mouseover";
 			}
 		}
@@ -2505,13 +2576,13 @@ if (!nexacro.Grid) {
 				if (h < band._client_height) {
 					if (t < 0) {
 						if (vscroll._isEnable()) {
-							vscroll.set_pixelpos(vscroll._pos + t);
+							vscroll._set_pixelpos(vscroll._pos + t);
 						}
 					}
 					else if (b > band._client_height) {
 						var gab = b - band._client_height;
 						if (vscroll._isEnable()) {
-							vscroll.set_pixelpos(vscroll._pos + gab);
+							vscroll._set_pixelpos(vscroll._pos + gab);
 						}
 					}
 				}
@@ -2535,7 +2606,7 @@ if (!nexacro.Grid) {
 			return;
 		}
 
-		if (editType == "checkbox") {
+		if (editType == "checkbox" && nexacro._toBoolean(grid.readonly) == false) {
 			if (this._curDisplayType != "checkbox") {
 				grid._toggleVal(datarow, this._refobj);
 			}
@@ -2645,7 +2716,7 @@ if (!nexacro.Grid) {
 		};
 	};
 
-	_pGridCell._showEditor = function (flag, focus) {
+	_pGridCell._showEditor = function (flag, focus, show) {
 		var textCtrl = this._text_elem;
 		var cellinfo = this._refobj;
 		var grid = this._grid;
@@ -2656,6 +2727,10 @@ if (!nexacro.Grid) {
 		grid._currentCellRow = datarow;
 
 		if (!flag) {
+			if (show) {
+				this._showfull();
+			}
+
 			if (this._grid._showEditing) {
 				this._grid._hideEditor();
 			}
@@ -2676,7 +2751,15 @@ if (!nexacro.Grid) {
 				editComp._setFocus(false);
 			}
 
-			editComp._stat_change("focus", "focused");
+			if (grid.autoenter == "select" && grid._lbuttondown_proc) {
+				editComp._user_push = true;
+				editComp._stat_change("focus", "pushed");
+				editComp._is_pushed_area = true;
+				editComp._is_push = true;
+			}
+			else {
+				editComp._stat_change("focus", "focused");
+			}
 		}
 		else {
 			if (this._subComp) {
@@ -2782,6 +2865,7 @@ if (!nexacro.Grid) {
 				text_elem.setElementFont(curstyle.font);
 				text_elem.setElementColor(curstyle.color);
 				text_elem.setElementAlignXY(halign, valign);
+				text_elem.setElementLetterSpace(curstyle.letterspace);
 			}
 			if (this._imagetext) {
 				this._setExpandImg(this._imagetext);
@@ -2840,6 +2924,61 @@ if (!nexacro.Grid) {
 
 		this._setAccessibilityLabel(label);
 		nexacro.Component.prototype._setAccessibilityStatFocus.call(this);
+	};
+
+	_pGridExpand._find_pseudo_obj = function (styleProp, pseudo, returnType, ctrl) {
+		if (!ctrl) {
+			return nexacro.Component.prototype._find_pseudo_obj.call(this, styleProp, pseudo, returnType);
+		}
+
+		var cellinfo = this._cellinfo;
+		var grid = this._grid;
+		var datarow = grid._getDataRow(this._cellobj._rowidx);
+
+		if (this._cellobj && this._grid._isFakeCell(datarow) && pseudo != "disabled") {
+			pseudo = "normal";
+		}
+
+		datarow = grid._getDataRow(this._cellobj._rowidx);
+		var controlProp = "control" + styleProp;
+		var v = cellinfo._query_pseudo_control(this, datarow, controlProp, styleProp, pseudo, returnType);
+		return v;
+	};
+
+	_pGridExpand.on_find_CurrentStyle_background = function (pseudo) {
+		var v = this._find_pseudo_obj("background", pseudo, "background", true);
+		if (!v) {
+			v = this._cellobj.on_find_CurrentStyle_background(this._cellobj._pseudo);
+		}
+
+		return (v) ? v : nexacro.Component._default_color;
+	};
+
+	_pGridExpand.on_find_CurrentStyle_color = function (pseudo) {
+		var v = this._find_pseudo_obj("color", pseudo, "color", true);
+		if (!v) {
+			v = this._cellobj.on_find_CurrentStyle_color(this._cellobj._pseudo);
+		}
+
+		return (v) ? v : nexacro.Component._default_color;
+	};
+
+	_pGridExpand.on_find_CurrentStyle_font = function (pseudo) {
+		var v = this._find_pseudo_obj("font", pseudo, "font", true);
+		if (!v) {
+			v = this._cellobj.on_find_CurrentStyle_font(this._cellobj._pseudo);
+		}
+
+		return (v) ? v : nexacro.Component._default_font;
+	};
+
+	_pGridExpand.on_find_CurrentStyle_letterspace = function (pseudo) {
+		var v = this._find_pseudo_obj("letterspace", pseudo, "letterspace");
+		if (!v) {
+			v = this._cellobj.on_find_CurrentStyle_letterspace(this._cellobj._pseudo);
+		}
+
+		return (v) ? v : nexacro.Component._default_letterspace;
 	};
 
 	_pGridExpand.on_get_style_accessibility_description = function () {
@@ -2978,15 +3117,17 @@ if (!nexacro.Grid) {
 			var grid = this._grid;
 			var datarow = grid._getDataRow(this._cellobj._rowidx);
 
-			this.on_apply_pseudo(this._pseudo);
+			this._control_pseudo = "";
+			this._contents_pseudo = "";
+			this.on_apply_pseudo(this._cellobj._pseudo);
 
 			var v = this._cellinfo._getAttrValue(this._cellinfo.expandimage, datarow);
 			this._setExpandImg(v);
 			v = this._cellinfo._getAttrValue(this._cellinfo.expandchar, datarow);
 			this._setExpandText(v);
-			v = this._cellobj.on_find_CurrentStyle_font(this._cellobj._pseudo);
+			v = this.on_find_CurrentStyle_font(this._cellobj._pseudo);
 			this._setFont(v);
-			v = this._cellobj.on_find_CurrentStyle_color(this._cellobj._pseudo);
+			v = this.on_find_CurrentStyle_color(this._cellobj._pseudo);
 			this._setColor(v);
 			this._setAlign("center", "middle");
 			this._setPositionEx();
@@ -3009,7 +3150,7 @@ if (!nexacro.Grid) {
 				val = nexacro._getURIValue(val);
 				val = nexacro._getImageLocation(val, this._getRefFormBaseUrl());
 
-				var size = nexacro._getImageSize(val, this._on_loadImg, this);
+				var size = nexacro._getImageSize(val, this._on_loadImg, this, undefined, image);
 				if (size) {
 					this._image_width = size.width;
 					this._image_height = size.height;
@@ -3046,6 +3187,7 @@ if (!nexacro.Grid) {
 					elem.setElementFont(curstyle.font);
 					elem.setElementColor(curstyle.color);
 					elem.setElementAlignXY(halign, valign);
+					elem.setElementLetterSpace(curstyle.letterspace);
 					elem.create();
 				}
 
@@ -3076,6 +3218,12 @@ if (!nexacro.Grid) {
 		if (elem) {
 			elem.setElementAlignXY(halign, valign);
 		}
+	};
+
+	_pGridExpand.set_visible = function (v) {
+		v = v && !this._cellobj._hideInner;
+
+		nexacro.Component.prototype.set_visible.call(this, v);
 	};
 	delete _pGridExpand;
 
@@ -3213,6 +3361,23 @@ if (!nexacro.Grid) {
 		return null;
 	};
 
+	_pGridButton.on_find_CurrentStyle_letterspace = function (pseudo) {
+		var cellinfo = this._cellinfo;
+		var cellobj = this._cellobj;
+		if (cellinfo && cellobj) {
+			var letterspace = this._find_pseudo_obj("letterspace", pseudo, "letterspace");
+			var grid = this._grid;
+			var datarow = grid._getDataRow(cellobj._rowidx);
+
+			if (!letterspace) {
+				letterspace = cellinfo._query_pseudo_letterspace(datarow, cellobj._curDisplayType, pseudo);
+			}
+
+			return letterspace;
+		}
+		return null;
+	};
+
 	_pGridButton.on_find_CurrentStyle_gradation = function (pseudo) {
 		var cellinfo = this._cellinfo;
 		var cellobj = this._cellobj;
@@ -3246,11 +3411,6 @@ if (!nexacro.Grid) {
 
 	_pGridButton._find_pseudo_obj = function (styleProp, pseudo, returnType) {
 		var cellinfo = this._cellinfo;
-		if (this._displaymode == true) {
-			if (pseudo != "disabled") {
-				pseudo = "normal";
-			}
-		}
 		var grid = this._grid;
 		var datarow = grid._getDataRow(this._cellobj._rowidx);
 
@@ -3476,7 +3636,7 @@ if (!nexacro.Grid) {
 	};
 
 	_pGridButton._updateAll = function () {
-		this.on_apply_pseudo(this._pseudo);
+		this.on_apply_pseudo(this._cellobj._pseudo);
 		this._setProperty();
 	};
 
@@ -3531,10 +3691,27 @@ if (!nexacro.Grid) {
 			var datarow = grid._getDataRow(cellobj._rowidx);
 
 			if (!font) {
-				font = cellinfo._query_pseudo_font(datarow, cellobj._selected, pseudo);
+				font = cellinfo._query_pseudo_font(datarow, cellobj.selected, pseudo);
 			}
 
 			return font;
+		}
+		return null;
+	};
+
+	_pGridBar.on_find_CurrentStyle_letterspace = function (pseudo) {
+		var cellinfo = this._cellinfo;
+		var cellobj = this._cellobj;
+		if (cellinfo && cellobj) {
+			var letterspace = this._find_inherit_pseudo_obj("letterspace", pseudo, "letterspace");
+			var grid = this._grid;
+			var datarow = grid._getDataRow(cellobj._rowidx);
+
+			if (!letterspace) {
+				letterspace = cellinfo._query_pseudo_letterspace(datarow, cellobj.selected, pseudo);
+			}
+
+			return letterspace;
 		}
 		return null;
 	};
@@ -3549,7 +3726,7 @@ if (!nexacro.Grid) {
 			var datarow = grid._getDataRow(cellobj._rowidx);
 
 			if (!color) {
-				color = cellinfo._query_pseudo_color(datarow, odd, cellobj._selected, pseudo);
+				color = cellinfo._query_pseudo_color(datarow, odd, cellobj.selected, pseudo);
 			}
 			return color;
 		}
@@ -3739,6 +3916,7 @@ if (!nexacro.Grid) {
 					text_elem.setElementColor(this.currentstyle.color);
 					text_elem.setElementFont(this.currentstyle.font);
 					text_elem.setElementAlignXY(halign, valign);
+					text_elem.setElementLetterSpace(this.currentstyle.letterspace);
 					text_elem.create();
 				}
 			}
@@ -3747,6 +3925,7 @@ if (!nexacro.Grid) {
 				var valign = (!align || align.valign == "") ? "middle" : align._valign;
 				text_elem.setElementColor(this.currentstyle.color);
 				text_elem.setElementFont(this.currentstyle.font);
+				text_elem.setElementLetterSpace(this.currentstyle.letterspace);
 				text_elem.setElementAlignXY(halign, valign);
 			}
 			this._text_elem.setElementText(this._display_text);
@@ -3782,7 +3961,7 @@ if (!nexacro.Grid) {
 
 	_pGridBar._updateAll = function () {
 		if (this.getElement()) {
-			this.on_apply_pseudo(this._pseudo);
+			this.on_apply_pseudo(this._cellobj._pseudo);
 			this._setProperty();
 		}
 	};
@@ -3873,6 +4052,28 @@ if (!nexacro.Grid) {
 			}
 
 			return font;
+		}
+		return null;
+	};
+
+	_pGridEdit.on_find_CurrentStyle_letterspace = function (pseudo) {
+		var cellinfo = this._cellinfo;
+		var cellobj = this._cellobj;
+
+		if (cellinfo && cellobj) {
+			if (this._displaymode) {
+				if (pseudo != "disabled") {
+					pseudo = "normal";
+				}
+			}
+
+			var letterspace = this._find_inherit_pseudo_obj("letterspace", pseudo);
+
+			if (!letterspace) {
+				letterspace = cellobj.on_find_CurrentStyle_letterspace(pseudo);
+			}
+
+			return letterspace;
 		}
 		return null;
 	};
@@ -3986,13 +4187,13 @@ if (!nexacro.Grid) {
 
 	_pGridEdit._find_pseudo_obj = function (styleProp, pseudo, returnType) {
 		var cellinfo = this._cellinfo;
-		if (this._displaymode == true) {
-			if (pseudo != "disabled") {
-				pseudo = "normal";
-			}
-		}
 		var grid = this._grid;
 		var datarow = grid._getDataRow(this._cellobj._rowidx);
+
+		if (this._cellobj && this._grid._isFakeCell(datarow) && pseudo != "disabled") {
+			pseudo = "normal";
+		}
+
 		var controlProp = "control" + styleProp;
 		var v = cellinfo._query_pseudo_control(this, datarow, controlProp, styleProp, pseudo, returnType);
 		return v;
@@ -4335,7 +4536,7 @@ if (!nexacro.Grid) {
 
 	_pGridEdit._updateAll = function () {
 		if (this.getElement()) {
-			this.on_apply_pseudo(this._pseudo);
+			this.on_apply_pseudo(this._cellobj._pseudo);
 			this._setProperty();
 		}
 	};
@@ -4488,6 +4689,7 @@ if (!nexacro.Grid) {
 			this._grid = parent;
 		}
 		this._absolutelyValue = false;
+		this._is_use_ex_enter = true;
 	};
 
 	var _pGridTextArea = nexacro._createPrototype(nexacro.TextAreaCtrl, nexacro.GridControlTextArea);
@@ -4642,11 +4844,6 @@ if (!nexacro.Grid) {
 
 	_pGridTextArea._find_pseudo_obj = function (styleProp, pseudo, returnType) {
 		var cellinfo = this._cellinfo;
-		if (this._displaymode == true) {
-			if (pseudo != "disabled") {
-				pseudo = "normal";
-			}
-		}
 		var grid = this._grid;
 		var datarow = grid._getDataRow(this._cellobj._rowidx);
 
@@ -5004,7 +5201,7 @@ if (!nexacro.Grid) {
 
 	_pGridTextArea._updateAll = function () {
 		if (this.getElement()) {
-			this.on_apply_pseudo(this._pseudo);
+			this.on_apply_pseudo(this._cellobj._pseudo);
 			this._setProperty();
 		}
 	};
@@ -5076,6 +5273,10 @@ if (!nexacro.Grid) {
 	};
 
 	_pGridTextArea._setDataset = function (async, row) {
+		if (this.readonly) {
+			return false;
+		}
+
 		var cellobj = this._cellobj;
 		var cellinfo = this._cellinfo;
 		var grid = this._grid;
@@ -5194,6 +5395,28 @@ if (!nexacro.Grid) {
 			}
 
 			return font;
+		}
+		return null;
+	};
+
+	_pGridMaskEdit.on_find_CurrentStyle_letterspace = function (pseudo) {
+		var cellinfo = this._cellinfo;
+		var cellobj = this._cellobj;
+
+		if (cellinfo && cellobj) {
+			if (this._displaymode) {
+				if (pseudo != "disabled") {
+					pseudo = "normal";
+				}
+			}
+
+			var letterspace = this._find_inherit_pseudo_obj("letterspace", pseudo);
+
+			if (!letterspace) {
+				letterspace = cellobj.on_find_CurrentStyle_letterspace(pseudo);
+			}
+
+			return letterspace;
 		}
 		return null;
 	};
@@ -5572,7 +5795,7 @@ if (!nexacro.Grid) {
 	_pGridMaskEdit._updateAll = function () {
 		if (this.getElement()) {
 			this._setProperty();
-			this.on_apply_pseudo(this._pseudo);
+			this.on_apply_pseudo(this._cellobj._pseudo);
 		}
 	};
 
@@ -5702,9 +5925,13 @@ if (!nexacro.Grid) {
 	};
 
 	var _pGridCalendar = nexacro._createPrototype(nexacro.CalendarCtrl, nexacro.GridControlCalendar);
-
 	nexacro.GridControlCalendar.prototype = _pGridCalendar;
 
+	nexacro.GridControlCalendar._defaultButtonsize = nexacro._getCachedStyleObj("buttonsize", 24);
+
+	_pGridCalendar.on_find_CurrentStyle_buttonsize = function (pseudo) {
+		return nexacro.GridControlCalendar._defaultButtonsize;
+	};
 
 	_pGridCalendar.on_find_CurrentStyle_align = function (pseudo, childctrl) {
 		var cellinfo = this._cellinfo;
@@ -5736,6 +5963,23 @@ if (!nexacro.Grid) {
 			}
 
 			return font;
+		}
+		return null;
+	};
+
+	_pGridCalendar.on_find_CurrentStyle_letterspace = function (pseudo, childctrl) {
+		var cellinfo = this._cellinfo;
+		var cellobj = this._cellobj;
+		if (cellinfo && cellobj) {
+			var letterspace = this._find_pseudo_obj("letterspace", pseudo, "letterspace", childctrl);
+			var grid = this._grid;
+			var datarow = grid._getDataRow(cellobj._rowidx);
+
+			if (!letterspace) {
+				letterspace = cellobj.on_find_CurrentStyle_letterspace(pseudo);
+			}
+
+			return letterspace;
 		}
 		return null;
 	};
@@ -5792,12 +6036,6 @@ if (!nexacro.Grid) {
 
 	_pGridCalendar._find_pseudo_obj = function (styleProp, pseudo, returnType, childctrl) {
 		var cellinfo = this._cellinfo;
-		if (this._displaymode == true) {
-			if (pseudo != "disabled") {
-				pseudo = "normal";
-			}
-		}
-
 		var v;
 		if (styleProp == "dayborder" || styleProp == "daybordertype" || styleProp == "daybackground" || styleProp == "daycolor" || styleProp == "dayfont" || styleProp == "daygradation") {
 			v = nexacro.CalendarCtrl.prototype._find_pseudo_obj.call(this, styleProp, pseudo, returnType);
@@ -5859,10 +6097,13 @@ if (!nexacro.Grid) {
 
 	_pGridCalendar.set_innerdataset = function (str) {
 		var ret = nexacro.CalendarCtrl.prototype.set_innerdataset.call(this, str);
-		var grid = this._grid;
-		if (grid) {
-			for (var i = 0; i < grid.getCellCount("body"); i++) {
-				grid.setCellProperty("body", i, "calendarinnerdataset", str);
+
+		if (this._controlmode) {
+			var grid = this._grid;
+			if (grid) {
+				for (var i = 0; i < grid.getCellCount("body"); i++) {
+					grid.setCellProperty("body", i, "calendarinnerdataset", str);
+				}
 			}
 		}
 		return ret;
@@ -5870,42 +6111,56 @@ if (!nexacro.Grid) {
 
 	_pGridCalendar.set_backgroundcolumn = function (str) {
 		nexacro.CalendarCtrl.prototype.set_backgroundcolumn.call(this, str);
-		var grid = this._grid;
-		if (grid) {
-			for (var i = 0; i < grid.getCellCount("body"); i++) {
-				grid.setCellProperty("body", i, "calendarbackgroundcolumn", str);
+		if (this._controlmode) {
+			var grid = this._grid;
+			if (grid) {
+				for (var i = 0; i < grid.getCellCount("body"); i++) {
+					grid.setCellProperty("body", i, "calendarbackgroundcolumn", str);
+				}
 			}
 		}
 	};
 
 	_pGridCalendar.set_bordercolumn = function (str) {
 		nexacro.CalendarCtrl.prototype.set_bordercolumn.call(this, str);
-		var grid = this._grid;
-		if (grid) {
-			for (var i = 0; i < grid.getCellCount("body"); i++) {
-				grid.setCellProperty("body", i, "calendarbordercolumn", str);
+		if (this._controlmode) {
+			var grid = this._grid;
+			if (grid) {
+				for (var i = 0; i < grid.getCellCount("body"); i++) {
+					grid.setCellProperty("body", i, "calendarbordercolumn", str);
+				}
 			}
 		}
 	};
 
 	_pGridCalendar.set_datecolumn = function (str) {
 		nexacro.CalendarCtrl.prototype.set_datecolumn.call(this, str);
-		var grid = this._grid;
-		if (grid) {
-			for (var i = 0; i < grid.getCellCount("body"); i++) {
-				grid.setCellProperty("body", i, "calendardatecolumn", str);
+		if (this._controlmode) {
+			var grid = this._grid;
+			if (grid) {
+				for (var i = 0; i < grid.getCellCount("body"); i++) {
+					grid.setCellProperty("body", i, "calendardatecolumn", str);
+				}
 			}
 		}
 	};
 
 	_pGridCalendar.set_textcolorcolumn = function (str) {
 		nexacro.CalendarCtrl.prototype.set_textcolorcolumn.call(this, str);
-		var grid = this._grid;
-		if (grid) {
-			var cellinfo = null;
-			for (var i = 0; i < grid.getCellCount("body"); i++) {
-				grid.setCellProperty("body", i, "calendartextcolorcolumn", str);
+		if (this._controlmode) {
+			var grid = this._grid;
+			if (grid) {
+				var cellinfo = null;
+				for (var i = 0; i < grid.getCellCount("body"); i++) {
+					grid.setCellProperty("body", i, "calendartextcolorcolumn", str);
+				}
 			}
+		}
+	};
+
+	_pGridCalendar.on_apply_custom_setfocus = function (evt_name) {
+		if (!this._displaymode) {
+			return nexacro.Calendar.prototype.on_apply_custom_setfocus.call(this, evt_name);
 		}
 	};
 
@@ -6115,15 +6370,12 @@ if (!nexacro.Grid) {
 			clickitem = "control";
 		}
 
-		return this._cellobj.on_fire_onclick(e.button, e.alt_key, e.ctrl_key, e.shift_key, e.screenX, e.screenY, e.canvasX, e.canvasY, e.clientX, e.clientY, e.fromobject, e.fromreferenceobject, clickitem);
-	};
+		var padding = this._cellobj.currentstyle.padding;
+		var canvasX = e.canvasX + (padding ? padding.left : 0);
+		var canvasY = e.canvasY + (padding ? padding.top : 0);
+		var clientXY = this._getClientXY(canvasX, canvasY);
 
-	_pGridCalendar.on_lbuttondown_basic_action = function (elem, button, alt_key, ctrl_key, shift_key, canvasX, canvasY, screenX, screenY, event_bubbles, fire_comp, refer_comp, bubble_scope) {
-		var retn = nexacro.Component.prototype.on_lbuttondown_basic_action.call(this, elem, button, alt_key, ctrl_key, shift_key, canvasX, canvasY, screenX, screenY, event_bubbles, fire_comp, refer_comp, bubble_scope);
-		if (this._isPopupVisible() && this == refer_comp) {
-			this._closePopup();
-		}
-		return retn;
+		return this._cellobj.on_fire_onclick(e.button, e.alt_key, e.ctrl_key, e.shift_key, e.screenX, e.screenY, canvasX, canvasY, clientXY[0], clientXY[1], e.fromobject, e.fromreferenceobject, clickitem);
 	};
 
 	_pGridCalendar._on_click = function (elem, button, alt_key, ctrl_key, shift_key, canvasX, canvasY, screenX, screenY) {
@@ -6169,7 +6421,7 @@ if (!nexacro.Grid) {
 
 	_pGridCalendar._updateAll = function () {
 		if (this.getElement()) {
-			this.on_apply_pseudo(this._pseudo);
+			this.on_apply_pseudo(this._cellobj._pseudo);
 			this._setProperty();
 		}
 	};
@@ -6189,7 +6441,7 @@ if (!nexacro.Grid) {
 			this.set_dateformat(v);
 		}
 
-		var v = cellinfo._getValue(datarow);
+		var v = org_v = cellinfo._getValue(datarow);
 		if (this._displaymode == true && !v) {
 			v = cellinfo._getDisplayText(datarow);
 			v = this._makeNormalValue1(v);
@@ -6219,6 +6471,22 @@ if (!nexacro.Grid) {
 			v = cellinfo._getAttrValue(cellinfo.calendardisplaynulltext, datarow);
 			if (v != null) {
 				this.set_displaynulltext(v);
+			}
+		}
+		var calendardisplaynulltype = cellinfo._getAttrValue(cellinfo.calendardisplaynulltype, datarow);
+		if (calendardisplaynulltype != "default" && (nexacro._isNull(org_v) || org_v === "")) {
+			if (calendardisplaynulltype == "nulltext") {
+				this.set_dateformat("");
+			}
+			else {
+				if (calendardisplaynulltype == "nullmask") {
+					v = this._toValueStr(null);
+					this.set_value(v, true);
+				}
+				else {
+					this.set_dateformat("");
+				}
+				this.set_displaynulltext("");
 			}
 		}
 
@@ -6285,12 +6553,24 @@ if (!nexacro.Grid) {
 			cellinfo.grid._binddataset._setColumn(datarow, cellinfo.text._bindexpr, v, fail);
 
 			if (fail.status == "cancolumnchange") {
+				this._setValue(undefined);
 				retn = false;
 			}
-
 			this._grid._dsEventOccured = false;
 		}
 		return retn;
+	};
+
+	_pGridCalendar._getDlgCode = function (keycode, altKey, ctrlKey, shiftKey) {
+		var _want_arrows = this._want_arrows;
+		this._is_first_focus = false;
+		return {
+			want_tab : this._grid._acceptstab, 
+			want_return : false, 
+			want_escape : false, 
+			want_chars : false, 
+			want_arrows : _want_arrows
+		};
 	};
 
 	delete _pGridCalendar;
@@ -6353,6 +6633,23 @@ if (!nexacro.Grid) {
 			}
 
 			return font;
+		}
+		return null;
+	};
+
+	_pGridCombo.on_find_CurrentStyle_letterspace = function (pseudo, childctrl) {
+		var cellinfo = this._cellinfo;
+		var cellobj = this._cellobj;
+		if (cellinfo && cellobj) {
+			var letterspace = this._find_pseudo_obj("letterspace", pseudo, "letterspace", childctrl);
+			var grid = this._grid;
+			var datarow = grid._getDataRow(cellobj._rowidx);
+
+			if (!letterspace) {
+				letterspace = cellobj.on_find_CurrentStyle_letterspace(pseudo);
+			}
+
+			return letterspace;
 		}
 		return null;
 	};
@@ -6447,13 +6744,13 @@ if (!nexacro.Grid) {
 
 	_pGridCombo._find_pseudo_obj = function (styleProp, pseudo, returnType, childctrl) {
 		var cellinfo = this._cellinfo;
-		if (this._displaymode == true) {
-			if (pseudo != "disabled") {
-				pseudo = "normal";
-			}
-		}
 		var grid = this._grid;
 		var datarow = grid._getDataRow(this._cellobj._rowidx);
+
+		if (this._cellobj && this._grid._isFakeCell(datarow) && pseudo != "disabled") {
+			pseudo = "normal";
+		}
+
 		var controlProp = "control" + styleProp;
 		var v = cellinfo._query_pseudo_control(this, datarow, controlProp, styleProp, pseudo, returnType, childctrl);
 		return v;
@@ -6694,7 +6991,12 @@ if (!nexacro.Grid) {
 			clickitem = "control";
 		}
 
-		return this._cellobj.on_fire_onclick(e.button, e.alt_key, e.ctrl_key, e.shift_key, e.screenX, e.screenY, e.canvasX, e.canvasY, e.clientX, e.clientY, e.fromobject, e.fromreferenceobject, clickitem);
+		var padding = this._cellobj.currentstyle.padding;
+		var canvasX = e.canvasX + (padding ? padding.left : 0);
+		var canvasY = e.canvasY + (padding ? padding.top : 0);
+		var clientXY = this._getClientXY(canvasX, canvasY);
+
+		return this._cellobj.on_fire_onclick(e.button, e.alt_key, e.ctrl_key, e.shift_key, e.screenX, e.screenY, canvasX, canvasY, clientXY[0], clientXY[1], e.fromobject, e.fromreferenceobject, clickitem);
 	};
 
 	_pGridCombo.on_lbuttondown_basic_action = function (elem, button, alt_key, ctrl_key, shift_key, canvasX, canvasY, screenX, screenY, event_bubbles, fire_comp, refer_comp, bubble_scope) {
@@ -6748,7 +7050,7 @@ if (!nexacro.Grid) {
 
 	_pGridCombo._updateAll = function () {
 		if (this.getElement()) {
-			this.on_apply_pseudo(this._pseudo);
+			this.on_apply_pseudo(this._cellobj._pseudo);
 			this._setProperty();
 		}
 	};
@@ -6837,13 +7139,25 @@ if (!nexacro.Grid) {
 				cellinfo.grid._binddataset._setColumn(datarow, cellinfo.text._bindexpr, v, fail);
 
 				if (fail.status == "cancolumnchange") {
+					this.set_value(undefined);
 					retn = false;
 				}
-
 				this._grid._dsEventOccured = false;
 			}
 		}
 		return retn;
+	};
+
+	_pGridCombo._getDlgCode = function (keycode, altKey, ctrlKey, shiftKey) {
+		var _want_arrows = this._want_arrows;
+		this._is_first_focus = false;
+		return {
+			want_tab : this._grid._acceptstab, 
+			want_return : false, 
+			want_escape : false, 
+			want_chars : false, 
+			want_arrows : _want_arrows
+		};
 	};
 
 	delete _pGridCombo;
@@ -6872,6 +7186,8 @@ if (!nexacro.Grid) {
 
 
 	_pGridCellCheckbox.on_find_CurrentStyle_font = function () {
+	};
+	_pGridCellCheckbox.on_find_CurrentStyle_letterspace = function () {
 	};
 	_pGridCellCheckbox.on_find_CurrentStyle_color = function () {
 	};
@@ -6906,6 +7222,8 @@ if (!nexacro.Grid) {
 	_pGridCellCheckbox.on_update_style_gradation = function () {
 	};
 	_pGridCellCheckbox.on_update_style_font = function () {
+	};
+	_pGridCellCheckbox.on_update_style_letterspace = function () {
 	};
 	_pGridCellCheckbox.on_update_style_padding = function () {
 	};
@@ -7116,7 +7434,7 @@ if (!nexacro.Grid) {
 	_pGridCellCheckbox._updateAll = function () {
 		if (this.getElement()) {
 			this._setProperty();
-			this.on_apply_pseudo(this._pseudo);
+			this.on_apply_pseudo(this._cellobj._pseudo);
 			this.set_value(this.checked);
 		}
 	};
@@ -7237,9 +7555,9 @@ if (!nexacro.Grid) {
 			if (cellinfo.text._bindtype == 1) {
 				grid._dsEventOccured = true;
 				if (cellinfo.grid._binddataset.setColumn(datarow, cellinfo.text._bindexpr, v)) {
+					v = this._getDisplayText();
 					this.set_value(v);
 				}
-
 				if (grid) {
 					grid._dsEventOccured = false;
 				}
@@ -7252,6 +7570,32 @@ if (!nexacro.Grid) {
 			return this.parent._getDisplayText();
 		}
 		return "";
+	};
+
+	_pGridCheckbox._on_bubble_mouseenter = function (elem, from_comp, button, alt_key, ctrl_key, shift_key, canvasX, canvasY, screenX, screenY, event_bubbles, fire_comp, refer_comp, bubble_scope) {
+		var call = true;
+		if (bubble_scope) {
+			call = this._cellobj._common_mouseenter();
+		}
+
+		if (call) {
+			nexacro.GridCellCheckbox.prototype._on_bubble_mouseenter.call(this, elem, from_comp, button, alt_key, ctrl_key, shift_key, canvasX, canvasY, screenX, screenY, event_bubbles, fire_comp, refer_comp, bubble_scope);
+		}
+
+		return true;
+	};
+
+	_pGridCheckbox._on_bubble_mouseleave = function (elem, to_comp, button, alt_key, ctrl_key, shift_key, canvasX, canvasY, screenX, screenY, event_bubbles, fire_comp, refer_comp, bubble_scope) {
+		var call = true;
+		if (bubble_scope) {
+			call = this._cellobj._common_mouseleave();
+		}
+
+		if (call) {
+			nexacro.GridCellCheckbox.prototype._on_bubble_mouseleave.call(this, elem, to_comp, button, alt_key, ctrl_key, shift_key, canvasX, canvasY, screenX, screenY, event_bubbles, fire_comp, refer_comp, bubble_scope);
+		}
+
+		return true;
 	};
 
 	delete _pGridCheckbox;
@@ -7267,6 +7611,7 @@ if (!nexacro.Grid) {
 		}
 		this._img_elem = null;
 		this._img_type = "url";
+		this._accessibility_role = "image";
 	};
 
 	var _pGridImage = nexacro._createPrototype(nexacro.Component, nexacro.GridControlImage);
@@ -7334,6 +7679,10 @@ if (!nexacro.Grid) {
 
 	_pGridImage.on_find_CurrentStyle_font = function (pseudo) {
 		return this._find_inherit_pseudo_obj("font", pseudo, "font");
+	};
+
+	_pGridImage.on_find_CurrentStyle_letterspace = function (pseudo) {
+		return this._find_inherit_pseudo_obj("letterspace", pseudo, "letterspace");
 	};
 
 	_pGridImage.on_find_CurrentStyle_color = function (pseudo) {
@@ -7475,7 +7824,7 @@ if (!nexacro.Grid) {
 	};
 
 	_pGridImage._updateAll = function () {
-		this.on_apply_pseudo(this._pseudo);
+		this.on_apply_pseudo(this._cellobj._pseudo);
 		this._setProperty();
 	};
 
@@ -7608,7 +7957,7 @@ if (!nexacro.Grid) {
 
 			this._img_type = img_type;
 
-			var size = nexacro._getImageSize(val, this._on_loadImg, this);
+			var size = nexacro._getImageSize(val, this._on_loadImg, this, undefined, image.toString());
 			if (size) {
 				this.imagewidth = size.width;
 				this.imageheight = size.height;
@@ -7701,7 +8050,7 @@ if (!nexacro.Grid) {
 
 			val = nexacro._getImageLocation(val, this._getRefFormBaseUrl());
 
-			var size = nexacro._getImageSize(val, this._on_loadImg, this);
+			var size = nexacro._getImageSize(val, this._on_loadImg, this, undefined, (image ? image._value : ""));
 
 			if (size) {
 				this._on_loadImg(val, size.width, size.height);
@@ -8797,6 +9146,12 @@ if (!nexacro.Grid) {
 			this.on_apply_style_font(font);
 		}
 
+		var letterspace = this.on_find_CurrentStyle_letterspace(pseudo);
+		if (curstyle.letterspace != letterspace) {
+			curstyle.letterspace = letterspace;
+			this.on_apply_style_letterspace(letterspace);
+		}
+
 		var color = this.on_find_CurrentStyle_color(pseudo);
 		if (curstyle.color != color) {
 			curstyle.color = color;
@@ -8818,8 +9173,16 @@ if (!nexacro.Grid) {
 	};
 
 
+	_pGridTree.on_find_CurrentStyle_background = function (pseudo) {
+		return this.parent.on_find_CurrentStyle_background(pseudo);
+	};
+
 	_pGridTree.on_find_CurrentStyle_font = function (pseudo) {
 		return this.parent.on_find_CurrentStyle_font(pseudo);
+	};
+
+	_pGridTree.on_find_CurrentStyle_letterspace = function (pseudo) {
+		return this.parent.on_find_CurrentStyle_letterspace(pseudo);
 	};
 
 	_pGridTree.on_find_CurrentStyle_color = function (pseudo) {
@@ -8846,17 +9209,10 @@ if (!nexacro.Grid) {
 	_pGridTree._find_pseudo_obj = function (styleProp, pseudo, returnType) {
 		var cellinfo = this._cellinfo;
 		var cellobj = this._cellobj;
-
-		if (this._displaymode == true) {
-			if (pseudo != "disabled") {
-				pseudo = "normal";
-			}
-		}
-
 		var odd = (cellobj._rowidx >= 0) ? (cellobj._rowidx % 2) : false;
 		var grid = this._grid;
 		var datarow = grid._getDataRow(this._cellobj._rowidx);
-		var v = cellinfo._query_pseudo_control(this, datarow, styleProp, styleProp, pseudo, returnType, null, odd, cellobj._isSelected());
+		var v = cellinfo._query_pseudo_control(this, datarow, styleProp, styleProp, pseudo, returnType, null, odd, cellobj._is_Selected());
 		return v;
 	};
 
@@ -8961,6 +9317,9 @@ if (!nexacro.Grid) {
 			this._text_elem = null;
 		}
 		this._clicktarget = null;
+		this._grid = null;
+		this._cellinfo = null;
+		this._cellobj = null;
 	};
 
 	_pGridTree._setAccessibilityStatFocus = function (evt_name) {
@@ -9058,9 +9417,6 @@ if (!nexacro.Grid) {
 			return;
 		}
 
-		if (nexacro.Browser == "IE" && nexacro.BrowserVersion >= 9 && elem == this._btn_elem) {
-			return;
-		}
 
 		if (this.visible && this._isEnable() && this.enableevent) {
 			var clickitem;
@@ -9082,12 +9438,6 @@ if (!nexacro.Grid) {
 
 			var clientXY = this._getClientXY(canvasX, canvasY);
 			this.on_fire_onclick(button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientXY[0], clientXY[1], this, this, clickitem);
-			if (this._is_alive == false) {
-				if (!this._grid._after_recreate_contents_all) {
-					this._grid._after_recreate_contents_all = [true, true, true, true];
-				}
-				this._on_last_lbuttonup();
-			}
 		}
 	};
 
@@ -9130,7 +9480,7 @@ if (!nexacro.Grid) {
 					var datarow = grid._getDataRow(cellobj._rowidx);
 					cellobj._tree_lbuttondown = true;
 
-					grid._toggleTreeState(cellobj._rowidx, true, this._control_element);
+					grid._toggleTreeState(cellobj._rowidx, true);
 
 					if (this._is_alive) {
 						cellobj._tree_lbuttondown = false;
@@ -9138,7 +9488,7 @@ if (!nexacro.Grid) {
 
 					var rowstatus = grid._treeStates[datarow];
 
-					if (this._clicktarget != rowstatus && nexacro.Browser == "IE" && nexacro.BrowserVersion > 8) {
+					if (this._clicktarget != rowstatus && (nexacro.Browser == "Edge" || nexacro.Browser == "IE" && nexacro.BrowserVersion > 8)) {
 						grid._treetarget = {
 							row : datarow, 
 							cell : cellobj._cellidx
@@ -9283,7 +9633,7 @@ if (!nexacro.Grid) {
 			val = nexacro._getImageLocation(val, this._getRefFormBaseUrl());
 			img_elem._load_url = val;
 
-			var size = nexacro._getImageSize(val, this._on_loadImage, this);
+			var size = nexacro._getImageSize(val, this._on_loadImage, this, undefined, image.toString());
 
 			if (size) {
 				this._on_loadImage(val, size.width, size.height);
@@ -9338,7 +9688,7 @@ if (!nexacro.Grid) {
 		else if (state == 1) {
 			prop += "closebuttonimage";
 		}
-		else if (state == 2 || state == -1) {
+		else if (state == 2 || state == 3 || state == -1) {
 			this._btn_elem.setElementVisible(false);
 			this._btn_elem.setElementSize(0, 0);
 			return;
@@ -9384,7 +9734,7 @@ if (!nexacro.Grid) {
 		else if (state == 1) {
 			prop = "treeexpandimage";
 		}
-		else if (state == 2) {
+		else if (state == 2 || state == 3) {
 			prop = "treeitemimage";
 		}
 
@@ -9571,7 +9921,7 @@ if (!nexacro.Grid) {
 				this._toggleItem(false);
 			}
 
-			this.on_apply_pseudo(this._pseudo);
+			this.on_apply_pseudo(this._cellobj._pseudo);
 
 			var rowstatus = grid._treeStates[rowidx];
 			var level = this._cellinfo._getTreeLevel(rowidx);
@@ -9905,7 +10255,7 @@ if (!nexacro.Grid) {
 			for (var i = 0; i < cells.length; i++) {
 				cellAccessibility = cells[i].currentstyle.accessibility;
 				if (cellAccessibility) {
-					cellLabel = cells[i]._getAccessibilityLabel(cellAccessibility);
+					cellLabel = cells[i]._getAccessibilityLabel(cellAccessibility, true);
 					if (label) {
 						if (cellLabel) {
 							label += " " + cellLabel;
@@ -10047,8 +10397,8 @@ if (!nexacro.Grid) {
 				}
 
 				is_change = false;
-				if (cell._selected != selected) {
-					cell._selected = selected;
+				if (cell.selected != selected) {
+					cell.selected = selected;
 					onlycontents = false;
 					is_change = true;
 				}
@@ -10056,7 +10406,7 @@ if (!nexacro.Grid) {
 				subcellsLen = subcells.length;
 
 				for (var j = 0; j < subcellsLen; j++) {
-					subcells[j]._selected = selected;
+					subcells[j].selected = selected;
 				}
 
 				if (for_select) {
@@ -10226,7 +10576,7 @@ if (!nexacro.Grid) {
 					if (cells[i]._is_created) {
 						if (cells[i]._refresh_display == true) {
 							if (update) {
-								cells[i]._selected = selected;
+								cells[i].selected = selected;
 								cells[i]._updateAll();
 							}
 
@@ -10236,7 +10586,7 @@ if (!nexacro.Grid) {
 					}
 					else {
 						if (update) {
-							cells[i]._selected = selected;
+							cells[i].selected = selected;
 							cells[i]._updateAll();
 						}
 						cells[i].on_created();
@@ -10315,7 +10665,7 @@ if (!nexacro.Grid) {
 
 			id = "cell_" + this._rowidx + "_" + _cellinfo._cellidx;
 			cellitem = new nexacro.GridCell(id, left, top, width, height, this, _cellinfo, this._rowidx, _cellinfo._cellidx);
-			cellitem._selected = selected;
+			cellitem.selected = selected;
 			cellitem.createComponent(true);
 
 			this._cells[i] = cellitem;
@@ -10338,7 +10688,7 @@ if (!nexacro.Grid) {
 				id = "subcell_" + this._rowidx + "_" + _cellinfo._cellidx + "_" + _subcellinfo._cellidx;
 				subcellitem = new nexacro.GridCell(id, left, top, width, height, cellitem, _subcellinfo, this._rowidx, _subcellinfo._cellidx);
 				subcellitem._isSubCell = true;
-				subcellitem._selected = selected;
+				subcellitem.selected = selected;
 				subcellitem.parentcell = cellitem;
 				subcellitem.createComponent(true);
 				cellitem.subcells[j] = subcellitem;
@@ -10696,7 +11046,7 @@ if (!nexacro.Grid) {
 					top = this._getBodyRowTopPos(newrow);
 					size = grid._getRowSize(newrow);
 
-					if (newrow <= lastrow && newrow >= grid._getFixRowCnt()) {
+					if (newrow <= lastrow && newrow >= grid._getFixRowCnt() && size > 0) {
 						this._addRow(top, size, newrow, is_scrolling);
 						add = true;
 					}
@@ -10763,6 +11113,10 @@ if (!nexacro.Grid) {
 	_pGridMatrixManager._adjustColsDisplay = function (reset_colsize, scrolling, startcol) {
 		var rows = this._getAllRows(), rows_len = rows.length;
 
+		if (!scrolling) {
+			this._grid._resetScrollMax();
+		}
+
 		if (reset_colsize) {
 			var format = this._grid._curFormat;
 
@@ -10785,10 +11139,6 @@ if (!nexacro.Grid) {
 
 				rows[i]._createCellElements(startcol);
 			}
-		}
-
-		if (!scrolling) {
-			this._grid._resetScrollMax();
 		}
 	};
 
@@ -11010,16 +11360,31 @@ if (!nexacro.Grid) {
 		}
 		else {
 			if (is_updatecontents) {
+				var prev_rowidx = null;
 				grid._toprowpos = grid._getScreenTopRowPos();
 				grid._bottomrowpos = grid._getScreenBottomRowPos();
 
 				target_rowidx = grid._toprowpos[0];
+
 				hide_len = rows.length;
 				hide_rows = rows;
 
 				for (var i = 0; i < hide_len; i++) {
 					hide_row = hide_rows[i];
 					r = target_rowidx++;
+
+					if (r >= grid.rowcount) {
+						if (prev_rowidx == null) {
+							prev_rowidx = grid._toprowpos[0] - 1;
+						}
+
+						r = prev_rowidx--;
+
+						if (r < 0) {
+							break;
+						}
+					}
+
 					hide_row._changeRow(r, variable_size);
 					l = hide_row._adjust_left;
 					w = hide_row._adjust_width;
@@ -11038,6 +11403,12 @@ if (!nexacro.Grid) {
 				}
 
 				if (rows.length > 0) {
+					if (prev_rowidx != null) {
+						rows.sort(function (a, b) {
+							return a._rowidx - b._rowidx;
+						});
+					}
+
 					grid._begrowpos = rows[0]._rowidx;
 					grid._endrowpos = rows[rows.length - 1]._rowidx;
 				}
@@ -11193,6 +11564,11 @@ if (!nexacro.Grid) {
 		this._refresh_contents(true);
 	};
 
+	_pGridBand.on_update_style_cellletterspace = function () {
+		this._grid._curFormat._clearCellStyleCache(this.id);
+		this._refresh_contents(true);
+	};
+
 	_pGridBand.on_update_style_selectfont = function () {
 		this._grid._curFormat._clearCellStyleCache(this.id);
 		this._refresh_contents(true);
@@ -11306,8 +11682,11 @@ if (!nexacro.Grid) {
 
 	_pGridBand.on_find_CurrentStyle_accessibility = function (pseudo) {
 		var accessibility = this._find_pseudo_obj("accessibility", pseudo, "accessibility");
-		if (nexacro._enableaccessibility && nexacro._accessibilitytype == 5 && this._grid.nodatatext) {
+		if (nexacro._accessibilitytype == 5 && this._grid.nodatatext) {
 			return nexacro.Component._default_accessibility;
+		}
+		else if (nexacro._accessibilitytype == 4) {
+			return nexacro.GridBand._default_accessibility;
 		}
 		else {
 			return accessibility ? accessibility : nexacro.GridBand._default_accessibility;
@@ -11358,6 +11737,7 @@ if (!nexacro.Grid) {
 				text_elem.setElementVisible(false);
 				text_elem.setElementAlignXY("center", "middle");
 				text_elem.setElementFont(curstyle.font);
+				text_elem.setElementLetterSpace(curstyle.letterspace);
 				text_elem.setElementColor(curstyle.color);
 				text_elem.setElementWordWrap("char");
 
@@ -11452,8 +11832,14 @@ if (!nexacro.Grid) {
 		}
 
 		if (grid._is_changingRect) {
-			grid._resetRowSizeList();
-			grid._resetColSizeList();
+			if (grid._colautofit) {
+				if (grid.autosizingtype == "row" || grid.autosizingtype == "both") {
+					if (grid._is_body_wordwrap || grid._is_head_wordwrap || grid._is_summ_wordwrap) {
+						grid._resetRowSizeList();
+						grid._resetColSizeList();
+					}
+				}
+			}
 		}
 
 		if (this._isBody) {
@@ -11557,9 +11943,11 @@ if (!nexacro.Grid) {
 				var text = this.parent.nodatatext;
 				var font = this.parent.on_find_CurrentStyle_font();
 				var color = this.parent.on_find_CurrentStyle_color();
+				var letterspace = this.parent.on_find_CurrentStyle_letterspace();
 				this._text_elem.setElementVisible(text ? true : false);
 				this._text_elem.setElementText(text);
 				this._text_elem.setElementFont(font);
+				this._text_elem.setElementLetterSpace(letterspace);
 				this._text_elem.setElementColor(color);
 			}
 			else {
@@ -11613,6 +12001,7 @@ if (!nexacro.Grid) {
 			}
 			this.on_apply_text();
 			grid._applyResizer();
+			grid._adjustOverlayElements(false, grid._is_use_fakemerge);
 		}
 	};
 
@@ -11632,7 +12021,6 @@ if (!nexacro.Grid) {
 
 				for (var i = 0; i < create_rows_len; i++) {
 					var create_row = create_rows[i];
-					create_row._is_scrollproc = true;
 
 					if (create_row._is_alive) {
 						create_row._updateAll();
@@ -11646,8 +12034,6 @@ if (!nexacro.Grid) {
 				}
 
 				for (var i = 0; i < update_rows_len; i++) {
-					update_rows[i]._is_scrollproc = true;
-
 					if (update_rows[i]._is_alive) {
 						update_rows[i]._updateAll(undefined, undefined, onlycontents);
 					}
@@ -11656,30 +12042,15 @@ if (!nexacro.Grid) {
 				if (grid._is_use_suppress) {
 					if (create_rows_len > 0 || update_rows_len > 0) {
 						var cells = grid._curFormat._bodycells, cells_cnt = cells.length;
-						var cellobj, rowidx, datarow;
+						var rowidx, datarow;
 
 						for (var j = 0; j < rows_len; j++) {
-							if (rows[j]._is_scrollproc) {
-								rows[j]._is_scrollproc = undefined;
-								continue;
-							}
-
 							rowidx = rows[j]._rowidx;
 							datarow = (grid._hasTree) ? grid._treeIndexes[rowidx] : rowidx;
 
 							for (var i = 0; i < cells_cnt; i++) {
 								if (cells[i].suppress != 0) {
-									if (rows[j]) {
-										cellobj = rows[j]._cells[i];
-
-										var suppinfo = cellobj._getSuppressInfo();
-
-										if (cellobj._border_proc == suppinfo.border_proc && cellobj._text_proc == suppinfo.text_proc) {
-											continue;
-										}
-
-										this._refreshRowCell(j, i, grid._isSelectedCell(i, datarow));
-									}
+									this._refreshRowCell(j, i, grid._isSelectedCell(i, datarow));
 								}
 							}
 						}
@@ -11720,13 +12091,13 @@ if (!nexacro.Grid) {
 			return;
 		}
 
-		cell._selected = selected;
+		cell.selected = selected;
 
 		var subcells = cell.subcells;
 		var subcellsLen = subcells.length;
 
 		for (var i = 0; i < subcellsLen; i++) {
-			subcells[i]._selected = selected;
+			subcells[i].selected = selected;
 		}
 		cell._updateAll(pseudo, onlycontents);
 	};
@@ -12017,8 +12388,6 @@ if (!nexacro.Grid) {
 					grid._absolutelyResetScrollPos(false);
 				}
 			}
-			grid._control_element._scroll_left = hpos;
-			grid._control_element._scroll_top = vpos;
 		}
 		else {
 			if (hpos > 0) {
@@ -12033,7 +12402,6 @@ if (!nexacro.Grid) {
 					grid._absolutelyResetScrollPos(false);
 				}
 			}
-			grid._control_element._scroll_left = hpos;
 		}
 		this._recreating = false;
 	};
@@ -12090,7 +12458,7 @@ if (!nexacro.Grid) {
 		this._grid = null;
 	};
 
-	_pGridScrollBarCtrl._set_rowpos = function (v) {
+	_pGridScrollBarCtrl._set_rowpos = function (v, evt_kind) {
 		var grid = this._grid;
 		v -= grid._getFixRowCnt();
 
@@ -12098,12 +12466,16 @@ if (!nexacro.Grid) {
 			v = this._scroll_convert_pixel(v, true);
 		}
 		this._no_set_scrollinfo = true;
-		this.set_pos(v);
+		this._setPos(v, evt_kind);
 		this._no_set_scrollinfo = false;
 	};
 
-	_pGridScrollBarCtrl.set_pixelpos = function (v) {
-		var str = this._getScrollInfo(v);
+	_pGridScrollBarCtrl._set_pixelpos = function (v, evt_kind) {
+		var str = "none";
+
+		if (evt_kind == "mousewheel") {
+			str = this._getScrollInfo(v);
+		}
 
 		if (v < this._min) {
 			v = this._min;
@@ -12301,7 +12673,6 @@ if (!nexacro.Grid) {
 	nexacro.Grid = function (id, position, left, top, width, height, right, bottom, parent) {
 		nexacro.Component.call(this, id, position, left, top, width, height, right, bottom, parent);
 
-
 		this._event_list = {
 			"onclick" : 1, 
 			"ondblclick" : 1, 
@@ -12464,6 +12835,9 @@ if (!nexacro.Grid) {
 
 		this._text_elem = null;
 		this._is_use_suppress = false;
+		this._is_head_wordwrap = false;
+		this._is_body_wordwrap = false;
+		this._is_summ_wordwrap = false;
 		this._recreate_contents_proc = [];
 		this._keydown_elem = null;
 		this._tree_load_all = null;
@@ -12471,6 +12845,7 @@ if (!nexacro.Grid) {
 		this._is_editor_keyaction = true;
 		this._focus_proc = null;
 		this._after_recreate_contents_all = null;
+		this._after_recreate = false;
 		this._is_async_recreate = false;
 		this._is_after_recreate = false;
 
@@ -12529,6 +12904,11 @@ if (!nexacro.Grid) {
 		this._func_queue = [];
 		this._recalcXY_info = null;
 		this._fake_mergecell_arr = [];
+		this._enable_redraw_history = {
+		};
+		this._temphead = this._tempsumm = null;
+		this._autofitcol_rate = [];
+		this._org_treeStates = [];
 	};
 
 	var _pGrid = nexacro._createPrototype(nexacro.Component, nexacro.Grid);
@@ -12726,6 +13106,12 @@ if (!nexacro.Grid) {
 			this.on_apply_style_font(font);
 		}
 
+		var letterspace = this.on_find_CurrentStyle_letterspace(pseudo);
+		if (curstyle.letterspace != letterspace) {
+			curstyle.letterspace = letterspace;
+			this.on_apply_style_letterspace(letterspace);
+		}
+
 		var color = this.on_find_CurrentStyle_color(pseudo);
 		if (curstyle.color != color) {
 			curstyle.color = color;
@@ -12920,6 +13306,13 @@ if (!nexacro.Grid) {
 		this.on_apply_style_font(this.currentstyle.font = this.on_find_CurrentStyle_font(this._pseudo));
 	};
 
+	_pGrid.on_update_style_letterspace = function () {
+		if (this._is_created) {
+			this._clearAllStyleCache();
+		}
+		this.on_apply_style_letterspace(this.currentstyle.letterspace = this.on_find_CurrentStyle_letterspace(this._pseudo));
+	};
+
 	_pGrid.on_update_style_padding = function () {
 		if (this._is_created) {
 			this._clearAllStyleCache();
@@ -13021,6 +13414,17 @@ if (!nexacro.Grid) {
 
 	_pGrid.on_apply_style_font = function (font) {
 		if (!this.enableredraw) {
+			this._enable_redraw_history["refreshall"] = true;
+			return;
+		}
+		if (this._is_created) {
+			this._refreshAll();
+		}
+	};
+
+	_pGrid.on_apply_style_letterspace = function (letterspace) {
+		if (!this.enableredraw) {
+			this._enable_redraw_history["refreshall"] = true;
 			return;
 		}
 		if (this._is_created) {
@@ -13030,16 +13434,17 @@ if (!nexacro.Grid) {
 
 	_pGrid.on_apply_style_color = function (color) {
 		if (!this.enableredraw) {
+			this._enable_redraw_history["refreshall"] = true;
 			return;
 		}
 		if (this._is_created) {
 			this._refreshAll();
 		}
 	};
-
 
 	_pGrid.on_apply_style_align = function (align) {
 		if (!this.enableredraw) {
+			this._enable_redraw_history["refreshall"] = true;
 			return;
 		}
 		if (this._is_created) {
@@ -13047,10 +13452,9 @@ if (!nexacro.Grid) {
 		}
 	};
 
-
-
 	_pGrid.on_apply_style_linetype = function (linetype) {
 		if (!this.enableredraw) {
+			this._enable_redraw_history["refreshall"] = true;
 			return;
 		}
 		if (this._is_created) {
@@ -13060,6 +13464,7 @@ if (!nexacro.Grid) {
 
 	_pGrid.on_apply_style_line = function (line) {
 		if (!this.enableredraw) {
+			this._enable_redraw_history["refreshall"] = true;
 			return;
 		}
 		if (this._is_created) {
@@ -13069,6 +13474,7 @@ if (!nexacro.Grid) {
 
 	_pGrid.on_apply_style_selectline = function (selectline) {
 		if (!this.enableredraw) {
+			this._enable_redraw_history["refreshall"] = true;
 			return;
 		}
 		if (this._is_created) {
@@ -13078,6 +13484,7 @@ if (!nexacro.Grid) {
 
 	_pGrid.on_apply_style_selectlinetype = function (selectlinetype) {
 		if (!this.enableredraw) {
+			this._enable_redraw_history["refreshall"] = true;
 			return;
 		}
 		if (this._is_created) {
@@ -13087,6 +13494,7 @@ if (!nexacro.Grid) {
 
 	_pGrid.on_apply_style_treeclosebuttonimage = function (treeclosebuttonimage) {
 		if (!this.enableredraw) {
+			this._enable_redraw_history["refreshall"] = true;
 			return;
 		}
 		if (this._is_created) {
@@ -13096,6 +13504,7 @@ if (!nexacro.Grid) {
 
 	_pGrid.on_apply_style_treecollapseimage = function (treecollapseimage) {
 		if (!this.enableredraw) {
+			this._enable_redraw_history["refreshall"] = true;
 			return;
 		}
 		if (this._is_created) {
@@ -13105,6 +13514,7 @@ if (!nexacro.Grid) {
 
 	_pGrid.on_apply_style_treeexpandimage = function (treeexpandimage) {
 		if (!this.enableredraw) {
+			this._enable_redraw_history["refreshall"] = true;
 			return;
 		}
 		if (this._is_created) {
@@ -13114,6 +13524,7 @@ if (!nexacro.Grid) {
 
 	_pGrid.on_apply_style_treeitemimage = function (treeitemimage) {
 		if (!this.enableredraw) {
+			this._enable_redraw_history["refreshall"] = true;
 			return;
 		}
 		if (this._is_created) {
@@ -13123,6 +13534,7 @@ if (!nexacro.Grid) {
 
 	_pGrid.on_apply_style_treelinetype = function (treelinetype) {
 		if (!this.enableredraw) {
+			this._enable_redraw_history["refreshall"] = true;
 			return;
 		}
 		if (this._is_created) {
@@ -13132,6 +13544,7 @@ if (!nexacro.Grid) {
 
 	_pGrid.on_apply_style_treeopenbuttonimage = function (treeopenbuttonimage) {
 		if (!this.enableredraw) {
+			this._enable_redraw_history["refreshall"] = true;
 			return;
 		}
 		if (this._is_created) {
@@ -13154,12 +13567,29 @@ if (!nexacro.Grid) {
 
 	_pGrid._find_bandcomp_pseudo_obj = function (band, styleProp, pseudo, returnType) {
 		var bandctrl;
+		var format = this._curFormat;
 
 		if (band == "head") {
 			bandctrl = this._headBand;
+
+			if (!bandctrl) {
+				bandctrl = this._temphead;
+
+				if (!bandctrl) {
+					bandctrl = this._temphead = new nexacro.GridBand("head", 0, 0, 0, 0, this, format._headband);
+				}
+			}
 		}
 		else if (band == "summ" || band == "summary") {
 			bandctrl = this._summBand;
+
+			if (!bandctrl) {
+				bandctrl = this._tempsumm;
+
+				if (!bandctrl) {
+					bandctrl = this._tempsumm = new nexacro.GridBand("summ", 0, 0, 0, 0, this, format._summband);
+				}
+			}
 		}
 		else {
 			bandctrl = this._bodyBand;
@@ -13183,6 +13613,14 @@ if (!nexacro.Grid) {
 		}
 
 		return obj;
+	};
+
+	_pGrid.on_apply_pseudo = function (pseudo, is_only_contents) {
+		nexacro.Component.prototype.on_apply_pseudo.call(this, pseudo, is_only_contents);
+
+		if (pseudo == "") {
+			this._recreate();
+		}
 	};
 
 	_pGrid.on_create_contents = function () {
@@ -13265,8 +13703,9 @@ if (!nexacro.Grid) {
 			this._control_element._arrangeBandOrder();
 		}
 
+		this._applyResizer();
 		this.on_apply_prop_rtldirection();
-		this._adjustOverlayElements(true, false);
+		this._adjustOverlayElements(true, this._is_use_fakemerge);
 	};
 
 	_pGrid.on_destroy_contents = function () {
@@ -13386,6 +13825,9 @@ if (!nexacro.Grid) {
 		this._overlay_elements = null;
 		this._recalcXY_info = null;
 		this._fake_mergecell_arr = null;
+		this._enable_redraw_history = null;
+		this._autofitcol_rate = null;
+		this._org_treeStates = null;
 	};
 
 	_pGrid._is_changingRect = false;
@@ -13396,6 +13838,7 @@ if (!nexacro.Grid) {
 
 		this._is_changingRect = true;
 		this._resizeBand();
+		this._adjustOverlayElements(true, this._is_use_fakemerge);
 		this._is_changingRect = false;
 	};
 
@@ -13563,7 +14006,7 @@ if (!nexacro.Grid) {
 	};
 
 	_pGrid._setAccessibilityNotifyEvent = function (direction) {
-		this._resetScrollPos(this, this._adjust_left, this._adjust_top, this._adjust_left + this._adjust_width, this._adjust_top + this._adjust_height, direction);
+		this._resetScrollPos(this, this._adjust_left, this._adjust_top, this._adjust_left + this._adjust_width, this._adjust_top + this._adjust_height, (direction && direction > 0) ? 0 : 1);
 		this._accessibility_row = -1;
 		this._accessibility_cellidx = -1;
 		this.on_fire_sys_onaccessibilitygesture(direction);
@@ -13744,9 +14187,11 @@ if (!nexacro.Grid) {
 					var text = this.nodatatext;
 					var font = this.on_find_CurrentStyle_font();
 					var color = this.on_find_CurrentStyle_color();
+					var letterspace = this.on_find_CurrentStyle_letterspace();
 					this._text_elem.setElementVisible(true);
 					this._text_elem.setElementText(text);
 					this._text_elem.setElementFont(font);
+					this._text_elem.setElementLetterSpace(letterspace);
 					this._text_elem.setElementColor(color);
 				}
 			}
@@ -13834,7 +14279,7 @@ if (!nexacro.Grid) {
 			this.setBindDataset(str);
 			return;
 		}
-		if (str != this.binddataset) {
+		if (str != this.binddataset || this.binddataset && !this._binddataset) {
 			if (this._binddataset) {
 				this._removeDSEventHandlers(this._binddataset);
 			}
@@ -13848,10 +14293,6 @@ if (!nexacro.Grid) {
 				this._binddataset = this._findDataset(str);
 				this.binddataset = str;
 			}
-			this.on_apply_prop_binddataset();
-		}
-		else if (this.binddataset && !this._binddataset) {
-			this._setBindDatasetStr(this.binddataset);
 			this.on_apply_prop_binddataset();
 		}
 		return this.binddataset;
@@ -13897,6 +14338,7 @@ if (!nexacro.Grid) {
 		}
 
 		this._curFormat = this._formats[formatid];
+		this._autofitcol_rate = [];
 		this._recreate();
 		this._resetSelect(this._rowposition);
 	};
@@ -14008,7 +14450,7 @@ if (!nexacro.Grid) {
 
 	_pGrid.on_apply_prop_autofittype = function () {
 		if (this._curFormat) {
-			this._curFormat._resetOrgColSize(true);
+			this._curFormat._resetOrgColSize(true, this._autofitcol_rate);
 		}
 
 		this._applyAutofittype(true, true);
@@ -14125,7 +14567,7 @@ if (!nexacro.Grid) {
 			}
 			if (v == "row" || v == "none" || !v) {
 				if (this._curFormat) {
-					this._curFormat._resetOrgColSize(true);
+					this._curFormat._resetOrgColSize(true, this._autofitcol_rate);
 				}
 			}
 			this.autosizingtype = v;
@@ -14999,6 +15441,7 @@ if (!nexacro.Grid) {
 	};
 
 	_pGrid.set_treeuseexpandkey = function (v) {
+		v = nexacro._toBoolean(v);
 		if (this.treeuseexpandkey != v) {
 			this.treeuseexpandkey = v;
 		}
@@ -15035,6 +15478,8 @@ if (!nexacro.Grid) {
 		var _treeIndexes = this._treeIndexes;
 		var _treeStates = this._treeStates;
 
+		this._org_treeStates = [];
+
 		if (!value) {
 			var update = false;
 			var dsrowidx;
@@ -15052,28 +15497,33 @@ if (!nexacro.Grid) {
 					}
 				}
 				if (cellinfo) {
-					var state;
+					var state, precnt;
 					if (cellinfo.treestate._bindtype != 0) {
 						state = cellinfo._getAttrValue(cellinfo.treestate, dsrowidx);
 					}
 					if (!state || state == "") {
+						precnt = _treeIndexes.length;
 						if (expand) {
-							if (this._setTreeState(i, 1) > 0) {
-								i = _treeIndexes.length;
+							if (this._setTreeState(i, 1, false, "null") > 0) {
+								i += (_treeIndexes.length - precnt + 1);
 								update = true;
 							}
 						}
 						else {
-							if (this._setTreeState(i, 0) > 0) {
-								i = _treeIndexes.length;
+							if (this._setTreeState(i, 0, false, "null") > 0) {
 								update = true;
 							}
 						}
 					}
 					else {
-						var s = this._setTreeState(i, state);
+						precnt = _treeIndexes.length;
+
+						var s = this._setTreeState(i, state, false, "null_value");
 						if (s == 2) {
-							i = _treeIndexes.length;
+							if ((_treeIndexes.length - precnt) > 0) {
+								i += (_treeIndexes.length - precnt + 1);
+							}
+
 							update = true;
 						}
 						else if (s == 1) {
@@ -15087,26 +15537,33 @@ if (!nexacro.Grid) {
 			}
 		}
 		else {
-			var update = false;
-			var dsrowidx;
+			var update = false, precnt;
 
 			for (var i = _treeIndexes.length - 1; i >= 0; i--) {
-				var cellinfo, editType;
-				dsrowidx = this.getDatasetRow(i);
-
+				precnt = _treeIndexes.length;
 				if (expand) {
-					if (this._setTreeState(i, 1) > 0) {
-						i = _treeIndexes.length;
+					if (this._setTreeState(i, 1, false, "all") > 0) {
+						i += (_treeIndexes.length - precnt + 1);
 						update = true;
 					}
 				}
 				else {
-					if (this._setTreeState(i, 0) > 0) {
-						i = _treeIndexes.length;
+					if (this._setTreeState(i, 0, false, "all") > 0) {
 						update = true;
 					}
 				}
 			}
+
+			if (!expand) {
+				for (var i = _treeStates.length - 1; i >= 0; i--) {
+					var state = this._getOrgTreeStates(i);
+
+					if (state == 2) {
+						_treeStates[i] = 2;
+					}
+				}
+			}
+
 			if (update == true) {
 				this._recreate_contents_all(false, false, false, true);
 			}
@@ -15777,10 +16234,20 @@ if (!nexacro.Grid) {
 			strPropID = strPropID.toLowerCase();
 			if (this._curFormat.setFormatColProperty(nColIdx, strPropID, nValue)) {
 				if (strPropID == "band") {
+					this._autofitcol_rate = [];
 					this._recreate();
 				}
 				else if (strPropID == "size") {
-					this._recreate_contents_all(true, true, false);
+					if (this.enableredraw) {
+						this._updateColSize(nColIdx);
+					}
+					else {
+						if (!this._enable_redraw_history["updatecolsize"]) {
+							this._enable_redraw_history["updatecolsize"] = [];
+						}
+
+						this._enable_redraw_history["updatecolsize"].push(nColIdx);
+					}
 				}
 				else {
 					this._recreate_contents_all(true, false, false);
@@ -15796,6 +16263,9 @@ if (!nexacro.Grid) {
 			strPropID = strPropID.toLowerCase();
 			if (this._curFormat.setFormatRowProperty(nRowIdx, strPropID, nValue)) {
 				if (strPropID == "band" || strPropID == "size") {
+					this._isUserChangeHeadRowSize = false;
+					this._isUserChangeSummRowSize = false;
+					this._isUserChangeBodyRowSize = false;
 					this._recreate();
 				}
 				else {
@@ -16054,6 +16524,18 @@ if (!nexacro.Grid) {
 									this._updateRowSize(nRowIndex, nSubRowIndex);
 								}
 							}
+							else {
+								if (this.extendsizetype != "row" && this.extendsizetype != "both") {
+									this._enable_redraw_history["recreate_body"] = true;
+								}
+								else {
+									if (!this._enable_redraw_history["updaterowsize"]) {
+										this._enable_redraw_history["updaterowsize"] = [];
+									}
+
+									this._enable_redraw_history["updaterowsize"].push([nRowIndex, nSubRowIndex]);
+								}
+							}
 							this._isUserChangeBodyRowSize = true;
 						}
 					}
@@ -16086,6 +16568,9 @@ if (!nexacro.Grid) {
 								if (this._bodyBand) {
 									this._bodyBand._recreate_contents();
 								}
+							}
+							else {
+								this._enable_redraw_history["recreate_body"] = true;
 							}
 							this._isUserChangeBodyRowSize = true;
 						}
@@ -16145,8 +16630,11 @@ if (!nexacro.Grid) {
 						if (this._headBand) {
 							this._headBand._recreate_contents();
 						}
-
 						this._resizeBand();
+					}
+					else {
+						this._enable_redraw_history["recreate_head"] = true;
+						this._enable_redraw_history["resize_band"] = true;
 					}
 					this._isUserChangeHeadRowSize = true;
 				}
@@ -16201,8 +16689,11 @@ if (!nexacro.Grid) {
 						if (this._summBand) {
 							this._summBand._recreate_contents();
 						}
-
 						this._resizeBand();
+					}
+					else {
+						this._enable_redraw_history["recreate_summ"] = true;
+						this._enable_redraw_history["resize_band"] = true;
 					}
 					this._isUserChangeSummRowSize = true;
 				}
@@ -16386,10 +16877,9 @@ if (!nexacro.Grid) {
 			}
 
 			var bodycnt = this._getColFixCnt("body");
-			for (var i = 0; i < nPivotIndexCnt; i++) {
-				for (var j = 0; j < bodycnt; j++) {
-					size += this.getRealColSize(leftcnt + i);
-				}
+
+			for (var i = 0; i < bodycnt; i++) {
+				size += this.getRealColSize(leftcnt + i);
 			}
 
 			var rightcnt = this._getColFixCnt("right");
@@ -16562,10 +17052,11 @@ if (!nexacro.Grid) {
 	};
 
 	_pGrid.appendContentsCol = function (strBand, bBandAppend) {
-		if (!this._curFormat) {
+		if (!this._curFormat || (!isNaN(parseInt(strBand)) && strBand < -2)) {
 			return -1;
 		}
 
+		this._autofitcol_rate = [];
 		var col = this._curFormat.appendContentsCol(strBand, bBandAppend);
 
 		if (col >= 0) {
@@ -16618,6 +17109,7 @@ if (!nexacro.Grid) {
 			return -1;
 		}
 
+		this._autofitcol_rate = [];
 		var col = this._curFormat.insertContentsCol(strBand, nColIndex, bBandIndex);
 
 		if (col >= 0) {
@@ -16650,6 +17142,7 @@ if (!nexacro.Grid) {
 			return -1;
 		}
 
+		this._autofitcol_rate = [];
 		var col = this._curFormat.deleteContentsCol(strBand, nColIndex, bBandIndex);
 
 		if (col >= 0) {
@@ -16763,7 +17256,22 @@ if (!nexacro.Grid) {
 				if (varValue != 0) {
 					this._is_use_suppress = true;
 				}
+				else {
+					cellinfo._clearSuppressInfo();
 
+					var cells = this._curFormat._bodycells;
+					var cellcnt = cells ? cells.length : 0;
+					var cellinfo2;
+
+					this._is_use_suppress = false;
+					for (var j = 0; j < cellcnt; j++) {
+						cellinfo2 = cells[j];
+						if (cellinfo2.suppress != 0) {
+							this._is_use_suppress = true;
+							break;
+						}
+					}
+				}
 				this._refreshBody();
 			}
 			else if (strPropID == "suppressalign" && this._is_use_suppress) {
@@ -16773,6 +17281,64 @@ if (!nexacro.Grid) {
 			else {
 				if (strPropID == "displaytype" || strPropID == "editdisplay" || strPropID == "combodisplay" || strPropID == "calendardisplay") {
 					this._changeDisplayer = true;
+				}
+				else if (strPropID == "wordwrap") {
+					if (varValue != "none") {
+						if (strBand == "head") {
+							this._is_head_wordwrap = true;
+						}
+						if (strBand == "body") {
+							this._is_body_wordwrap = true;
+						}
+						if (strBand.indexOf("summ") >= 0) {
+							this._is_head_wordwrap = true;
+						}
+					}
+					else {
+						var cells, cellcnt, cellinfo2;
+
+						if (strBand == "body") {
+							cells = this._curFormat._bodycells;
+							cellcnt = cells ? cells.length : 0;
+
+							this._is_body_wordwrap = false;
+							for (var j = 0; j < cellcnt; j++) {
+								cellinfo2 = cells[j];
+								if (cellinfo2.wordwrap != "none") {
+									this._is_body_wordwrap = true;
+									break;
+								}
+							}
+						}
+
+						if (strBand == "head") {
+							cells = this._curFormat._headcells;
+							cellcnt = cells ? cells.length : 0;
+
+							this._is_head_wordwrap = false;
+							for (var j = 0; j < cellcnt; j++) {
+								cellinfo2 = cells[j];
+								if (cellinfo2.wordwrap != "none") {
+									this._is_head_wordwrap = true;
+									break;
+								}
+							}
+						}
+
+						if (strBand == "summ") {
+							cells = this._curFormat._summcells;
+							cellcnt = cells ? cells.length : 0;
+
+							this._is_summ_wordwrap = false;
+							for (var j = 0; j < cellcnt; j++) {
+								cellinfo2 = cells[j];
+								if (cellinfo2.wordwrap != "none") {
+									this._is_summ_wordwrap = true;
+									break;
+								}
+							}
+						}
+					}
 				}
 
 				this._refreshCell(strBand, nCellIdx, -1, true);
@@ -16805,7 +17371,7 @@ if (!nexacro.Grid) {
 			this.autofittype = strType;
 		}
 		if (this._curFormat) {
-			this._curFormat._resetOrgColSize(true);
+			this._curFormat._resetOrgColSize(true, this._autofitcol_rate);
 		}
 
 		var retn = this._applyAutofittype(true);
@@ -17773,7 +18339,7 @@ if (!nexacro.Grid) {
 		control_elem.setElementVScrollPos(pos);
 		this._MoveEditComp();
 		this._updateSelector("vscroll", pos - this._last_scroll_top);
-		this._adjustOverlayElements(false, false);
+		this._adjustOverlayElements(false, this._is_use_fakemerge);
 	};
 
 	_pGrid._adjustGridScrollRows_callback_onscroll_after = function (pos) {
@@ -17789,7 +18355,7 @@ if (!nexacro.Grid) {
 		body._update_rows = body._matrix._adjustScrollRows(pos);
 		body._on_refresh_rows(true);
 		this._MoveEditComp();
-		this._adjustOverlayElements(false, false);
+		this._adjustOverlayElements(false, this._is_use_fakemerge);
 	};
 
 	_pGrid._adjustGridScrollRows_callback_onscroll = function () {
@@ -17839,7 +18405,7 @@ if (!nexacro.Grid) {
 
 		this._MoveEditComp();
 		this._updateSelector("hscroll", pos - prevpos);
-		this._adjustOverlayElements(false, true);
+		this._adjustOverlayElements(false, this._is_use_fakemerge);
 	};
 
 	_pGrid._callback_onscroll = _pGrid._adjustGridScrollRows_callback_onscroll_after;
@@ -17905,7 +18471,9 @@ if (!nexacro.Grid) {
 				}
 			}
 			else {
+				this.vscrollbar._no_set_scrollinfo = true;
 				this._adjustGridScrollRows_callback(true);
+				this.vscrollbar._no_set_scrollinfo = false;
 			}
 		}
 
@@ -17985,7 +18553,7 @@ if (!nexacro.Grid) {
 					pos = vscrollbar.pos + this.wheelscrollrow;
 				}
 				else {
-					vscrollbar.set_pixelpos(vscrollbar._pos - wheelDelta);
+					vscrollbar._set_pixelpos(vscrollbar._pos - wheelDelta, "mousewheel");
 					return;
 				}
 			}
@@ -17994,7 +18562,7 @@ if (!nexacro.Grid) {
 					pos = vscrollbar.pos - this.wheelscrollrow;
 				}
 				else {
-					vscrollbar.set_pixelpos(vscrollbar._pos - wheelDelta);
+					vscrollbar._set_pixelpos(vscrollbar._pos - wheelDelta, "mousewheel");
 					return;
 				}
 			}
@@ -18008,7 +18576,7 @@ if (!nexacro.Grid) {
 					pos += this.wheelscrollrow;
 				}
 				else {
-					vscrollbar.set_pixelpos(vscrollbar._pos - wheelDelta);
+					vscrollbar._set_pixelpos(vscrollbar._pos - wheelDelta, "mousewheel");
 					return;
 				}
 			}
@@ -18017,7 +18585,7 @@ if (!nexacro.Grid) {
 				pos -= this.wheelscrollrow;
 			}
 		}
-		vscrollbar._set_rowpos(pos + this._getFixRowCnt());
+		vscrollbar._set_rowpos(pos + this._getFixRowCnt(), "mousewheel");
 	};
 
 	_pGrid._makeEventInfo = function (cellobj, subcellobj, from_refer_comp) {
@@ -18121,7 +18689,7 @@ if (!nexacro.Grid) {
 			}
 		}
 
-		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false);
+		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false, from_refer_comp);
 		canvasX = posobj.canvasX;
 		canvasY = posobj.canvasY;
 		clientX = posobj.clientX;
@@ -18144,7 +18712,7 @@ if (!nexacro.Grid) {
 			}
 		}
 
-		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false);
+		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false, from_refer_comp);
 		canvasX = posobj.canvasX;
 		canvasY = posobj.canvasY;
 		clientX = posobj.clientX;
@@ -18169,7 +18737,7 @@ if (!nexacro.Grid) {
 			}
 		}
 
-		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false);
+		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false, from_refer_comp);
 		canvasX = posobj.canvasX;
 		canvasY = posobj.canvasY;
 		clientX = posobj.clientX;
@@ -18194,7 +18762,12 @@ if (!nexacro.Grid) {
 	};
 
 	_pGrid.on_fire_sys_ondragmove = function (src_comp, src_refer_comp, dragdata, userdata, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, from_comp, from_refer_comp) {
-		return this._areaselectMove(canvasX, from_refer_comp, canvasX, canvasY);
+		if (!this._is_drag_sameselect) {
+			return this._areaselectMove(from_refer_comp, canvasX, canvasY);
+		}
+		else {
+			this._is_drag_selecting = true;
+		}
 	};
 
 	_pGrid._noFireDragFlag = false;
@@ -18210,7 +18783,7 @@ if (!nexacro.Grid) {
 			}
 		}
 
-		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false);
+		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false, from_refer_comp);
 		canvasX = posobj.canvasX;
 		canvasY = posobj.canvasY;
 		clientX = posobj.clientX;
@@ -18295,7 +18868,7 @@ if (!nexacro.Grid) {
 			}
 		}
 
-		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false);
+		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false, from_refer_comp);
 		canvasX = posobj.canvasX;
 		canvasY = posobj.canvasY;
 		clientX = posobj.clientX;
@@ -18323,6 +18896,7 @@ if (!nexacro.Grid) {
 				tocol = info[0];
 				var tocolspan = info[1];
 
+				this._autofitcol_rate = [];
 				format._moveColumn(fromcol, tocol, fromcolspan, tocolspan, this.cellmovingtype);
 
 				this._addRefreshContents("cellmoving", this._headBand);
@@ -18407,6 +18981,8 @@ if (!nexacro.Grid) {
 							cell._editshowing = true;
 
 							var editor = this._currentCellEditor;
+							editor._setFocus(false);
+
 							if (editor && editor.setCaretPos && !editor.autoselect) {
 								editor.setCaretPos(0);
 							}
@@ -18431,7 +19007,9 @@ if (!nexacro.Grid) {
 					}
 					else {
 						if (cellobj != from_refer_comp && cellobj._subComp && cellobj._subComp._toggleCheck) {
-							cellobj._subComp._toggleCheck();
+							if (cellobj.selected) {
+								cellobj._subComp._toggleCheck();
+							}
 						}
 					}
 				}
@@ -18459,6 +19037,10 @@ if (!nexacro.Grid) {
 		else {
 			this._mouseSelection(cellobj, ctrl_key, shift_key, canvasX, canvasY, from_comp, from_refer_comp);
 		}
+
+		if (this._is_down_act) {
+			this._on_last_lbuttonup(true);
+		}
 	};
 
 	_pGrid._common_fire_user_lbuttondown = function (cellobj, ctrl_key, shift_key, canvasX, canvasY, from_comp, from_refer_comp) {
@@ -18466,10 +19048,11 @@ if (!nexacro.Grid) {
 			return;
 		}
 
-		this._resizerStart(canvasX, canvasY, cellobj, "down");
+		this._resizerStart(canvasX, canvasY, cellobj, "down", from_refer_comp);
 
 		var resizer_colctrl = this._resizer_colctrl;
 		var resizer_rowctrl = this._resizer_rowctrl;
+		var client = this._getClientXY(canvasX, canvasY);
 
 		if (resizer_colctrl && resizer_colctrl._is_range) {
 			var win = this._getWindow();
@@ -18477,7 +19060,7 @@ if (!nexacro.Grid) {
 			resizer_colctrl._setTracksize(this._client_height);
 
 			if (resizer_colctrl._direction == "horizon") {
-				resizer_colctrl.move(canvasX, this._client_top, 1, resizer_colctrl._tracksize);
+				resizer_colctrl.move(client[0], this._client_top, 1, resizer_colctrl._tracksize);
 			}
 
 			nexacro._setTrackInfo(win, resizer_colctrl, win._curWindowX, win._curWindowY);
@@ -18488,7 +19071,7 @@ if (!nexacro.Grid) {
 			resizer_rowctrl._setTracksize(this._client_width);
 
 			if (resizer_rowctrl._direction == "vertical") {
-				resizer_rowctrl.move(this._client_left, canvasY, resizer_rowctrl._tracksize, 1);
+				resizer_rowctrl.move(this._client_left, client[1], resizer_rowctrl._tracksize, 1);
 			}
 
 			nexacro._setTrackInfo(win, resizer_rowctrl, win._curWindowX, win._curWindowY);
@@ -18499,11 +19082,11 @@ if (!nexacro.Grid) {
 		}
 	};
 
-	_pGrid._recalcTouchInfosXY = function (obj, touchinfos, need_recalcXY) {
+	_pGrid._recalcTouchInfosXY = function (obj, touchinfos, need_recalcXY, from_refer_comp) {
 		var touchinfo, posobj;
 		for (var i = 0; i < touchinfos.length; i++) {
 			if (touchinfo = touchinfos[i]) {
-				posobj = this._recalcXY(obj, touchinfo.canvasX, touchinfo.canvasY, need_recalcXY);
+				posobj = this._recalcXY(obj, touchinfo.canvasX, touchinfo.canvasY, need_recalcXY, from_refer_comp);
 				touchinfo.canvasX = posobj.canvasX;
 				touchinfo.canvasY = posobj.canvasY;
 				touchinfo.clientX = posobj.clientX;
@@ -18523,7 +19106,7 @@ if (!nexacro.Grid) {
 		return [canvasX, canvasY];
 	};
 
-	_pGrid._recalcXY = function (obj, canvasX, canvasY, need_recalcXY) {
+	_pGrid._recalcXY = function (obj, canvasX, canvasY, need_recalcXY, from_refer_comp) {
 		var real_canvasX = canvasX;
 		var real_canvasY = canvasY;
 
@@ -18555,6 +19138,19 @@ if (!nexacro.Grid) {
 				}
 			}
 		}
+
+		if (from_refer_comp._type_name != "Grid") {
+			if (from_refer_comp._type_name == "GridRow") {
+				real_canvasY -= this._getScrollTop();
+			}
+
+			var cur_border = this.currentstyle.border;
+			if (cur_border) {
+				real_canvasX += cur_border._left_width;
+				real_canvasY += cur_border._top_width;
+			}
+		}
+
 		this._recalcXY_info = [real_canvasX, real_canvasY];
 		var real_clientXY = this._getClientXY(real_canvasX, real_canvasY);
 
@@ -18580,7 +19176,7 @@ if (!nexacro.Grid) {
 
 		cellobj = this._findCellObj(cellobj);
 
-		this._recalcTouchInfosXY(cellobj, changedtouchinfos, need_recalcXY);
+		this._recalcTouchInfosXY(cellobj, changedtouchinfos, need_recalcXY, from_refer_comp);
 
 		var touchinfo = nexacro._getFirstTouchInfo(changedtouchinfos);
 		var subcellobj;
@@ -18618,7 +19214,7 @@ if (!nexacro.Grid) {
 
 		if (touchinfo) {
 			if (user_fire) {
-				this._resizerStart(touchinfo.canvasX, touchinfo.canvasY, cellobj, "down");
+				this._resizerStart(touchinfo.canvasX, touchinfo.canvasY, cellobj, "down", from_refer_comp);
 
 				this._common_fire_user_lbuttondown(cellobj, false, false, touchinfo.canvasX, touchinfo.canvasY, from_comp, from_refer_comp);
 			}
@@ -18668,7 +19264,7 @@ if (!nexacro.Grid) {
 			}
 		}
 
-		var posobj = this._recalcXY(cellobj, canvasX, canvasY, need_recalcXY);
+		var posobj = this._recalcXY(cellobj, canvasX, canvasY, need_recalcXY, from_refer_comp);
 		canvasX = posobj.canvasX;
 		canvasY = posobj.canvasY;
 		clientX = posobj.clientX;
@@ -18700,7 +19296,7 @@ if (!nexacro.Grid) {
 
 		if (nexacro.isTouchInteraction) {
 			if (user_fire) {
-				this._resizerStart(canvasX, canvasY, cellobj, "down");
+				this._resizerStart(canvasX, canvasY, cellobj, "down", from_refer_comp);
 				this._common_fire_user_lbuttondown(cellobj, ctrl_key, shift_key, canvasX, canvasY, from_comp, from_refer_comp);
 			}
 			else {
@@ -18737,7 +19333,7 @@ if (!nexacro.Grid) {
 			}
 		}
 
-		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false);
+		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false, from_refer_comp);
 		canvasX = posobj.canvasX;
 		canvasY = posobj.canvasY;
 		clientX = posobj.clientX;
@@ -18783,7 +19379,7 @@ if (!nexacro.Grid) {
 			}
 		}
 
-		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false);
+		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false, from_refer_comp);
 		canvasX = posobj.canvasX;
 		canvasY = posobj.canvasY;
 		clientX = posobj.clientX;
@@ -18811,13 +19407,6 @@ if (!nexacro.Grid) {
 			else {
 				retn = this.onmousedown._fireSysEvent(this, evt);
 			}
-		}
-
-		if (user_fire) {
-			this._common_fire_user_lbuttondown(cellobj, ctrl_key, shift_key, canvasX, canvasY, from_comp, from_refer_comp);
-		}
-		else {
-			this._common_fire_sys_lbuttondown(cellobj, ctrl_key, shift_key, canvasX, canvasY, from_comp, from_refer_comp);
 		}
 
 		return retn;
@@ -19335,19 +19924,21 @@ if (!nexacro.Grid) {
 
 				for (var j = 0; j < target_cellinfos.length; j++) {
 					for (var k = srow; k <= erow; k++) {
-						target_cellinfos[j]._fakemerge_infos[k + 2] = undefined;
+						if (target_cellinfos[j]._fakemerge_infos) {
+							target_cellinfos[j]._fakemerge_infos[k + 2] = undefined;
+						}
 					}
-
 					format._clearCellStyleCache(band, target_cellinfos[j]._cellidx);
 					this._refreshCell(band, target_cellinfos[j]._cellidx, -1, true);
 				}
 			}
-
-			if (fake_arr.length == 0) {
-				this._is_use_fakemerge = false;
-			}
 		}
-		this._adjustOverlayElements(false, false, true);
+		this._adjustOverlayElements(false, this._is_use_fakemerge);
+
+		if (fake_arr.length == 0) {
+			this._is_use_fakemerge = false;
+		}
+
 		return true;
 	};
 
@@ -19445,13 +20036,15 @@ if (!nexacro.Grid) {
 		return "";
 	};
 
-	_pGrid._on_last_lbuttonup = function () {
+	_pGrid._on_last_lbuttonup = function (down_act) {
 		if (this._movingcell) {
 			this._setGlobalCursor(null, this);
 			this._movingcell = null;
 		}
 
+		this._is_down_act = false;
 		this._clearDestroyEditor(true);
+
 		var args = this._after_recreate_contents_all;
 		if (args != null) {
 			this._is_after_recreate = true;
@@ -19459,15 +20052,38 @@ if (!nexacro.Grid) {
 			this._after_recreate_contents_all = null;
 			this._is_after_recreate = false;
 		}
+
+		if (this._after_recreate) {
+			this._is_after_recreate = true;
+			this._recreate();
+			this._after_recreate = false;
+			this._is_after_recreate = false;
+		}
+
+		if (this._currentCellEditor && this._currentCellEditor._user_push) {
+			this._currentCellEditor._user_push = false;
+			this._currentCellEditor._stat_change("focus", "focused");
+			this._currentCellEditor._is_pushed_area = false;
+			this._currentCellEditor._is_push = false;
+		}
 	};
 
-	_pGrid._on_last_keyup = function () {
+	_pGrid._on_last_keyup = function (down_act) {
+		this._is_down_act = false;
 		this._clearDestroyEditor(true);
+
 		var args = this._after_recreate_contents_all;
 		if (args != null) {
 			this._is_after_recreate = true;
 			this._recreate_contents_all(args[0], args[1], args[2], args[3], args[4]);
 			this._after_recreate_contents_all = null;
+			this._is_after_recreate = false;
+		}
+
+		if (this._after_recreate) {
+			this._is_after_recreate = true;
+			this._recreate();
+			this._after_recreate = false;
 			this._is_after_recreate = false;
 		}
 	};
@@ -19486,6 +20102,7 @@ if (!nexacro.Grid) {
 			if (this._isFakeCell(newPos)) {
 				this._is_drag_selectstart = false;
 				this._is_drag_selecting = false;
+				this._is_drag_sameselect = false;
 				return true;
 			}
 			if (ctrlKey == false && shiftKey == false && this._is_drag_selecting == false && newPos >= 0) {
@@ -19501,6 +20118,7 @@ if (!nexacro.Grid) {
 
 		this._is_drag_selectstart = false;
 		this._is_drag_selecting = false;
+		this._is_drag_sameselect = false;
 		this._execRefreshContents("colsizing", false, true);
 		this._execRefreshContents("rowsizing", false, false);
 		this._execRefreshContents("cellmoving", true);
@@ -19508,10 +20126,12 @@ if (!nexacro.Grid) {
 		this._exeFuncQueue("rowsizing");
 	};
 
+	_pGrid._is_down_act = false;
 	_pGrid._cancelEvent = function (target_comp) {
 		this._endExtraTrack();
 		this._is_drag_selectstart = false;
 		this._is_drag_selecting = false;
+		this._is_down_act = this._isDownActionKeyMouse();
 	};
 
 	_pGrid.on_fire_user_ontouchend = function (touchinfos, changedtouchinfos, from_comp, from_refer_comp, need_recalcXY) {
@@ -19527,7 +20147,7 @@ if (!nexacro.Grid) {
 
 		cellobj = this._findCellObj(cellobj);
 
-		this._recalcTouchInfosXY(cellobj, changedtouchinfos, need_recalcXY);
+		this._recalcTouchInfosXY(cellobj, changedtouchinfos, need_recalcXY, from_refer_comp);
 
 		var subcellobj;
 		if (cellobj && cellobj._type_name == "GridCell") {
@@ -19626,7 +20246,7 @@ if (!nexacro.Grid) {
 			}
 		}
 
-		var posobj = this._recalcXY(cellobj, canvasX, canvasY, need_recalcXY);
+		var posobj = this._recalcXY(cellobj, canvasX, canvasY, need_recalcXY, from_refer_comp);
 		canvasX = posobj.canvasX;
 		canvasY = posobj.canvasY;
 		clientX = posobj.clientX;
@@ -19668,7 +20288,7 @@ if (!nexacro.Grid) {
 			}
 
 			this._common_fire_sys_lbuttonup(cellobj, altKey, ctrlKey, shiftKey);
-			this._resizerStart(canvasX, canvasY, cellobj, "up");
+			this._resizerStart(canvasX, canvasY, cellobj, "up", from_refer_comp);
 		}
 		return retn;
 	};
@@ -19686,7 +20306,7 @@ if (!nexacro.Grid) {
 			}
 		}
 
-		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false);
+		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false, from_refer_comp);
 		canvasX = posobj.canvasX;
 		canvasY = posobj.canvasY;
 		clientX = posobj.clientX;
@@ -19732,7 +20352,7 @@ if (!nexacro.Grid) {
 			}
 		}
 
-		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false);
+		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false, from_refer_comp);
 		canvasX = posobj.canvasX;
 		canvasY = posobj.canvasY;
 		clientX = posobj.clientX;
@@ -19761,21 +20381,10 @@ if (!nexacro.Grid) {
 			}
 		}
 
-		if (!user_fire) {
-			if (cellobj && cellobj._type_name == "GridCell" && cellobj._band.id == "body") {
-				if (this.selectchangetype == "up") {
-					if (this.selecttype != "area" && this.selecttype != "multiarea") {
-						this._mouseSelection(cellobj, ctrl_key, shift_key, canvasX, canvasY, from_comp, from_refer_comp);
-					}
-				}
-			}
-
-			this._common_fire_sys_lbuttonup(cellobj, alt_key, ctrl_key, shift_key);
-		}
 		return retn;
 	};
 
-	_pGrid._resizerStart = function (canvasX, canvasY, cellobj, kind) {
+	_pGrid._resizerStart = function (canvasX, canvasY, cellobj, kind, from_refer_comp) {
 		if (this._movingcell) {
 			return;
 		}
@@ -19846,7 +20455,12 @@ if (!nexacro.Grid) {
 				}
 			}
 			if (!resizer_colctrl._is_range && !resizer_colctrl._is_tracking && (!resizer_rowctrl || !resizer_rowctrl._is_tracking)) {
-				this._setGlobalCursor(null, cellobj);
+				if (cellobj._type_name != "GridCell") {
+					this._setGlobalCursor(null, from_refer_comp);
+				}
+				else {
+					this._setGlobalCursor(null, cellobj);
+				}
 				action = false;
 			}
 			else if (resizer_colctrl._is_tracking) {
@@ -19884,7 +20498,12 @@ if (!nexacro.Grid) {
 				}
 			}
 			if (!resizer_rowctrl._is_range && !resizer_rowctrl._is_tracking && (!resizer_colctrl || !resizer_colctrl._is_tracking)) {
-				this._setGlobalCursor(null, cellobj);
+				if (cellobj._type_name != "GridCell") {
+					this._setGlobalCursor(null, from_refer_comp);
+				}
+				else {
+					this._setGlobalCursor(null, cellobj);
+				}
 			}
 			else if (resizer_rowctrl._is_tracking) {
 				this._setGlobalCursor(resize_cursor, cellobj);
@@ -19897,7 +20516,7 @@ if (!nexacro.Grid) {
 
 		cellobj = this._findCellObj(cellobj);
 
-		this._recalcTouchInfosXY(cellobj, changedtouchinfos, false);
+		this._recalcTouchInfosXY(cellobj, changedtouchinfos, false, from_refer_comp);
 
 		var subcellobj;
 		if (cellobj && cellobj._type_name == "GridCell") {
@@ -19940,7 +20559,7 @@ if (!nexacro.Grid) {
 			}
 		}
 
-		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false);
+		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false, from_refer_comp);
 		canvasX = posobj.canvasX;
 		canvasY = posobj.canvasY;
 		clientX = posobj.clientX;
@@ -19965,7 +20584,7 @@ if (!nexacro.Grid) {
 		}
 
 		if (!nexacro.isTouchInteraction) {
-			this._resizerStart(canvasX, canvasY, cellobj, "move");
+			this._resizerStart(canvasX, canvasY, cellobj, "move", from_refer_comp);
 		}
 
 		return retn;
@@ -19973,7 +20592,7 @@ if (!nexacro.Grid) {
 
 	_pGrid._prevAreaCellObj = null;
 
-	_pGrid._areaselectMove = function (canvasX, from_refer_comp, canvasX, canvasY) {
+	_pGrid._areaselectMove = function (from_refer_comp, canvasX, canvasY) {
 		if (this._is_drag_selectstart && !this._showEditing) {
 			var cellobj = from_refer_comp;
 
@@ -19986,7 +20605,7 @@ if (!nexacro.Grid) {
 					cellobj = cellobj.parentcell;
 				}
 
-				var posobj = this._recalcXY(cellobj, canvasX, canvasY, false);
+				var posobj = this._recalcXY(cellobj, canvasX, canvasY, false, from_refer_comp);
 				canvasX = posobj.canvasX;
 				canvasY = posobj.canvasY;
 				clientX = posobj.clientX;
@@ -20176,6 +20795,38 @@ if (!nexacro.Grid) {
 
 		this._track_start_info.cell_screenX = system.clientToScreenX(this._lastmouseentercell, 0);
 		this._track_start_info.cell_screenY = system.clientToScreenY(this._lastmouseentercell, 0);
+
+
+		var frame = this._getOwnerFrame();
+
+		if (frame && (frame._window_type == 1 || frame._window_type == 4 || frame._window_type == 5)) {
+			var adjust_x = this._lastmouseentercell._adjust_left;
+			var adjust_y = this._lastmouseentercell._adjust_top;
+
+			var parent = this._lastmouseentercell.parent;
+
+			while (parent) {
+				if (parent._is_frame) {
+					break;
+				}
+				adjust_x += parent._adjust_left;
+				adjust_y += parent._adjust_top;
+
+				parent = parent.parent;
+			}
+
+			var frame_screenx = system.clientToScreenX(frame, 0);
+			var frame_screeny = system.clientToScreenY(frame, 0);
+			if (frame_screenx == 0 && frame._adjust_left < 0) {
+				frame_screenx = frame._adjust_left;
+			}
+			if (frame_screeny == 0 && frame._adjust_top < 0) {
+				frame_screeny = frame._adjust_top;
+			}
+
+			this._track_start_info.cell_screenX = frame_screenx + adjust_x;
+		}
+
 		this._track_start_info.start_screenX = screenX;
 		this._track_start_info.start_screenY = screenY;
 		this._track_start_info.scrollLeft = scroll_left;
@@ -20255,6 +20906,38 @@ if (!nexacro.Grid) {
 
 				var grid_x = nexacro.System.clientToScreenX(obj, 0);
 				var grid_y = nexacro.System.clientToScreenY(obj, 0);
+				var frame = obj._getOwnerFrame();
+
+				if (frame && (frame._window_type == 1 || frame._window_type == 4)) {
+					var adjust_x = obj._adjust_left;
+					var adjust_y = obj._adjust_top;
+
+					var parent = obj.parent;
+
+					while (parent) {
+						if (parent._is_frame) {
+							break;
+						}
+
+						adjust_x += parent._adjust_left;
+						adjust_y += parent._adjust_top;
+
+						parent = parent.parent;
+					}
+
+
+					var frame_screenx = system.clientToScreenX(frame, 0);
+					var frame_screeny = system.clientToScreenY(frame, 0);
+					if (frame_screenx == 0 && frame._adjust_left < 0) {
+						frame_screenx = frame._adjust_left;
+					}
+					if (frame_screeny == 0 && frame._adjust_top < 0) {
+						frame_screeny = frame._adjust_top;
+					}
+
+					grid_x = frame_screenx + adjust_x;
+				}
+
 				var grid_r = grid_x + parseInt(obj._adjust_width);
 				var grid_b = grid_y + parseInt(obj._adjust_height);
 
@@ -20604,6 +21287,37 @@ if (!nexacro.Grid) {
 		var grid_body_screenx = system.clientToScreenX(this, 0);
 		var grid_body_screeny = system.clientToScreenY(this, 0);
 
+		var frame = this._getOwnerFrame();
+		;
+
+		if (frame && (frame._window_type == 1 || frame._window_type == 4 || frame._window_type == 5)) {
+			var adjust_x = this._adjust_left;
+			var adjust_y = this._adjust_top;
+
+			var parent = this.parent;
+
+			while (parent) {
+				if (parent._is_frame) {
+					break;
+				}
+
+				adjust_x += parent._adjust_left;
+				adjust_y += parent._adjust_top;
+
+				parent = parent.parent;
+			}
+			var frame_screenx = system.clientToScreenX(frame, 0);
+			var frame_screeny = system.clientToScreenY(frame, 0);
+			if (frame_screenx == 0 && frame._adjust_left < 0) {
+				frame_screenx = frame._adjust_left;
+			}
+			if (frame_screeny == 0 && frame._adjust_top < 0) {
+				frame_screeny = frame._adjust_left;
+			}
+
+			grid_body_screenx = frame_screenx + adjust_x;
+		}
+
 		var bApply_scroll_top = true;
 		if (this._fixed_rowcnt > 0 && start_cell_row >= this._fixed_startrow && start_cell_row <= this._fixed_endrow) {
 			bApply_scroll_top = false;
@@ -20679,7 +21393,7 @@ if (!nexacro.Grid) {
 			return true;
 		}
 
-		return this._areaselectMove(canvasX, from_refer_comp, canvasX, canvasY);
+		return this._areaselectMove(from_refer_comp, canvasX, canvasY);
 	};
 
 	_pGrid._setSelectedInfo = function (cell, col, datarow, subrow, pvt, areainfo) {
@@ -20794,12 +21508,21 @@ if (!nexacro.Grid) {
 		}
 		;
 
+		if (!retn) {
+			this._is_drag_sameselect = true;
+		}
+
 		var win = this._getWindow();
 		if (!nexacro.isTouchInteraction && (this._isAreaSelect() || this.selecttype == "multirow")) {
 			if (nexacro.Browser == "Runtime") {
-				var mainframe = application.mainframe;
-				var screenX = system.clientToScreenX(mainframe, 0) + win._curWindowX;
-				var screenY = system.clientToScreenY(mainframe, 0) + win._curWindowY;
+				var frame = this._getOwnerFrame();
+
+				if (frame._window_type != 1 && frame._window_type != 4 && frame._window_type != 5) {
+					frame = application.mainframe;
+				}
+
+				var screenX = system.clientToScreenX(frame, 0) + win._curWindowX - ((frame._adjust_left >= 0) ? frame._adjust_left : 0);
+				var screenY = system.clientToScreenY(frame, 0) + win._curWindowY - ((frame._adjust_top >= 0) ? frame._adjust_top : 0);
 
 				nexacro._setExtraTrackInfo(win, this, win._curWindowX, win._curWindowY, screenX, screenY, shiftkey || no_select);
 			}
@@ -20840,7 +21563,7 @@ if (!nexacro.Grid) {
 		var retn = nexacro.Component.prototype.on_fire_user_onkeyup.call(this, keyCode, altKey, ctrlKey, shiftKey, obj, refer_comp);
 
 		if (!this._is_alive) {
-			return ret;
+			return retn;
 		}
 
 		if (keyCode == nexacro.Event.KEY_RIGHT && altKey) {
@@ -20864,6 +21587,12 @@ if (!nexacro.Grid) {
 		}
 
 		return retn;
+	};
+
+	_pGrid.on_fire_sys_onkeydown = function (keycode, alt_key, ctrl_key, shift_key, fire_comp, refer_comp) {
+		if (this._is_down_act) {
+			this._on_last_keyup(true);
+		}
 	};
 
 	_pGrid.on_fire_user_onkeydown = function (keyCode, altKey, ctrlKey, shiftKey, obj, refer_comp) {
@@ -20890,25 +21619,47 @@ if (!nexacro.Grid) {
 					break;
 				case nexacro.AccessibilityUtil.Hotkey.FIRSTCELLINROW:
 					this.currentcol = 0;
-					this._moveToPosAccessibilityCell(row, 0);
+					if (nexacro._enableaccessibility) {
+						this._moveToPosAccessibilityCell(row, 0);
+					}
+					else {
+						this._moveToPosCell(row, 0);
+					}
 					break;
 				case nexacro.AccessibilityUtil.Hotkey.LASTCELLINROW:
 					this.currentcol = this._curFormat._cols.length - 1;
-					this._moveToPosAccessibilityCell(row, this.currentcol);
+					if (nexacro._enableaccessibility) {
+						this._moveToPosAccessibilityCell(row, this.currentcol);
+					}
+					else {
+						this._moveToPosCell(row, this.currentcol);
+					}
 					break;
 				case nexacro.AccessibilityUtil.Hotkey.FIRSTCELLINCOLUMN:
 					this._currentBand = "grid";
 					if (this.vscrollbar && this.vscrollbar.visible) {
 						this.vscrollbar.set_pos(0);
 					}
-					this._setAccessibilityBandFocus("next", false, true);
+
+					if (nexacro._enableaccessibility) {
+						this._setAccessibilityBandFocus("next", false, true);
+					}
+					else {
+						this._moveToPosCell(0, this.currentcol);
+					}
 					break;
 				case nexacro.AccessibilityUtil.Hotkey.LASTCELLINCOLUMN:
 					this._currentBand = "grid";
 					if (this.vscrollbar && this.vscrollbar.visible) {
 						this.vscrollbar.set_pos(this.vscrollbar._max);
 					}
-					this._setAccessibilityBandFocus("prev", false, true);
+
+					if (nexacro._enableaccessibility) {
+						this._setAccessibilityBandFocus("prev", false, true);
+					}
+					else {
+						this._moveToPosCell(this._rowcount - 1, this.currentcol);
+					}
 					break;
 			}
 			return true;
@@ -20964,17 +21715,20 @@ if (!nexacro.Grid) {
 		}
 
 		var bEnterDown = false;
-		if (this._isChar(keyCode) && this.autoenter == "key") {
-			if (nexacro.Browser == "Runtime") {
+		var bShowEditor = true;
+
+		if (this.autoenter == "key" && nexacro.Browser == "Runtime") {
+			if (this._isChar(keyCode) || keyCode == 25) {
 				if (!this._showEditing) {
 					this._showEditor();
 
-					if (this._currentCellEditor && this._currentCellEditor._set_absolutelyValue) {
-						this._currentCellEditor._set_absolutelyValue("");
-					}
-
 					if (keyCode == nexacro.Event.KEY_ENTER) {
 						bEnterDown = true;
+					}
+					else {
+						if (this._currentCellEditor && this._currentCellEditor._set_absolutelyValue) {
+							this._currentCellEditor._set_absolutelyValue("");
+						}
 					}
 				}
 			}
@@ -20983,7 +21737,11 @@ if (!nexacro.Grid) {
 		if (keyCode == nexacro.Event.KEY_ENTER && this._showEditing) {
 			var edit = this._currentCellEditor;
 			var edittype = edit._cellinfo._getEdittype(edit._cellobj._rowidx);
-			if (edittype == "text" || edittype == "mask" || edittype == "date" || edittype == "combo" || edittype == "masknumber") {
+
+			if (edittype == "textarea" && (altKey || ctrlKey || shiftKey)) {
+				;
+			}
+			else if (edittype == "text" || edittype == "mask" || edittype == "date" || edittype == "combo" || edittype == "masknumber" || edittype == "textarea") {
 				if (edit.calendaredit) {
 					edit.calendaredit._edit_base_api.syncValue();
 				}
@@ -20993,8 +21751,15 @@ if (!nexacro.Grid) {
 				else {
 					edit._edit_base_api.syncValue();
 				}
+
 				bEnterDown = true;
-				edit._setDataset();
+				bShowEditor = false;
+
+				if (refer_comp instanceof nexacro.ComboEditCtrl && refer_comp.parent._isPopupVisible()) {
+				}
+				else {
+					this._hideEditor();
+				}
 			}
 		}
 
@@ -21080,7 +21845,8 @@ if (!nexacro.Grid) {
 		}
 		else if (keyCode == nexacro.Event.KEY_ENTER) {
 			if (!nexacro._enableaccessibility || nexacro._enableaccessibility && this._currentBand == "body") {
-				if (this.autoenter != "select") {
+				{
+
 					var editType = "";
 
 					if (refer_comp._type_name == "GridCell") {
@@ -21100,21 +21866,27 @@ if (!nexacro.Grid) {
 						refer_comp instanceof nexacro.GridControlCheckbox || refer_comp.parent instanceof nexacro.GridControlCheckbox || editType == "checkbox" || 
 						refer_comp instanceof nexacro.GridControlCalendar || refer_comp.parent instanceof nexacro.GridControlCalendar || 
 						refer_comp instanceof nexacro.GridControlCombo || refer_comp.parent instanceof nexacro.GridControlCombo) {
-						if (nexacro.Browser == "IE") {
+						if (nexacro.Browser == "Edge" || nexacro.Browser == "IE") {
 							if (refer_comp instanceof nexacro.GridControlCombo) {
 								firecomp = refer_comp.comboedit;
 							}
 						}
 						if (this._showEditing || editType == "checkbox") {
-							bEnterDown = true;
+							if (!altKey && !ctrlKey && !shiftKey) {
+								bEnterDown = true;
+							}
 						}
-						else {
-							this._showEditor();
+						else if (bShowEditor) {
+							nexacro.OnceCallbackTimer.callonce(this, function () {
+								this._showEditor();
+							}, 50);
 						}
 					}
 					else {
 						if (!this._showEditing) {
-							this._showEditor();
+							nexacro.OnceCallbackTimer.callonce(this, function () {
+								this._showEditor();
+							}, 50);
 						}
 					}
 				}
@@ -21228,8 +22000,6 @@ if (!nexacro.Grid) {
 			}
 		}
 		else if (keyCode == nexacro.Event.KEY_TAB) {
-			this._keydown_elem._event_stop = true;
-
 			if (nexacro._enableaccessibility) {
 				if (shiftKey) {
 					this._acceptstab = this._moveToAccessibilityCell("prev", true);
@@ -21251,11 +22021,14 @@ if (!nexacro.Grid) {
 				this._moveCellAfterFocus();
 				this._iskey_movetocell = false;
 			}
+
+			this._keydown_elem._event_stop = true;
+
 			return this._acceptstab;
 		}
 		else {
-			if (this._isChar(keyCode) && this.autoenter == "key") {
-				if (nexacro.Browser == "Runtime") {
+			if (this.autoenter == "key" && nexacro.Browser == "Runtime") {
+				if (this._isChar(keyCode) || keyCode == 25) {
 					if (!this._showEditing) {
 						this._showEditor();
 
@@ -21266,7 +22039,7 @@ if (!nexacro.Grid) {
 
 							return true;
 						}
-						else if (nexacro.Browser == "IE") {
+						else if (nexacro.Browser == "Edge" || nexacro.Browser == "IE") {
 						}
 					}
 				}
@@ -21323,7 +22096,7 @@ if (!nexacro.Grid) {
 			cellobj = cellobj.parentcell;
 		}
 
-		var posobj = this._recalcXY(cellobj, canvasX, canvasY, true);
+		var posobj = this._recalcXY(cellobj, canvasX, canvasY, true, from_refer_comp);
 		canvasX = posobj.canvasX;
 		canvasY = posobj.canvasY;
 		clientX = posobj.clientX;
@@ -21381,7 +22154,7 @@ if (!nexacro.Grid) {
 			cellobj = cellobj.parentcell;
 		}
 
-		var posobj = this._recalcXY(cellobj, canvasX, canvasY, true);
+		var posobj = this._recalcXY(cellobj, canvasX, canvasY, true, from_refer_comp);
 		canvasX = posobj.canvasX;
 		canvasY = posobj.canvasY;
 		clientX = posobj.clientX;
@@ -21413,7 +22186,7 @@ if (!nexacro.Grid) {
 			cellobj = cellobj.parentcell;
 		}
 
-		var posobj = this._recalcXY(cellobj, canvasX, canvasY, true);
+		var posobj = this._recalcXY(cellobj, canvasX, canvasY, true, from_refer_comp);
 		canvasX = posobj.canvasX;
 		canvasY = posobj.canvasY;
 		clientX = posobj.clientX;
@@ -21451,7 +22224,7 @@ if (!nexacro.Grid) {
 			cellobj = cellobj.parentcell;
 		}
 
-		var posobj = this._recalcXY(cellobj, canvasX, canvasY, true);
+		var posobj = this._recalcXY(cellobj, canvasX, canvasY, true, from_refer_comp);
 		canvasX = posobj.canvasX;
 		canvasY = posobj.canvasY;
 		clientX = posobj.clientX;
@@ -21493,7 +22266,7 @@ if (!nexacro.Grid) {
 			cellobj = cellobj.parentcell;
 		}
 
-		var posobj = this._recalcXY(cellobj, canvasX, canvasY, true);
+		var posobj = this._recalcXY(cellobj, canvasX, canvasY, true, from_refer_comp);
 		canvasX = posobj.canvasX;
 		canvasY = posobj.canvasY;
 		clientX = posobj.clientX;
@@ -21531,7 +22304,7 @@ if (!nexacro.Grid) {
 			cellobj = cellobj.parentcell;
 		}
 
-		var posobj = this._recalcXY(cellobj, canvasX, canvasY, true);
+		var posobj = this._recalcXY(cellobj, canvasX, canvasY, true, from_refer_comp);
 		canvasX = posobj.canvasX;
 		canvasY = posobj.canvasY;
 		clientX = posobj.clientX;
@@ -21595,9 +22368,7 @@ if (!nexacro.Grid) {
 			beforeSubrow = this._beforebodysubrowpos = this._selectinfo.cursubrow;
 			beforePvt = this._beforepvt = this._selectinfo.curpvt;
 
-			if (cellOldPos == cellNewPos) {
-			}
-			else if (cellNewPos < 0) {
+			if (cellNewPos < 0) {
 				afterCell = (this._selectinfo.curcell < 0) ? 0 : this._selectinfo.curcell;
 				afterCol = (this._selectinfo.curcol < 0) ? 0 : this._selectinfo.curcol;
 				afterRow = newPos;
@@ -21606,6 +22377,8 @@ if (!nexacro.Grid) {
 				this._hideEditor();
 				this._setSelectedInfo(afterCell, afterCol, afterRow, afterSubrow, afterPvt);
 				this._ChangeSelect(afterCell, afterCol, afterRow, afterSubrow, afterPvt, true, beforeCell, beforeCol, beforeRow, beforeSubrow, beforePvt, "body");
+			}
+			else if (cellOldPos == cellNewPos) {
 			}
 			else {
 				afterCell = (this._selectinfo.curcell < 0) ? 0 : this._selectinfo.curcell;
@@ -21680,7 +22453,9 @@ if (!nexacro.Grid) {
 		else if ((this.autosizingtype == "row" || this.autosizingtype == "both") && this._isChangeBodyRowSizeList(e.row) == true) {
 			this._recreate_contents_all(true, true, false);
 		}
-		else if ((this.autosizingtype == "col" || this.autosizingtype == "both") && this._isChangeBodyColSizeList(e.columnid, cols) == true) {
+		else if ((this.autosizingtype == "col" || this.autosizingtype == "both") && this._isChangeBodyColSizeList(e.columnid, cols, e.row) == true) {
+			this._autofitcol_rate = [];
+
 			if (cols.length > 1) {
 				if (this.autosizingtype == "both") {
 					this._recreate_contents_all(true, true, false);
@@ -21809,6 +22584,10 @@ if (!nexacro.Grid) {
 		this.rowcount = this._rowcount = obj.rowcount;
 		this._rowposition = obj.rowposition;
 
+		if (this._is_down_act && !this._isDownActionKeyMouse()) {
+			this._is_down_act = false;
+		}
+
 		this._exprcache = {
 		};
 		this._clearAllStyleCache();
@@ -21834,6 +22613,10 @@ if (!nexacro.Grid) {
 		var updaterow_pos = false;
 		if (this._rowposition != dataset.rowposition) {
 			updaterow_pos = true;
+		}
+
+		if (this._is_down_act && !this._isDownActionKeyMouse()) {
+			this._is_down_act = false;
 		}
 
 		this._rowposition = dataset.rowposition;
@@ -21953,6 +22736,7 @@ if (!nexacro.Grid) {
 			else if (kind == "deleteall" || kind == "cleardata" || kind == "filter") {
 				this._clrMultiSelect();
 				this._setSelectedInfo(-1, -1, -1, -1, null);
+				this._destroyOverlayElements();
 			}
 			else if (kind == "copydata") {
 				this._setSelectedInfo(null, null, this._rowposition, 0, null);
@@ -21974,7 +22758,11 @@ if (!nexacro.Grid) {
 	};
 
 	_pGrid._afterRowsetChanged = function (kind, updaterow_pos, row, bchange_rowcnt, prev_rowcnt) {
-		if (this.getElement() && this.enableredraw) {
+		if (!this.enableredraw) {
+			this._enable_redraw_history["recreate"] = true;
+			return;
+		}
+		if (this.getElement()) {
 			if (kind == "moverow" || kind == "enableevent") {
 				this._hideEditor(false, true);
 			}
@@ -22079,6 +22867,7 @@ if (!nexacro.Grid) {
 			}
 			else if (kind == "exchangerow" || kind == "moverow") {
 				if (this.autosizingtype != "none" || this._hasTree) {
+					this._initTreeStates();
 					this._recreate_contents_all(true, false, false, true);
 				}
 				else {
@@ -22169,6 +22958,10 @@ if (!nexacro.Grid) {
 
 		var afterrowcnt = this._getDisplayRowCount();
 
+		if (this.fillareatype != "none") {
+			this._refreshBody();
+		}
+
 		this._updateNodata(beforerowcnt, afterrowcnt);
 	};
 
@@ -22189,7 +22982,86 @@ if (!nexacro.Grid) {
 	};
 
 	_pGrid.on_apply_enableredraw = function () {
-		this.redraw();
+		if (this._enable_redraw_history["recreate"]) {
+			this.redraw();
+			this._enable_redraw_history = {
+			};
+			return;
+		}
+
+		var ds = this._binddataset;
+		if (ds && ds.oncolumnchanged && ds.oncolumnchanged._firestat) {
+			this._recreate_contents_all(true, true, false);
+			this._enable_redraw_history = {
+			};
+			return;
+		}
+
+		if (this._enable_redraw_history["recreate_body"]) {
+			if (this._bodyBand) {
+				this._bodyBand._recreate_contents();
+			}
+		}
+		else if (this._enable_redraw_history["refresh_body"] && !this._enable_redraw_history["refreshall"]) {
+			this._refreshBody(true);
+		}
+
+		if (this._enable_redraw_history["recreate_head"]) {
+			if (this._headBand) {
+				this._headBand._recreate_contents();
+			}
+		}
+		else if (this._enable_redraw_history["refresh_head"] && !this._enable_redraw_history["refreshall"]) {
+			this._refreshHead(true);
+		}
+
+		if (this._enable_redraw_history["recreate_summ"]) {
+			if (this._summBand) {
+				this._summBand._recreate_contents();
+			}
+		}
+		else if (this._enable_redraw_history["refresh_summ"] && !this._enable_redraw_history["refreshall"]) {
+			this._refreshSumm(true);
+		}
+
+		if (this._enable_redraw_history["resize_band"]) {
+			this._resizeBand();
+		}
+
+		if (this._enable_redraw_history["updatecolsize"]) {
+			var props = this._enable_redraw_history["updatecolsize"];
+			var props_len = props.length;
+			var min = props[0];
+
+			for (var i = 1; i < props_len; i++) {
+				min = Math.min(props[i], min);
+			}
+			this._updateColSize(min);
+		}
+
+		if (this._enable_redraw_history["updaterowsize"]) {
+			var props = this._enable_redraw_history["updaterowsize"];
+			var props_len = props.length;
+
+			for (var i = 0; i < props_len; i++) {
+				this._updateRowSize(props[i][0], props[i][1], (i < props_len - 1));
+			}
+		}
+
+		if (this._enable_redraw_history["autofit"]) {
+			var prop = this._enable_redraw_history["autofit"];
+			this._applyAutofittype(prop[0], prop[1]);
+		}
+
+		if (this._enable_redraw_history["refreshall"]) {
+			this._refreshAll(true);
+		}
+		else {
+			nexacro.Component.prototype.on_apply_enableredraw.call(this);
+		}
+
+		this._enable_redraw_history = {
+		};
 	};
 
 	_pGrid._isSelectedCell = function (cell, datarow) {
@@ -22501,7 +23373,13 @@ if (!nexacro.Grid) {
 			return;
 		}
 
-		this._hideEditor(undefined, undefined, true);
+		if (this._binddataset && this._binddataset.cancolumnchange && this._binddataset.cancolumnchange._firestat) {
+			this._hideEditor(undefined, true, true);
+		}
+		else {
+			this._hideEditor(undefined, undefined, true);
+		}
+
 		this._focusSelectorPoint(false);
 
 		if (nexacro._enableaccessibility) {
@@ -22592,6 +23470,10 @@ if (!nexacro.Grid) {
 				this._accept_arrow = true;
 				this._acceptstab = true;
 				retn = false;
+				if (nexacro._accessibilitytype == 4 && evt_name === undefined) {
+					this._currentBand = "grid";
+					this._moveToAccessibilityCell("next");
+				}
 			}
 			else {
 				if (self_flag == false) {
@@ -22717,7 +23599,7 @@ if (!nexacro.Grid) {
 			}
 		}
 
-		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false);
+		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false, from_refer_comp);
 		canvasX = posobj.canvasX;
 		canvasY = posobj.canvasY;
 		clientX = posobj.clientX;
@@ -22753,7 +23635,7 @@ if (!nexacro.Grid) {
 			}
 		}
 
-		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false);
+		var posobj = this._recalcXY(cellobj, canvasX, canvasY, false, from_refer_comp);
 		canvasX = posobj.canvasX;
 		canvasY = posobj.canvasY;
 		clientX = posobj.clientX;
@@ -22822,12 +23704,19 @@ if (!nexacro.Grid) {
 
 	_pGrid._is_recreating = false;
 	_pGrid._recreate = function () {
-		if (this.enableredraw == false) {
+		if (!this.enableredraw) {
+			this._enable_redraw_history["recreate"] = true;
 			return true;
 		}
 
 		if (!this.getElement()) {
 			return false;
+		}
+
+		var down_act = this._isDownActionKeyMouse() || this._is_down_act;
+		if (down_act && !this._userRowposChange && !this._is_after_recreate) {
+			this._after_recreate = true;
+			return;
 		}
 
 		this._is_recreating = true;
@@ -22841,8 +23730,8 @@ if (!nexacro.Grid) {
 		this._recreate_contents_proc = [];
 
 		if (this.vscrollbar) {
-			this.vscrollbar.set_pixelpos(0);
-			this.vscrollbar.set_pixelpos(vpos);
+			this.vscrollbar._set_pixelpos(0);
+			this.vscrollbar._set_pixelpos(vpos);
 		}
 
 		if (this.hscrollbar) {
@@ -22881,7 +23770,11 @@ if (!nexacro.Grid) {
 			var elem = window._cur_ldown_elem || window._keydown_element, comp = window.findComponent(elem, 0, 0)[0], isgrid = false;
 
 			while (comp) {
-				if (comp._type_name == "Grid" && comp.id == this.id) {
+				if (comp instanceof nexacro.ScrollBarCtrl) {
+					break;
+				}
+
+				if (comp._type_name == "Grid" && comp == this && comp.id == this.id) {
 					isgrid = true;
 					break;
 				}
@@ -22893,11 +23786,12 @@ if (!nexacro.Grid) {
 	};
 
 	_pGrid._recreate_contents_all = function (reset_colarea, reset_size, init_scroll, only_body, no_hide_edit, chk_srow) {
-		if (this.enableredraw == false) {
-			return true;
+		if (!this.enableredraw) {
+			this._enable_redraw_history["recreate"] = true;
+			return;
 		}
 
-		var down_act = this._isDownActionKeyMouse();
+		var down_act = this._isDownActionKeyMouse() || this._is_down_act;
 		if (down_act && !this._userRowposChange && !this._is_after_recreate) {
 			var args = [reset_colarea, reset_size, init_scroll, only_body, no_hide_edit];
 			if (this._after_recreate_contents_all) {
@@ -22956,6 +23850,7 @@ if (!nexacro.Grid) {
 		this._updateNodata(beforerowcnt, afterrowcnt);
 
 		this._updateSelector();
+		this._adjustOverlayElements(true, this._is_use_fakemerge);
 	};
 
 	_pGrid._updateNodata = function (beforerowcnt, afterrowcnt) {
@@ -23037,7 +23932,8 @@ if (!nexacro.Grid) {
 	};
 
 	_pGrid._createBandsAndAreas = function () {
-		if (this.enableredraw == false) {
+		if (!this.enableredraw) {
+			this._enable_redraw_history["recreate"] = true;
 			return;
 		}
 
@@ -23057,6 +23953,30 @@ if (!nexacro.Grid) {
 			cellinfo = cells[j];
 			if (cellinfo.suppress != 0) {
 				this._is_use_suppress = true;
+			}
+			if (cellinfo.wordwrap != "none") {
+				this._is_body_wordwrap = true;
+			}
+		}
+
+		cells = this._curFormat._headcells;
+		cellcnt = cells ? cells.length : 0;
+
+		for (var j = 0; j < cellcnt; j++) {
+			cellinfo = cells[j];
+			if (cellinfo.wordwrap != "none") {
+				this._is_head_wordwrap = true;
+				break;
+			}
+		}
+
+		cells = this._curFormat._summcells;
+		cellcnt = cells ? cells.length : 0;
+
+		for (var j = 0; j < cellcnt; j++) {
+			cellinfo = cells[j];
+			if (cellinfo.wordwrap != "none") {
+				this._is_summ_wordwrap = true;
 				break;
 			}
 		}
@@ -23211,15 +24131,46 @@ if (!nexacro.Grid) {
 
 		if (!reset && (this._colautofit || this._rowautofit)) {
 			this._applyAutofittype(true);
-
-			if (this._client_height != clientheight) {
-				this._resizeBand(true);
-			}
 		}
 
 		this._MoveEditComp();
 		this._updateSelector();
 		this._updateScrollInfo();
+	};
+
+	_pGrid._onResetScrollBar = function () {
+		if (this._scrollbars == 1 || this._scrollbars == 4) {
+			if (this._rowautofit) {
+				this._scrollbars = 0;
+			}
+		}
+		else if (this._scrollbars == 2 || this._scrollbars == 8) {
+			if (this._colautofit) {
+				this._scrollbars = 0;
+			}
+		}
+		else if (this._scrollbars == 3) {
+			if (this._colautofit && this._rowautofit) {
+				this._scrollbars = 0;
+			}
+			if (this._colautofit) {
+				this._scrollbars = 1;
+			}
+			if (this._rowautofit) {
+				this._scrollbars = 2;
+			}
+		}
+		else if (this._scrollbars == 16) {
+			if (this._rowautofit) {
+				this._scrollbars = 2;
+			}
+		}
+		else if (this._scrollbars == 32) {
+			if (this._colautofit) {
+				this._scrollbars = 1;
+			}
+		}
+		return nexacro.Component.prototype._onResetScrollBar.call(this);
 	};
 
 	_pGrid._setHscrollElement = function () {
@@ -23312,6 +24263,7 @@ if (!nexacro.Grid) {
 		var firstformat = "";
 
 		this._format_str = [];
+		this._autofitcol_rate = [];
 
 		for (var i = 0; i < len; i++) {
 			var formatElem = formatElems[i];
@@ -23339,7 +24291,8 @@ if (!nexacro.Grid) {
 	};
 
 	_pGrid._destroyBands = function (parent_destory) {
-		if (this.enableredraw == false) {
+		if (!this.enableredraw) {
+			this._enable_redraw_history["recreate"] = true;
 			return;
 		}
 
@@ -23347,6 +24300,14 @@ if (!nexacro.Grid) {
 			this._hideEditor(false, true);
 		}
 
+		if (this._temphead) {
+			this._temphead.destroy();
+			this._temphead = null;
+		}
+		if (this._tempsumm) {
+			this._tempsumm.destroy();
+			this._tempsumm = null;
+		}
 		if (this._bodyBand) {
 			if (this._control_element) {
 				this._control_element.setVertScrollElements(null);
@@ -23424,6 +24385,7 @@ if (!nexacro.Grid) {
 
 	_pGrid._refreshBodyCell = function (cell, displayrow, clearCurstyle) {
 		if (!this.enableredraw) {
+			this._enable_redraw_history["refresh_body"] = true;
 			return;
 		}
 
@@ -23434,6 +24396,11 @@ if (!nexacro.Grid) {
 		var band = this._bodyBand;
 		if (band) {
 			var rows = band._get_rows();
+
+			if (rows.length <= displayrow) {
+				return;
+			}
+
 			var rowidx = rows[displayrow]._rowidx;
 			var dsrowidx = (this._hasTree) ? this._treeIndexes[rowidx] : rowidx;
 			var selected = this._isSelectedCell(cell, dsrowidx);
@@ -23453,6 +24420,7 @@ if (!nexacro.Grid) {
 
 	_pGrid._refreshHead = function (clearCurstyle) {
 		if (!this.enableredraw) {
+			this._enable_redraw_history["refresh_head"] = true;
 			return;
 		}
 
@@ -23467,10 +24435,12 @@ if (!nexacro.Grid) {
 			}
 		}
 		this._applyResizer();
+		this._adjustOverlayElements(false, this._is_use_fakemerge);
 	};
 
 	_pGrid._refreshSumm = function (clearCurstyle) {
 		if (!this.enableredraw) {
+			this._enable_redraw_history["refresh_summ"] = true;
 			return;
 		}
 
@@ -23485,10 +24455,12 @@ if (!nexacro.Grid) {
 			}
 			band._updateAll(clearCurstyle);
 		}
+		this._adjustOverlayElements(false, this._is_use_fakemerge);
 	};
 
 	_pGrid._refreshBody = function (clearCurstyle, for_select, no_overlay, no_update_supp) {
 		if (!this.enableredraw) {
+			this._enable_redraw_history["refresh_body"] = true;
 			return;
 		}
 
@@ -23509,7 +24481,7 @@ if (!nexacro.Grid) {
 			}
 
 			if (!no_overlay) {
-				this._adjustOverlayElements(false, false);
+				this._adjustOverlayElements(this._is_recreating, this._is_use_fakemerge);
 			}
 		}
 	};
@@ -23527,18 +24499,21 @@ if (!nexacro.Grid) {
 			return;
 		}
 
-		var rowcnt;
+		var total_dispcnt;
 
 		if (exportFlag) {
-			rowcnt = this._getGridRowCount();
+			total_dispcnt = this._getGridRowCount();
 		}
 		else {
-			var band = this._bodyBand;
-			var rows = band._get_rows();
-			rowcnt = rows.length;
+			if (this._fixed_rowcnt > 0) {
+				total_dispcnt = this._fixed_rowcnt - this._fixed_startrow + this._disprowcnt;
+			}
+			else {
+				total_dispcnt = this._disprowcnt;
+			}
 		}
 
-		if (rowcnt == 0) {
+		if (total_dispcnt == 0) {
 			return;
 		}
 
@@ -23551,24 +24526,29 @@ if (!nexacro.Grid) {
 			if (cellinfo.suppress == 0) {
 				continue;
 			}
+
 			cellinfo._clearSuppressInfo();
 
 			var rowidx, text1, text2, lvl1, lvl2, displayType, psuppinfo, pdatarow, cdatarow, csupp;
-			var fixerow = this._fixed_endrow;
 
-
-			for (var i = 0; i < rowcnt; i++) {
+			for (var i = 0; i <= total_dispcnt; i++) {
 				rowidx = (!exportFlag) ? this.__getBodyCellRowIdxFromIdx(i) : i;
 				cdatarow = this._getDataRow(rowidx);
 				csupp = cellinfo._getSuppress(cdatarow);
 
+				if (i > 0) {
+					psuppinfo = cellinfo._getSuppressInfo(i - 1, true);
+				}
+
 				if (csupp > 0 && i > 0) {
-					psuppinfo = cellinfo._getSuppressInfo(i - 1);
+					if (total_dispcnt == i) {
+						break;
+					}
 
 					lvl1 = 0;
 					lvl2 = 0;
 
-					pdatarow = this._getDataRow(rowidx - 1);
+					pdatarow = this._getDataRow((!exportFlag) ? this.__getBodyCellRowIdxFromIdx(i - 1) : i - 1);
 					cdatarow = this._getDataRow(rowidx);
 
 					if (this._hasTree) {
@@ -23608,7 +24588,7 @@ if (!nexacro.Grid) {
 		if (suppresslevel == "sameskip" || suppresslevel == "allcompare") {
 			var i = 0;
 			function __analyzeSuppress_row_loop2 (grid) {
-				if (i < rowcnt) {
+				if (i < total_dispcnt) {
 					var suppressRow = [];
 					var suppressCol = [];
 					var cellinfo;
@@ -23706,7 +24686,7 @@ if (!nexacro.Grid) {
 			}
 		}
 
-		if (rowcnt > 0) {
+		if (total_dispcnt > 0) {
 			var count = 0;
 			var start;
 			var csuppinfo, csuppinfo2, csupp, rowidx, cdatarow;
@@ -23716,10 +24696,15 @@ if (!nexacro.Grid) {
 
 				var cellinfo, center;
 
-				for (var i = 0; i < rowcnt; i++) {
+				for (var i = 0; i < total_dispcnt; i++) {
 					cellinfo = cells[j];
 
+					if (cellinfo.suppress == 0) {
+						continue;
+					}
+
 					rowidx = (!exportFlag) ? this.__getBodyCellRowIdxFromIdx(i) : i;
+
 					cdatarow = this._getDataRow(rowidx);
 
 					if (cellinfo.suppressalign.indexOf("middle") < 0) {
@@ -23792,7 +24777,7 @@ if (!nexacro.Grid) {
 		return false;
 	};
 
-	_pGrid.__getBodyCellRowIdxFromIdx = function (idx, is_scr_toprow) {
+	_pGrid.__getBodyCellRowIdxFromIdx = function (idx) {
 		var toprowpos;
 		if (this._fixed_rowcnt) {
 			if (idx + this._fixed_startrow <= this._fixed_endrow) {
@@ -23800,60 +24785,38 @@ if (!nexacro.Grid) {
 			}
 			else {
 				idx -= this._fixed_rowcnt - this._fixed_startrow;
-				toprowpos = (is_scr_toprow) ? this._toprowpos[0] : this._begrowpos;
+				toprowpos = this._toprowpos[0];
 			}
 		}
 		else {
-			toprowpos = (is_scr_toprow) ? this._toprowpos[0] : this._begrowpos;
+			toprowpos = this._toprowpos[0];
 		}
 		return idx + toprowpos;
 	};
 
 	_pGrid._suppressUpdate = function () {
-		if (!this._is_use_suppress) {
+		if (!this._is_use_suppress || !this._curFormat || !this._curFormat._bodycells) {
 			return;
 		}
 
 		this._analyzeSuppress();
 
-		var band = this._bodyBand;
-		var rows = band._get_rows();
-		var rowcnt = rows.length;
-		var toprowpos = (this._fixed_rowcnt) ? this._fixed_startrow : this._toprowpos[0];
-		var bottomrowpos = this._bottomrowpos;
-		var start_rowpos = 0;
-		var end_rowpos = rowcnt - 1;
-
-		for (var i = 0; i < rowcnt; i++) {
-			if (rows[i]._rowidx == toprowpos) {
-				start_rowpos = i;
-			}
-			else if (rows[i]._rowidx == bottomrowpos) {
-				end_rowpos = i;
-				break;
-			}
-
-			if (bottomrowpos < 0) {
-				break;
-			}
-		}
-
-		for (var i = start_rowpos; i <= end_rowpos; i++) {
-			this._suppressUpdateRow(i, start_rowpos, end_rowpos);
+		var total_dispcnt = this._fixed_rowcnt + this._disprowcnt;
+		for (var i = 0; i <= total_dispcnt; i++) {
+			this._suppressUpdateRow(i, 0, total_dispcnt - 1);
 		}
 	};
 
-	_pGrid._suppressUpdateRow = function (row, start_rowpos, end_rowpos) {
+	_pGrid._suppressUpdateRow = function (row, start_rowpos, end_rowpos, exportFlag) {
 		var band = this._bodyBand;
-		var rows = band._get_rows();
 
-		if (band == null || rows.length == 0) {
+		if (band == null) {
 			return;
 		}
 
 		var cells = this._curFormat._bodycells;
 		var cellcnt = cells.length;
-		var rowidx = this.__getBodyCellRowIdxFromIdx(row, true);
+		var rowidx = (!exportFlag) ? this.__getBodyCellRowIdxFromIdx(row) : row;
 		var cellinfo, prevcellitem, prelast, curlast;
 		var psuppinfo, csuppinfo, csupp;
 		var cdatarow = this._getDataRow(rowidx);
@@ -23862,6 +24825,10 @@ if (!nexacro.Grid) {
 			cellinfo = cells[col];
 			csuppinfo = cellinfo._getSuppressInfo(row);
 			csupp = cellinfo._getSuppress(cdatarow);
+
+			if (!csuppinfo) {
+				continue;
+			}
 
 			if (csupp > 0) {
 				if (csupp > 0 && (row - start_rowpos) > 0) {
@@ -23909,11 +24876,17 @@ if (!nexacro.Grid) {
 					}
 				}
 			}
+			else if (csupp == undefined) {
+				if (cellinfo.suppressalign.indexOf("first") >= 0 || cellinfo.suppressalign.indexOf("middle") >= 0) {
+					csuppinfo.text_proc = 1;
+				}
+			}
 		}
 	};
 
 	_pGrid._refreshBodyRow = function (displayrow, pseudo, enable) {
 		if (!this.enableredraw) {
+			this._enable_redraw_history["refresh_body"] = true;
 			return;
 		}
 
@@ -23935,20 +24908,24 @@ if (!nexacro.Grid) {
 
 				band._refreshRow(displayrow, pseudo);
 			}
+			this._adjustOverlayElements(false, this._is_use_fakemerge);
 		}
 	};
 
+	_pGrid._global_cursor = undefined;
 	_pGrid._setGlobalCursor = function (cursor, obj) {
-		this._global_cursor = cursor;
+		if (this._global_cursor !== cursor) {
+			this._global_cursor = cursor;
 
-		while (obj) {
-			obj._updateCursor(cursor);
+			while (obj) {
+				obj._updateCursor(cursor);
 
-			if (obj instanceof nexacro.Grid) {
-				return;
+				if (obj instanceof nexacro.Grid) {
+					return;
+				}
+
+				obj = obj.parent;
 			}
-
-			obj = obj.parent;
 		}
 	};
 
@@ -24290,7 +25267,7 @@ if (!nexacro.Grid) {
 				var rowLen = row.length;
 				for (var i = rowLen - 1; i >= 0; i--) {
 					if (adjust) {
-						if (select[row[i] + 2]) {
+						if (select.length > row[i] + 2) {
 							select.splice(row[i] + 2, 1);
 						}
 					}
@@ -24308,7 +25285,7 @@ if (!nexacro.Grid) {
 			}
 			else {
 				if (adjust) {
-					if (select[row + 2]) {
+					if (select.length > row + 2) {
 						select.splice(row + 2, 1);
 					}
 				}
@@ -25452,6 +26429,7 @@ if (!nexacro.Grid) {
 			}
 		}
 
+		this._adjustOverlayElements(false, this._is_use_fakemerge);
 		this._updateSelector();
 	};
 
@@ -25713,12 +26691,6 @@ if (!nexacro.Grid) {
 
 		if (this.enableredraw) {
 			if (this._isSelectRowType()) {
-				if (this.useselcolor == false && cellobj._selected) {
-					if (this._mouseovercell && (this._mouseovercell._rowidx == cellobj._rowidx)) {
-						pseudo = "mouseover";
-					}
-				}
-
 				if (pseudo == "mouseover") {
 					this._refreshBodyRow(cellobj._getDisplayRowIdx(), pseudo, cellobj.enable);
 				}
@@ -25728,6 +26700,8 @@ if (!nexacro.Grid) {
 					cellobj._contents_pseudo = "";
 					this._refreshBodyRow(cellobj._getDisplayRowIdx(), pseudo, cellobj.enable);
 				}
+
+				this._adjustOverlayElements(false, this._is_use_fakemerge);
 			}
 		}
 		cellobj._ReasonRefresh = null;
@@ -25772,6 +26746,7 @@ if (!nexacro.Grid) {
 
 	_pGrid._applyAutofittype = function (redraw, property_set) {
 		if (this.enableredraw == false) {
+			this._enable_redraw_history["autofit"] = [redraw, property_set];
 			return;
 		}
 
@@ -25831,7 +26806,7 @@ if (!nexacro.Grid) {
 		}
 
 		if (this._colautofit && width >= 0) {
-			change = format._adjustColWidth(width);
+			change = format._adjustColWidth(width, this._autofitcol_rate);
 		}
 
 		if (change) {
@@ -25910,7 +26885,16 @@ if (!nexacro.Grid) {
 	};
 
 	_pGrid.redraw = function () {
+		if (!this.enableredraw) {
+			this._enable_redraw_history["recreate"] = true;
+			return;
+		}
+
 		this._recreate();
+
+		if (this._select_ctrl) {
+			this._select_ctrl._updateAll();
+		}
 	};
 
 	_pGrid._getRowSizeInfo = function (datarow) {
@@ -26147,7 +27131,7 @@ if (!nexacro.Grid) {
 		}
 	};
 
-	_pGrid._isChangeBodyColSizeList = function (columnid, cols) {
+	_pGrid._isChangeBodyColSizeList = function (columnid, cols, row) {
 		if (this.autosizingtype != "both" && this.autosizingtype != "col") {
 			return false;
 		}
@@ -26160,9 +27144,16 @@ if (!nexacro.Grid) {
 		var cells = format._bodycells;
 		var colinfo, col, size, j = 0;
 		var retn = false;
+		var displayType;
 
 		for (var i = 0; i < cells.length; i++) {
 			if (cells[i].text._bindexpr == columnid) {
+				displayType = cells[i]._getAttrValue(cells[i].displaytype, row);
+
+				if (displayType == "checkbox") {
+					continue;
+				}
+
 				col = cells[i]._col;
 				colinfo = format._cols[col];
 				size = this._getMaxColDataSizeBand(col);
@@ -26461,17 +27452,19 @@ if (!nexacro.Grid) {
 								var re_newline = /\r\n|\n|\r/;
 								var lines = text.split(re_newline);
 								var lcnt = lines.length;
-								var byte, max_byte = 0;
+								var nbyte, max_byte = 0, max_len = 0;
 
 								for (var j = 0; j < lcnt; j++) {
-									byte = this._getByteLength_UTF8(lines[j]);
-									max_byte = Math.max(max_byte, byte);
+									nbyte = this._getByteLength_UTF8(lines[j]);
+									max_len = Math.max(max_len, lines[j].length);
+									max_byte = Math.max(max_byte, nbyte);
 								}
 
-								if (maxbyte.max >= max_byte) {
+								if (maxbyte.max > max_byte && maxbyte.len > max_len) {
 									continue;
 								}
 
+								maxbyte.len = max_len;
 								maxbyte.max = max_byte;
 							}
 
@@ -26523,12 +27516,13 @@ if (!nexacro.Grid) {
 
 	_pGrid._getCellRowTextSize = function (cellinfo, rowidx, text) {
 		var font = cellinfo._curfont, select_font = cellinfo._curselfont;
+		var letterspace = cellinfo._query_pseudo_letterspace(rowidx, false, "normal");
 		var word = cellinfo._getWordwrap(rowidx);
 		var size = [], size1, size2;
 
 		if (font === undefined) {
 			font = cellinfo._query_pseudo_font(rowidx, false, "normal");
-			size1 = nexacro._getTextSize2("A", font);
+			size1 = nexacro._getTextSize2(letterspace, "A", font);
 
 			if (cellinfo._curfont !== "bindexpr") {
 				cellinfo._cur1font_size = size1;
@@ -26537,17 +27531,17 @@ if (!nexacro.Grid) {
 		else {
 			if (font === "bindexpr") {
 				font = cellinfo._query_pseudo_font(rowidx, false, "normal");
-				size1 = nexacro._getTextSize2("A", font);
+				size1 = nexacro._getTextSize2(letterspace, "A", font);
 			}
 			else if (!(size1 = cellinfo._cur1font_size)) {
-				size1 = nexacro._getTextSize2("A", font);
+				size1 = nexacro._getTextSize2(letterspace, "A", font);
 				cellinfo._cur1font_size = size1;
 			}
 		}
 
 		if (select_font === undefined) {
 			select_font = cellinfo._query_pseudo_font(rowidx, true, "normal");
-			size2 = nexacro._getTextSize2("A", select_font);
+			size2 = nexacro._getTextSize2(letterspace, "A", select_font);
 
 			if (cellinfo._curselfont !== "bindexpr") {
 				cellinfo._cur1selectfont_size = size2;
@@ -26556,10 +27550,10 @@ if (!nexacro.Grid) {
 		else {
 			if (select_font === "bindexpr") {
 				select_font = cellinfo._query_pseudo_font(rowidx, true, "normal");
-				size2 = nexacro._getTextSize2("A", select_font);
+				size2 = nexacro._getTextSize2(letterspace, "A", select_font);
 			}
 			else if (!(size2 = cellinfo._cur1selectfont_size)) {
-				size2 = nexacro._getTextSize2("A", select_font);
+				size2 = nexacro._getTextSize2(letterspace, "A", select_font);
 				cellinfo._cur1selectfont_size = size2;
 			}
 		}
@@ -26604,7 +27598,7 @@ if (!nexacro.Grid) {
 				url = nexacro._getURIValue(text);
 				url = nexacro._getImageLocation(url, this._getRefFormBaseUrl());
 
-				var imgsize = nexacro._getImageSize(url, this._on_sizeloading, this);
+				var imgsize = nexacro._getImageSize(url, this._on_sizeloading, this, undefined, text);
 
 				if (imgsize) {
 					size[0] = imgsize.width;
@@ -26636,10 +27630,10 @@ if (!nexacro.Grid) {
 				width -= (padd.left + padd.right);
 				width -= bord.right_width ? parseInt(bord.right_width) : 0;
 
-				size = nexacro._getTextSize2(text, font, true, width, word);
+				size = nexacro._getTextSize2(letterspace, text, font, true, width, word);
 			}
 			else {
-				size = nexacro._getTextSize2(text, font, true);
+				size = nexacro._getTextSize2(letterspace, text, font, true);
 			}
 
 			if (size[1] < default_height) {
@@ -26713,33 +27707,48 @@ if (!nexacro.Grid) {
 						size = formatsize;
 					}
 					else {
-						var text = cells[i]._getDisplayText(rowidx);
-						var s = this._getCellRowTextSize(cells[i], rowidx, text);
-						size = s[1];
+						var displayType = cells[i]._getAttrValue(cells[i].displaytype, _row);
+						if (displayType == "checkbox") {
+							var controlSize = cells[i]._query_pseudo_control(this, _row, "checkboxsize", "buttonsize", "normal");
 
-						var width = s[0];
-						var mul = 1;
-						var padd = cells[i]._curpadding, bord = cells[i]._curborder;
-
-						if (padd === "bindexpr" || padd === undefined) {
-							padd = cells[i]._query_pseudo_padding(rowidx, "normal");
-						}
-
-						if (bord === "bindexpr" || bord === undefined) {
-							bord = cells[i]._query_pseudo_border(rowidx, false, "normal", 0, null, null);
-						}
-
-						size += padd.top + padd.bottom;
-						size += bord.bottom_width ? parseInt(bord.bottom_width) : 0;
-
-						if (autosizerow == "limitmin") {
-							if (size < formatsize) {
-								size = formatsize;
+							if (controlSize == null) {
+								controlSize = 14;
 							}
+							else {
+								controlSize = parseInt(controlSize._value, 10);
+							}
+
+							size = controlSize + 6;
 						}
-						else if (autosizerow == "limitmax") {
-							if (size > formatsize) {
-								size = formatsize;
+						else {
+							var text = cells[i]._getDisplayText(rowidx);
+							var s = this._getCellRowTextSize(cells[i], rowidx, text);
+							size = s[1];
+
+							var width = s[0];
+							var mul = 1;
+							var padd = cells[i]._curpadding, bord = cells[i]._curborder;
+
+							if (padd === "bindexpr" || padd === undefined) {
+								padd = cells[i]._query_pseudo_padding(rowidx, "normal");
+							}
+
+							if (bord === "bindexpr" || bord === undefined) {
+								bord = cells[i]._query_pseudo_border(rowidx, false, "normal", 0, null, null);
+							}
+
+							size += padd.top + padd.bottom;
+							size += bord.bottom_width ? parseInt(bord.bottom_width) : 0;
+
+							if (autosizerow == "limitmin") {
+								if (size < formatsize) {
+									size = formatsize;
+								}
+							}
+							else if (autosizerow == "limitmax") {
+								if (size > formatsize) {
+									size = formatsize;
+								}
 							}
 						}
 					}
@@ -26767,12 +27776,6 @@ if (!nexacro.Grid) {
 		ctrl._refcssobj = this;
 		ctrl._refcssid = "#" + ctrl.id;
 		return this;
-	};
-
-	_pGrid._applyCellMoving = function (movepos, idx) {
-		if (this.enableredraw == false) {
-			return;
-		}
 	};
 
 	_pGrid._addFuncQueue = function (work, pthis, func, args_arr) {
@@ -27003,14 +28006,19 @@ if (!nexacro.Grid) {
 			this._resetRowSizeList();
 			var flag = this._no_update_bandrect;
 			this._no_update_bandrect = true;
-			this._resizeBand();
+			this._resizeBand(true);
 			this._no_update_bandrect = flag;
 
 			reset_bandsize = true;
 			col = null;
 		}
 
+		this._autofitcol_rate = [];
 		this._applyAutofittype(true);
+
+		if (this._getScrollLeft() != 0) {
+			col = 0;
+		}
 
 		if (this._headBand) {
 			this._headBand._matrix._adjustColsDisplay(true, false, col);
@@ -27038,10 +28046,11 @@ if (!nexacro.Grid) {
 
 			this._bodyBand._update_rows = this._bodyBand._matrix._adjustScrollRows(_vpos, true);
 			this._bodyBand._on_refresh_rows(false, true);
+			this._adjustOverlayElements(false, this._is_use_fakemerge);
 		}
 	};
 
-	_pGrid._updateRowSize = function (row, subrow) {
+	_pGrid._updateRowSize = function (row, subrow, no_refresh_band) {
 		if (this.extendsizetype != "row" && this.extendsizetype != "both") {
 			return;
 		}
@@ -27081,7 +28090,7 @@ if (!nexacro.Grid) {
 
 			this._resizeBand();
 
-			if (this._bodyBand) {
+			if (this._bodyBand && !no_refresh_band) {
 				this._bodyBand._matrix._adjustRowsDisplay();
 				this._bodyBand._matrix._adjustColsDisplay();
 				this._bodyBand._on_refresh_rows(false, false);
@@ -27121,7 +28130,7 @@ if (!nexacro.Grid) {
 
 			this._resizeBand();
 
-			if (this._bodyBand) {
+			if (this._bodyBand && !no_refresh_band) {
 				this._bodyBand._matrix._adjustRowsDisplay();
 				this._bodyBand._matrix._adjustColsDisplay();
 				this._bodyBand._on_refresh_rows(false, false);
@@ -27183,24 +28192,35 @@ if (!nexacro.Grid) {
 				_vpos = 0;
 			}
 
-			this._last_scroll_top = _vpos;
-			this._toprowpos = this._getScreenTopRowPos(_vpos);
-			this._bottomrowpos = this._getScreenBottomRowPos(_vpos);
+			if (!no_refresh_band) {
+				this._last_scroll_top = _vpos;
+				this._toprowpos = this._getScreenTopRowPos(_vpos);
+				this._bottomrowpos = this._getScreenBottomRowPos(_vpos);
 
-			this._bodyBand._matrix._adjustRowsDisplay(true);
-			this._bodyBand._matrix._adjustColsDisplay();
+				this._bodyBand._matrix._adjustRowsDisplay(true);
+				this._bodyBand._matrix._adjustColsDisplay();
 
-			this._bodyBand._update_rows = this._bodyBand._matrix._adjustScrollRows(_vpos, true);
-			this._bodyBand._on_refresh_rows(false, false);
+				this._bodyBand._update_rows = this._bodyBand._matrix._adjustScrollRows(_vpos, true);
+				this._bodyBand._on_refresh_rows(false, false);
+			}
 		}
 		else {
 			return false;
 		}
 
+		this._adjustOverlayElements(false, this._is_use_fakemerge);
 		return true;
 	};
 
 	_pGrid._applyResizer = function () {
+		if (!this._is_created) {
+			return;
+		}
+
+		var curborder = this.currentstyle.border;
+		var lborder_w = (curborder) ? curborder._left_width : 0;
+		var tborder_w = (curborder) ? curborder._top_width : 0;
+
 		if (this.cellsizingtype == "col" || this.cellsizingtype == "both") {
 			var band = this._headBand;
 
@@ -27258,10 +28278,10 @@ if (!nexacro.Grid) {
 				}
 
 				resizermark_range = {
-					left : left, 
-					top : cellpos.top, 
-					right : left + width + 6, 
-					bottom : cellpos.top + height, 
+					left : left + lborder_w, 
+					top : cellpos.top + tborder_w, 
+					right : left + width + lborder_w + 6, 
+					bottom : cellpos.top + height + tborder_w, 
 					index : cellitem._cellidx, 
 					area : cellinfo._area
 				};
@@ -27348,10 +28368,10 @@ if (!nexacro.Grid) {
 					top = cellpos.top + cellitem._adjust_height - height - 4;
 
 					resizermark_range = {
-						left : cellpos.left, 
-						top : top, 
-						right : cellpos.left + width, 
-						bottom : top + height + 6, 
+						left : cellpos.left + lborder_w, 
+						top : top + tborder_w, 
+						right : cellpos.left + width + lborder_w, 
+						bottom : top + height + 6 + tborder_w, 
 						index : mark_idx, 
 						area : "head", 
 						row : cellitem._rowidx, 
@@ -27381,10 +28401,10 @@ if (!nexacro.Grid) {
 						top = cellpos.top + cellitem._adjust_height - height - 4;
 
 						resizermark_range = {
-							left : cellpos.left, 
-							top : top, 
-							right : cellpos.left + width, 
-							bottom : top + height + 6, 
+							left : cellpos.left + lborder_w, 
+							top : top + tborder_w, 
+							right : cellpos.left + width + lborder_w, 
+							bottom : top + height + 6 + tborder_w, 
 							index : mark_idx, 
 							area : "body", 
 							row : cellitem._rowidx, 
@@ -27425,10 +28445,10 @@ if (!nexacro.Grid) {
 					}
 
 					resizermark_range = {
-						left : cellpos.left, 
-						top : top, 
-						right : cellpos.left + width, 
-						bottom : top + height + 6, 
+						left : cellpos.left + lborder_w, 
+						top : top + tborder_w, 
+						right : cellpos.left + width + lborder_w, 
+						bottom : top + height + 6 + tborder_w, 
 						index : mark_idx, 
 						area : "summ", 
 						row : cellitem._rowidx, 
@@ -27535,6 +28555,10 @@ if (!nexacro.Grid) {
 				bChange = format._setColSize(nColIndex, nSize, noAdjust);
 				break;
 			}
+		}
+
+		if (bChange) {
+			this._autofitcol_rate = [];
 		}
 
 		if (bRedraw && bChange) {
@@ -27698,15 +28722,27 @@ if (!nexacro.Grid) {
 	};
 
 	_pGrid._getScollMaxLeft = function () {
-		return this._control_element.hscroll_limit;
+		if (this._control_element) {
+			return this._control_element.hscroll_limit;
+		}
+
+		return 0;
 	};
 
 	_pGrid._getScrollLeft = function () {
-		return this._control_element.scroll_left;
+		if (this._control_element) {
+			return this._control_element.scroll_left;
+		}
+
+		return 0;
 	};
 
 	_pGrid._getScrollTop = function () {
-		return this._control_element.scroll_top;
+		if (this._control_element) {
+			return this._control_element.scroll_top;
+		}
+
+		return 0;
 	};
 
 	_pGrid._getDataRow = function (rowidx) {
@@ -27739,6 +28775,7 @@ if (!nexacro.Grid) {
 
 	_pGrid._refreshCol = function (nColIdx, clearCurstyle, strBand) {
 		if (!this.enableredraw) {
+			this._enable_redraw_history["refreshall"] = true;
 			return;
 		}
 		if (!this.getElement()) {
@@ -27794,6 +28831,7 @@ if (!nexacro.Grid) {
 
 	_pGrid._refreshCell = function (strBand, nCellIdx, nDisplayRowIdx, clearCurstyle) {
 		if (!this.enableredraw) {
+			this._enable_redraw_history["refreshall"] = true;
 			return;
 		}
 
@@ -27863,7 +28901,8 @@ if (!nexacro.Grid) {
 					var colcells = [];
 					var size;
 					var maxbyte = {
-						max : -1
+						max : -1, 
+						len : -1
 					};
 					var bfont, bselfont, bborder, bpadding;
 					var cellinfo, prevcellinfo, subcells, subcol;
@@ -28252,7 +29291,7 @@ if (!nexacro.Grid) {
 			}
 
 			image = nexacro._getImageLocation(image, this._getRefFormBaseUrl());
-			var size = nexacro._getImageSize(image, this._on_treeloadImagetemp, this);
+			var size = nexacro._getImageSize(image, this._on_treeloadImagetemp, this, undefined, cellinfo._query_pseudo_treecontrol(datarow, prop, pseudo));
 
 			if (size) {
 				imagewidth = size.width;
@@ -28276,7 +29315,7 @@ if (!nexacro.Grid) {
 
 				image = nexacro._getImageLocation(image, this._getRefFormBaseUrl());
 
-				var size = nexacro._getImageSize(image, this._on_treeloadImagetemp, this);
+				var size = nexacro._getImageSize(image, this._on_treeloadImagetemp, this, undefined, cellinfo._query_pseudo_treecontrol(datarow, prop, pseudo));
 				if (size) {
 					buttonwidth = size.width;
 				}
@@ -28465,8 +29504,8 @@ if (!nexacro.Grid) {
 			}
 
 			for (; true; ) {
-				var rowcount = (this._binddataset) ? this._binddataset.getRowCount() : this.rowcount;
-				if (this._selectinfo.curdsrow >= (rowcount - 1) && this._selectinfo.curcell >= (format._bodycells.length - 1)) {
+				var rowcount = this.rowcount;
+				if (this._selectinfo.currow >= (rowcount - 1) && this._selectinfo.curcell >= (format._bodycells.length - 1)) {
 					return false;
 				}
 
@@ -28474,13 +29513,35 @@ if (!nexacro.Grid) {
 					if (colmove) {
 						return false;
 					}
+					for (; true; ) {
+						afterCell = 0;
+						afterCol = 0;
+						afterRow = this._selectinfo.curdsrow + 1;
+						afterSubrow = 0;
 
-					afterCell = 0;
-					afterCol = 0;
-					afterRow = this._selectinfo.curdsrow + 1;
-					afterSubrow = 0;
+						this._setSelectedInfo(afterCell, afterCol, afterRow, afterSubrow, afterPvt);
 
-					this._setSelectedInfo(afterCell, afterCol, afterRow, afterSubrow, afterPvt);
+						if (this._hasTree) {
+							var exist = false;
+							var _treeIndexes = this._treeIndexes;
+							var _treeIndexesLen = _treeIndexes.length;
+
+							for (var k = 0; k < _treeIndexes.length; k++) {
+								if (_treeIndexes[k] == afterRow) {
+									exist = true;
+									break;
+								}
+								else if (_treeIndexes[k] > afterRow) {
+									break;
+								}
+							}
+							if (exist == false) {
+								continue;
+							}
+						}
+
+						break;
+					}
 				}
 				else {
 					if (colmove) {
@@ -28567,16 +29628,39 @@ if (!nexacro.Grid) {
 		else if (type == "prev") {
 			for (; true; ) {
 				if (this._selectinfo.curcell <= 0) {
-					if (colmove || this._selectinfo.curdsrow <= 0) {
+					if (colmove || this._selectinfo.currow <= 0) {
 						return false;
 					}
 
-					afterCell = format._bodycells.length - 1;
-					afterCol = bodycells[afterCell]._col;
-					afterRow = this._selectinfo.curdsrow - 1;
-					afterSubrow = bodycells[afterCell]._row;
+					for (; true; ) {
+						afterCell = format._bodycells.length - 1;
+						afterCol = bodycells[afterCell]._col;
+						afterRow = this._selectinfo.curdsrow - 1;
+						afterSubrow = bodycells[afterCell]._row;
 
-					this._setSelectedInfo(afterCell, afterCol, afterRow, afterSubrow, afterPvt);
+						this._setSelectedInfo(afterCell, afterCol, afterRow, afterSubrow, afterPvt);
+
+						if (this._hasTree) {
+							var exist = false;
+							var _treeIndexes = this._treeIndexes;
+							var _treeIndexesLen = _treeIndexes.length;
+
+							for (var k = 0; k < _treeIndexes.length; k++) {
+								if (_treeIndexes[k] == afterRow) {
+									exist = true;
+									break;
+								}
+								else if (_treeIndexes[k] > afterRow) {
+									break;
+								}
+							}
+							if (exist == false) {
+								continue;
+							}
+						}
+
+						break;
+					}
 				}
 				else {
 					var newcol;
@@ -28775,14 +29859,15 @@ if (!nexacro.Grid) {
 					afterSubrow = this._selectinfo.cursubrow;
 				}
 				else {
-					if (rowcount - 1 <= curr && this._selectinfo.cursubrow == lastsubrow) {
+					selectedrowspan = bodycells[this._selectinfo.curcell]._rowspan;
+
+					if (rowcount - 1 <= curr && (this._selectinfo.cursubrow + selectedrowspan) - 1 == lastsubrow) {
 						if (this.vscrollbar) {
 							this.vscrollbar.set_pos(this.vscrollbar.max);
 						}
 
 						return false;
 					}
-					selectedrowspan = bodycells[this._selectinfo.curcell]._rowspan;
 
 					if ((this._selectinfo.cursubrow + selectedrowspan - 1) == lastsubrow) {
 						for (var i = 0; i < bodycells_len; i++) {
@@ -28857,6 +29942,12 @@ if (!nexacro.Grid) {
 		this._hideEditor();
 		var change = this._ChangeSelect(afterCell, afterCol, afterRow, afterSubrow, afterPvt, false, beforeCell, beforeCol, beforeRow, beforeSubrow, beforePvt, "body", evt_name);
 
+		var cell = this._getCurrentBodyCell(afterRow, afterCell);
+
+		if (cell && !nexacro._enableaccessibility) {
+			cell._setFocus(false);
+		}
+
 		if (!this._keydown_elem) {
 			this._moveCellAfterFocus();
 		}
@@ -28875,11 +29966,11 @@ if (!nexacro.Grid) {
 		var retn = true;
 
 		if (this.autoenter == "select") {
-			if (nexacro.Browser == "Opera" || nexacro.Browser == "IE") {
+			if (nexacro.Browser == "Edge" || nexacro.Browser == "Opera" || nexacro.Browser == "IE") {
 				this._onceTime_focus = true;
 			}
 
-			if (!this._showEditor()) {
+			if (!this._showEditor(false, true)) {
 				this._hideEditor();
 				retn = false;
 			}
@@ -28945,19 +30036,16 @@ if (!nexacro.Grid) {
 
 		this._hasSameNextNode = new Array(rowcount);
 
-		var prevlvl = -1;
 		for (var i = rowcount - 1; i >= 0; i--) {
 			var lvl = cellinfo._getTreeLevel(i);
 			this._maxdepth = Math.max(lvl, this._maxdepth);
 			this._rootlevel = Math.min(lvl, this._rootlevel);
 
-			if (lvl != prevlvl) {
-				if (this._hasSameNextNode[i] == undefined) {
-					var val = [];
-					val[0] = lvl;
-					val[1] = false;
-					this._hasSameNextNode[i] = val;
-				}
+			if (this._hasSameNextNode[i] == undefined) {
+				var val = [];
+				val[0] = lvl;
+				val[1] = false;
+				this._hasSameNextNode[i] = val;
 
 				for (var j = i - 1; j >= 0; j--) {
 					var lvl2 = cellinfo._getTreeLevel(j);
@@ -28972,7 +30060,6 @@ if (!nexacro.Grid) {
 					}
 				}
 			}
-			prevlvl = lvl;
 		}
 
 		this._rootlevel = Math.max(cellinfo._getTreeStartLevel(), this._rootlevel);
@@ -29003,7 +30090,7 @@ if (!nexacro.Grid) {
 		return indexes;
 	};
 
-	_pGrid._createTreeStates = function (keepstate) {
+	_pGrid._createTreeStates = function (keepstate, ignoreDS) {
 		if (this._binddataset == null) {
 			return [];
 		}
@@ -29026,13 +30113,8 @@ if (!nexacro.Grid) {
 
 		if (keepstate && oldstates.length == rowcount) {
 			for (var i = 0, j = 0; i < rowcount; i++, j++) {
-				if (records[i]._rtype == 1) {
+				if (cellinfo.treestate._bindtype == 0) {
 					states[i] = oldstates[j];
-				}
-				else if (records[i]._rtype == 4) {
-					if (cellinfo.treestate._bindtype == 0) {
-						states[i] = oldstates[j];
-					}
 				}
 			}
 		}
@@ -29045,7 +30127,9 @@ if (!nexacro.Grid) {
 			var prestate;
 
 			for (var i = 0; i < rowcount; i++) {
-				state = cellinfo._getTreeState(i);
+				if (!ignoreDS) {
+					state = cellinfo._getTreeState(i);
+				}
 
 				if (states[i] == undefined) {
 					if (state && state.length) {
@@ -29060,7 +30144,7 @@ if (!nexacro.Grid) {
 
 				if (!prestate || cellinfo.treestate._bindtype == 0) {
 					if (prelevel >= level) {
-						states[i - 1] = 2;
+						states[i - 1] = 3;
 					}
 				}
 				prelevel = level;
@@ -29087,6 +30171,10 @@ if (!nexacro.Grid) {
 				prelevel = level;
 			}
 			states[rowcount - 1] = 2;
+		}
+
+		if (this._org_treeStates.length == 0) {
+			this._org_treeStates = this._org_treeStates.concat(states);
 		}
 
 		return states;
@@ -29201,7 +30289,7 @@ if (!nexacro.Grid) {
 		}
 
 		var indexes = this._treeIndexes;
-		var max = Math.max(v, indexes.length - 1);
+		var max = indexes.length - 1;
 
 		for (var i = max; i >= 0; i--) {
 			if (indexes[i] == v) {
@@ -29211,7 +30299,6 @@ if (!nexacro.Grid) {
 				break;
 			}
 		}
-
 		return -1;
 	};
 
@@ -29313,7 +30400,7 @@ if (!nexacro.Grid) {
 		return changed;
 	};
 
-	_pGrid._setTreeState = function (rowidx, v, redraw) {
+	_pGrid._setTreeState = function (rowidx, v, redraw, prop_set) {
 		v = parseInt(v, 10);
 
 		if (isFinite(v)) {
@@ -29328,7 +30415,7 @@ if (!nexacro.Grid) {
 					}
 					return 1;
 				}
-				else if ((retn = this._toggleTreeState(rowidx, redraw)) > 0) {
+				else if ((retn = this._toggleTreeState(rowidx, redraw, v, prop_set)) > 0) {
 					return retn;
 				}
 			}
@@ -29336,9 +30423,35 @@ if (!nexacro.Grid) {
 		return 0;
 	};
 
-	_pGrid._toggleTreeState = function (rowidx, redraw, elem) {
+	_pGrid._getOrgTreeStates = function (rowidx) {
+		var states;
+
+		if (this._org_treeStates.length) {
+			states = this._org_treeStates;
+		}
+		else {
+			states = this._createTreeStates(false, true);
+		}
+
+		if (states[rowidx] == 2) {
+			return 2;
+		}
+		else {
+			return this._treeStates[rowidx];
+		}
+	};
+
+	_pGrid._toggleTreeState = function (rowidx, redraw, v, prop_set) {
 		var dsrowidx = this._treeIndexes[rowidx];
-		var state = this._treeStates[dsrowidx];
+		var state;
+
+		if (prop_set) {
+			state = this._getOrgTreeStates(dsrowidx);
+		}
+		else {
+			state = this._treeStates[dsrowidx];
+		}
+
 		var collapse = false;
 		var retn;
 
@@ -29355,6 +30468,23 @@ if (!nexacro.Grid) {
 				this.on_fire_ontreestatuschanged(rowidx, dsrowidx, 0);
 			}
 		}
+		else if (state == 2) {
+			if (prop_set) {
+				if (prop_set == "null_value") {
+					this._treeStates[dsrowidx] = v;
+				}
+				else {
+					this._treeStates[dsrowidx] = 2;
+				}
+			}
+			else {
+				if (this.on_fire_cantreestatuschange(rowidx, dsrowidx, 0) !== false) {
+					retn = 1;
+					this._treeStates[dsrowidx] = v;
+					this.on_fire_ontreestatuschanged(rowidx, dsrowidx, 0);
+				}
+			}
+		}
 
 		if (redraw) {
 			if (retn == 2) {
@@ -29363,7 +30493,7 @@ if (!nexacro.Grid) {
 				}
 			}
 			else if (retn == 1) {
-				this._refreshBodyRow(rowidx - this._begrowpos);
+				this._refreshBodyRow(rowidx - this._getBodyBegRowPos(rowidx));
 			}
 		}
 		return retn;
@@ -29569,7 +30699,7 @@ if (!nexacro.Grid) {
 		return null;
 	};
 
-	_pGrid._showEditor = function (flag) {
+	_pGrid._showEditor = function (flag, bShowcell) {
 		if (nexacro._toBoolean(this.readonly) == true) {
 			return false;
 		}
@@ -29597,7 +30727,7 @@ if (!nexacro.Grid) {
 			else {
 				if (this._beforeEditRowIdx != currow || this._beforeEditCellIdx != curcell) {
 					if (cellobj._hasEditor()) {
-						cellobj._showEditor();
+						cellobj._showEditor(false, false, true);
 						this._beforeEditRowIdx = this._selectinfo.curdsrow;
 						this._beforeEditCellIdx = this._selectinfo.curcell;
 						this._showEditing = true;
@@ -29791,6 +30921,13 @@ if (!nexacro.Grid) {
 		cButton._cellobj = cellobj;
 		cButton._cellinfo = cellobj._refobj;
 		cButton.createComponent();
+
+		if (nexacro.Browser == "IE") {
+			nexacro.OnceCallbackTimer.callonce(this, function () {
+				cButton._control_element.setElementFocus();
+			}, 0);
+		}
+
 		return cButton;
 	};
 
@@ -30063,7 +31200,7 @@ if (!nexacro.Grid) {
 	};
 
 	_pGrid._setOverlayElements = function (overlay_elements, overlay_index) {
-		if (overlay_index && overlay_index < overlay_elements.length) {
+		if (overlay_index > -1 && overlay_index < overlay_elements.length) {
 			for (var i = overlay_elements.length - 1; i >= overlay_index; i--) {
 				overlay_elements[i].destroy();
 				overlay_elements.splice(i, 1);
@@ -30072,7 +31209,7 @@ if (!nexacro.Grid) {
 		this._overlay_elements = overlay_elements;
 	};
 
-	_pGrid._setOverlayElementProperty = function (elem, left, top, width, height, cellobj, display_text, is_fake_merge) {
+	_pGrid._setOverlayElementProperty = function (elem, left, top, width, height, style_cells, display_text, is_fake_merge) {
 		if (!elem) {
 			return;
 		}
@@ -30081,25 +31218,41 @@ if (!nexacro.Grid) {
 		elem.setElementPosition(left, top);
 		elem.setElementSize(width, height);
 
-		if (cellobj) {
+		if (style_cells && style_cells.length > 0) {
+			var cellobj = style_cells[0];
 			var cellinfo = cellobj._refobj;
+			if (!is_fake_merge && cellinfo.suppressalign.indexOf("first") != 0) {
+				if (cellinfo.suppressalign.indexOf("last") == 0) {
+					cellobj = style_cells[style_cells.length - 1];
+				}
+				else {
+					cellobj = style_cells[Math.floor(style_cells.length / 2)];
+				}
+				cellinfo = cellobj._refobj;
+			}
+
+			var selected = cellobj.selected;
+
+			cellobj.selected = false;
 			var datarow = this._getDataRow(cellobj._rowidx);
 
 
-			elem.setElementText(display_text);
+			elem.setElementText(cellobj._getDisplayText());
 			elem.setElementWordWrap(cellinfo._getWordwrap(datarow));
+			elem.setElementToolTip(cellobj.tooltiptext);
 
 
 			var font = cellobj.on_find_CurrentStyle_font(cellobj._pseudo);
 			var color = cellobj.on_find_CurrentStyle_color(cellobj._pseudo);
-			var align = cellobj.on_find_CurrentStyle_align(cellobj._pseudo);
-			var padding = cellobj.on_find_CurrentStyle_padding(cellobj._pseudo);
+			var letterspace = cellobj.on_find_CurrentStyle_letterspace(cellobj._pseudo);
 			elem.setElementFont(font);
+			elem.setElementLetterSpace(letterspace);
 			elem.setElementColor(color);
-			elem.setElementPadding(padding);
 
+
+			var align = cellobj.on_find_CurrentStyle_align(cellobj._pseudo);
 			if (is_fake_merge) {
-				elem.setElementAlignXY(align.halign, align.valign);
+				elem.setElementAlignXY("center", "middle");
 			}
 			else if (cellinfo.suppressalign.indexOf("first") == 0) {
 				elem.setElementAlignXY(align.halign, "top");
@@ -30112,30 +31265,41 @@ if (!nexacro.Grid) {
 			}
 
 			var cell_hpos = 0;
+			var merge_width = cellobj.width;
 			if (is_fake_merge) {
-				cell_hpos = this._getScrollLeft();
-			}
-			else {
-				var border = cellobj.on_find_CurrentStyle_border(cellobj._pseudo);
-				if (cellobj.width > (width + padding.left + border._right_width)) {
-					cell_hpos = cellobj.width - (width + padding.left + border._right_width);
+				var merge_col = cellinfo._col;
+				var style_cellinfo = null;
+				for (var i = 1; i < style_cells.length; i++) {
+					style_cellinfo = style_cells[i]._refobj;
+					if (style_cellinfo && merge_col < style_cellinfo._col) {
+						merge_width += style_cells[i].width;
+						merge_col = style_cellinfo._col;
+					}
 				}
 			}
-			elem.updateCellNodeClient(left, top, width, height, cell_hpos, is_fake_merge);
+
+			var border = cellobj.on_find_CurrentStyle_border(cellobj._pseudo);
+			var padding = cellobj.on_find_CurrentStyle_padding(cellobj._pseudo);
+			if (merge_width > (width + padding.left + border._right_width)) {
+				cell_hpos = merge_width - (width + padding.left + border._right_width);
+			}
+			elem.updateCellNodeClient(left, top, width, height, cell_hpos);
+			cellobj.selected = selected;
 		}
 	};
 
-	_pGrid._adjustOverlayElements = function (is_create, is_hscroll, fake_merge) {
-		if (!this._curFormat) {
-			return false;
-		}
+	_pGrid._adjustOverlayElements = function (is_create, fake_merge) {
 		if (is_create || fake_merge) {
 			this._destroyOverlayElements();
 		}
 
+		if (!this._curFormat || (!this._is_use_suppress && !this._is_use_fakemerge)) {
+			return false;
+		}
+
 		var retn = false;
 		var overlay_elements = this._overlay_elements;
-		var elements = [], display_text = "", cellobj = null, cellinfo = null;
+		var elements = [], style_cells = [], display_text = "", cellobj = null, cellinfo = null;
 		var pos = null, elem = null, style_cell = null;
 		var left = 0, top = 0, width = 0, height = 0, overlay_index = 0;
 		var cols_len = this._curFormat._cols.length;
@@ -30148,95 +31312,121 @@ if (!nexacro.Grid) {
 			}
 
 			var rows = band._get_rows();
+			var total_dispcnt;
+			var rows_len = rows.length;
+			var fixcnt = (this._fixed_rowcnt > 0) ? (this._fixed_rowcnt - this._fixed_startrow) : 0;
+			var fixerow = this._fixed_endrow;
+			var toprow = this._toprowpos[0];
+			var dispcnt = this._disprowcnt;
 
-			if (!rows.length) {
+			if (!rows_len) {
 				return false;
 			}
 
 			var cells = rows[0]._cells;
 			for (var i = 0; i < cols_len; i++) {
 				cellinfo = this._getBodyCellInfo(i);
-				if (cellinfo.suppressalign.indexOf("over") > 0) {
-					cellidx = i;
+
+				if (cellinfo && cellinfo.suppress != 0 && cellinfo.suppressalign.indexOf("over") > 0) {
+					cellidx = cellinfo._cellidx;
 					top = left = -1;
 					width = height = 0;
-
+					total_dispcnt = fixcnt + dispcnt;
 					elements = [];
-					for (var j = 0; j < rows.length; j++) {
+
+					for (var j = 0; j < rows_len; j++) {
 						cellobj = this._getBodyCellItem(j, cellidx);
 
-
-						pos = cellobj._setPositionInGrid();
-						left = (left < 0) ? pos.left : left;
-						top = (top < 0) ? pos.top : top;
-
-
-						if (pos.top > top) {
-							elements.push(cellobj._control_element);
-						}
-						else {
-							elements.splice(0, 1, cellobj._control_element);
-						}
-
-						var subrow_index = 1;
-						var subrow_cell = null;
-						if (cells.length > cols_len && cellinfo._rowspan == 1) {
-							subrow_cell = this._getBodyCellItem(j, cellidx + (cols_len * subrow_index));
-							while (subrow_cell) {
-								elements.push(subrow_cell._control_element);
-								subrow_index++;
-								subrow_cell = this._getBodyCellItem(j, cellidx + (cols_len * subrow_index));
-							}
-							subrow_cell = elements[elements.length - 1].linkedcontrol;
-							subrow_index = null;
-						}
-
-						if (cellobj._getSuppressInfo().text_proc == 0) {
-							display_text = cellobj._display_text;
-						}
-
-						if (cellobj._getSuppressInfo().last) {
-							if (subrow_cell) {
-								pos = subrow_cell._setPositionInGrid();
-								subrow_cell = null;
-							}
-							width = (pos.right > left) ? pos.right - left : 0;
-							height = (pos.bottom > top) ? pos.bottom - top : 0;
-
-							elem = null;
-							if (elements.length > 1) {
-								if (overlay_elements[overlay_index]) {
-									elem = overlay_elements[overlay_index];
-									elem.setTargetElements(elements);
-								}
-								else {
-									elem = new nexacro.EventPassOverlayElement(this._control_element, elements);
-									elem.create();
-									overlay_elements.push(elem);
-								}
-
-								if (elem) {
-									overlay_index++;
-									if (cellinfo.suppressalign.indexOf("first") >= 0) {
-										style_cell = rows[0]._cells[cellidx];
-									}
-
-									if (!style_cell || style_cell._selected) {
-										style_cell = cellobj;
-									}
-
-									this._setOverlayElementProperty(elem, left, top, width, height, style_cell, display_text);
+						if (cellobj) {
+							if (fixcnt > 0) {
+								if (cellobj._rowidx > fixerow && cellobj._rowidx < toprow) {
+									continue;
 								}
 							}
 							else {
-								cellobj._showInnerElement();
+								if (cellobj._rowidx < toprow) {
+									continue;
+								}
 							}
 
-							elements = [];
-							display_text = "";
-							pos = style_cell = null;
-							left = top = -1;
-							height = width = 0;
+							if (total_dispcnt-- == 0) {
+								break;
+							}
+
+
+							pos = cellobj._setPositionInGrid();
+							left = (left < 0) ? pos.left : left;
+							top = (top < 0) ? pos.top : top;
+
+
+							if (pos.top > top) {
+								elements.push(cellobj._control_element);
+							}
+							else {
+								elements.splice(0, 1, cellobj._control_element);
+							}
+
+							var subrow_index = 1;
+							var subrow_cell = null;
+							if (cells.length > cols_len && cellinfo._rowspan == 1) {
+								subrow_cell = this._getBodyCellItem(j, cellidx + (cols_len * subrow_index));
+								while (subrow_cell) {
+									elements.push(subrow_cell._control_element);
+									subrow_index++;
+									subrow_cell = this._getBodyCellItem(j, cellidx + (cols_len * subrow_index));
+								}
+								subrow_cell = elements[elements.length - 1].linkedcontrol;
+								subrow_index = null;
+							}
+
+							var suppinfo = cellobj._getSuppressInfo();
+
+							if (!suppinfo || suppinfo.text_proc == 0) {
+								display_text = cellobj._display_text;
+							}
+
+							if (!cellobj._hideInner) {
+								cellobj._hideInnerElement();
+							}
+
+							style_cells.push(cellobj);
+
+							if (suppinfo && suppinfo.last) {
+								if (subrow_cell) {
+									pos = subrow_cell._setPositionInGrid();
+									subrow_cell = null;
+								}
+								width = (pos.right > left) ? pos.right - left : 0;
+								height = (pos.bottom > top) ? pos.bottom - top : 0;
+
+								elem = null;
+								if (elements.length > 0) {
+									if (overlay_elements[overlay_index]) {
+										elem = overlay_elements[overlay_index];
+										elem.setTargetElements(elements);
+									}
+									else {
+										elem = new nexacro.EventPassOverlayElement(this._control_element, elements);
+										elem.create();
+										overlay_elements.push(elem);
+									}
+
+									if (elem) {
+										overlay_index++;
+										this._setOverlayElementProperty(elem, left, top, width, height, style_cells, display_text);
+									}
+								}
+								else {
+									cellobj._showInnerElement();
+								}
+
+								elements = [];
+								style_cells = [];
+								display_text = "";
+								pos = style_cell = null;
+								left = top = -1;
+								height = width = 0;
+							}
 						}
 					}
 				}
@@ -30247,23 +31437,42 @@ if (!nexacro.Grid) {
 
 		var fake_mergecell_arr = this._fake_mergecell_arr;
 		if (this._is_use_fakemerge && fake_mergecell_arr.length) {
-			var s_cell = null, e_cell = null;
-			var start_row = 0, end_row = 0, subrow_start = 0, subrow_end = 0;
+			var start_column, end_column, start_row, end_row, subrow_start, subrow_end;
 			for (var i = 0; i < fake_mergecell_arr.length; i++) {
-				s_cell = null;
-				e_cell = null;
 				elements = [];
+				style_cells = [];
 				fake_mergecell = fake_mergecell_arr[i];
 				start_row = fake_mergecell.start_row;
 				end_row = fake_mergecell.end_row;
-				for (var j = fake_mergecell.start_column; j <= fake_mergecell.end_column; j++) {
+				start_column = fake_mergecell.start_column;
+				end_column = fake_mergecell.end_column;
+
+				var j = 0;
+				if (fake_mergecell.start_row == -1 || fake_mergecell.start_row == -2) {
+					j = start_column;
+				}
+
+				for (; j <= end_column; j++) {
 					if (fake_mergecell.start_row == -1) {
-						start_row = end_row = subrow_start = 0;
+						start_row = end_row = 0;
+						subrow_start = (fake_mergecell.start_subrow >= 0) ? fake_mergecell.start_subrow : 0;
 						subrow_end = (fake_mergecell.end_subrow >= 0) ? fake_mergecell.end_subrow : this._curFormat._headrows.length - 1;
 					}
 					else if (fake_mergecell.start_row == -2) {
-						start_row = end_row = subrow_start = 0;
+						start_row = end_row = 0;
+						subrow_start = (fake_mergecell.start_subrow >= 0) ? fake_mergecell.start_subrow : 0;
 						subrow_end = (fake_mergecell.end_subrow >= 0) ? fake_mergecell.end_subrow : this._curFormat._summrows.length - 1;
+					}
+					else {
+						cellinfo = this._getBodyCellInfo(j);
+						if (cellinfo) {
+							if (cellinfo._col < start_column || cellinfo._col > end_column) {
+								continue;
+							}
+						}
+						else {
+							break;
+						}
 					}
 
 					for (var k = start_row; k <= end_row; k++) {
@@ -30274,7 +31483,8 @@ if (!nexacro.Grid) {
 							if (k == end_row && fake_mergecell.end_subrow != undefined) {
 								subrow_end = fake_mergecell.end_subrow;
 							}
-							else if (k == start_row && fake_mergecell.start_subrow != undefined) {
+
+							if (k == start_row && fake_mergecell.start_subrow != undefined) {
 								subrow_start = fake_mergecell.start_subrow;
 							}
 						}
@@ -30292,59 +31502,51 @@ if (!nexacro.Grid) {
 
 							if (cellobj) {
 								elements.push(cellobj._control_element);
-								s_cell = (s_cell) ? s_cell : cellobj;
-								e_cell = cellobj;
+								style_cells.push(cellobj);
 							}
 						}
 					}
 				}
 
-				if (s_cell && e_cell) {
-					style_cell = null, display_text = null;
-					elem = overlay_elements[overlay_index];
-					if (!elem) {
-						elem = new nexacro.EventPassOverlayElement(this._control_element, elements);
-						elem.create();
-						overlay_elements.push(elem);
+				if (style_cells.length > 0) {
+					if (1) {
+						style_cell = null, display_text = null;
+						elem = overlay_elements[overlay_index];
+						if (!elem) {
+							elem = new nexacro.EventPassOverlayElement(this._control_element, elements);
+							elem.create();
+							overlay_elements.push(elem);
+						}
+						else {
+							elem.setTargetElements(elements);
+						}
+
+						cellinfo = style_cells[0]._refobj;
+						if (cellinfo) {
+							if (style_cells[0].subcells.length) {
+								cellinfo = style_cells[0].subcells[0]._refobj;
+							}
+							display_text = cellinfo._getDisplayText(fake_mergecell.start_row);
+						}
+
+						var s_pos = style_cells[0]._setPositionInGrid();
+						var e_pos = style_cells[style_cells.length - 1]._setPositionInGrid();
+						left = s_pos.left;
+						top = s_pos.top;
+						width = (e_pos.right > left) ? e_pos.right - left : 0;
+						height = (e_pos.bottom > top) ? e_pos.bottom - top : 0;
+
+						this._setOverlayElementProperty(elem, left, top, width, height, style_cells, display_text, true);
+
+						left = top = width = height = 0;
+						s_pos = null, e_pos = null, style_cell = null, display_text = "", elem = null;
+						overlay_index++;
 					}
 					else {
-						elem.setTargetElements(elements);
+						style_cells[0]._showInnerElement();
 					}
-
-					cellinfo = s_cell._refobj;
-					if (cellinfo) {
-						display_text = cellinfo._getDisplayText(fake_mergecell.start_row);
-					}
-					style_cell = s_cell;
-
-					var s_pos = s_cell._setPositionInGrid();
-					var e_pos = e_cell._setPositionInGrid();
-					left = s_pos.left;
-					top = s_pos.top;
-					width = (e_pos.right > left) ? e_pos.right - left : 0;
-					height = (e_pos.bottom > top) ? e_pos.bottom - top : 0;
-
-					if (is_hscroll) {
-						if (elem) {
-							top = elem.top;
-							height = elem.height;
-							this._setOverlayElementProperty(elem, left, top, width, height, style_cell, display_text, true);
-							overlay_index++;
-						}
-						continue;
-					}
-
-					this._setOverlayElementProperty(elem, left, top, width, height, style_cell, display_text, true);
-
-					if (!is_hscroll) {
-						elem.setElementStartHScrollPos(left);
-					}
-
-					left = top = width = height = 0;
-					s_pos = e_pos = style_cell = display_text = elem = null;
-					overlay_index++;
 				}
-				fake_mergecell = s_cell = e_cell = null;
+				fake_mergecell = null, e_cell = null;
 			}
 			retn = true;
 		}
@@ -30406,13 +31608,18 @@ if (!nexacro.Grid) {
 		var band;
 		var retn = true;
 		var cellobj = null;
-		var accessibility = null;
+		var accessibility_enable = false;
 		this._is_band_focus = false;
 		this._beforegridrowpos = this.currentrow;
 		this._beforegridcolpos = this.currentcol;
 
 		if (this._currentBand == "body") {
 			this._is_first_bodycell = false;
+
+			if (this._showEditing) {
+				this._hideEditor();
+			}
+
 			for (; true; ) {
 				if (tabstop) {
 					retn = this._moveToCell(type, true, colmove, undefined, undefined, true);
@@ -30429,16 +31636,28 @@ if (!nexacro.Grid) {
 							break;
 						}
 						else {
-							accessibility = cellobj.on_find_CurrentStyle_accessibility(cellobj._pseudo);
-							if (accessibility && accessibility.enable) {
+							var cellinfo = cellobj._refobj;
+							var datarow = this._getDataRow(cellobj._rowidx);
+							var display_type = cellinfo._getDisplaytype(datarow);
+
+							accessibility_enable = cellobj._isAccessibilityEnable();
+							if (accessibility_enable) {
 								if (type == "up" || type == "down") {
-									if (this._isSelectRowType() && cellobj._curDisplayType != "tree") {
+									if (this._isSelectRowType() && display_type != "tree") {
 										var rowobj = cellobj.parent;
 										rowobj._setFocus(false);
 										break;
 									}
 								}
-								cellobj._setFocus(false);
+								this._showEditor();
+								if (!this._showEditing) {
+									if (cellobj._subComp && display_type != "tree") {
+										cellobj._subComp._setFocus(false);
+									}
+									else {
+										cellobj._setFocus(false);
+									}
+								}
 								break;
 							}
 						}
@@ -30478,18 +31697,16 @@ if (!nexacro.Grid) {
 						continue;
 					}
 					else {
-						accessibility = cellobj.on_find_CurrentStyle_accessibility(cellobj._pseudo);
-						if (accessibility) {
-							if (accessibility.enable == false) {
-								continue;
-							}
-
-							var cellinfo = cellobj._refobj;
-							this.currentsubrow = cellinfo._row;
-							this.currentcol = cellinfo._col;
-							cellobj._showfull();
-							cellobj._setFocus(false);
+						accessibility_enable = cellobj._isAccessibilityEnable();
+						if (!accessibility_enable) {
+							continue;
 						}
+
+						var cellinfo = cellobj._refobj;
+						this.currentsubrow = cellinfo._row;
+						this.currentcol = cellinfo._col;
+						cellobj._showfull();
+						cellobj._setFocus(false);
 					}
 				}
 				else {
@@ -30508,18 +31725,16 @@ if (!nexacro.Grid) {
 						continue;
 					}
 					else {
-						accessibility = cellobj.on_find_CurrentStyle_accessibility(cellobj._pseudo);
-						if (accessibility) {
-							if (accessibility.enable == false) {
-								continue;
-							}
-
-							var cellinfo = cellobj._refobj;
-							this.currentsubrow = cellinfo._row;
-							this.currentcol = cellinfo._col;
-							cellobj._showfull();
-							cellobj._setFocus(false);
+						accessibility_enable = cellobj._isAccessibilityEnable();
+						if (!accessibility_enable) {
+							continue;
 						}
+
+						var cellinfo = cellobj._refobj;
+						this.currentsubrow = cellinfo._row;
+						this.currentcol = cellinfo._col;
+						cellobj._showfull();
+						cellobj._setFocus(false);
 					}
 				}
 				else {
@@ -30554,10 +31769,11 @@ if (!nexacro.Grid) {
 							col = cellobj._refobj._col;
 
 							if (col == curCol && row == curRow - 1) {
-								accessibility = cellobj.on_find_CurrentStyle_accessibility(cellobj._pseudo);
-								if (accessibility && accessibility.enable == false) {
+								accessibility_enable = cellobj._isAccessibilityEnable();
+								if (!accessibility_enable) {
 									continue;
 								}
+
 								this.currentsubrow = row;
 								this.currentcol = col;
 								cellobj._setFocus(false);
@@ -30611,7 +31827,7 @@ if (!nexacro.Grid) {
 	};
 
 	_pGrid._setAccessibilityBandFocus = function (type, extcomp, hotkey) {
-		var retn = true, band = null, accessibility = null, curBand = this._currentBand;
+		var retn = true, band = null, curBand = this._currentBand;
 		if (type == "next") {
 			if (curBand == "grid") {
 				if (this._headBand) {
@@ -30619,7 +31835,7 @@ if (!nexacro.Grid) {
 					this._currentBand = "head";
 					this._currentDSrow = this.currentrow = -1;
 				}
-				else if (this._bodyBand && this.summarytype != "top" && this.summarytype != "lefttop") {
+				else if (this._bodyBand && this.body && this.summarytype != "top" && this.summarytype != "lefttop") {
 					band = this._bodyBand;
 					this._currentBand = "body";
 					this._currentDSrow = this.currentrow = 0;
@@ -30672,9 +31888,9 @@ if (!nexacro.Grid) {
 					this._moveToPosAccessibilityCell(this.currentrow, this.currentcell);
 				}
 				else {
-					accessibility = band.on_find_CurrentStyle_accessibility(band._pseudo);
-					if (!this._is_band_focus && (accessibility && accessibility.enable
-						 || (band._isBody && this.rowcount <= 0))) {
+					var accessibility_enable = band._isAccessibilityEnable();
+					if (!this._is_band_focus
+						 && (accessibility_enable || (band._isBody && this.rowcount <= 0))) {
 						if (extcomp) {
 							this.currentcell = this.currentsubrow = this.currentcol = 0;
 						}
@@ -30699,7 +31915,7 @@ if (!nexacro.Grid) {
 						this._currentDSrow = this.currentrow = -2;
 						this.currentsubrow = band._get_rows()[0]._format_rows.length - 1;
 					}
-					else if (this._bodyBand) {
+					else if (this._bodyBand && this.body) {
 						band = this._bodyBand;
 						this._currentBand = "body";
 						this._currentDSrow = this.currentrow = this.rowcount - 1;
@@ -30721,8 +31937,8 @@ if (!nexacro.Grid) {
 			}
 			else {
 				if (curBand == "summ") {
-					accessibility = this._summBand.on_find_CurrentStyle_accessibility(this._summBand._pseudo);
-					if (!this._is_band_focus && accessibility && accessibility.enable) {
+					var accessibility_enable = this._summBand._isAccessibilityEnable();
+					if (!this._is_band_focus && accessibility_enable) {
 						this._moveToAccessibilityBand(false);
 					}
 					else {
@@ -30740,8 +31956,8 @@ if (!nexacro.Grid) {
 					}
 				}
 				else if (curBand == "body") {
-					accessibility = this._bodyBand.on_find_CurrentStyle_accessibility(this._bodyBand._pseudo);
-					if (!this._is_band_focus && accessibility && accessibility.enable) {
+					var accessibility_enable = this._bodyBand._isAccessibilityEnable();
+					if (!this._is_band_focus && accessibility_enable) {
 						this._hideEditor();
 						this._moveToAccessibilityBand(false);
 					}
@@ -30765,6 +31981,7 @@ if (!nexacro.Grid) {
 			}
 
 			if (band) {
+				var accessibility_enable = band._isAccessibilityEnable();
 				if (band._isBody && this.rowcount <= 0) {
 					this._removeAccessibilityCurrentFocus();
 					band._setFocus(false);
@@ -30782,8 +31999,8 @@ if (!nexacro.Grid) {
 		}
 		else if (type == "up") {
 			if (curBand == "summ") {
-				accessibility = this._summBand.on_find_CurrentStyle_accessibility(this._summBand._pseudo);
-				if (!this._is_band_focus && accessibility && accessibility.enable) {
+				var accessibility_enable = this._summBand._isAccessibilityEnable();
+				if (!this._is_band_focus && accessibility_enable) {
 					this._moveToAccessibilityBand(false);
 				}
 				else {
@@ -30805,8 +32022,8 @@ if (!nexacro.Grid) {
 				}
 			}
 			else if (curBand == "body") {
-				accessibility = this._bodyBand.on_find_CurrentStyle_accessibility(this._bodyBand._pseudo);
-				if (!this._is_band_focus && accessibility && accessibility.enable) {
+				var accessibility_enable = this._bodyBand._isAccessibilityEnable();
+				if (!this._is_band_focus && accessibility_enable) {
 					this._hideEditor();
 					this._moveToAccessibilityBand(false);
 				}
@@ -30831,8 +32048,8 @@ if (!nexacro.Grid) {
 				}
 			}
 			else if (curBand == "head" && this.currentcell <= 0) {
-				accessibility = this._headBand.on_find_CurrentStyle_accessibility(this._headBand._pseudo);
-				if (!this._is_band_focus && accessibility && accessibility.enable) {
+				var accessibility_enable = this._headBand._isAccessibilityEnable();
+				if (!this._is_band_focus && accessibility_enable) {
 					this._moveToAccessibilityBand(false);
 				}
 				else {
@@ -30846,7 +32063,7 @@ if (!nexacro.Grid) {
 			else if (curBand == "grid") {
 				this._is_band_focus = false;
 				this._currentBand = curBand;
-				accessibility = this.on_find_CurrentStyle_accessibility(this._pseudo);
+				var accessibility = this.on_find_CurrentStyle_accessibility(this._pseudo);
 				if (accessibility && accessibility.enable) {
 					this._moveToAccessibilityBand(true);
 				}
@@ -30896,9 +32113,8 @@ if (!nexacro.Grid) {
 				}
 
 				if (band) {
-					accessibility = band.on_find_CurrentStyle_accessibility(band._pseudo);
-					if (!this._is_band_focus && accessibility && accessibility.enable
-						 || (this.rowcount <= 0 && band._isBody)) {
+					var accessibility_enable = band._isAccessibilityEnable();
+					if (!this._is_band_focus && (accessibility_enable || (this.rowcount <= 0 && band._isBody))) {
 						this._moveToAccessibilityBand(false);
 					}
 					else {
@@ -30998,20 +32214,35 @@ if (!nexacro.Grid) {
 
 		if (this._currentBand == "body" && this._bodyBand._get_rows().length > 0) {
 			this._hideEditor();
-
 			cellobj = this._getAccessibilityCurrentCell();
 			if (cellobj) {
-				cellobj._stat_change("notfocus", "normal");
+				var cellinfo = cellobj._refobj;
+				if (cellinfo._row != rowidx || cellinfo._cellidx != cellidx) {
+					cellobj._stat_change("notfocus", "normal");
+				}
 			}
 			this._moveToPosCell(rowidx, cellidx);
 		}
 
 		cellobj = this._getAccessibilityCurrentCell(rowidx, cellidx);
-		if (cellobj && (this._currentBand != "body" || this.autoenter != "select")) {
+
+		if (cellobj) {
+			var cellinfo = cellobj._refobj;
+
 			retn = true;
 			cellobj._showfull();
-			cellobj._setFocus(false);
-			this.currentcol = cellobj._refobj._col;
+			if (this._currentBand != "body" || this.autoenter != "select" || !this._showEditing) {
+				if (cellobj._subComp && cellinfo._getDisplaytype(rowidx) != "tree") {
+					cellobj._subComp._setFocus(false);
+				}
+				else {
+					cellobj._setFocus(false);
+				}
+			}
+			else {
+				this._showEditor();
+			}
+			this.currentcol = cellinfo._col;
 		}
 		this._is_band_focus = this._first_focus = false;
 		return retn;

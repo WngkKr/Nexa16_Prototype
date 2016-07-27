@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="SAM007" classname="testBoard" left="0" top="0" width="1024" height="768" titletext="사용자 컵포넌트 모음" onload="SAM007_onload">
+    <Layouts>
+      <Layout>
+        <Edit id="Edit00" taborder="1" left="51" top="60" width="139" height="25"/>
+        <PopupDiv id="PopupDiv000" text="PopupDiv000" left="540" top="206" width="19.14%" height="100">
+          <Layouts>
+            <Layout>
+              <Grid id="Grid00" taborder="0" binddataset="Dataset00" useinputpanel="false" autofittype="col" oncellclick="PopupDiv000_Grid00_oncellclick" left="0" top="0" width="139" height="79">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="25" band="left"/>
+                      <Column size="120"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="body">
+                      <Cell displaytype="checkbox" edittype="checkbox" text="bind:chk"/>
+                      <Cell col="1" style="align:left middle;padding:0 0 0 5;" text="bind:data" tooltiptext="expr:&quot;값을?&quot;"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </PopupDiv>
+        <Edit id="Edit01" taborder="3" left="55" top="116" width="219" height="25"/>
+        <PopupDiv id="PopupDiv01" text="PopupDiv000" left="776" top="110" width="19.92%" height="268">
+          <Layouts>
+            <Layout>
+              <Grid id="Grid00" taborder="0" binddataset="Dataset01" useinputpanel="false" autofittype="col" oncellclick="PopupDiv000_Grid00_oncellclick" left="0" top="0" width="195" height="247" treeusecheckbox="false" treeinitstatus="expand,null">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="163"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="body">
+                      <Cell displaytype="tree" edittype="tree" style="align:left middle;padding:0 0 0 5;" text="bind:data" treelevel="bind:lev"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </PopupDiv>
+        <Button id="Button00" taborder="4" left="504" top="32" width="25" height="25" cssclass="btn_WF_Treecombo"/>
+        <Button id="Button01" taborder="5" cssclass="btn_WF_Treecombo" left="412" top="60" width="25" height="25"/>
+        <Static id="Static00" taborder="6" text="&lt;-- check Combo" left="300" top="64" width="120" height="20"/>
+        <Static id="Static01" taborder="7" text="&lt;-- tree Combo" left="292" top="116" width="120" height="20"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="chk" type="STRING" size="256"/>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="data" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="chk">0</Col>
+            <Col id="code">1</Col>
+            <Col id="data">1</Col>
+          </Row>
+          <Row>
+            <Col id="chk">0</Col>
+            <Col id="code">2</Col>
+            <Col id="data">2</Col>
+          </Row>
+          <Row>
+            <Col id="chk">0</Col>
+            <Col id="code">3</Col>
+            <Col id="data">3</Col>
+          </Row>
+          <Row>
+            <Col id="chk">0</Col>
+            <Col id="code">4</Col>
+            <Col id="data">4</Col>
+          </Row>
+          <Row>
+            <Col id="chk">0</Col>
+            <Col id="code">5</Col>
+            <Col id="data">5</Col>
+          </Row>
+          <Row>
+            <Col id="chk">0</Col>
+            <Col id="code">6</Col>
+            <Col id="data">6</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset01">
+        <ColumnInfo>
+          <Column id="lev" type="STRING" size="256"/>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="data" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="data">스틱인베스트먼트</Col>
+            <Col id="lev">0</Col>
+          </Row>
+          <Row>
+            <Col id="data">파트너위원회</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">감사</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">OPG</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">투자1본부</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">바이오팀</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">투자2본부</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">투자3본부</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">코파팀</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">벤처본부</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">벤처투자1팀</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">벤처투자2팀</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">CSI팀</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">리스크관리본부</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">경영지원본부</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">관리팀</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">지원팀</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">LP지원팀</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">부산사무소</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">홍콩지사</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">상해지사</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">대만지사</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">베트남지사</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">미국지사</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">고문위원회</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">R &amp; DD실</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">M&amp;A본부</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">PE본부</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">SS본부</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">투자지원본부</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">법무팀</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">재무팀</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">VI팀</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">전략기획실</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">전략혁신본부</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">고문</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">이사회</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">전략기획실</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">Value Innovation실</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">자문위원</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">상임자문위원</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">비상임자문위원</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">Compliance본부</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">1본부</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">해외본부</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">(구)경영지원본부</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">전략회수팀</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">전략기획팀</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">애널리스트</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">리서치팀</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">기타</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">DSC</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">CAO</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">투자본부</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">KGIF</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">Oryx</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">3본부</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">호주지사</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">2본부</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">일본지사</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">해외투자팀</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">스틱</Col>
+            <Col id="lev">0</Col>
+          </Row>
+          <Row>
+            <Col id="data">대표이사</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">총괄</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">스틱아이티벤처투자</Col>
+            <Col id="lev">0</Col>
+          </Row>
+          <Row>
+            <Col id="data">대표이사</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">지원본부</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">투자본부</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">PE본부</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">미국법인</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">홍콩법인</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">투자1본부</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">투자2본부</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">KGIF본부</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">M&amp;A본부</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">이사회</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">스틱M&amp;A</Col>
+            <Col id="lev">0</Col>
+          </Row>
+          <Row>
+            <Col id="data">대표이사</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">총괄</Col>
+            <Col id="lev">2</Col>
+          </Row>
+          <Row>
+            <Col id="data">디피씨</Col>
+            <Col id="lev">0</Col>
+          </Row>
+          <Row>
+            <Col id="data">디피씨</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">기타회사</Col>
+            <Col id="lev">0</Col>
+          </Row>
+          <Row>
+            <Col id="data">대표이사</Col>
+            <Col id="lev">1</Col>
+          </Row>
+          <Row>
+            <Col id="data">총괄</Col>
+            <Col id="lev">2</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset02"/>
+    </Objects>
+    <Bind/>
+    <Script type="xscript5.0"><![CDATA[
+/**
+*  인트라넷 고도화[Lexpeed3]구축 사업
+*
+*  @MenuPath       
+*  @FileName       SAM007.xfdl
+*  @Creator        송원창
+*  @CreateDate     2016.04.15
+*  @LastModifier   
+*  @LastModifyDate 
+*  @Version        1.0
+*  @Outline        프린트 샘플1
+*  @Description       
+*
+*
+************** 소스 수정 이력 *************************************************
+*    date          Modifier            Description
+*******************************************************************************
+*  2016.04.15      송원창              클래스 최초 생성
+*******************************************************************************
+*/
+/*----------------------------------------------------------------------------------------------
+ * 공통 라이브러리 INCLUDE 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------------------------
+ * FORM 변수 선언 영역
+----------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------------------------
+ * FORM EVENT 영역
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  화면 로드시 이벤트
+ */
+this.SAM007_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	this.gfn_setCheckComboEdit(this.Edit00, this.Dataset00, ["code","data"]);	// 체크 박스 콤보
+	this.gfn_setTreeComboEdit(this.Edit01, this.Dataset01, ["code","data"]);	// 트리 콤보
+}
+
+
+/*----------------------------------------------------------------------------------------------
+ * 공통기능 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * TRANSACTION 및 CallBack 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * 각 COMPONENT 별 EVENT 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * 사용자 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+]]></Script>
+  </Form>
+</FDL>

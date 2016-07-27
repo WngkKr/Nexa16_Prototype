@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -1007,6 +1007,7 @@ if (nexacro.Device && nexacro.OS == "Android") {
 			this._name = null;
 			this.location.set_parentID(this._id);
 		};
+
 		var _pMapMarker = nexacro.MapMarker.prototype = nexacro._createPrototype(nexacro.EventSinkObject, nexacro.MapMarker);
 		_pMapMarker._type_name = "MapMarker";
 
@@ -1078,7 +1079,6 @@ if (nexacro.Device && nexacro.OS == "Android") {
 			return true;
 		};
 
-
 		_pMapMarker.set_draggable = function (v) {
 			if (v == null) {
 				return false;
@@ -1134,9 +1134,9 @@ if (nexacro.Device && nexacro.OS == "Android") {
 					return ret;
 				}
 			}
-
 			return ret;
 		};
+
 		delete _pMapMarker;
 	}
 
@@ -1221,6 +1221,7 @@ if (nexacro.Device && nexacro.OS == "Android") {
 			this.style.set_parentID(this._id);
 			this.style.strokepen.set_parentID(this._id);
 		};
+
 		var _pMapPolyline = nexacro.MapPolyline.prototype = nexacro._createPrototype(nexacro.EventSinkObject, nexacro.MapPolyline);
 		_pMapPolyline._type_name = "MapPolyline";
 
@@ -1235,6 +1236,7 @@ if (nexacro.Device && nexacro.OS == "Android") {
 			this.locationdata = v;
 			return true;
 		};
+
 		_pMapPolyline.set_visible = function (v) {
 			if (v == true || (typeof (v) == "string" && v == "true")) {
 				this.visible = true;
@@ -1248,6 +1250,7 @@ if (nexacro.Device && nexacro.OS == "Android") {
 
 			return true;
 		};
+
 		_pMapPolyline.set_style = function (v) {
 			var v_arr = v.split(";");
 			var i = 0;
@@ -1273,6 +1276,7 @@ if (nexacro.Device && nexacro.OS == "Android") {
 			}
 			return ret;
 		};
+
 		delete _pMapPolyline;
 	}
 
@@ -1381,6 +1385,7 @@ if (nexacro.Device && nexacro.OS == "Android") {
 			this.style.strokepen.set_parentID(this._id);
 			this.style.fillbrush.set_parentID(this._id);
 		};
+
 		var _pMapPolygon = nexacro.MapPolygon.prototype = nexacro._createPrototype(nexacro.EventSinkObject, nexacro.MapPolygon);
 		_pMapPolygon._type_name = "MapPolygon";
 
@@ -1395,6 +1400,7 @@ if (nexacro.Device && nexacro.OS == "Android") {
 			this.locationdata = v;
 			return true;
 		};
+
 		_pMapPolygon.set_visible = function (v) {
 			if (v == true || (typeof (v) == "string" && v == "true")) {
 				this.visible = true;
@@ -1407,6 +1413,7 @@ if (nexacro.Device && nexacro.OS == "Android") {
 			}
 			return true;
 		};
+
 		_pMapPolygon.set_style = function (v) {
 			var v_arr = v.split(";");
 			var i = 0;
@@ -1435,6 +1442,7 @@ if (nexacro.Device && nexacro.OS == "Android") {
 			}
 			return ret;
 		};
+
 		delete _pMapPolygon;
 	}
 }
@@ -1716,6 +1724,7 @@ else if (nexacro.Device || nexacro.Browser != "Runtime" && !(nexacro.Browser == 
 			var __zoomalign = google.maps.ControlPosition.LEFT_TOP;
 			__zoomalign = this._getalign(this.zoomalign_halign, this.zoomalign_valign);
 			this.zoomalign = __zoomalign;
+
 			this._google_map_option_test = {
 				zoomControlOptions : {
 					position : this.zoomalign, 
@@ -1844,6 +1853,7 @@ else if (nexacro.Device || nexacro.Browser != "Runtime" && !(nexacro.Browser == 
 				return true;
 			}
 		};
+
 		_pMap.set_showmapscale = function (v) {
 			if (v == null) {
 				return false;
@@ -1955,6 +1965,7 @@ else if (nexacro.Device || nexacro.Browser != "Runtime" && !(nexacro.Browser == 
 			var map_type = this._getMapType();
 			this._google_map.setOptions(this.setOptions());
 		};
+
 		_pMap.set_zoomlevel = function (v) {
 			this.zoomlevel = Number(v.toString());
 		};
@@ -2377,6 +2388,14 @@ else if (nexacro.Device || nexacro.Browser != "Runtime" && !(nexacro.Browser == 
 				return true;
 			});
 
+			google.maps.event.addListenerOnce(google_map, 'tilesloaded', function () {
+				parentMap.bLoaded = true;
+				parentMap._apply_onload();
+
+				google.maps.event.addListenerOnce(google_map, 'tilesloaded', function () {
+				});
+			});
+
 			google.maps.event.addListener(google_map, 'dragstart', function (e) {
 			});
 
@@ -2427,10 +2446,6 @@ else if (nexacro.Device || nexacro.Browser != "Runtime" && !(nexacro.Browser == 
 				return true;
 			});
 
-
-			this.bLoaded = true;
-
-			this._apply_onload();
 			return true;
 		};
 
@@ -2439,7 +2454,6 @@ else if (nexacro.Device || nexacro.Browser != "Runtime" && !(nexacro.Browser == 
 
 			this.items[strItemID].location.longitude = lng;
 		};
-
 
 		_pMap.getAddress = function (nLatitude, nLongitude, nMaxResultCount, strLocale) {
 			if (nLatitude == undefined || nLatitude == null) {
@@ -2585,6 +2599,7 @@ else if (nexacro.Device || nexacro.Browser != "Runtime" && !(nexacro.Browser == 
 			}
 			_items[markName].setOptions(markerOpt);
 		};
+
 		_pMap.addMarker = function (markName, markObj, parentMap, obj) {
 			if (typeof (_infowindow[markName]) == "undefined") {
 				var temp_infowindow = new google.maps.InfoWindow({
@@ -2930,6 +2945,7 @@ else if (nexacro.Device || nexacro.Browser != "Runtime" && !(nexacro.Browser == 
 				return true;
 			}
 		};
+
 		_pMap._removeItem = function (itemname) {
 			_items[itemname].setMap(null);
 			if (typeof (_items[itemname].title) != "undefined") {
@@ -2953,10 +2969,10 @@ else if (nexacro.Device || nexacro.Browser != "Runtime" && !(nexacro.Browser == 
 		_pMap.gmap_ondrag = function (lat, lng) {
 			this.on_fire_ondragstart(this, new nexacro.MapDragEventInfo("ondrag"));
 		};
+
 		_pMap.gmap_ondragenter = function (objData) {
 			this._fire_ondragenter(this, new nexacro.MapDragEventInfo("ondragenter"));
 		};
-
 
 		_pMap.gmap_ondragmove = function (lat, lng) {
 			this._location.latitude = lat;
@@ -2965,13 +2981,16 @@ else if (nexacro.Device || nexacro.Browser != "Runtime" && !(nexacro.Browser == 
 			this.centerlocation.latitude = this._location.latitude;
 			this.centerlocation.longitude = this._location.longitude;
 		};
+
 		_pMap.gmap_ondragleave = function (objData) {
 			this._fire_ondragleave(this, new nexacro.MapDragEventInfo("ondragleave"));
 		};
+
 		_pMap.gmap_dragend = function (lat, lng) {
 			this._location.latitude = lat;
 			this._location.longitude = lng;
 		};
+
 
 		_pMap.gmap_onclick = function (lat, lng, x, y) {
 			this._location.latitude = lat;
@@ -2980,6 +2999,7 @@ else if (nexacro.Device || nexacro.Browser != "Runtime" && !(nexacro.Browser == 
 			this._pixel.y = y;
 			this.kindClick = "normalclick";
 		};
+
 		_pMap.gmap_onoverlayclick = function (fromobj, lat, lng, x, y) {
 			this._location.latitude = lat;
 			this._location.longitude = lng;
@@ -2988,8 +3008,10 @@ else if (nexacro.Device || nexacro.Browser != "Runtime" && !(nexacro.Browser == 
 			this.overlayfromobj = fromobj;
 			this.kindClick = "overlayclick";
 		};
+
 		_pMap._on_click = function (elem, button, alt_key, ctrl_key, shift_key, canvasX, canvasY, screenX, screenY) {
 		};
+
 		_pMap._on_sys_click = function (node, e, bubble) {
 			var e = e.changedTouches ? e.changedTouches[0] : e;
 			nexacro.ajaxlog("_on_sys_click" + e.screenX + "," + e.screenY
@@ -3558,6 +3580,7 @@ else if (nexacro.Device || nexacro.Browser != "Runtime" && !(nexacro.Browser == 
 			}
 			return true;
 		};
+
 		_pMapPolyline.set_style = function (v) {
 			var v_arr = v.split(";");
 			var i = 0;
@@ -3868,6 +3891,7 @@ else {
 		};
 		_pMapMarker.set_style = function (v) {
 		};
+
 		delete _pMapMarker;
 	}
 

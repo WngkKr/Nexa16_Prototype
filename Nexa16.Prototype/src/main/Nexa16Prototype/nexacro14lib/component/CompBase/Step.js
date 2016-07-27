@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -132,8 +132,7 @@ if (!nexacro.Step) {
 		this.text = "";
 		this.canstepchange = null;
 		this.onstepchanged = null;
-
-
+		35;
 		this._event_list = 
 			{
 			"onclick" : 1, 
@@ -161,7 +160,21 @@ if (!nexacro.Step) {
 			"onmove" : 1, 
 			"onsize" : 1, 
 			"canstepchange" : 1, 
-			"onstepchanged" : 1
+			"onstepchanged" : 1, 
+			"onfling" : 1, 
+			"onflingstart" : 1, 
+			"onflingend" : 1, 
+			"onpinch" : 1, 
+			"onpinchstart" : 1, 
+			"onpinchend" : 1, 
+			"onslide" : 1, 
+			"onslidestart" : 1, 
+			"onslideend" : 1, 
+			"ontouchstart" : 1, 
+			"ontouchmove" : 1, 
+			"ontouchend" : 1, 
+			"ontap" : 1, 
+			"onlongpress" : 1
 		};
 
 
@@ -186,12 +199,15 @@ if (!nexacro.Step) {
 	nexacro.Step.prototype = _pStep;
 	_pStep._type_name = "Step";
 
+	nexacro.Step._default_step_buttonalign = nexacro._getCachedStyleObj("align", "lefttext middle");
+
 	_pStep.on_apply_custom_pseudo = function (pseudo) {
 		var currentstyle = this.currentstyle;
 		var align = this.on_find_CurrentStyle_align(pseudo);
 		var color = this.on_find_CurrentStyle_color(pseudo);
 		var cursor = this.on_find_CurrentStyle_cursor(pseudo);
 		var font = this.on_find_CurrentStyle_font(pseudo);
+		var letterspace = this.on_find_CurrentStyle_letterspace(pseudo);
 		var padding = this.on_find_CurrentStyle_padding(pseudo);
 
 		var buttonalign = this.on_find_CurrentStyle_buttonalign(pseudo);
@@ -211,6 +227,9 @@ if (!nexacro.Step) {
 		}
 		if (font != currentstyle.font) {
 			currentstyle.font = font;
+		}
+		if (letterspace != currentstyle.letterspace) {
+			currentstyle.letterspace = letterspace;
 		}
 		if (padding != currentstyle.padding) {
 			currentstyle.padding = padding;
@@ -244,6 +263,7 @@ if (!nexacro.Step) {
 		this.on_apply_style_align(align);
 		this.on_apply_style_color(color);
 		this.on_apply_style_font(font);
+		this.on_apply_style_letterspace(letterspace);
 		this.on_apply_style_cursor(cursor);
 		this.on_apply_style_padding(padding);
 	};
@@ -251,6 +271,9 @@ if (!nexacro.Step) {
 
 	_pStep.on_find_CurrentStyle_buttonalign = function (pseudo) {
 		var buttonalign = this._find_pseudo_obj("buttonalign", pseudo, "align");
+		if (!buttonalign) {
+			buttonalign = (this._is_subcontrol) ? nexacro.Component._default_step_align : nexacro.Step._default_step_buttonalign;
+		}
 		return buttonalign;
 	};
 
@@ -281,12 +304,12 @@ if (!nexacro.Step) {
 
 	_pStep.on_find_CurrentStyle_buttonpadding = function (pseudo) {
 		var buttonpadding = this._find_pseudo_obj("buttonpadding", pseudo, "padding");
-		return buttonpadding;
+		return buttonpadding || nexacro.Component._default_padding;
 	};
 
 	_pStep.on_find_CurrentStyle_buttonsize = function (pseudo) {
 		var buttonsize = this._find_pseudo_obj("buttonsize", pseudo);
-		return buttonsize;
+		return parseInt(buttonsize) | 0;
 	};
 
 
@@ -423,6 +446,7 @@ if (!nexacro.Step) {
 				text_elem.setElementFont(curstyle.font);
 				text_elem.setElementColor(curstyle.color);
 				text_elem.setElementAlignXY(halign, valign);
+				text_elem.setElementLetterSpace(curstyle.letterspace);
 			}
 			if (size) {
 				info.width = size.width;
@@ -581,6 +605,7 @@ if (!nexacro.Step) {
 					text_elem.setElementColor(currentstyle.color);
 					text_elem.setElementFont(currentstyle.font);
 					text_elem.setElementAlignXY(halign, valign);
+					text_elem.setElementLetterSpace(currentstyle.letterspace);
 					text_elem.create();
 				}
 			}
@@ -703,35 +728,31 @@ if (!nexacro.Step) {
 	};
 
 	_pStep._drawStepButton = function () {
-		var item = this._items;
-		var text = this.text;
-		var img_info = this._btn_img_info;
 		var stepcount = this.stepcount;
-		var stepindex = this.stepindex;
-		var pseudo = this._pseudo;
-		var client_width = this._client_width;
-		var client_height = this._client_height;
-		var align = this.on_find_CurrentStyle_align(pseudo);
-		var font = this.on_find_CurrentStyle_font(pseudo);
-		var txt_size = nexacro._getTextSize2(text, font);
-		var txt_elem = this._text_elem;
-
 		if (stepcount > 0) {
+			var items = this._items;
+			var stepindex = this.stepindex;
+			var img_info = this._btn_img_info;
+
+			var pseudo = this._pseudo;
+			var align = this.on_find_CurrentStyle_align(pseudo);
 			var btn_align = this.on_find_CurrentStyle_buttonalign(pseudo);
-			var btn_image = this.on_find_CurrentStyle_buttonimage(pseudo);
-			var btn_size = this.on_find_CurrentStyle_buttonsize(pseudo);
-			btn_size = btn_size ? (parseInt(btn_size) | 0) : btn_size;
 			var btn_padding = this.on_find_CurrentStyle_buttonpadding(pseudo);
 
-			if (img_info.width > btn_size || img_info.height > btn_size) {
-				var max = Math.max(img_info.width, img_info.height);
-				btn_size = max;
-			}
-
-			var btnArea_width = (btn_padding.left + btn_padding.right + btn_size) * stepcount;
-			var btnArea_height = btn_padding.top + btn_padding.bottom + btn_size;
+			var text = this.text;
+			var font = this.on_find_CurrentStyle_font(pseudo);
+			var letterspace = this.on_find_CurrentStyle_letterspace(pseudo);
+			var txt_size = nexacro._getTextSize2(letterspace, text, font);
 			var txtArea_width = txt_size[0];
 			var txtArea_height = txt_size[1];
+
+			var client_width = this._client_width;
+			var client_height = this._client_height;
+
+			var btn_size = this._getButtonSize();
+			var btnArea = this._getButtonAreaSize(stepcount, btn_size);
+			var btnArea_width = btnArea.width;
+			var btnArea_height = btnArea.height;
 
 			var btn_l = 0;
 			var btn_t = 0;
@@ -749,7 +770,12 @@ if (!nexacro.Step) {
 								btn_l = btn_padding.left;
 								break;
 							case "center":
-								btn_l = (client_width / 2) - ((btnArea_width + txtArea_width) / 2) + btn_padding.left;
+								if (txtArea_width > 0) {
+									btn_l = (client_width / 2) - ((btnArea_width + txtArea_width) / 2) + btn_padding.left;
+								}
+								else {
+									btn_l = btn_padding.left;
+								}
 								break;
 							case "right":
 								btn_l = client_width - btnArea_width - txtArea_width + btn_padding.left;
@@ -797,7 +823,7 @@ if (!nexacro.Step) {
 						}
 						break;
 					case "middle":
-						btn_t = (client_height / 2) - (btnArea_height / 2) + btn_padding.top;
+						btn_t = (client_height / 2) - (btnArea_height / 2) + btn_padding.top - btn_padding.bottom;
 						break;
 					case "bottom":
 						btn_t = client_height - btnArea_height + btn_padding.top;
@@ -829,12 +855,15 @@ if (!nexacro.Step) {
 				stepButton.createComponent();
 				stepButton.on_created();
 				if (i == stepindex) {
+					var btn_image = this.on_find_CurrentStyle_buttonimage(pseudo);
 					stepButton.style.set_image(btn_image);
 				}
-				item[i] = stepButton;
 
+				items[i] = stepButton;
 				btn_l = btn_l + btn_w + btn_padding.left + btn_padding.right;
 			}
+
+			this._items = items;
 			this.on_apply_style_buttonbordertype(this.on_find_CurrentStyle_buttonbordertype(pseudo));
 		}
 	};
@@ -870,6 +899,30 @@ if (!nexacro.Step) {
 		this.on_apply_stepcount();
 	};
 
+	_pStep._getButtonSize = function () {
+		var pseudo = this._pseudo;
+		var img_info = this._btn_img_info;
+		var btn_size = this.on_find_CurrentStyle_buttonsize(pseudo);
+
+		if (img_info.width > btn_size || img_info.height > btn_size) {
+			var max = Math.max(img_info.width, img_info.height);
+			btn_size = max;
+		}
+		return btn_size;
+	};
+
+	_pStep._getButtonAreaSize = function (stepcount, btn_size) {
+		var btn_padding = this.on_find_CurrentStyle_buttonpadding(this._pseudo);
+
+		var btnArea_width = (btn_padding.left + btn_padding.right + btn_size) * stepcount;
+		var btnArea_height = btn_padding.top + btn_padding.bottom + btn_size;
+
+		return {
+			width : btnArea_width, 
+			height : btnArea_height
+		};
+	};
+
 	delete _pStep;
 
 
@@ -894,6 +947,7 @@ if (!nexacro.Step) {
 			this.on_apply_stepcount();
 			this.on_apply_stepindex();
 		}
+
 		this.on_apply_text();
 		this.on_apply_expr();
 
@@ -959,41 +1013,24 @@ if (!nexacro.Step) {
 		}
 	};
 
-	_pStepCtrl.on_apply_stepcount = function () {
-		var control_elem = this.getElement();
-		if (control_elem) {
-			if (this._btn_img_info.isimg) {
-				var item = this._items;
-				var item_len = item.length;
-				if (item_len > 0) {
-					this._deleteStepButton();
-				}
-				this._drawStepButton();
-			}
-		}
-	};
-
-
 	_pStepCtrl._drawStepButton = function () {
 		var stepcount = this.stepcount;
-		var stepindex = this.stepindex;
-		var item = this._items;
-		var pseudo = this._pseudo;
-		var layout = this.parent;
-		var client_width = this._client_width;
-		var client_height = this._client_height;
-		var layout_width = layout._client_width;
-		var layout_height = layout._client_height;
-		var align = this.on_find_CurrentStyle_align(pseudo);
-
 		if (stepcount > 0) {
+			var stepindex = this.stepindex;
+			var items = this._items;
+			var pseudo = this._pseudo;
+			var layout = this.parent;
+			var client_width = this._client_width;
+			var client_height = this._client_height;
+			var layout_width = layout._client_width;
+			var layout_height = layout._client_height;
+
 			var btn_size = this._getButtonSize();
-			var btn_area = this._getButtonAreaSize(stepcount, btn_size);
-			var btn_image = this.on_find_CurrentStyle_buttonimage(pseudo);
 			var btn_padding = this.on_find_CurrentStyle_buttonpadding(pseudo);
+			var step_padding = this.on_find_CurrentStyle_padding(pseudo);
 
 			var btn_l = btn_padding.left;
-			var btn_t = ((client_height - btn_size) / 2) + btn_padding.top;
+			var btn_t = (((client_height - btn_size) / 2) + btn_padding.top) - btn_padding.bottom;
 			var btn_w = btn_size;
 			var btn_h = btn_size;
 
@@ -1002,48 +1039,35 @@ if (!nexacro.Step) {
 				stepButton._setEventHandler("onclick", this.__onStepButtonClick, this);
 				stepButton.createComponent();
 				stepButton.on_created();
+
 				if (i == stepindex) {
+					var btn_image = this.on_find_CurrentStyle_buttonimage(pseudo);
 					stepButton.style.set_image(btn_image);
 				}
-				item[i] = stepButton;
 
-				btn_l = btn_l + btn_w + 5;
+				items[i] = stepButton;
+				btn_l = btn_l + btn_w + btn_padding.left + btn_padding.right;
 			}
+
+			this._items = items;
 			this.on_apply_style_buttonbordertype(this.on_find_CurrentStyle_buttonbordertype(pseudo));
 		}
 	};
 
-	_pStepCtrl._getButtonSize = function () {
-		var pseudo = this._pseudo;
-		var img_info = this._btn_img_info;
-		var btn_size = this.on_find_CurrentStyle_buttonsize(pseudo);
-		btn_size = btn_size ? (parseInt(btn_size) | 0) : btn_size;
-
-		if (img_info.width > btn_size || img_info.height > btn_size) {
-			var max = Math.max(img_info.width, img_info.height);
-			btn_size = max;
-		}
-		return btn_size;
-	};
-
 	_pStepCtrl._getButtonAreaSize = function (stepcount, btn_size) {
-		var btn_padding = this.on_find_CurrentStyle_padding(this._pseudo);
+		var btn_padding = this.on_find_CurrentStyle_buttonpadding(this._pseudo);
+		var step_padding = this.on_find_CurrentStyle_padding(this._pseudo);
 
-		var btnArea_width = (btn_padding.left + btn_padding.right + btn_size) * stepcount;
-		var btnArea_height = btn_padding.top + btn_padding.bottom + btn_size;
+		var btnArea_width = step_padding.left + step_padding.right;
+		btnArea_width = btnArea_width + ((btn_padding.left + btn_padding.right + btn_size) * stepcount);
+
+		var btnArea_height = step_padding.top + step_padding.bottom;
+		btnArea_height = btnArea_height + btn_padding.top + btn_padding.bottom + btn_size;
 
 		return {
 			width : btnArea_width, 
 			height : btnArea_height
 		};
-	};
-
-	_pStepCtrl._loadImage = function (url, width, height) {
-		var info = this._btn_img_info;
-		info.width = width;
-		info.height = height;
-		info.isimg = true;
-		this.on_apply_stepcount();
 	};
 
 	delete _pStepCtrl;

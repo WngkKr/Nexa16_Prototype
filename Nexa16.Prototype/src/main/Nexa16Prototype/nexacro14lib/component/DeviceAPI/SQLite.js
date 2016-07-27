@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -551,7 +551,7 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 					return false;
 				}
 			}
-			else if (strQuery) {
+			else {
 				if (typeof (strQuery) == "string" && strQuery.length > 0) {
 					this.query = strQuery;
 					nexacro._setLiteDBStatementHandleQuery(this, strQuery);
@@ -561,10 +561,8 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 				}
 			}
 
-			var retType = this.caheckTypeKeyword(this.query);
-			if (retType != 1) {
-				return false;
-			}
+
+
 
 			if (this.ldbconnection == null || this.ldbconnection == undefined) {
 				return false;
@@ -586,7 +584,7 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 					return false;
 				}
 			}
-			else if (strQuery) {
+			else {
 				if (typeof (strQuery) == "string" && strQuery.length > 0) {
 					this.query = strQuery;
 					nexacro._setLiteDBStatementHandleQuery(this, strQuery);
@@ -595,15 +593,9 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 					return false;
 				}
 			}
-			else {
-				return false;
-			}
 
-			var retType = this.caheckTypeKeyword(this.query);
 
-			if (retType < 2) {
-				return false;
-			}
+
 
 			if (this.ldbconnection == null || this.ldbconnection == undefined) {
 				return false;

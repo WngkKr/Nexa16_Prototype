@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -128,6 +128,11 @@ if (!nexacro.FileDownload) {
 			curstyle.font = font;
 			this.on_apply_style_font(font);
 		}
+		var letterspace = this.on_find_CurrentStyle_letterspace(pseudo);
+		if (curstyle.letterspace != letterspace) {
+			curstyle.letterspace = letterspace;
+			this.on_apply_style_letterspace(letterspace);
+		}
 		var color = this.on_find_CurrentStyle_color(pseudo);
 		if (curstyle.color != color) {
 			curstyle.color = color;
@@ -158,6 +163,7 @@ if (!nexacro.FileDownload) {
 			text_elem.setElementColor(this.currentstyle.color);
 			text_elem.setElementFont(this.currentstyle.font);
 			text_elem.setElementAlignXY(halign, valign);
+			text_elem.setElementLetterSpace(this.currentstyle.letterspace);
 		}
 	};
 
@@ -210,6 +216,7 @@ if (!nexacro.FileDownload) {
 					text_elem.setElementColor(this.currentstyle.color);
 					text_elem.setElementFont(this.currentstyle.font);
 					text_elem.setElementAlignXY(halign, valign);
+					text_elem.setElementLetterSpace(this.currentstyle.letterspace);
 					text_elem.create();
 				}
 			}
@@ -342,7 +349,8 @@ if (!nexacro.FileDownload) {
 
 	_pFileDownload.on_load = function (status, data, url, errcode, httpcode, errmsg) {
 		if (status < 0) {
-			var errormsg = nexacro._GetSystemErrorMsg(this, errmsg);
+			application._onHttpSystemError(this, true, this, errcode, url, httpcode, url, null);
+			var errormsg = nexacro._GetSystemErrorMsg(this, errcode);
 			this.on_fire_onerror(this, "ObjectError", errormsg, this, 9901, null, null);
 		}
 		else {

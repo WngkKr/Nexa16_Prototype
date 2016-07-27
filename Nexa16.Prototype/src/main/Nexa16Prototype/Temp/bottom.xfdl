@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="Bottom" classname="Bottom" left="0" top="0" width="1400" height="65" titletext="Bottom Frame" scrollbars="none" cssclass="frm_BF_bottom">
+    <Layouts>
+      <Layout>
+        <Static id="Static00" taborder="0" text="ⓒ STIC INVESMENTS INC. ALL RIGHT RESERVED." top="37" height="21" right="27" width="350" cssclass="sta_BF_copyright" style="background:transparent;"/>
+        <Tab id="Tab00" taborder="1" left="28" top="-1" width="1340" height="32" tabindex="0" scrollbars="autoboth" selectchangetype="down" tabposition="bottom" cssclass="tab_BF_tab">
+          <Tabpages>
+            <Tabpage id="tabpage1" text="펀드통합정보" scrollbars="none"/>
+            <Tabpage id="tabpage2" text="펀드등록" scrollbars="none"/>
+            <Tabpage id="tabpage3" text="출자등록" scrollbars="none"/>
+            <Tabpage id="tabpage4" text="배분등록"/>
+            <Tabpage id="tabpage5" text="SPC등록"/>
+          </Tabpages>
+        </Tab>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

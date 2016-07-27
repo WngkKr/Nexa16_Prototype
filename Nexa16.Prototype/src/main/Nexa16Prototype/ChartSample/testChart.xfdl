@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="testChart" classname="testChart" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Div id="Div00" taborder="0" text="Div00" left="7.52%" top="39" right="10.64%" height="448" url="ChartSample_1::frmDataset.xfdl"/>
+        <Div id="Div01" taborder="1" text="Div01" left="4.3%" top="147" right="8.4%" height="483" url="ChartSample_1::frmFillFunction.xfdl" style="background:aliceblue;">
+          <Layouts/>
+        </Div>
+        <Button id="Button00" taborder="2" text="Div00" left="15.23%" top="680" right="72.66%" height="47" onclick="Button00_onclick"/>
+        <Button id="Button01" taborder="3" text="Div01" left="31.54%" top="678" right="52.93%" height="48" onclick="Button01_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+
+
+this.Button00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.Div00.bringToFront();
+	//this.Div00.reload();
+}
+
+this.Button01_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.Div01.bringToFront();
+	//this.Div01.reload();
+}
+]]></Script>
+  </Form>
+</FDL>

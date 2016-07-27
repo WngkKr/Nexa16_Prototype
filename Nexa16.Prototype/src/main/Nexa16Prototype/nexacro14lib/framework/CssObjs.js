@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -8295,6 +8295,7 @@ if (!nexacro._bInitCssObjects) {
 	_pStyle.align = null;
 	_pStyle.font = null;
 	_pStyle.color = null;
+	_pStyle.letterspace = null;
 	_pStyle._value = "";
 	_pStyle.rtlimagemirroring = null;
 	_pStyle._rtlvalue = "";
@@ -8313,6 +8314,7 @@ if (!nexacro._bInitCssObjects) {
 	eval(nexacro._createFontAttributeEvalStr("_pStyle", "font"));
 	eval(nexacro._createColorAttributeEvalStr("_pStyle", "color"));
 	eval(nexacro._createValueAttributeEvalStr("_pStyle", "rtlimagemirroring"));
+	eval(nexacro._createValueAttributeEvalStr("_pStyle", "letterspace"));
 
 	_pStyle._use_NC_border = true;
 	_pStyle._use_NC_padding = true;
@@ -8338,6 +8340,7 @@ if (!nexacro._bInitCssObjects) {
 			this.align = null;
 			this.font = null;
 			this.color = null;
+			this.letterspace = null;
 			this.__custom_emptyObject();
 			return true;
 		}
@@ -8397,6 +8400,9 @@ if (!nexacro._bInitCssObjects) {
 			}
 			if (this.rtlimagemirroring && !this.rtlimagemirroring._is_empty) {
 				val += "rtlimagemirroring:" + this.rtlimagemirroring._value + "; ";
+			}
+			if (this.letterspace && !this.letterspace._is_empty) {
+				val += "letterspace:" + this.letterspace._value + "; ";
 			}
 			val += this.__get_custom_style_value();
 			val = val.trim();
@@ -8889,6 +8895,7 @@ if (!nexacro._bInitCssObjects) {
 	_pCurrentStyle.font = null;
 	_pCurrentStyle.color = null;
 	_pCurrentStyle.rtlimagemirroring = null;
+	_pCurrentStyle.letterspace = null;
 	_pCurrentStyle._value = "";
 	_pCurrentStyle._rtlvalue = "";
 
@@ -8917,6 +8924,7 @@ if (!nexacro._bInitCssObjects) {
 		this.shadow = null;
 		this.align = null;
 		this.font = null;
+		this.letterspace = null;
 		this.color = null;
 		this.__custom_emptyObject();
 

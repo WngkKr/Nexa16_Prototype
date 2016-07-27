@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="POPUP_Temp" classname="POPUP_Temp" left="0" top="0" width="790" height="600" titletext="본문내용  팝업 스타일" cssclass="frm_POPUP_BG">
+    <Layouts>
+      <Layout>
+        <Static id="Static02" taborder="0" text="W&#13;&#10;15" visible="false" left="775" top="2" width="15" height="34" style="background:indianred;align:center;opacity:30;"/>
+        <Button id="Button00" taborder="1" cssclass="btn_POP_AlertClose" top="8" right="15" width="20" height="20"/>
+        <Static id="Static01" taborder="3" text="h20" visible="false" left="0" top="36" width="790" height="20" style="background:green;align:center;opacity:30;"/>
+        <Static id="Static07" taborder="4" text="Title" cssclass="sta_POP_tit" left="0" top="5" width="238" height="26" style="padding:0 0 0 30;"/>
+        <Static id="Static03" taborder="5" text="W20" visible="false" left="0" top="0" width="20" height="600" style="background:green;align:center;opacity:30;"/>
+        <Static id="Static04" taborder="6" text="W&#13;&#10;15" visible="false" left="0" top="28" width="790" height="8" style="background:lightcoral;align:center;opacity:30;"/>
+        <Static id="Static05" taborder="7" text="h20" visible="false" left="0" top="580" width="790" style="background:green;align:center;opacity:30;" height="20"/>
+        <Grid id="Grid00" taborder="8" useinputpanel="false" left="20" top="55" width="751" height="525" binddataset="Dataset00">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="30" band="head"/>
+                <Row size="30"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="펀드명"/>
+                <Cell col="1" text="존속기간"/>
+                <Cell col="2" text="차"/>
+                <Cell col="3" text="기준화페"/>
+                <Cell col="4" text="LP"/>
+                <Cell col="5" text="결성차수"/>
+                <Cell col="6" text="책임구분"/>
+                <Cell col="7" text="가입일자"/>
+                <Cell col="8" text="제명일"/>
+                <Cell col="9" text="출자약정액원화"/>
+                <Cell col="10" text="출자약정액달러"/>
+                <Cell col="11" text="담당자"/>
+                <Cell col="12" text="비고"/>
+                <Cell col="13" text="영문비고"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:펀드명"/>
+                <Cell col="1" text="bind:존속기간"/>
+                <Cell col="2" text="bind:차"/>
+                <Cell col="3" text="bind:기준화페"/>
+                <Cell col="4" text="bind:LP"/>
+                <Cell col="5" text="bind:결성차수"/>
+                <Cell col="6" text="bind:책임구분"/>
+                <Cell col="7" text="bind:가입일자"/>
+                <Cell col="8" text="bind:제명일"/>
+                <Cell col="9" text="bind:출자약정액원화"/>
+                <Cell col="10" text="bind:출자약정액달러"/>
+                <Cell col="11" text="bind:담당자"/>
+                <Cell col="12" text="bind:비고"/>
+                <Cell col="13" text="bind:영문비고"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static06" taborder="9" text="W20" visible="false" left="770" top="36" width="20" height="572" style="background:green;align:center;opacity:30;"/>
+        <Static id="Static00" taborder="2" text="W&#13;&#10;15" visible="false" left="0" top="0" width="790" height="8" style="background:indianred;align:center;opacity:30;"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="펀드명" type="STRING" size="256"/>
+          <Column id="존속기간" type="STRING" size="256"/>
+          <Column id="차" type="STRING" size="256"/>
+          <Column id="기준화페" type="STRING" size="256"/>
+          <Column id="LP" type="STRING" size="256"/>
+          <Column id="결성차수" type="STRING" size="256"/>
+          <Column id="책임구분" type="STRING" size="256"/>
+          <Column id="가입일자" type="STRING" size="256"/>
+          <Column id="제명일" type="STRING" size="256"/>
+          <Column id="출자약정액원화" type="STRING" size="256"/>
+          <Column id="출자약정액달러" type="STRING" size="256"/>
+          <Column id="담당자" type="STRING" size="256"/>
+          <Column id="비고" type="STRING" size="256"/>
+          <Column id="영문비고" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="펀드명">Rokin프로젝트PEF</Col>
+            <Col id="존속기간">2016-02-29 ~ 2024-02-28</Col>
+            <Col id="차">1차</Col>
+            <Col id="기준화페">(KRW) \</Col>
+            <Col id="LP">국민연금공단</Col>
+            <Col id="결성차수">1 차</Col>
+            <Col id="책임구분">유한 책임 LP</Col>
+            <Col id="가입일자">2016-02-29</Col>
+            <Col id="출자약정액원화">KRW 74,250,000,000</Col>
+            <Col id="출자약정액달러">USD 0</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

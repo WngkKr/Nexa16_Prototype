@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -23,7 +23,8 @@ if (nexacro.Browser == "Runtime") {
 				msgs.push(arguments[i]);
 			}
 			var msg = msgs.join(' ');
-			nexacro._writeTraceLog("", msg, false, 4);
+
+			nexacro._writeTraceLog(4, msg, false, application._loglevel);
 
 			if (nexacro.System.navigatorname != "nexacro" && nexacro.Browser == "Runtime") {
 				application.on_fire_onaddlog(application, msg);
@@ -100,6 +101,10 @@ if (nexacro.Browser == "Runtime") {
 			return nexacro.__getOSVersion();
 		};
 
+		nexacro._getPackageVersion = function () {
+			return nexacro.__getPackageVersion();
+		};
+
 		nexacro._getSystemType = function () {
 			return nexacro.__getSystemType();
 		};
@@ -114,6 +119,10 @@ if (nexacro.Browser == "Runtime") {
 
 		nexacro._isPhone = function () {
 			return nexacro.__isPhone();
+		};
+
+		nexacro._setOrientation = function (orientation) {
+			return nexacro.__setOrientation(orientation);
 		};
 
 		nexacro.OS = nexacro._getOS();
@@ -182,12 +191,31 @@ if (nexacro.Browser == "Runtime") {
 		nexacro._removeCookie = function (name) {
 			return nexacro.__removeCookie(name);
 		};
+		nexacro._setSharedVariablesToCookie = function (url, cookies) {
+			return nexacro.__setSharedVariablesToCookie(url, cookies);
+		};
 
 		nexacro._setFileSecureLevel = function (lvl) {
 			return nexacro.__setFileSecureLevel(lvl);
 		};
 		nexacro._setNetworkSecureLevel = function (lvl) {
 			return nexacro.__setNetworkSecureLevel(lvl);
+		};
+		nexacro._setEnableScreenCapture = function (enable) {
+			application.enablescreencapture = enable;
+			return nexacro.__setEnableScreenCapture(application.enablescreencapture);
+		};
+		nexacro._setEnableCookie = function (enable) {
+			application.enablecookie = enable;
+			return nexacro.__setEnableCookie(application.enablecookie);
+		};
+		nexacro._setEnableCache = function (enable) {
+			application.enablecache = enable;
+			return nexacro.__setEnableCache(application.enablecache);
+		};
+		nexacro._setEnableClipboard = function (enable) {
+			application.enableclipboard = enable;
+			return nexacro.__setEnableClipboard(application.enableclipboard);
 		};
 
 		Error.prepareStackTrace = function (error, stack) {
@@ -222,8 +250,10 @@ if (nexacro.Browser == "Runtime") {
 			}
 		};
 		nexacro._decodeXml = function (str) {
-			if (str.indexOf("&") >= 0) {
-				return nexacro.__decodeXml(str);
+			if (!nexacro._isNull(str)) {
+				if (str.indexOf("&") >= 0) {
+					return nexacro.__decodeXml(str);
+				}
 			}
 			return str;
 		};
@@ -256,10 +286,12 @@ if (nexacro.Browser == "Runtime") {
 		nexacro._prepareManagerFrame = nexacro._emptyFn;
 		nexacro._destroyManagerFrame = nexacro._emptyFn;
 
-		nexacro._TextInfoCacheManager = function (font) {
+		nexacro._TextInfoCacheManager = function (font, letterspace) {
 			this.font = font;
+			this.letterspace = letterspace;
 			this.font_height = 0;
 			this.space_width = 0;
+			this.space_width1 = 0;
 			this.cache = {
 			};
 			this._getFontInfo();
@@ -269,27 +301,30 @@ if (nexacro.Browser == "Runtime") {
 
 		_pTextInfoCacheManager._getFontInfo = function () {
 			var font = this.font;
-			var size = nexacro.__getTextSize("gH", font.face, font.size, font._antialias, font._bold, font._italic, font._underline, font._strikeout, "none");
-			var space_size = nexacro.__getTextSize(" ", font.face, font.size, font._antialias, font._bold, font._italic, font._underline, font._strikeout, "none");
+			var letterspace = this.letterspace;
+			var size = nexacro.__getTextSize(letterspace, "gH", font.face, font.size, font._antialias, font._bold, font._italic, font._underline, font._strikeout, "none");
+			var space_size = nexacro.__getTextSize(letterspace, " ", font.face, font.size, font._antialias, font._bold, font._italic, font._underline, font._strikeout, "none");
+			var space_size1 = nexacro.__getTextSize(letterspace, "　", font.face, font.size, font._antialias, font._bold, font._italic, font._underline, font._strikeout, "none");
 
 			this.font_height = size[1];
 			this.space_width = space_size[0];
+			this.space_width1 = space_size1[0];
 		};
 
-		_pTextInfoCacheManager.getWordTextWidth = function (word) {
-			var text_width = this.cache[word];
+		_pTextInfoCacheManager.getWordTextWidth = function (letterspace, word) {
+			var strw = word + "#letterspace" + letterspace;
+			var text_width = this.cache[strw];
 
 			if (text_width == null) {
 				var font = this.font;
-				var size = nexacro.__getTextSize(word, font.face, font.size, font._antialias, font._bold, font._italic, font._underline, font._strikeout, "none");
-
-				this.cache[word] = text_width = size[0];
+				var size = nexacro.__getTextSize(letterspace, word, font.face, font.size, font._antialias, font._bold, font._italic, font._underline, font._strikeout, "none");
+				this.cache[strw] = text_width = size[0];
 			}
 			return text_width;
 		};
 
-		_pTextInfoCacheManager.getWordWrapTextSize = function (text, width, wordwrap) {
-			var strw = text + "#width" + width;
+		_pTextInfoCacheManager.getWordWrapTextSize = function (letterspace, text, width, wordwrap) {
+			var strw = text + "#width" + width + "#letterspace" + letterspace;
 			var strh = strw + "#height";
 
 			var text_width = this.cache[strw];
@@ -297,7 +332,7 @@ if (nexacro.Browser == "Runtime") {
 
 			if (text_width == null) {
 				var font = this.font;
-				var size = nexacro.__getTextSize(text, font.face, font.size, font._antialias, font._bold, font._italic, font._underline, font._strikeout, wordwrap, width);
+				var size = nexacro.__getTextSize(letterspace, text, font.face, font.size, font._antialias, font._bold, font._italic, font._underline, font._strikeout, wordwrap, width);
 
 				this.cache[strw] = text_width = size[0];
 				this.cache[strh] = text_height = size[1];
@@ -313,31 +348,38 @@ if (nexacro.Browser == "Runtime") {
 			var re_newline = /\r\n|\n|\r/;
 			var re_space = /\s/;
 
-			nexacro.__getSinglelineTextSize = function (manager, text) {
+			nexacro.__getSinglelineTextSize = function (manager, letterspace, text) {
 				var words = text.split(re_space);
 				var wcnt = words.length;
 				var text_size = 0;
+				var letterspace_size = text.length * letterspace;
 				for (var i = 0; i < wcnt; i++) {
 					var word = words[i];
 					if (word) {
-						text_size += manager.getWordTextWidth(word);
+						text_size += manager.getWordTextWidth(letterspace, word);
 					}
 				}
-				text_size += (wcnt - 1) * manager.space_width;
+				var idx_space = text.indexOf("　");
+				if (idx_space > -1) {
+					text_size += (wcnt - 1) * manager.space_width1;
+				}
+				else {
+					text_size += (wcnt - 1) * manager.space_width;
+				}
 				return text_size;
 			};
 
-			nexacro._getSinglelineTextSize = function (manager, text) {
-				var text_width = nexacro.__getSinglelineTextSize(manager, text.replace(/\r\n|\n|\r/, ' '));
+			nexacro._getSinglelineTextSize = function (manager, letterspace, text) {
+				var text_width = nexacro.__getSinglelineTextSize(manager, letterspace, text.replace(/\r\n|\n|\r/, ' '));
 				return [text_width, manager.font_height];
 			};
 
-			nexacro._getMultilineTextSize = function (manager, text) {
+			nexacro._getMultilineTextSize = function (manager, letterspace, text) {
 				var lines = text.split(re_newline);
 				var lcnt = lines.length;
 				var text_width = 0;
 				for (var i = 0; i < lcnt; i++) {
-					var line_width = nexacro.__getSinglelineTextSize(manager, lines[i]);
+					var line_width = nexacro.__getSinglelineTextSize(manager, letterspace, lines[i]);
 					if (line_width > text_width) {
 						text_width = line_width;
 					}
@@ -345,7 +387,7 @@ if (nexacro.Browser == "Runtime") {
 				return [text_width, manager.font_height * lcnt];
 			};
 
-			nexacro._getWordwrapTextSize = function (manager, text, content_width, wordwrap) {
+			nexacro._getWordwrapTextSize = function (manager, letterspace, text, content_width, wordwrap) {
 				if (typeof (wordwrap) == "string") {
 					wordwrap = wordwrap.toLowerCase();
 				}
@@ -357,36 +399,36 @@ if (nexacro.Browser == "Runtime") {
 					wordwrap = "none";
 				}
 
-				var text_size = manager.getWordWrapTextSize(text, content_width, wordwrap);
+				var text_size = manager.getWordWrapTextSize(letterspace, text, content_width, wordwrap);
 				return text_size;
 			};
 		})();
 
-		nexacro._getTextSize = function (text, font, multiline, content_width, wordwrap) {
+		nexacro._getTextSize = function (letterspace, text, font, multiline, content_width, wordwrap) {
 			if (text && text.length > 0 && font && !font._is_empty) {
 				var cacheManager = nexacro._TextSizeCacheManagers[font._sysvalue];
 				if (cacheManager == null) {
-					cacheManager = new nexacro._TextInfoCacheManager(font);
+					cacheManager = new nexacro._TextInfoCacheManager(font, letterspace);
 					nexacro._TextSizeCacheManagers[font._sysvalue] = cacheManager;
 				}
 
 				if (multiline) {
 					if (content_width != null) {
-						return nexacro._getWordwrapTextSize(cacheManager, text, content_width, wordwrap);
+						return nexacro._getWordwrapTextSize(cacheManager, letterspace, text, content_width, wordwrap);
 					}
 					else {
-						return nexacro._getMultilineTextSize(cacheManager, text);
+						return nexacro._getMultilineTextSize(cacheManager, letterspace, text);
 					}
 				}
 				else {
-					return nexacro._getSinglelineTextSize(cacheManager, text);
+					return nexacro._getSinglelineTextSize(cacheManager, letterspace, text);
 				}
 			}
 			return [0, 0];
 		};
 		nexacro._getTextSize2 = nexacro._getTextSize;
 
-		nexacro.getTextSize = function (text, font, width, wordwrap) {
+		nexacro.getTextSize = function (text, font, width, wordwrap, letterspace) {
 			if (typeof (wordwrap) == "string") {
 				wordwrap = wordwrap.toLowerCase();
 			}
@@ -407,7 +449,11 @@ if (nexacro.Browser == "Runtime") {
 				wordwrap = null;
 			}
 
-			var retn = nexacro._getTextSize(text, font, line, width, wordwrap);
+			if (!letterspace) {
+				letterspace = 0;
+			}
+
+			var retn = nexacro._getTextSize(letterspace, text, font, line, width, wordwrap);
 			var obj = {
 				nx : retn[0], 
 				ny : retn[1]
@@ -422,7 +468,7 @@ if (nexacro.Browser == "Runtime") {
 		nexacro._imgloadhandler_onload = nexacro._emptyFn;
 		nexacro._imgloadhandler_onerror = nexacro._emptyFn;
 
-		nexacro._getImageSize = function (src, callbackFn, pThis, base_url) {
+		nexacro._getImageSize = function (src, callbackFn, pThis, base_url, org_src) {
 			if (!src) {
 				return null;
 			}
@@ -444,9 +490,19 @@ if (nexacro.Browser == "Runtime") {
 			}
 
 			if (imgurl) {
-				var retval = nexacro._ImgInfoCacheList[imgurl];
-				if (retval) {
-					return retval;
+				if (org_src) {
+					org_src = org_src.toString();
+					org_src = nexacro._getURIValue(org_src);
+				}
+
+				var service = application._getServiceObject(org_src ? org_src : src);
+				var servicecachelevel = "none";
+				var serviceversion = service.version;
+				if (service.cachelevel == "static" || service.cachelevel == "session") {
+					var retval = nexacro._ImgInfoCacheList[imgurl];
+					if (retval) {
+						return retval;
+					}
 				}
 
 				var loadItem = nexacro._CommunicationManager[imgurl];
@@ -457,7 +513,17 @@ if (nexacro.Browser == "Runtime") {
 					loadItem = new nexacro.CommunicationItem(imgurl, "image", false);
 					nexacro._CommunicationManager[imgurl] = loadItem;
 					loadItem.appendCallback(pThis, callbackFn);
-					loadItem._handle = nexacro.__getImageSize(imgurl, nexacro.__bindLoadImageHandler(loadItem));
+
+					if (service) {
+						if (service.cachelevel == "session") {
+							servicecachelevel = "dynamic";
+						}
+						else {
+							servicecachelevel = service.cachelevel;
+						}
+					}
+
+					loadItem._handle = nexacro.__getImageSize(imgurl, nexacro.__bindLoadImageHandler(loadItem), servicecachelevel, serviceversion);
 				}
 				return null;
 			}
@@ -489,7 +555,18 @@ if (nexacro.Browser == "Runtime") {
 					loadItem = new nexacro.CommunicationItem(imgurl, "image", false);
 					nexacro._CommunicationManager[imgurl] = loadItem;
 					loadItem.appendCallback(pThis, callbackFn);
-					loadItem._handle = nexacro.__getImageSize(imgurl, nexacro.__bindLoadImageHandler(loadItem));
+					var service = application._getServiceObject(application.xadl);
+					var servicecachelevel = "none";
+					var serviceversion = service.version;
+					if (service) {
+						if (service.cachelevel == "session") {
+							servicecachelevel = "dynamic";
+						}
+						else {
+							servicecachelevel = service.cachelevel;
+						}
+					}
+					loadItem._handle = nexacro.__getImageSize(imgurl, nexacro.__bindLoadImageHandler(loadItem), servicecachelevel, serviceversion);
 				}
 
 				return loadItem._handle;
@@ -577,8 +654,25 @@ if (nexacro.Browser == "Runtime") {
 		};
 
 		nexacro._download = function (url, handle, initname, targetpath) {
+			var httpheaderstr = "";
+			var header_vars = application._header_variables;
+			var header_vars_len = header_vars.length;
+			if (header_vars_len > 0) {
+				var header_id, header_value;
+				for (var i = 0; i < header_vars_len; i++) {
+					header_id = header_vars[i];
+					header_value = application[header_id];
+					if (header_id && header_value) {
+						httpheaderstr += header_id;
+						httpheaderstr += ":";
+						httpheaderstr += header_value;
+						httpheaderstr += "\r\n";
+					}
+				}
+			}
+
 			application._beginCommProgress();
-			var handle = nexacro.__downloadFileDownloadHandle(url, handle, initname, targetpath);
+			var handle = nexacro.__downloadFileDownloadHandle(url, handle, initname, targetpath, httpheaderstr);
 			if (handle == null) {
 				application._endCommProgress();
 			}
@@ -598,8 +692,25 @@ if (nexacro.Browser == "Runtime") {
 		};
 
 		nexacro._submit = function (form_id, action, handle, exp_info_data, item_value) {
+			var httpheaderstr = "";
+			var header_vars = application._header_variables;
+			var header_vars_len = header_vars.length;
+			if (header_vars_len > 0) {
+				var header_id, header_value;
+				for (var i = 0; i < header_vars_len; i++) {
+					header_id = header_vars[i];
+					header_value = application[header_id];
+					if (header_id && header_value) {
+						httpheaderstr += header_id;
+						httpheaderstr += ":";
+						httpheaderstr += header_value;
+						httpheaderstr += "\r\n";
+					}
+				}
+			}
+
 			application._beginCommProgress();
-			var handle = nexacro.__submitFileUploadHandle(form_id, action, handle, exp_info_data, item_value);
+			var handle = nexacro.__submitFileUploadHandle(form_id, action, handle, exp_info_data, item_value, httpheaderstr);
 			if (handle == null) {
 				application._endCommProgress();
 			}
@@ -609,6 +720,7 @@ if (nexacro.Browser == "Runtime") {
 		nexacro._fileinputhandler_onload = nexacro._emptyFn;
 		nexacro._fileinputhandler_onchange_forward = nexacro._emptyFn;
 		nexacro._getDataFromDOM = nexacro._emptyFn;
+		nexacro._getContentType = nexacro._emptyFn;
 
 
 		nexacro.__createHttpRequest = nexacro._emptyFn;
@@ -651,63 +763,92 @@ if (nexacro.Browser == "Runtime") {
 						pthis.on_error(0, "comm_cancel_byuser");
 					}
 					else {
-						pthis.on_error(status, fireerrorcode, returncode, locationurl);
+						if (pthis) {
+							pthis.on_error(status, fireerrorcode, returncode, locationurl);
+						}
 					}
 					pthis = null;
 				}
 				else if (status == 0) {
-					pthis.on_load_data(data, cookie);
-					nexacro.__refreshDirtyWindow(pthis.context ? (pthis.context._is_component ? pthis.context._getWindowHandle() : null) : null);
+					if (pthis instanceof nexacro.TransactionItem) {
+						pthis.on_load_data(data, cookie);
+						nexacro.__refreshDirtyWindow(pthis.context ? (pthis.context._is_component ? pthis.context._getWindowHandle() : null) : null);
+					}
+					else if (pthis instanceof nexacro.CommunicationItem) {
+						if (!pthis._progress_data) {
+							pthis.on_load_data(data, cookie);
+							nexacro.__refreshDirtyWindow(pthis.context ? (pthis.context._is_component ? pthis.context._getWindowHandle() : null) : null);
+						}
+						else {
+							data = pthis._progress_data + data;
+							pthis.on_load_data(data, cookie);
+							pthis._progress_data = null;
+
+							nexacro.__refreshDirtyWindow(pthis.context ? (pthis.context._is_component ? pthis.context._getWindowHandle() : null) : null);
+						}
+					}
 				}
 				else if (status > 0) {
-					pthis.on_progress_data(data, false);
-					nexacro.__refreshDirtyWindow(pthis.context ? (pthis.context._is_component ? pthis.context._getWindowHandle() : null) : null);
+					if (pthis instanceof nexacro.TransactionItem) {
+						pthis.on_progress_data(data, false);
+						nexacro.__refreshDirtyWindow(pthis.context ? (pthis.context._is_component ? pthis.context._getWindowHandle() : null) : null);
+					}
+					else if (pthis instanceof nexacro.CommunicationItem) {
+						if (!pthis._progress_data) {
+							pthis._progress_data = data;
+						}
+						else {
+							pthis._progress_data += data;
+						}
+					}
 				}
 				data = null;
 			};
 		};
 		nexacro.__bindLoadImageHandler = function (pthis) {
 			return function (status, width, height, fireerrorcode, returncode, locationurl) {
-				if (status < 0) {
-					delete nexacro._ImgInfoCacheList[pthis.path];
-					pthis.on_error_image(0, 0, null, status, fireerrorcode, returncode, locationurl);
-					pthis = null;
-				}
-				else if (status == 0) {
-					var target_wins = [];
-					var callbackList = pthis.callbackList;
-					var n = callbackList ? callbackList.length : 0;
-					for (var i = 0; i < n; i++) {
-						var item = callbackList[i];
-						var target = item.target;
-						var target_handle = (target._getWindowHandle ? target._getWindowHandle() : null);
-						if (target._is_alive != false && target_handle) {
-							if (nexacro._indexOf(target_wins, target_handle) < 0) {
-								target_wins.push(target_handle);
-							}
-						}
+				if (pthis) {
+					if (status < 0) {
+						delete nexacro._ImgInfoCacheList[pthis.path];
+						pthis.on_error_image(0, 0, null, status, fireerrorcode, returncode, locationurl);
+						pthis = null;
 					}
-
-					nexacro._ImgInfoCacheList[pthis.path] = {
-						width : width, 
-						height : height
-					};
-					pthis.on_load_image(width, height);
-
-					n = target_wins.length;
-					if (n > 0) {
+					else if (status == 0) {
+						var target_wins = [];
+						var callbackList = pthis.callbackList;
+						var n = callbackList ? callbackList.length : 0;
 						for (var i = 0; i < n; i++) {
-							var target_win = target_wins[i];
-							if (target_win) {
-								nexacro.__refreshDirtyWindow(target_win);
+							var item = callbackList[i];
+							var target = item.target;
+							var target_handle = (target._getWindowHandle ? target._getWindowHandle() : null);
+							if (target._is_alive != false && target_handle) {
+								if (nexacro._indexOf(target_wins, target_handle) < 0) {
+									target_wins.push(target_handle);
+								}
 							}
 						}
-						delete target_wins;
+
+						nexacro._ImgInfoCacheList[pthis.path] = {
+							width : width, 
+							height : height
+						};
+						pthis.on_load_image(width, height);
+
+						n = target_wins.length;
+						if (n > 0) {
+							for (var i = 0; i < n; i++) {
+								var target_win = target_wins[i];
+								if (target_win) {
+									nexacro.__refreshDirtyWindow(target_win);
+								}
+							}
+							delete target_wins;
+						}
+						else {
+							nexacro.__refreshDirtyWindow(pthis.context ? (pthis.context._is_component ? pthis.context._getWindowHandle() : null) : null);
+						}
+						pthis = null;
 					}
-					else {
-						nexacro.__refreshDirtyWindow(pthis.context ? (pthis.context._is_component ? pthis.context._getWindowHandle() : null) : null);
-					}
-					pthis = null;
 				}
 			};
 		};
@@ -772,19 +913,47 @@ if (nexacro.Browser == "Runtime") {
 
 			var servicecachelevel = "none";
 			if (service) {
-				if (service.cachelevel == "session") {
-					servicecachelevel = "dynamic";
-				}
-				else {
-					servicecachelevel = service.cachelevel;
-				}
+				servicecachelevel = service.cachelevel;
 			}
 
 			if (!ver) {
 				ver = service.version;
 			}
 
-			handlewrap._handle = nexacro.__startLoad(url, bindfn, loadItem.type, servicecachelevel, async, refer_url, senddata, ndatatype, compress, ver, failpass);
+			var httpheaderstr = "";
+			var protocoladp = application._getProtocol(loadItem.protocol);
+
+			if (protocoladp && protocoladp.version) {
+				var protocolver = protocoladp.version();
+				if (protocolver > "1.0") {
+					var httpheaders = protocoladp.getHTTPHeader();
+
+					for (var i = 0; i < httpheaders.length; i++) {
+						httpheaderstr += httpheaders[i].id;
+						httpheaderstr += ":";
+						httpheaderstr += httpheaders[i].value;
+						httpheaderstr += "\r\n";
+					}
+				}
+			}
+
+			var header_vars = application._header_variables;
+			var header_vars_len = header_vars.length;
+			if (header_vars_len > 0) {
+				var header_id, header_value;
+				for (var i = 0; i < header_vars_len; i++) {
+					header_id = header_vars[i];
+					header_value = application[header_id];
+					if (header_id && header_value) {
+						httpheaderstr += header_id;
+						httpheaderstr += ":";
+						httpheaderstr += header_value;
+						httpheaderstr += "\r\n";
+					}
+				}
+			}
+
+			handlewrap._handle = nexacro.__startLoad(url, bindfn, loadItem.type, servicecachelevel, async, refer_url, senddata, ndatatype, compress, ver, failpass, httpheaderstr);
 			return handlewrap;
 		};
 
@@ -825,6 +994,7 @@ if (nexacro.Browser == "Runtime") {
 			this._parameters = [];
 			this._datasets = {
 			};
+			this._datasets_in_seq = [];
 			this._cur_dataset_id = "";
 
 			this._error_info = [0, "SUCCESS"];
@@ -951,18 +1121,41 @@ if (nexacro.Browser == "Runtime") {
 			var idx1 = baseIdx[1];
 			var n = -1;
 
-			if (this._rs instanceof Array) {
-				var rss = this._rs;
-				var i;
-				for (i = 0; i < rss.length; i++) {
-					var rs = rss[i];
+			if (this._data_buffer[idx0]) {
+				if (this._rs instanceof Array) {
+					var rss = this._rs;
+					var i;
+					for (i = 0; i < rss.length; i++) {
+						var rs = rss[i];
 
+						while (true) {
+							if (!this._data_buffer[idx0]) {
+								break;
+							}
+
+							n = this._data_buffer[idx0].indexOf(rs, idx1);
+							if (n >= 0 || !this._data_buffer[idx0 + 1]) {
+								break;
+							}
+
+							idx0++;
+							idx1 = 0;
+						}
+
+						if (n >= 0) {
+							rs_len = this._rs[i].length;
+							this._rs = this._rs[i];
+							break;
+						}
+					}
+				}
+				else {
 					while (true) {
 						if (!this._data_buffer[idx0]) {
 							break;
 						}
 
-						n = this._data_buffer[idx0].indexOf(rs, idx1);
+						n = this._data_buffer[idx0].indexOf(this._rs, idx1);
 						if (n >= 0 || !this._data_buffer[idx0 + 1]) {
 							break;
 						}
@@ -970,29 +1163,8 @@ if (nexacro.Browser == "Runtime") {
 						idx0++;
 						idx1 = 0;
 					}
-
-					if (n >= 0) {
-						rs_len = this._rs[i].length;
-						this._rs = this._rs[i];
-						break;
-					}
+					rs_len = this._rs.length;
 				}
-			}
-			else {
-				while (true) {
-					if (!this._data_buffer[idx0]) {
-						break;
-					}
-
-					n = this._data_buffer[idx0].indexOf(this._rs, idx1);
-					if (n >= 0 || !this._data_buffer[idx0 + 1]) {
-						break;
-					}
-
-					idx0++;
-					idx1 = 0;
-				}
-				rs_len = this._rs.length;
 			}
 
 			return [n, idx0, rs_len];
@@ -1133,6 +1305,7 @@ if (nexacro.Browser == "Runtime") {
 						buffer_obj._isEnable = true;
 						this._cur_dataset_id = remoteId;
 
+						this._datasets_in_seq[this._datasets_in_seq.length] = remoteId;
 						buffer_obj._ds_start_idx = new Array(this._cur_idx[0], this._cur_idx[1]);
 						buffer_obj._ds_end_idx = new Array(this._cur_idx[0], this._cur_idx[1] + n);
 					}
@@ -1178,8 +1351,22 @@ if (nexacro.Browser == "Runtime") {
 		_pProgressData._getNextIdx = function (idx) {
 			var bufferIdx = idx[0];
 			var dataIdx = idx[1];
+			var bufferlength = this._data_buffer.length;
+			var nextIdx = bufferIdx;
 
-			if (this._data_buffer[bufferIdx].length <= (dataIdx + 1)) {
+			if (!this._data_buffer[nextIdx]) {
+				while (nextIdx < bufferlength) {
+					if (this._data_buffer[nextIdx]) {
+						break;
+					}
+
+					nextIdx++;
+				}
+
+				bufferIdx = nextIdx;
+			}
+
+			if (this._data_buffer[bufferIdx] && this._data_buffer[bufferIdx].length <= (dataIdx + 1)) {
 				if (this._data_buffer[bufferIdx + 1]) {
 					bufferIdx += 1;
 					dataIdx = 0;
@@ -1232,7 +1419,7 @@ if (nexacro.Browser == "Runtime") {
 		_pProgressData._parse = function (bFinal) {
 			var bLoop = true;
 			var pre_parse_mode;
-			var rows_buffer, buffer_obj, ds, lines, line_idx;
+			var rows_buffer, buffer_obj, ds, lines, line_idx, val;
 
 			while (bLoop) {
 				pre_parse_mode = this._parse_mode;
@@ -1284,7 +1471,7 @@ if (nexacro.Browser == "Runtime") {
 							continue;
 						}
 
-						this._on_fire_onload(buffer_obj, 0);
+						this._on_fire_onload(buffer_obj, 2);
 						buffer_obj._is_loaded = true;
 						this._parse_mode = 9;
 						break;
@@ -1294,7 +1481,8 @@ if (nexacro.Browser == "Runtime") {
 			}
 
 			if (bFinal) {
-				for (var val in this._datasets) {
+				for (var i = 0; i < this._datasets_in_seq.length; i++) {
+					val = this._datasets_in_seq[i];
 					buffer_obj = this._datasets[val];
 					if (!buffer_obj._isEnable || buffer_obj._is_loaded) {
 						if (!this._parent.bcache) {
@@ -1308,11 +1496,17 @@ if (nexacro.Browser == "Runtime") {
 						this._datasets[val] = null;
 					}
 				}
+
+				while (this._data_buffer && this._data_buffer.length) {
+					this._data_buffer[this._data_buffer.length - 1] = null;
+					this._data_buffer.pop();
+				}
+
 				this._data_buffer = null;
 			}
 		};
 
-		_pProgressData._getBufferDataByIdx = function (startIdx, endIdx) {
+		_pProgressData._getBufferDataByIdx = function (startIdx, endIdx, bBufferClear) {
 			var data = "";
 
 			if (!startIdx || !endIdx) {
@@ -1321,12 +1515,22 @@ if (nexacro.Browser == "Runtime") {
 
 			if (startIdx[0] < endIdx[0]) {
 				var idx = startIdx[0];
-				data = this._data_buffer[idx].slice(startIdx[1], this._data_buffer[idx].length);
+				if (this._data_buffer[idx]) {
+					data = this._data_buffer[idx].slice(startIdx[1], this._data_buffer[idx].length);
+					if (bBufferClear) {
+						this._data_buffer[idx] = null;
+					}
+				}
+
 				idx++;
 				while (true) {
 					if (idx < endIdx[0]) {
-						data += this._data_buffer[idx].slice(0, this._data_buffer[idx].length);
-						this._data_buffer[idx] = null;
+						if (this._data_buffer[idx]) {
+							data += this._data_buffer[idx].slice(0, this._data_buffer[idx].length);
+							if (bBufferClear) {
+								this._data_buffer[idx] = null;
+							}
+						}
 						idx++;
 					}
 					else {
@@ -1336,13 +1540,15 @@ if (nexacro.Browser == "Runtime") {
 				}
 			}
 			else {
-				data = this._data_buffer[startIdx[0]].slice(startIdx[1], endIdx[1]);
+				if (this._data_buffer[startIdx[0]]) {
+					data = this._data_buffer[startIdx[0]].slice(startIdx[1], endIdx[1]);
+				}
 			}
 
 			return data;
 		};
 
-		_pProgressData._getBufferData = function (bufferObj) {
+		_pProgressData._getBufferData = function (bufferObj, nLoadType) {
 			var data = "";
 			var start_idx = [];
 			var end_idx = [];
@@ -1380,7 +1586,7 @@ if (nexacro.Browser == "Runtime") {
 				bufferObj._next_load_idx = this._getNextIdx([end_idx[0], end_idx[1] + nrp[2]]);
 			}
 
-			data = this._getBufferDataByIdx(start_idx, end_idx);
+			data = this._getBufferDataByIdx(start_idx, end_idx, (nLoadType == 0) ? true : false);
 
 			return data;
 		};
@@ -1389,33 +1595,35 @@ if (nexacro.Browser == "Runtime") {
 			var idx = baseIdx;
 			var regexp = new RegExp(this._rs + "dataset", "gi");
 			var n = -1;
-			if (this._data_buffer[idx[0] - 1] && idx[1] == 0) {
-				idx[1] = this._data_buffer[idx[0] - 1].length - this._rs.length;
-				idx[0] = idx[0] - 1;
-			}
-
-			while (true) {
-				var len = this._data_buffer[idx[0]].length;
-				var buff = this._data_buffer[idx[0]].slice(idx[1], this._data_buffer[idx[0]].length);
-				if (this._data_buffer[idx[0] + 1]) {
-					buff += this._data_buffer[idx[0] + 1].slice(0, 7);
+			if (this._data_buffer[idx[0]]) {
+				if (this._data_buffer[idx[0] - 1] && idx[1] == 0) {
+					idx[1] = this._data_buffer[idx[0] - 1].length - this._rs.length;
+					idx[0] = idx[0] - 1;
 				}
 
-				n = buff.search(regexp);
-
-				if (n >= 0) {
-					if (baseIdx[0] == idx[0]) {
-						n += baseIdx[1];
+				while (true) {
+					var len = this._data_buffer[idx[0]].length;
+					var buff = this._data_buffer[idx[0]].slice(idx[1], this._data_buffer[idx[0]].length);
+					if (this._data_buffer[idx[0] + 1]) {
+						buff += this._data_buffer[idx[0] + 1].slice(0, 7);
 					}
 
-					break;
-				}
-				if (!this._data_buffer[idx[0] + 1]) {
-					break;
-				}
+					n = buff.search(regexp);
 
-				idx[0]++;
-				idx[1] = 0;
+					if (n >= 0) {
+						if (baseIdx[0] == idx[0]) {
+							n += baseIdx[1];
+						}
+
+						break;
+					}
+					if (!this._data_buffer[idx[0] + 1]) {
+						break;
+					}
+
+					idx[0]++;
+					idx[1] = 0;
+				}
 			}
 
 			return [n, idx[0], this._rs.length];
@@ -1454,7 +1662,7 @@ if (nexacro.Browser == "Runtime") {
 					bLoop = false;
 				}
 				else {
-					data = this._getBufferData(bufferObj);
+					data = this._getBufferData(bufferObj, nLoadType);
 				}
 
 				if (data.length == 0) {
@@ -1521,8 +1729,11 @@ if (nexacro.Browser == "Runtime") {
 
 		_pProgressDataCSV._setNextParseMode = function () {
 			var sec_type_max_len = 10;
+			var sec = "";
+			if (this._data_buffer[this._cur_idx[0]]) {
+				sec = this._data_buffer[this._cur_idx[0]].substr(this._cur_idx[1], sec_type_max_len);
+			}
 
-			var sec = this._data_buffer[this._cur_idx[0]].substr(this._cur_idx[1], sec_type_max_len);
 
 			sec = sec.toUpperCase();
 
@@ -1602,8 +1813,10 @@ if (nexacro.Browser == "Runtime") {
 
 		_pProgressDataSSV._setNextParseMode = function () {
 			var sec_type_max_len = 10;
-
-			var sec = this._data_buffer[this._cur_idx[0]].substr(this._cur_idx[1], sec_type_max_len);
+			var sec = "";
+			if (this._data_buffer[this._cur_idx[0]]) {
+				sec = this._data_buffer[this._cur_idx[0]].substr(this._cur_idx[1], sec_type_max_len);
+			}
 			sec = sec.toUpperCase();
 
 			if (this._parse_mode == 0) {
@@ -1697,14 +1910,17 @@ if (nexacro.Browser == "Runtime") {
 
 		_pProgressDataPPX._setNextParseMode = function () {
 			var sec_type_max_len = 10;
-			var sec = this._data_buffer[this._cur_idx[0]].substr(this._cur_idx[1], sec_type_max_len);
+			var sec = "";
+			if (this._data_buffer[this._cur_idx[0]]) {
+				sec = this._data_buffer[this._cur_idx[0]].substr(this._cur_idx[1], sec_type_max_len);
+			}
 
 			sec = sec.toUpperCase();
 
 			if (this._parse_mode == 0) {
 				this._parse_mode = 1;
 			}
-			else if (sec.charAt(this._cur_idx) == "D") {
+			else if (sec.charAt(0) == "D") {
 				this._parse_mode = 3;
 			}
 			else {
@@ -1776,32 +1992,34 @@ if (nexacro.Browser == "Runtime") {
 			var regexp = new RegExp(this._rs + "D", "gi");
 			var n = -1;
 
-			if (this._data_buffer[idx[0] - 1] && idx[1] == 0) {
-				idx[1] = this._data_buffer[idx[0] - 1].length - this._rs.length;
-				idx[0] = idx[0] - 1;
-			}
-
-			while (true) {
-				var len = this._data_buffer[idx[0]].length;
-				var buff = this._data_buffer[idx[0]].slice(idx[1], this._data_buffer[idx[0]].length);
-				if (this._data_buffer[idx[0] + 1]) {
-					buff += this._data_buffer[idx[0] + 1].slice(0, 3);
+			if (this._data_buffer[idx[0]]) {
+				if (this._data_buffer[idx[0] - 1] && idx[1] == 0) {
+					idx[1] = this._data_buffer[idx[0] - 1].length - this._rs.length;
+					idx[0] = idx[0] - 1;
 				}
 
-				n = buff.search(regexp);
-
-				if (n >= 0) {
-					if (baseIdx[0] == idx[0]) {
-						n += baseIdx[1];
+				while (true) {
+					var len = this._data_buffer[idx[0]].length;
+					var buff = this._data_buffer[idx[0]].slice(idx[1], this._data_buffer[idx[0]].length);
+					if (this._data_buffer[idx[0] + 1]) {
+						buff += this._data_buffer[idx[0] + 1].slice(0, 3);
 					}
-					break;
-				}
-				if (!this._data_buffer[idx[0] + 1]) {
-					break;
-				}
 
-				idx[0]++;
-				idx[1] = 0;
+					n = buff.search(regexp);
+
+					if (n >= 0) {
+						if (baseIdx[0] == idx[0]) {
+							n += baseIdx[1];
+						}
+						break;
+					}
+					if (!this._data_buffer[idx[0] + 1]) {
+						break;
+					}
+
+					idx[0]++;
+					idx[1] = 0;
+				}
 			}
 
 			return [n, idx[0], this._rs.length];
@@ -1910,6 +2128,7 @@ if (nexacro.Browser == "Runtime") {
 					buffer_obj._isEnable = true;
 					this._cur_dataset_id = remoteId;
 
+					this._datasets_in_seq[this._datasets_in_seq.length] = remoteId;
 					buffer_obj._ds_start_idx = new Array(this._cur_idx[0], this._cur_idx[1]);
 					buffer_obj._ds_end_idx = new Array(this._cur_idx[0], this._cur_idx[1] + n);
 				}
@@ -2606,8 +2825,13 @@ if (nexacro.Browser == "Runtime") {
 		nexacro.__pluginCallMethod = function (obj, args) {
 			if (nexacro.OS == "Android" && nexacro.Browser == "Runtime") {
 				var str = args[0];
+
 				str += "(";
 				for (var i = 1; i < args.length; i++) {
+					if (typeof (args[i]) == "string") {
+						args[i] = nexacro.replaceAll(args[i], "'", "\\'");
+					}
+
 					str += "'";
 					str += args[i];
 					str += "'";
@@ -3073,7 +3297,7 @@ if (nexacro.Browser == "Runtime") {
 			if (!next_node) {
 				var next_handle = nexacro.__xmlGetNextSiblingNode(this._handle);
 				if (next_handle) {
-					var node_type = nexacro.__xmlGetNodeType(child_handle);
+					var node_type = nexacro.__xmlGetNodeType(next_handle);
 					next_node = this._next_sibling = nexacro.__createNodeObjectByType(this._owner_document, node_type);
 					next_node._handle = next_handle;
 					next_node._previous_sibling = this;
@@ -3095,7 +3319,7 @@ if (nexacro.Browser == "Runtime") {
 			if (!prev_node) {
 				var prev_handle = nexacro.__xmlGetPrevSiblingNode(this._handle);
 				if (prev_handle) {
-					var node_type = nexacro.__xmlGetNodeType(child_handle);
+					var node_type = nexacro.__xmlGetNodeType(prev_handle);
 					prev_node = this._previous_sibling = nexacro.__createNodeObjectByType(this._owner_document, node_type);
 					prev_node._handle = prev_handle;
 					prev_node._next_sibling = this;
@@ -4173,6 +4397,12 @@ if (nexacro.Browser == "Runtime") {
 
 		nexacro._setProtocolVar = function (name, key, val) {
 			nexacro.__setProtocolVar(name, key, val);
+		};
+		nexacro._isSimulator = function () {
+			return nexacro.__isSimulator();
+		};
+		nexacro._releaseImageUrl = function (url) {
+			return nexacro.__releaseImageUrl(url);
 		};
 	}
 }

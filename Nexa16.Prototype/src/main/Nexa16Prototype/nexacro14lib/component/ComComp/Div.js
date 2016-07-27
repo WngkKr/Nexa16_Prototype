@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -255,7 +255,7 @@ if (!nexacro.Div) {
 	};
 
 	_pDiv.on_apply_custom_pseudo = function (pseudo) {
-		var applystyles = applystyles = ["align", "background", "border", "bordertype", "color", "cursor", "font", "glow", "gradation", "margin", "opacity", "padding", "shadow", "accessibility"];
+		var applystyles = applystyles = ["align", "background", "border", "bordertype", "color", "cursor", "font", "letterspace", "glow", "gradation", "margin", "opacity", "padding", "shadow", "accessibility"];
 		var findstyle;
 		if (!this._url || this._url.length == 0) {
 			this._oldstyletype = this._styletype;
@@ -469,12 +469,17 @@ if (!nexacro.Div) {
 					text_elem.setElementFont(curstyle.font);
 					text_elem.setElementColor(curstyle.color);
 					text_elem.setElementAlignXY(halign, valign);
+					text_elem.setElementLetterSpace(curstyle.letterspace);
 					this._text_elem = text_elem;
 
 					text_elem = null;
 					curstyle = null;
 					halign = null;
 					valign = null;
+				}
+				else if (nexacro._enableaccessibility && nexacro._accessibilitytype == 4) {
+					this._text_elem = new nexacro.TextBoxElement(control_elem);
+					this._text_elem.setElementSize(this._client_width, this._client_height);
 				}
 			}
 			control_elem = null;
@@ -493,6 +498,12 @@ if (!nexacro.Div) {
 				text_elem.create();
 				text_elem = null;
 			}
+		}
+
+		if (nexacro._enableaccessibility && nexacro._accessibilitytype == 4 && this._text_elem) {
+			this._text_elem.create();
+			this._text_elem._setElementAccessibilityRole();
+			this._text_elem._setElementAccessibilityLabel();
 		}
 
 		if (this._is_loaded == false && this.url != null && !this._has_parent) {
@@ -568,13 +579,11 @@ if (!nexacro.Div) {
 
 	_pDiv._getAccessibilityRole = function (accessibility) {
 		var role = accessibility.role ? accessibility.role : this._accessibility_role;
-		if (this.components.length <= 0 && nexacro._accessibilitytype == 4) {
-			role = this._accessibility_role = "static";
-		}
-		else {
-			role = this._accessibility_role = "form";
-		}
 		return role;
+	};
+
+	_pDiv.on_get_style_accessibility_label = function () {
+		return this.text ? this.text : "";
 	};
 
 	_pDiv.getFocus = function () {
@@ -732,6 +741,84 @@ if (!nexacro.Div) {
 		}
 		this._is_created = false;
 	};
+	_pDiv._clear_obj = function () {
+		this._is_init = true;
+		this._pseudo = "normal";
+		this.currentstyle._empty();
+		this._contents_pseudo = "";
+
+		this._clearEventListeners();
+
+		if (this._timerManager && this._timerManager.timerList.length > 0) {
+			this._timerManager.clearAll();
+		}
+
+		if (this._text_elem) {
+			this._text_elem.destroy();
+			this._text_elem = null;
+		}
+
+		if (this.stepcontrol) {
+			this._destroyStepControl();
+			this.stepcontrol = null;
+		}
+
+		var binds = this.binds;
+		var len = binds.length;
+		for (var i = 0; i < len; i++) {
+			var bindname = binds.get_id(i);
+			this._bind_manager._setBinditem(binds.get_item(bindname), true);
+			this[bindname] = null;
+		}
+		binds.clear();
+		binds = null;
+
+		var components = this.components;
+		var objects = this.objects;
+
+		this.all = new nexacro.Collection();
+		this.components = new nexacro.Collection();
+		this.objects = new nexacro.Collection();
+
+		len = components.length;
+		for (var i = 0; i < len; i++) {
+			var compname = components.get_id(i);
+			if (this[compname]) {
+				if (this[compname]._destroy) {
+					this[compname]._destroy();
+				}
+			}
+		}
+		components.clear();
+		components = null;
+
+		len = objects.length;
+		for (var i = 0; i < len; i++) {
+			var objname = objects.get_id(i);
+			if (this[objname]) {
+				if (this[objname].destroy) {
+					this[objname].destroy();
+				}
+				delete this[objname];
+				this[objname] = null;
+			}
+		}
+		objects.clear();
+		objects = null;
+
+		if (this._linkstyles) {
+			var linkstyles = this._linkstyles;
+			for (pseudo in linkstyles) {
+				var linkstyle = linkstyles[pseudo];
+				if (linkstyle.destroy) {
+					linkstyle.destroy();
+					linkstyle = null;
+				}
+			}
+		}
+
+		this._last_focused = null;
+	};
 
 	_pDiv._loadInclude = function (mainurl, url) {
 		var asyncmode = this.async;
@@ -765,6 +852,7 @@ if (!nexacro.Div) {
 				text_elem.setElementFont(curstyle.font);
 				text_elem.setElementColor(curstyle.color);
 				text_elem.setElementAlignXY(halign, valign);
+				text_elem.setElementLetterSpace(curstyle.letterspace);
 
 				halign = null;
 				valign = null;
@@ -778,6 +866,11 @@ if (!nexacro.Div) {
 						text_elem.setElementText("");
 					}
 				}
+
+				if (this._is_created && nexacro._enableaccessibility && nexacro._accessibilitytype == 4) {
+					text_elem._setElementAccessibilityRole();
+					text_elem._setElementAccessibilityLabel();
+				}
 			}
 		}
 		control_elem = null;
@@ -790,21 +883,30 @@ if (!nexacro.Div) {
 	};
 
 	_pDiv.set_url = function (v, basync) {
-		if (v != this.url) {
-			this.url = v;
-			this._url = v;
-			this.on_apply_url();
+		if ((v != this.url) && !(v == "" && this.url == null)) {
+			if (v.substring(v.length - 5) == ".xfdl" || !v) {
+				this.url = v;
+				this._url = v;
+				this.on_apply_url();
+			}
 		}
 	};
 
 	_pDiv.getSetter = function (name, fnname) {
-		if (!this._user_property_list) {
-			this._user_property_list = [];
+		if (this._urlloading) {
+			if (!this._user_property_list) {
+				this._user_property_list = [];
+			}
+
+			if (!this._user_property_list[name]) {
+				this._user_property_list.push(name);
+			}
 		}
-		this._user_property_list[name] = 1;
+
 		if (!fnname) {
 			fnname = "set_" + name;
 		}
+
 		var fn = this[fnname];
 		if (fn) {
 			return new nexacro.SetterBinder(this, name, fn);
@@ -1046,6 +1148,7 @@ if (!nexacro.Div) {
 		this.on_apply_style_color(styleObj.color);
 		this.on_apply_style_cursor(styleObj.cursor);
 		this.on_apply_style_font(styleObj.font);
+		this.on_apply_style_letterspace(styleObj.letterspace);
 		this.on_apply_style_glow(styleObj.glow);
 		this.on_apply_style_gradation(styleObj.gradation);
 		this.on_apply_style_margin(styleObj.margin);
@@ -1109,6 +1212,11 @@ if (!nexacro.Div) {
 					style["font"] = this.on_find_CurrentStyle_font(pseudo);
 					if (!style["font"]) {
 						style["font"] = nexacro._getCachedFontObj("");
+					}
+				case "letterspace":
+					style["letterspace"] = this.on_find_CurrentStyle_letterspace(pseudo);
+					if (!style["letterspace"]) {
+						style["letterspace"] = nexacro._getCachedStyleObj("letterspace", "0");
 					}
 				case "glow":
 					style["glow"] = this.on_find_CurrentStyle_glow(pseudo);

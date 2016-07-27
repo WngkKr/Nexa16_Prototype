@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -114,7 +114,11 @@ if (!nexacro.ExcelExportObject) {
 		this._uniqueIndex = 0;
 		this._fileURL = "";
 		this._itemsIndex = 0;
+
 		this._argsParam = null;
+		this._argsDsParam = null;
+		this._is_orgval = false;
+
 		this._exportBar;
 		this._tempSaveMethod = null;
 
@@ -483,8 +487,11 @@ if (!nexacro.ExcelExportObject) {
 		return g_len;
 	};
 
-	_pExcelExport.exportData = function (argsParam) {
+	_pExcelExport.exportData = function (argsParam, argsDsParam, bOrgValue) {
 		this._argsParam = argsParam;
+		this._argsDsParam = argsDsParam;
+		this._is_orgval = bOrgValue ? true : false;
+
 		var ret = -1;
 		if (!this.exporturl) {
 			return ret;
@@ -666,7 +673,8 @@ if (!nexacro.ExcelExportObject) {
 		this._excel_suppress_info = {
 		};
 
-		this._temp_enableevent = this._temp_treeIndexes = this._temp__treeStates = null;
+		this._gridTempInfo = null;
+
 		this._tmpSuppressInfos;
 		this._event_list = {
 			"onsuccess" : 1, 
@@ -913,31 +921,42 @@ if (!nexacro.ExcelExportObject) {
 	};
 
 
-	_pItem._getCellText = function (cell) {
-		var subs = cell.subcells;
+	_pItem._getCellText = function (source, rowidx, cellidx) {
+		var celltext;
 
-		if (subs.length) {
-			return subs[0]._getDisplayText();
+		if (source && source instanceof nexacro.Grid) {
+			var band;
+			if (rowidx == -1) {
+				band = "head";
+			}
+			else if (rowidx == -2) {
+				band = "summ";
+			}
+			else {
+				band = "body";
+			}
+
+			var export_obj = this.parent;
+
+			if (source.getSubCellCount(band, cellidx)) {
+				if (export_obj._is_orgval) {
+					celltext = source.getSubCellValue(rowidx, cellidx, 0);
+				}
+				else {
+					celltext = source.getSubCellText(rowidx, cellidx, 0);
+				}
+			}
+			else {
+				if (export_obj._is_orgval) {
+					celltext = source.getCellValue(rowidx, cellidx);
+				}
+				else {
+					celltext = source.getCellText(rowidx, cellidx);
+				}
+			}
 		}
 
-		return cell._getDisplayText();
-	};
-
-
-	_pItem._getCellTextBody = function (source, rowidx, cellidx) {
-		var cells = source._curFormat._bodycells;
-		var celldisplayText;
-
-		var subs = cells[cellidx]._subcells;
-
-		if (subs.length > 0) {
-			celldisplayText = subs[0]._getDisplayText(rowidx);
-		}
-		else {
-			celldisplayText = cells[cellidx]._getDisplayText(rowidx);
-		}
-
-		return celldisplayText;
+		return celltext;
 	};
 
 	_pItem._find_styleName = function (dataset, type, value, count, startRow) {
@@ -977,6 +996,17 @@ if (!nexacro.ExcelExportObject) {
 
 		val_a = value.split(" ");
 		return val_a.join(",");
+	};
+
+	_pItem._getFitFontValue = function (obj) {
+		if (!obj) {
+			return;
+		}
+
+		var str;
+		str = obj.type + "," + obj.size + "," + obj.face;
+
+		return str;
 	};
 
 	_pItem._getHEXtoRGB = function (color) {
@@ -1138,29 +1168,24 @@ if (!nexacro.ExcelExportObject) {
 		return "";
 	};
 
-	_pItem._getCellBodyStyle = function (cell, idx, defaultLineColor) {
-		var align;
-		var background;
-		var background2;
-		var color;
-		var color2;
-		var font;
-		var line;
-		var gradation;
-		var gradation2;
-		var c_style;
-		var c_style2;
+	_pItem._getCellBodyStyle = function (cell, idx) {
+		var align, background, background2, color, color2, font, line, gradation, gradation2, c_style, c_style2, _background2, _color2;
+
 		var str = "";
 		var ds_style = this._ds_style;
 		var flag = false;
 		var viewType = cell.displaytype._value;
-		var _background2;
-		var _color2;
+		var _linestyle = "empty:empty:empty:empty";
+		var linecolor = {
+			vertical : "empty", 
+			horizon : "empty"
+		};
 
 		align = cell._stylecache["alignnormal" + viewType];
 		background = cell._stylecache["backgroundfalsefalsenormal"];
 		color = cell._stylecache["colorfalsefalsenormal"];
 		font = cell._stylecache["fontfalsenormal"];
+
 		if (this._applyL) {
 			line = cell._stylecache["linefalsebothn"];
 			if (!line) {
@@ -1226,21 +1251,23 @@ if (!nexacro.ExcelExportObject) {
 		else {
 			var _background = this._getHEXtoRGB(background);
 		}
-		var _color = this._getHEXtoRGB(color);
-		var _font = this._getFitValue(font);
 
-		var _linestyle = "";
+		var _color = this._getHEXtoRGB(color);
+		var _font = this._getFitFontValue(font);
+
 		if (this._applyL && line) {
 			if (line.right_style != "none" && line._right_width != 0) {
-				var _line = this._getHEXtoRGB(line.right_color) + (line.right_style == "solid" ? "" : "," + line.right_style);
-				_linestyle = "empty:empty:" + _line + ":" + _line;
+				linecolor.vertical = this._getHEXtoRGB(line.right_color) + (line.right_style == "solid" ? "" : "," + line.right_style);
+				linecolor.horizon = this._getHEXtoRGB(line.bottom_color) + (line.bottom_style == "solid" ? "" : "," + line.bottom_style);
+				if (this._applyHead) {
+					_linestyle = (cell._col == 0 ? linecolor.vertical : "empty") + ":" + "empty" + ":";
+				}
+				else {
+					_linestyle = (cell._col == 0 ? linecolor.vertical : "empty") + ":" + (cell._row == 0 ? linecolor.horizon : "empty") + ":";
+				}
+
+				_linestyle += linecolor.vertical + ":" + linecolor.horizon;
 			}
-			else {
-				_linestyle = "empty:empty:empty:empty";
-			}
-		}
-		else {
-			_linestyle = "empty:empty:empty:empty";
 		}
 
 		if (this._checkExpr(align)) {
@@ -1380,6 +1407,16 @@ if (!nexacro.ExcelExportObject) {
 				if (this.exportimage.toLowerCase() == "image") {
 					displaytype += "image";
 				}
+				cell_type = "text";
+				break;
+			case "text":
+				if (cell._getAttrValue(cell.displaytype, rowidx) == "normal") {
+					cell_type = "normal";
+				}
+				else {
+					cell_type = "text";
+				}
+				break;
 			default:
 				cell_type = "text";
 				break;
@@ -1480,33 +1517,31 @@ if (!nexacro.ExcelExportObject) {
 	};
 
 	_pItem._getSubCellLine = function (subCell, defaultColor, linecolor, rsp, csp) {
-		var lLine;
-		var tLine;
-		var rLine;
-		var bLine;
+		var lLine, tLine, rLine, bLine;
 
 		var sbc = subCell._col;
 		var sbr = subCell._row;
+
 		if (sbc == csp) {
-			rLine = linecolor;
+			rLine = linecolor.vertical;
 		}
 		else {
 			rLine = "empty";
 		}
 		if (sbc == 0) {
-			lLine = defaultColor;
+			lLine = defaultColor.vertical;
 		}
 		else {
 			lLine = "empty";
 		}
 		if (sbr == rsp) {
-			bLine = linecolor;
+			bLine = linecolor.horizon;
 		}
 		else {
 			bLine = "empty";
 		}
 		if (sbr == 0) {
-			tLine = defaultColor;
+			tLine = defaultColor.horizon;
 		}
 		else {
 			tLine = "empty";
@@ -1520,14 +1555,14 @@ if (!nexacro.ExcelExportObject) {
 		switch (str) {
 			case "topfake":
 			case "bottomfake":
-				linestyle_str = "empty:empty:" + color + ":empty";
+				linestyle_str = "empty:empty:" + color.vertical + ":empty";
 				break;
 			case "rightfake":
 				if (type) {
-					linestyle_str = "empty:empty:empty:" + color;
+					linestyle_str = "empty:empty:empty:" + color.horizon;
 				}
 				else {
-					linestyle_str = "empty:" + color + ":empty:empty";
+					linestyle_str = "empty:" + color.horizon + ":empty:empty";
 				}
 				break;
 			case "righttopfake":
@@ -1536,18 +1571,19 @@ if (!nexacro.ExcelExportObject) {
 				break;
 			default:
 				if (type) {
-					linestyle_str = "empty:empty:" + color + ":" + color;
+					linestyle_str = "empty:empty:" + color.vertical + ":" + color.horizon;
 				}
 				else {
-					linestyle_str = "empty:" + color + ":" + color + ":empty";
+					linestyle_str = "empty:" + color.horizon + ":" + color.vertical + ":empty";
 				}
-
 				break;
 		}
 		return linestyle_str;
 	};
 
 	_pItem._makeFormat = function (grid) {
+		var bg, align, font, color, line, style, cell, subCell, background, gradation;
+
 		var format = grid._curFormat;
 		var hCells = format._headcells;
 		var hLen = hCells ? hCells.length : 0;
@@ -1557,24 +1593,12 @@ if (!nexacro.ExcelExportObject) {
 		var sLen = sCells ? sCells.length : 0;
 		var str = "";
 		var ds_style = this._ds_style;
-		var bg;
-		var align;
-		var font;
-		var color;
-		var line;
-		var linecolor;
-		var linestyle;
-		var defaultHL;
-		var d_HLColor;
-		var defaultBL;
-		var d_BLColor;
-		var tmp;
-		var style;
-		var cell;
-		var subCell;
+		var linecolor = {
+			vertical : "empty", 
+			horizon : "empty"
+		};
+		var linestyle = "empty:empty:empty:empty";
 		var subL = 0;
-		var background;
-		var gradation;
 		var f_cols = format._cols;
 		var f_hrows = format._headrows;
 		var f_brows = format._bodyrows;
@@ -1582,23 +1606,21 @@ if (!nexacro.ExcelExportObject) {
 
 		str = "<Formats><Format><Columns>";
 		for (var i = 0, fcLen = f_cols.length; i < fcLen; i++) {
-			str += '<Column size="' + f_cols[i].size + '" />';
+			str += '<Column size="' + Math.round(f_cols[i].size) + '" />';
 		}
 		str += "</Columns><Rows>";
 		for (var i = 0, frLen = f_hrows ? f_hrows.length : 0; i < frLen; i++) {
-			str += '<Row size="' + f_hrows[i].size + '" band="head" />';
+			str += '<Row size="' + Math.round(f_hrows[i].size) + '" band="head" />';
 		}
 		for (var i = 0, frLen = f_brows ? f_brows.length : 0; i < frLen; i++) {
-			str += '<Row size="' + f_brows[i].size + '" />';
+			str += '<Row size="' + Math.round(f_brows[i].size) + '" />';
 		}
 		for (var i = 0, frLen = f_srows ? f_srows.length : 0; i < frLen; i++) {
-			str += '<Row size="' + f_srows[i].size + '" band="summ" />';
+			str += '<Row size="' + Math.round(f_srows[i].size) + '" band="summ" />';
 		}
 		str += "</Rows>";
 
 		if (hLen > 0 && this._applyHead) {
-			defaultHL = hCells[0].parent._find_gridpseudo_obj("cellline", "normal", null, "line");
-			d_HLColor = defaultHL.right_color ? this._getHEXtoRGB(defaultHL.right_color) + (defaultHL.right_style == "solid" ? "" : "," + defaultHL.right_style) : "empty";
 			str += "<Head>";
 			for (var i = 0; i < hLen; i++) {
 				cell = hCells[i];
@@ -1610,20 +1632,27 @@ if (!nexacro.ExcelExportObject) {
 				else {
 					bg = this._getHEXtoRGB(background);
 				}
+
 				align = this._getFitValue(this._getCellStyle(cell, -1, false, "align", "normal"));
-				font = this._getFitValue(this._getCellStyle(cell, -1, false, "font", "normal"));
+				font = this._getFitFontValue(this._getCellStyle(cell, -1, false, "font", "normal"));
 				color = this._getHEXtoRGB(this._getCellStyle(cell, -1, false, "color", "normal"));
-				if (this._applyL && cell.style.line) {
+				linecolor = {
+					vertical : "empty", 
+					horizon : "empty"
+				};
+
+				if (this._applyL) {
 					line = this._getCellStyle(cell, -1, false, "border", "normal");
-					if (line.right_style != "none" && line._right_width != 0) {
-						linecolor = this._getHEXtoRGB(line.right_color) + (line.right_style == "solid" ? "" : "," + line.right_style);
+
+					if (line) {
+						if (line.right_style != "none" && line._right_width != 0) {
+							linecolor.vertical = this._getHEXtoRGB(line.right_color) + (line.right_style == "solid" ? "" : "," + line.right_style);
+						}
+
+						if (line.bottom_style != "none" && line._bottom_width != 0) {
+							linecolor.horizon = this._getHEXtoRGB(line.bottom_color) + (line.bottom_style == "solid" ? "" : "," + line.bottom_style);
+						}
 					}
-					else {
-						linecolor = "empty";
-					}
-				}
-				else {
-					linecolor = d_HLColor;
 				}
 
 				var cell_type = this._getFixedCellType(cell, -1);
@@ -1631,17 +1660,20 @@ if (!nexacro.ExcelExportObject) {
 				subL = subCell.length;
 				if (subL) {
 					for (var j = 0; j < subL; j++) {
-						linestyle = this._getSubCellLine(subCell[j], d_HLColor, linecolor, cell._rowspan - 1, cell._colspan - 1);
+						linestyle = this._getSubCellLine(subCell[j], linecolor, linecolor, cell._rowspan - 1, cell._colspan - 1);
 						style = this._makeforDsStyle(ds_style, align, bg, color, font, linestyle, cell_type);
 						str += this._modifyFormat(subCell[j], style, null, -1, cell);
 					}
 				}
 				else {
+					linestyle = (cell._col == 0 ? linecolor.vertical : "empty") + ":" + (cell._row == 0 ? linecolor.horizon : "empty") + ":";
+					linestyle += linecolor.vertical + ":" + linecolor.horizon;
+
 					var need_merge_cell = false;
-					linestyle = "empty:empty:" + linecolor + ":" + linecolor;
 					var fake_value = null;
 					var row_suppress_count = 0;
 					var col_suppress_count = 0;
+
 					if (this._exportmerge == 1) {
 						if (!!grid._checkFakeMerge(cell, -1)) {
 							linestyle = this._makeFakeLine(cell._fakemerge_infos[1], linecolor, true);
@@ -1696,11 +1728,9 @@ if (!nexacro.ExcelExportObject) {
 
 		if (bLen > 0) {
 			str += "<Body>";
-			defaultBL = bCells[0].parent._find_gridpseudo_obj("cellline", "normal", null, "line");
-			this._d_BLColor = d_BLColor = defaultBL.right_color ? this._getHEXtoRGB(defaultBL.right_color) + (defaultBL.right_style == "solid" ? "" : "," + defaultBL.right_style) : "empty";
 			for (var i = 0; i < bLen; i++) {
 				cell = bCells[i];
-				str += this._getCellBodyStyle(cell, i, d_BLColor);
+				str += this._getCellBodyStyle(cell, i);
 			}
 			str += "</Body>";
 		}
@@ -1718,23 +1748,25 @@ if (!nexacro.ExcelExportObject) {
 					bg = this._getHEXtoRGB(background);
 				}
 				align = this._getFitValue(this._getCellStyle(cell, -2, false, "align", "normal"));
-				font = this._getFitValue(this._getCellStyle(cell, -2, false, "font", "normal"));
+				font = this._getFitFontValue(this._getCellStyle(cell, -2, false, "font", "normal"));
 				color = this._getHEXtoRGB(this._getCellStyle(cell, -2, false, "color", "normal"));
-				if (!d_HLColor) {
-					defaultHL = hCells[0].parent._find_gridpseudo_obj("cellline", "normal", null, "line");
-					d_HLColor = this._getHEXtoRGB(defaultHL.right_color) + (defaultHL.right_style == "solid" ? "" : "," + defaultHL.right_style);
-				}
-				if (this._applyL && cell.style.line) {
+				linecolor = {
+					vertical : "empty", 
+					horizon : "empty"
+				};
+
+				if (this._applyL) {
 					line = this._getCellStyle(cell, -2, false, "border", "normal");
-					if (line.right_style != "none" && line._right_width != 0) {
-						linecolor = this._getHEXtoRGB(line.right_color) + (line.right_style == "solid" ? "" : "," + line.right_style);
+
+					if (line) {
+						if (line.right_style != "none" && line._right_width != 0) {
+							linecolor.vertical = this._getHEXtoRGB(line.right_color) + (line.right_style == "solid" ? "" : "," + line.right_style);
+						}
+
+						if (line.top_style != "none" && line._top_width != 0) {
+							linecolor.horizon = this._getHEXtoRGB(line.top_color) + (line.top_style == "solid" ? "" : "," + line.top_style);
+						}
 					}
-					else {
-						linecolor = "empty";
-					}
-				}
-				else {
-					linecolor = d_HLColor;
 				}
 
 				var cell_type = this._getFixedCellType(cell, -2);
@@ -1742,14 +1774,14 @@ if (!nexacro.ExcelExportObject) {
 				subL = subCell.length;
 				if (subL) {
 					for (var j = 0; j < subL; j++) {
-						linestyle = this._getSubCellLine(subCell[j], d_HLColor, linecolor, cell._rowspan - 1, cell._colspan - 1);
+						linestyle = this._getSubCellLine(subCell[j], linecolor, linecolor, cell._rowspan - 1, cell._colspan - 1);
 						style = this._makeforDsStyle(ds_style, align, bg, color, font, linestyle, cell_type);
 						str += this._modifyFormat(subCell[j], style, null, -2, cell);
 					}
 				}
 				else {
 					var need_merge_cell = false;
-					linestyle = "empty:" + linecolor + ":" + linecolor + ":empty";
+					linestyle = linecolor.vertical + ":" + linecolor.horizon + ":" + linecolor.vertical + ":" + linecolor.horizon;
 					var fake_value = null;
 					if (this._exportmerge == 1) {
 						if (!!grid._checkFakeMerge(cell, -2)) {
@@ -1905,7 +1937,7 @@ if (!nexacro.ExcelExportObject) {
 		grid._analyzeSuppress(true);
 
 		for (var i = 0; i < rowcount; i++) {
-			grid._suppressUpdateRow(i, 0);
+			grid._suppressUpdateRow(i, 0, rowcount - 1, true);
 		}
 	};
 
@@ -1920,6 +1952,7 @@ if (!nexacro.ExcelExportObject) {
 		ds_command.setColumn(0, "startrow", this._startRow);
 		ds_command.setColumn(0, "instanceid", this._instanceId);
 		ds_command.setColumn(0, "url", exportObj._fileURL);
+		ds_command.setColumn(0, "summarytype", grid.summarytype);
 
 		ds_command.setColumn(0, "range", this.range);
 		ds_command.setColumn(0, "exportsize", this.exportsize);
@@ -1956,6 +1989,7 @@ if (!nexacro.ExcelExportObject) {
 		var rt;
 
 		var export_param = null;
+		var export_dsparam = null;
 		if (bodycntcell > 0) {
 			var kk = 0;
 			var selectedrow = 0;
@@ -1968,7 +2002,8 @@ if (!nexacro.ExcelExportObject) {
 			if (partitionRow >= bodycntrow) {
 				partitionRow = bodycntrow;
 				this._eof = true;
-				var export_param = this.parent._argsParam;
+				export_param = this.parent._argsParam;
+				export_dsparam = this.parent._argsDsParam;
 			}
 
 			var cells = grid._curFormat._bodycells;
@@ -2078,7 +2113,7 @@ if (!nexacro.ExcelExportObject) {
 					}
 					else {
 						sFlag = true;
-						fontCell = nexacro._nvl(this._getFitValue(this._getCellStyle(cell, k, odd, "font", _pseudo)), "");
+						fontCell = nexacro._nvl(this._getFitFontValue(this._getCellStyle(cell, k, odd, "font", _pseudo)), "");
 					}
 
 					var is_line_changed, d_BLColor, right_linecolor, bottom_linecolor, linecolor;
@@ -2254,7 +2289,7 @@ if (!nexacro.ExcelExportObject) {
 					}
 					this._s_ct = rt[1];
 
-					var display_text = this._getCellTextBody(grid, k, j);
+					var display_text = this._getCellText(grid, k, j);
 					val = emptyCellFlag ? "" : display_text;
 
 					if (longdate_flag) {
@@ -2267,7 +2302,7 @@ if (!nexacro.ExcelExportObject) {
 					if (displaytype == "image") {
 						var expImg = this.exportimage.toLowerCase();
 						if (expImg == "url" || expImg == "image") {
-							var path = this._getCellTextBody(grid, k, j);
+							var path = this._getCellText(grid, k, j);
 
 							if (path) {
 								var url = nexacro._getURIValue(path);
@@ -2320,7 +2355,16 @@ if (!nexacro.ExcelExportObject) {
 							}
 						}
 					}
-					ds.setColumn(idx, "Column" + (j + subcnt), nexacro._nvl(val, "") + delimiter + (sFlag || (is_selected && activate_select_style) ? style_name : ""));
+
+					if (exportObj._is_orgval) {
+						val = nexacro._isNumber(val) ? val : nexacro._isDecimal(val) ? val : nexacro._nvl(val, "");
+					}
+					else {
+						val = nexacro._nvl(val, "");
+					}
+
+					ds.setColumn(idx, "Column" + (j + subcnt), val + delimiter + (sFlag || (is_selected && activate_select_style) ? style_name : ""));
+
 					if (cell._subcells.length) {
 						var subCell = cell._subcells;
 						var subL = subCell.length;
@@ -2379,7 +2423,16 @@ if (!nexacro.ExcelExportObject) {
 								ds.addColumn("Column" + (jj + subcnt), "String", 256);
 								subcnt++;
 							}
-							ds.setColumn(idx, "Column" + (j + subcnt), subCell[i]._getDisplayText(k) + delimiter + style_name);
+
+							var val = subCell[i]._getDisplayText(k);
+							if (exportObj._is_orgval) {
+								var cellinfo = subCell[i]._refobj;
+								if (cellinfo) {
+									val = cellinfo._getValue(k);
+								}
+							}
+
+							ds.setColumn(idx, "Column" + (j + subcnt), val + delimiter + style_name);
 						}
 					}
 				}
@@ -2396,7 +2449,13 @@ if (!nexacro.ExcelExportObject) {
 		}
 
 		this._ds_response = new Dataset("RESPONSE");
-		this._transaction(this.id, exportObj._exporturl, "COMMAND=_ds_command STYLE=_ds_style2 CELL=_ds_cell", "_ds_response=RESPONSE", export_param, "_exportCallback", true, exportObj._commdataformat, exportObj._commcompress);
+
+		if (export_dsparam != undefined) {
+			this._transaction(this.id, exportObj._exporturl, "COMMAND=_ds_command STYLE=_ds_style2 CELL=_ds_cell" + " " + export_dsparam, "_ds_response=RESPONSE", export_param, "_exportCallback", true, exportObj._commdataformat, exportObj._commcompress);
+		}
+		else {
+			this._transaction(this.id, exportObj._exporturl, "COMMAND=_ds_command STYLE=_ds_style2 CELL=_ds_cell", "_ds_response=RESPONSE", export_param, "_exportCallback", true, exportObj._commdataformat, exportObj._commcompress);
+		}
 		this._updateBarPos(exportObj, exportObj.exporteventtype);
 	};
 
@@ -2414,13 +2473,13 @@ if (!nexacro.ExcelExportObject) {
 				exportbar._set_text("");
 			}
 			if (grid._hasTree) {
-				grid.set_treeinitstatus("collapse,null");
+				grid.set_treeinitstatus(this._gridTempInfo["treeinitstatus"]);
 				nexacro.Grid.prototype._recreate_contents_all = exportObj._tempSaveMethod;
 				exportObj._tempSaveMethod = null;
-				grid._treeIndexes = this._temp_treeIndexes;
-				grid._treeStates = this._temp__treeStates;
-				grid.enableevent = this._temp_enableevent;
-				this._temp_enableevent = this._temp_treeIndexes = this._temp__treeStates = null;
+				grid._treeIndexes = this._gridTempInfo["treeIndexes"];
+				grid._treeStates = this._gridTempInfo["treeStates"];
+				grid.enableevent = this._gridTempInfo["enableevent"];
+				this._gridTempInfo = null;
 			}
 		}
 		else {
@@ -2465,6 +2524,24 @@ if (!nexacro.ExcelExportObject) {
 					}
 
 					this.on_fire_onsuccess(exportObj, this, excelURL);
+
+					switch (exportObj.exporttype) {
+						case nexacro.ExportTypes.EXCEL:
+						case nexacro.ExportTypes.EXCEL97:
+							exportfilename_ = exportObj.exportfilename;
+							exportfilename_ += ".xls";
+							break;
+						case nexacro.ExportTypes.EXCEL2007:
+							exportfilename_ = exportObj.exportfilename;
+							exportfilename_ += ".xlsx";
+							break;
+						case nexacro.ExportTypes.HANCELL2010:
+						case nexacro.ExportTypes.HANCELL2014:
+							exportfilename_ = exportObj.exportfilename;
+							exportfilename_ += ".cell";
+							break;
+					}
+
 					nexacro._download(excelURL, exportObj._handle, exportfilename_);
 				}
 				else {
@@ -2481,13 +2558,13 @@ if (!nexacro.ExcelExportObject) {
 				this._eof = false;
 				this._selectcount = 0;
 				if (grid._hasTree) {
-					grid.set_treeinitstatus("collapse,null");
+					grid.set_treeinitstatus(this._gridTempInfo["treeinitstatus"]);
 					nexacro.Grid.prototype._recreate_contents_all = exportObj._tempSaveMethod;
 					exportObj._tempSaveMethod = null;
-					grid._treeIndexes = this._temp_treeIndexes;
-					grid._treeStates = this._temp__treeStates;
-					grid.enableevent = this._temp_enableevent;
-					this._temp_enableevent = this._temp_treeIndexes = this._temp__treeStates = null;
+					grid._treeIndexes = this._gridTempInfo["treeIndexes"];
+					grid._treeStates = this._gridTempInfo["treeStates"];
+					grid.enableevent = this._gridTempInfo["enableevent"];
+					this._gridTempInfo = null;
 				}
 			}
 			else {
@@ -2583,8 +2660,6 @@ if (!nexacro.ExcelExportObject) {
 			var exportbar = exportObj._exportBar;
 			if (!exportbar || exportbar._uitype != uiType) {
 				exportbar = exportObj._exportBar = exportObj._getExportBar(uiType);
-				exportbar.progressbar.style.set_bartype("normal");
-				exportbar.progressbar.style.set_barcolor("darkorange");
 				var str = exportObj._getProcessStr(exportObj.count(), exportObj._allRowCount, exportObj._allRowCount);
 				str = nexacro._getLongerStr(str, exportObj.exportmessagecomplete, exportObj.exportmessageready);
 				var tSize = nexacro._getTextSize(str, exportbar.currentstyle.font);
@@ -2603,12 +2678,15 @@ if (!nexacro.ExcelExportObject) {
 		var cur_fomat_row_len = grid._curFormat._bodyrows ? grid._curFormat._bodyrows.length : 0;
 
 		if (grid._hasTree) {
+			this._gridTempInfo = {
+			};
 			exportObj._tempSaveMethod = nexacro.Grid.prototype._recreate_contents_all;
 			nexacro.Grid.prototype._recreate_contents_all = nexacro._emptyFn;
-			this._temp_enableevent = grid.enableevent;
+			this._gridTempInfo["enableevent"] = grid.enableevent;
 			grid.enableevent = false;
-			this._temp_treeIndexes = grid._treeIndexes.slice(0);
-			this._temp__treeStates = grid._treeStates.slice(0);
+			this._gridTempInfo["treeIndexes"] = grid._treeIndexes.slice(0);
+			this._gridTempInfo["treeStates"] = grid._treeStates.slice(0);
+			this._gridTempInfo["treeinitstatus"] = grid.treeinitstatus;
 			grid.set_treeinitstatus("expand,all");
 		}
 
@@ -2634,6 +2712,7 @@ if (!nexacro.ExcelExportObject) {
 		ds_command.addColumn("eof", "boolean", 32);
 		ds_command.addColumn("instanceid", "String", 256);
 		ds_command.addColumn("url", "String", 256);
+		ds_command.addColumn("summarytype", "String", 256);
 		ds_command.addColumn("range", "String", 32);
 		ds_command.addColumn("exportsize", "String", 32);
 		ds_command.addColumn("exporthead", "String", 32);
@@ -2650,6 +2729,7 @@ if (!nexacro.ExcelExportObject) {
 		ds_command.setColumn(0, "startrow", this._startRow);
 		ds_command.setColumn(0, "instanceid", this._instanceId);
 		ds_command.setColumn(0, "url", exportObj._fileURL);
+		ds_command.setColumn(0, "summarytype", grid.summarytype);
 
 		ds_command.setColumn(0, "range", this.range);
 		var is_selectRec = this.exportselect == "selectrecord";
@@ -2690,7 +2770,9 @@ if (!nexacro.ExcelExportObject) {
 		if (this._exportmerge && grid._is_use_suppress && bodycntrow > grid._bodyBand._get_rows().length) {
 			this._gridSuppressUpdate(grid, bodycntrow);
 		}
+
 		var export_param = null;
+		var export_dsparam = null;
 
 		if (bodycntcell > 0) {
 			var kk = 0;
@@ -2699,11 +2781,11 @@ if (!nexacro.ExcelExportObject) {
 			var b_row = bodycntrow / 5;
 			for (var jj = 0; jj < bodycntcell; jj++) {
 				ds.addColumn("Column" + jj, "String", 256);
-				str_lenth += this._getCellTextBody(grid, 0, jj);
-				str_lenth += this._getCellTextBody(grid, b_row * 2, jj);
-				str_lenth += this._getCellTextBody(grid, b_row * 3, jj);
-				str_lenth += this._getCellTextBody(grid, b_row * 4, jj);
-				str_lenth += this._getCellTextBody(grid, bodycntrow - 1, jj);
+				str_lenth += this._getCellText(grid, 0, jj);
+				str_lenth += this._getCellText(grid, b_row * 2, jj);
+				str_lenth += this._getCellText(grid, b_row * 3, jj);
+				str_lenth += this._getCellText(grid, b_row * 4, jj);
+				str_lenth += this._getCellText(grid, bodycntrow - 1, jj);
 			}
 			str_lenth = str_lenth.length + 1;
 			var partRowCount = this._partitionRow = parseInt(23000 / str_lenth);
@@ -2711,7 +2793,8 @@ if (!nexacro.ExcelExportObject) {
 			if (partRowCount >= bodycntrow) {
 				partRowCount = bodycntrow;
 				this._eof = true;
-				var export_param = this.parent._argsParam;
+				export_param = this.parent._argsParam;
+				export_dsparam = this.parent._argsDsParam;
 			}
 			else {
 				partRowCount = parseInt(partRowCount / 2);
@@ -2820,7 +2903,7 @@ if (!nexacro.ExcelExportObject) {
 					}
 					else {
 						sFlag = true;
-						fontCell = nexacro._nvl(this._getFitValue(this._getCellStyle(cell, k, odd, "font", _pseudo)), "");
+						fontCell = nexacro._nvl(this._getFitFontValue(this._getCellStyle(cell, k, odd, "font", _pseudo)), "");
 					}
 
 					var is_line_changed, d_BLColor, right_linecolor, bottom_linecolor, linecolor;
@@ -2919,7 +3002,7 @@ if (!nexacro.ExcelExportObject) {
 						}
 					}
 
-					var display_text = this._getCellTextBody(grid, k, j);
+					var display_text = this._getCellText(grid, k, j);
 					val = emptyCellFlag ? "" : display_text;
 
 					if (longdate_flag) {
@@ -2932,7 +3015,7 @@ if (!nexacro.ExcelExportObject) {
 					if (displaytype == "image") {
 						var expImg = this.exportimage.toLowerCase();
 						if (expImg == "url" || expImg == "image") {
-							var path = this._getCellTextBody(grid, k, j);
+							var path = this._getCellText(grid, k, j);
 
 							if (path) {
 								var url = nexacro._getURIValue(path);
@@ -2985,7 +3068,15 @@ if (!nexacro.ExcelExportObject) {
 						}
 					}
 
-					ds.setColumn(idx, "Column" + (j + subcnt), nexacro._nvl(val, "") + delimiter + (sFlag || (is_selected && activate_select_style) ? style_name : ""));
+					if (exportObj._is_orgval) {
+						val = nexacro._isNumber(val) ? val : nexacro._isDecimal(val) ? val : nexacro._nvl(val, "");
+					}
+					else {
+						val = nexacro._nvl(val, "");
+					}
+
+					ds.setColumn(idx, "Column" + (j + subcnt), val + delimiter + (sFlag || (is_selected && activate_select_style) ? style_name : ""));
+
 					if (cell._subcells.length) {
 						var subCell = cell._subcells;
 						var subL = subCell.length;
@@ -3042,7 +3133,16 @@ if (!nexacro.ExcelExportObject) {
 								ds.addColumn("Column" + (jj + subcnt), "String", 256);
 								subcnt++;
 							}
-							ds.setColumn(idx, "Column" + (j + subcnt), subCell[i]._getDisplayText(k) + delimiter + style_name);
+
+							var val = subCell[i]._getDisplayText(k);
+							if (exportObj._is_orgval) {
+								var cellinfo = subCell[i]._refobj;
+								if (cellinfo) {
+									val = cellinfo._getValue(k);
+								}
+							}
+
+							ds.setColumn(idx, "Column" + (j + subcnt), val + delimiter + style_name);
 						}
 					}
 				}
@@ -3053,6 +3153,7 @@ if (!nexacro.ExcelExportObject) {
 		else {
 			this._eof = true;
 			export_param = this.parent._argsParam;
+			export_dsparam = this.parent._argsDsParam;
 		}
 
 		ds_command.setColumn(0, "eof", this._eof);
@@ -3062,7 +3163,13 @@ if (!nexacro.ExcelExportObject) {
 		}
 
 		this._ds_response = new Dataset("RESPONSE");
-		this._transaction(this.id, exportObj._exporturl, "COMMAND=_ds_command STYLE=_ds_style CELL=_ds_cell", "_ds_response=RESPONSE", export_param, "_exportCallback", true, exportObj._commdataformat, exportObj._commcompress);
+
+		if (export_dsparam != undefined) {
+			this._transaction(this.id, exportObj._exporturl, "COMMAND=_ds_command STYLE=_ds_style CELL=_ds_cell" + " " + export_dsparam, "_ds_response=RESPONSE", export_param, "_exportCallback", true, exportObj._commdataformat, exportObj._commcompress);
+		}
+		else {
+			this._transaction(this.id, exportObj._exporturl, "COMMAND=_ds_command STYLE=_ds_style CELL=_ds_cell", "_ds_response=RESPONSE", export_param, "_exportCallback", true, exportObj._commdataformat, exportObj._commcompress);
+		}
 		return true;
 	};
 

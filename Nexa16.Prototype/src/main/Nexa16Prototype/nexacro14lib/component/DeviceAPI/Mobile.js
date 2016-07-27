@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -181,6 +181,8 @@ if (!nexacro.Device) {
 		};
 		nexacro.System.setOrientation = function (nOrientation) {
 		};
+		nexacro.System.getPackageVersion = function () {
+		};
 	}
 }
 
@@ -262,13 +264,7 @@ if (!nexacro.Sms) {
 	};
 
 	_pSms.sendMessage = function (strPhoneNumber, strMessage) {
-		if (nexacro.Device.curDevice == 0) {
-			if (nexacro.__getMobileProductType().toLowerCase() == "shw-m380s") {
-				this.sendUnsupportedFunc();
-				return false;
-			}
-		}
-		else {
+		if (nexacro.Device.curDevice != 0) {
 			if (nexacro.SystemType == "ipad") {
 				this.sendUnsupportedFunc();
 				return false;
@@ -347,10 +343,6 @@ if (!nexacro.Sms) {
 
 	_pSms.recvStart = function () {
 		if (nexacro.Device.curDevice == 0) {
-			if (nexacro.__getMobileProductType().toLowerCase() == "shw-m380s") {
-				this.sendUnsupportedFunc();
-				return;
-			}
 			var params = '""';
 			var jsonstr = '{"id":' + this._id + ', "div":"Sms", "method":"recvStart", "params":' + params + '}';
 			nexacro.Device.exec(jsonstr);
@@ -362,10 +354,6 @@ if (!nexacro.Sms) {
 
 	_pSms.recvStop = function () {
 		if (nexacro.Device.curDevice == 0) {
-			if (nexacro.__getMobileProductType().toLowerCase() == "shw-m380s") {
-				this.sendUnsupportedFunc();
-				return;
-			}
 			var params = '""';
 			var jsonstr = '{"id":' + this._id + ', "div":"Sms", "method":"recvStop", "params":' + params + '}';
 			nexacro.Device.exec(jsonstr);
@@ -377,11 +365,6 @@ if (!nexacro.Sms) {
 
 	_pSms.readMessageList = function () {
 		if (nexacro.Device.curDevice == 0) {
-			if (nexacro.__getMobileProductType().toLowerCase() == "shw-m380s" || 
-				nexacro.__getMobileProductType().toLowerCase() == "lg-su760") {
-				this.sendUnsupportedFunc();
-				return;
-			}
 			var params = '""';
 			var jsonstr = '{"id":' + this._id + ', "div":"Sms", "method":"readMessageList", "params":' + params + '}';
 			nexacro.Device.exec(jsonstr);
@@ -392,15 +375,7 @@ if (!nexacro.Sms) {
 	};
 
 	_pSms.deleteMessage = function (_id) {
-		if (nexacro.Device.curDevice == 0) {
-			if (nexacro.__getMobileProductType().toLowerCase() == "shw-m380s" || 
-				nexacro.__getMobileProductType().toLowerCase() == "shw-m250s" || 
-				nexacro.__getMobileProductType().toLowerCase() == "lg-su760") {
-				this.sendUnsupportedFunc();
-				return false;
-			}
-		}
-		else {
+		if (nexacro.Device.curDevice != 0) {
 			this.sendUnsupportedFunc();
 			return false;
 		}
@@ -2154,7 +2129,7 @@ if (!nexacro.Vibrator) {
 	};
 
 	_pVibrator.paramck_vibstartpos = function (v) {
-		if (!nexacro.Device.publicNumCheck(v)) {
+		if (!nexacro.Device.publicNumCheck(v) || Number(v) < 0) {
 			return false;
 		}
 		return true;
@@ -6280,7 +6255,7 @@ if (!nexacro.ExternalAPI) {
 	};
 
 	_pExternalAPI.isAccessible = function (strApplicationID) {
-		if (typeof (strApplicationID) == "undefined" || strApplicationID.length == 0) {
+		if (typeof (strApplicationID) == "undefined" || strApplicationID.length == 0 || typeof (strApplicationID) != "string") {
 			return false;
 		}
 		else {
@@ -6293,7 +6268,7 @@ if (!nexacro.ExternalAPI) {
 	};
 
 	_pExternalAPI.execExtAPI = function (strRecvID, strApplicationID, strAPI, strParams) {
-		if (typeof (strApplicationID) == "undefined" || strApplicationID.length == 0) {
+		if (typeof (strApplicationID) == "undefined" || strApplicationID.length == 0 || typeof (strApplicationID) != "string") {
 			return false;
 		}
 
@@ -6867,7 +6842,7 @@ if (nexacro.OS == "iOS" && !nexacro.LiteDBStatement) {
 				return false;
 			}
 		}
-		else if (strQuery) {
+		else {
 			if (typeof (strQuery) == "string" && strQuery.length > 0) {
 				this.query = strQuery;
 			}
@@ -6876,10 +6851,7 @@ if (nexacro.OS == "iOS" && !nexacro.LiteDBStatement) {
 			}
 		}
 
-		var retType = this.caheckTypeKeyword(this.query);
-		if (retType != 1) {
-			return false;
-		}
+
 
 		var retQuery = this.retQueryString(this.query);
 		var param_dataset = new nexacro.Dataset();
@@ -6899,7 +6871,7 @@ if (nexacro.OS == "iOS" && !nexacro.LiteDBStatement) {
 
 		{
 
-			var params = '{"query":"' + retQuery + '", "qType":"' + retType + '","parameters":' + JSON.stringify(param_parameters) + ',"paramdataset":' + nexacro.Device.DatasetToJSONString2(param_dataset) + ',"applyrowpos":' + param_applyrowpos + '}';
+			var params = '{"query":"' + retQuery + '","parameters":' + JSON.stringify(param_parameters) + ',"paramdataset":' + nexacro.Device.DatasetToJSONString2(param_dataset) + ',"applyrowpos":' + param_applyrowpos + '}';
 			var jsonstr = '{"id":' + this._id + ',"div":"SQLStatement", "method":"executeQuery", "params":' + params + '}';
 			nexacro.Device.exec(jsonstr);
 		}
@@ -6914,7 +6886,7 @@ if (nexacro.OS == "iOS" && !nexacro.LiteDBStatement) {
 				return false;
 			}
 		}
-		else if (strQuery) {
+		else {
 			if (typeof (strQuery) == "string" && strQuery.length > 0) {
 				this.query = strQuery;
 			}
@@ -6922,11 +6894,8 @@ if (nexacro.OS == "iOS" && !nexacro.LiteDBStatement) {
 				return false;
 			}
 		}
-		else {
-			return false;
-		}
 
-		var retType = this.caheckTypeKeyword(this.query);
+
 
 		var retQuery = this.retQueryString(this.query);
 
@@ -6947,7 +6916,7 @@ if (nexacro.OS == "iOS" && !nexacro.LiteDBStatement) {
 
 		{
 
-			var params = '{"query":"' + retQuery + '", "qType":"' + retType + '","parameters":' + JSON.stringify(param_parameters) + ',"paramdataset":' + nexacro.Device.DatasetToJSONString2(param_dataset) + ',"applyrowpos":' + param_applyrowpos + '}';
+			var params = '{"query":"' + retQuery + '","parameters":' + JSON.stringify(param_parameters) + ',"paramdataset":' + nexacro.Device.DatasetToJSONString2(param_dataset) + ',"applyrowpos":' + param_applyrowpos + '}';
 			var jsonstr = '{"id":' + this._id + ', "div":"SQLStatement", "method":"executeUpdate", "params":' + params + '}';
 			nexacro.Device.exec(jsonstr);
 		}
@@ -7198,6 +7167,7 @@ if (nexacro.OS == "iOS" && !nexacro.XPush) {
 		this.connectip = "";
 		this.connectport = "-1";
 		this.connectSuccess = false;
+		this.action;
 
 		this._event_list = {
 			"onsuccess" : 1, 
@@ -7363,6 +7333,7 @@ if (nexacro.OS == "iOS" && !nexacro.XPush) {
 			var layoutCheck = v.substring(0, 9);
 
 			if (layoutCheck.toLowerCase() != "%userapp%") {
+				this.action = "ERROR";
 				this._onerror({
 					errorcode : "-702"
 				});
@@ -7448,31 +7419,39 @@ if (nexacro.OS == "iOS" && !nexacro.XPush) {
 
 
 
-	_pXPush.subscribe = function (strCommand, strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack) {
+	_pXPush.subscribe = function (strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack) {
+		strCommand = "ADDF";
 		this.command(strCommand, strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack);
 	};
-	_pXPush.unsubscribe = function (strCommand, strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack) {
+	_pXPush.unsubscribe = function (strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack) {
+		strCommand = "DELF";
 		this.command(strCommand, strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack);
 	};
-	_pXPush.reqisterDevice = function (strCommand, strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack) {
+	_pXPush.registerDevice = function (strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack) {
+		strCommand = "RGST";
 		this.command(strCommand, strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack);
 	};
-	_pXPush.unregisterDevice = function (strCommand, strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack) {
+	_pXPush.unregisterDevice = function (strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack) {
+		strCommand = "UNRG";
 		this.command(strCommand, strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack);
 	};
-	_pXPush.reqisterTopic = function (strCommand, strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack) {
+	_pXPush.registerTopic = function (strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack) {
+		strCommand = "ADUI";
 		this.command(strCommand, strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack);
 	};
-	_pXPush.unreqisterTopic = function (strCommand, strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack) {
+	_pXPush.unregisterTopic = function (strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack) {
+		strCommand = "UNUI";
 		this.command(strCommand, strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack);
 	};
-	_pXPush.requestMessageCount = function (strCommand, strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack) {
+	_pXPush.requestMessageCount = function (strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack) {
+		strCommand = "MSGC";
 		this.command(strCommand, strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack);
 	};
 	_pXPush.command = function (strCommand, strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack) {
 		var cc = new nexacro.CommandControl();
 		var jsonstr;
 
+		this.action = strCommand;
 		cc.actiontype = strCommand;
 		cc.type = strType;
 		cc.callback = strCallBack;
@@ -7480,14 +7459,6 @@ if (nexacro.OS == "iOS" && !nexacro.XPush) {
 		cc.messagetype = strMessageType;
 		cc.objdataset = objDataset;
 		cc.objform = objForm;
-
-
-		if (this.connectSuccess == false) {
-			this._onerror({
-				errorcode : "-701"
-			});
-			return;
-		}
 
 		if (nRow != undefined) {
 			if ((+nRow) != (+nRow)) {
@@ -7568,7 +7539,8 @@ if (nexacro.OS == "iOS" && !nexacro.XPush) {
 						}
 						else {
 							if (strCommand == "ADDF") {
-								jsonstr = '{"id":' + this._id + ', "div":"XPush", "method":"ADDF", "params":' + JSON.stringify(cc) + '}';
+								var params = '{"type":"' + strType.toLowerCase() + '","parameters":' + JSON.stringify(cc) + '}';
+								jsonstr = '{"id":' + this._id + ', "div":"XPush", "method":"ADDF", "params":' + params + '}';
 								var i, duplicated = false;
 								for (var i = 0; i < this.commandlist.length; i++) {
 									var item = this.commandlist[i];
@@ -7583,16 +7555,12 @@ if (nexacro.OS == "iOS" && !nexacro.XPush) {
 							}
 							else if (strCommand == "DELF") {
 								jsonstr = '{"id":' + this._id + ', "div":"XPush", "method":"DELF", "params":' + JSON.stringify(cc) + '}';
-								var i, duplicated = false;
+								var i;
 								for (var i = 0; i < this.commandlist.length; i++) {
 									var item = this.commandlist[i];
 									if (item.equal(cc)) {
-										duplicated = true;
 										break;
 									}
-								}
-								if (duplicated) {
-									this.commandlist.splice(i, 1);
 								}
 							}
 						}
@@ -7600,22 +7568,52 @@ if (nexacro.OS == "iOS" && !nexacro.XPush) {
 				}
 			}
 			else if (strCommand == "ADUI") {
+				if (this.connectSuccess == false) {
+					this._onerror({
+						errorcode : "-1002"
+					});
+					return;
+				}
 				jsonstr = '{"id":' + this._id + ', "div":"XPush", "method":"ADUI", "params":' + JSON.stringify(cc) + '}';
 				this.commandlist.push(cc);
 			}
 			else if (strCommand == "UNUI") {
+				if (this.connectSuccess == false) {
+					this._onerror({
+						errorcode : "-1003"
+					});
+					return;
+				}
 				jsonstr = '{"id":' + this._id + ', "div":"XPush", "method":"UNUI", "params":' + JSON.stringify(cc) + '}';
 				this.commandlist.push(cc);
 			}
 			else if (strCommand == "MSGC") {
+				if (this.connectSuccess == false) {
+					this._onerror({
+						errorcode : "-1004"
+					});
+					return;
+				}
 				jsonstr = '{"id":' + this._id + ', "div":"XPush", "method":"MSGC", "params":' + JSON.stringify(cc) + '}';
 				this.commandlist.push(cc);
 			}
 			else if (strCommand == "RGST") {
+				if (this.connectSuccess == false) {
+					this._onerror({
+						errorcode : "-1001"
+					});
+					return;
+				}
 				jsonstr = '{"id":' + this._id + ', "div":"XPush", "method":"RGST", "params":' + JSON.stringify(cc) + '}';
 				this.commandlist.push(cc);
 			}
 			else if (strCommand == "UNRG") {
+				if (this.connectSuccess == false) {
+					this._onerror({
+						errorcode : "-1001"
+					});
+					return;
+				}
 				jsonstr = '{"id":' + this._id + ', "div":"XPush", "method":"UNRG", "params":' + JSON.stringify(cc) + '}';
 				this.commandlist.push(cc);
 			}
@@ -7679,6 +7677,7 @@ if (nexacro.OS == "iOS" && !nexacro.XPush) {
 			nexacro.Device.exec(jsonstr);
 		}
 		else {
+			this.action = "BYEC";
 			this._onerror({
 				errorcode : "-401"
 			});
@@ -7739,6 +7738,7 @@ if (nexacro.OS == "iOS" && !nexacro.XPush) {
 			nexacro.Device.exec(jsonstr);
 		}
 		else {
+			this.action = "RECT";
 			this._onerror({
 				errorcode : "-901"
 			});
@@ -7773,6 +7773,7 @@ if (nexacro.OS == "iOS" && !nexacro.XPush) {
 			}
 		}
 		else {
+			this.action = "REQD";
 			this._onerror({
 				errorcode : "-902"
 			});
@@ -7873,19 +7874,18 @@ if (nexacro.OS == "iOS" && !nexacro.XPush) {
 						paramRow = cr;
 					}
 					else if (cc.type == "replace") {
-						if (cc.row < cc.objdataset.getRowCount()) {
-							var cr = cc.objdataset.addRow();
-
-							for (colId in row) {
-								if (!row.hasOwnProperty(colId)) {
-									continue;
-								}
-								cc.objdataset.setColumn(cr, colId, nexacro.Device.decodeString(row[colId]));
-								paramAllColumns.push(colId);
-								paramChangeColumns.push(colId);
+						for (colId in row) {
+							if (!row.hasOwnProperty(colId)) {
+								continue;
 							}
-							paramRow = cr;
+							var value = cc.objdataset.getColumn(cc.row, colId);
+							if (value != nexacro.Device.decodeString(row[colId])) {
+								cc.objdataset.setColumn(cc.row, colId, nexacro.Device.decodeString(row[colId]));
+								paramChangeColumns.push(colId);
+								paramRow = cc.row;
+							}
 						}
+						paramAllColumns.push(colId);
 					}
 					else if (cc.type == "update") {
 						var cr = cc.objdataset.findRow(layoutKey, messageKey);
@@ -7923,7 +7923,7 @@ if (nexacro.OS == "iOS" && !nexacro.XPush) {
 									var value = cc.objdataset.getColumn(cr, colId);
 
 									if (value != row[colId]) {
-										if ((cc.check == "0") || ((checkFieldname == colId) && (value == cc.check))) {
+										if ((cc.check == "0") || (row[colId] == cc.check)) {
 											cc.objdataset.setColumn(cr, colId, nexacro.Device.decodeString(row[colId]));
 											temp.push(colId);
 										}
@@ -7996,25 +7996,40 @@ if (nexacro.OS == "iOS" && !nexacro.XPush) {
 
 		var command;
 		var listlength = this.commandlist.length;
-		for (var i = 0; i < listlength; i++) {
-			command = this.commandlist[i];
+		var index;
+
+		for (index = 0; index < listlength; index++) {
+			command = this.commandlist[index];
 			if (command.messagetype == objData.messagetype) {
 				if (command.messagekey == objData.messagekey) {
 					break;
 				}
 			}
+		}
+
+		if (index == listlength) {
 			command = null;
 		}
-
-		if (command) {
+		if (command && (objData.classtype == "DELF" || objData.classtype == "ADUI" || objData.classtype == "UNUI" || objData.classtype == "MSGC" || objData.classtype == "RGST " || objData.classtype == "UNRG")) {
 			command.actiontype = objData.classtype;
+			var e = new nexacro.XPushEventInfo("onsuccess", objData.reason, objData.serverip, objData.serverport, command, objData.action, pushmessageobject);
+			this.connectip = objData.serverip;
+			this.connectport = objData.serverport;
+
+			this._fire_onsuccess(this, e);
+			this.commandlist.splice(index, 1);
 		}
+		else {
+			if (command) {
+				command.actiontype = objData.classtype;
+			}
 
-		var e = new nexacro.XPushEventInfo("onsuccess", objData.reason, objData.serverip, objData.serverport, command, objData.action, pushmessageobject);
-		this.connectip = objData.serverip;
-		this.connectport = objData.serverport;
+			var e = new nexacro.XPushEventInfo("onsuccess", objData.reason, objData.serverip, objData.serverport, command, objData.action, pushmessageobject);
+			this.connectip = objData.serverip;
+			this.connectport = objData.serverport;
 
-		this._fire_onsuccess(this, e);
+			this._fire_onsuccess(this, e);
+		}
 	};
 
 	_pXPush._fire_onsuccess = function (objXPush, eXPushEventInfo) {
@@ -8025,9 +8040,6 @@ if (nexacro.OS == "iOS" && !nexacro.XPush) {
 	};
 
 	_pXPush._onerror = function (objData) {
-		this.errorcode = objData.errorcode;
-		this.errormsg = objData.errormsg;
-
 		var pushmessageobject = new Object();
 
 		pushmessageobject.messagetype = "";
@@ -8058,7 +8070,15 @@ if (nexacro.OS == "iOS" && !nexacro.XPush) {
 			}
 			command = null;
 		}
-		var errormsg = this._geterrormsg(this.errorcode);
+		var errormsg = this._geterrormsg(objData.errorcode);
+
+		if (objData.action === undefined) {
+			objData.action = this._getaction(this.action);
+		}
+
+		this.errorcode = objData.errorcode;
+		this.errormsg = errormsg;
+
 		var e = new nexacro.XPushErrorEventInfo("onerror", this.errorcode, errormsg, objData.serverip, objData.serverport, command, objData.action, pushmessageobject);
 
 		this.connectip = objData.serverip;
@@ -8098,6 +8118,51 @@ if (nexacro.OS == "iOS" && !nexacro.XPush) {
 		if (this.onrequestmessagecount && this.requestmessagecount._has_handlers) {
 			return this.onrequestmessagecount._fireEvent(this, eXPushRequestMessageCountEventInfo);
 		}
+	};
+
+	_pXPush._getaction = function (action) {
+		var pushaction;
+
+		switch (action) {
+			case "ERROR":
+				pushaction = -1;
+				break;
+			case "AUTH":
+				pushaction = nexacro.XPushAction.AUTH;
+				break;
+			case "BYEC":
+				pushaction = nexacro.XPushAction.BYEC;
+				break;
+			case "ADDF":
+				pushaction = nexacro.XPushAction.ADDF;
+				break;
+			case "DELF":
+				pushaction = nexacro.XPushAction.DELF;
+				break;
+			case "REQD":
+				pushaction = nexacro.XPushAction.REQD;
+				break;
+			case "RECT":
+				pushaction = nexacro.XPushAction.RECT;
+				break;
+			case "RGST":
+				pushaction = nexacro.XPushAction.RGST;
+				break;
+			case "UNRG":
+				pushaction = nexacro.XPushAction.UNRG;
+				break;
+			case "ADUI":
+				pushaction = nexacro.XPushAction.ADUI;
+				break;
+			case "UNUI":
+				pushaction = nexacro.XPushAction.UNUI;
+				break;
+			case "MSGC":
+				pushaction = nexacro.XPushAction.MSGC;
+				break;
+		}
+
+		return pushaction;
 	};
 
 	_pXPush._geterrormsg = function (errorcode) {
@@ -8279,7 +8344,10 @@ if (!nexacro.FakeXMLHttpRequest) {
 
 
 	_pFakeXMLHttpRequest.abort = function () {
-		return false;
+		var params = '{}';
+		var jsonstr = '{"id":' + this._id + ', "div":"FakeXMLHttpRequest", "method":"abort", "params":' + params + '}';
+
+		nexacro.Device.exec(jsonstr);
 	};
 
 	_pFakeXMLHttpRequest.getResponseHeader = function (header) {

@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -28,9 +28,7 @@ if (nexacro.OS == "Android" && nexacro.Browser == "Runtime") {
 	nexacro.DeviceI.prototype.exec = function (method) {
 		nexacro.__execMobileAPI(method);
 	};
-	nexacro.Application._callscript = function (script) {
-		eval(script);
-	};
+
 	nexacro.Application._callscript = function (script) {
 		eval(script);
 	};

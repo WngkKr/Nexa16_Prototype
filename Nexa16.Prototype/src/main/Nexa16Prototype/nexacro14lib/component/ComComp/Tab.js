@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -80,6 +80,8 @@ if (!nexacro.TabComponent) {
 
 		this._is_canchange = false;
 
+		this._is_scrollable = false;
+
 		this._accessibility_role = "tab";
 	};
 
@@ -112,7 +114,7 @@ if (!nexacro.TabComponent) {
 
 	_pTabComponent.set_visible = function (v) {
 		var child_list = this._child_list;
-		if (child_list && child_list.length == 0 && v) {
+		if (child_list && child_list.length == 0 && nexacro._toBoolean(v)) {
 			return;
 		}
 
@@ -660,6 +662,12 @@ if (!nexacro.TabComponent) {
 		if (border && border._top_width != 0) {
 			this._rearrangeBorder();
 		}
+
+		var buttonWidth = this._buttonWidth;
+		var buttonRect = this._buttonRect;
+		for (var i = 0; i < tabpagecnt; i++) {
+			buttonWidth[i] = buttonRect[i].right - buttonRect[i].left;
+		}
 	};
 
 
@@ -775,8 +783,10 @@ if (!nexacro.TabComponent) {
 				button_rect.right += maxHeight;
 			}
 			total_width = button_rect.right + bmright;
-		}
 
+			this._buttonRect[i] = button_rect;
+			this._buttonWidth[i] = button_rect.right - button_rect.left;
+		}
 
 		if ((total_width - bmright) >= maxWidth) {
 			if (this._isMultiLine()) {
@@ -941,8 +951,8 @@ if (!nexacro.TabComponent) {
 						break;
 					}
 
-					button_rect.left = inc_width + bmleft;
-					inc_width = button_rect.right = button_rect.left + bmright + (Math.floor(maxWidth * (this._buttonWidth[i] / total_buttonWidth)) | 0);
+					button_rect.left = inc_width;
+					inc_width = button_rect.right = button_rect.left + (Math.floor(maxWidth * (this._buttonWidth[i] / total_buttonWidth)) | 0);
 				}
 
 				if (buttonRect && buttonRect.length >= tabpagecnt) {
@@ -1215,7 +1225,7 @@ if (!nexacro.TabComponent) {
 			for (var i = 0; i < len; i++) {
 				tabButtons[i].set_visible(false);
 				if (isextrabutton) {
-					tabextrabuttons[i].set_visible(false);
+					tabextrabutton[i].set_visible(false);
 				}
 			}
 
@@ -1223,7 +1233,7 @@ if (!nexacro.TabComponent) {
 				this._drawTabButton(i);
 				tabButtons[i].set_visible(true);
 				if (isextrabutton) {
-					tabextrabuttons[i].set_visible(true);
+					tabextrabutton[i].set_visible(true);
 				}
 			}
 
@@ -1464,6 +1474,9 @@ if (!nexacro.TabComponent) {
 			}
 
 			total_width = button_rect.right + bmright;
+
+			this._buttonRect[i] = button_rect;
+			this._buttonWidth[i] = button_rect.right - button_rect.left;
 		}
 
 		if ((total_width - bmright) >= maxWidth) {
@@ -1543,23 +1556,22 @@ if (!nexacro.TabComponent) {
 				this._bSpin = false;
 			}
 			else {
-				this._scrollIndex = 0;
 				var spinsize;
 				spinsize = this._getSpinSize();
 
 				var tabs_width = clientWidth - (Math.ceil(this._getToolBarSize()) | 0) - (spinsize[0] * 2) - 2;
 
 				var tabindex = this.tabindex;
-				for (var i = 0; i <= tabindex; i++) {
-					var button_rect = buttonRect[i];
-					if (!button_rect) {
-						break;
-					}
 
-					if ((buttonRect[tabindex].right - button_rect.left + bmleft) < tabs_width) {
-						this._scrollIndex = i;
-						break;
-					}
+				var scrollidx = this._scrollIndex;
+
+				if (this._scrollIndex < 0 || this._scrollIndex >= this._child_list.length) {
+					scrollidx = this._child_list.length - 1;
+				}
+
+				var buttonRect_scroll = buttonRect[scrollidx];
+				if (!buttonRect_scroll) {
+					return;
 				}
 
 				var rcButton = {
@@ -1570,9 +1582,9 @@ if (!nexacro.TabComponent) {
 				};
 
 				rcButton.left = maxWidth - spinsize[0] * 2 - 2;
-				rcButton.top = buttonRect[this._scrollIndex].top + 2;
+				rcButton.top = buttonRect_scroll.top + 2;
 				rcButton.right = maxWidth - spinsize[0] - 2;
-				rcButton.bottom = buttonRect[this._scrollIndex].top + spinsize[1] + 2;
+				rcButton.bottom = buttonRect_scroll.top + spinsize[1] + 2;
 
 				this.spinupbutton.move(rcButton.left, rcButton.top, rcButton.right - rcButton.left, rcButton.bottom - rcButton.top);
 				this.spinupbutton.set_visible(true);
@@ -1585,9 +1597,9 @@ if (!nexacro.TabComponent) {
 				}
 
 				rcButton.left = maxWidth - spinsize[0];
-				rcButton.top = buttonRect[this._scrollIndex].top + 2;
+				rcButton.top = buttonRect[scrollidx].top + 2;
 				rcButton.right = maxWidth;
-				rcButton.bottom = buttonRect[this._scrollIndex].top + spinsize[1] + 2;
+				rcButton.bottom = buttonRect[scrollidx].top + spinsize[1] + 2;
 
 				var spinpos = this.spindownbutton.position;
 
@@ -1676,6 +1688,9 @@ if (!nexacro.TabComponent) {
 		var page_t = pagerect.top + b_top + m_t;
 		var page_w = pagerect.right - b_right - pagerect.left - b_left - m_r - m_l;
 		var page_h = pagerect.bottom - pagerect.top - b_bottom - b_top - m_b - m_t;
+		if (page_h < 0) {
+			page_h = 0;
+		}
 		var child_list = this._child_list;
 		for (var i = 0; i < tabpagecnt; i++) {
 			var pagecontrol = child_list[i];
@@ -1765,6 +1780,9 @@ if (!nexacro.TabComponent) {
 				if (this._isRotateText()) {
 					if (max_txt_width < rtText.right - rtText.left) {
 						max_txt_width = rtText.right - rtText.left;
+
+						total_height = 0;
+
 						i = -1;
 						continue;
 					}
@@ -1774,6 +1792,9 @@ if (!nexacro.TabComponent) {
 				else {
 					if (max_txt_height < rtText.bottom - rtText.top) {
 						max_txt_height = rtText.bottom - rtText.top;
+
+						total_height = 0;
+
 						i = -1;
 						continue;
 					}
@@ -1939,8 +1960,15 @@ if (!nexacro.TabComponent) {
 						break;
 					}
 
+					max_txt_height = button_rect.bottom - button_rect.top;
+
 					button_rect.top = inc_height;
-					inc_height = button_rect.bottom = button_rect.bottom * maxHeight / total_height;
+
+					inc_height = button_rect.bottom = (Math.floor(button_rect.bottom * maxHeight / total_height) | 0);
+
+					if (max_txt_height < (button_rect.bottom - button_rect.top)) {
+						button_rect.right = button_rect.right - max_txt_height + (button_rect.bottom - button_rect.top);
+					}
 				}
 
 				if (buttonRect && buttonRect.length >= tabpagecnt) {
@@ -2005,11 +2033,11 @@ if (!nexacro.TabComponent) {
 				var page_ad_w = pagecontrol._adjust_width;
 				var page_ad_h = pagecontrol._adjust_height;
 
-				if (page_ad_w != 0 || page_ad_h != 0) {
-					pagecontrol.move(page_l, page_t, page_ad_w, page_ad_h);
+				if (pagecontrol._adjust_left != page_l || pagecontrol._adjust_top != page_t || pagecontrol._getPosRight() != page_w || pagecontrol._getPosBottom() != page_h) {
+					pagecontrol.move(page_l, page_t, page_w, page_h);
 				}
 				else {
-					pagecontrol.move(page_l, page_t, page_w, page_h);
+					pagecontrol.move(page_l, page_t, page_ad_w, page_ad_h);
 				}
 			}
 		}
@@ -2270,8 +2298,15 @@ if (!nexacro.TabComponent) {
 						break;
 					}
 
+					max_txt_height = button_rect.bottom - button_rect.top;
+
 					button_rect.top = inc_height;
-					inc_height = button_rect.bottom = button_rect.bottom * maxHeight / total_height;
+
+					inc_height = button_rect.bottom = (Math.floor(button_rect.bottom * maxHeight / total_height) | 0);
+
+					if (max_txt_height <= (button_rect.bottom - button_rect.top)) {
+						button_rect.left = button_rect.left - (button_rect.bottom - button_rect.top - max_txt_height);
+					}
 				}
 
 				if (buttonRect && buttonRect.length >= tabpagecnt) {
@@ -2329,6 +2364,10 @@ if (!nexacro.TabComponent) {
 			m_b = margin.bottom;
 		}
 
+		var page_l = pagerect.left + b_left + m_l;
+		var page_t = pagerect.top + b_top + m_t;
+		var page_w = pagerect.right - b_right - pagerect.left - b_left - m_r - m_l;
+		var page_h = pagerect.bottom - pagerect.top - b_bottom - b_top - m_b - m_t;
 		var child_list = this._child_list;
 		for (var i = 0; i < tabpagecnt; i++) {
 			var pagecontrol = child_list[i];
@@ -2336,11 +2375,11 @@ if (!nexacro.TabComponent) {
 				var page_ad_w = pagecontrol._adjust_width;
 				var page_ad_h = pagecontrol._adjust_height;
 
-				if (page_ad_w != 0 || page_ad_h != 0) {
-					pagecontrol.move(pagerect.left + m_l + b_left, pagerect.top + m_t + b_top, page_ad_w, page_ad_h);
+				if (pagecontrol._adjust_left != page_l || pagecontrol._adjust_top != page_t || pagecontrol._getPosRight() != page_w || pagecontrol._getPosBottom() != page_h) {
+					pagecontrol.move(page_l, page_t, page_w, page_h);
 				}
 				else {
-					pagecontrol.move(pagerect.left + m_l + b_left, pagerect.top + m_t + b_top, pagerect.right - pagerect.left - m_l - m_r - b_right - b_left, pagerect.bottom - pagerect.top - m_t - m_b - b_bottom - b_top);
+					pagecontrol.move(page_l, page_t, page_ad_w, page_ad_h);
 				}
 			}
 		}
@@ -2414,6 +2453,13 @@ if (!nexacro.TabComponent) {
 		var strTitle = this._child_list[index].text.toString();
 		var font = this.on_find_CurrentStyle_font("normal");
 
+		if (index == this.tabindex) {
+			var btncontrol = this._tabButtons[index];
+			if (btncontrol != null && (btncontrol._pseudo == "focused" || btncontrol._pseudo == "selected")) {
+				font = this.on_find_CurrentStyle_font("selected");
+			}
+		}
+
 		var bpleft = 0, bpright = 0, bptop = 0, bpbottom = 0;
 		if (btnpadding) {
 			bpleft = btnpadding.left;
@@ -2433,17 +2479,24 @@ if (!nexacro.TabComponent) {
 				var ret = strTitle.search("\n");
 			}
 			multi = (ret == -1) ? false : true;
+			var letterspace = this.on_find_CurrentStyle_letterspace(this._pseudo);
 
-			var size = nexacro._getTextSize2(strTitle, font, multi);
+			var size = nexacro._getTextSize2(letterspace, strTitle, font, multi);
 
 			if (btnbackground && (btnbackground.repeat == "stretch" || btnbackground.repeat == "quad")) {
+				var btn_height = (Math.ceil(size[1]) | 0) + bptop + bpbottom;
 				if (this._imageheight == 0) {
 					rc.right = (Math.ceil(size[0]) | 0) + bpleft + bpright;
-					rc.bottom = (Math.ceil(size[1]) | 0);
+					rc.bottom = btn_height;
 				}
 				else {
 					rc.right = (Math.ceil(size[0]) | 0) + bpleft + bpright;
-					rc.bottom = this._imageheight;
+					if (btn_height < this._imageheight) {
+						rc.bottom = this._imageheight;
+					}
+					else {
+						rc.bottom = btn_height;
+					}
 				}
 			}
 			else {
@@ -2678,6 +2731,8 @@ if (!nexacro.TabComponent) {
 
 		var oldindex = this.tabindex;
 		if (oldindex > -1 && this.enableevent) {
+			this._tabButtons[index]._stat_change("notselect", "normal");
+
 			var ret = this.on_fire_canchange(this, index, oldindex);
 			if (ret == false) {
 				this._tabButtons[index]._stat_change("notselect", "normal");
@@ -2718,13 +2773,16 @@ if (!nexacro.TabComponent) {
 				newtabpage.set_visible(true);
 			}
 
-			if (newtabpage._isLoaded == false && this.preload == false) {
-				if (newtabpage.url != "" && newtabpage.url != undefined) {
-					newtabpage._url = newtabpage.url;
-					newtabpage.on_apply_url(false);
+			if (!this.preload) {
+				if (newtabpage._isLoaded == false) {
+					if (newtabpage.url != "" && newtabpage.url != undefined) {
+						newtabpage._url = newtabpage.url;
+						newtabpage.on_apply_url(false);
 
-					newtabpage._isLoaded = true;
+						newtabpage._isLoaded = true;
+					}
 				}
+				this._createTabpage(index, newtabpage.id, newtabpage);
 			}
 
 			newtabbtn._setAccessibilityStatSelected(true);
@@ -2799,13 +2857,15 @@ if (!nexacro.TabComponent) {
 		this._drawButton();
 		this._rearrangeBorder();
 
-		if (this._isBtnFocusAcceptable() && this._focusobj instanceof nexacro.TabButtonCtrl) {
-			this._focusobj._setFocus(false);
+		var lastfocus = this._find_lastFocused();
+		if (lastfocus == this) {
+			if (this._isBtnFocusAcceptable() && this._focusobj instanceof nexacro.TabButtonCtrl) {
+				this._focusobj._setFocus(false);
+			}
+			else {
+				this._set_child_focus();
+			}
 		}
-		else {
-			this._set_child_focus();
-		}
-
 		if (nexacro._accessibilitywholereadtype > 1) {
 			newtabpage._playAccessibilityWholeReadLabel("wholeread");
 		}
@@ -3122,10 +3182,14 @@ if (!nexacro.TabComponent) {
 		this._rearrangeButton();
 		this._drawButton();
 
+		var bckscrollIndex = this._scrollIndex;
 		this._resetScrollIndex(this.tabindex);
 
 		if (this._pre_scrollIndex != -1) {
 			this._setScrollIndex(this._pre_scrollIndex);
+		}
+		else if (bckscrollIndex != this._scrollIndex) {
+			this._setScrollIndex(bckscrollIndex);
 		}
 
 		this._rearrangeButton();
@@ -3222,16 +3286,16 @@ if (!nexacro.TabComponent) {
 					else if (this._focusobj instanceof nexacro.TabButtonCtrl) {
 						if (shift_key == false) {
 							var tabpage = this._child_list[tabindex];
-							if (tabpage && tabpage._last_focused) {
-								tabpage._last_focused = null;
-							}
-							var newfocus_comp = tabpage._searchNextTabFocus(null, undefined, undefined, false);
 
-							if (newfocus_comp && newfocus_comp[0]) {
-								newfocus_comp[0]._setFocus(true, 0, true);
-								this._setFocusTabButton(-1, this.tabindex);
+							if (tabpage) {
+								var newfocus_comp = tabpage._getTabOrderFirst();
+
+								if (newfocus_comp) {
+									newfocus_comp._setFocus(true, 0, true);
+									this._setFocusTabButton(-1, this.tabindex);
+								}
+								this._setTabFocusObj(tabpage);
 							}
-							this._setTabFocusObj(tabpage);
 						}
 						else {
 							return false;
@@ -3249,12 +3313,12 @@ if (!nexacro.TabComponent) {
 						if (!dlgc || (dlgc.want_tab == false)) {
 							if (shift_key == false) {
 								if (page_last_comp == null && page_first_comp) {
-									page_first_comp._setFocus(false, 0);
+									page_first_comp._setFocus(true, 0);
 								}
 								else {
 									var page_next_comp = this._focusobj._searchNextTabFocus(page_last_comp);
 									if (page_next_comp && page_next_comp[0]) {
-										page_next_comp[0]._setFocus(false, 0);
+										page_next_comp[0]._setFocus(true, 0);
 									}
 								}
 							}
@@ -3266,7 +3330,7 @@ if (!nexacro.TabComponent) {
 									else {
 										this._setTabFocusObj(this);
 									}
-									this._focusobj._setFocus(false, 1);
+									this._focusobj._setFocus(true, 1);
 								}
 								else if (page_last_comp == page_first_comp) {
 									if (this._isBtnFocusAcceptable()) {
@@ -3275,12 +3339,12 @@ if (!nexacro.TabComponent) {
 									else {
 										this._setTabFocusObj(this);
 									}
-									this._focusobj._setFocus(false, 1);
+									this._focusobj._setFocus(true, 1);
 								}
 								else {
 									var page_prev_comp = this._focusobj._searchPrevTabFocus(page_last_comp);
 									if (page_prev_comp && page_prev_comp[0]) {
-										page_prev_comp[0]._setFocus(false, 1);
+										page_prev_comp[0]._setFocus(true, 1);
 									}
 								}
 							}
@@ -3773,7 +3837,8 @@ if (!nexacro.Tab) {
 	_pTab.setWaitCursor = null;
 
 
-	_pTab._accessibility_tabindex = 0;
+	_pTab._accessibility_tabindex = -1;
+	_pTab._accessibility_is_next = false;
 
 	_pTab.on_create_custom_style = function () {
 		return new nexacro.Tab_Style(this);
@@ -3790,6 +3855,12 @@ if (!nexacro.Tab) {
 		var font = this.on_find_CurrentStyle_font(pseudo);
 		if (curr_style.font != font) {
 			curr_style.font = font;
+			change = true;
+		}
+
+		var letterspace = this.on_find_CurrentStyle_letterspace(pseudo);
+		if (curr_style.letterspace != letterspace) {
+			curr_style.letterspace = letterspace;
 			change = true;
 		}
 
@@ -3965,6 +4036,17 @@ if (!nexacro.Tab) {
 		}
 	};
 
+	_pTab.on_update_style_letterspace = function () {
+		var tabbtn = null;
+		var len = this._tabButtons.length;
+		for (var i = 0; i < len; i++) {
+			tabbtn = this._tabButtons[i];
+			tabbtn.on_apply_style_letterspace(this.style.letterspace);
+		}
+		this._updateAllTabButton();
+		this._recalcLayout();
+	};
+
 	_pTab.on_apply_style_buttonbackground = function (v) {
 		this._updateAllTabButton();
 	};
@@ -4082,6 +4164,7 @@ if (!nexacro.Tab) {
 
 			this.on_apply_tabindex();
 			this.on_apply_prop_rtldirection();
+			this.on_apply_style_letterspace(this.currentstyle.letterspace);
 		}
 	};
 
@@ -4437,6 +4520,11 @@ if (!nexacro.Tab) {
 		this._tabbutton_obj = obj;
 		var ret = nexacro.Component.prototype._on_lbuttondown.call(this, elem, button, alt_key, ctrl_key, shift_key, canvasX, canvasY, screenX, screenY, event_bubbles, fire_comp, refer_comp);
 		this._setTabFocusObj(this._tabButtons[obj._index]);
+
+		if (this._isBtnFocusAcceptable() && this._child_list[obj._index]) {
+			this._child_list[obj._index]._last_focused = null;
+		}
+
 		return ret;
 	};
 
@@ -4444,6 +4532,9 @@ if (!nexacro.Tab) {
 		this._tabbutton_obj = obj;
 		var ret = nexacro.Component.prototype._on_touchstart.call(this, touch_manager, touchinfos, changedtouchinfos, event_bubbles, fire_comp, refer_comp);
 		this._setTabFocusObj(obj);
+		if (this._isBtnFocusAcceptable() && this._child_list[obj._index]) {
+			this._child_list[obj._index]._last_focused = null;
+		}
 		return ret;
 	};
 
@@ -4529,6 +4620,11 @@ if (!nexacro.Tab) {
 	};
 
 	_pTab._getTabOrderFirst = function () {
+		if (nexacro._enableaccessibility && nexacro._accessibilitytype == 5 && this._accessibility_is_next) {
+			this._accessibility_is_next = false;
+			return null;
+		}
+
 		if (this._isBtnFocusAcceptable()) {
 			return this._tabButtons[this.tabindex];
 		}
@@ -4742,8 +4838,9 @@ if (!nexacro.Tab) {
 
 	_pTab.insertTabpage = function (strID, nIndex, strURL, strText) {
 		if (!this._is_created) {
-			this.show();
+			return -1;
 		}
+
 		var _nIndex = parseInt(nIndex) | 0;
 		var count = this._child_list.length;
 		var oldtabidx = 0;
@@ -4843,6 +4940,7 @@ if (!nexacro.Tab) {
 		tabbutton.createComponent();
 
 		pTabPage._index = _nIndex;
+
 		if (strText) {
 			pTabPage.set_text(strText);
 		}
@@ -5035,11 +5133,16 @@ if (!nexacro.Tab) {
 
 
 		var newtabpage = child_list[this.tabindex];
-		if (newtabpage && newtabpage._isLoaded == false && this.preload == false) {
-			if (newtabpage.url != "" && newtabpage.url != undefined) {
-				newtabpage._url = newtabpage.url;
-				newtabpage.on_apply_url(false);
-				newtabpage._isLoaded = true;
+		if (newtabpage) {
+			if (!this.preload) {
+				if (newtabpage._isLoaded == false) {
+					if (newtabpage.url != "" && newtabpage.url != undefined) {
+						newtabpage._url = newtabpage.url;
+						newtabpage.on_apply_url(false);
+						newtabpage._isLoaded = true;
+					}
+				}
+				this._createTabpage(this.tabindex, newtabpage.id, newtabpage);
 			}
 		}
 
@@ -5175,6 +5278,7 @@ if (!nexacro.Tab) {
 		var tobuttonheight = buttonHeight[nToIndex];
 		var frombuttonheight = buttonHeight[nFromIndex];
 
+
 		if (nFromIndex < nToIndex) {
 			for (var i = nFromIndex + 1; i < len; i++) {
 				child_list[i - 1] = child_list[i];
@@ -5216,6 +5320,8 @@ if (!nexacro.Tab) {
 			buttonWidth[i] = frombuttonwidth;
 			buttonHeight[i] = frombuttonheight;
 		}
+
+		this.components = child_list;
 
 		len = child_list.length;
 		for (var i = 0; i < len; i++) {
@@ -5288,6 +5394,7 @@ if (!nexacro.Tab) {
 		}
 
 		obj._refform = this;
+		obj._index = this._child_list ? this._child_list.length : 0;
 
 		this[id] = obj;
 		this.all.add_item(id, obj);
@@ -5320,6 +5427,9 @@ if (!nexacro.Tab) {
 		var len = tabpages.length;
 		for (var i = 0; i < len; i++) {
 			var tabpage = tabpages[i];
+			if (!tabpage._isLoaded) {
+				continue;
+			}
 			var tabpage_msg = tabpage._on_beforeclose(root_closing_comp);
 			msg = this._appendBeforeCloseMsg(msg, tabpage_msg);
 		}
@@ -5336,24 +5446,24 @@ if (!nexacro.Tab) {
 		var len = tabpages.length;
 		for (var i = 0; i < len; i++) {
 			var tabpage = tabpages[i];
+			if (!tabpage._isLoaded) {
+				continue;
+			}
 			tabpage._on_close();
 		}
 	};
 
 	_pTab.on_apply_addChild = function () {
 		var id, obj;
-
 		var comps = this.components;
 		var len = comps.length;
 		var pseudo = this._pseudo;
-		for (var i = 0; i < len; i++) {
-			id = comps[i].id;
-			obj = comps[i];
 
+
+		for (var i = 0; i < len; i++) {
 			var tabbutton = this._createTabbutton(i);
 			tabbutton.createComponent();
 			this._tabButtonBorders[i].createComponent();
-			this._createTabpage(i, id, obj);
 		}
 
 		this._rearrangeButton();
@@ -5364,11 +5474,11 @@ if (!nexacro.Tab) {
 
 		this._drawButton();
 
-		len = comps.length;
+
 		var isextrabutton = this._isExtraButton();
 		for (var i = 0; i < len; i++) {
-			id = comps[i].id;
 			obj = comps[i];
+			id = obj.id;
 
 			if (isextrabutton) {
 				var extrabutton = this._createtabextrabutton(i);
@@ -5378,21 +5488,21 @@ if (!nexacro.Tab) {
 			}
 
 			if (this._setidx == i) {
-				obj._url = obj.url;
-				obj._isLoaded = true;
-				obj.set_visible(true);
-				obj.show();
-				obj.initProperties();
+				if (obj.url != "" && obj.url != undefined) {
+					obj._url = obj.url;
+					obj._isLoaded = true;
+				}
 
-				this.on_apply_tabindex();
+				obj.set_visible(true);
+				this._createTabpage(i, id, obj);
+				obj.initProperties();
 			}
 			else {
+				if (this.preload) {
+					this._createTabpage(i, id, obj);
+				}
+
 				obj.set_visible(false);
-			}
-
-
-			if (this.preload) {
-				obj.show();
 			}
 		}
 
@@ -5427,7 +5537,7 @@ if (!nexacro.Tab) {
 
 		var imagesize = null;
 
-		imagesize = nexacro._getImageSize(back.image, this._saveImageSize, this);
+		imagesize = nexacro._getImageSize(back.image, this._saveImageSize, this, undefined, back.image);
 		if (imagesize) {
 			this._imagewidth = imagesize.width;
 			this._imageheight = imagesize.height;
@@ -5633,7 +5743,9 @@ if (!nexacro.Tab) {
 		obj._applyClientPadding = false;
 		obj._preLoad(this.preload);
 
-		obj.createComponent();
+		if (!obj._control_element) {
+			obj.createComponent();
+		}
 
 		obj.on_apply_prop_tooltip();
 	};
@@ -5654,22 +5766,26 @@ if (!nexacro.Tab) {
 		var next_obj = null;
 		var tabindex = this._getTabIndex();
 
-		if (this._accessibility_tabindex == tabindex) {
-			if (direction) {
+		if (direction) {
+			if (this._accessibility_tabindex == tabindex) {
 				next_obj = this._child_list[tabindex];
 			}
 			else {
-				this._accessibility_tabindex--;
-			}
-		}
-		else {
-			if (direction) {
 				this._accessibility_tabindex++;
 				if (this._accessibility_tabindex < this.tabpages.length) {
 					next_obj = this._tabButtons[this._accessibility_tabindex];
 				}
 				else {
+					this._accessibility_tabindex = -1;
+					this._accessibility_is_next = true;
+					next_obj = this.parent._searchNextTabFocus(this, undefined, undefined, true)[0];
 				}
+			}
+		}
+		else {
+			if (this._accessibility_tabindex == tabindex) {
+				this._accessibility_tabindex--;
+				next_obj = this._tabButtons[this._accessibility_tabindex];
 			}
 			else {
 				this._accessibility_tabindex--;
@@ -5689,10 +5805,6 @@ if (!nexacro.Tab) {
 			return true;
 		}
 		return false;
-	};
-
-	_pTab._setAccessibilityNotifyEvent = function (direction) {
-		nexacro.Component.prototype._setAccessibilityNotifyEvent.call(this, direction);
 	};
 
 	_pTab._setRtlDirectionOfComps = function (comps) {
@@ -5899,6 +6011,24 @@ if (!nexacro.TabExtraButtonCtrl) {
 			nexacro.Button.prototype.on_apply_style_font.call(this, font);
 		}
 	};
+
+	_pTabExtraButtonCtrl.on_apply_style_letterspace = function (letterspace) {
+		var extrabuttons = this.parent._tabextrabuttons;
+		var len = extrabuttons ? extrabuttons.length : 0;
+		if (len > 0) {
+			if (this._index == 0 && !extrabuttons[this._index]._flag) {
+				for (var i = 0; i < len; i++) {
+					extrabuttons[i]._flag = true;
+					extrabuttons[i].on_apply_style_letterspace(letterspace);
+					extrabuttons[i]._flag = false;
+				}
+				return;
+			}
+
+			nexacro.Button.prototype.on_apply_style_letterspace.call(this, letterspace);
+		}
+	};
+
 	_pTabExtraButtonCtrl.on_apply_style_gradation = function (gradation) {
 		var extrabuttons = this.parent._tabextrabuttons;
 		var len = extrabuttons ? extrabuttons.length : 0;
@@ -6064,6 +6194,9 @@ if (!nexacro.TabButtonCtrl) {
 		return this.parent.on_find_CurrentStyle_font(pseudo);
 	};
 
+	_pTabButtonCtrl.on_find_CurrentStyle_letterspace = function (pseudo) {
+		return this.parent.on_find_CurrentStyle_letterspace(pseudo);
+	};
 
 	_pTabButtonCtrl.on_apply_style_border = function (border) {
 		var control_elem = this._control_element;
@@ -6107,8 +6240,18 @@ if (!nexacro.TabButtonCtrl) {
 		}
 	};
 
+	_pTabButtonCtrl.on_apply_style_letterspace = function (letterspace) {
+		if (this._text_elem) {
+			this._text_elem.setElementLetterSpace(letterspace);
+			if (this._img_elem && this.currentstyle.align && this.currentstyle.imagealign) {
+				this._updateElementPositions(this.currentstyle.align, this.currentstyle.imagealign);
+			}
+		}
+	};
+
 	_pTabButtonCtrl.on_change_status = function (status, pseudo) {
 		var objTab = this.parent;
+
 		if ((pseudo == "normal" || pseudo == "mouseover" || pseudo == "pushed") && (objTab._tabButtons && objTab._tabButtons[objTab.tabindex] && this.name == objTab._tabButtons[objTab.tabindex].name)) {
 			status = "select";
 		}
@@ -6116,6 +6259,7 @@ if (!nexacro.TabButtonCtrl) {
 		if (status == "") {
 			this._status = "enable";
 		}
+
 
 		switch (status) {
 			case "enable":
@@ -6282,8 +6426,20 @@ if (!nexacro.TabButtonCtrl) {
 	};
 
 	_pTabButtonCtrl._setAccessibilityNotifyEvent = function (direction) {
-		this.parent._accessibility_tabindex = this._index;
-		return nexacro.Component.prototype._setAccessibilityNotifyEvent.call(this, direction);
+		var tab_comp = this.parent;
+		if (tab_comp._accessibility_tabindex < 0 && tab_comp._tabButtons && tab_comp._tabButtons.length > 0) {
+			if (direction) {
+				tab_comp._accessibility_tabindex = 0;
+			}
+			else {
+				tab_comp._accessibility_tabindex = tab_comp.tabpages.length - 1;
+			}
+			return tab_comp._tabButtons[tab_comp._accessibility_tabindex]._setAccessibilityNotifyEvent(direction);
+		}
+		else {
+			tab_comp._accessibility_tabindex = this._index;
+			return nexacro.Component.prototype._setAccessibilityNotifyEvent.call(this, direction);
+		}
 	};
 
 	_pTabButtonCtrl._on_sys_lbuttondown = function (node, e) {
@@ -6301,6 +6457,7 @@ if (!nexacro.TabButtonCtrl) {
 		var ret = this.parent._on_btn_lbuttondown(this, elem, button, alt_key, ctrl_key, shift_key, canvasX + this._adjust_left, canvasY, screenX + this._adjust_left, screenY, event_bubbles, fire_comp, refer_comp);
 
 
+
 		return ret;
 	};
 
@@ -6315,7 +6472,22 @@ if (!nexacro.TabButtonCtrl) {
 	_pTabButtonCtrl._on_focus = function (self_flag, evt_name, lose_focus, refer_lose_focus, new_focus, refer_new_focus) {
 		nexacro.Component.prototype._on_focus.call(this, self_flag, evt_name, lose_focus, refer_lose_focus, new_focus, refer_new_focus);
 		this._setTabFocusObj(this);
+
+		if (this.parent._isBtnFocusAcceptable()) {
+			this.parent._child_list[this._index]._last_focused = null;
+		}
 	};
+
+	_pTabButtonCtrl._on_touch_lbuttondown = function (elem, button, alt_key, ctrl_key, shift_key, canvasX, canvasY, screenX, screenY, event_bubbles, fire_comp, refer_comp, isTap) {
+		if (!this._is_alive) {
+			return;
+		}
+
+		this._on_focus(true);
+
+		var ret = this.parent._on_btn_lbuttondown(this, elem, button, alt_key, ctrl_key, shift_key, canvasX + this._adjust_left, canvasY, screenX + this._adjust_left, screenY, event_bubbles, fire_comp, refer_comp);
+	};
+
 
 	_pTabButtonCtrl._setTabFocusObj = function (focusobj) {
 		if (!this._is_alive) {
@@ -6601,7 +6773,12 @@ if (!nexacro.Tabpage) {
 	};
 
 	_pTabPage.set_text = function (v) {
-		this.text = nexacro._toString(v);
+		var text = nexacro._toString(v);
+		if (this.text == text) {
+			return;
+		}
+
+		this.text = text;
 
 		var TabComp = this.parent;
 		var btn = null;
@@ -6658,6 +6835,9 @@ if (!nexacro.Tabpage) {
 					}
 				}
 			}
+		}
+		else {
+			this._resetTabPage(v);
 		}
 	};
 
@@ -6982,6 +7162,11 @@ if (!nexacro.Tabpage) {
 		var last_notify = _window._accessibility_last_focused_comp;
 		if (direction) {
 			next_obj = this._searchNextTabFocus(last_notify, undefined, undefined, true)[0];
+			if (next_obj.parent != fire_comp) {
+				index++;
+				tab_comp._accessibility_tabindex = index;
+				next_obj = (button_len > index) ? tab_comp._tabButtons[index] : next_obj;
+			}
 		}
 		else {
 			next_obj = this._searchPrevTabFocus(last_notify, undefined, undefined, true)[0];
@@ -6999,11 +7184,25 @@ if (!nexacro.Tabpage) {
 
 	_pTabPage._setAccessibilityNotifyEvent = function (direction) {
 		var next_obj = null;
+		var index = this._index;
+		var tab_comp = this.parent;
+		var tabindex = tab_comp._getTabIndex();
+
 		if (direction) {
-			next_obj = this._getTabOrderFirst(true, false);
+			if (index != tabindex) {
+				next_obj = tab_comp._tabButtons[index];
+			}
+			else {
+				next_obj = this._getTabOrderFirst(true, false);
+			}
 		}
 		else {
-			next_obj = this._getTabOrderLast(true, false);
+			if (index != tabindex) {
+				next_obj = tab_comp._tabButtons[index];
+			}
+			else {
+				next_obj = this._getTabOrderLast(true, false);
+			}
 		}
 
 		if (next_obj) {

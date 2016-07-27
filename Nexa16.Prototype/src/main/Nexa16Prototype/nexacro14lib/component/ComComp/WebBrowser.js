@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -113,9 +113,11 @@ if (!nexacro.WebBrowser) {
 
 			nexacro._observeSysEvent(ifrm_elem._handle, "mouseover", "onmouseover", this._webbrowser_mouseover);
 		}
+
 		if (this._url === "") {
 			this._url = "about:blank";
 		}
+
 		this.on_apply_style_url();
 		this._setAccessibilityOutfocusAction();
 	};
@@ -129,6 +131,12 @@ if (!nexacro.WebBrowser) {
 			this.document = null;
 			ifrm_elem.destroy();
 			this._ifrm_elem = null;
+		}
+
+		var text_elem = this._text_elem;
+		if (text_elem) {
+			text_elem.destroy();
+			this._text_elem = null;
 		}
 	};
 
@@ -308,6 +316,28 @@ if (!nexacro.WebBrowser) {
 			return;
 		}
 
+		if (nexacro._enableaccessibility && nexacro._accessibilitytype == 4) {
+			var control_elem = this.getElement();
+			if (control_elem) {
+				if (this._url == "about:blank") {
+					if (!this._text_elem) {
+						this._text_elem = new nexacro.TextBoxElement(this.getElement());
+						this._text_elem.setElementSize(this._client_width, this._client_height);
+					}
+
+					this._text_elem.create();
+					this._text_elem._setElementAccessibilityRole();
+					this._text_elem._setElementAccessibilityLabel();
+				}
+				else {
+					if (this._text_elem) {
+						this._text_elem.destroy();
+						this._text_elem = null;
+					}
+				}
+			}
+		}
+
 		var ifrm_elem = this._ifrm_elem;
 		if (ifrm_elem) {
 			this._blockLoadFlag = false;
@@ -327,7 +357,7 @@ if (!nexacro.WebBrowser) {
 	_pWebBrowser.reload = function () {
 		var ifrm_elem = this._ifrm_elem;
 		if (ifrm_elem) {
-			if (this._isCrossDomain(this._current_url, this._getRefFormBaseUrl())) {
+			if (this._isCrossDomain(this._current_url)) {
 				var tmp_url = this._url;
 				ifrm_elem._setUrl("");
 				ifrm_elem._setUrl(tmp_url);
@@ -341,8 +371,8 @@ if (!nexacro.WebBrowser) {
 	_pWebBrowser.goback = function () {
 		var ifrm_elem = this._ifrm_elem;
 		if (ifrm_elem) {
-			if (!this._isCrossDomain(this._current_url, this._getRefFormBaseUrl())) {
-				ifrm_elem._setBack();
+			if (!this._isCrossDomain(this._current_url)) {
+				return ifrm_elem._setBack();
 			}
 		}
 	};
@@ -350,8 +380,8 @@ if (!nexacro.WebBrowser) {
 	_pWebBrowser.goforward = function () {
 		var ifrm_elem = this._ifrm_elem;
 		if (ifrm_elem) {
-			if (!this._isCrossDomain(this._current_url, this._getRefFormBaseUrl())) {
-				ifrm_elem._setForward();
+			if (!this._isCrossDomain(this._current_url)) {
+				return ifrm_elem._setForward();
 			}
 		}
 	};
@@ -400,21 +430,19 @@ if (!nexacro.WebBrowser) {
 		nexacro.Component.prototype.removeEventHandler.call(this, evt_id, func, target);
 	};
 
-	_pWebBrowser._isCrossDomain = function (url1, url2) {
-		if (url1 == "" || url2 == "") {
+	_pWebBrowser._isCrossDomain = function (target) {
+		if (target == "") {
 			return true;
 		}
-		if (url1.match(regExp)[4] == url2.match(regExp)[4]) {
-			return true;
+
+		var base = this._getRefFormBaseUrl();
+		if (base.match(/^(file):\/\//)) {
+			return false;
 		}
-	};
-	_pWebBrowser._isCrossDomain = function (url1, url2) {
-		if (url1 == "" || url2 == "") {
-			return true;
-		}
+
 		var regExp = /^(https?):\/\/([^:\/\s]+)(:([^\/]*))?((\/[^\s/\/]+)*)?\/?([^#\s\?]*)(\?([^#\s]*))?(#(\w*))?$/;
-		var u1 = url1.match(regExp);
-		var u2 = url2.match(regExp);
+		var u1 = target.match(regExp);
+		var u2 = base.match(regExp);
 		if (!u1 || !u2) {
 			return true;
 		}
@@ -450,4 +478,3 @@ if (!nexacro.WebBrowser) {
 
 	delete _pWebBrowser;
 }
-

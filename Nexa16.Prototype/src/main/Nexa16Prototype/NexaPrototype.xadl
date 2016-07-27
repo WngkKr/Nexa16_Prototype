@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ADL version="1.2">
+  <TypeDefinition url="default_typedef.xml"/>
+  <GlobalVariables url="globalvars.xml"/>
+  <Application id="Lexpeed3" codepage="utf-8" language="Korean" loginformurl="" loginformstyle="" windowopeneffect="" windowcloseeffect="" version="" tracemode="none" themeid="stic_basic.xtheme" usecontextmenu="edit" onload="application_onload">
+    <Layout>
+      <MainFrame id="mainframe" title="maintitle" defaultfont="" resizable="true" showtitlebar="true" showstatusbar="true" left="0" top="0" width="1400" height="880" showcascadestatustext="false" showcascadetitletext="false">
+        <VFrameSet id="VFrameSet" separatesize="*,0,0">
+          <Frames>
+            <ChildFrame id="LoginFrame" formurl="FRM::FRM_LOGIN.xfdl" showcascadestatustext="false" showcascadetitletext="false" autosize="false" dragmovetype="none" showtitlebar="false"/>
+            <ChildFrame id="TopFrame" showtitlebar="false" dragmovetype="none" showcascadestatustext="false" showcascadetitletext="false" autosize="false"/>
+            <VFrameSet id="BottomVFrameSet" showstatusbar="false" separatesize="*,60">
+              <Frames>
+                <FrameSet id="WorkFrameSet" showtitlebar="false"/>
+                <ChildFrame id="BottomFrame" showtitlebar="false" showcascadestatustext="false" showcascadetitletext="false" dragmovetype="none" autosize="false"/>
+              </Frames>
+            </VFrameSet>
+          </Frames>
+        </VFrameSet>
+      </MainFrame>
+    </Layout>
+    <ScreenInfo>
+      <Screen name="desktop_desktop" type="desktop" screenwidth="" sizeorientation="" autozoom="false" zoommin="100%" zoommax="" systemos="" systemlocale="" formlayoutwidth="" formlayoutheight=""/>
+    </ScreenInfo>
+    <Style url="CSS::St_Common.css"/>
+    <Style url="CSS::St_Common.css"/>
+  </Application>
+  <Script type="xscript5.0"><![CDATA[
+this.application_onload = function(obj:Application, e:nexacro.LoadEventInfo)
+{
+	//                         *,0,0,0   login 화면 보이는 사이즈
+	this.av_vFrameSet   	= application.mainframe.VFrameSet;								//vFrame Set
+	this.av_LoginFrame  	= application.mainframe.VFrameSet.LoginFrame;					//login
+	this.av_TopFrame    	= application.mainframe.VFrameSet.TopFrame;						//top
+	this.av_BottomVFrameSet = application.mainframe.VFrameSet.BottomVFrameSet;				//bottom Frame Set
+	this.av_WorkFrameSet  	= application.mainframe.VFrameSet.BottomVFrameSet.WorkFrameSet;	//work Frame Set
+	this.av_BottomFrame  	= application.mainframe.VFrameSet.BottomVFrameSet.BottomFrame;	//bottom
+}
+]]></Script>
+</ADL>

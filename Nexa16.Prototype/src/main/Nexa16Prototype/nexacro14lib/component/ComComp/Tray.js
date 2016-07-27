@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -20,7 +20,8 @@ if (!nexacro.Tray) {
 		this.items = new nexacro.Collection();
 		this.name = id;
 
-		this._handle = 0;
+		this._handle = null;
+		this._init_flag = false;
 
 		this._event_list = 
 			{
@@ -76,10 +77,20 @@ if (!nexacro.Tray) {
 		if (v != this.icon) {
 			this.icon = v;
 		}
+
+		if (this._handle) {
+			nexacro._setTrayIconHandle(this._handle, this.icon);
+		}
 	};
 
 	_pTray.set_tooltip = function (v) {
-		this.tooltip = v;
+		if (v != this.tooltip) {
+			this.tooltip = v;
+		}
+
+		if (this._handle) {
+			nexacro._setTrayTooltipHandle(this._handle, this.tooltip);
+		}
 	};
 
 
@@ -87,7 +98,9 @@ if (!nexacro.Tray) {
 
 
 	_pTray.show = function () {
-		this.on_created();
+		if (this._init_flag) {
+			this.on_created();
+		}
 	};
 
 	_pTray.destroy = function () {
@@ -95,9 +108,14 @@ if (!nexacro.Tray) {
 	};
 
 	_pTray.init = function (id, icon, tooltip) {
-		this.set_id(id);
-		this.set_icon(icon);
-		this.set_tooltip(tooltip);
+		var obj = application.trays[id];
+		if (obj && obj._handle == null) {
+			this.set_id(id);
+			this.set_icon(icon);
+			this.set_tooltip(tooltip);
+
+			this._init_flag = true;
+		}
 	};
 
 	_pTray.showBalloonTip = function (titleicon, title, text, nosound) {
@@ -113,13 +131,23 @@ if (!nexacro.Tray) {
 
 	_pTray.addItem = function (id, obj) {
 		if (obj._type_name == "TrayPopupMenu") {
-			return this.items.add_item(id, obj);
+			if (this.items.indexOf(id) >= 0) {
+				return -1;
+			}
+			else {
+				return this.items.add_item(id, obj);
+			}
 		}
 	};
 
 	_pTray.insertItem = function (index, id, obj) {
 		if (obj._type_name == "TrayPopupMenu") {
-			return this.items.insert_item(index, id, obj);
+			if (this.items.indexOf(id) >= 0) {
+				return -1;
+			}
+			else {
+				return this.items.insert_item(index, id, obj);
+			}
 		}
 	};
 
@@ -129,6 +157,11 @@ if (!nexacro.Tray) {
 
 	_pTray.findItem = function (id) {
 		var find_pos = this.items.indexOf(id);
+
+		if (find_pos == undefined) {
+			find_pos = -1;
+		}
+
 		return find_pos;
 	};
 
@@ -299,6 +332,15 @@ if (!nexacro.TrayPopupMenu) {
 		}
 	};
 
+	_pTrayPopupMenu._updatePopupMenu = function (handle) {
+		this._level = 0;
+		this._rowindex = 0;
+
+		nexacro._destroyTrayPopupMenuHandle(this.parent._handle, handle);
+
+		this._handle = nexacro._createTrayPopupMenuHandle(this.parent._handle);
+		this._createPopupMenu(this._handle);
+	};
 
 	_pTrayPopupMenu.trackPopup = function () {
 		if (this._handle) {
@@ -340,6 +382,10 @@ if (!nexacro.TrayPopupMenu) {
 			ds._setEventHandler("onrowposchanged", callback, this);
 			ds._setEventHandler("oncolumnchanged", callback, this);
 			ds._setEventHandler("onrowsetchanged", callback, this);
+
+			if (this._handle) {
+				this._updatePopupMenu(this._handle);
+			}
 		}
 	};
 
@@ -382,6 +428,7 @@ if (!nexacro.TrayPopupMenu) {
 	_pTrayPopupMenu.on_apply_captioncolumn = function () {
 		var ds = this._innerdataset;
 		if (ds) {
+			this._updatePopupMenu(this._handle);
 		}
 	};
 
@@ -395,6 +442,7 @@ if (!nexacro.TrayPopupMenu) {
 	_pTrayPopupMenu.on_apply_checkboxcolumn = function () {
 		var ds = this._innerdataset;
 		if (ds) {
+			this._updatePopupMenu(this._handle);
 		}
 	};
 
@@ -408,6 +456,7 @@ if (!nexacro.TrayPopupMenu) {
 	_pTrayPopupMenu.on_apply_enablecolumn = function () {
 		var ds = this._innerdataset;
 		if (ds) {
+			this._updatePopupMenu(this._handle);
 		}
 	};
 
@@ -421,6 +470,7 @@ if (!nexacro.TrayPopupMenu) {
 	_pTrayPopupMenu.on_apply_hotkeycolumn = function () {
 		var ds = this._innerdataset;
 		if (ds) {
+			this._updatePopupMenu(this._handle);
 		}
 	};
 
@@ -434,6 +484,7 @@ if (!nexacro.TrayPopupMenu) {
 	_pTrayPopupMenu.on_apply_iconcolumn = function () {
 		var ds = this._innerdataset;
 		if (ds) {
+			this._updatePopupMenu(this._handle);
 		}
 	};
 
@@ -447,6 +498,7 @@ if (!nexacro.TrayPopupMenu) {
 	_pTrayPopupMenu.on_apply_idcolumn = function () {
 		var ds = this._innerdataset;
 		if (ds) {
+			this._updatePopupMenu(this._handle);
 		}
 	};
 
@@ -460,6 +512,7 @@ if (!nexacro.TrayPopupMenu) {
 	_pTrayPopupMenu.on_apply_levelcolumn = function () {
 		var ds = this._innerdataset;
 		if (ds) {
+			this._updatePopupMenu(this._handle);
 		}
 	};
 
@@ -473,6 +526,7 @@ if (!nexacro.TrayPopupMenu) {
 	_pTrayPopupMenu.on_apply_userdatacolumn = function () {
 		var ds = this._innerdataset;
 		if (ds) {
+			this._updatePopupMenu(this._handle);
 		}
 	};
 

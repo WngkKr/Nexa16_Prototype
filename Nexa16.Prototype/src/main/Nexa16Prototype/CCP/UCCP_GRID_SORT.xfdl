@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="UCCP_GRID_SORT" ontimer="UCCP4004PU_OnTimer" left="0" top="0" width="397" height="350" scrollbars="none" style="color:#999999ff;" onload="form_onload" onkeydown="UCCP_GRID_FIND_onkeydown" titletext="그리드 정렬 팝업" onbeforeclose="UCCP_GRID_FIND_onbeforeclose" cssclass="frm_POPUP_BG">
+    <Layouts>
+      <Layout>
+        <Static id="Static01" taborder="37" cssclass="sta_WF_GridBox" left="15" top="15" right="15" height="32"/>
+        <Static id="Static94" taborder="16" text="W&#13;&#10;15" visible="false" left="0" top="0" width="15" style="background:green;align:center;opacity:30;" bottom="0"/>
+        <Static id="Static02" taborder="18" text="W&#13;&#10;15" visible="false" left="382" top="0" width="15" style="background:green;align:center;opacity:30;" bottom="0"/>
+        <Static id="Static03" taborder="19" text="H15" visible="false" left="0" top="335" width="398" height="15" style="background:green;align:center middle;opacity:30;"/>
+        <Button id="btn_sort" taborder="28" text="적용" height="24" right="86" width="69" bottom="15" onclick="btn_sort_onclick" cssclass="btn_WF_Confirm"/>
+        <Button id="btn_clearSort" taborder="32" text="정렬취소" right="-154" width="66" height="24" bottom="15" onclick="btn_clearSort_onclick" cssclass="btn_WF_PageControl" visible="false"/>
+        <Button id="btn_close" taborder="33" text="취소" cssclass="btn_WF_Del" width="69" height="24" right="15" bottom="15" onclick="btn_close_onclick"/>
+        <Grid id="grd_sort" taborder="34" useinputpanel="false" left="15" top="72" right="15" bottom="49" autofittype="col" cellsizingtype="col" u_menu="none" binddataset="ds_sort" autoenter="select">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="256"/>
+                <Column size="107"/>
+              </Columns>
+              <Rows>
+                <Row size="30" band="head"/>
+                <Row size="30"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="컬럼명"/>
+                <Cell col="1" text="정렬기준"/>
+              </Band>
+              <Band id="body">
+                <Cell style="align:left;" text="bind:title"/>
+                <Cell col="1" displaytype="combo" edittype="combo" style="align:center;" text="bind:sorttype" combodataset="ds_sorttype" combocodecol="cd" combodatacol="cdNm"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="btn_up" taborder="35" top="46" width="21" height="21" right="48" onclick="btn_up_onclick" cssclass="btn_WF_Support" style="image:URL('theme://images/btn_Shuttle_UpN.png');"/>
+        <Button id="btn_down" taborder="36" top="46" width="21" height="21" right="25" onclick="btn_down_onclick" cssclass="btn_WF_Support" style="image:URL('theme://images/btn_Shuttle_DownN.png');"/>
+        <Static id="Static00" taborder="38" text="H30" visible="false" left="0" top="36" right="0" height="10" style="background:green;align:center middle;opacity:30;"/>
+        <Button id="btn_close1" taborder="39" onclick="gfn_close" cssclass="btn_POP_AlertClose" top="8" right="15" width="20" height="20"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_sort" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="title" type="STRING" size="256"/>
+          <Column id="sorttype" type="STRING" size="256"/>
+          <Column id="columid" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_sorttype" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="cd" type="STRING" size="256"/>
+          <Column id="cdNm" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="cdNm"/>
+            <Col id="cd"/>
+          </Row>
+          <Row>
+            <Col id="cd">+</Col>
+            <Col id="cdNm">오름차순</Col>
+          </Row>
+          <Row>
+            <Col id="cd">-</Col>
+            <Col id="cdNm">내림차순</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_temp" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="title" type="STRING" size="256"/>
+          <Column id="col" type="INT" size="256"/>
+          <Column id="body" type="STRING" size="256"/>
+          <Column id="sorttype" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[/**
+*  인트라넷 고도화[Lexpeed3]구축 사업
+*
+*  @MenuPath       
+*  @FileName       UCCP_GRID_SORT.xfdl
+*  @Creator        송원창
+*  @CreateDate     2016.04.18
+*  @LastModifier   
+*  @LastModifyDate 
+*  @Version        1.0
+*  @Outline        그리드 공통 소트팝업
+*  @Desction 
+* 
+************** 소스 수정 이력 *************************************************
+*    date          Modifier            Description
+*******************************************************************************
+*  2016.04.18      송원창             클래스 최초 생성
+*******************************************************************************
+*/
+ 
+ 
+/*----------------------------------------------------------------------------------------------
+ * 공통 라이브러리 INCLUDE 영역
+----------------------------------------------------------------------------------------------*/
+//include "LIB::LIB_COMMON.xjs";      // 공통 js
+
+
+/*----------------------------------------------------------------------------------------------
+ * FORM 변수 선언 영역
+----------------------------------------------------------------------------------------------*/
+this.P_TARGET_GRID;              // 대상 그리드 Object
+
+/*----------------------------------------------------------------------------------------------
+ * FORM EVENT 영역
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description    화면 로드시 이벤트
+ */
+this.form_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+    this.set_titletext("정렬");
+
+    // Form Load 시 공통 기능 처리
+    this.gfn_initForm(obj);
+
+    this.P_TARGET_GRID = this.gfn_getParam("P_TARGET_GRID");
+    var targetdataset  = this.P_TARGET_GRID.getBindDataset();
+    
+    // 바디의 갯수만큼 디스플레이정보 및 콤보의 정보를 설정한다.     
+    for(var i=0;i<this.P_TARGET_GRID.getCellCount("Body");i++)
+    {
+        if( this.P_TARGET_GRID.getCellProperty("Body", i, "displaytype") != "image" )
+        {
+            var nrow = this.ds_temp.addRow();
+
+            // 콤보의 경우는 TEXT로 필터링이 되질않기 때문에 해당 _text 를 동적으로 생성해서 그 값을 이용하도록 한다. 
+            if( this.P_TARGET_GRID.getCellProperty("Body", i, "displaytype") == "combo" )
+            {
+                var columname = this.P_TARGET_GRID.getCellProperty("Body", i, "text").substring(5);                
+                if( this.gfn_isNull(targetdataset.getColumnInfo(columname+"_text")) )
+                {
+                    targetdataset.set_enableevent(false);
+                    targetdataset.set_updatecontrol(false);
+                    targetdataset.addColumn(columname+"_text");                    
+                    for(var j=0;j<targetdataset.getRowCount();j++)
+                    {
+                        targetdataset.setColumn(j, columname+"_text", this.P_TARGET_GRID.getCellText(j, i));
+                    }
+                    targetdataset.set_enableevent(true);
+                    targetdataset.set_updatecontrol(true);
+                }
+                this.ds_temp.setColumn(nrow, "col",  i);
+                this.ds_temp.setColumn(nrow, "body", "bind:"+columname+"_text");
+            }
+            // 콤보가 아닌경우는 그냥 그대로 처리 
+            else
+            {
+                this.ds_temp.setColumn(nrow, "col",  i);
+                this.ds_temp.setColumn(nrow, "body", this.P_TARGET_GRID.getCellProperty("Body", i, "text"));
+            }
+        }
+    }        
+
+    // 그리드의 Body의 갯수와 일치하는 Head의 정보를 찾아서 하나의 셋트를 만든다. 
+    for(var i=0;i<this.P_TARGET_GRID.getCellCount("Head");i++)
+    {
+        var title   = this.P_TARGET_GRID.getCellProperty("Head", i,   "text");
+        var col     = this.P_TARGET_GRID.getCellProperty("Head", i,   "col");
+        var body    = this.P_TARGET_GRID.getCellProperty("Body", col, "text");
+        
+        //  콤보일때는 _text 로 처리한다. 
+        var display = this.P_TARGET_GRID.getCellProperty("Body", col, "displaytype");        
+        if( display == "combo" )
+        {
+            body = "bind:"+body.substring(5)+"_text";
+        }
+        
+        var nrow = this.ds_temp.findRow("body", body);   
+        this.ds_temp.setColumn(nrow, "title",    title);
+        this.ds_temp.setColumn(nrow, "sorttype", ""   );
+    }
+    
+    // 키스트링을 이용해서 정렬을 다시 설정한다. 
+    var keystring = this.P_TARGET_GRID.getBindDataset().keystring;
+    if( !this.gfn_isNull(keystring) )
+    {
+        var keylist   = new Array();
+        var startflag = false;
+        var splitdata = "";
+        for(var i=2;i<keystring.length;i++)
+        {
+            if( keystring.charAt(i) == "+" || keystring.charAt(i) == "-" )
+            {
+                // 최초 시작
+                if( startflag == false )
+                {
+                    splitdata = keystring.charAt(i);
+                    startflag = true;
+                }
+                else
+                {
+                    keylist.push(new String(splitdata));
+                    splitdata = keystring.charAt(i);
+                }
+            }
+            else
+            {
+                splitdata += keystring.charAt(i);
+            }
+        }        
+        keylist.push(splitdata);
+        
+        // 우선순위를 설정한다. 
+        for(var i=0;i<keylist.length;i++)
+        {
+            var columid = keylist[i].substring(1);
+            var findrow = this.ds_temp.findRow("body", "bind:"+columid);
+            this.ds_temp.setColumn(findrow, "col",      -(keylist.length-i));
+            this.ds_temp.setColumn(findrow, "sorttype", keylist[i].substring(0, 1));
+        }
+    }
+        
+    this.ds_temp.set_keystring("S:col");    
+    for(var i=0;i<this.ds_temp.getRowCount();i++)
+    {
+        var body = this.ds_temp.getColumn(i, "body").substring(5);
+        
+        this.ds_sort.addRow();    
+        this.ds_sort.setColumn(i, "title",    this.ds_temp.getColumn(i, "title"));
+        this.ds_sort.setColumn(i, "sorttype", this.ds_temp.getColumn(i, "sorttype"));
+        this.ds_sort.setColumn(i, "columid",  body);        
+    }    
+    this.ds_sort.set_rowposition(-1);
+}
+
+
+
+/*----------------------------------------------------------------------------------------------
+ * 사용자 FUNCTION 영역
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * COMPONENT EVENT 영역
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description    버튼 Click시 
+ */
+this.btn_close_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+    this.close();
+}
+
+/**
+ * @description    정렬 
+ */
+this.btn_sort_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+    var dataset = this.P_TARGET_GRID.getBindDataset();
+    var sortkey = "S:";
+    
+    for(var i=0;i<this.ds_sort.getRowCount();i++)
+    {
+        var columid  = this.ds_sort.getColumn(i, "columid");
+        var sorttype = this.ds_sort.getColumn(i, "sorttype");
+        
+        if( !this.gfn_isNull(sorttype) )
+        {
+            sortkey += sorttype+""+columid;
+        }
+    }
+    
+    dataset.set_keystring(sortkey);
+    this.close();
+}
+
+/**
+ * @description    정렬취소
+ */
+this.btn_clearSort_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+    this.P_TARGET_GRID.getBindDataset().set_keystring("");
+    this.close();
+}
+
+/**
+ * @description    위로올리기 
+ */
+this.btn_up_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+    var currow = this.ds_sort.rowposition;
+    
+    if( currow == 0 ) return;
+    
+    this.ds_sort.moveRow(currow, --currow);
+}
+
+/**
+ * @description    아래로내리기  
+ */
+this.btn_down_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+    var currow = this.ds_sort.rowposition;
+    
+    if( currow == this.ds_sort.getRowCount()-1 ) return;
+	
+    this.ds_sort.moveRow(currow, ++currow);
+}
+
+
+
+]]></Script>
+  </Form>
+</FDL>

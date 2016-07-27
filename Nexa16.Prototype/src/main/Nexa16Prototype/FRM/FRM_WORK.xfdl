@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="FRM_WORK" classname="FRM_CENTER" left="0" top="0" width="1400" height="748" titletext="Work" onload="FRM_WORK_onload" ontimer="FRM_WORK_ontimer">
+    <Layouts>
+      <Layout>
+        <Div id="div_Work" taborder="1" left="0" top="48" right="0" bottom="20">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+        <Div id="div_localArea" taborder="2" left="30" top="0" width="1340" height="28" scrollbars="none" cssclass="div_TF_locationArea">
+          <Layouts>
+            <Layout>
+              <Static id="sta_home" taborder="16" cssclass="sta_TF_locationHome" left="0" top="0" width="39" height="28" onclick="div_localArea_sta_home_onclick"/>
+              <Combo id="cmb_lev2" taborder="17" innerdataset="ds_loc2" codecolumn="MENU_CD" datacolumn="MENU_NM" left="238" top="0" width="200" height="28" visible="false" onitemchanged="div_localArea_cmb_lev_onitemchanged"/>
+              <Combo id="cmb_lev3" taborder="18" innerdataset="ds_loc3" codecolumn="MENU_CD" datacolumn="MENU_NM" left="438" top="0" width="199" height="28" visible="false" onitemchanged="div_localArea_cmb_lev_onitemchanged"/>
+              <Combo id="cmb_lev1" taborder="19" innerdataset="ds_loc1" codecolumn="MENU_CD" datacolumn="MENU_NM" left="39" top="0" width="199" height="28" visible="false" onitemchanged="div_localArea_cmb_lev_onitemchanged"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_loc1">
+        <ColumnInfo>
+          <Column id="MENU_CD" type="STRING" size="256"/>
+          <Column id="MENU_NM" type="STRING" size="256"/>
+          <Column id="ENG_MENU_NM" type="STRING" size="256"/>
+          <Column id="PGM_ID" type="STRING" size="256"/>
+          <Column id="UP_CD" type="STRING" size="256"/>
+          <Column id="ORDER_SEQ" type="STRING" size="256"/>
+          <Column id="CD_LEV" type="STRING" size="256"/>
+          <Column id="LOW_YN" type="STRING" size="256"/>
+          <Column id="USE_YN" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_loc2">
+        <ColumnInfo>
+          <Column id="MENU_CD" type="STRING" size="256"/>
+          <Column id="MENU_NM" type="STRING" size="256"/>
+          <Column id="ENG_MENU_NM" type="STRING" size="256"/>
+          <Column id="PGM_ID" type="STRING" size="256"/>
+          <Column id="UP_CD" type="STRING" size="256"/>
+          <Column id="ORDER_SEQ" type="STRING" size="256"/>
+          <Column id="CD_LEV" type="STRING" size="256"/>
+          <Column id="LOW_YN" type="STRING" size="256"/>
+          <Column id="USE_YN" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_loc3">
+        <ColumnInfo>
+          <Column id="MENU_CD" type="STRING" size="256"/>
+          <Column id="MENU_NM" type="STRING" size="256"/>
+          <Column id="ENG_MENU_NM" type="STRING" size="256"/>
+          <Column id="PGM_ID" type="STRING" size="256"/>
+          <Column id="UP_CD" type="STRING" size="256"/>
+          <Column id="ORDER_SEQ" type="STRING" size="256"/>
+          <Column id="CD_LEV" type="STRING" size="256"/>
+          <Column id="LOW_YN" type="STRING" size="256"/>
+          <Column id="USE_YN" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[/**
+*  인트라넷 고도화[Lexpeed3]구축 사업
+*
+*  @MenuPath       
+*  @FileName       FRM_WORK.xfdl
+*  @Creator        송원창
+*  @CreateDate     2016.05.16
+*  @LastModifier   
+*  @LastModifyDate 
+*  @Version        1.0
+*  @Outline        work Frame
+*  @Description       
+*
+*
+************** 소스 수정 이력 *************************************************
+*    date          Modifier            Description
+*******************************************************************************
+*  2016.05.16      송원창              클래스 최초 생성
+*******************************************************************************
+*/
+/*----------------------------------------------------------------------------------------------
+ * 공통 라이브러리 INCLUDE 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+//include "LIB::LIB_COMMON.xjs";  	// 공통 js
+/*----------------------------------------------------------------------------------------------
+ * FORM 변수 선언 영역
+----------------------------------------------------------------------------------------------*/
+this.pv_winKey;		//업무화면 Key코드
+this.pv_menuId;		//메뉴 ID
+this.pv_menuNm;
+this.pv_engNm;
+this.pv_pageUrl;
+
+this.fv_loadFlg = false;
+
+/*----------------------------------------------------------------------------------------------
+ * FORM EVENT 영역
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  화면 로드시 이벤트
+ */
+
+this.FRM_WORK_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	//공통초기화 필수
+	this.gfn_initForm(obj);
+	
+	// trace(">>>>>>>>>>>>>>>>>>>>>>>>> :: " + application.gv_mdiFlg);
+
+	this.pv_winKey  = this.getOwnerFrame().arguments["winKey"];
+	this.pv_menuId  = this.getOwnerFrame().arguments["menuId"];
+ 	this.pv_menuNm  = this.getOwnerFrame().arguments["menuNm"];
+ 	this.pv_engNm 	= this.getOwnerFrame().arguments["engNm"];
+ 	this.pv_pageUrl = this.getOwnerFrame().arguments["pageUrl"];
+ 	this.pv_upCd 	= this.getOwnerFrame().arguments["upCd"];
+ 	this.pv_lev 	= this.getOwnerFrame().arguments["lev"];
+	
+	var sViewTitle = this.pv_menuNm + " (" + this.pv_winKey + ")";
+	//this.sta_title.set_text(sViewTitle);
+	this.div_Work.set_url(this.pv_pageUrl);
+	this.gfn_openAddMenu(this.pv_winKey, this.pv_menuId);
+	this.gfn_setNaviAdd(this.pv_winKey, this.pv_menuNm);
+	
+	this.gfn_setNaviCombo(this.pv_menuId, this.pv_lev);	// 선택된 메뉴 Navi 설정
+}
+
+/*----------------------------------------------------------------------------------------------
+ * 공통기능 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * TRANSACTION 및 CallBack 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * 각 COMPONENT 별 EVENT 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  홈 메뉴 이동
+ * @return       N/A
+ */
+this.div_localArea_sta_home_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+	this.gfn_activeWin("home");
+	this.gfn_activeNavi("home");
+}
+
+/**
+ * @description  Navi 선택시 메뉴 이동(첫번째 depth의 index=0 만 선택됨)
+ * @return       N/A
+ */
+this.div_localArea_cmb_lev_onitemchanged = function(obj:Combo, e:nexacro.ItemChangeEventInfo)
+{
+	var timed = 50;
+	if(obj.name == "cmb_lev1")
+	{
+		var bindDataset;
+		this.ds_loc2.filter("UP_CD == '"+ e.postvalue +"'");
+		
+		this.div_localArea.cmb_lev2.set_index(0);
+		
+		var UP_CD = this.ds_loc2.getColumn(0, "UP_CD");
+		
+		this.ds_loc3.filter("UP_CD == '"+ UP_CD +"'");
+		
+		if(this.ds_loc3.rowcount == 0)
+		{
+			obj.parent.cmb_lev3.set_visible(false);
+			
+			this.setTimer(2, timed);
+			//bindDataset = obj.parent.cmb_lev2.getInnerDataset();
+			//this.gfn_workMenuOpen(bindDataset, obj.parent.cmb_lev2.value, 2);
+		}
+		else
+		{
+			this.div_localArea.cmb_lev3.set_index(0);
+			obj.parent.cmb_lev3.set_visible(true);
+			
+			this.setTimer(3, timed);
+			//bindDataset = obj.parent.cmb_lev3.getInnerDataset();
+			//this.gfn_workMenuOpen(bindDataset, obj.parent.cmb_lev3.value, 3);
+		}
+		
+	}
+	else if(obj.name == "cmb_lev2")
+	{
+		this.ds_loc3.filter("UP_CD == '"+ e.postvalue +"'");
+		
+		if(this.ds_loc3.rowcount == 0)
+		{
+			obj.parent.cmb_lev3.set_visible(false);
+			
+			this.setTimer(2, timed);
+			//bindDataset = obj.parent.cmb_lev2.getInnerDataset();
+			//this.gfn_workMenuOpen(bindDataset, obj.parent.cmb_lev2.value, 2);
+		}
+		else
+		{
+			this.div_localArea.cmb_lev3.set_index(0);
+			obj.parent.cmb_lev3.set_visible(true);
+			
+			this.setTimer(3, timed);
+			//bindDataset = obj.parent.cmb_lev3.getInnerDataset();
+			//this.gfn_workMenuOpen(bindDataset, obj.parent.cmb_lev3.value, 3);
+		}
+	}
+	else if(obj.name == "cmb_lev3")
+	{
+		this.setTimer(3, timed);
+		//bindDataset = obj.parent.cmb_lev3.getInnerDataset();
+		//this.gfn_workMenuOpen(bindDataset, obj.parent.cmb_lev3.value, 3);
+	}
+}
+
+/**
+ * @description  Navi 에서 menu 이동시 100ms 시간이 필요함
+ * @return       N/A
+ */
+this.FRM_WORK_ontimer = function(obj:Form, e:nexacro.TimerEventInfo)
+{
+	if(e.timerid == 2)
+	{
+		var bindDataset = this.div_localArea.cmb_lev2.getInnerDataset();
+		this.gfn_workMenuOpen(bindDataset, this.div_localArea.cmb_lev2.value, 2);
+		this.killTimer(2);
+	}
+	else if(e.timerid == 3)
+	{
+		var bindDataset = this.div_localArea.cmb_lev3.getInnerDataset();			
+		this.gfn_workMenuOpen(bindDataset, this.div_localArea.cmb_lev3.value, 3);
+		this.killTimer(3);
+	}
+}
+/*----------------------------------------------------------------------------------------------
+ * 사용자 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+]]></Script>
+  </Form>
+</FDL>

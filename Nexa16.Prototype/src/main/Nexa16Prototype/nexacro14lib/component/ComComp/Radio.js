@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -236,6 +236,7 @@ if (!nexacro.Radio) {
 		this._want_tab = true;
 		this._want_arrow = false;
 		this._is_first_focus = false;
+		this._is_tab_focus = false;
 		this._accessibility_index = -1;
 		this._items = [];
 		this._exprcache = {
@@ -263,6 +264,7 @@ if (!nexacro.Radio) {
 		var itempadding = this.on_find_CurrentStyle_itempadding(pseudo);
 		var textpadding = this.on_find_CurrentStyle_textpadding(pseudo);
 		var font = this.on_find_CurrentStyle_font(pseudo);
+		var letterspace = this.on_find_CurrentStyle_letterspace(pseudo);
 		var color = this.on_find_CurrentStyle_color(pseudo);
 		var align = this.on_find_CurrentStyle_align(pseudo);
 		var accessibility = this.on_find_CurrentStyle_accessibility(pseudo);
@@ -271,6 +273,10 @@ if (!nexacro.Radio) {
 		if (curstyle.font != font) {
 			curstyle.font = font;
 			this.on_apply_style_font(curstyle.font);
+		}
+		if (curstyle.letterspace != letterspace) {
+			curstyle.letterspace = letterspace;
+			this.on_apply_style_letterspace(curstyle.letterspace);
 		}
 		if (curstyle.color != color) {
 			curstyle.color = color;
@@ -725,6 +731,17 @@ if (!nexacro.Radio) {
 		}
 	};
 
+	_pRadio.on_apply_style_letterspace = function (letterspace) {
+		var radioitems = this._items;
+		if (radioitems) {
+			var item_len = radioitems.length;
+			for (var i = 0; i < item_len; i++) {
+				letterspace = this._search_style_obj(letterspace, "letterspace", i);
+				radioitems[i].on_apply_style_letterspace(letterspace);
+			}
+		}
+	};
+
 	_pRadio.on_create_contents = function () {
 		var control_elem = this.getElement();
 		if (control_elem) {
@@ -737,6 +754,7 @@ if (!nexacro.Radio) {
 				text_elem.setElementFont(this.currentstyle.font);
 				text_elem.setElementColor(this.currentstyle.color);
 				text_elem.setElementAlignXY(halign, valign);
+				text_elem.setElementLetterSpace(this.currentstyle.letterspace);
 			}
 		}
 	};
@@ -799,6 +817,7 @@ if (!nexacro.Radio) {
 			if (nexacro._enableaccessibility) {
 				this._want_arrow = nexacro._enableaccessibility;
 				this.on_update_style_accessibility();
+				this._refreshAccessibilityValue();
 			}
 
 			this.on_apply_style_color(this.currentstyle.color);
@@ -806,6 +825,7 @@ if (!nexacro.Radio) {
 			this.on_apply_style_align(this.currentstyle.align);
 			this.on_apply_style_cursor(this.currentstyle.cursor);
 			this.on_apply_style_buttonalign(this.currentstyle.buttonalign);
+			this.on_apply_style_letterspace(this.currentstyle.letterspace);
 			this._setEventHandler("onkeydown", this.on_notify_radio_onkeydown, this);
 		}
 		this.on_apply_prop_rtldirection();
@@ -914,57 +934,24 @@ if (!nexacro.Radio) {
 		var count = items.length;
 
 		if (keycode == nexacro.Event.KEY_TAB) {
-			if (index > -1) {
-				if (shift_key) {
-					if (accIdx < 0) {
-						this._want_tab = false;
-					}
-					else {
-						var last_focused = this._last_focused;
-						this._do_defocus(last_focused, true);
-						if (last_focused && last_focused._selected) {
-							last_focused._stat_change("select", "selected");
-						}
-						this._on_focus(true);
-						this._accessibility_index = -1;
-					}
-				}
-				else {
-					if (accIdx > -1) {
-						this._want_tab = false;
-					}
-					else {
-						var comp = items[index];
-						if (comp) {
-							comp._on_focus(true);
-						}
-						this._accessibility_index = index;
-					}
-				}
-			}
-			else {
-				if ((shift_key && accIdx < 0) || (!shift_key && accIdx >= count - 1)) {
+			if (shift_key) {
+				if (accIdx < 0) {
 					this._want_tab = false;
 				}
 				else {
-					if (shift_key) {
-						accIdx--;
+					var last_focused = this._last_focused;
+					this._do_defocus(last_focused, true);
+					if (last_focused && last_focused._selected) {
+						last_focused._stat_change("select", "selected");
 					}
-					else {
-						accIdx++;
-					}
-
-					var comp = items[accIdx];
-					if (comp) {
-						comp._on_focus(true);
-					}
-					else {
-						this._do_defocus(this._last_focused, true);
-						this._on_focus(true);
-					}
-					this._accessibility_index = accIdx;
+					this._on_focus(true);
+					this._accessibility_index = -1;
 				}
 			}
+			else {
+				this._want_tab = false;
+			}
+
 			this._getWindow()._keydown_element._event_stop = true;
 		}
 		else if (keycode == nexacro.Event.KEY_SPACE) {
@@ -981,8 +968,9 @@ if (!nexacro.Radio) {
 	_pRadio.on_fire_sys_onaccessibilitygesture = function (direction, fire_comp, refer_comp) {
 		var ret = false;
 		var items = this._items;
-		if (items) {
-			if (direction) {
+
+		if (items && items.length > 0) {
+			if (direction > 0) {
 				this._accessibility_index++;
 			}
 			else {
@@ -994,36 +982,51 @@ if (!nexacro.Radio) {
 				items[this._accessibility_index]._setAccessibilityNotifyEvent();
 			}
 		}
+
 		return ret;
 	};
 
 	_pRadio._setAccessibilityNotifyEvent = function (direction) {
-		var ret = false;
 		var items = this._items;
-		if (items) {
-			if (direction) {
-				this._accessibility_index = 0;
-			}
-			else {
-				this._accessibility_index = items.length - 1;
+
+		if (items && items.length > 0) {
+			var obj = null;
+
+			if (this._accessibility_index < 0 || this._accessibility_index >= items.length) {
+				if (direction == undefined) {
+					direction = 1;
+				}
+
+				if (direction > 0) {
+					this._accessibility_index = 0;
+				}
+				else {
+					this._accessibility_index = items.length - 1;
+				}
 			}
 
-			if (items[this._accessibility_index]) {
-				ret = items[this._accessibility_index]._setAccessibilityNotifyEvent();
+			obj = items[this._accessibility_index];
+			if (obj) {
+				return obj._setAccessibilityNotifyEvent();
 			}
 		}
 		else {
-			ret = nexacro.Component.prototype._setAccessibilityNotifyEvent.call(this, direction);
+			return nexacro.Component.prototype._setAccessibilityNotifyEvent.call(this, direction);
 		}
-		return ret;
 	};
 
 	_pRadio._setAccessibilityInfoByHover = function (control) {
-		if (control && control.parent instanceof nexacro.RadioItemCtrl) {
-			control = control.parent;
+		if (control) {
+			if (control.parent instanceof nexacro.RadioItemCtrl) {
+				control = control.parent;
+			}
+
+			this._accessibility_index = control.index;
+			return control._setAccessibilityNotifyEvent();
 		}
-		this._accessibility_index = control.index;
-		return control._setAccessibilityNotifyEvent();
+		else {
+			return nexacro.Component.prototype._setAccessibilityNotifyEvent.call(this);
+		}
 	};
 
 	_pRadio._getDlgCode = function (keycode, altKey, ctrlKey, shiftKey) {
@@ -1036,6 +1039,7 @@ if (!nexacro.Radio) {
 
 		if (this._is_first_focus) {
 			this._is_first_focus = false;
+			this._is_tab_focus = false;
 		}
 		this._want_arrow = nexacro._enableaccessibility;
 		this._want_tab = true;
@@ -1080,12 +1084,13 @@ if (!nexacro.Radio) {
 			retn = nexacro.Component.prototype._on_focus.call(this, self_flag, evt_name, lose_focus, refer_lose_focus, new_focus, refer_new_focus);
 			if (self_flag == false) {
 				this._accessibility_index = -1;
-				var items = this._items;
 				if (focusdir < 2) {
 					var items = this._items;
-					if (items.length > 0) {
+					if (items && items.length > 0) {
 						var comp;
+						this._is_tab_focus = true;
 						this._is_first_focus = true;
+
 						if (this.index > -1) {
 							this._accessibility_index = this.index;
 							comp = items[this._accessibility_index];
@@ -1159,13 +1164,13 @@ if (!nexacro.Radio) {
 	};
 
 	_pRadio._on_getAccessibilityAdditionalLabel = function () {
-		if (this._isAccessibilityEnable() && !this._is_first_focus) {
+		if (!this._is_first_focus) {
 			var count = 0;
 			var items = this._items;
 			if (items) {
 				count = items.length;
 			}
-			return (+this.index + 1) + " " + count;
+			return (this.index + 1) + " " + count;
 		}
 		return "";
 	};
@@ -1184,6 +1189,19 @@ if (!nexacro.Radio) {
 			label = this.text ? this.text : this.value;
 		}
 		return label;
+	};
+
+	_pRadio._getAccessibilityRole = function (accessibility) {
+		var role = nexacro.Component.prototype._getAccessibilityRole.call(this, accessibility);
+		if (nexacro._accessibilitytype == 4) {
+			var control_elem = this.getElement();
+			var items = this._items;
+
+			if (control_elem && items.length <= 0) {
+				role = "static";
+			}
+		}
+		return role;
 	};
 
 	_pRadio.set_text = nexacro._emptyFn;
@@ -1270,7 +1288,9 @@ if (!nexacro.Radio) {
 	};
 
 	_pRadio.set_index = function (v) {
-		this._setIndex(v, false);
+		if (!this.value || this.getElement()) {
+			this._setIndex(v, false);
+		}
 	};
 
 	_pRadio.on_apply_index = function (preidx, curidx, bValue) {
@@ -1528,6 +1548,7 @@ if (!nexacro.Radio) {
 				text_elem.setElementFont(curstyle.font);
 				text_elem.setElementColor(curstyle.color);
 				text_elem.setElementAlignXY(halign, valign);
+				text_elem.setElementLetterSpace(curstyle.letterspace);
 
 				text_elem.create();
 			}
@@ -1833,6 +1854,7 @@ if (!nexacro.Radio) {
 
 			this.on_apply_index(this.pre_index, this.index, false);
 			this.on_apply_style_cursor();
+			this._refreshAccessibilityValue();
 		}
 	};
 
@@ -1904,6 +1926,8 @@ if (!nexacro.Radio) {
 						}
 						var radioitem = items[dataidx];
 						size = radioitem._getItemRealSize();
+						size.height = this._client_height / rowcnt;
+
 						radioitem.move(pre_w, pre_h, size.width, size.height);
 						radioitem.setTextOverflow(false);
 
@@ -2068,22 +2092,21 @@ if (!nexacro.Radio) {
 
 	_pRadio._getPreCalculateWantArrow = function (keycode) {
 		var ds = this._innerdataset;
-		if (nexacro._enableaccessibility && nexacro._accessibilitytype == 5) {
+		if (nexacro._enableaccessibility && (nexacro._accessibilitytype == 4 || nexacro._accessibilitytype == 5)) {
 			return true;
 		}
-		else {
-			if (ds) {
-				if (keycode == nexacro.Event.KEY_UP) {
-					return false;
-				}
-				else if (keycode == nexacro.Event.KEY_DOWN) {
-					return false;
-				}
+		else if (ds) {
+			if (keycode == nexacro.Event.KEY_UP) {
+				return false;
 			}
-			else {
+			else if (keycode == nexacro.Event.KEY_DOWN) {
 				return false;
 			}
 		}
+		else {
+			return false;
+		}
+
 		return this._want_arrow;
 	};
 
@@ -2387,6 +2410,22 @@ if (!nexacro.RadioItemCtrl) {
 		return this.parent._search_style_obj(propobj, "accessibility", this.index);
 	};
 
+	_pRadioItemCtrl.on_find_CurrentStyle_border = function (pseudo) {
+		return this.parent.on_find_CurrentStyle_itemborder(pseudo);
+	};
+
+	_pRadioItemCtrl.on_find_CurrentStyle_bordertype = function (pseudo) {
+		return this.parent.on_find_CurrentStyle_itembordertype(pseudo);
+	};
+
+	_pRadioItemCtrl.on_find_CurrentStyle_padding = function (pseudo) {
+		return this.parent.on_find_CurrentStyle_itempadding(pseudo);
+	};
+
+	_pRadioItemCtrl.on_find_CurrentStyle_gradation = function (pseudo) {
+		return this.parent.on_find_CurrentStyle_itemgradation(pseudo);
+	};
+
 
 	_pRadioItemCtrl.on_update_style_buttonalign = function () {
 		this.currentstyle.buttonsize = this.on_find_CurrentStyle_buttonalign(this._pseudo);
@@ -2460,6 +2499,12 @@ if (!nexacro.RadioItemCtrl) {
 	_pRadioItemCtrl.on_apply_style_font = function (v) {
 		if (this._text_elem) {
 			this._text_elem.setElementFont(v);
+		}
+	};
+
+	_pRadioItemCtrl.on_apply_style_letterspace = function (v) {
+		if (this._text_elem) {
+			this._text_elem.setElementLetterSpace(v);
 		}
 	};
 
@@ -2656,6 +2701,8 @@ if (!nexacro.RadioItemCtrl) {
 			text_elem.setElementColor(this.on_find_CurrentStyle_color());
 			text_elem.setElementFont(this.on_find_CurrentStyle_font());
 			text_elem.setElementAlignXY(halign, valign);
+			text_elem.setElementLetterSpace(this.currentstyle.letterspace);
+			this.text += "";
 			text_elem.setElementText(this.text);
 			text_elem.setElementWordWrap("char");
 
@@ -2745,13 +2792,13 @@ if (!nexacro.RadioItemCtrl) {
 	};
 
 	_pRadioItemCtrl.set_text = function (v) {
-		this.text = v;
+		this.text = v + "";
 		this.on_apply_text();
 	};
 
 	_pRadioItemCtrl.on_apply_text = function () {
 		if (this._text_elem) {
-			this._text_elem.setElementText(this.text);
+			this._text_elem.setElementText(this.text + "");
 		}
 	};
 
@@ -2760,9 +2807,10 @@ if (!nexacro.RadioItemCtrl) {
 	};
 
 	_pRadioItemCtrl._on_getAccessibilityAdditionalLabel = function () {
-		if (this._isAccessibilityEnable() && !this.parent._is_first_focus) {
+		var radio = this.parent;
+		if (this._isAccessibilityEnable() && radio && (!radio._is_first_focus || radio._is_tab_focus)) {
 			if (this.index > -1) {
-				return (+this.index + 1) + " " + this.parent._items.length;
+				return (this.index + 1) + " " + radio._items.length;
 			}
 		}
 		return "";
@@ -2774,13 +2822,28 @@ if (!nexacro.RadioItemCtrl) {
 
 	_pRadioItemCtrl._getAccessibilityLabel = function (accessibility) {
 		var label = "";
-		if (this.parent._is_first_focus) {
-			var parent = this.parent;
-			var p_accessibility = parent.on_find_CurrentStyle_accessibility(parent._pseudo);
-			label = parent._getAccessibilityParentValue(p_accessibility);
+		var radio = this.parent;
+		if (radio && radio._is_first_focus) {
+			var p_accessibility = radio.on_find_CurrentStyle_accessibility(radio._pseudo);
+			label = radio._getAccessibilityParentValue(p_accessibility);
 		}
 		label += " " + nexacro.Component.prototype._getAccessibilityLabel.call(this, accessibility);
 		return label;
+	};
+
+	_pRadioItemCtrl._setAccessibilityNotifyEvent = function (direction) {
+		var control_element = this.getElement();
+
+		if (control_element && control_element.accessibility_enable) {
+			control_element.setElementAccessibilityNotifyEvent();
+			var form = this._getForm();
+			if (form) {
+				var _window = form._getWindow();
+				_window._accessibility_last_focused_comp = this._getRootComponent(this);
+			}
+			return true;
+		}
+		return false;
 	};
 
 	_pRadioItemCtrl._isSelected = function () {
@@ -2791,9 +2854,13 @@ if (!nexacro.RadioItemCtrl) {
 		var buttonalign = this.on_find_CurrentStyle_buttonalign(this.pseudo);
 		var buttonsize = this.on_find_CurrentStyle_buttonsize(this.pseudo);
 		var textpadding = this.on_find_CurrentStyle_textpadding(this.pseudo);
+		var itempadding = this.on_find_CurrentStyle_padding(this.pseudo);
+		var itemborder = this.on_find_CurrentStyle_border(this.pseudo);
 		var width, height;
 
 		var tl = 0, tt = 0, tr = 0, tb = 0;
+		var ipl = 0, ipt = 0, ipr = 0, ipb = 0;
+		var ibl = 0, ibt = 0, ibr = 0, ibb = 0;
 		var btnsize = 20;
 
 		if (buttonsize) {
@@ -2814,13 +2881,38 @@ if (!nexacro.RadioItemCtrl) {
 			}
 		}
 
+		if (itempadding) {
+			if (itempadding.left) {
+				ipl = itempadding.left;
+			}
+			if (itempadding.top) {
+				ipt = itempadding.top;
+			}
+			if (itempadding.right) {
+				ipr = itempadding.right;
+			}
+			if (itempadding.bottom) {
+				ipb = itempadding.bottom;
+			}
+		}
+
+		if (itemborder) {
+			ibl = itemborder._left_width;
+			ibr = itemborder._right_width;
+			ibt = itemborder._top_width;
+			ibb = itemborder._bottom_width;
+		}
+
+
 		var text_size = 0;
 		if (this._text_elem) {
 			var font = this.on_find_CurrentStyle_font(this.pseudo);
-			text_size = nexacro._getTextSize2(this._text_elem.text, font);
+			var letterspace = this.on_find_CurrentStyle_letterspace(this._pseudo);
+			text_size = nexacro._getTextSize2(letterspace, this._text_elem.text, font);
 		}
-		width = btnsize + tl + tr + text_size[0];
-		height = btnsize + tt + tb + text_size[1];
+
+		width = btnsize + tl + tr + text_size[0] + ipl + ipr + ibl + ibr;
+		height = btnsize + tt + tb + text_size[1] + ipt + ipb + ibt + ibb;
 
 		return {
 			width : Math.ceil(width), 

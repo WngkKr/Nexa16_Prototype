@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -53,8 +53,7 @@ if (nexacro.Browser == "Runtime") {
 			return _window._on_sys_mouseleave(elem, to_elem, strButton, altKey, ctrlKey, shiftKey, windowX, windowY, screenX, screenY);
 		};
 		nexacro._syshandler_onmousewheel_forward = function (_window, elem, wheelDelta, strButton, altKey, ctrlKey, shiftKey, windowX, windowY, screenX, screenY) {
-			_window._on_sys_mousewheel(elem, 0, wheelDelta, strButton, altKey, ctrlKey, shiftKey, windowX, windowY, screenX, screenY);
-			return;
+			return _window._on_sys_mousewheel(elem, 0, wheelDelta, strButton, altKey, ctrlKey, shiftKey, windowX, windowY, screenX, screenY);
 		};
 		nexacro._syshandler_ondragenter_forward = function (_window, elem, strButton, altKey, ctrlKey, shiftKey, windowX, windowY, screenX, screenY, filelist) {
 			filelist = filelist.split(",");
@@ -118,6 +117,7 @@ if (nexacro.Browser == "Runtime") {
 			return _window._on_sys_deactivate();
 		};
 		nexacro._syshandler_onclose_forward = function (_window) {
+			nexacro._stopWindowEventHandler(_window);
 			return _window._on_sys_close();
 		};
 		nexacro._syshandler_onbeforeclose_forward = function (_window) {
@@ -336,10 +336,12 @@ if (nexacro.Browser == "Runtime") {
 						nexacro._syshandler_onload_forward(_window);
 					}
 
-					var width = nexacro._getWindowHandleOuterWidth(_handle);
-					var height = nexacro._getWindowHandleOuterHeight(_handle);
-					if (_window.width != width || _window.height != height) {
-						_window._on_default_sys_resize(width, height);
+					var width = nexacro._getWindowHandleOuterWidth(_window._handle);
+					var height = nexacro._getWindowHandleOuterHeight(_window._handle);
+					if (width != undefined && height != undefined) {
+						if (nexacro.OS == "Android" || _window.width != width || _window.height != height) {
+							_window._on_default_sys_resize(width, height);
+						}
 					}
 				}
 			};
@@ -417,7 +419,7 @@ if (nexacro.Browser == "Runtime") {
 			}
 		};
 
-		nexacro._createModalWindowHandle = function (parent_win, _window, name, left, top, width, height, resizable, layered, lockmode) {
+		nexacro._createModalWindowHandle = function (parent_win, _window, name, left, top, width, height, resizable, layered, lockmode, delayedCreate) {
 			var parent_handle = null;
 			if (parent_win) {
 				parent_handle = parent_win._handle;
@@ -448,13 +450,13 @@ if (nexacro.Browser == "Runtime") {
 
 			var callback = nexacro.__bindEventModalWindowLoadHandler(_window, null);
 
-			var _handle = nexacro.__createModalWindowHandle(parent_handle, _window, name, left, top, width, height, resizable, layered, lockmode, callback);
+			var _handle = nexacro.__createModalWindowHandle(parent_handle, _window, name, left, top, width, height, resizable, layered, lockmode, callback, delayedCreate);
 			callback = null;
 
 			for (var i = 0; i < window_list.length; i++) {
 				nexacro._setWindowModalLock(window_list[i], false, _handle, frame);
 			}
-
+			nexacro.__setModalParentWindowFocusHandle(parent_handle, _window, name, left, top, width, height, resizable, layered, lockmode, callback);
 			delete window_list;
 			return _window.returnValue;
 		};
@@ -727,12 +729,19 @@ if (nexacro.Browser == "Runtime") {
 			nexacro.__refreshDirtyWindow(_handle);
 		};
 
-		nexacro._blockScript = function (_handle) {
-			nexacro.__blockScript(_handle);
+		nexacro._createVirtualWindowHandle = function (_handle) {
+			return nexacro.__createVirtualWindowHandle(_handle);
+		};
+		nexacro._closeVirtualWindowHandle = function (_handle) {
+			nexacro.__closeVirtualWindowHandle(_handle);
 		};
 
-		nexacro._unblockScript = function (_handle) {
-			nexacro.__unblockScript(_handle);
+		nexacro._blockScript = function (_handle, _virtual_handle) {
+			nexacro.__blockScript(_handle, _virtual_handle);
+		};
+
+		nexacro._unblockScript = function (_handle, _virtual_handle) {
+			nexacro.__unblockScript(_handle, _virtual_handle);
 		};
 
 
@@ -879,20 +888,20 @@ if (nexacro.Browser == "Runtime") {
 			nexacro.__deleteTraceLogFile();
 		};
 
-		nexacro._writeTraceLog = function (msgtype, message, bsystemlog, loglevel) {
+		nexacro._writeTraceLog = function (msglevel, message, bsystemlog, loglevel) {
 			var data;
 			data = (bsystemlog == true) ? "S" : "U";
 
-			if (loglevel == 0) {
+			if (msglevel == 0) {
 				data += "F";
 			}
-			else if (loglevel == 1) {
+			else if (msglevel == 1) {
 				data += "E";
 			}
-			else if (loglevel == 2) {
+			else if (msglevel == 2) {
 				data += "W";
 			}
-			else if (loglevel == 3) {
+			else if (msglevel == 3) {
 				data += "I";
 			}
 			else {
@@ -911,15 +920,17 @@ if (nexacro.Browser == "Runtime") {
 			var traceduration = application.traceduration || -1;
 			var tracemode = application.tracemode || "none";
 
-			nexacro.__writeTraceLog(data, loglevel, tracemode, traceduration);
-		};
-
-		nexacro._loadImageURL = function (path, target, handler) {
-			return nexacro.__loadImageURL(path, target, handler);
+			nexacro.__writeTraceLog(data, loglevel, tracemode, traceduration, msglevel);
 		};
 
 		nexacro._loadImageBase64 = function (source, target, handler) {
 			return nexacro.__loadImageBase64(source, target, handler);
+		};
+
+		nexacro._setUseHttpKeepAlive = function (v) {
+			var usehttpkeepalive = nexacro._toBoolean(v);
+			application.usehttpkeepalive = (usehttpkeepalive == false) ? false : true;
+			nexacro.__setUseHttpKeepAlive(application.usehttpkeepalive);
 		};
 
 		nexacro._setHttpTimeout = function (v) {
@@ -1066,6 +1077,11 @@ if (nexacro.Browser == "Runtime") {
 		nexacro._createTrayPopupMenuHandle = function (tray_handle) {
 			var main_handle = nexacro._getMainWindowHandle();
 			return nexacro.__createTrayPopupMenuHandle(main_handle, tray_handle);
+		};
+
+		nexacro._destroyTrayPopupMenuHandle = function (tray_handle, menu_handle) {
+			var main_handle = nexacro._getMainWindowHandle();
+			return nexacro.__destroyTrayPopupMenuHandle(main_handle, tray_handle, menu_handle);
 		};
 
 		nexacro._setTrayPopupMenuItemHandle = function (tray_handle, menu_handle, flags, id, caption, icon) {

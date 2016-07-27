@@ -7,11 +7,11 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
-if (nexacro.OS == "iOS" && (window.location.protocol == "file:" && window.location.pathname.split('/').pop() == "Run.html")) {
+if (nexacro.OS == "iOS" && (window.location.protocol == "file:" && (window.location.pathname.split('/').pop() == "Run.html" || window.location.pathname.split('/').pop() == "nexacro.html"))) {
 	nexacro.DeviceI.prototype.setup = function () {
 		this._userCreatedObj = {
 		};
@@ -32,6 +32,7 @@ if (nexacro.OS == "iOS" && (window.location.protocol == "file:" && window.locati
 				this.bridge.setAttribute("height", "0px");
 				this.bridge.setAttribute("width", "0px");
 				this.bridge.setAttribute("frameborder", "0");
+				this.bridge.style.display = "none";
 				document.documentElement.appendChild(this.bridge);
 				this.msgqueue = new Array();
 				this.msgqueue.length = 0;

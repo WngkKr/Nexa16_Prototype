@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="UCCP_MESSAGE_RECEIVE" classname="UCCP_MESSAGE_RECEIVE" left="0" top="0" width="501" height="385" titletext="스크립트 영역 주석 처리 방법" onload="UCCP_MESSAGE_RECEIVE_onload">
+    <Layouts>
+      <Layout>
+        <Static id="Static05" taborder="0" onclick="Static23_onclick" cssclass="sta_WF_Box" bottom="49" right="15" top="107" left="15"/>
+        <Static id="Static28" taborder="1" text="제목" left="22" top="117" width="50" height="21"/>
+        <Edit id="edt_title" taborder="2" left="55" top="117" right="26" height="21" readonly="true"/>
+        <Static id="Static04" taborder="3" text="내용" left="22" top="141" width="50" height="21"/>
+        <TextArea id="txt_content" taborder="4" left="55" top="141" right="26" bottom="59" readonly="true"/>
+        <Static id="Static02" taborder="5" text="W&#13;&#10;15" visible="false" left="0" top="0" width="15" height="386" style="background:green;align:center;opacity:30;"/>
+        <Static id="Static00" taborder="6" text="H15" visible="false" left="0" top="0" width="501" height="15" style="background:green;align:center middle;opacity:30;"/>
+        <Static id="Static01" taborder="7" text="W&#13;&#10;15" visible="false" left="486" top="0" width="15" height="386" style="background:green;align:center;opacity:30;"/>
+        <Static id="Static53" taborder="8" text="보낸사람 :" cssclass="sta_SA_Label" left="16" top="15" width="70" height="21"/>
+        <Static id="Static03" taborder="9" text="수신일시 :" cssclass="sta_SA_Label" right="167" width="78" top="15" height="21"/>
+        <Static id="sta_user" taborder="10" cssclass="sta_WF_BoldGray" left="86" top="15" width="118" height="21"/>
+        <Static id="sta_date" taborder="11" cssclass="sta_WF_BoldGray" right="17" top="15" width="150" height="21"/>
+        <Button id="btn_close" taborder="12" text="닫기" onclick="btn_close_onclick" cssclass="btn_WF_Del" right="15" bottom="15" width="69" height="24" userdata=""/>
+        <Static id="Static07" taborder="13" text="H15" visible="false" left="0" top="370" width="501" height="15" style="background:green;align:center middle;opacity:30;"/>
+        <Button id="btn_reply" taborder="14" text="회신" cssclass="btn_WF_Confirm" width="69" height="24" bottom="15" right="87" onclick="btn_reply_onclick"/>
+        <Static id="Static14" taborder="15" text="수신 내용 정보" cssclass="sta_WF_Title" left="15" top="81" width="142" height="21"/>
+        <Static id="Static08" taborder="16" text="SR번호 :" cssclass="sta_SA_Label" left="16" top="42" width="70" height="21"/>
+        <Static id="sta_srNo" taborder="17" cssclass="sta_WF_BoldGray" left="86" top="42" width="397" height="21"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_messageRecive">
+        <ColumnInfo>
+          <Column id="O_ServiceType" type="STRING" size="256"/>
+          <Column id="O_IoName" type="STRING" size="256"/>
+          <Column id="O_IoXmlTag" type="STRING" size="256"/>
+          <Column id="O_IcXmlTag" type="STRING" size="256"/>
+          <Column id="O_DatasetName" type="STRING" size="256"/>
+          <Column id="S_Id" type="STRING" size="256"/>
+          <Column id="S_RecvConfirmedDate" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_output"/>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[/***********************************************************************************
+* SYSTEM      : Lexpeed3
+* BUSINESS    : Lex
+* FILE NAME   : KnowledgeList.xfdl
+* PROGRAMMER  : Knowledge Depot 목록
+* DATE        : 2016.05.26
+* DESCRIPTION : Knowledge Depot 목록 출력
+*------------------------------------------------------------------
+*   수정일      수정자			         수정내용
+*------------------------------------------------------------------
+* 2016.05.26     아무개            최초생성
+*------------------------------------------------------------------
+***********************************************************************************/
+
+/*----------------------------------------------------------------------------------------------
+ * 공통 라이브러리 INCLUDE 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+//include "LIB::LIB_COMMON.xjs";  	// 공통 js
+//include "NCRC::LIB_NMKT.xjs";		// MKT 공통 js
+
+/*----------------------------------------------------------------------------------------------
+ * FORM 변수 선언 영역
+----------------------------------------------------------------------------------------------*/
+this.fv_sId;
+
+/*----------------------------------------------------------------------------------------------
+ * FORM EVENT 영역
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  화면 로드시 이벤트
+ */
+this.UCCP_MESSAGE_RECEIVE_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	//공통초기화 필수
+	this.gfn_initForm(obj);
+	
+	this.sta_user.set_text( this.gfn_getParam("S_Login") );
+	this.sta_date.set_text( this.fn_dateMdyToYmd(this.gfn_getParam("S_RegisterDate")) );
+	this.sta_srNo.set_text( this.gfn_getParam("S_SRNumber") );
+	this.edt_title.set_value( this.gfn_getParam("S_Title") );
+	this.txt_content.set_value( this.gfn_getParam("S_MessageBody") );
+	this.txt_content.set_value( this.gfn_getParam("S_MessageBody") );
+	
+	if(this.gfn_isNull(this.gfn_getParam("S_RecvConfirmedDate")) && this.gfn_getParam("FLAG") == "R")
+	{
+		this.fn_messageReceive(this.gfn_getParam("S_Id"));		
+	}
+}
+
+/*----------------------------------------------------------------------------------------------
+ * 공통기능 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * TRANSACTION 및 CallBack 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description Push 수신 여부 저장 서비스 callback
+ * @param sTrId			- service ID
+ * @param nErrorCode	- error CODE
+ * @param sErrorMsg		- error MESSAGE
+ * @return N/A
+ */
+this.fn_callback = function(sTrId, nErrorCode, sErrorMsg)
+{
+	trace("sTrId: " + sTrId + " " + "nErrorCode: " + nErrorCode + " " +  "sErrorMsg: " + sErrorMsg);
+	
+	if ( nErrorCode < 0 ) return;
+	
+	switch(sTrId)
+	{
+		case "fn_messageReceive":
+			this.opener.fn_searchSpec("tabpage1");	//메시지 수신 목록 update
+			//trace(this.ds_output.saveXML());
+			break;
+		
+		default:
+			 break;
+	}
+}
+
+/*----------------------------------------------------------------------------------------------
+ * 각 COMPONENT 별 EVENT 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description 회신버튼 쪽지 발송 팝업호출
+ * @return N/A
+ */
+this.btn_reply_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	//1. 파라미터를 주지 않을때..
+    var oArgs    = 
+    {
+ 		"RECV_ID":this.sta_user.text     ,  //사용자id or 조직id
+ 		"RECV_NM":""  	,    				//사용자명
+ 		"GRADE":""      ,    				//직급
+ 		"DEPT_ID":""    ,    				//부서 id
+ 		"RESV_YN":"N"   ,	 				//예약설정여부
+ 		"EDT_TITLE":this.edt_title.value,
+ 		"TXT_CONTENT":this.txt_content.value
+    };
+
+	var sOption = "titletext=메시지발송,popupType=modalwindow";
+	this.gfn_openPopup("UCCP_MESSAGE_SEND", "CCP::UCCP_MESSAGE_SEND.xfdl", oArgs, sOption, "");
+	
+	this.close();
+}
+
+
+/**
+ * @description 화면 닫기
+ * @return N/A
+ */
+this.btn_close_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.close();
+}
+
+
+
+/*----------------------------------------------------------------------------------------------
+ * 사용자 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description Push 수신 여부 저장 서비스
+ * @param S_Id  - id 값
+ * @return N/A
+ */
+this.fn_messageReceive = function(S_Id)
+{	
+	var sRowId = S_Id;									// 조회에서 가져온 S_Id 를 꺼내옴
+	var S_RecvConfirmedDate = this.cfn_dateMdyToYmd(this.gfn_getDateTime());	//현재 시간
+	var objParamDs = this.ds_messageRecive;				// input ds명은 변경 (컬럼 구조는 excel 파일 참조)
+	this.ds_output.clearData();							// output ds는 임의(?) - (저장 후 돌려주는 값이 있는가?)
+	
+	objParamDs.clearData();	
+	objParamDs.addRow();
+
+	objParamDs.setColumn(0,"O_ServiceType", "IO_UPSERT");
+	objParamDs.setColumn(0,"O_IoName",      "KT Push Message Receiver List IO");
+	objParamDs.setColumn(0,"O_IoXmlTag",    "ListOfKtPushMessageReceiverListIo");	// 1) 참고성 자료(?)
+	objParamDs.setColumn(0,"O_IcXmlTag",    "KtPushMessageReceiverList");			// 2) 참고성 자료(?)
+	objParamDs.setColumn(0,"O_DatasetName", "ds_output");
+	objParamDs.setColumn(0,"S_Id", 			sRowId);	
+	objParamDs.setColumn(0,"S_RecvConfirmedDate", S_RecvConfirmedDate);
+	
+	var sInDs   = "ds_messageRecive=ds_messageRecive";	// input ds명은 변경
+	var sOutDs  = "ds_output=ds_output";
+	this.gfn_transaction("fn_messageReceive", "B2C::PL_PushMessage.saveMessageReceiverListIO", sInDs, sOutDs, "fn_callback", true, true);
+}
+
+/**
+ * @description yyyy/mm/dd hh:mm:ss -> yyyyMMddhhmmss 로 변경
+ * @param s - 날짜
+ * @return N/A
+ */
+this.fn_dateMdyToYmd = function(s)
+{
+	var f1='/';
+	var f2=' ';
+	var f3=':';	
+	
+	if(s.length == 6){
+		return s.substr(0,4)  + f1 + s.substr(4,2);
+	} else if(s.length == 8){
+		return s.substr(0,4)  + f1 + s.substr(4,2) + f1 + s.substr(6,2);
+	} else if(s.length == 14){
+		return  s.substr(0,4) + f1 + s.substr(4,2) + f1 + s.substr(6,2) + f2 + s.substr(8,2) + f3 + s.substr(10,2) + f3 + s.substr(12,2) ;
+	} else if(s.length == 12){
+		return s.substr(0,4)  + f1 + s.substr(4,2) + f1 + s.substr(6,2) + f2 + s.substr(8,2) + f3 + s.substr(10,2) ;
+	} else if(s.length == 10){
+		return s.substr(0,4)  + f1 + s.substr(4,2) + f1 + s.substr(6,2) + f2 + s.substr(8,2) ;
+	} else {
+		return s;
+	}
+}]]></Script>
+  </Form>
+</FDL>

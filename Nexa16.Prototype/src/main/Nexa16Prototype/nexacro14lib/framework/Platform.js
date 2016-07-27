@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -95,6 +95,7 @@ if (!nexacro._bInitPlatform) {
 		_jsContext.SQLStatement = nexacro.SQLStatement;
 		_jsContext.AudioRecord = nexacro.AudioRecord;
 		_jsContext.DomParser = nexacro.DomParser;
+		_jsContext.Map = nexacro.Map;
 
 		_jsContext.ColumnInfo = nexacro.DSColumnInfo;
 		_jsContext.Plugin = nexacro.Plugin;
@@ -182,6 +183,7 @@ if (!nexacro._bInitPlatform) {
 		_jsContext.SQLStatement = null;
 		_jsContext.AudioRecord = null;
 		_jsContext.DomParser = null;
+		_jsContext.Map = null;
 
 		_jsContext.ColumnInfo = null;
 		_jsContext.GridClickEventInfo = null;
@@ -219,6 +221,8 @@ if (!nexacro._bInitPlatform) {
 	nexacro.System.makeCall = function (phoneNumber, autoDialing) {
 	};
 	nexacro.System.play = function (filePath) {
+	};
+	nexacro.System.getPackageVersion = function () {
 	};
 
 	nexacro.System.convertRealPath = function (path) {
@@ -381,6 +385,8 @@ if (!nexacro._bInitPlatform) {
 	nexacro.System.getAccessibilityType = function () {
 		return nexacro.System._accessibilitytype;
 	};
+
+	nexacro.System.releaseImage = nexacro._emptyFn;
 
 	nexacro.TimerManager = function (context) {
 		this.context = context;
@@ -631,7 +637,7 @@ if (!nexacro._bInitPlatform) {
 				if (target && target._is_alive) {
 					pthis.callback.call(target);
 				}
-				if (!pthis.context._timerManager.deleteTimerItem(pthis)) {
+				if (pthis.context && pthis.context._timerManager && !pthis.context._timerManager.deleteTimerItem(pthis)) {
 					pthis.destroy();
 				}
 				pthis = null;
@@ -761,7 +767,7 @@ if (!nexacro._bInitPlatform) {
 		var targets = this.targets;
 		var idx = nexacro._indexOf(targets, target);
 		if (idx >= 0) {
-			targets.spliace(idx, 1);
+			targets.splice(idx, 1);
 			return true;
 		}
 		return false;
@@ -1150,7 +1156,7 @@ if (!nexacro._bInitPlatform) {
 				else {
 					if (this.context && this.context.parent && this.context.parent._is_frame) {
 						var child_frame = this.context.parent;
-						child_frame._is_loadform_failed = true;
+						child_frame._on_loadform_failed();
 					}
 					application._onHttpSystemError(this.context, true, this.context, fireerrorcode, url, returncode, requesturi, locationuri);
 				}
@@ -1793,23 +1799,17 @@ if (!nexacro._bInitPlatform) {
 		}
 
 		if (layout_len >= 1 && layout_list[layout_len - 1].name != "default") {
-			layout_list.add_item("default", form._default_layout);
-			layout_len++;
+			if (form._default_layout.screenid == "" || form._default_layout.screenid.indexOf(application._curscreen.name) >= 0) {
+				layout_list.add_item("default", form._default_layout);
+				layout_len++;
+			}
 		}
 
 		if (layout_len <= 1) {
-			return -1;
+			return 0;
 		}
 
-
-		var pt_min_x = -1, pt_min_y = -1;
-		var correct = -1;
-		var layout = null;
-		var distance = -1, distance_y = -1;
-		var correct_org = -1;
-		var count = 0;
-		var over_layout_width = [], over_layout_height = [];
-
+		var pt_min_x = -1, pt_min_y = -1, correct = -1, layout = null, distance = -1, distance_y = -1, correct_org = -1, count = 0, over_layout_width = [], over_layout_height = [];
 		var tmp_correct = -1;
 		var tmp_width = 0;
 
@@ -2323,7 +2323,7 @@ if (!nexacro._bInitPlatform) {
 			_handle = _parent._handle;
 			_parent._child_list.add_item(name, this);
 		}
-		return nexacro._createModalWindowHandle(_parent, this, name, left, top, width, height, resizable, layered, lockmode);
+		return nexacro._createModalWindowHandle(_parent, this, name, left, top, width, height, resizable, layered, lockmode, this.frame ? this.frame._delayed_create_window : false);
 	};
 
 	_pWindow.createModalAsync = function (_parent, name, width, height, left, top, resizable, layered, lockmode) {
@@ -2718,10 +2718,16 @@ if (!nexacro._bInitPlatform) {
 			if (!tmp) {
 				return [tmp, x, y];
 			}
+
 			var control_elem = tmp._control_element;
 			if (control_elem) {
 				x -= control_elem.left;
 				y -= control_elem.top;
+
+				if ((elem instanceof nexacro.ControlElementBase) == false && elem.left == 0 && elem.top == 0) {
+					x += control_elem.padding ? control_elem.padding.left : 0;
+					y += control_elem.padding ? control_elem.padding.top : 0;
+				}
 			}
 			if (tmp instanceof nexacro.Form) {
 				x += elem._scroll_left ? elem._scroll_left : 0;
@@ -2777,6 +2783,11 @@ if (!nexacro._bInitPlatform) {
 			if (control_elem) {
 				x -= control_elem.left;
 				y -= control_elem.top;
+
+				if ((elem instanceof nexacro.ControlElementBase) == false) {
+					x += control_elem.padding ? control_elem.padding.left : 0;
+					y += control_elem.padding ? control_elem.padding.top : 0;
+				}
 			}
 			if (is_passed) {
 				return [tmp, x, y, true];
@@ -2838,13 +2849,18 @@ if (!nexacro._bInitPlatform) {
 				focus_comp = form.getFocus();
 			}
 			else {
-				var id_arr = accessibilityFocusId.split("_");
-				var acc_comp = id_arr[id_arr.length - 1];
-				focus_comp = form[acc_comp];
+				var _window = form._getWindow();
+				focus_comp = _window._accessibility_last_focused_comp;
 			}
 
 			if (focus_comp) {
 				focus_comp._resetScrollPos(focus_comp, focus_comp._adjust_left, focus_comp._adjust_top, focus_comp._adjust_left + focus_comp._adjust_width, focus_comp._adjust_top + focus_comp._adjust_height);
+
+				if (nexacro._enableaccessibility) {
+					if (nexacro._accessibilitytype == 5) {
+						focus_comp._setAccessibilityNotifyEvent();
+					}
+				}
 			}
 		}
 	};
@@ -3055,10 +3071,14 @@ if (!nexacro._bInitPlatform) {
 
 		if (elem && elem._is_track) {
 			if (application._current_popups.length > 0) {
+				var is_capture = application._current_popups[0]._track_capture;
 				var comp = this.findComponent(elem, 0, 0);
 				application._checkClosePopupComponent(comp[0], false);
 				var cur_popup = application._current_popups[0];
-				if (!cur_popup) {
+				if (!is_capture) {
+					this._click_cancel = false;
+				}
+				else if (!cur_popup) {
 					this._click_cancel = true;
 					return;
 				}
@@ -3073,9 +3093,13 @@ if (!nexacro._bInitPlatform) {
 			var comp = this.findComponent(elem, 0, 0);
 			if (comp && comp[0]) {
 				if (application._current_popups.length > 0) {
+					var is_capture = application._current_popups[0]._track_capture;
 					application._checkClosePopupComponent(comp[0], true);
 					var cur_popup = application._current_popups[0];
-					if (!cur_popup) {
+					if (!is_capture) {
+						this._click_cancel = false;
+					}
+					else if (!cur_popup) {
 						this._click_cancel = true;
 						return;
 					}
@@ -3091,10 +3115,16 @@ if (!nexacro._bInitPlatform) {
 				var canvasX = windowX - elem_pos[0] + comp[1];
 				var canvasY = windowY - elem_pos[1] + comp[2];
 
+				var root_comp1 = comp[0]._getRootWindowComponent(comp[0]);
 				var capture_comp = this._getCaptureComp(true, false, comp[0]);
-				if (capture_comp && capture_comp != comp[0]) {
-					comp[0] = capture_comp;
+
+				if (capture_comp && capture_comp._track_capture) {
+					var root_comp2 = capture_comp._getRootWindowComponent(capture_comp);
+					if (root_comp1 != root_comp2) {
+						comp[0] = capture_comp;
+					}
 				}
+
 
 				comp[0]._on_lbuttondown(elem, strButton, altKey, ctrlKey, shiftKey, canvasX, canvasY, screenX, screenY);
 			}
@@ -3117,10 +3147,14 @@ if (!nexacro._bInitPlatform) {
 
 		if (elem && elem._is_track) {
 			if (application._current_popups.length > 0) {
+				var is_capture = application._current_popups[0]._track_capture;
 				var comp = this.findComponent(elem, 0, 0);
 				application._checkClosePopupComponent(comp[0], false);
 				var cur_popup = application._current_popups[0];
-				if (!cur_popup) {
+				if (!is_capture) {
+					this._click_cancel = false;
+				}
+				else if (!cur_popup) {
 					this._click_cancel = true;
 					return;
 				}
@@ -3135,9 +3169,13 @@ if (!nexacro._bInitPlatform) {
 			var comp = this.findComponent(elem, 0, 0);
 			if (comp && comp[0]) {
 				if (application._current_popups.length > 0) {
+					var is_capture = application._current_popups[0]._track_capture;
 					application._checkClosePopupComponent(comp[0], true);
 					var cur_popup = application._current_popups[0];
-					if (!cur_popup) {
+					if (!is_capture) {
+						this._click_cancel = false;
+					}
+					else if (!cur_popup) {
 						this._click_cancel = true;
 						return;
 					}
@@ -3153,9 +3191,14 @@ if (!nexacro._bInitPlatform) {
 				var canvasX = windowX - elem_pos[0] + comp[1];
 				var canvasY = windowY - elem_pos[1] + comp[2];
 
+				var root_comp1 = comp[0]._getRootWindowComponent(comp[0]);
 				var capture_comp = this._getCaptureComp(true, false, comp[0]);
-				if (capture_comp && capture_comp != comp[0]) {
-					comp[0] = capture_comp;
+
+				if (capture_comp && capture_comp._track_capture) {
+					var root_comp2 = capture_comp._getRootWindowComponent(capture_comp);
+					if (root_comp1 != root_comp2) {
+						comp[0] = capture_comp;
+					}
 				}
 
 				comp[0]._on_touch_lbuttondown(elem, strButton, altKey, ctrlKey, shiftKey, canvasX, canvasY, screenX, screenY, undefined, undefined, undefined, false);
@@ -3186,9 +3229,13 @@ if (!nexacro._bInitPlatform) {
 		var comp = this.findComponent(elem, 0, 0);
 		if (comp && comp[0]) {
 			if (application._current_popups.length > 0) {
+				var is_capture = application._current_popups[0]._track_capture;
 				application._checkClosePopupComponent(comp[0]);
 				var cur_popup = application._current_popups[0];
-				if (!cur_popup) {
+				if (!is_capture) {
+					this._click_cancel = false;
+				}
+				else if (!cur_popup) {
 					this._click_cancel = true;
 					return;
 				}
@@ -3201,9 +3248,14 @@ if (!nexacro._bInitPlatform) {
 			var canvasX = windowX - elem_pos[0] + comp[1];
 			var canvasY = windowY - elem_pos[1] + comp[2];
 
+			var root_comp1 = comp[0]._getRootWindowComponent(comp[0]);
 			var capture_comp = this._getCaptureComp(true, false, comp[0]);
-			if (capture_comp && capture_comp != comp[0]) {
-				comp[0] = capture_comp;
+
+			if (capture_comp && capture_comp._track_capture) {
+				var root_comp2 = capture_comp._getRootWindowComponent(capture_comp);
+				if (root_comp1 != root_comp2) {
+					comp[0] = capture_comp;
+				}
 			}
 
 			comp[0]._on_rbuttondown(elem, strButton, altKey, ctrlKey, shiftKey, canvasX, canvasY, screenX, screenY);
@@ -3231,6 +3283,13 @@ if (!nexacro._bInitPlatform) {
 		var extratrackInfo = nexacro._cur_extra_track_info;
 		var comp, elem_pos, canvasX, canvasY;
 		var _is_drag = false, _is_text, _is_select, _is_click, _is_input;
+		var down_rootcomp = this.findComponent(this._cur_ldown_elem, 0, 0);
+
+		var down_flag = false;
+		if (down_rootcomp[0]) {
+			down_rootcomp = down_rootcomp[0]._getRootComponent(down_rootcomp[0]);
+			down_flag = true;
+		}
 
 		elem = (elem && elem.setSelectEventPassElement) ? elem.setSelectEventPassElement(windowX, windowY) : elem;
 		if (elem && dragInfo && dragInfo.isDragging && dragInfo.targetwin == this) {
@@ -3278,10 +3337,16 @@ if (!nexacro._bInitPlatform) {
 			canvasX = windowX - elem_pos[0] + comp[1];
 			canvasY = windowY - elem_pos[1] + comp[2];
 
+			var root_comp1 = comp[0]._getRootWindowComponent(comp[0]);
 			var capture_comp = this._getCaptureComp(true, false, comp[0]);
-			if (capture_comp && capture_comp != comp[0]) {
-				comp[0] = capture_comp;
+
+			if (capture_comp && capture_comp._track_capture) {
+				var root_comp2 = capture_comp._getRootWindowComponent(capture_comp);
+				if (root_comp1 != root_comp2) {
+					comp[0] = capture_comp;
+				}
 			}
+
 
 			var component = comp[0];
 			if (component._is_subcontrol) {
@@ -3316,6 +3381,11 @@ if (!nexacro._bInitPlatform) {
 
 			if (comp[0]._is_alive) {
 				comp[0]._on_last_lbuttonup();
+			}
+		}
+		else if (elem && !comp[0]) {
+			if (down_rootcomp && down_flag) {
+				down_rootcomp._cancelEvent();
 			}
 		}
 
@@ -3495,10 +3565,16 @@ if (!nexacro._bInitPlatform) {
 			canvasX = windowX - elem_pos[0] + comp[1];
 			canvasY = windowY - elem_pos[1] + comp[2];
 
+			var root_comp1 = comp[0]._getRootWindowComponent(comp[0]);
 			var capture_comp = this._getCaptureComp(true, false, comp[0]);
-			if (capture_comp && capture_comp != comp[0]) {
-				comp[0] = capture_comp;
+
+			if (capture_comp && capture_comp._track_capture) {
+				var root_comp2 = capture_comp._getRootWindowComponent(capture_comp);
+				if (root_comp1 != root_comp2) {
+					comp[0] = capture_comp;
+				}
 			}
+
 
 			var component = comp[0];
 			if (component._is_subcontrol) {
@@ -3533,10 +3609,16 @@ if (!nexacro._bInitPlatform) {
 			var canvasX = windowX - elem_pos[0] + comp[1];
 			var canvasY = windowY - elem_pos[1] + comp[2];
 
+			var root_comp1 = comp[0]._getRootWindowComponent(comp[0]);
 			var capture_comp = this._getCaptureComp(true, false, comp[0]);
-			if (capture_comp && capture_comp != comp[0]) {
-				comp[0] = capture_comp;
+
+			if (capture_comp && capture_comp._track_capture) {
+				var root_comp2 = capture_comp._getRootWindowComponent(capture_comp);
+				if (root_comp1 != root_comp2) {
+					comp[0] = capture_comp;
+				}
 			}
+
 
 			comp[0]._on_rbuttonup(elem, strButton, altKey, ctrlKey, shiftKey, canvasX, canvasY, screenX, screenY, undefined, undefined, undefined, elem);
 		}
@@ -3561,10 +3643,16 @@ if (!nexacro._bInitPlatform) {
 			var canvasX = windowX - elem_pos[0] + comp[1];
 			var canvasY = windowY - elem_pos[1] + comp[2];
 
+			var root_comp1 = comp[0]._getRootWindowComponent(comp[0]);
 			var capture_comp = this._getCaptureComp(true, false, comp[0]);
-			if (capture_comp && capture_comp != comp[0]) {
-				comp[0] = capture_comp;
+
+			if (capture_comp && capture_comp._track_capture) {
+				var root_comp2 = capture_comp._getRootWindowComponent(capture_comp);
+				if (root_comp1 != root_comp2) {
+					comp[0] = capture_comp;
+				}
 			}
+
 
 			comp[0]._on_mouseup(elem, strButton, altKey, ctrlKey, shiftKey, canvasX, canvasY, screenX, screenY, undefined, undefined, undefined, elem);
 		}
@@ -3586,10 +3674,16 @@ if (!nexacro._bInitPlatform) {
 			var canvasX = windowX - elem_pos[0] + comp[1];
 			var canvasY = windowY - elem_pos[1] + comp[2];
 
+			var root_comp1 = comp[0]._getRootWindowComponent(comp[0]);
 			var capture_comp = this._getCaptureComp(true, false, comp[0]);
-			if (capture_comp && capture_comp != comp[0]) {
-				comp[0] = capture_comp;
+
+			if (capture_comp && capture_comp._track_capture) {
+				var root_comp2 = capture_comp._getRootWindowComponent(capture_comp);
+				if (root_comp1 != root_comp2) {
+					comp[0] = capture_comp;
+				}
 			}
+
 
 			comp[0]._on_mousedown(elem, strButton, altKey, ctrlKey, shiftKey, canvasX, canvasY, screenX, screenY);
 		}
@@ -3626,7 +3720,20 @@ if (!nexacro._bInitPlatform) {
 							dragInfo.data = ret[3];
 							dragInfo.userdata = ret[4];
 							comp[0]._on_dragmove(elem, dragInfo.target, dragInfo.referTarget, dragInfo.data, dragInfo.userdata, strButton, altKey, ctrlKey, shiftKey, canvasX, canvasY, screenX, screenY);
-							return;
+							var c = comp[0];
+							var is_scroll = false;
+
+							while (c) {
+								if (c instanceof nexacro.ScrollBarCtrl) {
+									is_scroll = true;
+									break;
+								}
+								c = c.parent;
+							}
+
+							if (!is_scroll) {
+								return;
+							}
 						}
 					}
 					nexacro._cur_drag_info = null;
@@ -3668,7 +3775,7 @@ if (!nexacro._bInitPlatform) {
 				trackInfo.distY = windowY - trackInfo.startY;
 			}
 
-			trackInfo.target._on_movetrack(trackInfo.distX, trackInfo.distY, trackInfo.data);
+			trackInfo.target._on_movetrack(trackInfo.distX, trackInfo.distY, trackInfo.data, windowX, windowY);
 		}
 
 		if (extratrackInfo) {
@@ -3693,10 +3800,16 @@ if (!nexacro._bInitPlatform) {
 				canvasX = elem.width - canvasX;
 			}
 
+			var root_comp1 = comp[0]._getRootWindowComponent(comp[0]);
 			var capture_comp = this._getCaptureComp(true, false, comp[0]);
-			if (capture_comp && capture_comp != comp[0]) {
-				comp[0] = capture_comp;
+
+			if (capture_comp && capture_comp._track_capture) {
+				var root_comp2 = capture_comp._getRootWindowComponent(capture_comp);
+				if (root_comp1 != root_comp2) {
+					comp[0] = capture_comp;
+				}
 			}
+
 
 			var form = comp[0].parent;
 			while (form) {
@@ -3765,10 +3878,16 @@ if (!nexacro._bInitPlatform) {
 			var canvasX = windowX - elem_pos[0] + comp[1];
 			var canvasY = windowY - elem_pos[1] + comp[2];
 
+			var root_comp1 = comp[0]._getRootWindowComponent(comp[0]);
 			var capture_comp = this._getCaptureComp(true, false, comp[0]);
-			if (capture_comp && capture_comp != comp[0]) {
-				comp[0] = capture_comp;
+
+			if (capture_comp && capture_comp._track_capture) {
+				var root_comp2 = capture_comp._getRootWindowComponent(capture_comp);
+				if (root_comp1 != root_comp2) {
+					comp[0] = capture_comp;
+				}
 			}
+
 
 			comp[0]._on_dblclick(elem, strButton, altKey, ctrlKey, shiftKey, canvasX, canvasY, screenX, screenY);
 		}
@@ -3807,10 +3926,16 @@ if (!nexacro._bInitPlatform) {
 			var canvasX = windowX - elem_pos[0] + comp[1];
 			var canvasY = windowY - elem_pos[1] + comp[2];
 
+			var root_comp1 = comp[0]._getRootWindowComponent(comp[0]);
 			var capture_comp = this._getCaptureComp(true, false, comp[0]);
-			if (capture_comp && capture_comp != comp[0]) {
-				comp[0] = capture_comp;
+
+			if (capture_comp && capture_comp._track_capture) {
+				var root_comp2 = capture_comp._getRootWindowComponent(capture_comp);
+				if (root_comp1 != root_comp2) {
+					comp[0] = capture_comp;
+				}
 			}
+
 
 			comp[0]._on_mouseenter(elem, from_comp, strButton, altKey, ctrlKey, shiftKey, canvasX, canvasY, screenX, screenY);
 		}
@@ -3846,10 +3971,16 @@ if (!nexacro._bInitPlatform) {
 			var canvasX = windowX - elem_pos[0] + comp[1];
 			var canvasY = windowY - elem_pos[1] + comp[2];
 
+			var root_comp1 = comp[0]._getRootWindowComponent(comp[0]);
 			var capture_comp = this._getCaptureComp(true, false, comp[0]);
-			if (capture_comp && capture_comp != comp[0]) {
-				comp[0] = capture_comp;
+
+			if (capture_comp && capture_comp._track_capture) {
+				var root_comp2 = capture_comp._getRootWindowComponent(capture_comp);
+				if (root_comp1 != root_comp2) {
+					comp[0] = capture_comp;
+				}
 			}
+
 
 			comp[0]._on_mouseleave(elem, to_comp, strButton, altKey, ctrlKey, shiftKey, canvasX, canvasY, screenX, screenY);
 		}
@@ -3871,10 +4002,16 @@ if (!nexacro._bInitPlatform) {
 			var canvasX = windowX - elem_pos[0] + comp[1];
 			var canvasY = windowY - elem_pos[1] + comp[2];
 
+			var root_comp1 = comp[0]._getRootWindowComponent(comp[0]);
 			var capture_comp = this._getCaptureComp(true, false, comp[0]);
-			if (capture_comp && capture_comp != comp[0]) {
-				comp[0] = capture_comp;
+
+			if (capture_comp && capture_comp._track_capture) {
+				var root_comp2 = capture_comp._getRootWindowComponent(capture_comp);
+				if (root_comp1 != root_comp2) {
+					comp[0] = capture_comp;
+				}
 			}
+
 
 			return comp[0]._on_mousewheel(elem, wheelDeltaX, wheelDeltaY, strButton, altKey, ctrlKey, shiftKey, canvasX, canvasY, screenX, screenY);
 		}
@@ -4172,6 +4309,8 @@ if (!nexacro._bInitPlatform) {
 		if (!this._ignore_close_confirm) {
 			var frame = this.frame;
 			var confirm_message = frame._on_beforeclose();
+
+
 			return confirm_message;
 		}
 	};
@@ -4193,6 +4332,10 @@ if (!nexacro._bInitPlatform) {
 
 		if (!this._is_main && this.frame) {
 			nexacro._createModalAsyncCallbackHandler(this._handle, this.frame);
+		}
+
+		if (this._is_main && nexacro.Browser != "Runtime") {
+			application._exit(true);
 		}
 	};
 
@@ -4251,33 +4394,67 @@ if (!nexacro._bInitPlatform) {
 
 		this._cur_touch_elem = elem;
 
-		if (application._current_popups.length > 0) {
-			var comp = this.findComponent(elem, 0, 0);
-			application._checkClosePopupComponent(comp[0], false);
-			var cur_popup = application._current_popups[0];
-			if (!cur_popup) {
-				this._click_cancel = true;
-				return;
+		if (elem && elem._is_track) {
+			if (application._current_popups.length > 0) {
+				var is_capture = application._current_popups[0]._track_capture;
+				var comp = this.findComponent(elem, 0, 0);
+				application._checkClosePopupComponent(comp[0], false);
+				var cur_popup = application._current_popups[0];
+				if (!is_capture) {
+					this._click_cancel = false;
+				}
+				else if (!cur_popup) {
+					this._click_cancel = true;
+					return;
+				}
 			}
+			else {
+				this._click_cancel = false;
+			}
+
+			nexacro._setTrackInfo(this, elem, windowX, windowY);
 		}
 		else {
-			this._click_cancel = false;
-		}
+			if (application._current_popups.length > 0) {
+				var is_capture = application._current_popups[0]._track_capture;
+				var comp = this.findComponent(elem, 0, 0);
+				application._checkClosePopupComponent(comp[0], true);
+				var cur_popup = application._current_popups[0];
+				if (!is_capture) {
+					this._click_cancel = false;
+				}
+				else if (!cur_popup) {
+					this._click_cancel = true;
+					return;
+				}
+			}
+			else {
+				this._click_cancel = false;
+			}
 
-		if (nexacro.OS == "iOS") {
-			var last_touchid = this._last_touchid;
+			if (nexacro.OS == "iOS") {
+				var last_touchid = this._last_touchid;
 
-			this._last_touchid = touchid;
+				this._last_touchid = touchid;
 
-			if (touchid == last_touchid) {
-				this._click_cancel = true;
+				if (touchid == last_touchid) {
+					this._click_cancel = true;
+					return;
+				}
+			}
+
+			var ret = manager.ontouchstart(this, elem, touchid, clientX, clientY, screenX, screenY, curtime, orgtime, is_last_changedtouch, first_touchid);
+
+			if (nexacro._allow_default_pinchzoom && !nexacro.AccessibilityUtil.cancelTouchEvent(elem)) {
 				return;
 			}
 		}
 
-		var ret = manager.ontouchstart(this, elem, touchid, clientX, clientY, screenX, screenY, curtime, orgtime, is_last_changedtouch, first_touchid);
+		if (elem instanceof nexacro.InputElement) {
+			return;
+		}
 
-		if (nexacro._allow_default_pinchzoom && !nexacro.AccessibilityUtil.cancelTouchEvent(elem)) {
+		if (elem instanceof nexacro.InputElement) {
 			return;
 		}
 
@@ -4382,6 +4559,10 @@ if (!nexacro._bInitPlatform) {
 		var ret = manager.ontouchend(this, elem, touchid, clientX, clientY, screenX, screenY, curtime, orgtime, is_last_changedtouch);
 
 		if (manager._allow_default) {
+			return;
+		}
+
+		if (elem instanceof nexacro.InputElement) {
 			return;
 		}
 
@@ -4681,14 +4862,14 @@ if (!nexacro._bInitPlatform) {
 		_pApplication.codepage = "";
 		_pApplication.language = "";
 		_pApplication.version = "";
-		_pApplication.tracemode = false;
+		_pApplication.tracemode = "none";
 		_pApplication.traceduration = -1;
 		_pApplication.usehttpkeepalive = true;
-		_pApplication.useproxykeepalive = false;
+		_pApplication.useproxykeepalive = true;
 		_pApplication.httptimeout = 30;
-		_pApplication.proxytimeout = 0;
+		_pApplication.proxytimeout = 30;
 		_pApplication.httpretry = 3;
-		_pApplication.proxyretry = 1;
+		_pApplication.proxyretry = 3;
 		_pApplication.themeid = "";
 		_pApplication.engineversion = "2.0";
 		_pApplication.enginesetupkey = "";
@@ -4698,8 +4879,12 @@ if (!nexacro._bInitPlatform) {
 		_pApplication.mousewheeltype = 0;
 		_pApplication.imepastemode = 0;
 		_pApplication.addcookietovariable = true;
-		_pApplication.filesecurelevel = 0;
-		_pApplication.networksecurelevel = 0;
+		_pApplication.filesecurelevel = 1;
+		_pApplication.networksecurelevel = 1;
+		_pApplication.enablescreencapture = true;
+		_pApplication.enablecookie = true;
+		_pApplication.enablecache = true;
+		_pApplication.enableclipboard = true;
 		_pApplication.enabletouchevent = false;
 		_pApplication.enableanimation = false;
 		_pApplication.loglevel = "debug";
@@ -4824,6 +5009,8 @@ if (!nexacro._bInitPlatform) {
 		_pApplication._current_tray_popup = null;
 
 		_pApplication._accessibilitytype = 1;
+
+		_pApplication._is_on_alert = false;
 
 		_pApplication._event_list = {
 			"onload" : 1, 
@@ -4957,7 +5144,6 @@ if (!nexacro._bInitPlatform) {
 				var evt = new nexacro.ErrorEventInfo(obj, "onerror", errortype, errormsg, errorobj, statuscode, requesturi, locationuri);
 				return this.onerror._fireEvent(this, evt);
 			}
-			return true;
 		};
 
 		_pApplication.on_fire_onbeforeexit = function (obj) {
@@ -5176,13 +5362,13 @@ if (!nexacro._bInitPlatform) {
 		};
 
 
-		_pApplication._onFireSystemError = function (errorobj, bfireevent, errortype, msgtype, message, bsystemlog, loglevel) {
+		_pApplication._onFireSystemError = function (errorobj, bfireevent, errortype, msglevel, message, bsystemlog) {
 			if (bfireevent) {
 				this.on_fire_onerror(application, errortype, message, errorobj);
 			}
 
-			if ((loglevel || 4) <= this._loglevel && this.tracemode != "none" && message) {
-				nexacro._writeTraceLog(msgtype, message, bsystemlog, loglevel);
+			if (message) {
+				nexacro._writeTraceLog(msglevel, message, bsystemlog, this._loglevel);
 			}
 		};
 
@@ -5207,7 +5393,12 @@ if (!nexacro._bInitPlatform) {
 
 		_pApplication._getErrorMessge = function (errorcode) {
 			if (nexacro._errortable) {
-				var errmsg = nexacro._errortable[system._language][errorcode];
+				var lang = "en";
+				if (nexacro._errortable[system._language]) {
+					lang = system._language;
+				}
+
+				var errmsg = nexacro._errortable[lang][errorcode];
 
 				if (!errmsg) {
 					return "";
@@ -5477,10 +5668,13 @@ if (!nexacro._bInitPlatform) {
 		_pApplication._RegisterClass = function (_jsContext) {
 			var registerclass = this._registerclass;
 			var len = registerclass.length;
+
 			for (var i = 0; i < len; i++) {
 				var item = registerclass[i];
 				if (item) {
-					_jsContext[item.id] = eval(item.classname);
+					if (!_jsContext[item.id]) {
+						_jsContext[item.id] = eval(item.classname);
+					}
 				}
 			}
 		};
@@ -5740,6 +5934,10 @@ if (!nexacro._bInitPlatform) {
 				return -1;
 			}
 
+			if (this.trays.indexOf(id) > -1) {
+				return -1;
+			}
+
 			var idx = this.trays.add_item(id, obj);
 			this.all.add_item(id, obj);
 
@@ -5748,12 +5946,16 @@ if (!nexacro._bInitPlatform) {
 
 		_pApplication.removeTray = function (id) {
 			if (typeof (id) == "string") {
-				this.trays[id]._destroy();
+				if (this.trays[id]) {
+					this.trays[id]._destroy();
+				}
 			}
 			else {
 				var cnt = this.trays.length;
 				for (var i = cnt - 1; i >= 0; i--) {
-					this.trays[i]._destroy();
+					if (this.trays[i]) {
+						this.trays[i]._destroy();
+					}
 				}
 			}
 		};
@@ -5764,12 +5966,13 @@ if (!nexacro._bInitPlatform) {
 			}
 
 			var fullurl = this._getServiceLocation(url);
-
-			var service = this._getServiceObject(url);
+			var service;
 			if (type == "data") {
+				service = this._getServiceObject(url, true);
 				this._load_manager.addPreloadItem(type, fullurl, id, args, service);
 			}
 			else {
+				service = this._getServiceObject(url);
 				this._load_manager.addPreloadItem(type, url, (id ? id : this), null, service);
 			}
 		};
@@ -6395,7 +6598,6 @@ if (!nexacro._bInitPlatform) {
 		};
 
 		_pApplication.trace = function (log, level) {
-			var loglevel = 4;
 			if (level) {
 				trace(level);
 			}
@@ -6824,7 +7026,7 @@ if (!nexacro._bInitPlatform) {
 			}
 		};
 		_pApplication.set_usehttpkeepalive = function (v) {
-			this.usehttpkeepalive = nexacro._toBoolean(v);
+			nexacro._setUseHttpKeepAlive(v);
 		};
 
 		_pApplication.set_useproxykeepalive = function (v) {
@@ -6877,6 +7079,22 @@ if (!nexacro._bInitPlatform) {
 
 		_pApplication.set_networksecurelevel = function (v) {
 			nexacro._setNetworkSecureLevel(v);
+		};
+
+		_pApplication.set_enablescreencapture = function (v) {
+			nexacro._setEnableScreenCapture(v);
+		};
+
+		_pApplication.set_enablecookie = function (v) {
+			nexacro._setEnableCookie(v);
+		};
+
+		_pApplication.set_enablecache = function (v) {
+			nexacro._setEnableCache(v);
+		};
+
+		_pApplication.set_enableclipboard = function (v) {
+			nexacro._setEnableClipboard(v);
 		};
 
 		_pApplication.set_locale = function (v) {
@@ -7098,7 +7316,7 @@ if (!nexacro._bInitPlatform) {
 					altKey == ((forwardkey._modifierkey & 0x02) == 0x02) && 
 					ctrlKey == ((forwardkey._modifierkey & 0x01) == 0x01) && 
 					shiftKey == ((forwardkey._modifierkey & 0x04) == 0x04)) {
-					if (this._accessibilityHistoryCursor < this._accessibilityHistoryList.length - 2 && this._accessibilityHistoryCursor < this.accessibilityhistorycount - 1) {
+					if (this._accessibilityHistoryCursor <= this._accessibilityHistoryList.length - 2 && this._accessibilityHistoryCursor <= this.accessibilityhistorycount - 1) {
 						if (this._accessibilityHistoryCursor == -1) {
 							this._accessibilityHistoryCursor = 0;
 						}
@@ -7440,7 +7658,7 @@ if (!nexacro._bInitPlatform) {
 		_pApplication.set_loadingimage = function (v) {
 			this.loadingimage = v;
 			if (this._is_loaded) {
-				var imagesize = nexacro._getImageSize(v, this._on_loadwaitimage, this);
+				var imagesize = nexacro._getImageSize(v, this._on_loadwaitimage, this, undefined, v);
 			}
 		};
 
@@ -8029,13 +8247,16 @@ if (!nexacro._bInitPlatform) {
 		};
 
 
-		_pApplication._exit = function () {
+		_pApplication._exit = function (skip) {
 			this.removeTray();
 
 			var mainframe = this.mainframe;
-			var msg = mainframe._on_beforeclose();
-			if (mainframe._checkAndConfirmClose(msg) == false) {
-				return false;
+
+			if (!skip) {
+				var msg = mainframe._on_beforeclose();
+				if (mainframe._checkAndConfirmClose(msg) == false) {
+					return false;
+				}
 			}
 
 			var child_len = this.popupframes.length;
@@ -8050,6 +8271,7 @@ if (!nexacro._bInitPlatform) {
 			this.on_fire_onexit();
 
 			this._removeProtocols();
+
 			var popup_frame_len = this.popupframes.length;
 			for (var i = popup_frame_len - 1; i >= 0; i--) {
 				var chframe = this.popupframes[i];
@@ -8057,6 +8279,7 @@ if (!nexacro._bInitPlatform) {
 					chframe.form.close();
 				}
 			}
+
 			this.mainframe._destroy();
 
 			this._global_context = null;
@@ -8080,8 +8303,10 @@ if (!nexacro._bInitPlatform) {
 
 
 		_pApplication.alert = function (strText, strCaption, strType) {
+			this._is_on_alert = true;
 			this._skipDragEventAfterMsgBox = true;
 			nexacro._alert(this, strText, strCaption, strType);
+			this._is_on_alert = false;
 		};
 
 
@@ -8248,7 +8473,7 @@ if (!nexacro._bInitPlatform) {
 			if (!this.loadingimage) {
 				var loadingimage = this._getLoadingImageUrl();
 				loadingimage = nexacro._getImageLocation(loadingimage);
-				nexacro._getImageSize(loadingimage, this._on_loadwaitimage, this);
+				nexacro._getImageSize(loadingimage, this._on_loadwaitimage, this, undefined, this.loadingimage);
 			}
 
 			this._is_loaded = true;
@@ -8380,7 +8605,6 @@ if (!nexacro._bInitPlatform) {
 			this._start_point.screenX = screenX;
 			this._start_point.screenY = screenY;
 			this._fling_blocked = false;
-			this._scroll_end = false;
 		}
 
 		var touchinfo = new nexacro.TouchInputInfo(elem, "touchstart", touchid, curtime, is_first, screenX, screenY, x, y);
@@ -8475,6 +8699,57 @@ if (!nexacro._bInitPlatform) {
 		}
 
 		return true;
+	};
+
+	_pTouchManager.checkValidScrollEnd = function () {
+		var elem = this._start_elem;
+		var compinfo = this._start_win.findComponent(elem, 0, 0);
+		if (!compinfo || !compinfo[0]) {
+			return;
+		}
+		var comp = compinfo[0];
+		var dir = this._scroll_direction;
+		var s;
+		while (comp && !comp._is_application) {
+			switch (dir) {
+				case -10:
+					s = comp.hscrollbar;
+					if (s && s.enable && (comp.dragscrolltype != "none" && comp.dragscrolltype != "vert")) {
+						if (s.pos > 0) {
+							return false;
+						}
+					}
+					break;
+				case 10:
+					s = comp.hscrollbar;
+					if (s && s.enable && (comp.dragscrolltype != "none" && comp.dragscrolltype != "vert")) {
+						if (s.pos < s.max) {
+							return false;
+						}
+					}
+					break;
+				case -1:
+					s = comp.vscrollbar;
+					if (s && s.enable && (comp.dragscrolltype != "none" && comp.dragscrolltype != "horz")) {
+						if (s.pos > 0) {
+							return false;
+						}
+					}
+					break;
+				case 1:
+					s = comp.vscrollbar;
+					if (s && s.enable && (comp.dragscrolltype != "none" && comp.dragscrolltype != "horz")) {
+						if (s.pos < s.max) {
+							return false;
+						}
+					}
+					break;
+			}
+
+			comp = comp.parent;
+		}
+
+		return;
 	};
 
 	_pTouchManager.ontouchmove = function (win, elem, touchid, clientX, clientY, screenX, screenY, curtime, orgtime, is_last_changedtouch) {
@@ -8581,9 +8856,17 @@ if (!nexacro._bInitPlatform) {
 				if (this._scroll_direction != move_dir) {
 					this._scroll_end = false;
 				}
+				if (this._scroll_end && this.checkValidScrollEnd() === false) {
+					this._scroll_end = false;
+				}
+
 				if (this._scroll_body || (this._scroll_end && this._scroll_direction == move_dir)) {
+					var is_intended = this.checkUnintendedMove(info);
+					if (is_intended) {
+						this._tap_blocked = true;
+					}
+
 					this._slide_blocked = true;
-					this._tap_blocked = true;
 					this._scroll_body = true;
 					return false;
 				}
@@ -8592,6 +8875,7 @@ if (!nexacro._bInitPlatform) {
 			if (nexacro.OS == "iOS" && 
 				elem instanceof nexacro.InputElement) {
 				this._tap_blocked = true;
+				elem._tap_blocked = true;
 			}
 
 			if (is_drag_return) {
@@ -8868,12 +9152,14 @@ if (!nexacro._bInitPlatform) {
 				}
 
 				if (!this._is_first_tap) {
-					var range = this.getRange(this._currentTouches[0]._x, this._currentTouches[0]._y, this._first_tap_point.x, this._first_tap_point.y);
-					if (range < this.dbltap_bound) {
-						var firsttapcompinfo = win.findComponent(this._first_tap_elem, 0, 0);
-						if (startcompinfo && startcompinfo[0]) {
-							if (firsttapcompinfo && startcompinfo[0] === firsttapcompinfo[0]) {
-								this.on_fire_ondbltap(startcompinfo);
+					if (this._first_tap_point) {
+						var range = this.getRange(this._currentTouches[0]._x, this._currentTouches[0]._y, this._first_tap_point.x, this._first_tap_point.y);
+						if (range < this.dbltap_bound) {
+							var firsttapcompinfo = win.findComponent(this._first_tap_elem, 0, 0);
+							if (startcompinfo && startcompinfo[0]) {
+								if (firsttapcompinfo && startcompinfo[0] === firsttapcompinfo[0]) {
+									this.on_fire_ondbltap(startcompinfo);
+								}
 							}
 						}
 					}
@@ -8924,6 +9210,10 @@ if (!nexacro._bInitPlatform) {
 
 						this._current_gesture = undefined;
 						this._tap_blocked = false;
+						if (nexacro.OS == "iOS" && elem instanceof nexacro.InputElement) {
+							elem._tap_blocked = false;
+							elem._is_longpressed = false;
+						}
 						this._slide_blocked = false;
 						this._pinch_blocked = false;
 						this._fling_blocked = false;
@@ -8979,6 +9269,73 @@ if (!nexacro._bInitPlatform) {
 			return;
 		}
 
+		if (!nexacro._isDesktop() && nexacro.OS == "Android" && nexacro.Browser != "Runtime") {
+			var repeatInfo = nexacro._cur_repeat_info;
+			var trackInfo = nexacro._cur_track_info;
+
+			info._updateInfo(elem, "touchcancel", curtime, info.screenX, info.screenY, info._x, info._y);
+
+			if (is_last_changedtouch) {
+				if (repeatInfo) {
+					if (repeatInfo._timer) {
+						var _handle = nexacro._getWindowHandle(win._handle);
+						nexacro._clearSystemTimer(_handle, repeatInfo._timer);
+					}
+					repeatInfo.distX = clientX - repeatInfo.startX;
+					repeatInfo.distY = clientY - repeatInfo.startY;
+					repeatInfo.target._on_endrepeat(repeatInfo.refer_comp, repeatInfo.distX, repeatInfo.distY, repeatInfo.data);
+					nexacro._cur_repeat_info = null;
+				}
+
+				if (trackInfo) {
+					trackInfo.distX = clientX - trackInfo.startX;
+					trackInfo.distY = clientY - trackInfo.startY;
+					trackInfo.target._on_endtrack(trackInfo.distX, trackInfo.distY, trackInfo.data);
+					nexacro._cur_track_info = null;
+				}
+
+				this.on_fire_ontouch(3);
+
+				var comp = win.findComponent(elem, 0, 0);
+				if (comp && comp[0] && comp[0]._is_alive) {
+					comp[0]._on_last_lbuttonup();
+				}
+			}
+
+			var touchlen = this._currentTouches.size();
+			if (touchlen == 1) {
+				if (Math.abs(this._currentTouches[0]._startx - this._currentTouches[0]._x) > this._tap_bound || 
+					Math.abs(this._currentTouches[0]._starty - this._currentTouches[0]._y) > this._tap_bound || 
+					this._start_elem != elem) {
+					this._tap_blocked = true;
+				}
+
+				if (this._hold_timer && this._hold_timer.isWait()) {
+					this._hold_timer.stop();
+				}
+				if (this._tap_timer && this._tap_timer.isWait() && this._tap_blocked == false) {
+					this._tap_timer.stop();
+
+					var startcompinfo = win.findComponent(this._start_elem, 0, 0);
+					if (startcompinfo) {
+						this.on_fire_ontap(startcompinfo);
+					}
+
+					if (!this._is_first_tap) {
+						var range = this.getRange(this._currentTouches[0]._x, this._currentTouches[0]._y, this._first_tap_point.x, this._first_tap_point.y);
+						if (range < this.dbltap_bound) {
+							var firsttapcompinfo = win.findComponent(this._first_tap_elem, 0, 0);
+							if (startcompinfo && startcompinfo[0]) {
+								if (firsttapcompinfo && startcompinfo[0] === firsttapcompinfo[0]) {
+									this.on_fire_ondbltap(startcompinfo);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
 		this._currentTouches.delete_item(info.touchid);
 
 		if (this._currentTouches.length > 0) {
@@ -8995,6 +9352,10 @@ if (!nexacro._bInitPlatform) {
 
 			this._current_gesture = undefined;
 			this._tap_blocked = false;
+			if (nexacro.OS == "iOS" && elem instanceof nexacro.InputElement) {
+				elem._tap_blocked = false;
+				elem._is_longpressed = false;
+			}
 			this._slide_blocked = false;
 			this._pinch_blocked = false;
 			this._fling_blocked = false;
@@ -9016,6 +9377,13 @@ if (!nexacro._bInitPlatform) {
 		if (threshold === undefined) {
 			threshold = this.unintendedmove_threshold;
 		}
+
+		var conversion_factor = 1;
+		if (nexacro._zoom_factor < 100 && nexacro._zoom_factor > 0) {
+			conversion_factor = 100 / nexacro._zoom_factor;
+		}
+
+		threshold = threshold * conversion_factor;
 
 		var range1 = this.getRange(info._oldx, info._oldy, info._x, info._y);
 		var range2 = this.getRange(info._x, info._y, info._startx, info._starty);
@@ -9247,6 +9615,9 @@ if (!nexacro._bInitPlatform) {
 					if (ret == true) {
 						this._tap_blocked = true;
 					}
+					break;
+				case 3:
+					ret = compinfo[0]._on_touchcancel(this, touchinfos, changedtouchinfos);
 					break;
 			}
 		}
@@ -9498,6 +9869,9 @@ if (!nexacro._bInitPlatform) {
 		this._slide_blocked = true;
 		this._fling_blocked = true;
 		this._is_longpressed = true;
+		if (nexacro.OS == "iOS" && this._start_elem instanceof nexacro.InputElement) {
+			this._start_elem._is_longpressed = true;
+		}
 	};
 
 	_pTouchManager._on_fling_timer = function () {
@@ -9534,7 +9908,7 @@ if (!nexacro._bInitPlatform) {
 
 		var focused_comp;
 		var linkedcontrol = elem ? elem.linkedcontrol : null;
-		if (!linkedcontrol && elem.parent) {
+		if (!linkedcontrol && elem && elem.parent) {
 			linkedcontrol = elem.parent.linkedcontrol;
 			if ((elem instanceof nexacro.InputElement) && linkedcontrol._is_subcontrol) {
 				linkedcontrol = linkedcontrol._getRootComponent(linkedcontrol);
@@ -9573,6 +9947,10 @@ if (!nexacro._bInitPlatform) {
 					}
 
 					if (this._scroll_end && (type == 0 || type == 1)) {
+						return true;
+					}
+
+					if (is_display_elem && elem._parent_elem.enable) {
 						return true;
 					}
 				}

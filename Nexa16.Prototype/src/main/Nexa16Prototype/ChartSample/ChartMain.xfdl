@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="frmMain" classname="frmMain" left="0" top="0" width="1024" height="768">
+    <Layouts>
+      <Layout>
+        <Grid id="Grid00" taborder="0" useinputpanel="false" left="0" top="0" width="25%" height="100%" style="padding:1 1 1 1;" treeinitstatus="expand,all" binddataset="gds_menu" scrollbars="autovert" oncellclick="Grid00_oncellclick" treeusecheckbox="false">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="301"/>
+              </Columns>
+              <Rows>
+                <Row size="24"/>
+              </Rows>
+              <Band id="body">
+                <Cell displaytype="tree" edittype="tree" text="bind:menu_nm" treelevel="bind:menu_lv" treestate="bind:menu_st"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Div id="Div00" taborder="1" left="25%" top="0" width="75%" height="100%">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="gds_menu">
+        <ColumnInfo>
+          <Column id="menu_id" type="STRING" size="256"/>
+          <Column id="menu_nm" type="STRING" size="256"/>
+          <Column id="menu_lv" type="STRING" size="256"/>
+          <Column id="menu_st" type="STRING" size="256"/>
+          <Column id="form_url" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="menu_id">1</Col>
+            <Col id="menu_nm">rMateChartH5 Samples</Col>
+            <Col id="menu_lv">0</Col>
+            <Col id="menu_st">1</Col>
+          </Row>
+          <Row>
+            <Col id="menu_id">3</Col>
+            <Col id="menu_nm">URL로 레이아웃, 데이타 로딩</Col>
+            <Col id="menu_lv">1</Col>
+            <Col id="menu_st">1</Col>
+            <Col id="form_url">ChartSample::frmLoadingFromURL.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="menu_id">4</Col>
+            <Col id="menu_nm">함수로 레이아웃, 데이타 로딩</Col>
+            <Col id="menu_lv">1</Col>
+            <Col id="menu_st">1</Col>
+            <Col id="form_url">ChartSample::frmLoadingByFunction.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="menu_id">5</Col>
+            <Col id="menu_nm">라벨 사용자 정의</Col>
+            <Col id="menu_lv">1</Col>
+            <Col id="menu_st">1</Col>
+            <Col id="form_url">ChartSample::frmLabelFunction.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="menu_id">6</Col>
+            <Col id="menu_nm">라벨 사용자 정의(PieChart)</Col>
+            <Col id="menu_lv">1</Col>
+            <Col id="menu_st">1</Col>
+            <Col id="form_url">ChartSample::frmLabelFunctionPieChart.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="menu_id">7</Col>
+            <Col id="menu_nm">데이타팁 사용자 정의</Col>
+            <Col id="menu_lv">1</Col>
+            <Col id="menu_st">1</Col>
+            <Col id="form_url">ChartSample::frmDatatipFunction.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="menu_id">8</Col>
+            <Col id="menu_nm">클릭 이벤트 처리</Col>
+            <Col id="menu_lv">1</Col>
+            <Col id="menu_st">1</Col>
+            <Col id="form_url">ChartSample::frmItemClick.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="menu_id">9</Col>
+            <Col id="menu_nm">조건에 따라 색상 결정하기</Col>
+            <Col id="menu_lv">1</Col>
+            <Col id="menu_st">1</Col>
+            <Col id="form_url">ChartSample::frmFillFunction.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="menu_id">10</Col>
+            <Col id="menu_nm">두개의 차트 표시</Col>
+            <Col id="menu_lv">1</Col>
+            <Col id="menu_st">1</Col>
+            <Col id="form_url">ChartSample::frmTwoChart.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="menu_id">11</Col>
+            <Col id="menu_nm">슬라이드 차트</Col>
+            <Col id="menu_lv">1</Col>
+            <Col id="menu_st">1</Col>
+            <Col id="form_url">ChartSample::frmSlideChart.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="menu_id">12</Col>
+            <Col id="menu_nm">게이지</Col>
+            <Col id="menu_lv">1</Col>
+            <Col id="menu_st">1</Col>
+            <Col id="form_url">ChartSample::frmGauge.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="menu_id">13</Col>
+            <Col id="menu_nm">Dataset</Col>
+            <Col id="menu_lv">1</Col>
+            <Col id="menu_st">1</Col>
+            <Col id="form_url">ChartSample::frmDataset.xfdl</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.Grid00_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	var strUrl = this.gds_menu.getColumn(e.row, "form_url");
+	var strTitle = this.gds_menu.getColumn(e.row, "menu_nm");
+	if (strUrl && strUrl.length > 0) {
+	
+		this.Div00.set_url(strUrl);
+		//this.Div01.set_url(this.gds_menu.getColumn(e.row, "form_url"));
+	}
+}
+]]></Script>
+  </Form>
+</FDL>

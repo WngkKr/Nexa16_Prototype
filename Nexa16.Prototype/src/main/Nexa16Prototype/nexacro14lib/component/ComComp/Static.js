@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -84,6 +84,11 @@ if (!nexacro.Static) {
 			this.on_apply_style_font(font);
 		}
 
+		var letterspace = this.on_find_CurrentStyle_letterspace(pseudo);
+		if (curstyle.letterspace != letterspace) {
+			curstyle.letterspace = letterspace;
+			this.on_apply_style_letterspace(letterspace);
+		}
 		var color = this.on_find_CurrentStyle_color(pseudo);
 		if (curstyle.color != color) {
 			curstyle.color = color;
@@ -134,8 +139,9 @@ if (!nexacro.Static) {
 		var text_elem = this._text_elem;
 		if (text_elem) {
 			var lineHeight = v ? v : 0;
+			var letterspace = this.on_find_CurrentStyle_letterspace(this._pseudo);
 
-			var font_size = nexacro._getTextSize2("Wj", this.on_find_CurrentStyle_font(this._pseudo));
+			var font_size = nexacro._getTextSize2(letterspace, "Wj", this.on_find_CurrentStyle_font(this._pseudo));
 			var linespace = font_size[1] + nexacro._toInt(lineHeight);
 			if (this._adjust_height < linespace) {
 				lineHeight = (this._adjust_height > font_size[1]) ? (this._adjust_height - font_size[1]) : 0;
@@ -175,6 +181,7 @@ if (!nexacro.Static) {
 			text_elem.setElementColor(this.currentstyle.color);
 			text_elem.setElementFont(this.currentstyle.font);
 			text_elem.setElementAlignXY(halign, valign);
+			text_elem.setElementLetterSpace(this.currentstyle.letterspace);
 			text_elem = null;
 		}
 		else if (control_elem && !this.text && this._text_elem) {
@@ -248,6 +255,7 @@ if (!nexacro.Static) {
 				text_elem.setElementColor(this.currentstyle.color);
 				text_elem.setElementFont(this.currentstyle.font);
 				text_elem.setElementAlignXY(halign, valign);
+				text_elem.setElementLetterSpace(this.currentstyle.letterspace);
 
 				if (this._is_created) {
 					text_elem.create();
@@ -259,6 +267,12 @@ if (!nexacro.Static) {
 
 			var val = this.text;
 			var expr = this.expr;
+
+			val = nexacro._toString(val);
+			if (val && val.indexOf("\r") != -1) {
+				val = val.replace(/\r/g, "");
+			}
+
 			if (expr && expr.length > 0) {
 				expr = expr.trim().split(":");
 				var len = expr.length;

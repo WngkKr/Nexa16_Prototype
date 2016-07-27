@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="frame_work" classname="frame_work" left="0" top="0" width="1400" height="700" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <ImageViewer id="Setfocus" taborder="1" left="695" top="555" width="142" height="75" readonly="true"/>
+        <Tab id="tab_navi" taborder="7" left="20" top="135" right="201" height="565" tabindex="0" scrollbars="autoboth" cssclass="Tab_tabF">
+          <Tabpages>
+            <Tabpage id="tabpage1" text="tabpage1" left="1" top="160" width="1177" height="540">
+              <Layouts>
+                <Layout/>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="tabpage2" text="tabpage2"/>
+            <Tabpage id="tabpage3" text="tabpage3"/>
+            <Tabpage id="tabpage4" text="tabpage4"/>
+            <Tabpage id="tabpage5" text="tabpage5"/>
+            <Tabpage id="tabpage6" text="tabpage6"/>
+            <Tabpage id="tabpage7" text="tabpage7"/>
+            <Tabpage id="tabpage8" text="tabpage8"/>
+          </Tabpages>
+        </Tab>
+        <Div id="Div00" taborder="9" left="20" top="43" width="1180" height="41" cssclass="test">
+          <Layouts>
+            <Layout>
+              <Combo id="Combo00" taborder="49" innerdataset="ds_cmb_part" codecolumn="code" datacolumn="data" left="83" top="8" width="167" height="25" index="-1"/>
+              <Static id="Static01" taborder="50" text="펀드명" cssclass="sta_WF_label" left="29" top="11" width="58" height="18"/>
+              <Static id="Static00" taborder="51" text="기간" onclick="Div00_Static00_onclick" cssclass="sta_WF_label" left="268" top="11" width="40" height="18"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Calendar id="Calendar07" taborder="10" value="20140713" dateformat="yyyy-MM-dd" oneditclick="Calendar07_oneditclick" left="331" top="53" width="100" height="25" style="background:#ffffffff;"/>
+        <Static id="Static78" taborder="11" text="~" left="431" top="53" width="14" height="25" style="align:center middle;"/>
+        <Calendar id="Calendar11" taborder="12" value="20140713" dateformat="yyyy-MM-dd" left="446" top="53" width="100" height="25"/>
+        <Button id="btnSetting01" taborder="13" text="조회" onclick="divInfo_btnSetting_onclick" cssclass="btn_WF_search" left="1097" top="48" width="85" height="30"/>
+        <Static id="Static00" taborder="34" cssclass="sta_WF_caption" left="177" top="579" width="200" height="30" style="background:#ffffffff;padding:0 0 0 15;font:9 dotum;"/>
+        <Static id="Static01" taborder="35" cssclass="sta_WF_caption" left="177" top="608" width="200" height="30" style="background:#ffffffff;padding:0 0 0 15;font:9 dotum;"/>
+        <Static id="Static02" taborder="36" cssclass="sta_WF_caption" left="177" top="666" width="200" height="30" style="background:#ffffffff;padding:0 0 0 15;font:9 dotum;"/>
+        <Static id="Static03" taborder="37" cssclass="sta_WF_caption" left="177" top="637" width="200" height="30" style="background:#ffffffff;padding:0 0 0 15;font:9 dotum;"/>
+        <Edit id="Edit01" taborder="40" left="187" top="611" width="184" height="24" style="border:1 solid #9c9c9cff ;"/>
+        <Edit id="Edit06" taborder="41" left="187" top="640" width="184" height="24" style="border:1 solid #9c9c9cff ;"/>
+        <Edit id="Edit07" taborder="42" left="187" top="669" width="184" height="24" style="border:1 solid #9c9c9cff ;"/>
+        <Edit id="Edit00" taborder="46" left="187" top="582" width="184" height="24" style="border:1 solid #9c9c9cff ;"/>
+        <Static id="Static06" taborder="47" text="제목" cssclass="sta_WF_caption" left="34" top="608" width="144" height="30" style="background:#f3f4f6ff;padding:0 0 0 15;"/>
+        <Static id="Static07" taborder="48" text="소속" cssclass="sta_WF_caption" left="34" top="579" width="144" height="30" style="background:#f3f4f6ff;padding:0 0 0 15;font:9 dotum;"/>
+        <Static id="Static08" taborder="49" text="소속" cssclass="sta_WF_caption" left="376" top="579" width="144" height="30" style="background:#f3f4f6ff;padding:0 0 0 15;font:9 dotum;"/>
+        <Static id="Static09" taborder="50" text="제목" cssclass="sta_WF_caption" left="376" top="608" width="144" height="30" style="background:#f3f4f6ff;padding:0 0 0 15;"/>
+        <Static id="Static10" taborder="51" text="제목" cssclass="sta_WF_caption" left="34" top="666" width="144" height="30" style="background:#f3f4f6ff;padding:0 0 0 15;"/>
+        <Static id="Static11" taborder="52" text="소속" cssclass="sta_WF_caption" left="34" top="637" width="144" height="30" style="background:#f3f4f6ff;padding:0 0 0 15;font:9 dotum;"/>
+        <Static id="Static12" taborder="53" text="소속" cssclass="sta_WF_caption" left="376" top="637" width="144" height="30" style="background:#f3f4f6ff;padding:0 0 0 15;font:9 dotum;"/>
+        <Static id="Static13" taborder="54" text="제목" cssclass="sta_WF_caption" left="376" top="666" width="144" height="30" style="background:#f3f4f6ff;padding:0 0 0 15;"/>
+        <Static id="Static20" taborder="61" cssclass="sta_WF_caption" left="517" top="608" width="200" height="30" style="background:#ffffffff;padding:0 0 0 15;font:9 dotum;"/>
+        <Static id="Static22" taborder="62" cssclass="sta_WF_caption" left="517" top="637" width="200" height="30" style="background:#ffffffff;padding:0 0 0 15;font:9 dotum;"/>
+        <Static id="Static24" taborder="64" cssclass="sta_WF_caption" left="517" top="666" width="200" height="30" style="background:#ffffffff;padding:0 0 0 15;font:9 dotum;"/>
+        <Edit id="Edit02" taborder="67" left="525" top="611" width="184" height="24" style="border:1 solid #9c9c9cff ;"/>
+        <Edit id="Edit03" taborder="68" left="525" top="640" width="184" height="24" style="border:1 solid #9c9c9cff ;"/>
+        <Edit id="Edit04" taborder="69" left="525" top="669" width="184" height="24" style="border:1 solid #9c9c9cff ;"/>
+        <Static id="Static27" taborder="73" cssclass="sta_WF_caption" left="517" top="579" width="200" height="30" style="background:#ffffffff;padding:0 0 0 15;font:9 dotum;"/>
+        <Edit id="Edit10" taborder="74" left="525" top="582" width="184" height="24" style="border:1 solid #9c9c9cff ;"/>
+        <Static id="Static28" taborder="75" cssclass="sta_WF_caption" left="857" top="608" width="328" height="30" style="background:#ffffffff;padding:0 0 0 15;font:9 dotum;"/>
+        <Static id="Static29" taborder="76" cssclass="sta_WF_caption" left="857" top="637" width="328" height="30" style="background:#ffffffff;padding:0 0 0 15;font:9 dotum;"/>
+        <Static id="Static31" taborder="78" cssclass="sta_WF_caption" left="857" top="666" width="328" height="30" style="background:#ffffffff;padding:0 0 0 15;font:9 dotum;"/>
+        <Edit id="Edit11" taborder="81" left="865" top="611" width="312" height="24" style="border:1 solid #9c9c9cff ;"/>
+        <Edit id="Edit14" taborder="82" left="865" top="640" width="312" height="24" style="border:1 solid #9c9c9cff ;"/>
+        <Edit id="Edit15" taborder="83" left="865" top="669" width="312" height="24" style="border:1 solid #9c9c9cff ;"/>
+        <Static id="Static34" taborder="87" cssclass="sta_WF_caption" left="857" top="579" width="328" height="30" style="background:#ffffffff;padding:0 0 0 15;font:9 dotum;"/>
+        <Edit id="Edit20" taborder="88" left="865" top="582" width="312" height="24" style="border:1 solid #9c9c9cff ;"/>
+        <Static id="Static35" taborder="89" text="소속" cssclass="sta_WF_caption" left="716" top="579" width="144" height="30" style="background:#f3f4f6ff;padding:0 0 0 15;font:9 dotum;"/>
+        <Static id="Static36" taborder="90" text="제목" cssclass="sta_WF_caption" left="716" top="608" width="144" height="30" style="background:#f3f4f6ff;padding:0 0 0 15;"/>
+        <Static id="Static37" taborder="91" text="소속" cssclass="sta_WF_caption" left="716" top="637" width="144" height="30" style="background:#f3f4f6ff;padding:0 0 0 15;font:9 dotum;"/>
+        <Static id="Static38" taborder="92" text="제목" cssclass="sta_WF_caption" left="716" top="666" width="144" height="30" style="background:#f3f4f6ff;padding:0 0 0 15;"/>
+        <Static id="Static42" taborder="96" text="여백" left="1200" top="0" width="20" height="700" style="background:chartreuse;" cssclass="sta_WF_guideLine"/>
+        <Static id="Static04" taborder="97" text="여백" left="0" top="0" width="20" height="700" style="background:chartreuse;" cssclass="sta_WF_guideLine"/>
+        <PopupDiv id="PopupDiv00" text="PopupDiv00" left="1220" width="180" height="660" bottom="40"/>
+        <Grid id="Grid00" taborder="99" binddataset="Dataset00" useinputpanel="false" autofittype="col" left="33" top="187" width="1153" height="377">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="30" band="head"/>
+                <Row size="30"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="no"/>
+                <Cell col="1" text="시작"/>
+                <Cell col="2" text="둘"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:no"/>
+                <Cell col="1" text="bind:시작"/>
+                <Cell col="2" text="bind:둘"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static14" taborder="100" text="  3depth title" cssclass="sta_WF_title3" left="20" top="95" width="238" height="26" style="background:transparent URL('IMG::icon_3depth.png');border:0 solid #808080 ;align:left middle;font:18 arial;"/>
+        <Static id="Static05" taborder="101" text="2depth title" onclick="Static05_onclick" cssclass="sta_WF_title2" left="21" top="5" width="238" height="35" style="background:transparent;border:0 solid #808080ff ;padding:0 0 0 0;align:left middle;font:23 arial;"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="no" type="STRING" size="256"/>
+          <Column id="시작" type="STRING" size="256"/>
+          <Column id="둘" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="no">001</Col>
+            <Col id="시작">1</Col>
+            <Col id="둘">2</Col>
+          </Row>
+          <Row>
+            <Col id="no">002</Col>
+            <Col id="시작">3</Col>
+            <Col id="둘">4</Col>
+          </Row>
+          <Row>
+            <Col id="no">003</Col>
+            <Col id="시작">5</Col>
+            <Col id="둘"/>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.Static05_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+	
+}
+
+this.Calendar07_oneditclick = function(obj:Calendar,  e:nexacro.EditClickEventInfo)
+{
+	
+}
+]]></Script>
+  </Form>
+</FDL>

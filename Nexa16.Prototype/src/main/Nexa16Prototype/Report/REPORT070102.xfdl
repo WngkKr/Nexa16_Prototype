@@ -1,0 +1,506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="frame_work" classname="frame_work" left="0" top="0" width="1400" height="700" titletext="펀드 투자/회수 현황">
+    <Layouts>
+      <Layout>
+        <Div id="Div00" taborder="9" left="20" top="50" width="1180" height="45" style="border:1 solid #b1b1b1ff ;">
+          <Layouts>
+            <Layout>
+              <Static id="Static01" taborder="50" text="펀드명" cssclass="sta_WF_label" left="29" top="11" width="54" height="18" style="border:0 none #808080ff ;"/>
+              <Static id="Static00" taborder="51" text="기준일" onclick="Div00_Static00_onclick" cssclass="sta_WF_label" left="336" top="11" width="53" height="18"/>
+              <Combo id="Combo00" taborder="53" text="전체" innerdataset="@ds_cmb_fund" codecolumn="FUND_CD" datacolumn="FUND_SHORT_NM" index="0" left="86" top="9" width="220" height="25"/>
+              <Calendar id="Calendar00" taborder="54" left="33.53%" top="9" right="54.92%" height="25" value="20160427" dateformat="yyyy-MM-dd"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="btnSetting01" taborder="13" text="조회" onclick="divInfo_btnSetting_onclick" cssclass="btn_wf_search" left="1097" top="58" width="85" height="30" positionstep="0"/>
+        <Static id="Static42" taborder="96" text="20" left="1200" top="11" width="20" height="705" style="background:chartreuse;" visible="false"/>
+        <Static id="Static04" taborder="97" text="20" left="0" top="11" width="20" height="673" style="background:chartreuse;" visible="false"/>
+        <PopupDiv id="PopupDiv00" text="PopupDiv00" left="1220" width="180" bottom="33" height="660"/>
+        <Static id="Static05" taborder="100" text="h13" left="20" top="37" width="1180" height="13" style="background:chartreuse;align:center middle;" visible="false"/>
+        <Static id="Static15" taborder="102" left="25" top="51" width="664" height="9" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;" text="9" visible="false"/>
+        <Static id="Static16" taborder="103" text="9" left="25" top="85" width="664" height="9" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;" visible="false"/>
+        <Static id="Static17" taborder="104" text="30" left="20" top="60" width="30" height="25" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;" visible="false"/>
+        <Static id="Static18" taborder="105" text="30" left="327" top="60" width="30" height="25" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;" visible="false"/>
+        <Static id="Static19" taborder="106" text="17" left="1182" top="58" width="17" height="24" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;" visible="false"/>
+        <Static id="Static01" taborder="139" text="h7" visible="false" left="0" top="0" width="1220" height="7" style="background:chartreuse;align:center middle;"/>
+        <Static id="Static14" taborder="142" text="h13" visible="false" left="24" top="95" width="1180" height="13" style="background:#7fff00ee;color:darkred;align:center middle;"/>
+        <Static id="Static03" taborder="143" text="     펀드 투자/회수 현황" onclick="Static05_onclick" cssclass="sta_WF_title1" left="20" top="7" width="238" height="30" style="background:transparent URL('IMG::h1.png');align:left middle;font:15 arial;"/>
+        <Static id="Static00" taborder="144" text="* 지분율은 해당 조합에 대한 Partially diluted base 입니다. (보통주+우선주+해당 조합의 미행사 주식수) / (총 주식수 + 전체 조합의 미행사 주식수)" left="20" top="108" width="825" height="21" style="color:blue;"/>
+        <Static id="Static02" taborder="145" text="[unitKRW]" left="1106" top="112" width="89" height="21" style="color:dodgerblue;"/>
+        <Grid id="Grid00" taborder="146" binddataset="ds_grid" useinputpanel="false" autofittype="col" left="15" top="133" width="1185" height="267" style="border:1 solid #838383ff,1 solid #c9c6c3ff,1 solid #c9c6c3ff,1 solid #c9c6c3ff;">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="30"/>
+                <Column size="154"/>
+                <Column size="60"/>
+                <Column size="100"/>
+                <Column size="60"/>
+                <Column size="60"/>
+                <Column size="60"/>
+                <Column size="60"/>
+                <Column size="100"/>
+                <Column size="60"/>
+                <Column size="100"/>
+                <Column size="60"/>
+                <Column size="18"/>
+                <Column size="67"/>
+                <Column size="76"/>
+                <Column size="89"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+                <Row size="24" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell rowspan="2" text="No"/>
+                <Cell col="1" rowspan="2" text="회사명"/>
+                <Cell col="2" colspan="2" text="투자"/>
+                <Cell col="4" colspan="3" text="회수"/>
+                <Cell col="7" colspan="2" text="잔고"/>
+                <Cell col="9" colspan="2" text="장부가"/>
+                <Cell col="11" rowspan="2" colspan="2" text="지분율"/>
+                <Cell col="13" rowspan="2" text="업종"/>
+                <Cell col="14" rowspan="2" text="주요제품"/>
+                <Cell col="15" rowspan="2" text="투자유형"/>
+                <Cell row="1" col="2" text="주식수"/>
+                <Cell row="1" col="3" text="금액"/>
+                <Cell row="1" col="4" text="주식수"/>
+                <Cell row="1" col="5" text="금액"/>
+                <Cell row="1" col="6" text="손익"/>
+                <Cell row="1" col="7" text="주식수"/>
+                <Cell row="1" col="8" text="금액"/>
+                <Cell row="1" col="9" text="잔액"/>
+                <Cell row="1" col="10" text="금액"/>
+              </Band>
+              <Band id="body">
+                <Cell expr="expr:currow+1"/>
+                <Cell col="1" style="align:left;" text="bind:CO_NM"/>
+                <Cell col="2" style="align:right;" text="bind:INVEST_CNT"/>
+                <Cell col="3" style="align:right;" text="bind:INVEST_AMT"/>
+                <Cell col="4" style="align:right;" text="bind:EXIT_CNT"/>
+                <Cell col="5" style="align:right;" text="bind:EXIT_AMT"/>
+                <Cell col="6" style="align:right;" text="bind:PL_AMT"/>
+                <Cell col="7" style="align:right;" text="bind:REMAIN_CNT"/>
+                <Cell col="8" style="align:right;" text="bind:REMAIN_AMT"/>
+                <Cell col="9" style="align:right;" text="bind:REDUCT_AMT"/>
+                <Cell col="10" style="align:right;" text="bind:BOOK_REMAIN_AMT"/>
+                <Cell col="11" colspan="2">
+                  <Cell displaytype="normal" edittype="mask" style="align:right;" text="bind:STOCKS_RATE2" mask="##.#"/>
+                  <Cell col="1" style="align:left;" text="%"/>
+                </Cell>
+                <Cell col="13" style="align:left;" text="bind:CO_TYPE_NM"/>
+                <Cell col="14" style="align:left;" text="bind:MAIN_ITEM"/>
+                <Cell col="15" style="align:left;" text="bind:ITEMS"/>
+              </Band>
+              <Band id="summary">
+                <Cell colspan="2" style="align:center;" text="합계"/>
+                <Cell col="2" displaytype="number" edittype="normal" text="expr:dataset.getSum(&quot;INVEST_CNT&quot;)"/>
+                <Cell col="3" displaytype="number" text="expr:dataset.getSum(&quot;INVEST_AMT&quot;)"/>
+                <Cell col="4" displaytype="number" text="expr:dataset.getSum(&quot;EXIT_CNT&quot;)"/>
+                <Cell col="5" displaytype="number" text="expr:dataset.getSum(&quot;EXIT_AMT&quot;)"/>
+                <Cell col="6" displaytype="number" text="expr:dataset.getSum(&quot;PL_AMT&quot;)"/>
+                <Cell col="7" displaytype="number" text="expr:dataset.getSum(&quot;REMAIN_CNT&quot;)"/>
+                <Cell col="8" displaytype="number" text="expr:dataset.getSum(&quot;REMAIN_AMT&quot;)"/>
+                <Cell col="9" displaytype="number" text="expr:dataset.getSum(&quot;REDUCE_AMT&quot;)"/>
+                <Cell col="10" displaytype="number" text="expr:dataset.getSum(&quot;BOOK_REMAIN_AMT&quot;)"/>
+                <Cell col="11" colspan="2"/>
+                <Cell col="13"/>
+                <Cell col="14"/>
+                <Cell col="15"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static06" taborder="147" text="30" visible="false" left="552" top="59" width="30" height="25" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;"/>
+        <Static id="Static07" taborder="148" text="종목" cssclass="sta_WF_label" left="584" top="61" width="54" height="18" style="border:0 none #808080ff ;"/>
+        <Combo id="Combo00" taborder="149" value="0" text="전체" innerdataset="@ds_cmb_fund" codecolumn="FUND_CD" datacolumn="FUND_SHORT_NM" index="0" left="641" top="59" width="220" height="25"/>
+        <Button id="btnSetting00" taborder="150" text="Excel" onclick="divInfo_btnSetting_onclick" cssclass="btn_wf_search" left="1097" top="7" width="85" height="30"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_cmb_fund">
+        <ColumnInfo>
+          <Column id="FUND_CD" type="STRING" size="256"/>
+          <Column id="FUND_TYPE_CD" type="STRING" size="256"/>
+          <Column id="FUND_NM" type="STRING" size="256"/>
+          <Column id="FUND_SHORT_NM" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="FUND_CD">0</Col>
+            <Col id="FUND_TYPE_CD">0</Col>
+            <Col id="FUND_NM">전체</Col>
+            <Col id="FUND_SHORT_NM">전체</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00032</Col>
+            <Col id="FUND_TYPE_CD">3</Col>
+            <Col id="FUND_NM">CJKX Rokin Holdings Limited</Col>
+            <Col id="FUND_SHORT_NM">CJKX Rokin Holdings Limited</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00024</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱코리아 신성장동력 첨단융합 사모투자전문회사</Col>
+            <Col id="FUND_SHORT_NM">신성장동력PEF</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">01001</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="FUND_NM">STIC Shariah Private Equity Fund III L.P.</Col>
+            <Col id="FUND_SHORT_NM">Shariah PE Fund III</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00997</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="FUND_NM">OSSF Capital Sdn. Bhd</Col>
+            <Col id="FUND_SHORT_NM">OSSF Capital</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00029</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱씨제이글로벌투자파트너쉽사모투자전문회사</Col>
+            <Col id="FUND_SHORT_NM">CJ CPP</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00001</Col>
+            <Col id="FUND_TYPE_CD">9</Col>
+            <Col id="FUND_NM">자본계정</Col>
+            <Col id="FUND_SHORT_NM">본계정</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00002</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">MIC 99-9 스틱아이티투자조합1호</Col>
+            <Col id="FUND_SHORT_NM">1호펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00003</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">MIC 99-10 스틱아이티투자조합2호</Col>
+            <Col id="FUND_SHORT_NM">2호펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00004</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱투자조합3호</Col>
+            <Col id="FUND_SHORT_NM">3호펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00005</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱엔젤투자조합4호</Col>
+            <Col id="FUND_SHORT_NM">4호펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00007</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱투자조합6호</Col>
+            <Col id="FUND_SHORT_NM">6호펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00008</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">ET벤처펀드</Col>
+            <Col id="FUND_SHORT_NM">7호펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00009</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱투자조합8호</Col>
+            <Col id="FUND_SHORT_NM">8호펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00010</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱투자조합9호</Col>
+            <Col id="FUND_SHORT_NM">9호펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00011</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱-LG투자조합10호 갑</Col>
+            <Col id="FUND_SHORT_NM">10호(갑)</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00012</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">MIC 2000-6 스틱투자조합11호</Col>
+            <Col id="FUND_SHORT_NM">11호펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00013</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">MIC 2001-12 스틱투자조합12호</Col>
+            <Col id="FUND_SHORT_NM">12호펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00014</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">KGIF Limited Partnership</Col>
+            <Col id="FUND_SHORT_NM">KGIF</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00015</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">MIC2003-2스틱투자조합13호</Col>
+            <Col id="FUND_SHORT_NM">M&amp;A Fund</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00016</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱일자리창출펀드</Col>
+            <Col id="FUND_SHORT_NM">Pioneer Fund I</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00017</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱-LG투자조합10호 을</Col>
+            <Col id="FUND_SHORT_NM">10호(을)</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00018</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱세컨더리펀드(한국모태펀드 05-08)</Col>
+            <Col id="FUND_SHORT_NM">Secondary Fund I</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00019</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">2005 KIF-스틱 IT전문투자조합</Col>
+            <Col id="FUND_SHORT_NM">KIF Fund</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00020</Col>
+            <Col id="FUND_TYPE_CD">9</Col>
+            <Col id="FUND_NM">주식회사스틱</Col>
+            <Col id="FUND_SHORT_NM">스틱</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00021</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱샤리아창업투자조합</Col>
+            <Col id="FUND_SHORT_NM">스틱샤리아창투조합(18호)</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00023</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱투자조합19호</Col>
+            <Col id="FUND_SHORT_NM">스틱투자조합19호(세컨더리 II)</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00994</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="FUND_NM">SSF Capital Sdn. Bhd.</Col>
+            <Col id="FUND_SHORT_NM">SSF Capital</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00995</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="FUND_NM">STIC Secondary Fund II-B</Col>
+            <Col id="FUND_SHORT_NM">Secondary Fund II-B(SSF Capital)</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00996</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="FUND_NM">Oryx/STIC Korean Technology Fund</Col>
+            <Col id="FUND_SHORT_NM">Oryx Fund</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00999</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="FUND_NM">TFO/STIC Co-Investment Fund SPC</Col>
+            <Col id="FUND_SHORT_NM">TFO</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00998</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="FUND_NM">ZAD Global Fund I</Col>
+            <Col id="FUND_SHORT_NM">ZAD Fund</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00027</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱세컨더리제삼호 사모투자전문회사</Col>
+            <Col id="FUND_SHORT_NM">세컨더리3호PEF</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">01000</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="FUND_NM">STIC Private Equity Fund III L.P.</Col>
+            <Col id="FUND_SHORT_NM">PE Fund III</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00022</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱투자조합17호</Col>
+            <Col id="FUND_SHORT_NM">스틱투자조합17호(파이오니어 II)</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00025</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">코에프씨스틱그로쓰챔프2010의2호사모투자전문회사</Col>
+            <Col id="FUND_SHORT_NM">코에프씨스틱PEF</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00026</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱 팬아시아 테크놀로지 펀드</Col>
+            <Col id="FUND_SHORT_NM">팬아시아 펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00028</Col>
+            <Col id="FUND_TYPE_CD">3</Col>
+            <Col id="FUND_NM">팜한농 제 1의 1호 유한회사</Col>
+            <Col id="FUND_SHORT_NM">팜한농 제 1의 1호 유한회사</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00006</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱투자조합5호</Col>
+            <Col id="FUND_SHORT_NM">5호펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00031</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱해외진출플랫폼펀드</Col>
+            <Col id="FUND_SHORT_NM">해외진출플랫폼</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00030</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">2014 스틱 성장동력 M&amp;A 사모투자전문회사</Col>
+            <Col id="FUND_SHORT_NM">성장동력M&amp;A</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_grid">
+        <ColumnInfo>
+          <Column id="CO_CD" type="STRING" size="256"/>
+          <Column id="CO_NM" type="STRING" size="256"/>
+          <Column id="INVEST_CNT" type="INT" size="256"/>
+          <Column id="INVEST_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="EXIT_CNT" type="INT" size="256"/>
+          <Column id="EXIT_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="PL_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="REMAIN_CNT" type="INT" size="256"/>
+          <Column id="REMAIN_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="REDUCT_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="BOOK_REMAIN_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="STOCKS_RATE2" type="FLOAT" size="256"/>
+          <Column id="REDUCT_USD_AMT" type="STRING" size="256"/>
+          <Column id="CONVLANG" type="STRING" size="256"/>
+          <Column id="DATA_TYPE" type="STRING" size="256"/>
+          <Column id="CO_TYPE_NM" type="STRING" size="256"/>
+          <Column id="MAIN_ITEM" type="STRING" size="256"/>
+          <Column id="ITEMS" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CO_CD">02240</Col>
+            <Col id="CO_NM">솔트룩스</Col>
+            <Col id="INVEST_CNT">571429</Col>
+            <Col id="INVEST_AMT">4000003000</Col>
+            <Col id="EXIT_CNT">0</Col>
+            <Col id="EXIT_AMT">0</Col>
+            <Col id="PL_AMT">0</Col>
+            <Col id="REMAIN_CNT">571429</Col>
+            <Col id="REMAIN_AMT">4000003000</Col>
+            <Col id="REDUCT_AMT">0</Col>
+            <Col id="BOOK_REMAIN_AMT">4000003000</Col>
+            <Col id="STOCKS_RATE2">24.09639925968688077947937720252219231527</Col>
+            <Col id="REDUCT_USD_AMT">0</Col>
+            <Col id="CONVLANG">1</Col>
+            <Col id="DATA_TYPE">1</Col>
+            <Col id="CO_TYPE_NM">게임</Col>
+            <Col id="MAIN_ITEM">릴온라인 모나토에스프리</Col>
+          </Row>
+          <Row>
+            <Col id="CO_CD">02291</Col>
+            <Col id="CO_NM">애니닥터헬스케어</Col>
+            <Col id="INVEST_CNT">196667</Col>
+            <Col id="INVEST_AMT">3450006000</Col>
+            <Col id="EXIT_CNT">0</Col>
+            <Col id="EXIT_AMT">0</Col>
+            <Col id="PL_AMT">0</Col>
+            <Col id="REMAIN_CNT">196667</Col>
+            <Col id="REMAIN_AMT">3450006000</Col>
+            <Col id="REDUCT_AMT">0</Col>
+            <Col id="BOOK_REMAIN_AMT">3450006000</Col>
+            <Col id="STOCKS_RATE2">11.93608902769795110298379466239234019981</Col>
+            <Col id="REDUCT_USD_AMT">0</Col>
+            <Col id="CONVLANG">1</Col>
+            <Col id="DATA_TYPE">1</Col>
+            <Col id="CO_TYPE_NM">기타</Col>
+            <Col id="MAIN_ITEM">액체여과기</Col>
+            <Col id="ITEMS">우선주</Col>
+          </Row>
+          <Row>
+            <Col id="CO_CD">02322</Col>
+            <Col id="CO_NM">에스엔에스에너지</Col>
+            <Col id="INVEST_CNT">90000</Col>
+            <Col id="INVEST_AMT">4500000000</Col>
+            <Col id="EXIT_CNT">0</Col>
+            <Col id="EXIT_AMT">0</Col>
+            <Col id="PL_AMT">0</Col>
+            <Col id="REMAIN_CNT">90000</Col>
+            <Col id="REMAIN_AMT">4500000000</Col>
+            <Col id="REDUCT_AMT">0</Col>
+            <Col id="BOOK_REMAIN_AMT">4500000000</Col>
+            <Col id="STOCKS_RATE2">24.32432432432432432432432432432432432432</Col>
+            <Col id="REDUCT_USD_AMT">0</Col>
+            <Col id="CONVLANG">1</Col>
+            <Col id="DATA_TYPE">1</Col>
+            <Col id="CO_TYPE_NM">자동화(검사)장비</Col>
+            <Col id="MAIN_ITEM">SOlder Pasted Inspection..</Col>
+          </Row>
+          <Row>
+            <Col id="CO_CD">02324</Col>
+            <Col id="CO_NM">콩두컴퍼니</Col>
+            <Col id="INVEST_CNT">32786</Col>
+            <Col id="INVEST_AMT">2999919000</Col>
+            <Col id="EXIT_CNT">0</Col>
+            <Col id="EXIT_AMT">0</Col>
+            <Col id="PL_AMT">0</Col>
+            <Col id="REMAIN_CNT">32786</Col>
+            <Col id="REMAIN_AMT">2999919000</Col>
+            <Col id="REDUCT_AMT">0</Col>
+            <Col id="BOOK_REMAIN_AMT">2999919000</Col>
+            <Col id="STOCKS_RATE2">10.02341834457373109870557087565042464857</Col>
+            <Col id="REDUCT_USD_AMT">0</Col>
+            <Col id="CONVLANG">1</Col>
+            <Col id="DATA_TYPE">1</Col>
+            <Col id="CO_TYPE_NM">게임</Col>
+            <Col id="MAIN_ITEM">스크린골프시스템제조</Col>
+            <Col id="ITEMS">보통주, 우선주, 전환사채</Col>
+          </Row>
+          <Row>
+            <Col id="CO_CD">02272</Col>
+            <Col id="CO_NM">티엔에프</Col>
+            <Col id="INVEST_CNT">30000</Col>
+            <Col id="INVEST_AMT">3000000000</Col>
+            <Col id="EXIT_CNT">0</Col>
+            <Col id="EXIT_AMT">0</Col>
+            <Col id="PL_AMT">0</Col>
+            <Col id="REMAIN_CNT">30000</Col>
+            <Col id="REMAIN_AMT">3000000000</Col>
+            <Col id="REDUCT_AMT">0</Col>
+            <Col id="BOOK_REMAIN_AMT">3000000000</Col>
+            <Col id="STOCKS_RATE2">19.27029804727646454265159301130524152107</Col>
+            <Col id="REDUCT_USD_AMT">0</Col>
+            <Col id="CONVLANG">1</Col>
+            <Col id="DATA_TYPE">1</Col>
+            <Col id="CO_TYPE_NM">기타</Col>
+            <Col id="MAIN_ITEM">서버등</Col>
+            <Col id="ITEMS">보통주</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

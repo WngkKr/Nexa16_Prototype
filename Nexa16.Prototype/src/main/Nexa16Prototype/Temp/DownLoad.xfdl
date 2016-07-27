@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="downLoad" classname="Script_String_Quote" inheritanceid="" position="absolute" titletext="파일다운로드" left="0" top="0" width="1340" height="205" scrollbars="autohorz">
+    <Layouts>
+      <Layout>
+        <Div id="Div00" taborder="1" text="Div00" left="0" top="175" width="1340" height="30" cssclass="div_WF_btnAreaFile">
+          <Layouts>
+            <Layout>
+              <Button id="Button00" taborder="0" text="다운로드" left="15" top="3" width="65" height="23" cssclass="btn_WF_downLoad"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Grid id="Grid00" useinputpanel="false" left="0" top="0" width="1340" height="175" binddataset="download" scrollbars="autovert" useselcolor="false" summarytype="default" cssclass="grid_WF_upDownLoadGrid">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="55"/>
+                <Column size="1056"/>
+                <Column size="66"/>
+                <Column size="31"/>
+                <Column size="79"/>
+                <Column size="53"/>
+              </Columns>
+              <Rows>
+                <Row size="26" band="head"/>
+                <Row size="23"/>
+                <Row size="30" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell displaytype="checkbox" style="align:center middle;padding: ;" text="체크박스"/>
+                <Cell col="1" colspan="3" style="align:left middle;padding: ;" text="파일 이름"/>
+                <Cell col="4" colspan="2" style="align:center middle;" text="파일 크기"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="checkbox" style="align:center middle;padding: ;background2:#ffffffff;" text="bind:체크박스"/>
+                <Cell col="1" style="align:left middle;padding: ;" text="bind:파일이름"/>
+                <Cell col="2" style="align:left middle;padding: ;"/>
+                <Cell col="3" style="align:left middle;padding: ;"/>
+                <Cell col="4" style="align:right middle;padding: ;background2:#ffffffff;" text="bind:파일크기"/>
+                <Cell col="5" style="align:left middle;padding: ;background2:#ffffffff;" text="bind:파일단위"/>
+              </Band>
+              <Band id="summary">
+                <Cell colspan="2" style="padding:0 3 0 15;"/>
+                <Cell col="2" style="align:right middle;padding: ;color:crimson;" text="6"/>
+                <Cell col="3" style="padding: ;" text="개,"/>
+                <Cell col="4" style="align:right middle;padding: ;color:crimson;" expr="expr:dataset.getSum(&quot;파일크기&quot;)"/>
+                <Cell col="5" style="align:left middle;color:crimson;" text="MB"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="download">
+        <ColumnInfo>
+          <Column id="체크박스" type="STRING" size="256"/>
+          <Column id="파일이름" type="STRING" size="256"/>
+          <Column id="파일크기" type="FLOAT" size="256"/>
+          <Column id="파일단위" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="파일크기">2.5</Col>
+            <Col id="파일이름">파일이름1</Col>
+            <Col id="파일단위">KB</Col>
+          </Row>
+          <Row>
+            <Col id="파일크기">4</Col>
+            <Col id="파일이름">파일이름2</Col>
+            <Col id="파일단위">MB</Col>
+          </Row>
+          <Row>
+            <Col id="파일크기">12</Col>
+            <Col id="파일단위">KB</Col>
+            <Col id="파일이름">파일이름3</Col>
+          </Row>
+          <Row>
+            <Col id="파일크기">74.5</Col>
+            <Col id="파일단위">KB</Col>
+            <Col id="파일이름">파일이름4</Col>
+          </Row>
+          <Row>
+            <Col id="파일크기">130.9</Col>
+            <Col id="파일단위">KB</Col>
+            <Col id="파일이름">파일이름5</Col>
+          </Row>
+          <Row>
+            <Col id="파일이름">파일이름6</Col>
+            <Col id="파일크기">10</Col>
+            <Col id="파일단위">MB</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[]]></Script>
+  </Form>
+</FDL>

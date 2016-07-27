@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -152,6 +152,11 @@ if (!nexacro.StatusBar) {
 		if (curstyle.font != font) {
 			curstyle.font = font;
 			this.on_apply_style_font(font);
+		}
+		var letterspace = this.on_find_CurrentStyle_letterspace(pseudo);
+		if (curstyle.letterspace != letterspace) {
+			curstyle.letterspace = letterspace;
+			this.on_apply_style_letterspace(letterspace);
 		}
 		var color = this.on_find_CurrentStyle_color(pseudo);
 		if (curstyle.color != color) {
@@ -317,6 +322,7 @@ if (!nexacro.StatusBar) {
 			textElem.setElementAlign(curstyle.align ? curstyle.align : nexacro.StatusBar._default_align);
 			textElem.setElementFont(curstyle.font);
 			textElem.setElementColor(curstyle.color);
+			textElem.setElementLetterSpace(curstyle.letterspace);
 
 			var progressbar = this.progressbar = new nexacro.ProgressBarCtrl("progressbar", "absolute", 0, 0, 0, 0, null, null, this);
 			var zoomcombo = this.zoomcombo = new nexacro.ComboCtrl("zoomcombo", "absolute", 0, 0, 0, 0, null, null, this);

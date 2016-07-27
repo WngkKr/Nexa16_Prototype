@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -131,13 +131,16 @@ if (!nexacro.CheckBox) {
 	nexacro.CheckBox = function (id, position, left, top, width, height, right, bottom, parent) {
 		nexacro.Component.call(this, id, position, left, top, width, height, right, bottom, parent);
 
-		this.text_elem = null;
+		this._text_elem = null;
 		this.chkimg = null;
 		this.value = false;
 		this.binddataset = null;
 		this.readonly = false;
 		this.falsevalue = null;
 		this.truevalue = null;
+
+		this._value = undefined;
+		this._apply_pushed_pseudo = true;
 
 
 		this._event_list = {
@@ -210,6 +213,7 @@ if (!nexacro.CheckBox) {
 		var buttonbackgroundimagemode = this.on_find_CurrentStyle_buttonbackgroundimagemode(pseudo);
 		var buttongradation = this.on_find_CurrentStyle_buttongradation(pseudo);
 		var font = this.on_find_CurrentStyle_font(pseudo);
+		var letterspace = this.on_find_CurrentStyle_letterspace(pseudo);
 		var color = this.on_find_CurrentStyle_color(pseudo);
 		var align = this.on_find_CurrentStyle_align(pseudo);
 		var accessibility = this.on_find_CurrentStyle_accessibility(pseudo);
@@ -269,6 +273,10 @@ if (!nexacro.CheckBox) {
 		if (font != curstyle.font) {
 			curstyle.font = font;
 			this.on_apply_style_font(font);
+		}
+		if (letterspace != curstyle.letterspace) {
+			curstyle.letterspace = letterspace;
+			this.on_apply_style_letterspace(letterspace);
 		}
 		if (color != curstyle.color) {
 			curstyle.color = color;
@@ -395,10 +403,10 @@ if (!nexacro.CheckBox) {
 
 
 	_pCheckBox.on_apply_style_align = function (align) {
-		if (this.text_elem) {
+		if (this._text_elem) {
 			var halign = (align.halign == "" ? "center" : align._halign);
 			var valign = (align.valign == "" ? "middle" : align._valign);
-			this.text_elem.setElementAlignXY(halign, valign);
+			this._text_elem.setElementAlignXY(halign, valign);
 		}
 	};
 
@@ -469,6 +477,7 @@ if (!nexacro.CheckBox) {
 				cr = btnsize;
 			}
 			else if (btn_halign == "right") {
+				tr += btnsize;
 				cr = container_width;
 				cl = cr - btnsize;
 			}
@@ -488,7 +497,7 @@ if (!nexacro.CheckBox) {
 
 			this.chkimg.move(cl, ct, cr - cl, cb - ct);
 
-			if (this.text_elem) {
+			if (this._text_elem) {
 				tw = container_width - tr - tl;
 				th = container_height - tb - tt;
 				tw = (tw < 0) ? 0 : tw;
@@ -496,15 +505,15 @@ if (!nexacro.CheckBox) {
 
 				tl = this._convertLeftForRtlLayout(tl, tw);
 
-				this.text_elem.setElementPosition(tl, tt);
-				this.text_elem.setElementSize(tw, th);
+				this._text_elem.setElementPosition(tl, tt);
+				this._text_elem.setElementSize(tw, th);
 			}
 		}
 	};
 
 	_pCheckBox.on_apply_style_color = function (color) {
-		if (this.text_elem) {
-			this.text_elem.setElementColor(color);
+		if (this._text_elem) {
+			this._text_elem.setElementColor(color);
 		}
 	};
 
@@ -520,13 +529,13 @@ if (!nexacro.CheckBox) {
 	};
 
 	_pCheckBox.on_apply_style_font = function (font) {
-		if (this.text_elem) {
-			this.text_elem.setElementFont(font);
+		if (this._text_elem) {
+			this._text_elem.setElementFont(font);
 		}
 	};
 
 	_pCheckBox.on_apply_style_buttonimage = function (v) {
-		if (v && this.value == true) {
+		if (v && this._isChecked(this.value)) {
 			if (this.chkimg) {
 				this.chkimg.image = v;
 				this.chkimg._load_image(v);
@@ -536,7 +545,7 @@ if (!nexacro.CheckBox) {
 	};
 
 	_pCheckBox.on_apply_style_textpadding = function (v) {
-		if (this.text_elem && this.currentstyle.textpadding) {
+		if (this._text_elem && this.currentstyle.textpadding) {
 			this.on_apply_style_buttonalign(v);
 		}
 	};
@@ -620,7 +629,8 @@ if (!nexacro.CheckBox) {
 				text_elem.setElementColor(current_style.color);
 				text_elem.setElementFont(current_style.font);
 				text_elem.setElementAlignXY(halign, valign);
-				this.text_elem = text_elem;
+				text_elem.setElementLetterSpace(current_style.letterspace);
+				this._text_elem = text_elem;
 				text_elem = null;
 			}
 			if (current_style.buttonimage) {
@@ -638,8 +648,8 @@ if (!nexacro.CheckBox) {
 			}
 		}
 
-		if (this.text_elem) {
-			this.text_elem.create();
+		if (this._text_elem) {
+			this._text_elem.create();
 		}
 
 		this.on_apply_text();
@@ -648,7 +658,10 @@ if (!nexacro.CheckBox) {
 			this.on_apply_expr();
 		}
 
-		this._reCalcValue();
+		if (this._value !== this.value) {
+			this._setValue(this.value, true, false);
+		}
+
 		this.on_apply_style_buttonalign(this.currentstyle.buttonalign);
 		this.on_apply_style_buttonimage(this.currentstyle.buttonimage);
 		this.on_apply_style_buttonbackground(this.currentstyle.buttonbackground);
@@ -660,9 +673,9 @@ if (!nexacro.CheckBox) {
 	};
 
 	_pCheckBox.on_destroy_contents = function () {
-		if (this.text_elem) {
-			this.text_elem.destroy();
-			this.text_elem = null;
+		if (this._text_elem) {
+			this._text_elem.destroy();
+			this._text_elem = null;
 		}
 
 		if (this.chkimg) {
@@ -675,7 +688,7 @@ if (!nexacro.CheckBox) {
 	};
 
 	_pCheckBox.on_change_containerRect = function (width, height) {
-		var text_elem = this.text_elem;
+		var text_elem = this._text_elem;
 		var pseudo = this._pseudo;
 		var align = this.on_find_CurrentStyle_align(pseudo);
 
@@ -698,7 +711,7 @@ if (!nexacro.CheckBox) {
 
 	_pCheckBox.on_init_bindSource = function (columnid, propid, ds) {
 		if (propid == "value") {
-			this._setValue(undefined, false);
+			this._setValue(undefined, false, false);
 			return true;
 		}
 	};
@@ -707,7 +720,7 @@ if (!nexacro.CheckBox) {
 		this.binddataset = ds;
 
 		if (propid == "value") {
-			this._setValue(ds.getColumn(row, col), false);
+			this._setValue(ds.getColumn(row, col), false, false);
 			return true;
 		}
 		return false;
@@ -728,7 +741,12 @@ if (!nexacro.CheckBox) {
 
 	_pCheckBox.set_value = function (v) {
 		if (this.value != v) {
-			this._setValue(v, true, true);
+			if (this._is_created) {
+				this._setValue(v, true, false);
+			}
+			else {
+				this.value = v;
+			}
 		}
 	};
 
@@ -786,7 +804,7 @@ if (!nexacro.CheckBox) {
 	};
 
 	_pCheckBox.on_apply_text = function () {
-		if (this.text_elem) {
+		if (this._text_elem) {
 			var expr = this.expr;
 
 			if (expr && expr.length > 0) {
@@ -830,14 +848,15 @@ if (!nexacro.CheckBox) {
 				this.displaytext = this.text;
 			}
 
-			this.text_elem.setElementText(this.displaytext);
+			this._text_elem.setElementText(this.displaytext);
+			this._refreshAccessibilityValue();
 		}
 	};
 
 	_pCheckBox.set_truevalue = function (v) {
 		if (this.truevalue != v) {
 			if (this.isChecked()) {
-				this.value = v;
+				this.value = this._value = v;
 			}
 			this.truevalue = v;
 			this._reCalcValue();
@@ -848,7 +867,7 @@ if (!nexacro.CheckBox) {
 	_pCheckBox.set_falsevalue = function (v) {
 		if (this.falsevalue != v) {
 			if (!this.isChecked()) {
-				this.value = v;
+				this.value = this._value = v;
 			}
 			this.falsevalue = v;
 			this._reCalcValue();
@@ -857,11 +876,11 @@ if (!nexacro.CheckBox) {
 	};
 
 	_pCheckBox.isChecked = function () {
-		return this._isChecked(this.value);
+		return this._isChecked(this._value);
 	};
 
 	_pCheckBox.updateToDataset = function () {
-		return this.applyto_bindSource("value", this.value);
+		return this.applyto_bindSource("value", this._value);
 	};
 
 	_pCheckBox.on_fire_onclick = function (button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, from_comp, from_refer_comp) {
@@ -870,7 +889,7 @@ if (!nexacro.CheckBox) {
 		}
 
 		if (this.readonly == false) {
-			if (this._isChecked(this.value)) {
+			if (this._isChecked(this._value)) {
 				if (this.falsevalue != undefined && this.falsevalue != "") {
 					this._setValue(this.falsevalue, true);
 				}
@@ -929,24 +948,24 @@ if (!nexacro.CheckBox) {
 	_pCheckBox._setValue = function (val, bBind, bFireEvent) {
 		var retn;
 		if (this.isChecked() == this._isChecked(val)) {
-			return this.value;
+			return this._value;
 		}
 
 		if (bFireEvent !== false) {
-			retn = this.on_fire_canchange(this, this.value, val);
+			retn = this.on_fire_canchange(this, this._value, val);
 		}
 
 
 		if (retn || retn === undefined) {
-			var postVal = this.value;
-			this.value = val;
+			var postVal = this._value;
+			this.value = this._value = val;
 			this._reCalcValue();
 
 			this._setAccessibilityStatChecked(this.isChecked());
 
-			if (postVal !== this.value) {
+			if (postVal !== this._value) {
 				if (bFireEvent !== false) {
-					this.on_fire_onchanged(this, postVal, this.value);
+					this.on_fire_onchanged(this, postVal, this._value);
 				}
 			}
 
@@ -954,12 +973,12 @@ if (!nexacro.CheckBox) {
 				var ret = this.applyto_bindSource("value", val);
 
 				if (ret == false) {
-					this.value = postVal;
+					this.value = this._value = postVal;
 					this._reCalcValue();
 				}
 			}
 		}
-		return this.value;
+		return this._value;
 	};
 
 	_pCheckBox._isChecked = function (value) {
@@ -1009,21 +1028,21 @@ if (!nexacro.CheckBox) {
 
 		if (this.isChecked()) {
 			if (!this.truevalue) {
-				if (parseInt(this.value) != 1) {
-					this.value = true;
+				if (parseInt(this._value) != 1) {
+					this.value = this._value = true;
 				}
 				else {
-					this.value = 1;
+					this.value = this._value = 1;
 				}
 			}
 		}
 		else {
 			if (!this.falsevalue) {
-				if (parseInt(this.value) != 0) {
-					this.value = false;
+				if (parseInt(this._value) != 0) {
+					this.value = this._value = false;
 				}
 				else {
-					this.value = 0;
+					this.value = this._value = 0;
 				}
 			}
 		}

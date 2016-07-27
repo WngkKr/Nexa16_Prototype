@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="SAM012" classname="SAM011" left="0" top="0" width="1024" height="768" titletext="Transaction 단건 호출" onload="SAM011_onload">
+    <Layouts>
+      <Layout>
+        <Button id="btn_retrieve" taborder="0" text="조회" onclick="fn_retrieve" cssclass="btn_SA_Search" top="14" right="130" width="69" height="24" titletext="[Sample] CRUD Multi (작업중)"/>
+        <Grid id="grd_list00" taborder="1" binddataset="ds_output00" useinputpanel="false" cellsizingtype="col" autofittype="col" nodatatext="No Data" left="24" top="57" right="56" height="295" u_usestatus="" u_menu="export,import,usergrid,usercure">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row band="body" size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell col="0" disptype="normal" text="IDX"/>
+                <Cell col="1" disptype="normal" text="ObjectName"/>
+                <Cell col="2" disptype="normal" text="ObjectID"/>
+                <Cell col="3" disptype="normal" text="TestType"/>
+                <Cell col="4" disptype="normal" text="TestObject"/>
+                <Cell col="5" disptype="normal" text="TestValue"/>
+                <Cell col="6" disptype="normal" text="ResultValue"/>
+              </Band>
+              <Band id="body">
+                <Cell col="0" disptype="normal" text="bind:IDX"/>
+                <Cell col="1" disptype="normal" text="bind:ObjectName"/>
+                <Cell col="2" disptype="normal" text="bind:ObjectID"/>
+                <Cell col="3" disptype="normal" text="bind:TestType"/>
+                <Cell col="4" disptype="normal" text="bind:TestObject"/>
+                <Cell col="5" disptype="normal" text="bind:TestValue"/>
+                <Cell col="6" disptype="normal" text="bind:ResultValue"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="grd_list01" taborder="2" binddataset="ds_output01" useinputpanel="false" cellsizingtype="col" autofittype="col" nodatatext="No Data" left="24" top="417" right="56" height="295" u_usestatus="" u_menu="export,import,usergrid,usercure">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row band="body" size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell col="0" disptype="normal" text="IDX"/>
+                <Cell col="1" disptype="normal" text="ObjectName"/>
+                <Cell col="2" disptype="normal" text="ObjectID"/>
+                <Cell col="3" disptype="normal" text="TestType"/>
+                <Cell col="4" disptype="normal" text="TestObject"/>
+                <Cell col="5" disptype="normal" text="TestValue"/>
+                <Cell col="6" disptype="normal" text="ResultValue"/>
+              </Band>
+              <Band id="body">
+                <Cell col="0" disptype="normal" text="bind:IDX"/>
+                <Cell col="1" disptype="normal" text="bind:ObjectName"/>
+                <Cell col="2" disptype="normal" text="bind:ObjectID"/>
+                <Cell col="3" disptype="normal" text="bind:TestType"/>
+                <Cell col="4" disptype="normal" text="bind:TestObject"/>
+                <Cell col="5" disptype="normal" text="bind:TestValue"/>
+                <Cell col="6" disptype="normal" text="bind:ResultValue"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_output00"/>
+      <Dataset id="ds_output01"/>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[/**
+*  인트라넷 고도화[Lexpeed3]구축 사업
+*
+*  @MenuPath       
+*  @FileName       SAM012.xfdl
+*  @Creator        송원창
+*  @CreateDate     2016.04.15
+*  @LastModifier   
+*  @LastModifyDate 
+*  @Version        1.0
+*  @Outline        Transaction 호출
+*  @Desction       
+*
+*
+************** 소스 수정 이력 *************************************************
+*    date          Modifier            Description
+*******************************************************************************
+*  2016.04.15      송원창              클래스 최초 생성
+*******************************************************************************
+*/
+/*----------------------------------------------------------------------------------------------
+ * 공통 라이브러리 INCLUDE 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------------------------
+ * FORM 변수 선언 영역
+----------------------------------------------------------------------------------------------*/
+this.fv_sId;
+
+/*----------------------------------------------------------------------------------------------
+ * FORM EVENT 영역
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  화면 로드시 이벤트
+ */
+this.SAM011_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	//공통초기화 필수
+	this.gfn_initForm(obj);
+	
+	trace("SAM011_onload");
+}
+
+/*----------------------------------------------------------------------------------------------
+ * 공통기능 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * TRANSACTION 및 CallBack 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  조회 서비스 callback
+ * @param sTrId  	   - service ID
+ * @param nErrorCode   - error CODE
+ * @param sErrorMsg    - error MESSAGE
+ * @return       N/A
+ */
+this.fn_callback = function(sTrId, nErrorCode, sErrorMsg)
+{
+	trace("sTrId: " + sTrId + " " + "nErrorCode: " + nErrorCode + " " +  "sErrorMsg: " + sErrorMsg);
+	
+	if ( nErrorCode < 0 ) return;
+	
+	switch(sTrId)
+	{
+		case "retrieveEmp":
+			//trace(this.ds_output01.saveXML());
+			break;
+		
+		default:
+			 break;
+	}
+}
+
+
+/*----------------------------------------------------------------------------------------------
+ * 각 COMPONENT 별 EVENT 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  데이터 조회
+ * @return       N/A
+ */
+ 
+/**
+ * @param   :  	1. strSvcId 		: Transaction을 구분하기 위한 ID 값입니다.
+ * @param	:   2. strSvcUrl 		: Transaction을 요청할 주소 값입니다.
+ * @param	:   3. inData			: 입력값으로 보낼 Dataset 의 ID, a=b의 형태로 실제이름과 입력이름을 매칭.
+ * @param	:   4. outData			: 처리결과를 받을 Dataset 의 ID, a=b의 형태로 실제이름과 입력이름을 매칭.
+ * @param	:   5. strArg			: 입력값으로 보낼 arguments, strFromDate="20120607"
+ * @param	:   6. callBackFnc		: transaction의 결과를 돌려줄 Function의 이름.
+ * @param	:   7. isAsync			: 비동기 여부를 지정.	-> Default : true(ASync) 
+ * @param	:	8. svcType			: Transaction 유형 R:조회,C:등록,U:수정,D:삭제,S:저장, N:성공 실패시 메세지 처리 안함(무시)
+ * @param	:	9. bWait			: WaitCursor true/false
+ */
+ 
+this.fn_retrieve = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var sInDs  	= "";
+	var sOutDs 	= "ds_output00=output ds_output01=output1";
+	var sUrl	= "http://localhost:8080/Lexpeed3/nexacrojsp.jsp"
+	this.gfn_transaction("retrieveEmp", "http://localhost:8080/Lexpeed3/nexacrojsp1.jsp", sInDs, sOutDs, "", "fn_callback", "R", true);
+}
+
+
+
+
+/*----------------------------------------------------------------------------------------------
+ * 사용자 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+]]></Script>
+  </Form>
+</FDL>

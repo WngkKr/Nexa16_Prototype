@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="Component04" classname="Component04" left="0" top="0" width="1024" height="768" titletext="버튼">
+    <Layouts>
+      <Layout>
+        <Static id="Static00" taborder="0" left="12.01%" top="-1" right="0.78%" height="1070" style="background:#ffffffff;border:1 solid #c6c6c5ff ;align:center middle;font:Tahoma,9,bold antialias;"/>
+        <Static id="Static64" taborder="155" text="H35" left="910" top="962" width="30" height="35" style="border:0 solid #808080 ;color:#b1c0cbff;align:right middle;font:8 Dotum;"/>
+        <Static id="Static27" taborder="173" text="H23" left="357" top="907" width="100" height="23" style="border:1 dotted #b1c0cbff,0 none #808080ff;color:#b1c0cbff;align:right middle;font:8 Dotum;"/>
+        <Button id="Button12" taborder="5" text=" 띄어쓰기가 있는 경우" left="842" top="182" height="23" style="padding:0 0 0 0;" width="150"/>
+        <Static id="Static01" taborder="6" text="H23" left="230" top="179" width="39" height="23" style="border:1 dotted #b1c0cbff,0 none #808080ff;color:#b1c0cbff;align:center middle;font:8 Dotum;"/>
+        <Static id="Static02" taborder="7" text="Button" onclick="Static10_onclick" left="0" top="0" width="125" height="1069" style="background:#ebeff2ff;border:1 solid #ced5dfff ;color:#667f92ff;align:center middle;font:bold 9 Dotum;"/>
+        <Button id="Button08" taborder="8" text="Enable" left="164" top="109" width="65" height="23"/>
+        <Button id="Button09" taborder="9" text="Disable" enable="false" left="164" top="134" width="65" height="23"/>
+        <Button id="Button11" taborder="11" text="일이삼" left="490" top="110" width="65" height="23"/>
+        <Static id="Static03" taborder="12" left="166" top="181" width="65" height="40" style="border:0 none #808080ff,1 dotted #b1c0cbff;"/>
+        <Button id="Button13" taborder="14" text="일이" left="166" top="179" width="65" height="23"/>
+        <Static id="Static06" taborder="16" text="버튼의 너비는 10,Dotum 기준 - 기본 2자 에서 4글자까지 65px 유지 / 1글자 늘어날때 마다 15px씩 증가(영문,숫자도 동일) " left="145" top="14" width="655" height="20" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;" onclick="Static06_onclick"/>
+        <Static id="Static07" taborder="17" text="띄어쓰기가 들어갈 경우 좌,우측 여백기준으로 너비를 설정한다" left="145" top="32" width="565" height="20" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Button id="Button14" taborder="18" text="일이삼사" left="490" top="136" width="65" height="23"/>
+        <Button id="Button15" taborder="19" text="일이삼사오" left="490" top="162" width="80" height="23"/>
+        <Button id="Button16" taborder="20" text="일이삼사오육" left="652" top="108" width="95" height="23"/>
+        <Button id="Button17" taborder="21" text="일이삼사오육칠" left="652" top="134" width="110" height="23"/>
+        <Button id="Button18" taborder="22" text="일이삼사오육칠팔" left="652" top="160" width="125" height="23"/>
+        <Static id="Static09" taborder="24" text="w65" left="458" top="110" width="30" height="20" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static17" taborder="25" text="w65" left="458" top="138" width="30" height="20" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static20" taborder="26" text="w80" left="458" top="164" width="30" height="20" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static47" taborder="27" text="w95" left="620" top="109" width="30" height="20" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static48" taborder="28" text="w110" left="615" top="135" width="30" height="20" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static49" taborder="29" text="w125" left="615" top="161" width="30" height="20" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Button id="Button19" taborder="30" text="123" left="842" top="108" width="65" height="23"/>
+        <Button id="Button20" taborder="31" text="Abc" left="842" top="134" width="65" height="23"/>
+        <Static id="Static50" taborder="32" text="12" cssclass="sta_WF_GuideLine" visible="false" left="843" top="174" width="12" height="39" style="font:10 Noto Sans KR Regular;"/>
+        <Static id="Static44" taborder="49" text="Default &amp; 데이터영역 내부버튼" cssclass="sta_WF_title1" left="145" top="73" width="355" height="20" style="border:0 solid #808080 ;"/>
+        <Static id="Static46" taborder="50" cssclass="sta_WF_GuideLine" left="145" top="55" right="20" height="16" style="color:#99999972;" visible="false"/>
+        <Static id="Static11" taborder="52" text="공통버튼/그리드 컨드롤버튼" cssclass="sta_WF_title1" left="145" top="462" width="355" height="20" style="border:0 solid #808080 ;"/>
+        <Static id="Static16" taborder="55" text="버튼간 간격 6px" left="260" top="610" width="122" height="30" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static19" taborder="57" text="w140" left="615" top="187" width="30" height="20" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Button id="Button00" taborder="58" text="일이삼사오육칠팔구" left="652" top="186" width="140" height="23"/>
+        <Static id="Static25" taborder="62" text="ETC" cssclass="sta_WF_title1" left="145" top="844" width="355" height="20" style="border:0 solid #808080 ;"/>
+        <Button id="Button02" taborder="82" cssclass="btn_WF_ShuttleR" left="542" top="931" width="23" height="35"/>
+        <Button id="Button03" taborder="83" cssclass="btn_WF_ShuttleL" left="542" top="972" width="23" height="35"/>
+        <Static id="Static28" taborder="86" text="셔틀버튼" left="532" top="908" width="174" height="20" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static30" taborder="89" text="페이징버튼" left="152" top="879" width="264" height="20" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Button id="Button06" taborder="90" cssclass="btn_WF_PagingFirst" left="156" top="907" width="25" height="23"/>
+        <Button id="Button07" taborder="91" cssclass="btn_WF_PagingPrev" left="186" top="907" width="25" height="23"/>
+        <Button id="Button21" taborder="92" text="1" cssclass="btn_wfF_pagingfirst" left="224" top="907" width="25" height="23"/>
+        <Button id="Button22" taborder="93" text="4" cssclass="btn_wfF_pagingfirst" left="314" top="907" width="25" height="23"/>
+        <Button id="Button24" taborder="94" text="2" cssclass="btn_wfF_pagingfirst" left="254" top="907" width="25" height="23"/>
+        <Button id="Button25" taborder="95" text="3" cssclass="btn_wfF_pagingfirst" left="284" top="907" width="25" height="23"/>
+        <Button id="Button26" taborder="96" cssclass="btn_WF_PagingNext" left="352" top="907" width="25" height="23"/>
+        <Button id="Button27" taborder="97" cssclass="btn_WF_PagingLast" left="382" top="907" width="25" height="23"/>
+        <Static id="Static32" taborder="100" text="w103" left="161" top="340" width="103" height="40" style="border:0 none #808080ff,1 dotted #b1c0cbff;color:#b1c0cbff;align:center bottom;"/>
+        <Button id="btnReport03" taborder="114" text="출력" cssclass="btn_WF_CntPrint" top="576" right="640" width="75" height="23" userRW="Y"/>
+        <Button id="btnExcel00" taborder="115" text="Excel" cssclass="btn_WF_DetailExcelDown" top="576" right="802" width="75" height="23" userRW="Y"/>
+        <Static id="Static41" taborder="120" left="303" top="562" width="6" height="50" cssclass="sta_WF_GuideLine" visible="false"/>
+        <Static id="Static40" taborder="122" text="H44" left="199" top="319" width="90" height="44" style="border:1 dotted #b1c0cbff,0 none #808080ff;color:#b1c0cbff;align:right middle;font:8 Dotum;"/>
+        <Static id="Static43" taborder="124" text="조건 검색 버튼" cssclass="sta_WF_title1" left="145" top="267" width="355" height="20" style="border:0 solid #808080 ;"/>
+        <Button id="btnSetting01" taborder="127" text="조회" onclick="divInfo_btnSetting_onclick" cssclass="btn_WF_Search01" left="161" top="319" width="103" height="44"/>
+        <Static id="Static55" taborder="134" text="버튼 조건검색바 1줄" left="164" top="297" width="162" height="20" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static56" taborder="135" text="w103" left="350" top="368" width="103" height="40" style="border:0 none #808080ff,1 dotted #b1c0cbff;color:#b1c0cbff;align:center bottom;"/>
+        <Static id="Static59" taborder="136" text="H76" left="388" top="319" width="90" height="76" style="border:1 dotted #b1c0cbff,0 none #808080ff;color:#b1c0cbff;align:right middle;font:8 Dotum;"/>
+        <Button id="btnSetting02" taborder="137" text="조회" onclick="divInfo_btnSetting_onclick" cssclass="btn_WF_Search02" left="350" top="319" width="103" height="76"/>
+        <Static id="Static60" taborder="138" text="버튼 조건검색바 2줄" left="353" top="297" width="162" height="20" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static61" taborder="139" text="w103" left="562" top="404" width="103" height="40" style="border:0 none #808080ff,1 dotted #b1c0cbff;color:#b1c0cbff;align:center bottom;"/>
+        <Static id="Static62" taborder="140" text="H109" left="610" top="319" width="90" height="109" style="border:1 dotted #b1c0cbff,0 none #808080ff;color:#b1c0cbff;align:right middle;font:8 Dotum;"/>
+        <Button id="btnSetting03" taborder="141" text="조회" onclick="divInfo_btnSetting_onclick" cssclass="btn_WF_Search03" left="562" top="319" width="103" height="109"/>
+        <Static id="Static63" taborder="142" text="버튼 조건검색바 3줄" left="565" top="297" width="162" height="20" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Button id="btnSave00" taborder="117" text="목록" top="613" right="347" width="65" height="23" userRW="Y" cssclass="btn_WF_CntList"/>
+        <Static id="Static04" taborder="144" text="W65" left="186" top="205" width="65" height="20" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static08" taborder="145" text="12" cssclass="sta_WF_GuideLine" visible="false" left="980" top="174" width="12" height="39" style="font:10 Noto Sans KR Regular;"/>
+        <Static id="Static05" taborder="146" text="코멘트 입력버튼" left="842" top="502" width="122" height="30" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Button id="Button10" taborder="147" left="764" top="541" width="13" height="13" cssclass="btn_WF_CommentDel"/>
+        <Static id="Static10" taborder="148" text="코멘트 삭제버튼" left="842" top="531" width="122" height="30" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Button id="Button30" taborder="149" text="Pushed" enable="false" left="256" top="134" width="65" height="23"/>
+        <Button id="Button31" taborder="150" text="Focused/moseover" left="256" top="109" width="140" height="23"/>
+        <Static id="Static12" taborder="151" text="- 타이틀과 같은 라인 우측에 위치 " left="753" top="885" width="231" height="26" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Button id="btnReport07" taborder="152" cssclass="btn_WF_Favorite" left="835" top="962" width="35" height="35" userRW="Y"/>
+        <Button id="btnReport08" taborder="153" cssclass="btn_WF_AllPrint" left="880" top="962" width="35" height="35" userRW="Y"/>
+        <Static id="Static13" taborder="154" text="w35" left="880" top="936" width="35" height="22" style="border:0 none #808080ff,1 dotted #b1c0cbff;color:#b1c0cbff;align:center bottom;"/>
+        <Static id="Static65" taborder="156" text="- 버튼간여백 10px" left="790" top="1003" width="231" height="26" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static66" taborder="157" left="870" top="954" width="10" height="50" cssclass="sta_WF_GuideLine" visible="false"/>
+        <Static id="Static67" taborder="158" text="- 왼쪽부터 목록, 즐겨찾기, 출력 버튼" left="753" top="903" width="231" height="26" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Button id="btnExcel01" taborder="159" text="Excel" cssclass="btn_WF_DetailExcelUp" top="576" right="721" width="75" height="23" userRW="Y"/>
+        <Static id="Static14" taborder="160" text="- 상세 조회영역 데이터 좌측 하단에 위치, 앞에 아이콘 들어감" left="146" top="510" width="330" height="30" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static29" taborder="161" text="- 왼쪽부터 엑셀업로드, 엑셀다운, 출력 버튼" left="146" top="530" width="231" height="26" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static15" taborder="162" text="- 상세 조회영역 데이터 우측 상, 하단에 위치" left="697" top="600" width="234" height="30" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static31" taborder="163" text="- 앞에 아이콘 들어가는 버튼 들" left="146" top="491" width="306" height="30" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Button id="btnReport00" taborder="164" text="그 외 버튼" top="675" right="782" width="95" height="23" userRW="Y"/>
+        <Static id="Static52" taborder="165" text="- 검색바 아래 위치" left="147" top="639" width="234" height="30" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Button id="btnReport05" taborder="166" text="그 외 버튼" top="675" right="679" width="95" height="23" userRW="Y"/>
+        <Static id="Static57" taborder="167" left="242" top="661" width="8" height="50" cssclass="sta_WF_GuideLine" visible="false"/>
+        <Static id="Static68" taborder="168" text="버튼간 간격 8px" left="255" top="701" width="122" height="30" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static18" taborder="169" left="309" top="900" width="5" height="50" cssclass="sta_WF_GuideLine" visible="false"/>
+        <Static id="Static22" taborder="170" text="버튼간여백 5px" left="301" top="949" width="95" height="26" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static23" taborder="171" left="211" top="900" width="13" height="50" cssclass="sta_WF_GuideLine" visible="false"/>
+        <Static id="Static24" taborder="172" text="버튼간여백 13px" left="175" top="949" width="109" height="26" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static33" taborder="174" text="w25" left="382" top="884" width="25" height="22" style="border:0 none #808080ff,1 dotted #b1c0cbff;color:#b1c0cbff;align:center bottom;"/>
+        <Static id="Static34" taborder="175" text="&lt;버튼 순서&gt;" left="146" top="733" width="80" height="30" style="border:0 solid #808080 ;color:#b1c5cbff;font:8 Dotum;"/>
+        <Static id="Static35" taborder="176" text="- 조회화면" left="142" top="754" width="234" height="30" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Button id="btnReport01" taborder="177" text="등록" top="785" right="810" width="65" height="23" userRW="Y"/>
+        <Static id="Static36" taborder="178" text="- 등록, 수정화면" left="324" top="754" width="110" height="30" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Button id="btnReport02" taborder="179" text="저장" top="785" right="628" width="65" height="23" userRW="Y"/>
+        <Button id="btnReport04" taborder="180" text="취소" top="785" right="557" width="65" height="23" userRW="Y"/>
+        <Static id="Static39" taborder="181" text="- 상세화면" left="569" top="754" width="110" height="30" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Button id="btnReport06" taborder="182" text="수정" top="785" right="383" width="65" height="23" userRW="Y"/>
+        <Button id="btnReport09" taborder="183" text="삭제" top="785" right="312" width="65" height="23" userRW="Y"/>
+        <Button id="btnSave01" taborder="184" text="목록" cssclass="btn_WF_CntList" top="785" right="241" width="65" height="23" userRW="Y"/>
+        <Static id="Static51" taborder="185" text="- 상세 CRUD 버튼 데이터 우측 상, 하단에 위치" left="697" top="624" width="234" height="20" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static26" taborder="186" text="H23" left="571" top="507" width="66" height="23" style="border:1 dotted #b1c0cbff,0 none #808080ff;color:#b1c0cbff;align:right middle;font:8 Dotum;"/>
+        <Button id="Button01" taborder="187" left="575" top="507" width="25" height="23" cssclass="btn_WF_DataZoom"/>
+        <Static id="Static38" taborder="188" text="w25" left="575" top="484" width="25" height="22" style="border:0 none #808080ff,1 dotted #b1c0cbff;color:#b1c0cbff;align:center bottom;"/>
+        <Static id="Static54" taborder="189" text="- 그리드 상세 돋보기 버튼" left="546" top="534" width="137" height="26" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static42" taborder="190" cssclass="sta_WF_GuideLine" visible="false" left="824" top="952" width="10" height="50"/>
+        <Button id="btnReport10" taborder="191" cssclass="btn_WF_Bigist" left="789" top="962" width="35" height="35" userRW="Y"/>
+        <Button id="btnSetting00" taborder="192" text="입력" onclick="divInfo_btnSetting_onclick" cssclass="btn_WF_Comment" top="506" right="203" width="65" height="23"/>
+        <Button id="btnReport11" taborder="193" text="그 외 버튼" top="675" right="575" width="95" height="23" userRW="Y" cssclass="btn_WF_Etc"/>
+        <Static id="Static21" taborder="194" cssclass="sta_WF_guideLine" left="145" top="243" right="20" height="1" style="background:#ecececff;"/>
+        <Static id="Static45" taborder="195" cssclass="sta_WF_guideLine" left="145" top="451" right="20" height="1" style="background:#ecececff;"/>
+        <Static id="Static37" taborder="196" cssclass="sta_WF_guideLine" left="145" top="827" right="20" height="1" style="background:#ecececff;"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+this.Static06_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+	
+}
+]]></Script>
+  </Form>
+</FDL>

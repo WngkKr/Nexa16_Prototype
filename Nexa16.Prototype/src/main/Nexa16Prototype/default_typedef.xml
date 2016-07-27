@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TypeDefinition version="1.2">
+  <Modules>
+    <Module url="CompBase.json"/>
+    <Module url="ComComp.json"/>
+    <Module url="Grid.json"/>
+    <Module url="DeviceAPI.json"/>
+    <Module url="NPLibrary.json"/>
+  </Modules>
+  <Components>
+    <Component type="JavaScript" id="Div" classname="nexacro.Div"/>
+    <Component type="JavaScript" id="Button" classname="nexacro.Button"/>
+    <Component type="JavaScript" id="PopupDiv" classname="nexacro.PopupDiv"/>
+    <Component type="JavaScript" id="Combo" classname="nexacro.Combo"/>
+    <Component type="JavaScript" id="CheckBox" classname="nexacro.CheckBox"/>
+    <Component type="JavaScript" id="ListBox" classname="nexacro.ListBox"/>
+    <Component type="JavaScript" id="Edit" classname="nexacro.Edit"/>
+    <Component type="JavaScript" id="MaskEdit" classname="nexacro.MaskEdit"/>
+    <Component type="JavaScript" id="TextArea" classname="nexacro.TextArea"/>
+    <Component type="JavaScript" id="Menu" classname="nexacro.Menu"/>
+    <Component type="JavaScript" id="Tab" classname="nexacro.Tab"/>
+    <Component type="JavaScript" id="ImageViewer" classname="nexacro.ImageViewer"/>
+    <Component type="JavaScript" id="Radio" classname="nexacro.Radio"/>
+    <Component type="JavaScript" id="Calendar" classname="nexacro.Calendar"/>
+    <Component type="JavaScript" id="Static" classname="nexacro.Static"/>
+    <Component type="JavaScript" id="Grid" classname="nexacro.Grid"/>
+    <Component type="JavaScript" id="Spin" classname="nexacro.Spin"/>
+    <Component type="JavaScript" id="PopupMenu" classname="nexacro.PopupMenu"/>
+    <Component type="JavaScript" id="GroupBox" classname="nexacro.GroupBox"/>
+    <Component type="JavaScript" id="ProgressBar" classname="nexacro.ProgressBar"/>
+    <Component type="JavaScript" id="Plugin" classname="nexacro.Plugin"/>
+    <Component type="JavaScript" id="Dataset" classname="nexacro.NormalDataset"/>
+    <Component type="JavaScript" id="WebBroswer" classname="nexacro.WebBrowser"/>
+  </Components>
+  <Protocols/>
+  <Services>
+    <Service prefixid="svcurl" type="JSP" url="http://localhost:8080/" version="0" communicationversion="0" cachelevel="none"/>
+    <Service prefixid="nexacro14lib" type="file" url="./nexacro14lib/" version="0" communicationversion="0" cachelevel="session"/>
+    <Service prefixid="FRM" type="form" url="./FRM/" version="0" communicationversion="0"/>
+    <Service prefixid="CCP" type="form" url="./CCP/" version="0" communicationversion="0"/>
+    <Service prefixid="IMG" type="file" url="./IMG/" version="0" communicationversion="0"/>
+    <Service prefixid="FONT" type="file" url="./FONT/" version="0" communicationversion="0"/>
+    <Service prefixid="CSS" type="css" url="./CSS/" version="0" communicationversion="0"/>
+    <Service prefixid="TEMP" type="form" url="./Temp/" version="0" communicationversion="0"/>
+    <Service prefixid="Sample_DesignGuide" type="form" url="./Sample/" version="0" communicationversion="0"/>
+    <Service prefixid="ChartSample" type="form" url="./ChartSample/" version="0" communicationversion="0"/>
+    <Service prefixid="SAM" type="form" url="./SAM/" version="0" communicationversion="0"/>
+    <Service prefixid="Base" type="form" url="./Base/" version="0" communicationversion="0"/>
+    <Service prefixid="Lib" type="js" url="./Lib/" cachelevel="session" version="0" communicationversion="0"/>
+    <Service prefixid="REPORT" type="form" url="./Report/" version="0" communicationversion="0"/>
+  </Services>
+  <Update/>
+</TypeDefinition>

@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="SAM003" classname="SAM_updownload" left="0" top="0" width="1024" height="768" titletext="DEXT5 다운로드 샘플" onload="SAM_DEXT5download_onload">
+    <Layouts>
+      <Layout>
+        <WebBroswer id="WebBroswer00" left="0" top="225" taborder="0" onloadcompleted="WebBroswer00_onloadcompleted" height="205" right="0"/>
+        <Button id="bnt_download" taborder="1" text="다운로드" left="45" top="15" width="120" height="50" onclick="bnt_download_onclick"/>
+        <Button id="bnt_downloadAll" taborder="2" text="전체다운로드" left="175" top="15" width="120" height="50" onclick="bnt_downloadAll_onclick"/>
+        <Grid id="Grid00" taborder="4" useinputpanel="false" left="402" top="12" height="204" binddataset="ds_filelist" cellsizingtype="col" right="0" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="51"/>
+                <Column size="86"/>
+                <Column size="261"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="no"/>
+                <Cell col="1" text="filename"/>
+                <Cell col="2" text="url"/>
+                <Cell col="3" text="filesize"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:no"/>
+                <Cell col="1" style="align:left middle;" text="bind:filename"/>
+                <Cell col="2" style="align:left middle;" text="bind:url"/>
+                <Cell col="3" text="bind:filesize"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_filelist">
+        <ColumnInfo>
+          <Column id="no" type="STRING" size="256"/>
+          <Column id="filename" type="STRING" size="256"/>
+          <Column id="url" type="STRING" size="256"/>
+          <Column id="filesize" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="no">1</Col>
+            <Col id="filename">전경사진.jpg</Col>
+            <Col id="url">http://localhost:8080/dext5upload/sample/images/Panorama/ViewPhotos.jpg</Col>
+            <Col id="filesize">87325</Col>
+          </Row>
+          <Row>
+            <Col id="no">2</Col>
+            <Col id="filename">풍경이미지.bmp</Col>
+            <Col id="url">http://localhost:8080/dext5upload/sample/images/Scenery/image/CreativeImages.bmp</Col>
+            <Col id="filesize">2359350</Col>
+          </Row>
+          <Row>
+            <Col id="no">3</Col>
+            <Col id="filename">dext5_logo.png</Col>
+            <Col id="url">http://www.dext5.com/page/images/dext5_logo.png</Col>
+            <Col id="filesize">2232</Col>
+          </Row>
+          <Row>
+            <Col id="no">5</Col>
+            <Col id="filename">spliter.xfdl</Col>
+            <Col id="url">C:\\eGovFrame-3.5\\workspace\\nexacro-sample\\src\\main\\webapp\\dext5upload\\dext5uploaddata\\2016\\04\\559CFCB3-D4A1-5672-98BC-D5ACA89972C9.xfdl</Col>
+            <Col id="filesize">5336</Col>
+          </Row>
+          <Row>
+            <Col id="no">6</Col>
+            <Col id="filename">spliter_Test.xfdl</Col>
+            <Col id="url">C:\\eGovFrame-3.5\\workspace\\nexacro-sample\\src\\main\\webapp\\dext5upload\\dext5uploaddata\\2016\\04\\7AAD836A-555D-3961-EB7D-8DB5EF58E6DE.xfdl</Col>
+            <Col id="filesize">1742</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[/**
+*  인트라넷 고도화[Lexpeed3]구축 사업
+*
+*  @MenuPath       
+*  @FileName       SAM003.xfdl
+*  @Creator        송원창
+*  @CreateDate     2016.04.15
+*  @LastModifier   
+*  @LastModifyDate 
+*  @Version        1.0
+*  @Outline        DEXT5 다운로드 샘플
+*  @Desction       
+*
+*
+************** 소스 수정 이력 *************************************************
+*    date          Modifier            Description
+*******************************************************************************
+*  2016.04.20      송원창              클래스 최초 생성
+*******************************************************************************
+*/
+/*----------------------------------------------------------------------------------------------
+ * 공통 라이브러리 INCLUDE 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------------------------
+ * FORM 변수 선언 영역
+----------------------------------------------------------------------------------------------*/
+this.DEXT5download; 	// 
+
+/*----------------------------------------------------------------------------------------------
+ * FORM EVENT 영역
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  화면 로드시 이벤트
+ */
+this.SAM_DEXT5download_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	//공통초기화 필수
+	this.gfn_initForm(obj);
+	
+	this.WebBroswer00.set_url("http://localhost:8080/dext5upload/sample/download.html");
+}
+
+/*----------------------------------------------------------------------------------------------
+ * 공통기능 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * TRANSACTION 및 CallBack 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  Push 수신 여부 저장 서비스 callback
+ * @param sTrId  	   - service ID
+ * @param nErrorCode   - error CODE
+ * @param sErrorMsg    - error MESSAGE
+ * @return       N/A
+ */
+this.fn_callback = function(sTrId, nErrorCode, sErrorMsg)
+{
+	trace("sTrId: " + sTrId + " " + "nErrorCode: " + nErrorCode + " " +  "sErrorMsg: " + sErrorMsg);
+	
+	if ( nErrorCode < 0 ) return;
+	
+	switch(sTrId)
+	{
+		case "retrieveEmp":
+			trace(this.ds_output.saveXML());
+			break;
+		
+		default:
+			 break;
+	}
+}
+
+/*----------------------------------------------------------------------------------------------
+ * 각 COMPONENT 별 EVENT 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  웹브라우저 컴포넌트 onload 완료시 event
+ * @return       N/A
+ */
+this.WebBroswer00_onloadcompleted = function(obj:WebBroswer, e:nexacro.WebLoadCompEventInfo)
+{
+	this.DEXT5download = this.WebBroswer00.getProperty("document").getProperty("all");
+	
+	//데이터 전송하기
+	this.fn_dataTransfer();
+}
+
+/**
+ * @description	선택 항목 다운로드
+ * @return       N/A
+ */
+this.bnt_download_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.DEXT5download.getProperty("btn_download").callMethod("click");
+}
+
+/**
+ * @description	전체 다운로드
+ * @return       N/A
+ */
+this.bnt_downloadAll_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.DEXT5download.getProperty("btn_downloadAll").callMethod("click");
+}
+
+
+/*----------------------------------------------------------------------------------------------
+ * 사용자 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description	웹에디터에 데이터 전송하기
+ * @return       N/A
+ */
+this.fn_dataTransfer = function()
+{
+	var arr = {};
+	
+	for(var i = 0; i < this.ds_filelist.rowcount; i++)
+	{
+		arr[i] = {
+					no:this.ds_filelist.getColumn(i, "no"),
+					filename:this.ds_filelist.getColumn(i, "filename"),
+					url:this.ds_filelist.getColumn(i, "url"),
+					filesize:this.ds_filelist.getColumn(i, "filesize"),
+				 };
+	 }
+	 
+	 var strValue = JSON.stringify(arr);
+	
+	this.DEXT5download.getProperty("txtTestValue1").setProperty("value", strValue);
+	this.DEXT5download.getProperty("btn_nexacroAddFile").callMethod("click");
+}]]></Script>
+  </Form>
+</FDL>

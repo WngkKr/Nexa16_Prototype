@@ -1,0 +1,723 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="SAM011" classname="SAM011" left="0" top="0" width="1024" height="768" titletext="Transaction 단건 호출" onload="SAM011_onload">
+    <Layouts>
+      <Layout>
+        <Button id="btn_retrieve" taborder="0" text="조회" onclick="fn_retrieve" cssclass="btn_SA_Search" top="14" right="130" width="69" height="24" titletext="[Sample] CRUD Multi (작업중)"/>
+        <Grid id="grd_list01" taborder="1" binddataset="ds_output00" useinputpanel="false" cellsizingtype="col" nodatatext="No Data" left="24" top="57" right="56" height="191" u_usestatus="" u_menu="export,import,usergrid,usercure">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row band="body" size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell col="0" disptype="normal" text="class_nm"/>
+                <Cell col="1" disptype="normal" text="del_yn"/>
+                <Cell col="2" disptype="normal" text="dept_nm"/>
+                <Cell col="3" disptype="normal" text="doc_class_cd"/>
+                <Cell col="4" disptype="normal" text="doc_class_nm"/>
+                <Cell col="5" disptype="normal" text="doc_no"/>
+                <Cell col="6" disptype="normal" text="doc_subject_nm"/>
+                <Cell col="7" disptype="normal" text="emp_cd"/>
+                <Cell col="8" disptype="normal" text="eng_doc_subject_nm"/>
+                <Cell col="9" disptype="normal" text="eng_note"/>
+                <Cell col="10" disptype="normal" text="eng_yn"/>
+                <Cell col="11" disptype="normal" text="final_confirm_yn"/>
+                <Cell col="12" disptype="normal" text="firstIndex"/>
+                <Cell col="13" disptype="normal" text="kor_yn"/>
+                <Cell col="14" disptype="normal" text="lastIndex"/>
+                <Cell col="15" disptype="normal" text="list_all"/>
+                <Cell col="16" disptype="normal" text="manager_yn"/>
+                <Cell col="17" disptype="normal" text="note"/>
+                <Cell col="18" disptype="normal" text="notice_ymd"/>
+                <Cell col="19" disptype="normal" text="opinion_cnt"/>
+                <Cell col="20" disptype="normal" text="org_cd"/>
+                <Cell col="21" disptype="normal" text="pageIndex"/>
+                <Cell col="22" disptype="normal" text="pageSize"/>
+                <Cell col="23" disptype="normal" text="pageUnit"/>
+                <Cell col="24" disptype="normal" text="past_data_yn"/>
+                <Cell col="25" disptype="normal" text="recordCountPerPage"/>
+                <Cell col="26" disptype="normal" text="search_condition"/>
+                <Cell col="27" disptype="normal" text="search_doc_subject_nm"/>
+                <Cell col="28" disptype="normal" text="search_emp_cd"/>
+                <Cell col="29" disptype="normal" text="search_keyword"/>
+                <Cell col="30" disptype="normal" text="search_use_yn"/>
+                <Cell col="31" disptype="normal" text="search_write_ymd"/>
+                <Cell col="32" disptype="normal" text="show_all_yn"/>
+                <Cell col="33" disptype="normal" text="top_list_yn"/>
+                <Cell col="34" disptype="normal" text="ug_id"/>
+                <Cell col="35" disptype="normal" text="update_by"/>
+                <Cell col="36" disptype="normal" text="update_date"/>
+                <Cell col="37" disptype="normal" text="update_nm"/>
+                <Cell col="38" disptype="normal" text="write_hhmm"/>
+                <Cell col="39" disptype="normal" text="write_nm"/>
+                <Cell col="40" disptype="normal" text="write_ymd"/>
+              </Band>
+              <Band id="body">
+                <Cell col="0" disptype="normal" text="bind:class_nm"/>
+                <Cell col="1" disptype="normal" text="bind:del_yn"/>
+                <Cell col="2" disptype="normal" text="bind:dept_nm"/>
+                <Cell col="3" disptype="normal" text="bind:doc_class_cd"/>
+                <Cell col="4" disptype="normal" text="bind:doc_class_nm"/>
+                <Cell col="5" disptype="normal" text="bind:doc_no"/>
+                <Cell col="6" disptype="normal" text="bind:doc_subject_nm"/>
+                <Cell col="7" disptype="normal" text="bind:emp_cd"/>
+                <Cell col="8" disptype="normal" text="bind:eng_doc_subject_nm"/>
+                <Cell col="9" disptype="normal" text="bind:eng_note"/>
+                <Cell col="10" disptype="normal" text="bind:eng_yn"/>
+                <Cell col="11" disptype="normal" text="bind:final_confirm_yn"/>
+                <Cell col="12" disptype="normal" text="bind:firstIndex"/>
+                <Cell col="13" disptype="normal" text="bind:kor_yn"/>
+                <Cell col="14" disptype="normal" text="bind:lastIndex"/>
+                <Cell col="15" disptype="normal" text="bind:list_all"/>
+                <Cell col="16" disptype="normal" text="bind:manager_yn"/>
+                <Cell col="17" disptype="normal" text="bind:note"/>
+                <Cell col="18" disptype="normal" text="bind:notice_ymd"/>
+                <Cell col="19" disptype="normal" text="bind:opinion_cnt"/>
+                <Cell col="20" disptype="normal" text="bind:org_cd"/>
+                <Cell col="21" disptype="normal" text="bind:pageIndex"/>
+                <Cell col="22" disptype="normal" text="bind:pageSize"/>
+                <Cell col="23" disptype="normal" text="bind:pageUnit"/>
+                <Cell col="24" disptype="normal" text="bind:past_data_yn"/>
+                <Cell col="25" disptype="normal" text="bind:recordCountPerPage"/>
+                <Cell col="26" disptype="normal" text="bind:search_condition"/>
+                <Cell col="27" disptype="normal" text="bind:search_doc_subject_nm"/>
+                <Cell col="28" disptype="normal" text="bind:search_emp_cd"/>
+                <Cell col="29" disptype="normal" text="bind:search_keyword"/>
+                <Cell col="30" disptype="normal" text="bind:search_use_yn"/>
+                <Cell col="31" disptype="normal" text="bind:search_write_ymd"/>
+                <Cell col="32" disptype="normal" text="bind:show_all_yn"/>
+                <Cell col="33" disptype="normal" text="bind:top_list_yn"/>
+                <Cell col="34" disptype="normal" text="bind:ug_id"/>
+                <Cell col="35" disptype="normal" text="bind:update_by"/>
+                <Cell col="36" disptype="normal" text="bind:update_date"/>
+                <Cell col="37" disptype="normal" text="bind:update_nm"/>
+                <Cell col="38" disptype="normal" text="bind:write_hhmm"/>
+                <Cell col="39" disptype="normal" text="bind:write_nm"/>
+                <Cell col="40" disptype="normal" text="bind:write_ymd"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="grd_list00" taborder="2" binddataset="ds_output01" useinputpanel="false" cellsizingtype="col" nodatatext="No Data" left="24" top="265" right="56" height="191" u_usestatus="" u_menu="export,import,usergrid,usercure">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row band="body" size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell col="0" disptype="normal" text="currentPageNo"/>
+                <Cell col="1" disptype="normal" text="pageSize"/>
+                <Cell col="2" disptype="normal" text="recordCountPerPage"/>
+                <Cell col="3" disptype="normal" text="totalRecordCount"/>
+              </Band>
+              <Band id="body">
+                <Cell col="0" disptype="normal" text="bind:currentPageNo"/>
+                <Cell col="1" disptype="normal" text="bind:pageSize"/>
+                <Cell col="2" disptype="normal" text="bind:recordCountPerPage"/>
+                <Cell col="3" disptype="normal" text="bind:totalRecordCount"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="grd_list02" taborder="3" binddataset="ds_output02" useinputpanel="false" cellsizingtype="col" nodatatext="No Data" left="24" top="481" right="56" height="191" u_usestatus="" u_menu="export,import,usergrid,usercure">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row band="body" size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell col="0" disptype="normal" text="doc_class_cd"/>
+                <Cell col="1" disptype="normal" text="doc_class_nm"/>
+                <Cell col="2" disptype="normal" text="doc_prefix_nm"/>
+                <Cell col="3" disptype="normal" text="eng_doc_class_nm"/>
+                <Cell col="4" disptype="normal" text="eng_note"/>
+                <Cell col="5" disptype="normal" text="firstIndex"/>
+                <Cell col="6" disptype="normal" text="kor_yn"/>
+                <Cell col="7" disptype="normal" text="lastIndex"/>
+                <Cell col="8" disptype="normal" text="list_all"/>
+                <Cell col="9" disptype="normal" text="lv"/>
+                <Cell col="10" disptype="normal" text="manager_yn"/>
+                <Cell col="11" disptype="normal" text="note"/>
+                <Cell col="12" disptype="normal" text="pageIndex"/>
+                <Cell col="13" disptype="normal" text="pageSize"/>
+                <Cell col="14" disptype="normal" text="pageUnit"/>
+                <Cell col="15" disptype="normal" text="recordCountPerPage"/>
+                <Cell col="16" disptype="normal" text="search_condition"/>
+                <Cell col="17" disptype="normal" text="search_keyword"/>
+                <Cell col="18" disptype="normal" text="search_use_yn"/>
+                <Cell col="19" disptype="normal" text="show_all_yn"/>
+                <Cell col="20" disptype="normal" text="sort_seq"/>
+                <Cell col="21" disptype="normal" text="sub_yn"/>
+                <Cell col="22" disptype="normal" text="up_doc_class_cd"/>
+                <Cell col="23" disptype="normal" text="update_by"/>
+                <Cell col="24" disptype="normal" text="update_date"/>
+                <Cell col="25" disptype="normal" text="valid_end_ymd"/>
+                <Cell col="26" disptype="normal" text="valid_start_ymd"/>
+              </Band>
+              <Band id="body">
+                <Cell col="0" disptype="normal" text="bind:doc_class_cd"/>
+                <Cell col="1" disptype="normal" text="bind:doc_class_nm"/>
+                <Cell col="2" disptype="normal" text="bind:doc_prefix_nm"/>
+                <Cell col="3" disptype="normal" text="bind:eng_doc_class_nm"/>
+                <Cell col="4" disptype="normal" text="bind:eng_note"/>
+                <Cell col="5" disptype="normal" text="bind:firstIndex"/>
+                <Cell col="6" disptype="normal" text="bind:kor_yn"/>
+                <Cell col="7" disptype="normal" text="bind:lastIndex"/>
+                <Cell col="8" disptype="normal" text="bind:list_all"/>
+                <Cell col="9" disptype="normal" text="bind:lv"/>
+                <Cell col="10" disptype="normal" text="bind:manager_yn"/>
+                <Cell col="11" disptype="normal" text="bind:note"/>
+                <Cell col="12" disptype="normal" text="bind:pageIndex"/>
+                <Cell col="13" disptype="normal" text="bind:pageSize"/>
+                <Cell col="14" disptype="normal" text="bind:pageUnit"/>
+                <Cell col="15" disptype="normal" text="bind:recordCountPerPage"/>
+                <Cell col="16" disptype="normal" text="bind:search_condition"/>
+                <Cell col="17" disptype="normal" text="bind:search_keyword"/>
+                <Cell col="18" disptype="normal" text="bind:search_use_yn"/>
+                <Cell col="19" disptype="normal" text="bind:show_all_yn"/>
+                <Cell col="20" disptype="normal" text="bind:sort_seq"/>
+                <Cell col="21" disptype="normal" text="bind:sub_yn"/>
+                <Cell col="22" disptype="normal" text="bind:up_doc_class_cd"/>
+                <Cell col="23" disptype="normal" text="bind:update_by"/>
+                <Cell col="24" disptype="normal" text="bind:update_date"/>
+                <Cell col="25" disptype="normal" text="bind:valid_end_ymd"/>
+                <Cell col="26" disptype="normal" text="bind:valid_start_ymd"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="grd_list03" taborder="4" binddataset="ds_output03" useinputpanel="false" cellsizingtype="col" nodatatext="No Data" left="24" top="705" right="56" height="191" u_usestatus="" u_menu="export,import,usergrid,usercure">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row band="body" size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell col="0" disptype="normal" text="business_cd"/>
+                <Cell col="1" disptype="normal" text="chi_nm"/>
+                <Cell col="2" disptype="normal" text="class_cd"/>
+                <Cell col="3" disptype="normal" text="class_nm"/>
+                <Cell col="4" disptype="normal" text="class_seq_no"/>
+                <Cell col="5" disptype="normal" text="class_sort_seq"/>
+                <Cell col="6" disptype="normal" text="convlang"/>
+                <Cell col="7" disptype="normal" text="duty_cd"/>
+                <Cell col="8" disptype="normal" text="duty_seq_no"/>
+                <Cell col="9" disptype="normal" text="emp_cd"/>
+                <Cell col="10" disptype="normal" text="eng_class_nm"/>
+                <Cell col="11" disptype="normal" text="eng_nm"/>
+                <Cell col="12" disptype="normal" text="eng_org_nm"/>
+                <Cell col="13" disptype="normal" text="eval_org_cd"/>
+                <Cell col="14" disptype="normal" text="firstIndex"/>
+                <Cell col="15" disptype="normal" text="formality_emp_yn"/>
+                <Cell col="16" disptype="normal" text="fund_admin_yn"/>
+                <Cell col="17" disptype="normal" text="hrms_id"/>
+                <Cell col="18" disptype="normal" text="hunter_yn"/>
+                <Cell col="19" disptype="normal" text="in_ymd"/>
+                <Cell col="20" disptype="normal" text="in_ymd_curr"/>
+                <Cell col="21" disptype="normal" text="in_ymd_stic"/>
+                <Cell col="22" disptype="normal" text="inv_judge_yn"/>
+                <Cell col="23" disptype="normal" text="kor_nm"/>
+                <Cell col="24" disptype="normal" text="kor_yn"/>
+                <Cell col="25" disptype="normal" text="lastIndex"/>
+                <Cell col="26" disptype="normal" text="list_all"/>
+                <Cell col="27" disptype="normal" text="manager_yn"/>
+                <Cell col="28" disptype="normal" text="mg_charge_person_yn"/>
+                <Cell col="29" disptype="normal" text="mg_judge_yn"/>
+                <Cell col="30" disptype="normal" text="note"/>
+                <Cell col="31" disptype="normal" text="op_base_ymd"/>
+                <Cell col="32" disptype="normal" text="op_co_cd"/>
+                <Cell col="33" disptype="normal" text="op_fund_cd"/>
+                <Cell col="34" disptype="normal" text="org_cd"/>
+                <Cell col="35" disptype="normal" text="org_lev"/>
+                <Cell col="36" disptype="normal" text="org_nm"/>
+                <Cell col="37" disptype="normal" text="out_ymd"/>
+                <Cell col="38" disptype="normal" text="out_ymd_curr"/>
+                <Cell col="39" disptype="normal" text="pageIndex"/>
+                <Cell col="40" disptype="normal" text="pageSize"/>
+                <Cell col="41" disptype="normal" text="pageUnit"/>
+                <Cell col="42" disptype="normal" text="person_type"/>
+                <Cell col="43" disptype="normal" text="recordCountPerPage"/>
+                <Cell col="44" disptype="normal" text="rrn"/>
+                <Cell col="45" disptype="normal" text="search_condition"/>
+                <Cell col="46" disptype="normal" text="search_keyword"/>
+                <Cell col="47" disptype="normal" text="search_nm"/>
+                <Cell col="48" disptype="normal" text="search_use_yn"/>
+                <Cell col="49" disptype="normal" text="search_work_status"/>
+                <Cell col="50" disptype="normal" text="show_all_yn"/>
+                <Cell col="51" disptype="normal" text="specialty_judge_ymd"/>
+                <Cell col="52" disptype="normal" text="specialty_judge_yn"/>
+                <Cell col="53" disptype="normal" text="ug_id"/>
+                <Cell col="54" disptype="normal" text="ug_nm"/>
+                <Cell col="55" disptype="normal" text="user_id"/>
+                <Cell col="56" disptype="normal" text="user_nm"/>
+                <Cell col="57" disptype="normal" text="work_status"/>
+              </Band>
+              <Band id="body">
+                <Cell col="0" disptype="normal" text="bind:business_cd"/>
+                <Cell col="1" disptype="normal" text="bind:chi_nm"/>
+                <Cell col="2" disptype="normal" text="bind:class_cd"/>
+                <Cell col="3" disptype="normal" text="bind:class_nm"/>
+                <Cell col="4" disptype="normal" text="bind:class_seq_no"/>
+                <Cell col="5" disptype="normal" text="bind:class_sort_seq"/>
+                <Cell col="6" disptype="normal" text="bind:convlang"/>
+                <Cell col="7" disptype="normal" text="bind:duty_cd"/>
+                <Cell col="8" disptype="normal" text="bind:duty_seq_no"/>
+                <Cell col="9" disptype="normal" text="bind:emp_cd"/>
+                <Cell col="10" disptype="normal" text="bind:eng_class_nm"/>
+                <Cell col="11" disptype="normal" text="bind:eng_nm"/>
+                <Cell col="12" disptype="normal" text="bind:eng_org_nm"/>
+                <Cell col="13" disptype="normal" text="bind:eval_org_cd"/>
+                <Cell col="14" disptype="normal" text="bind:firstIndex"/>
+                <Cell col="15" disptype="normal" text="bind:formality_emp_yn"/>
+                <Cell col="16" disptype="normal" text="bind:fund_admin_yn"/>
+                <Cell col="17" disptype="normal" text="bind:hrms_id"/>
+                <Cell col="18" disptype="normal" text="bind:hunter_yn"/>
+                <Cell col="19" disptype="normal" text="bind:in_ymd"/>
+                <Cell col="20" disptype="normal" text="bind:in_ymd_curr"/>
+                <Cell col="21" disptype="normal" text="bind:in_ymd_stic"/>
+                <Cell col="22" disptype="normal" text="bind:inv_judge_yn"/>
+                <Cell col="23" disptype="normal" text="bind:kor_nm"/>
+                <Cell col="24" disptype="normal" text="bind:kor_yn"/>
+                <Cell col="25" disptype="normal" text="bind:lastIndex"/>
+                <Cell col="26" disptype="normal" text="bind:list_all"/>
+                <Cell col="27" disptype="normal" text="bind:manager_yn"/>
+                <Cell col="28" disptype="normal" text="bind:mg_charge_person_yn"/>
+                <Cell col="29" disptype="normal" text="bind:mg_judge_yn"/>
+                <Cell col="30" disptype="normal" text="bind:note"/>
+                <Cell col="31" disptype="normal" text="bind:op_base_ymd"/>
+                <Cell col="32" disptype="normal" text="bind:op_co_cd"/>
+                <Cell col="33" disptype="normal" text="bind:op_fund_cd"/>
+                <Cell col="34" disptype="normal" text="bind:org_cd"/>
+                <Cell col="35" disptype="normal" text="bind:org_lev"/>
+                <Cell col="36" disptype="normal" text="bind:org_nm"/>
+                <Cell col="37" disptype="normal" text="bind:out_ymd"/>
+                <Cell col="38" disptype="normal" text="bind:out_ymd_curr"/>
+                <Cell col="39" disptype="normal" text="bind:pageIndex"/>
+                <Cell col="40" disptype="normal" text="bind:pageSize"/>
+                <Cell col="41" disptype="normal" text="bind:pageUnit"/>
+                <Cell col="42" disptype="normal" text="bind:person_type"/>
+                <Cell col="43" disptype="normal" text="bind:recordCountPerPage"/>
+                <Cell col="44" disptype="normal" text="bind:rrn"/>
+                <Cell col="45" disptype="normal" text="bind:search_condition"/>
+                <Cell col="46" disptype="normal" text="bind:search_keyword"/>
+                <Cell col="47" disptype="normal" text="bind:search_nm"/>
+                <Cell col="48" disptype="normal" text="bind:search_use_yn"/>
+                <Cell col="49" disptype="normal" text="bind:search_work_status"/>
+                <Cell col="50" disptype="normal" text="bind:show_all_yn"/>
+                <Cell col="51" disptype="normal" text="bind:specialty_judge_ymd"/>
+                <Cell col="52" disptype="normal" text="bind:specialty_judge_yn"/>
+                <Cell col="53" disptype="normal" text="bind:ug_id"/>
+                <Cell col="54" disptype="normal" text="bind:ug_nm"/>
+                <Cell col="55" disptype="normal" text="bind:user_id"/>
+                <Cell col="56" disptype="normal" text="bind:user_nm"/>
+                <Cell col="57" disptype="normal" text="bind:work_status"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_output00">
+        <ColumnInfo>
+          <Column id="class_nm" type="STRING" size="32"/>
+          <Column id="del_yn" type="STRING" size="32"/>
+          <Column id="dept_nm" type="STRING" size="32"/>
+          <Column id="doc_class_cd" type="STRING" size="32"/>
+          <Column id="doc_class_nm" type="STRING" size="32"/>
+          <Column id="doc_no" type="STRING" size="32"/>
+          <Column id="doc_subject_nm" type="STRING" size="32"/>
+          <Column id="emp_cd" type="STRING" size="32"/>
+          <Column id="eng_doc_subject_nm" type="STRING" size="32"/>
+          <Column id="eng_note" type="STRING" size="32"/>
+          <Column id="eng_yn" type="STRING" size="32"/>
+          <Column id="final_confirm_yn" type="STRING" size="32"/>
+          <Column id="firstIndex" type="INT" size="4"/>
+          <Column id="kor_yn" type="STRING" size="32"/>
+          <Column id="lastIndex" type="INT" size="4"/>
+          <Column id="list_all" type="STRING" size="32"/>
+          <Column id="manager_yn" type="STRING" size="32"/>
+          <Column id="note" type="STRING" size="32"/>
+          <Column id="notice_ymd" type="STRING" size="32"/>
+          <Column id="opinion_cnt" type="STRING" size="32"/>
+          <Column id="org_cd" type="STRING" size="32"/>
+          <Column id="pageIndex" type="INT" size="4"/>
+          <Column id="pageSize" type="INT" size="4"/>
+          <Column id="pageUnit" type="INT" size="4"/>
+          <Column id="past_data_yn" type="STRING" size="32"/>
+          <Column id="recordCountPerPage" type="INT" size="4"/>
+          <Column id="search_condition" type="STRING" size="32"/>
+          <Column id="search_doc_subject_nm" type="STRING" size="32"/>
+          <Column id="search_emp_cd" type="STRING" size="32"/>
+          <Column id="search_keyword" type="STRING" size="32"/>
+          <Column id="search_use_yn" type="STRING" size="32"/>
+          <Column id="search_write_ymd" type="STRING" size="32"/>
+          <Column id="show_all_yn" type="STRING" size="32"/>
+          <Column id="top_list_yn" type="STRING" size="32"/>
+          <Column id="ug_id" type="STRING" size="32"/>
+          <Column id="update_by" type="STRING" size="32"/>
+          <Column id="update_date" type="STRING" size="32"/>
+          <Column id="update_nm" type="STRING" size="32"/>
+          <Column id="write_hhmm" type="STRING" size="32"/>
+          <Column id="write_nm" type="STRING" size="32"/>
+          <Column id="write_ymd" type="STRING" size="32"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_output01">
+        <ColumnInfo>
+          <Column id="currentPageNo" type="INT" size="4"/>
+          <Column id="pageSize" type="INT" size="4"/>
+          <Column id="recordCountPerPage" type="INT" size="4"/>
+          <Column id="totalRecordCount" type="INT" size="4"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_output02">
+        <ColumnInfo>
+          <Column id="doc_class_cd" type="STRING" size="32"/>
+          <Column id="doc_class_nm" type="STRING" size="32"/>
+          <Column id="doc_prefix_nm" type="STRING" size="32"/>
+          <Column id="eng_doc_class_nm" type="STRING" size="32"/>
+          <Column id="eng_note" type="STRING" size="32"/>
+          <Column id="firstIndex" type="INT" size="4"/>
+          <Column id="kor_yn" type="STRING" size="32"/>
+          <Column id="lastIndex" type="INT" size="4"/>
+          <Column id="list_all" type="STRING" size="32"/>
+          <Column id="lv" type="INT" size="4"/>
+          <Column id="manager_yn" type="STRING" size="32"/>
+          <Column id="note" type="STRING" size="32"/>
+          <Column id="pageIndex" type="INT" size="4"/>
+          <Column id="pageSize" type="INT" size="4"/>
+          <Column id="pageUnit" type="INT" size="4"/>
+          <Column id="recordCountPerPage" type="INT" size="4"/>
+          <Column id="search_condition" type="STRING" size="32"/>
+          <Column id="search_keyword" type="STRING" size="32"/>
+          <Column id="search_use_yn" type="STRING" size="32"/>
+          <Column id="show_all_yn" type="STRING" size="32"/>
+          <Column id="sort_seq" type="STRING" size="32"/>
+          <Column id="sub_yn" type="STRING" size="32"/>
+          <Column id="up_doc_class_cd" type="STRING" size="32"/>
+          <Column id="update_by" type="STRING" size="32"/>
+          <Column id="update_date" type="STRING" size="32"/>
+          <Column id="valid_end_ymd" type="STRING" size="32"/>
+          <Column id="valid_start_ymd" type="STRING" size="32"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_output03">
+        <ColumnInfo>
+          <Column id="business_cd" type="STRING" size="32"/>
+          <Column id="chi_nm" type="STRING" size="32"/>
+          <Column id="class_cd" type="STRING" size="32"/>
+          <Column id="class_nm" type="STRING" size="32"/>
+          <Column id="class_seq_no" type="STRING" size="32"/>
+          <Column id="class_sort_seq" type="STRING" size="32"/>
+          <Column id="convlang" type="STRING" size="32"/>
+          <Column id="duty_cd" type="STRING" size="32"/>
+          <Column id="duty_seq_no" type="STRING" size="32"/>
+          <Column id="emp_cd" type="STRING" size="32"/>
+          <Column id="eng_class_nm" type="STRING" size="32"/>
+          <Column id="eng_nm" type="STRING" size="32"/>
+          <Column id="eng_org_nm" type="STRING" size="32"/>
+          <Column id="eval_org_cd" type="STRING" size="32"/>
+          <Column id="firstIndex" type="INT" size="4"/>
+          <Column id="formality_emp_yn" type="STRING" size="32"/>
+          <Column id="fund_admin_yn" type="STRING" size="32"/>
+          <Column id="hrms_id" type="STRING" size="32"/>
+          <Column id="hunter_yn" type="STRING" size="32"/>
+          <Column id="in_ymd" type="STRING" size="32"/>
+          <Column id="in_ymd_curr" type="STRING" size="32"/>
+          <Column id="in_ymd_stic" type="STRING" size="32"/>
+          <Column id="inv_judge_yn" type="STRING" size="32"/>
+          <Column id="kor_nm" type="STRING" size="32"/>
+          <Column id="kor_yn" type="STRING" size="32"/>
+          <Column id="lastIndex" type="INT" size="4"/>
+          <Column id="list_all" type="STRING" size="32"/>
+          <Column id="manager_yn" type="STRING" size="32"/>
+          <Column id="mg_charge_person_yn" type="STRING" size="32"/>
+          <Column id="mg_judge_yn" type="STRING" size="32"/>
+          <Column id="note" type="STRING" size="32"/>
+          <Column id="op_base_ymd" type="STRING" size="32"/>
+          <Column id="op_co_cd" type="STRING" size="32"/>
+          <Column id="op_fund_cd" type="STRING" size="32"/>
+          <Column id="org_cd" type="STRING" size="32"/>
+          <Column id="org_lev" type="STRING" size="32"/>
+          <Column id="org_nm" type="STRING" size="32"/>
+          <Column id="out_ymd" type="STRING" size="32"/>
+          <Column id="out_ymd_curr" type="STRING" size="32"/>
+          <Column id="pageIndex" type="INT" size="4"/>
+          <Column id="pageSize" type="INT" size="4"/>
+          <Column id="pageUnit" type="INT" size="4"/>
+          <Column id="person_type" type="STRING" size="32"/>
+          <Column id="recordCountPerPage" type="INT" size="4"/>
+          <Column id="rrn" type="STRING" size="32"/>
+          <Column id="search_condition" type="STRING" size="32"/>
+          <Column id="search_keyword" type="STRING" size="32"/>
+          <Column id="search_nm" type="STRING" size="32"/>
+          <Column id="search_use_yn" type="STRING" size="32"/>
+          <Column id="search_work_status" type="STRING" size="32"/>
+          <Column id="show_all_yn" type="STRING" size="32"/>
+          <Column id="specialty_judge_ymd" type="STRING" size="32"/>
+          <Column id="specialty_judge_yn" type="STRING" size="32"/>
+          <Column id="ug_id" type="STRING" size="32"/>
+          <Column id="ug_nm" type="STRING" size="32"/>
+          <Column id="user_id" type="STRING" size="32"/>
+          <Column id="user_nm" type="STRING" size="32"/>
+          <Column id="work_status" type="STRING" size="32"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[/**
+*  인트라넷 고도화[Lexpeed3]구축 사업
+*
+*  @MenuPath       
+*  @FileName       SAM011.xfdl
+*  @Creator        송원창
+*  @CreateDate     2016.04.15
+*  @LastModifier   
+*  @LastModifyDate 
+*  @Version        1.0
+*  @Outline        Transaction 호출
+*  @Desction       
+*
+*
+************** 소스 수정 이력 *************************************************
+*    date          Modifier            Description
+*******************************************************************************
+*  2016.04.15      송원창              클래스 최초 생성
+*******************************************************************************
+*/
+/*----------------------------------------------------------------------------------------------
+ * 공통 라이브러리 INCLUDE 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------------------------
+ * FORM 변수 선언 영역
+----------------------------------------------------------------------------------------------*/
+this.fv_sId;
+
+/*----------------------------------------------------------------------------------------------
+ * FORM EVENT 영역
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  화면 로드시 이벤트
+ */
+this.SAM011_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	//공통초기화 필수
+	this.gfn_initForm(obj);
+	
+	trace("SAM011_onload");
+}
+
+/*----------------------------------------------------------------------------------------------
+ * 공통기능 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * TRANSACTION 및 CallBack 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  조회 서비스 callback
+ * @param sTrId  	   - service ID
+ * @param nErrorCode   - error CODE
+ * @param sErrorMsg    - error MESSAGE
+ * @return       N/A
+ */
+this.fn_callback = function(sTrId, nErrorCode, sErrorMsg)
+{
+	trace("sTrId: " + sTrId + " " + "nErrorCode: " + nErrorCode + " " +  "sErrorMsg: " + sErrorMsg);
+	
+	if ( nErrorCode < 0 ) return;
+	
+	switch(sTrId)
+	{
+		case "retrieveEmp":
+			trace(this.ds_output03.saveXML());
+			break;
+		
+		default:
+			 break;
+	}
+}
+
+
+/*----------------------------------------------------------------------------------------------
+ * 각 COMPONENT 별 EVENT 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  데이터 조회
+ * @return       N/A
+ */
+
+/**
+ * @param   :  	1. strSvcId 		: Transaction을 구분하기 위한 ID 값입니다.
+ * @param	:   2. strSvcUrl 		: Transaction을 요청할 주소 값입니다.
+ * @param	:   3. inData			: 입력값으로 보낼 Dataset 의 ID, a=b의 형태로 실제이름과 입력이름을 매칭.
+ * @param	:   4. outData			: 처리결과를 받을 Dataset 의 ID, a=b의 형태로 실제이름과 입력이름을 매칭.
+ * @param	:   5. strArg			: 입력값으로 보낼 arguments, strFromDate="20120607"
+ * @param	:   6. callBackFnc		: transaction의 결과를 돌려줄 Function의 이름.
+ * @param	:   7. isAsync			: 비동기 여부를 지정.	-> Default : true(ASync)
+ * @param	:	8. bWait			: WaitCursor true/false
+ * @param	:	9. svcType			: Transaction 유형 R:조회,C:등록,U:수정,D:삭제,S:저장, N:성공 실패시 메세지 처리 안함(무시)
+ */
+this.fn_retrieve = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var sInDs  	= "";
+	var sOutDs 	= "ds_output00=ds_knowledgeList ds_output01=ds_pagingInfo ds_output02=ds_docClassList ds_output03=ds_cboUserList";
+	var sUrl	= "http://localhost:8080/selectKnowledgeList.do"
+	this.gfn_transaction("retrieveEmp", sUrl, sInDs, sOutDs, "", "fn_callback", "R", true);
+}
+
+
+
+
+/*----------------------------------------------------------------------------------------------
+ * 사용자 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+]]></Script>
+  </Form>
+</FDL>

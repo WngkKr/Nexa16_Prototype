@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -532,6 +532,11 @@ if (!nexacro.DatePicker) {
 		if (curstyle.font != font) {
 			curstyle.font = font;
 			this.on_apply_style_font(font);
+		}
+		var letterspace = this.on_find_CurrentStyle_letterspace(pseudo);
+		if (curstyle.letterspace != letterspace) {
+			curstyle.letterspace = letterspace;
+			this.on_apply_style_letterspace(letterspace);
 		}
 		var color = this.on_find_CurrentStyle_color(pseudo);
 		if (curstyle.color != color) {
@@ -2802,9 +2807,7 @@ if (!nexacro.DatePicker) {
 		var p_id = from_elem ? from_elem.parent.parent.id : "";
 		var pp_id = from_elem ? from_elem.parent.parent.parent.id : "";
 
-		if (this._getWindow()._cur_ldown_elem == from_elem && 
-			p_id != "yearspin" && p_id != "monthspin" && 
-			pp_id != "yearspin" && pp_id != "monthspin") {
+		if (this._getWindow()._cur_ldown_elem == from_elem && (p_id != "yearspin" && p_id != "monthspin" && p_id != "yearStatic" && p_id != "monthStatic") && (pp_id != "yearspin" && pp_id != "monthspin" && pp_id != "yearStatic" && pp_id != "monthStatic")) {
 			this.hide_spindate();
 		}
 
@@ -2863,11 +2866,12 @@ if (!nexacro.DatePicker) {
 			var nextBtn_h = clientHeight;
 
 			var font = this.on_find_CurrentStyle_font(this._pseudo);
+			var letterspace = this.on_find_CurrentStyle_letterspace(this._pseudo);
 			var headerformat = this.on_find_CurrentStyle_headerformat(this._pseudo);
 
 			var month = this._month < 10 ? "0" + parseInt(this._month, 10) : this._month + "";
-			var yearTextSize = nexacro._getTextSize2(this._year + ".", font);
-			var monthTextSize = nexacro._getTextSize2(this._month + ".", font);
+			var yearTextSize = nexacro._getTextSize2(letterspace, this._year + ".", font);
+			var monthTextSize = nexacro._getTextSize2(letterspace, this._month + ".", font);
 			var yearWidth = yearTextSize[0] + 2;
 			var yearHeight = yearTextSize[1];
 			var monthWidth = monthTextSize[0] + 2;
@@ -3431,6 +3435,7 @@ if (!nexacro.DatePicker) {
 		if (curstyle.usetrailingday != usetrailingday) {
 			curstyle.usetrailingday = usetrailingday;
 		}
+
 		var trailingdaycolor = this.on_find_CurrentStyle_trailingdaycolor(pseudo);
 		if (curstyle.trailingdaycolor != trailingdaycolor) {
 			curstyle.trailingdaycolor = trailingdaycolor;
@@ -4279,14 +4284,6 @@ if (!nexacro.DatePicker) {
 		this._post_day = (obj.text < 10 ? "0" : "") + parseInt(obj.text, 10);
 
 		var ret = this.on_fire_ondayclick(obj, e);
-		if (ret || ret === undefined) {
-			if (obj.trailingday) {
-				this._setDate(obj.currYear, obj.currMonth, obj.text);
-			}
-			else {
-				this._setDay(obj.text);
-			}
-		}
 	};
 
 	_pDatePickerBody.on_fire_ondayclick = function (obj, e) {
@@ -4472,10 +4469,11 @@ if (!nexacro.DatePicker) {
 			}
 		}
 
-		this._initChangedDays();
 		this._changedDays = [];
 		var dataset_path = this.parent.parent;
 		var dataset = dataset_path._innerdataset;
+
+		this._initChangedDays();
 
 		if (dataset) {
 			this._setDatasetStyle(dataset, dataset_path);
@@ -4608,7 +4606,7 @@ if (!nexacro.DatePicker) {
 					date_year = parseInt(date.substr(0, 4), 10);
 					date_month = parseInt(date.substr(4, 2), 10);
 					date_day = parseInt(date.substr(6, 2), 10);
-					datasetDateObj = new nexacro.Date(date_year, date_month - 1, 1);
+					datasetDateObj = new nexacro.Date(date_year, date_month, 1);
 					week_idx = datasetDateObj.getDay();
 
 					datasetDateObj = null;
@@ -4631,6 +4629,10 @@ if (!nexacro.DatePicker) {
 				var currDate = year_val + month_val + day_val;
 				var changeday_len = this._changedDays.length;
 				if (currDate == date) {
+					if (day[j].trailingday) {
+						continue;
+					}
+
 					background = dataset.getColumn(i, backgroundcolumn);
 					background = nexacro._getCachedBackgroundObj(background);
 					border = dataset.getColumn(i, bordercolumn);
@@ -4646,7 +4648,7 @@ if (!nexacro.DatePicker) {
 						currStyle.border = border;
 						day[j].on_apply_style_border(border);
 					}
-					if (color) {
+					if (color && color._value) {
 						currStyle.color = color;
 						day[j].on_apply_style_color(color);
 					}
@@ -4834,10 +4836,13 @@ if (!nexacro.DatePicker) {
 				}
 				return this.parent.on_find_CurrentStyle_todayborder(pseudo);
 			}
-			if (this.parent.parent.bordercolumn && pseudo == "normal") {
-				var dataset = this.parent.parent._innerdataset;
-				var datecolumn = this.parent.parent.datecolumn;
-				var bordercolumn = this._refObj.parent.bordercolumn;
+
+			var p_comp = this._refObj.bordercolumn ? this._refObj : this._refObj.parent;
+			if (p_comp.bordercolumn) {
+				var dataset = p_comp._innerdataset;
+				var datecolumn = p_comp.datecolumn;
+
+				var bordercolumn = p_comp.bordercolumn;
 				var rowCount = dataset.getRowCount();
 				for (var i = 0; i < rowCount; i++) {
 					var date = dataset.getColumn(i, datecolumn);
@@ -4849,7 +4854,7 @@ if (!nexacro.DatePicker) {
 						var statictext = this.parent._makeDateText(text, "day");
 						if (year == this.currYear && month == this.currMonth && day === statictext) {
 							var border = dataset.getColumn(i, bordercolumn);
-							return border = nexacro._getCachedColorObj(border);
+							return border = nexacro._getCachedBorderObj(border);
 						}
 					}
 				}
@@ -4895,6 +4900,37 @@ if (!nexacro.DatePicker) {
 	_pDayStaticCtrl.on_find_CurrentStyle_color = function (pseudo) {
 		var text = this.text;
 		if (text && text.length > 0) {
+			if (this._refObj.parent.textcolorcolumn && pseudo == "normal") {
+				var dataset = this._refObj.parent._innerdataset;
+				var datecolumn = this._refObj.parent.datecolumn;
+				var textcolorcolumn = this._refObj.parent.textcolorcolumn;
+				var rowCount = dataset.getRowCount();
+				for (var i = 0; i < rowCount; i++) {
+					var date = dataset.getColumn(i, datecolumn);
+
+					if (date) {
+						var year = date.substr(0, 4);
+						var month = date.substr(4, 2);
+						var day = date.substr(6, 2);
+						var statictext = this.parent._makeDateText(text, "day");
+						if (year == this.currYear && month == this.currMonth && day === statictext) {
+							if (this.trailingday) {
+								return this.parent.on_find_CurrentStyle_trailingdaycolor(pseudo);
+							}
+							else {
+								var color = dataset.getColumn(i, textcolorcolumn);
+								color = nexacro._getCachedColorObj(color);
+								if (color && color._value) {
+									return color;
+								}
+
+								break;
+							}
+						}
+					}
+				}
+			}
+
 			if (this.trailingday) {
 				return this.parent.on_find_CurrentStyle_trailingdaycolor(pseudo);
 			}
@@ -4910,26 +4946,7 @@ if (!nexacro.DatePicker) {
 				}
 				return this.parent.on_find_CurrentStyle_todaycolor(pseudo);
 			}
-			if (this._refObj.parent.textcolorcolumn && pseudo == "normal") {
-				var dataset = this._refObj.parent._innerdataset;
-				var datecolumn = this._refObj.parent.datecolumn;
-				var textcolorcolumn = this._refObj.parent.textcolorcolumn;
-				var rowCount = dataset.getRowCount();
-				for (var i = 0; i < rowCount; i++) {
-					var date = dataset.getColumn(i, datecolumn);
 
-					if (date) {
-						var year = date.substr(0, 4);
-						var month = date.substr(4, 2);
-						var day = date.substr(6, 2);
-						var statictext = this.parent._makeDateText(text, "day");
-						if (year == this.currYear && month == this.currMonth && day === statictext) {
-							var color = dataset.getColumn(i, textcolorcolumn);
-							return color = nexacro._getCachedColorObj(color);
-						}
-					}
-				}
-			}
 			if (this._daysofweek == 6) {
 				return this.parent.on_find_CurrentStyle_saturdaycolor(pseudo);
 			}

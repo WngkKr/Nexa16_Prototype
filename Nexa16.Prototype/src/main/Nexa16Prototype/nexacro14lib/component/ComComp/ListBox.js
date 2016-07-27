@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -257,6 +257,16 @@ if (!nexacro.ListBox) {
 	_pListBox._default_Item_height = 24;
 
 
+	_pListBox._setVScrollDefaultAction = function (vscrollbar, wheelDelta) {
+		if (wheelDelta >= 0) {
+			wheelDelta = this.currentstyle.itemheight;
+		}
+		else {
+			wheelDelta = -(this.currentstyle.itemheight);
+		}
+		vscrollbar.set_pos(vscrollbar.pos - wheelDelta);
+	};
+
 	_pListBox.on_apply_custom_class = function () {
 		var items = this._get_contents_rows();
 		if (items) {
@@ -326,6 +336,12 @@ if (!nexacro.ListBox) {
 		if (style != curstyle.font) {
 			curstyle.font = style;
 			this.on_apply_style_font(style);
+		}
+
+		style = this.on_find_CurrentStyle_letterspace(pseudo);
+		if (style != curstyle.letterspace) {
+			curstyle.letterspace = style;
+			this.on_apply_style_letterspace(style);
 		}
 
 		style = this.on_find_CurrentStyle_color(pseudo);
@@ -497,6 +513,20 @@ if (!nexacro.ListBox) {
 		items = null;
 	};
 
+	_pListBox.on_apply_style_letterspace = function (v) {
+		var items = this._get_contents_rows();
+		if (items) {
+			var rowcount = items.length;
+			for (var i = 0; i < rowcount; i++) {
+				if (v) {
+					v = this._search_style_obj(v, "letterspace", i);
+					items[i].on_apply_style_letterspace(v);
+				}
+			}
+			items = null;
+		}
+	};
+
 	_pListBox.on_apply_prop_rtldirection = function () {
 		nexacro.Component.prototype.on_apply_prop_rtldirection.call(this);
 		var items = this._get_contents_rows();
@@ -516,7 +546,8 @@ if (!nexacro.ListBox) {
 		else {
 			var value = style._value;
 			if (value < 0 || value === null || value === "" || value === undefined) {
-				var size = nexacro._getTextSize2("1", this.currentstyle.font);
+				var letterspace = this.on_find_CurrentStyle_letterspace(this._pseudo);
+				var size = nexacro._getTextSize2(letterspace, "1", this.currentstyle.font);
 				style = nexacro._getCachedStyleObj("itemheight", size[1]);
 			}
 		}
@@ -599,6 +630,7 @@ if (!nexacro.ListBox) {
 		if (this.getElement()) {
 			this.on_apply_innerdataset();
 		}
+
 		var rowobjs = this._refresh_rows, rowobj;
 
 		for (var i = 0, n = rowobjs.length; i < n; i++) {
@@ -610,11 +642,13 @@ if (!nexacro.ListBox) {
 		}
 
 		this.on_apply_style_itemheight(this.currentstyle.itemheight);
+		this.on_apply_style_letterspace(this.currentstyle.letterspace);
 
 		this._refresh_rows = [];
 
 		if (nexacro._enableaccessibility) {
 			this._want_arrow = true;
+			this._refreshAccessibilityValue();
 		}
 
 		if (this._is_redraw == false) {
@@ -760,10 +794,12 @@ if (!nexacro.ListBox) {
 		else {
 			_want_arrow = this._getPreCalculateWantArrow(keycode);
 		}
+
 		if (this._is_first_focus) {
 			this._is_first_focus = false;
 		}
-		this._want_arrow = nexacro._enableaccessibility;
+
+		this._want_arrow = _want_arrow;
 		this._want_tab = true;
 
 		if (ctrlKey) {
@@ -954,6 +990,21 @@ if (!nexacro.ListBox) {
 		return retn;
 	};
 
+	_pListBox.on_apply_custom_setfocus = function (evt_name) {
+		if (nexacro.Browser != "Safari" || (nexacro.Browser == "Safari" && window && window == window.parent)) {
+			nexacro.Component.prototype.on_apply_custom_setfocus.call(this, evt_name);
+			return;
+		}
+
+		var control_elem = this._control_element;
+		if (control_elem) {
+			var selffocus = ((evt_name == "lbutton") ? false : nexacro._enableaccessibility);
+			if (!(nexacro.Browser == "Safari" && evt_name == "lbuttondown")) {
+				control_elem.setElementFocus(selffocus);
+			}
+		}
+	};
+
 	_pListBox.on_get_style_accessibility_label = function () {
 		var label = "";
 		if (!this._is_first_focus) {
@@ -961,6 +1012,64 @@ if (!nexacro.ListBox) {
 		}
 
 		return label;
+	};
+
+	_pListBox._setAccessibilityNotifyEvent = function (direction) {
+		var items = this._get_contents_rows();
+
+		if (items && items.length > 0) {
+			var obj = null;
+
+			if (this._overeditemindex < 0 || this._overeditemindex >= items.length) {
+				if (direction == undefined) {
+					direction = 1;
+				}
+
+				if (direction > 0) {
+					this._overeditemindex = 0;
+				}
+				else {
+					this._overeditemindex = items.length - 1;
+				}
+			}
+
+			obj = this._getItemByRealIdx(items, this._overeditemindex).obj;
+
+			if (obj) {
+				return obj._setAccessibilityNotifyEvent();
+			}
+		}
+		else {
+			return nexacro.Component.prototype._setAccessibilityNotifyEvent.call(this, direction);
+		}
+	};
+
+	_pListBox._setAccessibilityInfoByHover = function (control) {
+		if (control) {
+			this._overeditemindex = control.index;
+			return control._setAccessibilityInfoByHover();
+		}
+		else {
+			return nexacro.Component.prototype._setAccessibilityNotifyEvent.call(this);
+		}
+	};
+
+	_pListBox._clearAccessibilityInfoByHover = function () {
+		this._overeditemindex = -1;
+		return;
+	};
+
+	_pListBox._getAccessibilityRole = function (accessibility) {
+		var role = nexacro.Component.prototype._getAccessibilityRole.call(this, accessibility);
+		if (nexacro._accessibilitytype == 4) {
+			var control_elem = this.getElement();
+			var items = this._get_contents_rows();
+
+			if (control_elem && items.length <= 0) {
+				role = "static";
+			}
+		}
+		return role;
 	};
 
 	_pListBox.setInnerDataset = function (obj) {
@@ -1530,6 +1639,10 @@ if (!nexacro.ListBox) {
 	};
 
 	_pListBox.on_notify_item_onlbuttondown = function (obj, e) {
+		if (this.readonly) {
+			return false;
+		}
+
 		obj._keep_selecting = true;
 		obj._stat_change("select", "selected");
 
@@ -1541,7 +1654,7 @@ if (!nexacro.ListBox) {
 		this._selectinfo.text = obj.text;
 		this._selectinfo.value = obj.value;
 
-		if (nexacro.isTouchInteraction) {
+		if (nexacro.isTouchInteraction || nexacro.SupportTouch) {
 			this._selectinfo_list[this._selectinfo_list.length] = this._selectinfo;
 		}
 
@@ -1565,7 +1678,6 @@ if (!nexacro.ListBox) {
 			return;
 		}
 
-		var up_obj = this._getWindow().findComponent(touchinfos[0]._elem);
 		var sel_info_list = this._selectinfo_list;
 
 		var ret = nexacro.Component.prototype.on_fire_sys_ontouchend.call(this, touchinfos, changedtouchinfos, from_comp, from_refer_comp);
@@ -1578,97 +1690,31 @@ if (!nexacro.ListBox) {
 				var items = this._get_contents_rows();
 				var change_item;
 
-				if (this._contains(up_obj)) {
-					var evt = touchinfos[0];
 
-					var canvasX = evt.canvasX;
-					var canvasY = evt.canvasY;
+				var evt = touchinfos[0];
 
-					var elem = this.getElement();
-					if (elem) {
-						var border = this.currentstyle.border;
-						var c_l_border = border ? border._left_width : 0;
-						var c_t_border = border ? border._top_width : 0;
-						canvasX = canvasX - ((elem.scroll_left ? elem.scroll_left : 0) - c_l_border);
-						canvasY = canvasY - ((elem.scroll_top ? elem.scroll_top : 0) - c_t_border);
+				var canvasX = evt.canvasX;
+				var canvasY = evt.canvasY;
 
-						if (canvasX < 0) {
-							canvasX = c_l_border;
-						}
-						if (canvasY < 0) {
-							canvasY = c_t_border;
-						}
+				var elem = this.getElement();
+				if (elem) {
+					var border = this.currentstyle.border;
+					var c_l_border = border ? border._left_width : 0;
+					var c_t_border = border ? border._top_width : 0;
+					canvasX = canvasX - ((elem.scroll_left ? elem.scroll_left : 0) - c_l_border);
+					canvasY = canvasY - ((elem.scroll_top ? elem.scroll_top : 0) - c_t_border);
+
+					if (canvasX < 0) {
+						canvasX = c_l_border;
 					}
-
-					var clientXY = this._getClientXY(canvasX, canvasY);
-
-					this.on_fire_onitemclick(this, up_obj.index, up_obj.text, up_obj.value, evt._current_state, this._altKey, this._ctrlKey, this._shiftKey, evt.screenX, evt.screenY, canvasX, canvasY, clientXY[0], clientXY[1]);
-
-					change_item = down_item;
-
-					var change_index = change_item.index;
-
-					if (this.multiselect) {
-						if (this._shiftKey == true || this._ctrlKey == true) {
-							this._select_withmouseevent(change_index);
-						}
-						else {
-							this._do_select(change_index, false);
-						}
-					}
-					else {
-						if (this._changeIndex(change_index)) {
-							this.on_apply_index();
-						}
-						else {
-							if (!down_item.selected) {
-								down_item._stat_change("notselect", "normal");
-							}
-						}
+					if (canvasY < 0) {
+						canvasY = c_t_border;
 					}
 				}
-				else {
-					if (!down_item.selected) {
-						down_item._stat_change("notselect", "normal");
-					}
-				}
-			}
 
-			sel_info_list.shift();
-		}
+				var clientXY = this._getClientXY(canvasX, canvasY);
 
-		return ret;
-	};
-
-	_pListBox.on_fire_sys_onlbuttonup = function (button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, from_comp, from_refer_comp, from_elem) {
-		if (from_refer_comp && (from_refer_comp instanceof nexacro.ScrollBarCtrl || (from_refer_comp.parent && from_refer_comp.parent instanceof nexacro.ScrollBarCtrl))) {
-			return;
-		}
-
-		var up_obj = this._getWindow().findComponent(from_elem);
-		var sel_info = this._selectinfo;
-
-		var ret = nexacro.Component.prototype.on_fire_sys_onlbuttonup.call(this, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, from_comp, from_refer_comp, from_elem);
-
-		var down_item = sel_info.obj;
-		if (down_item) {
-			down_item._keep_selecting = false;
-
-			var items = this._get_contents_rows();
-			var change_item;
-
-			if (this._contains(from_elem)) {
-				this.on_fire_onitemclick(this, up_obj.index, up_obj.text, up_obj.value, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY);
-
-				if (nexacro._enableaccessibility) {
-					if (this._accessibility_index > -1) {
-						var sel_item = this._get_rowobj_byrow(this._accessibility_index);
-						if (sel_info.index != this._accessibility_index && sel_item && sel_item._selected == true) {
-							this._deselect_all(true);
-							sel_item._stat_change("notselect", "normal");
-						}
-					}
-				}
+				this.on_fire_onitemclick(this, down_item.index, down_item.text, down_item.value, evt._current_state, this._altKey, this._ctrlKey, this._shiftKey, evt.screenX, evt.screenY, canvasX, canvasY, clientXY[0], clientXY[1]);
 
 				change_item = down_item;
 
@@ -1693,9 +1739,61 @@ if (!nexacro.ListBox) {
 					}
 				}
 			}
+
+			sel_info_list.shift();
+		}
+
+		return ret;
+	};
+
+	_pListBox.on_fire_sys_onlbuttonup = function (button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, from_comp, from_refer_comp, from_elem) {
+		if (from_refer_comp && (from_refer_comp instanceof nexacro.ScrollBarCtrl || (from_refer_comp.parent && from_refer_comp.parent instanceof nexacro.ScrollBarCtrl))) {
+			return;
+		}
+
+		var sel_info = this._selectinfo;
+
+		var ret = nexacro.Component.prototype.on_fire_sys_onlbuttonup.call(this, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, from_comp, from_refer_comp, from_elem);
+
+		var down_item = sel_info.obj;
+		if (down_item) {
+			down_item._keep_selecting = false;
+
+			var items = this._get_contents_rows();
+			var change_item;
+
+			this.on_fire_onitemclick(this, down_item.index, down_item.text, down_item.value, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY);
+
+			if (nexacro._enableaccessibility) {
+				if (this._accessibility_index > -1) {
+					var sel_item = this._get_rowobj_byrow(this._accessibility_index);
+					if (sel_info.index != this._accessibility_index && sel_item && sel_item._selected == true) {
+						this._deselect_all(true);
+						sel_item._stat_change("notselect", "normal");
+					}
+				}
+			}
+
+			change_item = down_item;
+
+			var change_index = change_item.index;
+
+			if (this.multiselect) {
+				if (this._shiftKey == true || this._ctrlKey == true) {
+					this._select_withmouseevent(change_index);
+				}
+				else {
+					this._do_select(change_index, false);
+				}
+			}
 			else {
-				if (!down_item.selected) {
-					down_item._stat_change("notselect", "normal");
+				if (this._changeIndex(change_index)) {
+					this.on_apply_index();
+				}
+				else {
+					if (!down_item.selected) {
+						down_item._stat_change("notselect", "normal");
+					}
 				}
 			}
 		}
@@ -1941,42 +2039,24 @@ if (!nexacro.ListBox) {
 
 	_pListBox.on_fire_sys_onaccessibilitygesture = function (direction, fire_comp, refer_comp) {
 		var ret = false;
-
 		var items = this._get_contents_rows();
-		var obj = null;
 
-		if (items) {
-			if (!direction) {
-				if (this._overeditemindex == -1) {
-					this._overeditemindex = items.length - 1;
-					ret = true;
-				}
-				else if (this._overeditemindex <= 0) {
-					this._overeditemindex = -1;
-				}
-				else {
-					this._overeditemindex--;
-					ret = true;
-				}
+		if (items && items.length > 0) {
+			var obj = null;
+
+			if (direction > 0) {
+				this._overeditemindex++;
 			}
 			else {
-				if (this._overeditemindex == -1) {
-					this._overeditemindex++;
-					ret = true;
-				}
-				else if (this._overeditemindex == items.length - 1) {
-					this._overeditemindex = -1;
-				}
-				else {
-					this._overeditemindex++;
-					ret = true;
-				}
+				this._overeditemindex--;
 			}
-		}
 
-		if (ret) {
 			obj = this._getItemByRealIdx(items, this._overeditemindex).obj;
-			obj._setAccessibilityNotifyEvent();
+
+			if (obj) {
+				ret = true;
+				obj._setAccessibilityNotifyEvent();
+			}
 		}
 
 		return ret;
@@ -2086,6 +2166,7 @@ if (!nexacro.ListBox) {
 		}
 
 		var font = this.on_find_CurrentStyle_font(this._pseudo) || nexacro.Component._default_font;
+		var letterspace = this.on_find_CurrentStyle_letterspace(this._pseudo);
 		var ad_width = this.currentstyle.itempadding ? this.currentstyle.itempadding.left + this.currentstyle.itempadding.right : 0;
 		ad_width += this.currentstyle.itemborder ? this.currentstyle.itemborder._left_width + this.currentstyle.itemborder._right_width : 0;
 		var itemWidth;
@@ -2093,7 +2174,7 @@ if (!nexacro.ListBox) {
 		var maxWidth = 0;
 		if (ds_cnt > 0) {
 			for (i = 0; i < ds_cnt; i++) {
-				itemWidth = nexacro._getTextSize2(ds.getColumn(i, col), font)[0];
+				itemWidth = nexacro._getTextSize2(letterspace, ds.getColumn(i, col), font)[0];
 				if (maxWidth < itemWidth) {
 					maxWidth = itemWidth;
 				}
@@ -2138,6 +2219,7 @@ if (!nexacro.ListBox) {
 
 	_pListBox._set_scroll_max_width = function (nRow) {
 		var font = this.currentstyle.font || this._default_font;
+		var letterspace = this.on_find_CurrentStyle_letterspace(this._pseudo);
 		var dataset = this._innerdataset;
 
 		var ad_width = this.currentstyle.itempadding ? this.currentstyle.itempadding.left + this.currentstyle.itempadding.right : 0;
@@ -2160,7 +2242,7 @@ if (!nexacro.ListBox) {
 				}
 				else {
 					var txt = dataset.getColumn(nRow, this.datacolumn);
-					var size = nexacro._getTextSize2(txt, font);
+					var size = nexacro._getTextSize2(letterspace, txt, font);
 					if (this._contents_maxwidth < size[0]) {
 						this._contents_maxwidth = size[0] + ad_width;
 						this._pos_max_width = nRow;
@@ -2267,7 +2349,7 @@ if (!nexacro.ListBox) {
 			}
 
 			for (page = start_page; page <= end_page; page++) {
-				if (!this._buffer_pages[page]) {
+				if (!(this._buffer_pages[page]) || this._buffer_pages[page].length <= 0) {
 					buffer_page = this._buffer_pages[page] = [];
 
 					for (var j = 0; j < page_rowcount; j++) {
@@ -2623,7 +2705,10 @@ if (!nexacro.ListBox) {
 	};
 
 	_pListBox._getPreCalculateWantArrow = function (keycode) {
-		if (keycode == nexacro.Event.KEY_UP) {
+		if (nexacro._enableaccessibility && (nexacro._accessibilitytype == 4 || nexacro._accessibilitytype == 5)) {
+			return true;
+		}
+		else if (keycode == nexacro.Event.KEY_UP) {
 			var index = this._accessibility_index;
 			if (index == 0 && !this._isAccessibilityEnable()) {
 				return false;
@@ -3098,33 +3183,6 @@ if (!nexacro.ListBox) {
 		return false;
 	};
 
-	_pListBox._setAccessibilityNotifyEvent = function () {
-		if (this._overeditemindex < 0) {
-			this._overeditemindex = 0;
-		}
-
-		var items = this._get_contents_rows();
-		var obj = null;
-
-		if (items) {
-			obj = this._getItemByRealIdx(items, this._overeditemindex).obj;
-			obj._setAccessibilityNotifyEvent();
-		}
-	};
-
-	_pListBox._setAccessibilityInfoByHover = function (control) {
-		if (control) {
-			this._overeditemindex = control.index;
-			return control._setAccessibilityInfoByHover();
-		}
-		return;
-	};
-
-	_pListBox._clearAccessibilityInfoByHover = function () {
-		this._overeditemindex = -1;
-		return;
-	};
-
 	delete _pListBox;
 	_pListBox = null;
 
@@ -3195,6 +3253,7 @@ if (!nexacro.ListBox) {
 
 		style = null;
 	};
+
 	_pListItemCtrl.on_find_CurrentStyle_background = function (pseudo) {
 		if ((this._keep_selecting || this.selected) && this.parent.enable) {
 			pseudo = "selected";

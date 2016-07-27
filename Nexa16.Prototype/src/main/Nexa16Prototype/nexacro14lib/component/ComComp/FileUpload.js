@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -395,6 +395,12 @@ if (!nexacro.FileUpload) {
 		if (font != curstyle.font) {
 			curstyle.font = font;
 			this.on_apply_style_font(font);
+		}
+
+		var letterspace = this.on_find_CurrentStyle_letterspace(pseudo);
+		if (letterspace != curstyle.letterspace) {
+			curstyle.letterspace = letterspace;
+			this.on_apply_style_letterspace(letterspace);
 		}
 
 		var color = this.on_find_CurrentStyle_color(pseudo);
@@ -1004,6 +1010,20 @@ if (!nexacro.FileUpload) {
 		}
 	};
 
+	_pFileUpload.on_apply_style_letterspace = function (letterspace) {
+		var items = this._items;
+		var item_len = items.length;
+
+		for (var i = 0; i < item_len; i++) {
+			if (items[i].fileitembutton) {
+				items[i].fileitembutton.on_apply_style_letterspace(letterspace);
+			}
+			if (items[i].fileitemedit) {
+				items[i].fileitemedit.on_apply_style_letterspace(letterspace);
+			}
+		}
+	};
+
 	_pFileUpload.on_create_contents = function () {
 		var control_elem = this.getElement();
 		if (control_elem) {
@@ -1049,6 +1069,7 @@ if (!nexacro.FileUpload) {
 		this._onResetScrollBar();
 		this._updateClientSize(this._control_element);
 		this.on_apply_style_buttontext(this.currentstyle.buttontext);
+		this.on_apply_style_letterspace(this.currentstyle.letterspace);
 		this.on_change_containerRect();
 		this.on_apply_prop_rtldirection();
 	};
@@ -1615,7 +1636,7 @@ if (!nexacro.FileUpload) {
 		var bHandled = false;
 		var index = nexacro._indexOf(this._items, obj);
 
-		if (this.visible && this._isEnable() && this.enableevent) {
+		if (this._isEnable() && this.enableevent) {
 			bHandled = this.on_fire_onfindclick(obj, index);
 
 			if (bHandled) {
@@ -1721,18 +1742,12 @@ if (!nexacro.FileUpload) {
 		}
 	};
 
-	_pFileUpload.on_fire_onsuccess = function (ds, code, msg, url, variables) {
+	_pFileUpload.on_fire_onsuccess = function (ds, code, msg, url) {
 		application._endCommProgress();
 
 		if (this.onsuccess && this.onsuccess._has_handlers) {
-			if (variables && variables.length > 0) {
-				var evt = new nexacro.FileUploadLoadEventInfo(this, "onsuccess", ds, code, msg, url);
-				return this.onsuccess._fireEvent(this, evt);
-			}
-			else {
-				var evt = new nexacro.FileUploadLoadEventInfo(this, "onsuccess", ds, undefined, undefined, url);
-				return this.onsuccess._fireEvent(this, evt);
-			}
+			var evt = new nexacro.FileUploadLoadEventInfo(this, "onsuccess", ds, code, msg, url);
+			return this.onsuccess._fireEvent(this, evt);
 		}
 	};
 
@@ -1966,54 +1981,101 @@ if (!nexacro.FileUpload) {
 	_pFileUpload._setParamter = nexacro._emptyFn;
 	_pFileUpload._getDataset = nexacro._emptyFn;
 
-	_pFileUpload.on_load = function (status, data, url, errcode, httpcode, errmsg) {
-		var i, id, val, remoteId, ds;
-		var code = 0, msg = "";
-		var dsArray = new nexacro.Collection();
+	if (nexacro.Browser == "Runtime") {
+		_pFileUpload.on_load = function (status, data, url, errcode, httpcode, errmsg) {
+			var result, fstr, code = -1, msg = "fail to get", xmldoc = nexacro._getXMLDocument(this._unique_id, data, url);
+			if (status < 0) {
+				application._onHttpSystemError(this, true, this, errcode, url, httpcode, url, null);
+				errmsg = nexacro._GetSystemErrorMsg(this, errcode);
+				this.on_fire_onerror(this, "ObjectError", errmsg, this, httpcode, null, null, -1);
+			}
+			else {
+				if (data) {
+					fstr = data.substring(0, 3);
+					if (fstr != "SSV") {
+						fstr = "XML";
+					}
 
-		try {
-			var xmldoc = nexacro._getXMLDocument(this._unique_id, data, url);
-			if (xmldoc) {
+					if (fstr == "XML") {
+						result = nexacro.Deserializer["XML"](xmldoc);
+					}
+					else {
+						result = nexacro.Deserializer["SSV"](data);
+					}
+
+					var error_info = result[0];
+					if (error_info) {
+						code = error_info["ErrorCode"];
+						msg = error_info["ErrorMsg"];
+					}
+
+					if (code < 0) {
+						this.on_fire_onerror(this, "ObjectError", msg, this, 9901, null, null, -1);
+					}
+					else {
+						this.on_fire_onsuccess(result[1], code, msg, url);
+					}
+				}
+				else {
+				}
+			}
+		};
+	}
+	else {
+		_pFileUpload.on_load = function () {
+			var result, fstr, url, code = -1, msg = "", data = "";
+			try {
+				var xmldoc = nexacro._getXMLDocument(this._unique_id);
 				url = xmldoc.URL ? xmldoc.URL : xmldoc.url;
 				if (url == "about:blank") {
 					return;
 				}
 
-				var result = nexacro._getCommDataFromDom(xmldoc, this);
-				var variables = result[0];
-				var datasets = result[1];
-				var len = variables.length;
-
-				if (len > 0) {
-					for (i = 0; i < len; i++) {
-						id = variables[i]["id"];
-						if (id && id.length) {
-							val = variables[i]["val"];
-							if (id == "ErrorCode") {
-								code = parseInt(val, 10);
-								if (!isFinite(code)) {
-									code = -1;
-								}
-							}
-							else if (id == "ErrorMsg") {
-								msg = val;
-							}
-						}
-					}
-
-					this.on_fire_onsuccess(datasets, code, msg, url, variables);
+				this.context = this.parent;
+				if (nexacro._getContentType(xmldoc) == "XML") {
+					fstr = "XML";
 				}
 				else {
-					var errormsg = "failed to get";
-					this.on_fire_onerror(this, "ObjectError", errormsg, this, 9901, null, null, -1);
+					data = nexacro._getDataFromDOM(xmldoc, this);
+					data = data.trim();
+					fstr = data.substring(0, 3);
 				}
+
+				if (fstr == "XML") {
+					result = nexacro.Deserializer["XML"](xmldoc);
+				}
+				else if (fstr == "SSV") {
+					result = nexacro.Deserializer["SSV"](data);
+				}
+				else {
+				}
+
+				if (result) {
+					var error_info = result[0];
+					if (error_info["ErrorCode"] != null) {
+						code = error_info["ErrorCode"];
+					}
+					if (error_info["ErrorMsg"] != null) {
+						msg = error_info["ErrorMsg"];
+					}
+				}
+				else {
+					msg = data;
+				}
+
+				if (code < 0) {
+					this.on_fire_onerror(this, "ObjectError", "failed to get", this, 9901, null, null, -1);
+				}
+				else {
+					this.on_fire_onsuccess(result[1], code, msg, url);
+				}
+				delete this.context;
 			}
-		}
-		catch (e) {
-			var errormsg = "failed to get";
-			this.on_fire_onerror(this, "ObjectError", errormsg, this, 9901, null, null, -1);
-		}
-	};
+			catch (e) {
+				this.on_fire_onerror(this, "ObjectError", "failed to get", this, 9901, null, null, -1);
+			}
+		};
+	}
 
 	_pFileUpload._createFileItem = function (id, left, top, width, height) {
 		var unique = this.itemcount < 1 ? this._last_id = 0 : ++this._last_id;

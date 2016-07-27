@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -47,7 +47,7 @@ if (nexacro.Component) {
 	_pComponent._setLastFocus = function (comp) {
 		if (comp && !comp._is_popup_control) {
 			if (comp && nexacro._enableaccessibility && nexacro._accessibilitytype == 5) {
-				comp._setAccessibilityNotifyEvent();
+				comp._setAccessibilityNotifyEvent(1);
 			}
 
 			if (this == comp) {
@@ -148,7 +148,7 @@ if (nexacro.Component) {
 
 	_pComponent._setfocusing_comp = null;
 	_pComponent._on_focus = function (self_flag, evt_name, lose_focus, refer_lose_focus, new_focus, refer_new_focus) {
-		if (!this._is_alive || !this.visible || !this._isEnable()) {
+		if (!this._is_alive || !this.visible || !this._isEnable() || this._is_loading) {
 			return;
 		}
 
@@ -174,7 +174,11 @@ if (nexacro.Component) {
 
 			if (focuspath_index > -1) {
 				if (focuspath_index == cur_focus_paths.length - 1) {
-					if (this._getTabOrderFirst() == null) {
+					if (this._getTabOrderFirst(nexacro._enableaccessibility) == null) {
+						if (_win._is_active_window == false) {
+							_win._on_sys_activate();
+						}
+
 						return;
 					}
 				}
@@ -305,7 +309,9 @@ if (nexacro.Component) {
 						focus_path_before = focus_paths.slice(0);
 					}
 
-					this.on_fire_onsetfocus(lose_focus, refer_lose_focus);
+					if (!this._is_comp_focus) {
+						this.on_fire_onsetfocus(lose_focus, refer_lose_focus);
+					}
 
 					if (focus_paths) {
 						var focus_path_after = _win.getCurrentFocusPaths();
@@ -362,6 +368,7 @@ if (nexacro.Component) {
 					if (focus_paths) {
 						focus_path_before = focus_paths.slice(0);
 					}
+
 
 					this.on_fire_onsetfocus(lose_focus, refer_lose_focus);
 
@@ -1177,7 +1184,9 @@ if (nexacro.Component) {
 			var elem_comp = win.findComponent(elem, 0, 0);
 			if (elem_comp && elem_comp[0]) {
 				var cur_popup = application._current_popups[0];
-				if (cur_popup._track_capture && !cur_popup._contains(elem_comp[0])) {
+				var root_comp1 = this._getRootWindowComponent(this);
+				var root_comp2 = cur_popup.parent;
+				if (cur_popup._track_capture && (!cur_popup._contains(elem_comp[0]) && root_comp1 != root_comp2)) {
 					return;
 				}
 			}
@@ -1286,6 +1295,11 @@ if (nexacro.Component) {
 		else {
 			if (!nexacro.isTouchInteraction) {
 				this._stat_change("", "mouseover");
+				if (this._dragging_cursor) {
+					this._dragging_cursor = null;
+					var cursor = this.on_find_CurrentStyle_cursor(this._pseudo);
+					this._updateCursor(cursor);
+				}
 			}
 		}
 	};
@@ -1300,7 +1314,9 @@ if (nexacro.Component) {
 			var elem_comp = win.findComponent(elem, 0, 0);
 			if (elem_comp && elem_comp[0]) {
 				var cur_popup = application._current_popups[0];
-				if (cur_popup._track_capture && !cur_popup._contains(elem_comp[0])) {
+				var root_comp1 = this._getRootWindowComponent(this);
+				var root_comp2 = cur_popup.parent;
+				if (cur_popup._track_capture && (!cur_popup._contains(elem_comp[0]) && root_comp1 != root_comp2)) {
 					return;
 				}
 			}
@@ -1421,7 +1437,9 @@ if (nexacro.Component) {
 			var elem_comp = win.findComponent(elem, 0, 0);
 			if (elem_comp && elem_comp[0]) {
 				var cur_popup = application._current_popups[0];
-				if (cur_popup._track_capture && !cur_popup._contains(elem_comp[0])) {
+				var root_comp1 = this._getRootWindowComponent(this);
+				var root_comp2 = cur_popup.parent;
+				if (cur_popup._track_capture && (!cur_popup._contains(elem_comp[0]) && root_comp1 != root_comp2)) {
 					return;
 				}
 			}
@@ -1844,6 +1862,7 @@ if (nexacro.Component) {
 			}
 
 			if (this.visible && this._isEnable()) {
+				this.on_drop_basic_action();
 				var clientXY = this._getClientXY(canvasX, canvasY);
 				if (bubble_scope) {
 					event_bubbles = this.on_fire_user_ondrop(src_comp, src_refer_comp, dragdata, userdata, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientXY[0], clientXY[1], this, refer_comp);
@@ -1860,7 +1879,8 @@ if (nexacro.Component) {
 				canvasY = canvas[1];
 
 				if (this._is_subcontrol) {
-					return this.parent._on_bubble_drop(elem, src_comp, src_refer_comp, dragdata, userdata, button, alt_key, ctrl_key, shift_key, canvasX, canvasY, screenX, screenY, event_bubbles, null, refer_comp, bubble_scope);
+					var root_comp = this._getRootComponent(this);
+					return this.parent._on_bubble_drop(elem, src_comp, src_refer_comp, dragdata, userdata, button, alt_key, ctrl_key, shift_key, canvasX, canvasY, screenX, screenY, event_bubbles, root_comp, refer_comp, bubble_scope);
 				}
 				else {
 					return this.parent._on_bubble_drop(elem, src_comp, src_refer_comp, dragdata, userdata, button, alt_key, ctrl_key, shift_key, canvasX, canvasY, screenX, screenY, false, this, refer_comp, bubble_scope);
@@ -1888,6 +1908,13 @@ if (nexacro.Component) {
 		}
 	};
 
+	_pComponent.on_drop_basic_action = function () {
+		if (this._dragging_cursor) {
+			this._dragging_cursor = null;
+			var cursor = this.on_find_CurrentStyle_cursor(this._pseudo);
+			this._updateCursor(cursor);
+		}
+	};
 	_pComponent.on_drop_default_action = function () {
 	};
 
@@ -1929,10 +1956,12 @@ if (nexacro.Component) {
 
 			if (this._is_subcontrol) {
 				is_subcontrol_bubble = true;
+				this.on_dragmove_basic_action();
 			}
 			else {
 				is_subcontrol_bubble = false;
 				if (this.visible && this._isEnable()) {
+					this.on_dragmove_basic_action();
 					var clientXY = this._getClientXY(canvasX, canvasY);
 					if (bubble_scope) {
 						event_bubbles = this.on_fire_user_ondragmove(src_comp, src_refer_comp, dragdata, userdata, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientXY[0], clientXY[1], this, refer_comp);
@@ -1979,6 +2008,19 @@ if (nexacro.Component) {
 				canvasY = canvas[1];
 
 				return this.parent._on_bubble_dragmove(elem, src_comp, src_refer_comp, dragdata, userdata, button, alt_key, ctrl_key, shift_key, canvasX, canvasY, screenX, screenY, false, fire_comp, refer_comp, bubble_scope);
+			}
+		}
+	};
+
+	_pComponent.on_dragmove_basic_action = function () {
+		var dragInfo = nexacro._cur_drag_info;
+		var win = this._getWindow();
+		if (dragInfo && dragInfo.targetwin == win) {
+			var target = dragInfo.target;
+			if (target && target != this) {
+				var cursor = target.on_find_CurrentStyle_cursor(target._pseudo);
+				this._updateCursor(cursor);
+				this._dragging_cursor = cursor;
 			}
 		}
 	};
@@ -2362,12 +2404,14 @@ if (nexacro.Component) {
 	};
 
 	_pComponent._on_contextmenu = function (elem, event_bubbles, from_comp, from_refer_comp) {
-		var ret = true;
+		var is_enable = this._isEnable();
+		var ret = is_enable;
+
 		if (!this._is_alive) {
 			return ret;
 		}
 
-		if (this._isEnable()) {
+		if (is_enable) {
 			var root_comp = this._getFromComponent(this);
 			var listener = nexacro.Browser == "Safari" ? root_comp.onrbuttondown : root_comp.onrbuttonup;
 			if (listener && listener.defaultprevented) {
@@ -2442,19 +2486,31 @@ if (nexacro.Component) {
 		var comp = this;
 		var type = comp._type;
 		var use_context_menu = application ? application.usecontextmenu : "all";
+		var comp_use_context_menu = (comp.usecontextmenu !== undefined) ? comp.usecontextmenu : true;
+
 		if (use_context_menu == "all") {
-			return true;
+			if (comp instanceof nexacro.Form || comp instanceof nexacro.Edit || comp instanceof nexacro.MaskEdit || comp instanceof nexacro.TextArea) {
+				if (comp_use_context_menu) {
+					return true;
+				}
+			}
+
+			return false;
 		}
 		else if (use_context_menu == "form") {
 			if (comp instanceof nexacro.Form) {
 				return true;
 			}
+
 			return false;
 		}
 		else if (use_context_menu == "edit") {
-			if (comp instanceof nexacro.Edit || comp instanceof nexacro.TextArea) {
-				return true;
+			if (comp instanceof nexacro.Edit || comp instanceof nexacro.MaskEdit || comp instanceof nexacro.TextArea) {
+				if (comp_use_context_menu) {
+					return true;
+				}
 			}
+
 			return false;
 		}
 		else {
@@ -2737,6 +2793,103 @@ if (nexacro.Component) {
 	};
 
 	_pComponent.on_touchend_default_action = function () {
+	};
+
+	_pComponent._on_touchcancel = function (touch_manager, touchinfos, changedtouchinfos, event_bubbles, fire_comp, refer_comp) {
+		this._on_bubble_touchcancel(touch_manager, touchinfos, changedtouchinfos, event_bubbles, fire_comp, refer_comp, true);
+
+		var root_comp = this._getFromComponent(this);
+		if (root_comp) {
+			var listener = root_comp.ontouchcancel;
+			if (!listener || (listener && !listener.defaultprevented)) {
+				this._on_bubble_touchcancel(touch_manager, touchinfos, changedtouchinfos, event_bubbles, fire_comp, refer_comp, false);
+			}
+			if (listener && listener.defaultprevented) {
+				return true;
+			}
+		}
+	};
+
+	_pComponent._on_bubble_touchcancel = function (touch_manager, touchinfos, changedtouchinfos, event_bubbles, fire_comp, refer_comp, is_userbubble) {
+		if (!this._is_alive) {
+			return;
+		}
+
+		if (event_bubbles === undefined) {
+			if (!refer_comp) {
+				refer_comp = this;
+				if (!refer_comp._is_reference_control) {
+					refer_comp = this._getReferenceComponent(refer_comp);
+				}
+			}
+
+			if (is_userbubble) {
+				this.on_touchcancel_basic_action(touch_manager, changedtouchinfos);
+			}
+			else {
+				this.on_touchcancel_default_action();
+			}
+
+			if (this.visible && this._isEnable() && ((is_userbubble && this.enableevent) || !is_userbubble)) {
+				var fire_event_func = is_userbubble ? this.on_fire_user_ontouchcancel : this.on_fire_sys_ontouchcancel;
+				if (fire_event_func) {
+					event_bubbles = fire_event_func.call(this, touchinfos, changedtouchinfos, this, refer_comp);
+				}
+
+				if (event_bubbles === false) {
+					event_bubbles = undefined;
+				}
+			}
+
+			var listener = this.ontouchstart;
+			if ((!listener || (listener && !listener.stoppropagation)) && (event_bubbles !== true) && this.parent && !this.parent._is_application) {
+				touch_manager.updateTouchInputInfosCanvasXY(touchinfos, (this._adjust_left - this._scroll_left || 0), (this._adjust_top - this._scroll_top || 0));
+				if (this._is_subcontrol) {
+					return this.parent._on_bubble_touchcancel(touch_manager, touchinfos, changedtouchinfos, event_bubbles, null, refer_comp, is_userbubble);
+				}
+				else {
+					return this.parent._on_bubble_touchcancel(touch_manager, touchinfos, changedtouchinfos, false, this, refer_comp, is_userbubble);
+				}
+			}
+		}
+		else {
+			if (this.visible && this._isEnable() && ((is_userbubble && this.enableevent) || !is_userbubble)) {
+				touch_manager.updateTouchInputInfosClientXY(touchinfos, this);
+
+				var fire_event_func = is_userbubble ? this.on_fire_user_ontouchcancel : this.on_fire_sys_ontouchcancel;
+				if (fire_event_func) {
+					event_bubbles = fire_event_func.call(this, touchinfos, changedtouchinfos, this, refer_comp);
+				}
+			}
+
+			var listener = this.ontouchstart;
+			if ((!listener || (listener && !listener.stoppropagation)) && (event_bubbles !== true) && this.parent && !this.parent._is_application) {
+				touch_manager.updateTouchInputInfosCanvasXY(touchinfos, (this._adjust_left - this._scroll_left || 0), (this._adjust_top - this._scroll_top || 0));
+				return this.parent._on_bubble_touchcancel(touch_manager, touchinfos, changedtouchinfos, false, fire_comp, refer_comp, is_userbubble);
+			}
+		}
+	};
+
+	_pComponent.on_touchcancel_basic_action = function (touch_manager, changedtouchinfos) {
+		var firsttouchinput = touch_manager.getFirstTouchInputInfo(changedtouchinfos);
+
+		if (firsttouchinput) {
+			if (this._apply_pushed_pseudo) {
+				this._is_push = false;
+				if (this._is_pushed_area) {
+					if (nexacro.isTouchInteraction) {
+						this._stat_change("notpush", "normal");
+					}
+					else {
+						this._stat_change("notpush", "mouseover");
+					}
+					this._is_pushed_area = false;
+				}
+			}
+		}
+	};
+
+	_pComponent.on_touchcancel_default_action = function () {
 	};
 
 	_pComponent._on_tap = function (elem, canvasX, canvasY, screenX, screenY, event_bubbles, fire_comp, refer_comp) {
@@ -3334,7 +3487,7 @@ if (nexacro.Component) {
 
 				if (input_elem) {
 					nexacro._deleteRefreshNode();
-					nexacro._refreshCaret();
+					nexacro._refreshCaret(focused_comp);
 				}
 			}
 		}
@@ -3780,7 +3933,7 @@ if (nexacro.Component) {
 				}
 			}
 
-			if (this.visible && this._isEnable()) {
+			if ((this.visible && this._isEnable()) || (this.visible && nexacro._enableaccessibility && nexacro._accessibilitytype == 5)) {
 				if (bubble_scope && !this._is_hotkey) {
 					event_bubbles = this.on_fire_user_onaccessibilitygesture(direction, this, refer_comp);
 				}

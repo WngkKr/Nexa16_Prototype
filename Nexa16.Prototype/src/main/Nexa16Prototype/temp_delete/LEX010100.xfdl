@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="frame_work" classname="frame_work" left="0" top="0" width="1400" height="700" titletext="회사규정집/매뉴얼">
+    <Layouts>
+      <Layout>
+        <Div id="Div00" taborder="9" left="20" top="50" width="1180" height="45" style="border:1 solid #b1b1b1ff ;">
+          <Layouts>
+            <Layout>
+              <Static id="Static01" taborder="50" text="제목" cssclass="sta_WF_label" left="29" top="11" width="54" height="18" style="border:0 none #808080ff ;"/>
+              <Static id="Static00" taborder="51" text="등록자" onclick="Div00_Static00_onclick" cssclass="sta_WF_label" left="280" top="11" width="53" height="18"/>
+              <Combo id="Combo01" taborder="52" codecolumn="emp_cd" datacolumn="kor_nm" left="440" top="9" width="123" height="25" index="0" innerdataset="@ds_cmb_emp" text="전체"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="btnSetting01" taborder="13" text="조회" onclick="divInfo_btnSetting_onclick" cssclass="btn_WF_Search01" left="1097" top="58" width="85" height="30" positionstep="0"/>
+        <Static id="Static42" taborder="96" text="20" left="1200" top="11" width="20" height="705" style="background:chartreuse;" visible="false"/>
+        <Static id="Static04" taborder="97" text="30" left="0" top="11" width="30" height="673" style="background:chartreuse;" visible="false"/>
+        <Edit id="Edit05" taborder="98" left="360" top="60" width="88" height="25"/>
+        <CheckBox id="CheckBox02" taborder="99" text="퇴사자포함" left="597" top="62" width="87" height="20"/>
+        <Static id="Static05" taborder="100" text="h13" left="20" top="37" width="1180" height="13" style="background:chartreuse;align:center middle;" visible="false"/>
+        <Static id="Static15" taborder="102" left="25" top="51" width="664" height="9" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;" text="9" visible="false"/>
+        <Static id="Static16" taborder="103" text="9" left="25" top="85" width="664" height="9" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;" visible="false"/>
+        <Static id="Static17" taborder="104" text="30" left="20" top="60" width="30" height="25" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;" visible="false"/>
+        <Static id="Static18" taborder="105" text="30" left="271" top="60" width="30" height="25" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;" visible="false"/>
+        <Static id="Static19" taborder="106" text="17" left="1182" top="58" width="17" height="24" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;" visible="false"/>
+        <Static id="Static21" taborder="107" text="13" visible="false" left="448" top="59" width="13" height="26" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;"/>
+        <Static id="Static23" taborder="108" text="13" visible="false" left="584" top="59" width="13" height="26" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;"/>
+        <Static id="Static00" taborder="123" text="h20" visible="false" left="25" top="485" width="1164" height="20" style="background:#7fff00ee;color:darkred;align:center middle;"/>
+        <Edit id="Edit00" taborder="124" left="102" top="60" width="170" height="25"/>
+        <Static id="Static01" taborder="139" text="h7" visible="false" left="0" top="0" width="1220" height="7" style="background:chartreuse;align:center middle;"/>
+        <Grid id="Grid00" taborder="141" binddataset="ds_grid" useinputpanel="false" autofittype="col" left="20" top="108" width="1180" height="377" style="border:1 solid #838383ff,1 solid #c9c6c3ff,1 solid #c9c6c3ff,1 solid #c9c6c3ff;">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="307"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="번호"/>
+                <Cell col="1" text="제목"/>
+                <Cell col="2" text="등록자"/>
+                <Cell col="3" text="등록일"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:DOC_NO"/>
+                <Cell col="1" style="align:left;" text="bind:DOC_SUBJECT_NM"/>
+                <Cell col="2" text="bind:EMP_NM"/>
+                <Cell col="3" text="bind:WRITE_YMD"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static14" taborder="142" text="h13" visible="false" left="24" top="95" width="1180" height="13" style="background:#7fff00ee;color:darkred;align:center middle;"/>
+        <Static id="Static03" taborder="143" text="     회사규정집/매뉴얼" onclick="Static05_onclick" cssclass="sta_WF_title1" left="21" top="7" width="238" height="30" style="background:transparent URL('IMG::h1.png');align:left middle;font:15 arial;"/>
+        <Static id="Static02" taborder="144" text="30" visible="false" left="1370" top="0" width="30" height="673" style="background:chartreuse;"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_grid">
+        <ColumnInfo>
+          <Column id="DOC_NO" type="STRING" size="256"/>
+          <Column id="DOC_CLASS_CD" type="STRING" size="256"/>
+          <Column id="DOC_SUBJECT_NM" type="STRING" size="256"/>
+          <Column id="WRITE_YMD" type="STRING" size="256"/>
+          <Column id="EMP_CD" type="STRING" size="256"/>
+          <Column id="EMP_NM" type="STRING" size="256"/>
+          <Column id="UPDATE_DATE" type="STRING" size="256"/>
+          <Column id="READ_YN" type="STRING" size="256"/>
+          <Column id="NUM" type="STRING" size="256"/>
+          <Column id="TOP_LIST_YN" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="DOC_NO">PR075-35727</Col>
+            <Col id="DOC_CLASS_CD">075</Col>
+            <Col id="DOC_SUBJECT_NM">주식 거래 및 잔고 신고서 (2014년 12월 1일부터 적용)</Col>
+            <Col id="WRITE_YMD">20141128</Col>
+            <Col id="EMP_CD">00320</Col>
+            <Col id="EMP_NM">장정우</Col>
+            <Col id="UPDATE_DATE">2014-11-28 오후 4:40:16</Col>
+            <Col id="READ_YN">Y</Col>
+            <Col id="NUM">1</Col>
+            <Col id="TOP_LIST_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR075-35581</Col>
+            <Col id="DOC_CLASS_CD">075</Col>
+            <Col id="DOC_SUBJECT_NM">위임 전결규정 내역표 개정 안내 (2014년 10월 13일부터 적용)</Col>
+            <Col id="WRITE_YMD">20141013</Col>
+            <Col id="EMP_CD">00320</Col>
+            <Col id="EMP_NM">장정우</Col>
+            <Col id="UPDATE_DATE">2014-10-13 오후 6:27:15</Col>
+            <Col id="READ_YN">Y</Col>
+            <Col id="NUM">2</Col>
+            <Col id="TOP_LIST_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR075-32642</Col>
+            <Col id="DOC_CLASS_CD">075</Col>
+            <Col id="DOC_SUBJECT_NM">임직원 채용시 준비사항</Col>
+            <Col id="WRITE_YMD">20130218</Col>
+            <Col id="EMP_CD">00111</Col>
+            <Col id="EMP_NM">이재정</Col>
+            <Col id="UPDATE_DATE">2014-11-05 오후 3:25:56</Col>
+            <Col id="READ_YN">Y</Col>
+            <Col id="NUM">3</Col>
+            <Col id="TOP_LIST_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR075-32641</Col>
+            <Col id="DOC_CLASS_CD">075</Col>
+            <Col id="DOC_SUBJECT_NM">인턴채용 절차</Col>
+            <Col id="WRITE_YMD">20130218</Col>
+            <Col id="EMP_CD">00111</Col>
+            <Col id="EMP_NM">이재정</Col>
+            <Col id="UPDATE_DATE">2013-02-18 오후 2:20:15</Col>
+            <Col id="READ_YN">Y</Col>
+            <Col id="NUM">4</Col>
+            <Col id="TOP_LIST_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR075-30712</Col>
+            <Col id="DOC_CLASS_CD">075</Col>
+            <Col id="DOC_SUBJECT_NM">해외사무소 업무규정</Col>
+            <Col id="WRITE_YMD">20111228</Col>
+            <Col id="EMP_CD">00099</Col>
+            <Col id="EMP_NM">공원표</Col>
+            <Col id="UPDATE_DATE">2015-08-12 오전 11:06:13</Col>
+            <Col id="READ_YN">Y</Col>
+            <Col id="NUM">5</Col>
+            <Col id="TOP_LIST_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR075-28397</Col>
+            <Col id="DOC_CLASS_CD">075</Col>
+            <Col id="DOC_SUBJECT_NM">해외 자문위원 운영안</Col>
+            <Col id="WRITE_YMD">20101102</Col>
+            <Col id="EMP_CD">00102</Col>
+            <Col id="EMP_NM">김태헌</Col>
+            <Col id="UPDATE_DATE">2010-11-02 오후 4:50:08</Col>
+            <Col id="READ_YN">Y</Col>
+            <Col id="NUM">6</Col>
+            <Col id="TOP_LIST_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR075-28351</Col>
+            <Col id="DOC_CLASS_CD">075</Col>
+            <Col id="DOC_SUBJECT_NM">사외이사직 수행관련 유의사항 [Code of Conduct for Outside Directors]</Col>
+            <Col id="WRITE_YMD">20101020</Col>
+            <Col id="EMP_CD">00229</Col>
+            <Col id="EMP_NM">유상근</Col>
+            <Col id="UPDATE_DATE">2015-01-27 오전 9:15:37</Col>
+            <Col id="READ_YN">Y</Col>
+            <Col id="NUM">7</Col>
+            <Col id="TOP_LIST_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR075-27834</Col>
+            <Col id="DOC_CLASS_CD">075</Col>
+            <Col id="DOC_SUBJECT_NM">스틱이념_2010.07.26</Col>
+            <Col id="WRITE_YMD">20100726</Col>
+            <Col id="EMP_CD">00170</Col>
+            <Col id="EMP_NM">이진민</Col>
+            <Col id="UPDATE_DATE">2010-07-26 오후 6:01:11</Col>
+            <Col id="READ_YN">Y</Col>
+            <Col id="NUM">8</Col>
+            <Col id="TOP_LIST_YN">N</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_cmb_emp">
+        <ColumnInfo>
+          <Column id="emp_cd" type="STRING" size="256"/>
+          <Column id="kor_nm" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="kor_nm">전체</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00289</Col>
+            <Col id="kor_nm">한재준</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00251</Col>
+            <Col id="kor_nm">Mabel Zhu</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00326</Col>
+            <Col id="kor_nm">정금식</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00317</Col>
+            <Col id="kor_nm">한종훈</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00312</Col>
+            <Col id="kor_nm">Sheheryar Javaid</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00316</Col>
+            <Col id="kor_nm">최정원</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00026</Col>
+            <Col id="kor_nm">송정희</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00101</Col>
+            <Col id="kor_nm">강도현</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00088</Col>
+            <Col id="kor_nm">김영훈</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00093</Col>
+            <Col id="kor_nm">배선한</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00153</Col>
+            <Col id="kor_nm">Ly Hoang Duy</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00308</Col>
+            <Col id="kor_nm">한극우</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00309</Col>
+            <Col id="kor_nm">신동우</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00068</Col>
+            <Col id="kor_nm">김흥남</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00008</Col>
+            <Col id="kor_nm">곽동걸</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00103</Col>
+            <Col id="kor_nm">최진혁</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00034</Col>
+            <Col id="kor_nm">이성규</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00275</Col>
+            <Col id="kor_nm">최하나</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

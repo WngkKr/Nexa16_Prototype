@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="Component01" classname="Component01" left="0" top="0" width="1200" height="640" titletext="Edit, 타이틀, MaskEdit, Textarea, Spin">
+    <Layouts>
+      <Layout>
+        <Static id="Static27" taborder="66" text="Spin" left="0" top="537" width="125" height="100" style="background:#ebeff2ff;border:1 solid #ced5dfff ;color:#667f92ff;align:center middle;font:bold 9 Dotum;"/>
+        <Static id="Static32" taborder="67" left="124" top="537" width="962" height="100" style="background:#ffffffff;border:1 solid #c6c6c5ff ;align:center middle;font:Tahoma,9,bold antialias;"/>
+        <Static id="Static17" taborder="58" text="TextArea" left="0" top="374" width="125" height="164" style="background:#ebeff2ff;border:1 solid #ced5dfff ;color:#667f92ff;align:center middle;font:bold 9 Dotum;"/>
+        <Static id="Static19" taborder="59" left="124" top="374" width="962" height="164" style="background:#ffffffff;border:1 solid #c6c6c5ff ;align:center middle;font:Tahoma,9,bold antialias;"/>
+        <Static id="Static04" taborder="0" left="124" top="208" width="962" height="84" style="background:#ffffffff;border:1 solid #c6c6c5ff ;align:center middle;font:Tahoma,9,bold antialias;"/>
+        <Static id="Static03" taborder="1" left="124" top="66" width="962" height="143" style="background:#ffffffff;border:1 solid #c6c6c5ff ;align:center middle;font:Tahoma,9,bold antialias;"/>
+        <Static id="Static00" taborder="2" left="124" top="0" width="962" height="67" style="background:#ffffffff;border:1 solid #c6c6c5ff ;align:center middle;font:9 dotum;"/>
+        <Static id="Static39" taborder="3" left="329" top="23" width="450" height="21" style="border:1 dotted #b1c0cbff,0 none #808080;"/>
+        <Static id="Static40" taborder="4" left="339" top="15" width="397" height="35" style="border:0 none #808080ff,1 dotted #b1c0cbff;"/>
+        <Static id="Static28" taborder="5" text="* Static의 기본 높이를 20으로 지정, Static의 기본 스타일은 좌측 정렬" left="339" top="23" width="398" height="20" class="sta_WF_Info_Orange"/>
+        <Static id="Static26" taborder="6" text="Enabled" left="145" top="24" width="70" height="20" style="border:0 solid #808080 ;font:9 dotum;"/>
+        <Static id="Static18" taborder="7" text="Enabled" usedecorate="true" left="141" top="86" width="91" height="15" class="sta_WF_Info_Orange" style="border:0 solid #808080 ;font:8 Tahoma;"/>
+        <Static id="Static41" taborder="8" text="20" left="752" top="26" width="15" height="15" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static43" taborder="9" text="Disabled" enable="false" left="238" top="24" width="70" height="20" style="border:0 solid #808080 ;"/>
+        <Static id="Static05" taborder="17" text="Static" left="0" top="0" width="125" height="67" style="background:#ebeff2ff;border:1 solid #ced5dfff ;color:#667f92ff;align:center middle;font:bold 9 Dotum;"/>
+        <Static id="Static01" taborder="20" text="Edit" left="0" top="66" width="125" height="143" style="background:#ebeff2ff;border:1 solid #ced5dfff ;color:#667f92ff;align:center middle;font:bold 9 Dotum;"/>
+        <Static id="Static02" taborder="21" text="타이틀" left="0" top="208" width="125" height="84" style="background:#ebeff2ff;border:1 solid #ced5dfff ;color:#667f92ff;align:center middle;font:bold 9 Dotum;"/>
+        <Static id="Static07" taborder="25" text="sta_POP_tit" cssclass="sta_POP_tit" left="551" top="237" width="238" height="26" style="padding:0 0 0 30;"/>
+        <Static id="Static06" taborder="27" text="3depth title" cssclass="sta_WF_Title3" left="336" top="237" width="155" height="26" style="padding:0 0 0 30;"/>
+        <Static id="Static09" taborder="28" text="MaskEdit" left="0" top="291" width="125" height="84" style="background:#ebeff2ff;border:1 solid #ced5dfff ;color:#667f92ff;align:center middle;font:bold 9 Dotum;"/>
+        <Static id="Static10" taborder="29" left="124" top="291" width="962" height="84" style="background:#ffffffff;border:1 solid #c6c6c5ff ;align:center middle;font:Tahoma,9,bold antialias;"/>
+        <Edit id="Edit00" taborder="30" left="139" top="132" width="110" height="25"/>
+        <Edit id="Edit01" taborder="31" left="296" top="132" width="110" height="25"/>
+        <Static id="Static11" taborder="32" text="Mousover/Focused" usedecorate="true" left="282" top="86" width="158" height="15" style="border:0 solid #808080 ;font:8 Tahoma;" class="sta_WF_Info_Orange"/>
+        <Edit id="Edit02" taborder="33" left="458" top="132" width="110" height="25"/>
+        <Static id="Static12" taborder="34" text="Disabled" usedecorate="true" left="460" top="86" width="91" height="15" style="border:0 solid #808080 ;font:8 Tahoma;" class="sta_WF_Info_Orange" onclick="Static12_onclick"/>
+        <Edit id="Edit03" taborder="35" left="837" top="135" width="110" height="25" cssclass="edit_WF_Essential"/>
+        <Static id="Static13" taborder="36" text="필수" usedecorate="true" left="828" top="86" width="91" height="15" style="border:0 solid #808080 ;font:8 Tahoma;" class="sta_WF_Info_Orange"/>
+        <Edit id="Edit04" taborder="37" readonly="true" cssclass="input_readonly" left="603" top="132" width="145" height="25"/>
+        <Static id="Static38" taborder="39" left="748" top="132" width="24" height="25" style="border:1 dotted #b1c0cbff,0 none #808080;"/>
+        <Static id="Static42" taborder="40" text="H25" left="752" top="136" width="22" height="17" style="border:0 solid #808080 ;color:#b1c0cbff;font:8 Dotum;"/>
+        <Static id="Static14" taborder="41" text="Readonly" usedecorate="true" onclick="Static12_onclick" left="600" top="86" width="91" height="15" style="border:0 solid #808080 ;font:8 Tahoma;" class="sta_WF_Info_Orange"/>
+        <MaskEdit id="MaskEdit00" taborder="42" value="123,456" mask="#,###" left="139" top="330" width="145" height="25"/>
+        <MaskEdit id="MaskEdit01" taborder="43" value="123,456" mask="#,###" enable="false" left="305" top="330" width="145" height="25"/>
+        <MaskEdit id="MaskEdit02" taborder="44" value="123,456" readonly="true" mask="#,###" cssclass="input_readonly" left="477" top="330" width="145" height="25"/>
+        <Static id="Static20" taborder="45" text="enabled" left="142" top="305" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <Static id="Static21" taborder="46" text="disabled" left="306" top="305" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <Static id="Static22" taborder="47" text="readonly" left="474" top="305" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <Static id="Static15" taborder="48" text="* mask = &quot;#,###&quot;" cssclass="sta_WF_Info_Orange" left="648" top="333" width="151" height="15" class="sta_WF_Info_Orange" style="border:0 solid #808080 ;"/>
+        <MaskEdit id="MaskEdit03" taborder="49" value="1234567891" type="string" mask="###-##-#####" left="792" top="330" width="135" height="25" style="align:left middle;"/>
+        <Static id="Static49" taborder="50" text="type=string" left="793" top="311" width="145" height="13" style="border:0 solid #808080 ;color:#999999ff;align:left middle;font:8 Tahoma;"/>
+        <Static id="Static29" taborder="51" text="enabled" left="142" top="398" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <Static id="Static30" taborder="52" text="disabled" left="306" top="398" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <Static id="Static31" taborder="53" text="readonly" left="474" top="398" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <TextArea id="TextArea02" taborder="54" value="엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼" readonly="true" cssclass="input_readonly" left="477" top="423" width="150" height="93" style="bordertype:round 3 3 ;"/>
+        <TextArea id="TextArea01" taborder="55" value="엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼" enable="false" left="305" top="423" width="150" height="93"/>
+        <TextArea id="TextArea00" taborder="56" value="엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼 엑스플랫폼" left="139" top="423" width="150" height="93" style="linespace:4;"/>
+        <Static id="Static16" taborder="57" text="* wordwrap을 both로 지정" cssclass="sta_WF_Info_Orange" left="683" top="423" width="207" height="15" class="sta_WF_Info_Orange" style="border:0 solid #808080 ;"/>
+        <Static id="Static23" taborder="60" text="enabled" left="142" top="564" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <Static id="Static24" taborder="61" text="disabled" left="306" top="564" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <Static id="Static25" taborder="62" text="readonly" left="474" top="564" width="120" height="20" style="border:0 solid #808080 ;color:black;font:8 Tahoma;"/>
+        <Spin id="Spin02" taborder="63" value="0" readonly="true" cssclass="input_readonly" left="477" top="589" width="150" height="25"/>
+        <Spin id="Spin01" taborder="64" value="0" enable="false" left="305" top="589" width="150" height="25"/>
+        <Spin id="Spin00" taborder="65" value="0" onspin="Spin00_onspin" left="139" top="589" width="150" height="25"/>
+        <Static id="Static33" taborder="68" text="필수" usedecorate="true" left="946" top="309" width="91" height="15" style="border:0 solid #808080 ;font:8 Tahoma;" class="sta_WF_Info_Orange"/>
+        <Static id="Static34" taborder="70" text="필수" usedecorate="true" left="679" top="564" width="91" height="15" style="border:0 solid #808080 ;font:8 Tahoma;" class="sta_WF_Info_Orange"/>
+        <Static id="Static35" taborder="72" text="기타 title" cssclass="sta_WF_TitleEtc" left="843" top="237" width="83" height="26"/>
+        <Static id="Static36" taborder="73" text="2depth title" onclick="Static05_onclick" cssclass="sta_WF_Title2" left="139" top="232" width="181" height="35" style="padding:0 0 0 0;"/>
+        <MaskEdit id="MaskEdit04" taborder="74" value="1234567891" type="string" mask="###-##-#####" left="942" top="330" width="135" height="25" style="align:left middle;" cssclass="medit_WF_Essential"/>
+        <Spin id="Spin03" taborder="75" value="0" onspin="Spin00_onspin" left="680" top="589" width="150" height="25" cssclass="spin_WF_Essential"/>
+        <Static id="Static08" taborder="76" text="탭 속에 title" cssclass="sta_WF_Title_Intab" left="976" top="237" width="99" height="26"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+this.Static44_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+	
+}
+
+this.Static12_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+	
+}
+
+this.Static17_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+	
+}
+]]></Script>
+  </Form>
+</FDL>

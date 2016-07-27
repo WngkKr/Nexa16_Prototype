@@ -7,11 +7,11 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
-if (!nexacro.Device) {
+if (!nexacro.Device || nexacro.OS == "iOS") {
 	if (!nexacro._init_deviceobjs_api) {
 		nexacro._createFileDialogObject = nexacro._emptyFn;
 		nexacro._setFileDialogHandleDefaultExtension = nexacro._emptyFn;
@@ -49,7 +49,7 @@ if (!nexacro.Device) {
 		nexacro._setTopmostWidget = nexacro._emptyFn;
 	}
 
-	if (!nexacro.FileDialog) {
+	if (!nexacro.FileDialog && nexacro.OS != "iOS") {
 		nexacro.FileDialog = function (id, parent) {
 			this.id = this.name = id;
 			if (parent) {
@@ -331,9 +331,14 @@ if (!nexacro.Device) {
 	}
 }
 
-if (!nexacro.Device || nexacro.OS == "Android") {
+if (!nexacro.Device || nexacro.OS == "Android" || nexacro.OS == "iOS") {
 	if (!nexacro.VirtualFile) {
 		nexacro.VirtualFile = function (id, parent) {
+			if (nexacro.OS == "iOS") {
+				this._id = nexacro.Device.makeID();
+				nexacro.Device._userCreatedObj[this._id] = this;
+			}
+
 			this.id = this.name = id;
 			if (parent) {
 				this.parent = parent;
@@ -355,6 +360,12 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 			this.onerror = null;
 
 			this._handle = nexacro._createVirtualFileObject(this);
+
+			if (nexacro.OS == "iOS") {
+				var params = '{"strFilename":"' + this.filename + '","fullpath":"' + this.fullpath + '","path":"' + this.path + '"}';
+				var jsonstr = '{"id":' + this._id + ', "div":"VirtualFile", "method":"constructor", "params":' + params + '}';
+				nexacro.Device.exec(jsonstr);
+			}
 		};
 
 		nexacro.VirtualFile.openRead = 0x0001;
@@ -385,6 +396,15 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 			}
 			if (this._handle) {
 				this._handle = null;
+			}
+
+			if (nexacro.OS == "iOS") {
+				var params = '""';
+				var jsonstr;
+
+				delete nexacro.Device._userCreatedObj[this._id];
+				jsonstr = '{"id":' + this._id + ', "div":"VirtualFile", "method":"destroy", "params":' + params + '}';
+				nexacro.Device.exec(jsonstr);
 			}
 
 			return true;
@@ -423,10 +443,10 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 			}
 		};
 		_pVirtualFile.set_async = function (v) {
-			if (v == "true" || v == "false" || v == true || v == false) {
+			if (v == "true" || v == "false" || v == true || v == false || nexacro.OS != "iOS") {
 				v = nexacro._toBoolean(v);
 				this.async = v;
-				v = nexacro._toBoolean(v);
+
 				nexacro._setVirtualFileHandleAsync(this, v);
 				return true;
 			}
@@ -441,7 +461,6 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 
 		_pVirtualFile.open = function (strFileName, nOptions) {
 			var nConstOptions = "";
-			var nFiletype = "";
 			var fullpath = "";
 
 			if (strFileName == null) {
@@ -484,12 +503,42 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 			if (this._handle) {
 				nexacro._openVirtualFileHandle(this, strFileName, nConstOptions);
 			}
+
+			if (nexacro.OS == "iOS") {
+				var iosfilepath = "";
+				var rootPathCheck = fullpath.substring(0, 9);
+
+				if (rootPathCheck.toLowerCase() == "%userapp%") {
+					iosfilepath = "_userapp_" + fullpath.substring(9, fullpath.length);
+				}
+				else {
+					var _filecache = application._getFileCache(strFileName);
+					if (null != _filecache) {
+						iosfilepath = "_userapp_" + _filecache;
+					}
+					else {
+						iosfilepath = strFileName;
+					}
+				}
+				this.strFilename = iosfilepath;
+
+				var params = "";
+				params = '{"strFilename":"' + this.strFilename + '","nOptions":"' + nConstOptions + '"}';
+
+				var jsonstr = '{"id":' + this._id + ', "div":"VirtualFile", "method":"open", "params":' + params + '}';
+				nexacro.Device.exec(jsonstr);
+			}
 			return true;
 		};
 
 		_pVirtualFile.close = function () {
 			if (this._handle) {
 				nexacro._closeVirtualFileHandle(this);
+			}
+			if (nexacro.OS == "iOS") {
+				var params = '""';
+				var jsonstr = '{"id":' + this._id + ', "div":"VirtualFile", "method":"close", "params":' + params + '}';
+				nexacro.Device.exec(jsonstr);
 			}
 		};
 		_pVirtualFile.read = function (nLength, strCharset) {
@@ -511,6 +560,16 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 			if (this._handle) {
 				nexacro._readVirtualFileHandle(this, _nLen, _strCharset);
 			}
+
+			if (nexacro.OS == "iOS") {
+				var params = '{  "nLength":"' + _nLen;
+				params += '", "strCharset":"' + _strCharset;
+				params += '"}';
+
+				var jsonstr = '{"id":' + this._id + ', "div":"VirtualFile", "method":"read", "params":' + params + '}';
+				nexacro.Device.exec(jsonstr);
+			}
+
 			return true;
 		};
 		_pVirtualFile.readLine = function (strDelimeter, strCharset) {
@@ -529,6 +588,15 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 
 			if (this._handle) {
 				nexacro._readlineVirtualFileHandle(this, _strDelimeter, _strCharset);
+			}
+
+			if (nexacro.OS == "iOS") {
+				var params = '{  "strDelimeter":"' + _strDelimeter;
+				params += '", "strCharset":"' + _strCharset;
+				params += '"}';
+
+				var jsonstr = '{"id":' + this._id + ', "div":"VirtualFile", "method":"readLine", "params":' + params + '}';
+				nexacro.Device.exec(jsonstr);
 			}
 			return true;
 		};
@@ -551,6 +619,14 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 			if (this._handle) {
 				nexacro._seekVirtualFileHandle(this, _nOffset, _nOption);
 			}
+
+			if (nexacro.OS == "iOS") {
+				var params = '{  "nOffset":"' + _nOffset;
+				params += '", "nOption":"' + _nOption;
+				params += '"}';
+				var jsonstr = '{"id":' + this._id + ', "div":"VirtualFile", "method":"seek", "params":' + params + '}';
+				nexacro.Device.exec(jsonstr);
+			}
 			return true;
 		};
 		_pVirtualFile.write = function (varData, strCharset) {
@@ -566,6 +642,14 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 
 			if (this._handle) {
 				nexacro._writeVirtualFileHandle(this, _varData, _strCharset);
+			}
+
+			if (nexacro.OS == "iOS") {
+				var params = '{  "varData":"' + _varData;
+				params += '", "strCharset":"' + _strCharset;
+				params += '"}';
+				var jsonstr = '{"id":' + this._id + ', "div":"VirtualFile", "method":"write", "params":' + params + '}';
+				nexacro.Device.exec(jsonstr);
 			}
 			return true;
 		};
@@ -583,6 +667,31 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 
 			if (this._handle) {
 				nexacro._removeVirtualFileHandle(this, _strFilePath);
+			}
+
+			if (nexacro.OS == "iOS") {
+				var deletetPath = "";
+				var rootPathCheck = "";
+				var iosfilepath = "";
+
+				rootPathCheck = _strFilePath.substring(0, 9);
+				if (rootPathCheck.toLowerCase() == "%userapp%") {
+					iosfilepath = "_userapp_" + _strFilePath.substring(9, _strFilePath.length);
+				}
+				else {
+					var _filecache = application._getFileCache(strFilePath);
+					if (null != _filecache) {
+						iosfilepath = "_userapp_" + _filecache;
+					}
+					else {
+						return false;
+					}
+				}
+				deletetPath = iosfilepath;
+
+				var params = '{"strFilePath":"' + deletetPath + '"}';
+				var jsonstr = '{"id":' + this._id + ',"div":"VirtualFile", "method":"remove", "params":' + params + '}';
+				nexacro.Device.exec(jsonstr);
 			}
 			return true;
 		};
@@ -606,6 +715,14 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 			if (this._handle) {
 				nexacro._getFileListVirtualFileHandle(this, _strPath, _strSearchExpr, nConstOptions);
 			}
+
+			if (nexacro.OS == "iOS") {
+				var params = '{"strPath":"' + _strPath + '" ,"strSearchExpr":"' + _strSearchExpr
+					 + '","constOption":"' + nConstOptions + '"}';
+
+				var jsonstr = '{"id":' + this._id + ', "div":"VirtualFile", "method":"getFileList", "params":' + params + '}';
+				nexacro.Device.exec(jsonstr);
+			}
 			return true;
 		};
 		_pVirtualFile.getFileSize = function () {
@@ -622,6 +739,20 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 					ret = this._ref_file.size;
 				}
 			}
+
+			if (nexacro.OS == "iOS") {
+				var params;
+				var iosfilepath = "";
+				var rootPathCheck = this.fullpath.substring(0, 9);
+				if (rootPathCheck.toLowerCase() == "%userapp%") {
+					iosfilepath = "_userapp_" + this.fullpath.substring(9, this.fullpath.length);
+				}
+
+				params = '{  "strPath":"' + iosfilepath + '"}';
+				var jsonstr = '{"id":' + this._id + ', "div":"VirtualFile", "method":"getFileSize", "params":' + params + '}';
+				nexacro.Device.exec(jsonstr);
+			}
+
 			return ret;
 		};
 		_pVirtualFile.isExist = function (strPath) {
@@ -631,6 +762,12 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 
 			if (this._handle) {
 				nexacro._isExistVirtualFileHandle(this, strPath);
+			}
+
+			if (nexacro.OS == "iOS") {
+				var params = '{  "strPath":"' + strPath + '"}';
+				var jsonstr = '{"id":' + this._id + ', "div":"VirtualFile", "method":"isExist", "params":' + params + '}';
+				nexacro.Device.exec(jsonstr);
 			}
 			return true;
 		};
@@ -645,7 +782,7 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 			}
 			else if (arguments.length == 2) {
 				this.strPath = strPath;
-				this.bAllCreate = bAllCreate;
+				this.bAllCreate = nexacro._toBoolean(bAllCreate);
 			}
 			else {
 				return false;
@@ -653,6 +790,23 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 
 			if (this._handle) {
 				nexacro._createDirectoryVirtualFileHandle(this, strPath, this.bAllCreate);
+			}
+
+			if (nexacro.OS == "iOS") {
+				var strInitialPath = "";
+				var strDestPath = "";
+				var rootPathCheck = strPath.substring(0, 9);
+
+				if (rootPathCheck.toLowerCase() == "%userapp%") {
+					strInitialPath = "_userapp_" + strPath.substring(9, strPath.length);
+				}
+				else {
+					return false;
+				}
+				var params = '{  "strPath":"' + strInitialPath
+					 + '","bAllCreate":"' + this.bAllCreate + '"}';
+				var jsonstr = '{"id":' + this._id + ', "div":"VirtualFile", "method":"createDirectory", "params":' + params + '}';
+				nexacro.Device.exec(jsonstr);
 			}
 			return true;
 		};
@@ -667,7 +821,7 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 			}
 			else if (arguments.length == 2) {
 				this.strPath = strPath;
-				this.bAllChild = bAllChild;
+				this.bAllChild = nexacro._toBoolean(bAllChild);
 			}
 			else {
 				return false;
@@ -675,6 +829,22 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 
 			if (this._handle) {
 				nexacro._deleteDirectoryVirtualFileHandle(this, strPath, this.bAllChild);
+			}
+
+			if (nexacro.OS == "iOS") {
+				var strInitialPath = "";
+				var rootPathCheck = strPath.substring(0, 9);
+				if (rootPathCheck.toLowerCase() == "%userapp%") {
+					strInitialPath = "_userapp_" + strPath.substring(9, strPath.length);
+				}
+				else {
+					return false;
+				}
+
+				var params = '{  "strPath":"' + strInitialPath
+					 + '","bAllChild":"' + this.bAllChild + '"}';
+				var jsonstr = '{"id":' + this._id + ', "div":"VirtualFile", "method":"deleteDirectory", "params":' + params + '}';
+				nexacro.Device.exec(jsonstr);
 			}
 			return true;
 		};
@@ -691,13 +861,18 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 				return false;
 			}
 
-
-
 			this.strPath = strPath;
 			this.strNewName = strNewName;
 
 			if (this._handle) {
 				nexacro._renameDirectoryVirtualFileHandle(this, strPath, strNewName);
+			}
+
+			if (nexacro.OS == "iOS") {
+				var params = '{  "strPath":"' + strPath
+					 + '","strNewName":"' + strNewName + '"}';
+				var jsonstr = '{"id":' + this._id + ', "div":"VirtualFile", "method":"renameDirectory", "params":' + params + '}';
+				nexacro.Device.exec(jsonstr);
 			}
 			return true;
 		};
@@ -741,6 +916,46 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 			this.on_fire_onsuccess(this, e);
 		};
 
+		_pVirtualFile._onsuccess = function (objData) {
+			var _textdata = "";
+			var _bindata = "";
+			var temptxtlen = 0;
+			var tempbinlen = 0;
+
+			if (objData.textdata) {
+				temptxtlen = objData.textdata.length;
+			}
+			if (objData.binarydata) {
+				tempbinlen = objData.binarydata.length;
+			}
+
+			if (temptxtlen > 0) {
+				_textdata = objData.textdata.replace(/\&amp\;/g, "&");
+				_textdata = _textdata.replace(/\&lt\;/g, "<");
+				_textdata = _textdata.replace(/\&gt\;/g, ">");
+				_textdata = _textdata.replace(/\&quot\;/g, "\"");
+				_textdata = _textdata.replace(/\&apos\;/g, "'");
+				_textdata = _textdata.replace(/\&\#32\;/g, " ");
+				_textdata = _textdata.replace(/\&\#13\;/g, "\r");
+				_textdata = _textdata.replace(/\&\#10\;/g, "\n");
+				_textdata = _textdata.replace(/\&\#9\;/g, "\t");
+			}
+			else if (tempbinlen > 0) {
+				_bindata = objData.binarydata.replace(/\&amp\;/g, "&");
+				_bindata = _bindata.replace(/\&lt\;/g, "<");
+				_bindata = _bindata.replace(/\&gt\;/g, ">");
+				_bindata = _bindata.replace(/\&quot\;/g, "\"");
+				_bindata = _bindata.replace(/\&apos\;/g, "'");
+				_bindata = _bindata.replace(/\&\#32\;/g, " ");
+				_bindata = _bindata.replace(/\&\#13\;/g, "\r");
+				_bindata = _bindata.replace(/\&\#10\;/g, "\n");
+				_bindata = _bindata.replace(/\&\#9\;/g, "\t");
+			}
+
+			var e = new nexacro.VirtualFileEventInfo("onsuccess", objData.reason, _textdata, _bindata, eval(objData.fileattributelist), objData.filesize, objData.fileisexist);
+			this.on_fire_onsuccess(this, e);
+		};
+
 		_pVirtualFile.on_fire_onsuccess = function (objAsyncVFile, eAsyncVFileEventInfo) {
 			if (this.onsuccess && this.onsuccess._has_handlers) {
 				return this.onsuccess._fireEvent(this, eAsyncVFileEventInfo);
@@ -753,11 +968,20 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 			this.on_fire_onerror(this, e);
 		};
 
+		_pVirtualFile._onerror = function (objData) {
+			var e = new nexacro.VirtualFileErrorEventInfo("onerror", objData.errorcode, objData.errormsg);
+			this.on_fire_onerror(this, e);
+		};
+
 		_pVirtualFile.on_fire_onerror = function (objAsyncVFile, eAsyncVFileErrorEventInfo) {
 			if (this.onerror && this.onerror._has_handlers) {
 				return this.onerror._fireEvent(this, eAsyncVFileErrorEventInfo);
 			}
 			return true;
+		};
+
+		_pVirtualFile.toJSON = function () {
+			return eval('({"filename":"' + this.filename + '","fullpath":"' + this.fullpath + '","path":"' + this.path + '"})');
 		};
 
 		_pVirtualFile.paramck_folderName = function (strName) {
@@ -909,18 +1133,32 @@ if (!nexacro.Device || nexacro.OS == "Android") {
 			this.binarydata = strBinarydata;
 
 
-			var jsonObject = eval('(' + strFilelist + ')');
-			if (jsonObject == undefined) {
-				this.fileattributelist = "";
+			if (nexacro.OS == "iOS") {
+				if (typeof (strFilelist) != "undefined") {
+					var tempArr = new Array(strFilelist.length);
+					for (var i = 0; i < strFilelist.length; i++) {
+						tempArr[i] = new nexacro.FileAttribute(strFilelist[i]);
+					}
+					this.fileattributelist = tempArr;
+				}
+				else {
+					this.fileattributelist = "";
+				}
 			}
 			else {
-				var fileattrlist = jsonObject.fileattrlist;
-				var tempArr = new Array(fileattrlist.length);
-
-				for (var i = 0; i < fileattrlist.length; i++) {
-					tempArr[i] = new nexacro.FileAttribute(fileattrlist[i]);
+				var jsonObject = eval('(' + strFilelist + ')');
+				if (jsonObject == undefined) {
+					this.fileattributelist = "";
 				}
-				this.fileattributelist = tempArr;
+				else {
+					var fileattrlist = jsonObject.fileattrlist;
+					var tempArr = new Array(fileattrlist.length);
+
+					for (var i = 0; i < fileattrlist.length; i++) {
+						tempArr[i] = new nexacro.FileAttribute(fileattrlist[i]);
+					}
+					this.fileattributelist = tempArr;
+				}
 			}
 			this.filesize = strFilesize;
 			this.fileisexist = strExist;

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="SAM014" classname="SAM014" left="0" top="0" width="773" height="400" titletext="콤보, search, filter 기능">
+    <Layouts>
+      <Layout>
+        <Combo id="Combo00" taborder="4" displaynulltext="combo" innerdataset="@ds_data" codecolumn="code" datacolumn="data" left="80" top="64" width="150" height="20"/>
+        <Static id="Static00" taborder="5" text="Search" left="96" top="24" width="126" height="28"/>
+        <Combo id="Combo02" taborder="6" displaynulltext="filter" innerdataset="@ds_data" codecolumn="code" datacolumn="data" type="filter" left="504" top="64" width="150" height="20"/>
+        <Static id="Static02" taborder="7" text="filter" left="512" top="24" width="126" height="28"/>
+        <Combo id="Combo01" taborder="8" displaynulltext="search" innerdataset="@ds_data" codecolumn="code" datacolumn="data" type="search" left="272" top="64" width="150" height="20"/>
+        <Static id="Static01" taborder="9" text="Search" left="288" top="24" width="126" height="28"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_data">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="data" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">1</Col>
+            <Col id="data">가</Col>
+          </Row>
+          <Row>
+            <Col id="code">2</Col>
+            <Col id="data">가나다</Col>
+          </Row>
+          <Row>
+            <Col id="code">3</Col>
+            <Col id="data">나다</Col>
+          </Row>
+          <Row>
+            <Col id="code">4</Col>
+            <Col id="data">나다라마사</Col>
+          </Row>
+          <Row>
+            <Col id="code">5</Col>
+            <Col id="data">가나다라마바</Col>
+          </Row>
+          <Row>
+            <Col id="code">6</Col>
+            <Col id="data">마바사</Col>
+          </Row>
+          <Row>
+            <Col id="code">7</Col>
+            <Col id="data">나다라</Col>
+          </Row>
+          <Row>
+            <Col id="code">8</Col>
+            <Col id="data">ㄱㄴㄷㄹ</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

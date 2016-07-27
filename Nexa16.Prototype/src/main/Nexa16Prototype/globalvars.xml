@@ -1,0 +1,1239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GlobalVariables>
+  <Dataset id="GDS_USER_INFO"/>
+  <Dataset id="GDS_MESSAGE">
+    <ColumnInfo>
+      <Column id="MSG_ID" type="STRING" size="9"/>
+      <Column id="MSG_TYPE_CD" type="STRING" size="1"/>
+      <Column id="MSG_TITLE" type="STRING" size="256"/>
+      <Column id="MSG_NAME" type="STRING" size="256"/>
+      <Column id="NOTE_MATT" type="STRING" size="256"/>
+    </ColumnInfo>
+    <Rows>
+      <Row>
+        <Col id="MSG_ID">info</Col>
+        <Col id="MSG_TYPE_CD">I</Col>
+        <Col id="MSG_TITLE">알림</Col>
+        <Col id="MSG_NAME">${}</Col>
+        <Col id="NOTE_MATT">OK</Col>
+      </Row>
+      <Row>
+        <Col id="MSG_ID">ok</Col>
+        <Col id="MSG_TYPE_CD">Q</Col>
+        <Col id="MSG_TITLE">확인</Col>
+        <Col id="MSG_NAME">${}</Col>
+        <Col id="NOTE_MATT">YES,NO</Col>
+      </Row>
+      <Row>
+        <Col id="MSG_ID">err</Col>
+        <Col id="MSG_TYPE_CD">E</Col>
+        <Col id="MSG_TITLE">오류</Col>
+        <Col id="MSG_NAME">${} 필수입력 항목입니다.</Col>
+        <Col id="NOTE_MATT">OK</Col>
+      </Row>
+      <Row>
+        <Col id="MSG_ID">1033</Col>
+        <Col id="MSG_TYPE_CD">Q</Col>
+        <Col id="MSG_TITLE">업무메뉴 생성정보</Col>
+        <Col id="MSG_NAME">동일한 업무 메뉴가 이미 열려있습니다.\n\n새로운 업무영역(패널)을 여시겠습니까?</Col>
+        <Col id="NOTE_MATT">YES,NO</Col>
+      </Row>
+      <Row>
+        <Col id="MSG_ID">1034</Col>
+        <Col id="MSG_TYPE_CD">Q</Col>
+        <Col id="MSG_TITLE">업무메뉴 종료정보</Col>
+        <Col id="MSG_NAME">현재 실행중인 모든 업무 메뉴를\n\n종료하시겠습니까?</Col>
+        <Col id="NOTE_MATT">YES,NO</Col>
+      </Row>
+      <Row>
+        <Col id="MSG_ID">1035</Col>
+        <Col id="MSG_TYPE_CD">I</Col>
+        <Col id="MSG_TITLE">알림</Col>
+        <Col id="MSG_NAME"/>
+        <Col id="NOTE_MATT">OK</Col>
+      </Row>
+      <Row>
+        <Col id="MSG_ID">1036</Col>
+        <Col id="MSG_TYPE_CD">I</Col>
+        <Col id="MSG_TITLE">알림</Col>
+        <Col id="MSG_NAME"/>
+        <Col id="NOTE_MATT">OK</Col>
+      </Row>
+      <Row>
+        <Col id="MSG_ID">UFRMI9999</Col>
+        <Col id="MSG_TYPE_CD">I</Col>
+        <Col id="MSG_TITLE">알림</Col>
+        <Col id="MSG_NAME">지금은 통합UI 사용제한 시간입니다.\n사용가능시간 : [${} ~ ${}] \n통합UI가 종료됩니다.</Col>
+        <Col id="NOTE_MATT">OK</Col>
+      </Row>
+      <Row>
+        <Col id="MSG_ID">err_msg</Col>
+        <Col id="MSG_TYPE_CD">E</Col>
+        <Col id="MSG_TITLE">오휴</Col>
+        <Col id="MSG_NAME"/>
+        <Col id="NOTE_MATT">OK</Col>
+      </Row>
+      <Row>
+        <Col id="MSG_ID">ok_msg</Col>
+        <Col id="MSG_TYPE_CD">Q</Col>
+        <Col id="MSG_TITLE">확인</Col>
+        <Col id="MSG_NAME"/>
+        <Col id="NOTE_MATT">YES,NO</Col>
+      </Row>
+    </Rows>
+  </Dataset>
+  <Dataset id="GDS_MENU">
+    <ColumnInfo>
+      <Column id="GROUP_CD" type="STRING" size="256"/>
+      <Column id="MENU_CD" type="STRING" size="256"/>
+      <Column id="MENU_NM" type="STRING" size="256"/>
+      <Column id="ENG_MENU_NM" type="STRING" size="256"/>
+      <Column id="PGM_ID" type="STRING" size="256"/>
+      <Column id="UP_CD" type="STRING" size="256"/>
+      <Column id="ORDER_SEQ" type="STRING" size="256"/>
+      <Column id="CD_LEV" type="STRING" size="256"/>
+      <Column id="LOW_YN" type="STRING" size="256"/>
+      <Column id="USE_YN" type="STRING" size="256"/>
+    </ColumnInfo>
+    <Rows>
+      <Row>
+        <Col id="GROUP_CD">10</Col>
+        <Col id="MENU_CD">1000000</Col>
+        <Col id="MENU_NM">Lexpeed</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">0</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">1</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">10</Col>
+        <Col id="MENU_CD">1010000</Col>
+        <Col id="MENU_NM">사내소식</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">Lex::LEX040100.xfdl</Col>
+        <Col id="UP_CD">1000000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">10</Col>
+        <Col id="MENU_CD">1020000</Col>
+        <Col id="MENU_NM">규정/매뉴얼</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">1000000</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">10</Col>
+        <Col id="MENU_CD">1020100</Col>
+        <Col id="MENU_NM">회사규정집/매뉴얼</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">Lex::LEX010100.xfdl</Col>
+        <Col id="UP_CD">1020000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">10</Col>
+        <Col id="MENU_CD">1020200</Col>
+        <Col id="MENU_NM">파트너쉽 규약</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">Lex::LEX010200.xfdl</Col>
+        <Col id="UP_CD">1020000</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">10</Col>
+        <Col id="MENU_CD">1020300</Col>
+        <Col id="MENU_NM">표준프로세스</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">1020000</Col>
+        <Col id="ORDER_SEQ">3</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">10</Col>
+        <Col id="MENU_CD">1030000</Col>
+        <Col id="MENU_NM">Knowledge Depot</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">Lex::LEX020100.xfdl</Col>
+        <Col id="UP_CD">1000000</Col>
+        <Col id="ORDER_SEQ">3</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">10</Col>
+        <Col id="MENU_CD">1040000</Col>
+        <Col id="MENU_NM">행사정보</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">Lex::LEX040100.xfdl</Col>
+        <Col id="UP_CD">1000000</Col>
+        <Col id="ORDER_SEQ">4</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">10</Col>
+        <Col id="MENU_CD">1050000</Col>
+        <Col id="MENU_NM">인사정보</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">INSA::insainfo00</Col>
+        <Col id="UP_CD">1000000</Col>
+        <Col id="ORDER_SEQ">5</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">10</Col>
+        <Col id="MENU_CD">1050100</Col>
+        <Col id="MENU_NM">임직원 현황</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">BizMgnt::BIZMGNT01_Tab02.xfdl</Col>
+        <Col id="UP_CD">1050000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">10</Col>
+        <Col id="MENU_CD">1050200</Col>
+        <Col id="MENU_NM">인사조회</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">1050000</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">10</Col>
+        <Col id="MENU_CD">1050300</Col>
+        <Col id="MENU_NM">비상연락망</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">1050000</Col>
+        <Col id="ORDER_SEQ">3</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">10</Col>
+        <Col id="MENU_CD">1050400</Col>
+        <Col id="MENU_NM">베트남지사</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">1050000</Col>
+        <Col id="ORDER_SEQ">4</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">10</Col>
+        <Col id="MENU_CD">1060000</Col>
+        <Col id="MENU_NM">신청/예약</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">1000000</Col>
+        <Col id="ORDER_SEQ">6</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">10</Col>
+        <Col id="MENU_CD">1060100</Col>
+        <Col id="MENU_NM">회의실예약</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">1060000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">10</Col>
+        <Col id="MENU_CD">1060200</Col>
+        <Col id="MENU_NM">도서대여</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">Lex::LEX110301.xfdl</Col>
+        <Col id="UP_CD">1060000</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">10</Col>
+        <Col id="MENU_CD">1060300</Col>
+        <Col id="MENU_NM">차량예약</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">Lex::LEX120100.xfdl</Col>
+        <Col id="UP_CD">1060000</Col>
+        <Col id="ORDER_SEQ">3</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">20</Col>
+        <Col id="MENU_CD">2000000</Col>
+        <Col id="MENU_NM">전자결재</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">0</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">1</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">20</Col>
+        <Col id="MENU_CD">2010000</Col>
+        <Col id="MENU_NM">결재함</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">2000000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">20</Col>
+        <Col id="MENU_CD">2020000</Col>
+        <Col id="MENU_NM">품의/보고</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">EAPPROVAL::E_Approval01.xfdl</Col>
+        <Col id="UP_CD">2000000</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">20</Col>
+        <Col id="MENU_CD">2030000</Col>
+        <Col id="MENU_NM">출장/연수</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">EAPPROVAL::E_Approval02.xfdl</Col>
+        <Col id="UP_CD">2000000</Col>
+        <Col id="ORDER_SEQ">3</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">20</Col>
+        <Col id="MENU_CD">2040000</Col>
+        <Col id="MENU_NM">휴가신청</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">EAPPROVAL::E_Approval03.xfdl</Col>
+        <Col id="UP_CD">2000000</Col>
+        <Col id="ORDER_SEQ">4</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">20</Col>
+        <Col id="MENU_CD">2050000</Col>
+        <Col id="MENU_NM">공문대장</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">EAPPROVAL::E_Approval04.xfdl</Col>
+        <Col id="UP_CD">2000000</Col>
+        <Col id="ORDER_SEQ">5</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">20</Col>
+        <Col id="MENU_CD">2050100</Col>
+        <Col id="MENU_NM">수신대장</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">SAM::SAM003.xfdl</Col>
+        <Col id="UP_CD">2050000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">20</Col>
+        <Col id="MENU_CD">2050200</Col>
+        <Col id="MENU_NM">발신대장</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">SAM::SAM004.xfdl</Col>
+        <Col id="UP_CD">2050000</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">20</Col>
+        <Col id="MENU_CD">2060000</Col>
+        <Col id="MENU_NM">지출품의</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">SAM::SAM005.xfdl</Col>
+        <Col id="UP_CD">2000000</Col>
+        <Col id="ORDER_SEQ">6</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">20</Col>
+        <Col id="MENU_CD">2060100</Col>
+        <Col id="MENU_NM">지출품의</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">EAPPROVAL::E_Approval05.xfdl</Col>
+        <Col id="UP_CD">2060000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">20</Col>
+        <Col id="MENU_CD">2060200</Col>
+        <Col id="MENU_NM">사용내역</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">EAPPROVAL::E_Approval05_Detl.xfdl</Col>
+        <Col id="UP_CD">2060000</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">30</Col>
+        <Col id="MENU_CD">3000000</Col>
+        <Col id="MENU_NM">Fund/LP</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">0</Col>
+        <Col id="ORDER_SEQ">3</Col>
+        <Col id="CD_LEV">1</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">30</Col>
+        <Col id="MENU_CD">3010000</Col>
+        <Col id="MENU_NM">펀드통합정보</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">FundLP::FUND010100.xfdl</Col>
+        <Col id="UP_CD">3000000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">40</Col>
+        <Col id="MENU_CD">4000000</Col>
+        <Col id="MENU_NM">Deal/Portfolio</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">0</Col>
+        <Col id="ORDER_SEQ">4</Col>
+        <Col id="CD_LEV">1</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">40</Col>
+        <Col id="MENU_CD">4010000</Col>
+        <Col id="MENU_NM">Deal Flow</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">4000000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">40</Col>
+        <Col id="MENU_CD">4020000</Col>
+        <Col id="MENU_NM">Portfolio</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">4000000</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">40</Col>
+        <Col id="MENU_CD">4020100</Col>
+        <Col id="MENU_NM">통합정보</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">4020000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">40</Col>
+        <Col id="MENU_CD">4020200</Col>
+        <Col id="MENU_NM">행사일정</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">4020000</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">50</Col>
+        <Col id="MENU_CD">5000000</Col>
+        <Col id="MENU_NM">경영자정보</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">0</Col>
+        <Col id="ORDER_SEQ">5</Col>
+        <Col id="CD_LEV">1</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">50</Col>
+        <Col id="MENU_CD">5010000</Col>
+        <Col id="MENU_NM">펀드통합정보</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">5000000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">50</Col>
+        <Col id="MENU_CD">5020000</Col>
+        <Col id="MENU_NM">Deal Flow</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">5000000</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">50</Col>
+        <Col id="MENU_CD">5030000</Col>
+        <Col id="MENU_NM">업체매출현황</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">5000000</Col>
+        <Col id="ORDER_SEQ">3</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">50</Col>
+        <Col id="MENU_CD">5040000</Col>
+        <Col id="MENU_NM">투자기업권리 및 실적현황</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">5000000</Col>
+        <Col id="ORDER_SEQ">4</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">50</Col>
+        <Col id="MENU_CD">5050000</Col>
+        <Col id="MENU_NM">임직원 겸임현황</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">5000000</Col>
+        <Col id="ORDER_SEQ">5</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">50</Col>
+        <Col id="MENU_CD">5060000</Col>
+        <Col id="MENU_NM">핵심운용인력 및 투심위원현황</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">5000000</Col>
+        <Col id="ORDER_SEQ">6</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">50</Col>
+        <Col id="MENU_CD">5070000</Col>
+        <Col id="MENU_NM">경영실적</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">5000000</Col>
+        <Col id="ORDER_SEQ">7</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">50</Col>
+        <Col id="MENU_CD">5080000</Col>
+        <Col id="MENU_NM">회의록</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">5000000</Col>
+        <Col id="ORDER_SEQ">8</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6000000</Col>
+        <Col id="MENU_NM">지원/관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">0</Col>
+        <Col id="ORDER_SEQ">6</Col>
+        <Col id="CD_LEV">1</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6010000</Col>
+        <Col id="MENU_NM">펀드관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6000000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6010100</Col>
+        <Col id="MENU_NM">펀드정보</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6010000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6010200</Col>
+        <Col id="MENU_NM">출자/배분</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6010000</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6010300</Col>
+        <Col id="MENU_NM">SPC</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6010000</Col>
+        <Col id="ORDER_SEQ">3</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6020000</Col>
+        <Col id="MENU_NM">업체관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6000000</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6020100</Col>
+        <Col id="MENU_NM">업체정보관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6020000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6020200</Col>
+        <Col id="MENU_NM">매매내역현황</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6020000</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6020300</Col>
+        <Col id="MENU_NM">투자내역관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6020000</Col>
+        <Col id="ORDER_SEQ">3</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6020400</Col>
+        <Col id="MENU_NM">종목관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6020000</Col>
+        <Col id="ORDER_SEQ">4</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6020500</Col>
+        <Col id="MENU_NM">평가관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6020000</Col>
+        <Col id="ORDER_SEQ">5</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6020600</Col>
+        <Col id="MENU_NM">일정관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6020000</Col>
+        <Col id="ORDER_SEQ">6</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6020700</Col>
+        <Col id="MENU_NM">분기별업체현황 입력현황</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6020000</Col>
+        <Col id="ORDER_SEQ">7</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6020800</Col>
+        <Col id="MENU_NM">월별업체현황 입력현황</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6020000</Col>
+        <Col id="ORDER_SEQ">8</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6030000</Col>
+        <Col id="MENU_NM">LP관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6000000</Col>
+        <Col id="ORDER_SEQ">3</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6040000</Col>
+        <Col id="MENU_NM">인사관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6000000</Col>
+        <Col id="ORDER_SEQ">4</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6040100</Col>
+        <Col id="MENU_NM">인사정보</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">INSA::insacard00.xfdl</Col>
+        <Col id="UP_CD">6040000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6040200</Col>
+        <Col id="MENU_NM">발령정보</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">INSA::appoint00.xfdl</Col>
+        <Col id="UP_CD">6040000</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6040300</Col>
+        <Col id="MENU_NM">조직관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">INSA::jojic00.xfdl</Col>
+        <Col id="UP_CD">6040000</Col>
+        <Col id="ORDER_SEQ">3</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6040400</Col>
+        <Col id="MENU_NM">비상연락망</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6040000</Col>
+        <Col id="ORDER_SEQ">4</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6040500</Col>
+        <Col id="MENU_NM">인원현황</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">INSA::member00.xfdl</Col>
+        <Col id="UP_CD">6040000</Col>
+        <Col id="ORDER_SEQ">5</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6040600</Col>
+        <Col id="MENU_NM">주주현황</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6040000</Col>
+        <Col id="ORDER_SEQ">6</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6050000</Col>
+        <Col id="MENU_NM">성과관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6000000</Col>
+        <Col id="ORDER_SEQ">5</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6050100</Col>
+        <Col id="MENU_NM">심사역</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6050000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6050200</Col>
+        <Col id="MENU_NM">성과평가</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6050000</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6060000</Col>
+        <Col id="MENU_NM">지출관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6000000</Col>
+        <Col id="ORDER_SEQ">6</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6060100</Col>
+        <Col id="MENU_NM">법인카드 발급</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6060000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6060200</Col>
+        <Col id="MENU_NM">지출내역</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6060000</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6070000</Col>
+        <Col id="MENU_NM">도서관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6000000</Col>
+        <Col id="ORDER_SEQ">7</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6080000</Col>
+        <Col id="MENU_NM">문서고관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6000000</Col>
+        <Col id="ORDER_SEQ">8</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6090000</Col>
+        <Col id="MENU_NM">차량관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">Lex::LEX120600.xfdl</Col>
+        <Col id="UP_CD">6000000</Col>
+        <Col id="ORDER_SEQ">9</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6100000</Col>
+        <Col id="MENU_NM">재물관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">6000000</Col>
+        <Col id="ORDER_SEQ">10</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6100100</Col>
+        <Col id="MENU_NM">재물관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">Lex::LEX140100.xfdl</Col>
+        <Col id="UP_CD">6100000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6100200</Col>
+        <Col id="MENU_NM">재물코드관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">Lex::LEX140101.xfdl</Col>
+        <Col id="UP_CD">6100000</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">60</Col>
+        <Col id="MENU_CD">6110000</Col>
+        <Col id="MENU_NM">주간업무</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID">Lex::LEX040200.xfdl</Col>
+        <Col id="UP_CD">6000000</Col>
+        <Col id="ORDER_SEQ">11</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">70</Col>
+        <Col id="MENU_CD">7000000</Col>
+        <Col id="MENU_NM">시스템관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">0</Col>
+        <Col id="ORDER_SEQ">7</Col>
+        <Col id="CD_LEV">1</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">70</Col>
+        <Col id="MENU_CD">7010000</Col>
+        <Col id="MENU_NM">사용자관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">7000000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">70</Col>
+        <Col id="MENU_CD">7010100</Col>
+        <Col id="MENU_NM">사용자그룹관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">7010000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">70</Col>
+        <Col id="MENU_CD">7010200</Col>
+        <Col id="MENU_NM">사용자관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">7010000</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">70</Col>
+        <Col id="MENU_CD">7010300</Col>
+        <Col id="MENU_NM">LP사용자관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">7010000</Col>
+        <Col id="ORDER_SEQ">3</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">70</Col>
+        <Col id="MENU_CD">7020000</Col>
+        <Col id="MENU_NM">화면관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">7000000</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">70</Col>
+        <Col id="MENU_CD">7020100</Col>
+        <Col id="MENU_NM">화면관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">7020000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">70</Col>
+        <Col id="MENU_CD">7020200</Col>
+        <Col id="MENU_NM">화면타이틀관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">7020000</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">70</Col>
+        <Col id="MENU_CD">7030000</Col>
+        <Col id="MENU_NM">메뉴/권한관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">7000000</Col>
+        <Col id="ORDER_SEQ">3</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">70</Col>
+        <Col id="MENU_CD">7030100</Col>
+        <Col id="MENU_NM">메뉴관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">7030000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">70</Col>
+        <Col id="MENU_CD">7030200</Col>
+        <Col id="MENU_NM">그룹별메뉴관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">7030000</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">70</Col>
+        <Col id="MENU_CD">7030300</Col>
+        <Col id="MENU_NM">그룹별화면관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">7030000</Col>
+        <Col id="ORDER_SEQ">3</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">70</Col>
+        <Col id="MENU_CD">7040000</Col>
+        <Col id="MENU_NM">코드관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">7000000</Col>
+        <Col id="ORDER_SEQ">4</Col>
+        <Col id="CD_LEV">2</Col>
+        <Col id="LOW_YN">Y</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">70</Col>
+        <Col id="MENU_CD">7040100</Col>
+        <Col id="MENU_NM">공통코드관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">7040000</Col>
+        <Col id="ORDER_SEQ">1</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+      <Row>
+        <Col id="GROUP_CD">70</Col>
+        <Col id="MENU_CD">7040200</Col>
+        <Col id="MENU_NM">업종코드관리</Col>
+        <Col id="ENG_MENU_NM"/>
+        <Col id="PGM_ID"/>
+        <Col id="UP_CD">7040000</Col>
+        <Col id="ORDER_SEQ">2</Col>
+        <Col id="CD_LEV">3</Col>
+        <Col id="LOW_YN">N</Col>
+        <Col id="USE_YN">Y</Col>
+      </Row>
+    </Rows>
+  </Dataset>
+  <Dataset id="GDS_OPENMENU">
+    <ColumnInfo>
+      <Column id="MENU_CD" type="STRING" size="256"/>
+      <Column id="MENU_NM" type="STRING" size="256"/>
+      <Column id="EN_MENU_NM" type="STRING" size="256"/>
+      <Column id="PGM_ID" type="STRING" size="256"/>
+      <Column id="UP_CD" type="STRING" size="256"/>
+    </ColumnInfo>
+  </Dataset>
+  <Variable id="JSESSIONID" usecookie="true"/>
+</GlobalVariables>

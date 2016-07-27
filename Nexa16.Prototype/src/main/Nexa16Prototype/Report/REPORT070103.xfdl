@@ -1,0 +1,1894 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="frame_work" classname="frame_work" left="0" top="0" width="1400" height="700" titletext="펀드현황">
+    <Layouts>
+      <Layout>
+        <Div id="Div00" taborder="9" left="20" top="50" width="1180" height="45" style="border:1 solid #b1b1b1ff ;">
+          <Layouts>
+            <Layout>
+              <Static id="Static01" taborder="50" text="펀드명" cssclass="sta_WF_label" left="29" top="11" width="54" height="18" style="border:0 none #808080ff ;"/>
+              <Static id="Static00" taborder="51" text="기준일" onclick="Div00_Static00_onclick" cssclass="sta_WF_label" left="336" top="11" width="53" height="18"/>
+              <Combo id="Combo00" taborder="53" text="전체" innerdataset="@ds_cmb_fund" codecolumn="FUND_CD" datacolumn="FUND_SHORT_NM" index="0" left="86" top="9" width="220" height="25"/>
+              <Calendar id="Calendar00" taborder="54" left="33.53%" top="9" right="54.92%" height="25" value="20160427" dateformat="yyyy-MM-dd"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="btnSetting01" taborder="13" text="조회" onclick="divInfo_btnSetting_onclick" cssclass="btn_wf_search" left="1097" top="58" width="85" height="30" positionstep="0"/>
+        <Static id="Static42" taborder="96" text="20" left="1200" top="11" width="20" height="705" style="background:chartreuse;" visible="false"/>
+        <Static id="Static04" taborder="97" text="20" left="0" top="11" width="20" height="673" style="background:chartreuse;" visible="false"/>
+        <PopupDiv id="PopupDiv00" text="PopupDiv00" left="1220" width="180" bottom="33" height="660"/>
+        <Static id="Static05" taborder="100" text="h13" left="20" top="37" width="1180" height="13" style="background:chartreuse;align:center middle;" visible="false"/>
+        <Static id="Static15" taborder="102" left="25" top="51" width="664" height="9" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;" text="9" visible="false"/>
+        <Static id="Static16" taborder="103" text="9" left="25" top="85" width="664" height="9" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;" visible="false"/>
+        <Static id="Static17" taborder="104" text="30" left="20" top="60" width="30" height="25" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;" visible="false"/>
+        <Static id="Static18" taborder="105" text="30" left="327" top="60" width="30" height="25" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;" visible="false"/>
+        <Static id="Static19" taborder="106" text="17" left="1182" top="58" width="17" height="24" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;" visible="false"/>
+        <Static id="Static01" taborder="139" text="h7" visible="false" left="0" top="0" width="1220" height="7" style="background:chartreuse;align:center middle;"/>
+        <Static id="Static14" taborder="142" text="h13" visible="false" left="24" top="95" width="1180" height="13" style="background:#7fff00ee;color:darkred;align:center middle;"/>
+        <Static id="Static03" taborder="143" text="     펀드현황" onclick="Static05_onclick" cssclass="sta_WF_title1" left="20" top="7" width="238" height="30" style="background:transparent URL('IMG::h1.png');align:left middle;font:15 arial;"/>
+        <Static id="Static02" taborder="145" text="[단위:KRW]" left="1122" top="96" width="89" height="21" style="color:dodgerblue;"/>
+        <Grid id="Grid00" taborder="146" binddataset="ds_grid" useinputpanel="false" autofittype="none" left="20" top="117" width="1180" height="551" style="border:1 solid #838383ff,1 solid #c9c6c3ff,1 solid #c9c6c3ff,1 solid #c9c6c3ff;">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="140"/>
+                <Column size="140"/>
+                <Column size="140"/>
+                <Column size="140"/>
+                <Column size="140"/>
+                <Column size="140"/>
+                <Column size="140"/>
+                <Column size="140"/>
+                <Column size="140"/>
+                <Column size="140"/>
+                <Column size="60"/>
+                <Column size="18"/>
+                <Column size="140"/>
+                <Column size="140"/>
+                <Column size="115"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+                <Row size="24" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell rowspan="2" text="펀드"/>
+                <Cell col="1" rowspan="2" text="출자총액"/>
+                <Cell col="2" rowspan="2" text="납입액"/>
+                <Cell col="3" rowspan="2" text="투자액"/>
+                <Cell col="4" colspan="3" text="회수"/>
+                <Cell col="7" rowspan="2" text="배분액"/>
+                <Cell col="8" rowspan="2" text="투자잔액"/>
+                <Cell col="9" rowspan="2" text="장부금액"/>
+                <Cell col="10" rowspan="2" colspan="2" text="소진율"/>
+                <Cell col="12" rowspan="2" text="존속기간"/>
+                <Cell col="13" rowspan="2" text="투자기간"/>
+                <Cell col="14" rowspan="2" text="청산일"/>
+                <Cell row="1" col="4" text="회수총액"/>
+                <Cell row="1" col="5" text="회수원금"/>
+                <Cell row="1" col="6" text="손익"/>
+              </Band>
+              <Band id="body">
+                <Cell style="align:left;" text="bind:FUND_SHORT_NM"/>
+                <Cell col="1" style="align:right;" text="bind:CONTRIB_PROMISE_KRW_AMT"/>
+                <Cell col="2" style="align:right;" text="bind:CONTRIB_KRW_AMT"/>
+                <Cell col="3" style="align:right;" text="bind:INVEST_KRW_AMT"/>
+                <Cell col="4" style="align:right;" text="bind:EXIT_KRW_AMT"/>
+                <Cell col="5" style="align:right;" text="bind:BASE_KRW_AMT"/>
+                <Cell col="6" style="align:right;" text="bind:PL_KRW_AMT"/>
+                <Cell col="7" style="align:right;" text="bind:DIST_KRW_AMT"/>
+                <Cell col="8" style="align:right;" text="bind:REMAIN_KRW_AMT"/>
+                <Cell col="9" style="align:right;" text="bind:BOOK_REMAIN_KRW_AMT"/>
+                <Cell col="10" colspan="2">
+                  <Cell displaytype="normal" edittype="mask" style="align:right;" text="bind:RATE" mask="##.#"/>
+                  <Cell col="1" style="align:left;" text="%"/>
+                </Cell>
+                <Cell col="12" style="align:left;" text="bind:FORM_YMD"/>
+                <Cell col="13" style="align:left;" text="bind:INV_PERIOD_START_YMD"/>
+                <Cell col="14" displaytype="date" style="align:left;" text="bind:CLEARING_YMD"/>
+              </Band>
+              <Band id="summary">
+                <Cell style="align:center;" text="합계"/>
+                <Cell col="1" displaytype="number" edittype="normal" text="expr:dataset.getSum(&quot;CONTRIB_PROMISE_KRW_AMT&quot;)"/>
+                <Cell col="2" displaytype="number" text="expr:dataset.getSum(&quot;CONTRIB_KRW_AMT&quot;)"/>
+                <Cell col="3" displaytype="number" text="expr:dataset.getSum(&quot;INVEST_KRW_AMT&quot;)"/>
+                <Cell col="4" displaytype="number" text="expr:dataset.getSum(&quot;EXIT_KRW_AMT&quot;)"/>
+                <Cell col="5" displaytype="number" text="expr:dataset.getSum(&quot;BASE_KRW_AMT&quot;)"/>
+                <Cell col="6" displaytype="number" text="expr:dataset.getSum(&quot;PL_KRW_AMT&quot;)"/>
+                <Cell col="7" displaytype="number" text="expr:dataset.getSum(&quot;DIST_KRW_AMT&quot;)"/>
+                <Cell col="8" displaytype="number" text="expr:dataset.getSum(&quot;REMAIN_KRW_AMT&quot;)"/>
+                <Cell col="9" displaytype="number" text="expr:dataset.getSum(&quot;BOOK_REMAIN_KRW_AMT&quot;)"/>
+                <Cell col="10" colspan="2"/>
+                <Cell col="12"/>
+                <Cell col="13"/>
+                <Cell col="14"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_cmb_fund">
+        <ColumnInfo>
+          <Column id="FUND_CD" type="STRING" size="256"/>
+          <Column id="FUND_TYPE_CD" type="STRING" size="256"/>
+          <Column id="FUND_NM" type="STRING" size="256"/>
+          <Column id="FUND_SHORT_NM" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="FUND_CD">0</Col>
+            <Col id="FUND_TYPE_CD">0</Col>
+            <Col id="FUND_NM">전체</Col>
+            <Col id="FUND_SHORT_NM">전체</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00032</Col>
+            <Col id="FUND_TYPE_CD">3</Col>
+            <Col id="FUND_NM">CJKX Rokin Holdings Limited</Col>
+            <Col id="FUND_SHORT_NM">CJKX Rokin Holdings Limited</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00024</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱코리아 신성장동력 첨단융합 사모투자전문회사</Col>
+            <Col id="FUND_SHORT_NM">신성장동력PEF</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">01001</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="FUND_NM">STIC Shariah Private Equity Fund III L.P.</Col>
+            <Col id="FUND_SHORT_NM">Shariah PE Fund III</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00997</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="FUND_NM">OSSF Capital Sdn. Bhd</Col>
+            <Col id="FUND_SHORT_NM">OSSF Capital</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00029</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱씨제이글로벌투자파트너쉽사모투자전문회사</Col>
+            <Col id="FUND_SHORT_NM">CJ CPP</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00001</Col>
+            <Col id="FUND_TYPE_CD">9</Col>
+            <Col id="FUND_NM">자본계정</Col>
+            <Col id="FUND_SHORT_NM">본계정</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00002</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">MIC 99-9 스틱아이티투자조합1호</Col>
+            <Col id="FUND_SHORT_NM">1호펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00003</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">MIC 99-10 스틱아이티투자조합2호</Col>
+            <Col id="FUND_SHORT_NM">2호펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00004</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱투자조합3호</Col>
+            <Col id="FUND_SHORT_NM">3호펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00005</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱엔젤투자조합4호</Col>
+            <Col id="FUND_SHORT_NM">4호펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00007</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱투자조합6호</Col>
+            <Col id="FUND_SHORT_NM">6호펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00008</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">ET벤처펀드</Col>
+            <Col id="FUND_SHORT_NM">7호펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00009</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱투자조합8호</Col>
+            <Col id="FUND_SHORT_NM">8호펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00010</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱투자조합9호</Col>
+            <Col id="FUND_SHORT_NM">9호펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00011</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱-LG투자조합10호 갑</Col>
+            <Col id="FUND_SHORT_NM">10호(갑)</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00012</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">MIC 2000-6 스틱투자조합11호</Col>
+            <Col id="FUND_SHORT_NM">11호펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00013</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">MIC 2001-12 스틱투자조합12호</Col>
+            <Col id="FUND_SHORT_NM">12호펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00014</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">KGIF Limited Partnership</Col>
+            <Col id="FUND_SHORT_NM">KGIF</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00015</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">MIC2003-2스틱투자조합13호</Col>
+            <Col id="FUND_SHORT_NM">M&amp;A Fund</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00016</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱일자리창출펀드</Col>
+            <Col id="FUND_SHORT_NM">Pioneer Fund I</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00017</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱-LG투자조합10호 을</Col>
+            <Col id="FUND_SHORT_NM">10호(을)</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00018</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱세컨더리펀드(한국모태펀드 05-08)</Col>
+            <Col id="FUND_SHORT_NM">Secondary Fund I</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00019</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">2005 KIF-스틱 IT전문투자조합</Col>
+            <Col id="FUND_SHORT_NM">KIF Fund</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00020</Col>
+            <Col id="FUND_TYPE_CD">9</Col>
+            <Col id="FUND_NM">주식회사스틱</Col>
+            <Col id="FUND_SHORT_NM">스틱</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00021</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱샤리아창업투자조합</Col>
+            <Col id="FUND_SHORT_NM">스틱샤리아창투조합(18호)</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00023</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱투자조합19호</Col>
+            <Col id="FUND_SHORT_NM">스틱투자조합19호(세컨더리 II)</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00994</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="FUND_NM">SSF Capital Sdn. Bhd.</Col>
+            <Col id="FUND_SHORT_NM">SSF Capital</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00995</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="FUND_NM">STIC Secondary Fund II-B</Col>
+            <Col id="FUND_SHORT_NM">Secondary Fund II-B(SSF Capital)</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00996</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="FUND_NM">Oryx/STIC Korean Technology Fund</Col>
+            <Col id="FUND_SHORT_NM">Oryx Fund</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00999</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="FUND_NM">TFO/STIC Co-Investment Fund SPC</Col>
+            <Col id="FUND_SHORT_NM">TFO</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00998</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="FUND_NM">ZAD Global Fund I</Col>
+            <Col id="FUND_SHORT_NM">ZAD Fund</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00027</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱세컨더리제삼호 사모투자전문회사</Col>
+            <Col id="FUND_SHORT_NM">세컨더리3호PEF</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">01000</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="FUND_NM">STIC Private Equity Fund III L.P.</Col>
+            <Col id="FUND_SHORT_NM">PE Fund III</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00022</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱투자조합17호</Col>
+            <Col id="FUND_SHORT_NM">스틱투자조합17호(파이오니어 II)</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00025</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">코에프씨스틱그로쓰챔프2010의2호사모투자전문회사</Col>
+            <Col id="FUND_SHORT_NM">코에프씨스틱PEF</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00026</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱 팬아시아 테크놀로지 펀드</Col>
+            <Col id="FUND_SHORT_NM">팬아시아 펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00028</Col>
+            <Col id="FUND_TYPE_CD">3</Col>
+            <Col id="FUND_NM">팜한농 제 1의 1호 유한회사</Col>
+            <Col id="FUND_SHORT_NM">팜한농 제 1의 1호 유한회사</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00006</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱투자조합5호</Col>
+            <Col id="FUND_SHORT_NM">5호펀드</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00031</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">스틱해외진출플랫폼펀드</Col>
+            <Col id="FUND_SHORT_NM">해외진출플랫폼</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00030</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="FUND_NM">2014 스틱 성장동력 M&amp;A 사모투자전문회사</Col>
+            <Col id="FUND_SHORT_NM">성장동력M&amp;A</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_grid">
+        <ColumnInfo>
+          <Column id="FUND_CD" type="STRING" size="256"/>
+          <Column id="FUND_TYPE_CD" type="STRING" size="256"/>
+          <Column id="CONTRIB_PROMISE_KRW_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="CONTRIB_KRW_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="INVEST_KRW_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="EXIT_KRW_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="BASE_KRW_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="PL_KRW_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="REMAIN_KRW_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="BOOK_REMAIN_KRW_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="CONTRIB_PROMISE_USD_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="CONTRIB_USD_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="INVEST_USD_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="EXIT_USD_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="BASE_USD_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="PL_USD_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="REMAIN_USD_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="BOOK_REMAIN_USD_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="DIST_KRW_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="DIST_USD_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="MG_FEE_KRW_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="MG_FEE_USD_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="FUND_IRR_RATE" type="FLOAT" size="256"/>
+          <Column id="TARGET_IRR_RATE" type="FLOAT" size="256"/>
+          <Column id="EVALUATE_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="CASH_KRW_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="CASH_USD_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="EXPECTED_INVEST_KRW_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="EXPECTED_INVEST_USD_AMT" type="BIGDECIMAL" size="256"/>
+          <Column id="RATE" type="STRING" size="256"/>
+          <Column id="FORM_YMD" type="STRING" size="256"/>
+          <Column id="EXP_YMD" type="STRING" size="256"/>
+          <Column id="INV_PERIOD_START_YMD" type="STRING" size="256"/>
+          <Column id="INV_PERIOD_END_YMD" type="STRING" size="256"/>
+          <Column id="CLEARING_YMD" type="STRING" size="256"/>
+          <Column id="FUND_NM" type="STRING" size="256"/>
+          <Column id="ENG_FUND_NM" type="STRING" size="256"/>
+          <Column id="FUND_SHORT_NM" type="STRING" size="256"/>
+          <Column id="GUBUN" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="FUND_CD">00002</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">40000000000</Col>
+            <Col id="CONTRIB_KRW_AMT">40000000000</Col>
+            <Col id="INVEST_KRW_AMT">39485143876</Col>
+            <Col id="EXIT_KRW_AMT">33890261691</Col>
+            <Col id="BASE_KRW_AMT">39485143876</Col>
+            <Col id="PL_KRW_AMT">-5594882185</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">40000000</Col>
+            <Col id="CONTRIB_USD_AMT">40000000</Col>
+            <Col id="INVEST_USD_AMT">39485143.87</Col>
+            <Col id="EXIT_USD_AMT">33890261.48</Col>
+            <Col id="BASE_USD_AMT">39485143.87</Col>
+            <Col id="PL_USD_AMT">-5594882.39</Col>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">33711642546</Col>
+            <Col id="DIST_USD_AMT">37447522.81</Col>
+            <Col id="MG_FEE_KRW_AMT">4084844957</Col>
+            <Col id="MG_FEE_USD_AMT">4084844.98</Col>
+            <Col id="FUND_IRR_RATE"/>
+            <Col id="TARGET_IRR_RATE"/>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT">-3391369688</Col>
+            <Col id="CASH_USD_AMT">-7127250.18</Col>
+            <Col id="EXPECTED_INVEST_KRW_AMT">-3569988833</Col>
+            <Col id="EXPECTED_INVEST_USD_AMT">-3569988.85</Col>
+            <Col id="RATE">98.71285969</Col>
+            <Col id="FORM_YMD">2009-07-07 ~ 2017-07-07</Col>
+            <Col id="EXP_YMD">20041130</Col>
+            <Col id="INV_PERIOD_START_YMD">2009-08-27 ~ 2013-08-27</Col>
+            <Col id="INV_PERIOD_END_YMD"/>
+            <Col id="CLEARING_YMD">20070530</Col>
+            <Col id="FUND_NM">MIC 99-9 스틱아이티투자조합1호</Col>
+            <Col id="ENG_FUND_NM">MIC 99-9 STIC Partnership 1</Col>
+            <Col id="FUND_SHORT_NM">1호펀드</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00003</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">10000000000</Col>
+            <Col id="CONTRIB_KRW_AMT">10000000000</Col>
+            <Col id="INVEST_KRW_AMT">8459122500</Col>
+            <Col id="EXIT_KRW_AMT">5902985078</Col>
+            <Col id="BASE_KRW_AMT">8459122500</Col>
+            <Col id="PL_KRW_AMT">-2556137422</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">10000000</Col>
+            <Col id="CONTRIB_USD_AMT">10000000</Col>
+            <Col id="INVEST_USD_AMT">8459122.5</Col>
+            <Col id="EXIT_USD_AMT">5902985.06</Col>
+            <Col id="BASE_USD_AMT">8459122.5</Col>
+            <Col id="PL_USD_AMT">-2556137.44</Col>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">8142739497</Col>
+            <Col id="DIST_USD_AMT">8142739.49</Col>
+            <Col id="MG_FEE_KRW_AMT">837217755</Col>
+            <Col id="MG_FEE_USD_AMT">837217.78</Col>
+            <Col id="FUND_IRR_RATE"/>
+            <Col id="TARGET_IRR_RATE"/>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT">-1536094674</Col>
+            <Col id="CASH_USD_AMT">-1536094.71</Col>
+            <Col id="EXPECTED_INVEST_KRW_AMT">703659745</Col>
+            <Col id="EXPECTED_INVEST_USD_AMT">703659.72</Col>
+            <Col id="RATE">84.591225</Col>
+            <Col id="FORM_YMD">2013-02-07 ~ 2022-07-23</Col>
+            <Col id="EXP_YMD">20050430</Col>
+            <Col id="INV_PERIOD_START_YMD">2013-02-07 ~ 2018-07-23</Col>
+            <Col id="INV_PERIOD_END_YMD"/>
+            <Col id="CLEARING_YMD">20070420</Col>
+            <Col id="FUND_NM">MIC 99-10 스틱아이티투자조합2호</Col>
+            <Col id="ENG_FUND_NM">MIC 99-10 STIC Partnership 2</Col>
+            <Col id="FUND_SHORT_NM">2호펀드</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00004</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">5600000000</Col>
+            <Col id="CONTRIB_KRW_AMT">5600000000</Col>
+            <Col id="INVEST_KRW_AMT">4949930000</Col>
+            <Col id="EXIT_KRW_AMT">1604282081</Col>
+            <Col id="BASE_KRW_AMT">4949930000</Col>
+            <Col id="PL_KRW_AMT">-3345647919</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">5600000</Col>
+            <Col id="CONTRIB_USD_AMT">5600000</Col>
+            <Col id="INVEST_USD_AMT">4949930</Col>
+            <Col id="EXIT_USD_AMT">1604282.08</Col>
+            <Col id="BASE_USD_AMT">4949930</Col>
+            <Col id="PL_USD_AMT">-3345647.92</Col>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">2290036055</Col>
+            <Col id="DIST_USD_AMT">2290036.05</Col>
+            <Col id="MG_FEE_KRW_AMT">310836857</Col>
+            <Col id="MG_FEE_USD_AMT">310836.86</Col>
+            <Col id="FUND_IRR_RATE"/>
+            <Col id="TARGET_IRR_RATE"/>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT">-346520831</Col>
+            <Col id="CASH_USD_AMT">-346520.83</Col>
+            <Col id="EXPECTED_INVEST_KRW_AMT">339233143</Col>
+            <Col id="EXPECTED_INVEST_USD_AMT">339233.14</Col>
+            <Col id="RATE">88.39160714285714285714285714285714285714</Col>
+            <Col id="FORM_YMD">2006-05-04 ~ 2011-05-03</Col>
+            <Col id="EXP_YMD">20050131</Col>
+            <Col id="INV_PERIOD_START_YMD">2006-05-04 ~ 2009-11-03</Col>
+            <Col id="INV_PERIOD_END_YMD"/>
+            <Col id="CLEARING_YMD">20050325</Col>
+            <Col id="FUND_NM">스틱투자조합3호</Col>
+            <Col id="ENG_FUND_NM">STIC Partnership 3</Col>
+            <Col id="FUND_SHORT_NM">3호펀드</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00005</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">6000000000</Col>
+            <Col id="CONTRIB_KRW_AMT">6000000000</Col>
+            <Col id="INVEST_KRW_AMT">5819297758</Col>
+            <Col id="EXIT_KRW_AMT">12768206480</Col>
+            <Col id="BASE_KRW_AMT">5819297758</Col>
+            <Col id="PL_KRW_AMT">6948908722</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">6000000</Col>
+            <Col id="CONTRIB_USD_AMT">6000000</Col>
+            <Col id="INVEST_USD_AMT">5819297.75</Col>
+            <Col id="EXIT_USD_AMT">12768206.47</Col>
+            <Col id="BASE_USD_AMT">5819297.75</Col>
+            <Col id="PL_USD_AMT">6948908.72</Col>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">12148369384</Col>
+            <Col id="DIST_USD_AMT">12148369.53</Col>
+            <Col id="MG_FEE_KRW_AMT">552584442</Col>
+            <Col id="MG_FEE_USD_AMT">552584.43</Col>
+            <Col id="FUND_IRR_RATE"/>
+            <Col id="TARGET_IRR_RATE"/>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT">247954896</Col>
+            <Col id="CASH_USD_AMT">247954.76</Col>
+            <Col id="EXPECTED_INVEST_KRW_AMT">-371882200</Col>
+            <Col id="EXPECTED_INVEST_USD_AMT">-371882.18</Col>
+            <Col id="RATE">96.98829596666666666666666666666666666667</Col>
+            <Col id="FORM_YMD">2014-01-03 ~ 2024-01-02</Col>
+            <Col id="EXP_YMD">20050228</Col>
+            <Col id="INV_PERIOD_START_YMD">2014-03-04 ~ 2018-03-03</Col>
+            <Col id="INV_PERIOD_END_YMD"/>
+            <Col id="CLEARING_YMD">20060228</Col>
+            <Col id="FUND_NM">스틱엔젤투자조합4호</Col>
+            <Col id="ENG_FUND_NM">STIC Angel Partnership</Col>
+            <Col id="FUND_SHORT_NM">4호펀드</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00006</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">3000000000</Col>
+            <Col id="CONTRIB_KRW_AMT">3000000000</Col>
+            <Col id="INVEST_KRW_AMT">3140635000</Col>
+            <Col id="EXIT_KRW_AMT">1997722900</Col>
+            <Col id="BASE_KRW_AMT">3140635000</Col>
+            <Col id="PL_KRW_AMT">-1142912100</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">3000000</Col>
+            <Col id="CONTRIB_USD_AMT">3000000</Col>
+            <Col id="INVEST_USD_AMT">3140635</Col>
+            <Col id="EXIT_USD_AMT">1997722.89</Col>
+            <Col id="BASE_USD_AMT">3140635</Col>
+            <Col id="PL_USD_AMT">-1142912.11</Col>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">2056140878</Col>
+            <Col id="DIST_USD_AMT">2056140.88</Col>
+            <Col id="MG_FEE_KRW_AMT">229199800</Col>
+            <Col id="MG_FEE_USD_AMT">229199.82</Col>
+            <Col id="FUND_IRR_RATE"/>
+            <Col id="TARGET_IRR_RATE"/>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT">-428252778</Col>
+            <Col id="CASH_USD_AMT">-428252.81</Col>
+            <Col id="EXPECTED_INVEST_KRW_AMT">-369834800</Col>
+            <Col id="EXPECTED_INVEST_USD_AMT">-369834.82</Col>
+            <Col id="RATE">104.687833333333333333333333333333333333</Col>
+            <Col id="FORM_YMD">1999-07-15 ~ 2999-12-31</Col>
+            <Col id="EXP_YMD">20050228</Col>
+            <Col id="INV_PERIOD_START_YMD">~</Col>
+            <Col id="INV_PERIOD_END_YMD"/>
+            <Col id="CLEARING_YMD">20080215</Col>
+            <Col id="FUND_NM">스틱투자조합5호</Col>
+            <Col id="ENG_FUND_NM">STIC Partnership 5</Col>
+            <Col id="FUND_SHORT_NM">5호펀드</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00007</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">33400000000</Col>
+            <Col id="CONTRIB_KRW_AMT">33400000000</Col>
+            <Col id="INVEST_KRW_AMT">23877937256</Col>
+            <Col id="EXIT_KRW_AMT">21051827229</Col>
+            <Col id="BASE_KRW_AMT">23877937256</Col>
+            <Col id="PL_KRW_AMT">-2826110027</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">33400000</Col>
+            <Col id="CONTRIB_USD_AMT">33400000</Col>
+            <Col id="INVEST_USD_AMT">23877937.25</Col>
+            <Col id="EXIT_USD_AMT">21051827.03</Col>
+            <Col id="BASE_USD_AMT">23877937.25</Col>
+            <Col id="PL_USD_AMT">-2826110.22</Col>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">32292715717</Col>
+            <Col id="DIST_USD_AMT">32292715.73</Col>
+            <Col id="MG_FEE_KRW_AMT">2616790854</Col>
+            <Col id="MG_FEE_USD_AMT">2616790.85</Col>
+            <Col id="FUND_IRR_RATE"/>
+            <Col id="TARGET_IRR_RATE"/>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT">-4335616598</Col>
+            <Col id="CASH_USD_AMT">-4335616.8</Col>
+            <Col id="EXPECTED_INVEST_KRW_AMT">6905271890</Col>
+            <Col id="EXPECTED_INVEST_USD_AMT">6905271.9</Col>
+            <Col id="RATE">71.49083010778443113772455089820359281437</Col>
+            <Col id="FORM_YMD">1999-11-25 ~ 2004-11-30</Col>
+            <Col id="EXP_YMD">20050331</Col>
+            <Col id="INV_PERIOD_START_YMD">~</Col>
+            <Col id="INV_PERIOD_END_YMD"/>
+            <Col id="CLEARING_YMD">20070331</Col>
+            <Col id="FUND_NM">스틱투자조합6호</Col>
+            <Col id="ENG_FUND_NM">STIC Partnership 6</Col>
+            <Col id="FUND_SHORT_NM">6호펀드</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00008</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">10200000000</Col>
+            <Col id="CONTRIB_KRW_AMT">10200000000</Col>
+            <Col id="INVEST_KRW_AMT">7772790000</Col>
+            <Col id="EXIT_KRW_AMT">4951491187</Col>
+            <Col id="BASE_KRW_AMT">7772790000</Col>
+            <Col id="PL_KRW_AMT">-2821298813</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">10200000</Col>
+            <Col id="CONTRIB_USD_AMT">10200000</Col>
+            <Col id="INVEST_USD_AMT">7772790</Col>
+            <Col id="EXIT_USD_AMT">4951491.05</Col>
+            <Col id="BASE_USD_AMT">7772790</Col>
+            <Col id="PL_USD_AMT">-2821298.95</Col>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">8032116148</Col>
+            <Col id="DIST_USD_AMT">8032116.14</Col>
+            <Col id="MG_FEE_KRW_AMT">748543414</Col>
+            <Col id="MG_FEE_USD_AMT">748543.4</Col>
+            <Col id="FUND_IRR_RATE"/>
+            <Col id="TARGET_IRR_RATE"/>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT">-1401958375</Col>
+            <Col id="CASH_USD_AMT">-1401958.49</Col>
+            <Col id="EXPECTED_INVEST_KRW_AMT">1678666586</Col>
+            <Col id="EXPECTED_INVEST_USD_AMT">1678666.6</Col>
+            <Col id="RATE">76.20382352941176470588235294117647058824</Col>
+            <Col id="FORM_YMD">2000-04-14 ~ 2005-04-30</Col>
+            <Col id="EXP_YMD">20050731</Col>
+            <Col id="INV_PERIOD_START_YMD">~</Col>
+            <Col id="INV_PERIOD_END_YMD"/>
+            <Col id="CLEARING_YMD">20060731</Col>
+            <Col id="FUND_NM">ET벤처펀드</Col>
+            <Col id="ENG_FUND_NM">ET Venture Fund</Col>
+            <Col id="FUND_SHORT_NM">7호펀드</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00009</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">39000000000</Col>
+            <Col id="CONTRIB_KRW_AMT">39000000000</Col>
+            <Col id="INVEST_KRW_AMT">10055500000</Col>
+            <Col id="EXIT_KRW_AMT">10055500000</Col>
+            <Col id="BASE_KRW_AMT">10055500000</Col>
+            <Col id="PL_KRW_AMT">0</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">39000000</Col>
+            <Col id="CONTRIB_USD_AMT">0</Col>
+            <Col id="INVEST_USD_AMT">10055500</Col>
+            <Col id="EXIT_USD_AMT">10055500</Col>
+            <Col id="BASE_USD_AMT">10055500</Col>
+            <Col id="PL_USD_AMT">0</Col>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">0</Col>
+            <Col id="DIST_USD_AMT"/>
+            <Col id="MG_FEE_KRW_AMT"/>
+            <Col id="MG_FEE_USD_AMT"/>
+            <Col id="FUND_IRR_RATE"/>
+            <Col id="TARGET_IRR_RATE"/>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT"/>
+            <Col id="CASH_USD_AMT"/>
+            <Col id="EXPECTED_INVEST_KRW_AMT"/>
+            <Col id="EXPECTED_INVEST_USD_AMT"/>
+            <Col id="RATE">25.78333333333333333333333333333333333333</Col>
+            <Col id="FORM_YMD">2000-01-27 ~ 2005-01-31</Col>
+            <Col id="EXP_YMD">20040331</Col>
+            <Col id="INV_PERIOD_START_YMD">~</Col>
+            <Col id="INV_PERIOD_END_YMD"/>
+            <Col id="CLEARING_YMD">20011024</Col>
+            <Col id="FUND_NM">스틱투자조합8호</Col>
+            <Col id="ENG_FUND_NM">STIC Partnership 8</Col>
+            <Col id="FUND_SHORT_NM">8호펀드</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00010</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">31700000000</Col>
+            <Col id="CONTRIB_KRW_AMT">31700000000</Col>
+            <Col id="INVEST_KRW_AMT">2852360300</Col>
+            <Col id="EXIT_KRW_AMT">2602887316</Col>
+            <Col id="BASE_KRW_AMT">2852360300</Col>
+            <Col id="PL_KRW_AMT">-249472984</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">31700000</Col>
+            <Col id="CONTRIB_USD_AMT">0</Col>
+            <Col id="INVEST_USD_AMT">2852360.3</Col>
+            <Col id="EXIT_USD_AMT">2602887.31</Col>
+            <Col id="BASE_USD_AMT">2852360.3</Col>
+            <Col id="PL_USD_AMT">-249472.99</Col>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">0</Col>
+            <Col id="DIST_USD_AMT"/>
+            <Col id="MG_FEE_KRW_AMT"/>
+            <Col id="MG_FEE_USD_AMT"/>
+            <Col id="FUND_IRR_RATE"/>
+            <Col id="TARGET_IRR_RATE"/>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT"/>
+            <Col id="CASH_USD_AMT"/>
+            <Col id="EXPECTED_INVEST_KRW_AMT"/>
+            <Col id="EXPECTED_INVEST_USD_AMT"/>
+            <Col id="RATE">8.99798201892744479495268138801261829653</Col>
+            <Col id="FORM_YMD">2000-02-15 ~ 2005-02-28</Col>
+            <Col id="EXP_YMD">20040630</Col>
+            <Col id="INV_PERIOD_START_YMD">~</Col>
+            <Col id="INV_PERIOD_END_YMD"/>
+            <Col id="CLEARING_YMD">20030429</Col>
+            <Col id="FUND_NM">스틱투자조합9호</Col>
+            <Col id="ENG_FUND_NM">STIC Partnership 9</Col>
+            <Col id="FUND_SHORT_NM">9호펀드</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00011</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">15500000000</Col>
+            <Col id="CONTRIB_KRW_AMT">15500000000</Col>
+            <Col id="INVEST_KRW_AMT">8947144970</Col>
+            <Col id="EXIT_KRW_AMT">9099031557</Col>
+            <Col id="BASE_KRW_AMT">8947144970</Col>
+            <Col id="PL_KRW_AMT">151886587</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">15500000</Col>
+            <Col id="CONTRIB_USD_AMT">15500000</Col>
+            <Col id="INVEST_USD_AMT">8947144.96</Col>
+            <Col id="EXIT_USD_AMT">9099031.5</Col>
+            <Col id="BASE_USD_AMT">8947144.96</Col>
+            <Col id="PL_USD_AMT">151886.54</Col>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">8274467305</Col>
+            <Col id="DIST_USD_AMT">8274467.3</Col>
+            <Col id="MG_FEE_KRW_AMT"/>
+            <Col id="MG_FEE_USD_AMT"/>
+            <Col id="FUND_IRR_RATE"/>
+            <Col id="TARGET_IRR_RATE"/>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT"/>
+            <Col id="CASH_USD_AMT"/>
+            <Col id="EXPECTED_INVEST_KRW_AMT"/>
+            <Col id="EXPECTED_INVEST_USD_AMT"/>
+            <Col id="RATE">57.72351593548387096774193548387096774194</Col>
+            <Col id="FORM_YMD">2000-03-09 ~ 2005-03-31</Col>
+            <Col id="EXP_YMD">20050802</Col>
+            <Col id="INV_PERIOD_START_YMD">~</Col>
+            <Col id="INV_PERIOD_END_YMD"/>
+            <Col id="CLEARING_YMD">20050831</Col>
+            <Col id="FUND_NM">스틱-LG투자조합10호 갑</Col>
+            <Col id="ENG_FUND_NM">STIC-LG Partnership A</Col>
+            <Col id="FUND_SHORT_NM">10호(갑)</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00017</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">14500000000</Col>
+            <Col id="CONTRIB_KRW_AMT">14500000000</Col>
+            <Col id="INVEST_KRW_AMT">13223517000</Col>
+            <Col id="EXIT_KRW_AMT">47813473143</Col>
+            <Col id="BASE_KRW_AMT">13223517000</Col>
+            <Col id="PL_KRW_AMT">34589956143</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">14500000</Col>
+            <Col id="CONTRIB_USD_AMT">14500000</Col>
+            <Col id="INVEST_USD_AMT">13223516.94</Col>
+            <Col id="EXIT_USD_AMT">47813473.07</Col>
+            <Col id="BASE_USD_AMT">13223516.94</Col>
+            <Col id="PL_USD_AMT">34589956.13</Col>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">47006464544</Col>
+            <Col id="DIST_USD_AMT">47006464.54</Col>
+            <Col id="MG_FEE_KRW_AMT">1334418527</Col>
+            <Col id="MG_FEE_USD_AMT">1334418.51</Col>
+            <Col id="FUND_IRR_RATE"/>
+            <Col id="TARGET_IRR_RATE"/>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT">749073072</Col>
+            <Col id="CASH_USD_AMT">749073.08</Col>
+            <Col id="EXPECTED_INVEST_KRW_AMT">-57935527</Col>
+            <Col id="EXPECTED_INVEST_USD_AMT">-57935.45</Col>
+            <Col id="RATE">91.19666896551724137931034482758620689655</Col>
+            <Col id="FORM_YMD">2000-07-03 ~ 2005-07-31</Col>
+            <Col id="EXP_YMD">20050802</Col>
+            <Col id="INV_PERIOD_START_YMD">~</Col>
+            <Col id="INV_PERIOD_END_YMD"/>
+            <Col id="CLEARING_YMD">20050831</Col>
+            <Col id="FUND_NM">스틱-LG투자조합10호 을</Col>
+            <Col id="ENG_FUND_NM">STIC-LG Partnership B</Col>
+            <Col id="FUND_SHORT_NM">10호(을)</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00012</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">15000000000</Col>
+            <Col id="CONTRIB_KRW_AMT">15000000000</Col>
+            <Col id="INVEST_KRW_AMT">14675394071</Col>
+            <Col id="EXIT_KRW_AMT">18469315959</Col>
+            <Col id="BASE_KRW_AMT">14675394071</Col>
+            <Col id="PL_KRW_AMT">3793921888</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">15000000</Col>
+            <Col id="CONTRIB_USD_AMT">15000000</Col>
+            <Col id="INVEST_USD_AMT">14675394.03</Col>
+            <Col id="EXIT_USD_AMT">18469315.54</Col>
+            <Col id="BASE_USD_AMT">14675394.03</Col>
+            <Col id="PL_USD_AMT">3793921.51</Col>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">19437728693</Col>
+            <Col id="DIST_USD_AMT">19437728.7</Col>
+            <Col id="MG_FEE_KRW_AMT">1184484013</Col>
+            <Col id="MG_FEE_USD_AMT">1184484.02</Col>
+            <Col id="FUND_IRR_RATE"/>
+            <Col id="TARGET_IRR_RATE"/>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT">-1828290818</Col>
+            <Col id="CASH_USD_AMT">-1828291.21</Col>
+            <Col id="EXPECTED_INVEST_KRW_AMT">-859878084</Col>
+            <Col id="EXPECTED_INVEST_USD_AMT">-859878.05</Col>
+            <Col id="RATE">97.83596047333333333333333333333333333333</Col>
+            <Col id="FORM_YMD">2000-03-29 ~ 2004-03-31</Col>
+            <Col id="EXP_YMD">20070304</Col>
+            <Col id="INV_PERIOD_START_YMD">~</Col>
+            <Col id="INV_PERIOD_END_YMD"/>
+            <Col id="CLEARING_YMD">20080304</Col>
+            <Col id="FUND_NM">MIC 2000-6 스틱투자조합11호</Col>
+            <Col id="ENG_FUND_NM">MIC 2000-6 STIC Partnersip 11</Col>
+            <Col id="FUND_SHORT_NM">11호펀드</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00013</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">12500000000</Col>
+            <Col id="CONTRIB_KRW_AMT">12500000000</Col>
+            <Col id="INVEST_KRW_AMT">12682658820</Col>
+            <Col id="EXIT_KRW_AMT">12486214670</Col>
+            <Col id="BASE_KRW_AMT">12682658820</Col>
+            <Col id="PL_KRW_AMT">-196444150</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">12500000</Col>
+            <Col id="CONTRIB_USD_AMT">12500000</Col>
+            <Col id="INVEST_USD_AMT">12682658.81</Col>
+            <Col id="EXIT_USD_AMT">12092383.4</Col>
+            <Col id="BASE_USD_AMT">12682658.81</Col>
+            <Col id="PL_USD_AMT">-590275.41</Col>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">12682028919</Col>
+            <Col id="DIST_USD_AMT">12269154.83</Col>
+            <Col id="MG_FEE_KRW_AMT">640146535</Col>
+            <Col id="MG_FEE_USD_AMT">640146.55</Col>
+            <Col id="FUND_IRR_RATE">0.27</Col>
+            <Col id="TARGET_IRR_RATE">-0.46</Col>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT">-1018619604</Col>
+            <Col id="CASH_USD_AMT">-999576.79</Col>
+            <Col id="EXPECTED_INVEST_KRW_AMT">-822805355</Col>
+            <Col id="EXPECTED_INVEST_USD_AMT">-822805.36</Col>
+            <Col id="RATE">101.46127056</Col>
+            <Col id="FORM_YMD">2000-06-28 ~ 2004-06-30</Col>
+            <Col id="EXP_YMD">20061130</Col>
+            <Col id="INV_PERIOD_START_YMD">~</Col>
+            <Col id="INV_PERIOD_END_YMD"/>
+            <Col id="CLEARING_YMD">20081212</Col>
+            <Col id="FUND_NM">MIC 2001-12 스틱투자조합12호</Col>
+            <Col id="ENG_FUND_NM">MIC 2001-12 STIC Partnership 12</Col>
+            <Col id="FUND_SHORT_NM">12호펀드</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00014</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">114556912000</Col>
+            <Col id="CONTRIB_KRW_AMT">114556912000</Col>
+            <Col id="INVEST_KRW_AMT">79204529124</Col>
+            <Col id="EXIT_KRW_AMT">71398282451</Col>
+            <Col id="BASE_KRW_AMT">79204529124</Col>
+            <Col id="PL_KRW_AMT">-7806246673</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">114556912</Col>
+            <Col id="CONTRIB_USD_AMT">114556912</Col>
+            <Col id="INVEST_USD_AMT">79204529.07</Col>
+            <Col id="EXIT_USD_AMT">395341568.87</Col>
+            <Col id="BASE_USD_AMT">1265396802.94</Col>
+            <Col id="PL_USD_AMT">66966313.95</Col>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">95724710053</Col>
+            <Col id="DIST_USD_AMT">-8873327758.57</Col>
+            <Col id="MG_FEE_KRW_AMT">4663104986</Col>
+            <Col id="MG_FEE_USD_AMT">4663104.99</Col>
+            <Col id="FUND_IRR_RATE">-6.26</Col>
+            <Col id="TARGET_IRR_RATE">-21.68</Col>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT">6362850288</Col>
+            <Col id="CASH_USD_AMT">9299358605.38</Col>
+            <Col id="EXPECTED_INVEST_KRW_AMT">30689277890</Col>
+            <Col id="EXPECTED_INVEST_USD_AMT">30689277.94</Col>
+            <Col id="RATE">69.13989539452669604082903352003762112582</Col>
+            <Col id="FORM_YMD">2000-07-25 ~ 2005-08-02</Col>
+            <Col id="EXP_YMD">20090909</Col>
+            <Col id="INV_PERIOD_START_YMD">~</Col>
+            <Col id="INV_PERIOD_END_YMD"/>
+            <Col id="CLEARING_YMD">20110309</Col>
+            <Col id="FUND_NM">KGIF Limited Partnership</Col>
+            <Col id="ENG_FUND_NM">KGIF Limited Partnership</Col>
+            <Col id="FUND_SHORT_NM">KGIF</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00015</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">78500000000</Col>
+            <Col id="CONTRIB_KRW_AMT">78500000000</Col>
+            <Col id="INVEST_KRW_AMT">73603059802</Col>
+            <Col id="EXIT_KRW_AMT">139530195840</Col>
+            <Col id="BASE_KRW_AMT">73603059802</Col>
+            <Col id="PL_KRW_AMT">65927136038</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">78500000</Col>
+            <Col id="CONTRIB_USD_AMT">78500000</Col>
+            <Col id="INVEST_USD_AMT">73603059.77</Col>
+            <Col id="EXIT_USD_AMT">127495084.67</Col>
+            <Col id="BASE_USD_AMT">72232704.69</Col>
+            <Col id="PL_USD_AMT">55262379.98</Col>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">138395589611</Col>
+            <Col id="DIST_USD_AMT">-1296028885.21</Col>
+            <Col id="MG_FEE_KRW_AMT">4249299927</Col>
+            <Col id="MG_FEE_USD_AMT">4249299.92</Col>
+            <Col id="FUND_IRR_RATE">14.73</Col>
+            <Col id="TARGET_IRR_RATE">24.13</Col>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT">1782246500</Col>
+            <Col id="CASH_USD_AMT">1424171610.19</Col>
+            <Col id="EXPECTED_INVEST_KRW_AMT">647640271</Col>
+            <Col id="EXPECTED_INVEST_USD_AMT">647640.31</Col>
+            <Col id="RATE">93.76185962038216560509554140127388535032</Col>
+            <Col id="FORM_YMD">2001-03-05 ~ 2007-03-04</Col>
+            <Col id="EXP_YMD">20081209</Col>
+            <Col id="INV_PERIOD_START_YMD">~</Col>
+            <Col id="INV_PERIOD_END_YMD">20071209</Col>
+            <Col id="CLEARING_YMD">20091208</Col>
+            <Col id="FUND_NM">MIC2003-2스틱투자조합13호</Col>
+            <Col id="ENG_FUND_NM">MIC 2003-2 STIC Partnership 13</Col>
+            <Col id="FUND_SHORT_NM">M&amp;A Fund</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00016</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">33400000000</Col>
+            <Col id="CONTRIB_KRW_AMT">33400000000</Col>
+            <Col id="INVEST_KRW_AMT">33155511431</Col>
+            <Col id="EXIT_KRW_AMT">87449034657</Col>
+            <Col id="BASE_KRW_AMT">33155511431</Col>
+            <Col id="PL_KRW_AMT">0</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">33400000</Col>
+            <Col id="CONTRIB_USD_AMT">33400000</Col>
+            <Col id="INVEST_USD_AMT">32772535.83</Col>
+            <Col id="EXIT_USD_AMT">79327603.33</Col>
+            <Col id="BASE_USD_AMT">32634628.47</Col>
+            <Col id="PL_USD_AMT">46692974.86</Col>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">74827698153</Col>
+            <Col id="DIST_USD_AMT">78207670.98</Col>
+            <Col id="MG_FEE_KRW_AMT">2810805339</Col>
+            <Col id="MG_FEE_USD_AMT">2810805.32</Col>
+            <Col id="FUND_IRR_RATE">21.63</Col>
+            <Col id="TARGET_IRR_RATE"/>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT">10055019734</Col>
+            <Col id="CASH_USD_AMT">-1063408.8</Col>
+            <Col id="EXPECTED_INVEST_KRW_AMT">-2566316770</Col>
+            <Col id="EXPECTED_INVEST_USD_AMT">-2183341.15</Col>
+            <Col id="RATE">99.26799829640718562874251497005988023952</Col>
+            <Col id="FORM_YMD">2001-12-01 ~ 2006-11-30</Col>
+            <Col id="EXP_YMD">20110629</Col>
+            <Col id="INV_PERIOD_START_YMD">~</Col>
+            <Col id="INV_PERIOD_END_YMD">20080629</Col>
+            <Col id="CLEARING_YMD">20120430</Col>
+            <Col id="FUND_NM">스틱일자리창출펀드</Col>
+            <Col id="ENG_FUND_NM">STIC Pioneer Fund</Col>
+            <Col id="FUND_SHORT_NM">Pioneer Fund I</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00018</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">119000000000</Col>
+            <Col id="CONTRIB_KRW_AMT">101150000000</Col>
+            <Col id="INVEST_KRW_AMT">93166366077</Col>
+            <Col id="EXIT_KRW_AMT">153670264017</Col>
+            <Col id="BASE_KRW_AMT">93166366077</Col>
+            <Col id="PL_KRW_AMT">60503897940</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">119000000</Col>
+            <Col id="CONTRIB_USD_AMT">101150000</Col>
+            <Col id="INVEST_USD_AMT">93166366.06</Col>
+            <Col id="EXIT_USD_AMT">140569072.58</Col>
+            <Col id="BASE_USD_AMT">85865765.38</Col>
+            <Col id="PL_USD_AMT">54703307.2</Col>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">144177134387</Col>
+            <Col id="DIST_USD_AMT">137517493.99</Col>
+            <Col id="MG_FEE_KRW_AMT">5883164383</Col>
+            <Col id="MG_FEE_USD_AMT">5883164.38</Col>
+            <Col id="FUND_IRR_RATE">15.39</Col>
+            <Col id="TARGET_IRR_RATE"/>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT">11593599170</Col>
+            <Col id="CASH_USD_AMT">5152048.15</Col>
+            <Col id="EXPECTED_INVEST_KRW_AMT">2100469540</Col>
+            <Col id="EXPECTED_INVEST_USD_AMT">2100469.56</Col>
+            <Col id="RATE">78.29106393025210084033613445378151260504</Col>
+            <Col id="FORM_YMD">2002-09-09 ~ 2009-09-09</Col>
+            <Col id="EXP_YMD">20101020</Col>
+            <Col id="INV_PERIOD_START_YMD">~</Col>
+            <Col id="INV_PERIOD_END_YMD">20081020</Col>
+            <Col id="CLEARING_YMD">20120420</Col>
+            <Col id="FUND_NM">스틱세컨더리펀드(한국모태펀드 05-08)</Col>
+            <Col id="ENG_FUND_NM">STIC Secondary Fund(KFOF 05-08)</Col>
+            <Col id="FUND_SHORT_NM">Secondary Fund I</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00019</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">24000000000</Col>
+            <Col id="CONTRIB_KRW_AMT">19074000000</Col>
+            <Col id="INVEST_KRW_AMT">17779798887</Col>
+            <Col id="EXIT_KRW_AMT">12122794264</Col>
+            <Col id="BASE_KRW_AMT">17779798887</Col>
+            <Col id="PL_KRW_AMT">-5657004623</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">24000000</Col>
+            <Col id="CONTRIB_USD_AMT">19011023.01</Col>
+            <Col id="INVEST_USD_AMT">17779798.87</Col>
+            <Col id="EXIT_USD_AMT">10823483.99</Col>
+            <Col id="BASE_USD_AMT">17645471.23</Col>
+            <Col id="PL_USD_AMT">-6821987.24</Col>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">14924048945</Col>
+            <Col id="DIST_USD_AMT">10407133.8</Col>
+            <Col id="MG_FEE_KRW_AMT">1006375282</Col>
+            <Col id="MG_FEE_USD_AMT">1006375.27</Col>
+            <Col id="FUND_IRR_RATE">-9.14</Col>
+            <Col id="TARGET_IRR_RATE">-10.09</Col>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT">-2513428850</Col>
+            <Col id="CASH_USD_AMT">641199.06</Col>
+            <Col id="EXPECTED_INVEST_KRW_AMT">287825831</Col>
+            <Col id="EXPECTED_INVEST_USD_AMT">224848.87</Col>
+            <Col id="RATE">74.0824953625</Col>
+            <Col id="FORM_YMD">2003-12-10 ~ 2008-12-09</Col>
+            <Col id="EXP_YMD">20101106</Col>
+            <Col id="INV_PERIOD_START_YMD">2003-12-10 ~ 2007-12-09</Col>
+            <Col id="INV_PERIOD_END_YMD"/>
+            <Col id="CLEARING_YMD">20111228</Col>
+            <Col id="FUND_NM">2005 KIF-스틱 IT전문투자조합</Col>
+            <Col id="ENG_FUND_NM">2005 KIF-STIC IT Fund</Col>
+            <Col id="FUND_SHORT_NM">KIF Fund</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00021</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">20203000000</Col>
+            <Col id="CONTRIB_KRW_AMT">16354632835</Col>
+            <Col id="INVEST_KRW_AMT">15004994660</Col>
+            <Col id="EXIT_KRW_AMT">30669056320</Col>
+            <Col id="BASE_KRW_AMT">15004994660</Col>
+            <Col id="PL_KRW_AMT">15664061660</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">20203000</Col>
+            <Col id="CONTRIB_USD_AMT">16272691.29</Col>
+            <Col id="INVEST_USD_AMT">15752076.05</Col>
+            <Col id="EXIT_USD_AMT">26329613.03</Col>
+            <Col id="BASE_USD_AMT">15752075.71</Col>
+            <Col id="PL_USD_AMT">10577537.32</Col>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">30414922363</Col>
+            <Col id="DIST_USD_AMT">21715887</Col>
+            <Col id="MG_FEE_KRW_AMT">425093258</Col>
+            <Col id="MG_FEE_USD_AMT">425093.27</Col>
+            <Col id="FUND_IRR_RATE"/>
+            <Col id="TARGET_IRR_RATE"/>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT">1178678874</Col>
+            <Col id="CASH_USD_AMT">4709248</Col>
+            <Col id="EXPECTED_INVEST_KRW_AMT">924544917</Col>
+            <Col id="EXPECTED_INVEST_USD_AMT">95521.97</Col>
+            <Col id="RATE">74.27112141761124585457605306142652081374</Col>
+            <Col id="FORM_YMD">2004-06-30 ~ 2011-06-29</Col>
+            <Col id="EXP_YMD">20110806</Col>
+            <Col id="INV_PERIOD_START_YMD">2004-06-30 ~ 2008-06-29</Col>
+            <Col id="INV_PERIOD_END_YMD">20091103</Col>
+            <Col id="CLEARING_YMD">20121101</Col>
+            <Col id="FUND_NM">스틱샤리아창업투자조합</Col>
+            <Col id="ENG_FUND_NM">STIC Sharia Fund</Col>
+            <Col id="FUND_SHORT_NM">스틱샤리아창투조합(18호)</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00997</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">150610101000</Col>
+            <Col id="CONTRIB_KRW_AMT">150610101000</Col>
+            <Col id="INVEST_KRW_AMT">105859487115</Col>
+            <Col id="EXIT_KRW_AMT">219789182710</Col>
+            <Col id="BASE_KRW_AMT">105859487115</Col>
+            <Col id="PL_KRW_AMT">113929695595</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">150610101</Col>
+            <Col id="CONTRIB_USD_AMT">0</Col>
+            <Col id="INVEST_USD_AMT">107009047.97</Col>
+            <Col id="EXIT_USD_AMT">194294451.26</Col>
+            <Col id="BASE_USD_AMT">107009047.98</Col>
+            <Col id="PL_USD_AMT">87285403.28</Col>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">220561589070</Col>
+            <Col id="DIST_USD_AMT">194562265.47</Col>
+            <Col id="MG_FEE_KRW_AMT"/>
+            <Col id="MG_FEE_USD_AMT"/>
+            <Col id="FUND_IRR_RATE"/>
+            <Col id="TARGET_IRR_RATE"/>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT"/>
+            <Col id="CASH_USD_AMT"/>
+            <Col id="EXPECTED_INVEST_KRW_AMT"/>
+            <Col id="EXPECTED_INVEST_USD_AMT"/>
+            <Col id="RATE">70.2871098366768906157230450300275676729</Col>
+            <Col id="FORM_YMD">2000-07-25 ~ 2005-08-02</Col>
+            <Col id="EXP_YMD">20110503</Col>
+            <Col id="INV_PERIOD_START_YMD">~</Col>
+            <Col id="INV_PERIOD_END_YMD">20091103</Col>
+            <Col id="CLEARING_YMD"/>
+            <Col id="FUND_NM">OSSF Capital Sdn. Bhd</Col>
+            <Col id="ENG_FUND_NM">OSSF Capital Sdn. Bhd</Col>
+            <Col id="FUND_SHORT_NM">OSSF Capital</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00996</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">150610101000</Col>
+            <Col id="CONTRIB_KRW_AMT">144525643000</Col>
+            <Col id="INVEST_KRW_AMT">0</Col>
+            <Col id="EXIT_KRW_AMT">0</Col>
+            <Col id="BASE_KRW_AMT">0</Col>
+            <Col id="PL_KRW_AMT">0</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">150610101</Col>
+            <Col id="CONTRIB_USD_AMT">144525643</Col>
+            <Col id="INVEST_USD_AMT">0</Col>
+            <Col id="EXIT_USD_AMT">0</Col>
+            <Col id="BASE_USD_AMT"/>
+            <Col id="PL_USD_AMT"/>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">253925764007</Col>
+            <Col id="DIST_USD_AMT">211628423.02</Col>
+            <Col id="MG_FEE_KRW_AMT">0</Col>
+            <Col id="MG_FEE_USD_AMT">3137710.43</Col>
+            <Col id="FUND_IRR_RATE">16.3</Col>
+            <Col id="TARGET_IRR_RATE">29.17</Col>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT"/>
+            <Col id="CASH_USD_AMT"/>
+            <Col id="EXPECTED_INVEST_KRW_AMT"/>
+            <Col id="EXPECTED_INVEST_USD_AMT"/>
+            <Col id="RATE">00.0</Col>
+            <Col id="FORM_YMD">2005-10-21 ~ 2010-10-20</Col>
+            <Col id="EXP_YMD">20110503</Col>
+            <Col id="INV_PERIOD_START_YMD">2005-10-21 ~ 2008-10-20</Col>
+            <Col id="INV_PERIOD_END_YMD">20091103</Col>
+            <Col id="CLEARING_YMD"/>
+            <Col id="FUND_NM">Oryx/STIC Korean Technology Fund</Col>
+            <Col id="ENG_FUND_NM">Oryx/STIC Korean Technology Fund, Ltd.P.</Col>
+            <Col id="FUND_SHORT_NM">Oryx Fund</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00022</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">185200000000</Col>
+            <Col id="CONTRIB_KRW_AMT">163205000000</Col>
+            <Col id="INVEST_KRW_AMT">149061253649</Col>
+            <Col id="EXIT_KRW_AMT">185385846264</Col>
+            <Col id="BASE_KRW_AMT">149061253649</Col>
+            <Col id="PL_KRW_AMT">36324592615</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">185200000</Col>
+            <Col id="CONTRIB_USD_AMT">148990887.08</Col>
+            <Col id="INVEST_USD_AMT">135423804.1</Col>
+            <Col id="EXIT_USD_AMT">163269969.73</Col>
+            <Col id="BASE_USD_AMT">136123837.03</Col>
+            <Col id="PL_USD_AMT">27146132.7</Col>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">178808587105</Col>
+            <Col id="DIST_USD_AMT">159442951.53</Col>
+            <Col id="MG_FEE_KRW_AMT">4643506841</Col>
+            <Col id="MG_FEE_USD_AMT">4643506.84</Col>
+            <Col id="FUND_IRR_RATE">2.96</Col>
+            <Col id="TARGET_IRR_RATE">9.18</Col>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT">16154853234</Col>
+            <Col id="CASH_USD_AMT">12830389.79</Col>
+            <Col id="EXPECTED_INVEST_KRW_AMT">9500239510</Col>
+            <Col id="EXPECTED_INVEST_USD_AMT">8923576.14</Col>
+            <Col id="RATE">80.48663803941684665226781857451403887689</Col>
+            <Col id="FORM_YMD">2005-11-07 ~ 2010-11-06</Col>
+            <Col id="EXP_YMD">20131012</Col>
+            <Col id="INV_PERIOD_START_YMD">~</Col>
+            <Col id="INV_PERIOD_END_YMD">20101012</Col>
+            <Col id="CLEARING_YMD">20150924</Col>
+            <Col id="FUND_NM">스틱투자조합17호</Col>
+            <Col id="ENG_FUND_NM">STIC Pioneer Fund II, L.P.</Col>
+            <Col id="FUND_SHORT_NM">스틱투자조합17호(파이오니어 II)</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00994</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">116515151000</Col>
+            <Col id="CONTRIB_KRW_AMT">116515151000</Col>
+            <Col id="INVEST_KRW_AMT">99759626851</Col>
+            <Col id="EXIT_KRW_AMT">120253201803</Col>
+            <Col id="BASE_KRW_AMT">97459632161</Col>
+            <Col id="PL_KRW_AMT">22793569642</Col>
+            <Col id="REMAIN_KRW_AMT">2299994690</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">2299994690</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">116515151</Col>
+            <Col id="CONTRIB_USD_AMT">0</Col>
+            <Col id="INVEST_USD_AMT">86923313.91</Col>
+            <Col id="EXIT_USD_AMT">109794305.3</Col>
+            <Col id="BASE_USD_AMT">84917616.59</Col>
+            <Col id="PL_USD_AMT">24876688.71</Col>
+            <Col id="REMAIN_USD_AMT">2061711.31</Col>
+            <Col id="BOOK_REMAIN_USD_AMT">2061711.31</Col>
+            <Col id="DIST_KRW_AMT">111335503961</Col>
+            <Col id="DIST_USD_AMT">101053052.02</Col>
+            <Col id="MG_FEE_KRW_AMT"/>
+            <Col id="MG_FEE_USD_AMT"/>
+            <Col id="FUND_IRR_RATE"/>
+            <Col id="TARGET_IRR_RATE"/>
+            <Col id="EVALUATE_AMT">1003809000</Col>
+            <Col id="CASH_KRW_AMT"/>
+            <Col id="CASH_USD_AMT"/>
+            <Col id="EXPECTED_INVEST_KRW_AMT"/>
+            <Col id="EXPECTED_INVEST_USD_AMT"/>
+            <Col id="RATE">85.61944605041107486527653386468168418715</Col>
+            <Col id="FORM_YMD">1901-01-01 ~ 2999-12-31</Col>
+            <Col id="EXP_YMD">20130301</Col>
+            <Col id="INV_PERIOD_START_YMD">~</Col>
+            <Col id="INV_PERIOD_END_YMD">20120306</Col>
+            <Col id="CLEARING_YMD"/>
+            <Col id="FUND_NM">SSF Capital Sdn. Bhd.</Col>
+            <Col id="ENG_FUND_NM">SSF Capital Sdn. Bhd.</Col>
+            <Col id="FUND_SHORT_NM">SSF Capital</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00995</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">116515151000</Col>
+            <Col id="CONTRIB_KRW_AMT">103033014820</Col>
+            <Col id="INVEST_KRW_AMT">0</Col>
+            <Col id="EXIT_KRW_AMT">0</Col>
+            <Col id="BASE_KRW_AMT">0</Col>
+            <Col id="PL_KRW_AMT">0</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">116515151</Col>
+            <Col id="CONTRIB_USD_AMT">103033014.82</Col>
+            <Col id="INVEST_USD_AMT">0</Col>
+            <Col id="EXIT_USD_AMT">0</Col>
+            <Col id="BASE_USD_AMT"/>
+            <Col id="PL_USD_AMT"/>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">122792066862</Col>
+            <Col id="DIST_USD_AMT">109888351.65</Col>
+            <Col id="MG_FEE_KRW_AMT"/>
+            <Col id="MG_FEE_USD_AMT"/>
+            <Col id="FUND_IRR_RATE">2.11</Col>
+            <Col id="TARGET_IRR_RATE">14.1</Col>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT"/>
+            <Col id="CASH_USD_AMT"/>
+            <Col id="EXPECTED_INVEST_KRW_AMT"/>
+            <Col id="EXPECTED_INVEST_USD_AMT"/>
+            <Col id="RATE">00.0</Col>
+            <Col id="FORM_YMD">2006-08-07 ~ 2011-08-06</Col>
+            <Col id="EXP_YMD">20150301</Col>
+            <Col id="INV_PERIOD_START_YMD">2006-05-04 ~ 2009-11-03</Col>
+            <Col id="INV_PERIOD_END_YMD">20120306</Col>
+            <Col id="CLEARING_YMD"/>
+            <Col id="FUND_NM">STIC Secondary Fund II-B</Col>
+            <Col id="ENG_FUND_NM">STIC Secondary Fund II-B, Ltd.P.</Col>
+            <Col id="FUND_SHORT_NM">Secondary Fund II-B(SSF Capital)</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00023</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">168800000000</Col>
+            <Col id="CONTRIB_KRW_AMT">118067000000</Col>
+            <Col id="INVEST_KRW_AMT">104150222109</Col>
+            <Col id="EXIT_KRW_AMT">138808444633</Col>
+            <Col id="BASE_KRW_AMT">104150222109</Col>
+            <Col id="PL_KRW_AMT">34658222524</Col>
+            <Col id="REMAIN_KRW_AMT">0</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">0</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">168800000</Col>
+            <Col id="CONTRIB_USD_AMT">105894089.88</Col>
+            <Col id="INVEST_USD_AMT">92723451.11</Col>
+            <Col id="EXIT_USD_AMT">127709624.22</Col>
+            <Col id="BASE_USD_AMT">92782982.45</Col>
+            <Col id="PL_USD_AMT">34926641.77</Col>
+            <Col id="REMAIN_USD_AMT"/>
+            <Col id="BOOK_REMAIN_USD_AMT"/>
+            <Col id="DIST_KRW_AMT">135299672121</Col>
+            <Col id="DIST_USD_AMT">127785256.45</Col>
+            <Col id="MG_FEE_KRW_AMT"/>
+            <Col id="MG_FEE_USD_AMT"/>
+            <Col id="FUND_IRR_RATE">4.03</Col>
+            <Col id="TARGET_IRR_RATE">11.86</Col>
+            <Col id="EVALUATE_AMT"/>
+            <Col id="CASH_KRW_AMT"/>
+            <Col id="CASH_USD_AMT"/>
+            <Col id="EXPECTED_INVEST_KRW_AMT"/>
+            <Col id="EXPECTED_INVEST_USD_AMT"/>
+            <Col id="RATE">61.70036854798578199052132701421800947867</Col>
+            <Col id="FORM_YMD">2007-12-28 ~ 2014-12-27</Col>
+            <Col id="EXP_YMD">20141227</Col>
+            <Col id="INV_PERIOD_START_YMD">2007-12-28 ~ 2011-12-27</Col>
+            <Col id="INV_PERIOD_END_YMD">20111227</Col>
+            <Col id="CLEARING_YMD"/>
+            <Col id="FUND_NM">스틱투자조합19호</Col>
+            <Col id="ENG_FUND_NM">STIC Secondary Fund II, L.P.</Col>
+            <Col id="FUND_SHORT_NM">스틱투자조합19호(세컨더리 II)</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00999</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">100000000000</Col>
+            <Col id="CONTRIB_KRW_AMT">42404406883</Col>
+            <Col id="INVEST_KRW_AMT">43382001969</Col>
+            <Col id="EXIT_KRW_AMT">44610474408</Col>
+            <Col id="BASE_KRW_AMT">25328964270</Col>
+            <Col id="PL_KRW_AMT">19281510138</Col>
+            <Col id="REMAIN_KRW_AMT">18053037699</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">18053037699</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">100000000</Col>
+            <Col id="CONTRIB_USD_AMT">39356508.13</Col>
+            <Col id="INVEST_USD_AMT">37627678.5</Col>
+            <Col id="EXIT_USD_AMT">40172932.28</Col>
+            <Col id="BASE_USD_AMT">21906437.62</Col>
+            <Col id="PL_USD_AMT">18266494.66</Col>
+            <Col id="REMAIN_USD_AMT">15721241.43</Col>
+            <Col id="BOOK_REMAIN_USD_AMT">15721241.43</Col>
+            <Col id="DIST_KRW_AMT">46110461739</Col>
+            <Col id="DIST_USD_AMT">40636281.29</Col>
+            <Col id="MG_FEE_KRW_AMT"/>
+            <Col id="MG_FEE_USD_AMT"/>
+            <Col id="FUND_IRR_RATE">13.19</Col>
+            <Col id="TARGET_IRR_RATE">23.37</Col>
+            <Col id="EVALUATE_AMT">13480216789.5249928139917250551870512029</Col>
+            <Col id="CASH_KRW_AMT"/>
+            <Col id="CASH_USD_AMT"/>
+            <Col id="EXPECTED_INVEST_KRW_AMT"/>
+            <Col id="EXPECTED_INVEST_USD_AMT"/>
+            <Col id="RATE">43.382001969</Col>
+            <Col id="FORM_YMD">2008-03-01 ~ 2013-03-01</Col>
+            <Col id="EXP_YMD">20170707</Col>
+            <Col id="INV_PERIOD_START_YMD">2008-03-01 ~ 2012-03-06</Col>
+            <Col id="INV_PERIOD_END_YMD">20130707</Col>
+            <Col id="CLEARING_YMD"/>
+            <Col id="FUND_NM">TFO/STIC Co-Investment Fund SPC</Col>
+            <Col id="ENG_FUND_NM">TFO/STIC Co-Investment Fund SPC</Col>
+            <Col id="FUND_SHORT_NM">TFO</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00024</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">189974000000</Col>
+            <Col id="CONTRIB_KRW_AMT">170976600000</Col>
+            <Col id="INVEST_KRW_AMT">159856960470</Col>
+            <Col id="EXIT_KRW_AMT">194330797322</Col>
+            <Col id="BASE_KRW_AMT">102270073312</Col>
+            <Col id="PL_KRW_AMT">92060724010</Col>
+            <Col id="REMAIN_KRW_AMT">57586887158</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">57586887158</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">189974000</Col>
+            <Col id="CONTRIB_USD_AMT">154737842.41</Col>
+            <Col id="INVEST_USD_AMT">142827630.45</Col>
+            <Col id="EXIT_USD_AMT">178051755.12</Col>
+            <Col id="BASE_USD_AMT">92353477.17</Col>
+            <Col id="PL_USD_AMT">85698277.95</Col>
+            <Col id="REMAIN_USD_AMT">50339507</Col>
+            <Col id="BOOK_REMAIN_USD_AMT">50339507</Col>
+            <Col id="DIST_KRW_AMT">186591501836</Col>
+            <Col id="DIST_USD_AMT">177741253</Col>
+            <Col id="MG_FEE_KRW_AMT"/>
+            <Col id="MG_FEE_USD_AMT"/>
+            <Col id="FUND_IRR_RATE">19.05</Col>
+            <Col id="TARGET_IRR_RATE">2000799.99</Col>
+            <Col id="EVALUATE_AMT">43609875947.0348377663752914207272645665</Col>
+            <Col id="CASH_KRW_AMT"/>
+            <Col id="CASH_USD_AMT"/>
+            <Col id="EXPECTED_INVEST_KRW_AMT"/>
+            <Col id="EXPECTED_INVEST_USD_AMT"/>
+            <Col id="RATE">84.14675717203406781980692094707696842726</Col>
+            <Col id="FORM_YMD">2008-03-01 ~ 2015-03-01</Col>
+            <Col id="EXP_YMD">20170707</Col>
+            <Col id="INV_PERIOD_START_YMD">2008-03-01 ~ 2012-03-06</Col>
+            <Col id="INV_PERIOD_END_YMD">20130827</Col>
+            <Col id="CLEARING_YMD"/>
+            <Col id="FUND_NM">스틱코리아 신성장동력 첨단융합 사모투자전문회사</Col>
+            <Col id="ENG_FUND_NM">STIC Korea Integrated-Technologies New Growth Engine Private Equity Fund</Col>
+            <Col id="FUND_SHORT_NM">신성장동력PEF</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00025</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">505200000000</Col>
+            <Col id="CONTRIB_KRW_AMT">435735000000</Col>
+            <Col id="INVEST_KRW_AMT">422999497792</Col>
+            <Col id="EXIT_KRW_AMT">410528291024</Col>
+            <Col id="BASE_KRW_AMT">245142443792</Col>
+            <Col id="PL_KRW_AMT">165385847232</Col>
+            <Col id="REMAIN_KRW_AMT">177857054000</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">177857054000</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">505200000</Col>
+            <Col id="CONTRIB_USD_AMT">392692152.13</Col>
+            <Col id="INVEST_USD_AMT">381127533.97</Col>
+            <Col id="EXIT_USD_AMT">352123178.49</Col>
+            <Col id="BASE_USD_AMT">223702153.94</Col>
+            <Col id="PL_USD_AMT">128421024.55</Col>
+            <Col id="REMAIN_USD_AMT">157809092.22</Col>
+            <Col id="BOOK_REMAIN_USD_AMT">157809092.22</Col>
+            <Col id="DIST_KRW_AMT">366517644342</Col>
+            <Col id="DIST_USD_AMT">323312002</Col>
+            <Col id="MG_FEE_KRW_AMT"/>
+            <Col id="MG_FEE_USD_AMT"/>
+            <Col id="FUND_IRR_RATE">11.86</Col>
+            <Col id="TARGET_IRR_RATE">15.68</Col>
+            <Col id="EVALUATE_AMT">135847317174.201174723029302824982751004</Col>
+            <Col id="CASH_KRW_AMT"/>
+            <Col id="CASH_USD_AMT"/>
+            <Col id="EXPECTED_INVEST_KRW_AMT"/>
+            <Col id="EXPECTED_INVEST_USD_AMT"/>
+            <Col id="RATE">83.72911674425969912905779889152810768013</Col>
+            <Col id="FORM_YMD">2006-05-04 ~ 2011-05-03</Col>
+            <Col id="EXP_YMD">20181119</Col>
+            <Col id="INV_PERIOD_START_YMD">2006-05-04 ~ 2009-11-03</Col>
+            <Col id="INV_PERIOD_END_YMD">20131118</Col>
+            <Col id="CLEARING_YMD"/>
+            <Col id="FUND_NM">코에프씨스틱그로쓰챔프2010의2호사모투자전문회사</Col>
+            <Col id="ENG_FUND_NM">KoFC STIC Growth Champ No. 2010-2 Private Equity Fund</Col>
+            <Col id="FUND_SHORT_NM">코에프씨스틱PEF</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00026</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">138500000000</Col>
+            <Col id="CONTRIB_KRW_AMT">120495000000</Col>
+            <Col id="INVEST_KRW_AMT">113497512302</Col>
+            <Col id="EXIT_KRW_AMT">65932718294</Col>
+            <Col id="BASE_KRW_AMT">15267532055</Col>
+            <Col id="PL_KRW_AMT">50665186239</Col>
+            <Col id="REMAIN_KRW_AMT">98229980247</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">97937407975</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">0</Col>
+            <Col id="CONTRIB_USD_AMT">110131186.45</Col>
+            <Col id="INVEST_USD_AMT">102639666.24</Col>
+            <Col id="EXIT_USD_AMT">57678219.33</Col>
+            <Col id="BASE_USD_AMT">13762414.68</Col>
+            <Col id="PL_USD_AMT">43915804.65</Col>
+            <Col id="REMAIN_USD_AMT">88877250.44</Col>
+            <Col id="BOOK_REMAIN_USD_AMT">88584678.17</Col>
+            <Col id="DIST_KRW_AMT">61030508410</Col>
+            <Col id="DIST_USD_AMT">53542507</Col>
+            <Col id="MG_FEE_KRW_AMT"/>
+            <Col id="MG_FEE_USD_AMT"/>
+            <Col id="FUND_IRR_RATE">14.7</Col>
+            <Col id="TARGET_IRR_RATE">18.3</Col>
+            <Col id="EVALUATE_AMT">87439907219.5744665646205665564119725956</Col>
+            <Col id="CASH_KRW_AMT"/>
+            <Col id="CASH_USD_AMT"/>
+            <Col id="EXPECTED_INVEST_KRW_AMT"/>
+            <Col id="EXPECTED_INVEST_USD_AMT"/>
+            <Col id="RATE">81.94766231191335740072202166064981949458</Col>
+            <Col id="FORM_YMD">2009-06-30 ~ 2017-07-07</Col>
+            <Col id="EXP_YMD">20191219</Col>
+            <Col id="INV_PERIOD_START_YMD">2009-06-30 ~ 2013-07-07</Col>
+            <Col id="INV_PERIOD_END_YMD">20151219</Col>
+            <Col id="CLEARING_YMD"/>
+            <Col id="FUND_NM">스틱 팬아시아 테크놀로지 펀드</Col>
+            <Col id="ENG_FUND_NM">STIC Pan-Asia Technology Fund</Col>
+            <Col id="FUND_SHORT_NM">팬아시아 펀드</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00027</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">239000000000</Col>
+            <Col id="CONTRIB_KRW_AMT">178772000000</Col>
+            <Col id="INVEST_KRW_AMT">170005723818</Col>
+            <Col id="EXIT_KRW_AMT">35628812356</Col>
+            <Col id="BASE_KRW_AMT">24449344136</Col>
+            <Col id="PL_KRW_AMT">11179468220</Col>
+            <Col id="REMAIN_KRW_AMT">145556379682</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">121164866532</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">0</Col>
+            <Col id="CONTRIB_USD_AMT">163893282.52</Col>
+            <Col id="INVEST_USD_AMT">155956312.85</Col>
+            <Col id="EXIT_USD_AMT">31060982.07</Col>
+            <Col id="BASE_USD_AMT">22519688.58</Col>
+            <Col id="PL_USD_AMT">8541293.49</Col>
+            <Col id="REMAIN_USD_AMT">133436623.61</Col>
+            <Col id="BOOK_REMAIN_USD_AMT">111630715.49</Col>
+            <Col id="DIST_KRW_AMT">33997000000</Col>
+            <Col id="DIST_USD_AMT">31060979</Col>
+            <Col id="MG_FEE_KRW_AMT"/>
+            <Col id="MG_FEE_USD_AMT"/>
+            <Col id="FUND_IRR_RATE">-1.52</Col>
+            <Col id="TARGET_IRR_RATE">10.42</Col>
+            <Col id="EVALUATE_AMT">84774027800</Col>
+            <Col id="CASH_KRW_AMT"/>
+            <Col id="CASH_USD_AMT"/>
+            <Col id="EXPECTED_INVEST_KRW_AMT"/>
+            <Col id="EXPECTED_INVEST_USD_AMT"/>
+            <Col id="RATE">71.13210201589958158995815899581589958159</Col>
+            <Col id="FORM_YMD">2005-12-07 ~ 2018-04-30</Col>
+            <Col id="EXP_YMD">20171018</Col>
+            <Col id="INV_PERIOD_START_YMD">~</Col>
+            <Col id="INV_PERIOD_END_YMD">20151017</Col>
+            <Col id="CLEARING_YMD"/>
+            <Col id="FUND_NM">스틱세컨더리제삼호 사모투자전문회사</Col>
+            <Col id="ENG_FUND_NM">STIC Secondary Private Equity Fund III</Col>
+            <Col id="FUND_SHORT_NM">세컨더리3호PEF</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">01001</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">73459346000</Col>
+            <Col id="CONTRIB_KRW_AMT">42624281923</Col>
+            <Col id="INVEST_KRW_AMT">36623803750</Col>
+            <Col id="EXIT_KRW_AMT">227140915</Col>
+            <Col id="BASE_KRW_AMT">9662</Col>
+            <Col id="PL_KRW_AMT">227131253</Col>
+            <Col id="REMAIN_KRW_AMT">36623794088</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">36623794088</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">69020000</Col>
+            <Col id="CONTRIB_USD_AMT">38170696.26</Col>
+            <Col id="INVEST_USD_AMT">32917820.59</Col>
+            <Col id="EXIT_USD_AMT">195212.27</Col>
+            <Col id="BASE_USD_AMT">8.7</Col>
+            <Col id="PL_USD_AMT">195203.57</Col>
+            <Col id="REMAIN_USD_AMT">32917810.97</Col>
+            <Col id="BOOK_REMAIN_USD_AMT">32917810.97</Col>
+            <Col id="DIST_KRW_AMT">0</Col>
+            <Col id="DIST_USD_AMT"/>
+            <Col id="MG_FEE_KRW_AMT"/>
+            <Col id="MG_FEE_USD_AMT"/>
+            <Col id="FUND_IRR_RATE">-5.85</Col>
+            <Col id="TARGET_IRR_RATE">16.95</Col>
+            <Col id="EVALUATE_AMT">34108482760.3378447622488819963703372656</Col>
+            <Col id="CASH_KRW_AMT"/>
+            <Col id="CASH_USD_AMT"/>
+            <Col id="EXPECTED_INVEST_KRW_AMT"/>
+            <Col id="EXPECTED_INVEST_USD_AMT"/>
+            <Col id="RATE">49.85588048932534738329960084316568786224</Col>
+            <Col id="FORM_YMD">2012-10-18 ~ 2017-10-18</Col>
+            <Col id="EXP_YMD">20220723</Col>
+            <Col id="INV_PERIOD_START_YMD">2012-10-18 ~ 2015-10-17</Col>
+            <Col id="INV_PERIOD_END_YMD">20180723</Col>
+            <Col id="CLEARING_YMD"/>
+            <Col id="FUND_NM">STIC Shariah Private Equity Fund III L.P.</Col>
+            <Col id="ENG_FUND_NM">STIC Shariah Private Equity Fund III L.P.</Col>
+            <Col id="FUND_SHORT_NM">Shariah PE Fund III</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">01000</Col>
+            <Col id="FUND_TYPE_CD">2</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">394233283259</Col>
+            <Col id="CONTRIB_KRW_AMT">226904299874</Col>
+            <Col id="INVEST_KRW_AMT">200452439545</Col>
+            <Col id="EXIT_KRW_AMT">1426916065</Col>
+            <Col id="BASE_KRW_AMT">10338</Col>
+            <Col id="PL_KRW_AMT">1426905727</Col>
+            <Col id="REMAIN_KRW_AMT">200452429207</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">200452429207</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">374976528</Col>
+            <Col id="CONTRIB_USD_AMT">202798463.74</Col>
+            <Col id="INVEST_USD_AMT">180128979.54</Col>
+            <Col id="EXIT_USD_AMT">1226398.48</Col>
+            <Col id="BASE_USD_AMT">9.32</Col>
+            <Col id="PL_USD_AMT">1226389.16</Col>
+            <Col id="REMAIN_USD_AMT">180128971.14</Col>
+            <Col id="BOOK_REMAIN_USD_AMT">180128971.14</Col>
+            <Col id="DIST_KRW_AMT">0</Col>
+            <Col id="DIST_USD_AMT"/>
+            <Col id="MG_FEE_KRW_AMT"/>
+            <Col id="MG_FEE_USD_AMT"/>
+            <Col id="FUND_IRR_RATE">9.34</Col>
+            <Col id="TARGET_IRR_RATE">20.2</Col>
+            <Col id="EVALUATE_AMT">187306281131.1166238758467669143868191995</Col>
+            <Col id="CASH_KRW_AMT"/>
+            <Col id="CASH_USD_AMT"/>
+            <Col id="EXPECTED_INVEST_KRW_AMT"/>
+            <Col id="EXPECTED_INVEST_USD_AMT"/>
+            <Col id="RATE">50.84614822166307965070839128127730062342</Col>
+            <Col id="FORM_YMD">2013-02-07 ~ 2022-07-23</Col>
+            <Col id="EXP_YMD">20220723</Col>
+            <Col id="INV_PERIOD_START_YMD">2013-02-07 ~ 2018-07-23</Col>
+            <Col id="INV_PERIOD_END_YMD">20180723</Col>
+            <Col id="CLEARING_YMD"/>
+            <Col id="FUND_NM">STIC Private Equity Fund III L.P.</Col>
+            <Col id="ENG_FUND_NM">STIC Private Equity Fund III L.P.</Col>
+            <Col id="FUND_SHORT_NM">PE Fund III</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00029</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">500000000000</Col>
+            <Col id="CONTRIB_KRW_AMT">151000000000</Col>
+            <Col id="INVEST_KRW_AMT">150000000000</Col>
+            <Col id="EXIT_KRW_AMT">0</Col>
+            <Col id="BASE_KRW_AMT">0</Col>
+            <Col id="PL_KRW_AMT">0</Col>
+            <Col id="REMAIN_KRW_AMT">150000000000</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">150000000000</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">0</Col>
+            <Col id="CONTRIB_USD_AMT">125258451.02</Col>
+            <Col id="INVEST_USD_AMT">118382544.67</Col>
+            <Col id="EXIT_USD_AMT">0</Col>
+            <Col id="BASE_USD_AMT">0</Col>
+            <Col id="PL_USD_AMT">0</Col>
+            <Col id="REMAIN_USD_AMT">118382544.67</Col>
+            <Col id="BOOK_REMAIN_USD_AMT">118382544.67</Col>
+            <Col id="DIST_KRW_AMT">0</Col>
+            <Col id="DIST_USD_AMT"/>
+            <Col id="MG_FEE_KRW_AMT"/>
+            <Col id="MG_FEE_USD_AMT"/>
+            <Col id="FUND_IRR_RATE">0.09</Col>
+            <Col id="TARGET_IRR_RATE"/>
+            <Col id="EVALUATE_AMT">145905061518.2371170973820751907522463213</Col>
+            <Col id="CASH_KRW_AMT"/>
+            <Col id="CASH_USD_AMT"/>
+            <Col id="EXPECTED_INVEST_KRW_AMT"/>
+            <Col id="EXPECTED_INVEST_USD_AMT"/>
+            <Col id="RATE">30.0</Col>
+            <Col id="FORM_YMD">2006-10-13 ~ 2013-10-12</Col>
+            <Col id="EXP_YMD">20240102</Col>
+            <Col id="INV_PERIOD_START_YMD">2006-10-13 ~ 2010-10-12</Col>
+            <Col id="INV_PERIOD_END_YMD">20180303</Col>
+            <Col id="CLEARING_YMD"/>
+            <Col id="FUND_NM">스틱씨제이글로벌투자파트너쉽사모투자전문회사</Col>
+            <Col id="ENG_FUND_NM">STIC CJ Global Investment Corporate Partnership Private Equity Fund</Col>
+            <Col id="FUND_SHORT_NM">CJ CPP</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00030</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">221000000000</Col>
+            <Col id="CONTRIB_KRW_AMT">118235000000</Col>
+            <Col id="INVEST_KRW_AMT">113667969850</Col>
+            <Col id="EXIT_KRW_AMT">0</Col>
+            <Col id="BASE_KRW_AMT">0</Col>
+            <Col id="PL_KRW_AMT">0</Col>
+            <Col id="REMAIN_KRW_AMT">113667969850</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">113667969850</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">0</Col>
+            <Col id="CONTRIB_USD_AMT">100473148.9</Col>
+            <Col id="INVEST_USD_AMT">96682346.03</Col>
+            <Col id="EXIT_USD_AMT">0</Col>
+            <Col id="BASE_USD_AMT">0</Col>
+            <Col id="PL_USD_AMT">0</Col>
+            <Col id="REMAIN_USD_AMT">96682346.03</Col>
+            <Col id="BOOK_REMAIN_USD_AMT">96682346.03</Col>
+            <Col id="DIST_KRW_AMT">0</Col>
+            <Col id="DIST_USD_AMT"/>
+            <Col id="MG_FEE_KRW_AMT"/>
+            <Col id="MG_FEE_USD_AMT"/>
+            <Col id="FUND_IRR_RATE">-39.34</Col>
+            <Col id="TARGET_IRR_RATE"/>
+            <Col id="EVALUATE_AMT">109731976050</Col>
+            <Col id="CASH_KRW_AMT"/>
+            <Col id="CASH_USD_AMT"/>
+            <Col id="EXPECTED_INVEST_KRW_AMT"/>
+            <Col id="EXPECTED_INVEST_USD_AMT"/>
+            <Col id="RATE">51.43347052036199095022624434389140271493</Col>
+            <Col id="FORM_YMD">2010-11-19 ~ 2018-11-19</Col>
+            <Col id="EXP_YMD">20221119</Col>
+            <Col id="INV_PERIOD_START_YMD">2010-11-19 ~ 2013-11-18</Col>
+            <Col id="INV_PERIOD_END_YMD">20181119</Col>
+            <Col id="CLEARING_YMD"/>
+            <Col id="FUND_NM">2014 스틱 성장동력 M&amp;A 사모투자전문회사</Col>
+            <Col id="ENG_FUND_NM">2014 STIC Growth Engine M&amp;A Private Equity Fund</Col>
+            <Col id="FUND_SHORT_NM">성장동력M&amp;A</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00031</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">80000000000</Col>
+            <Col id="CONTRIB_KRW_AMT">23520000000</Col>
+            <Col id="INVEST_KRW_AMT">19277928000</Col>
+            <Col id="EXIT_KRW_AMT">0</Col>
+            <Col id="BASE_KRW_AMT">0</Col>
+            <Col id="PL_KRW_AMT">0</Col>
+            <Col id="REMAIN_KRW_AMT">19277928000</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">19277928000</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">0</Col>
+            <Col id="CONTRIB_USD_AMT">20474139.7</Col>
+            <Col id="INVEST_USD_AMT">16794284.53</Col>
+            <Col id="EXIT_USD_AMT">0</Col>
+            <Col id="BASE_USD_AMT">0</Col>
+            <Col id="PL_USD_AMT">0</Col>
+            <Col id="REMAIN_USD_AMT">16794284.53</Col>
+            <Col id="BOOK_REMAIN_USD_AMT">16794284.53</Col>
+            <Col id="DIST_KRW_AMT">0</Col>
+            <Col id="DIST_USD_AMT"/>
+            <Col id="MG_FEE_KRW_AMT"/>
+            <Col id="MG_FEE_USD_AMT"/>
+            <Col id="FUND_IRR_RATE">-18.43</Col>
+            <Col id="TARGET_IRR_RATE"/>
+            <Col id="EVALUATE_AMT">17949928000</Col>
+            <Col id="CASH_KRW_AMT"/>
+            <Col id="CASH_USD_AMT"/>
+            <Col id="EXPECTED_INVEST_KRW_AMT"/>
+            <Col id="EXPECTED_INVEST_USD_AMT"/>
+            <Col id="RATE">24.09741</Col>
+            <Col id="FORM_YMD">2011-12-20 ~ 2019-12-19</Col>
+            <Col id="EXP_YMD">20221211</Col>
+            <Col id="INV_PERIOD_START_YMD">2011-12-20 ~ 2015-12-19</Col>
+            <Col id="INV_PERIOD_END_YMD">20181211</Col>
+            <Col id="CLEARING_YMD"/>
+            <Col id="FUND_NM">스틱해외진출플랫폼펀드</Col>
+            <Col id="ENG_FUND_NM">STIC SME Global Expansion Platform Fund</Col>
+            <Col id="FUND_SHORT_NM">해외진출플랫폼</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+          <Row>
+            <Col id="FUND_CD">00034</Col>
+            <Col id="FUND_TYPE_CD">1</Col>
+            <Col id="CONTRIB_PROMISE_KRW_AMT">75000000000</Col>
+            <Col id="CONTRIB_KRW_AMT">70200000000</Col>
+            <Col id="INVEST_KRW_AMT">70000000000</Col>
+            <Col id="EXIT_KRW_AMT">0</Col>
+            <Col id="BASE_KRW_AMT">0</Col>
+            <Col id="PL_KRW_AMT">0</Col>
+            <Col id="REMAIN_KRW_AMT">70000000000</Col>
+            <Col id="BOOK_REMAIN_KRW_AMT">70000000000</Col>
+            <Col id="CONTRIB_PROMISE_USD_AMT">0</Col>
+            <Col id="CONTRIB_USD_AMT">60454702.03</Col>
+            <Col id="INVEST_USD_AMT">60774440.01</Col>
+            <Col id="EXIT_USD_AMT">0</Col>
+            <Col id="BASE_USD_AMT">0</Col>
+            <Col id="PL_USD_AMT">0</Col>
+            <Col id="REMAIN_USD_AMT">60774440.01</Col>
+            <Col id="BOOK_REMAIN_USD_AMT">60774440.01</Col>
+            <Col id="DIST_KRW_AMT">0</Col>
+            <Col id="DIST_USD_AMT"/>
+            <Col id="MG_FEE_KRW_AMT"/>
+            <Col id="MG_FEE_USD_AMT"/>
+            <Col id="FUND_IRR_RATE"/>
+            <Col id="TARGET_IRR_RATE"/>
+            <Col id="EVALUATE_AMT">67667627971.3534356289196819375208558523</Col>
+            <Col id="CASH_KRW_AMT"/>
+            <Col id="CASH_USD_AMT"/>
+            <Col id="EXPECTED_INVEST_KRW_AMT"/>
+            <Col id="EXPECTED_INVEST_USD_AMT"/>
+            <Col id="RATE">93.33333333333333333333333333333333333333</Col>
+            <Col id="FORM_YMD">2000-02-15 ~ 2005-02-28</Col>
+            <Col id="EXP_YMD">20240228</Col>
+            <Col id="INV_PERIOD_START_YMD">~</Col>
+            <Col id="INV_PERIOD_END_YMD">20160831</Col>
+            <Col id="CLEARING_YMD"/>
+            <Col id="FUND_NM">스틱글로벌투자제1호사모투자합자회사</Col>
+            <Col id="ENG_FUND_NM">STIC Global Investment 1st Private Equity Fund</Col>
+            <Col id="FUND_SHORT_NM">Rokin프로젝트PEF</Col>
+            <Col id="GUBUN">0</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

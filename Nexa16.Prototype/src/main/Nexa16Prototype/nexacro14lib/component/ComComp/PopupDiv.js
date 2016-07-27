@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -168,7 +168,13 @@ if (!nexacro.PopupDiv) {
 		return false;
 	};
 
-	_pPopupDiv.trackPopup = function (left, top, width, height, callbackfn) {
+	_pPopupDiv.trackPopup = function (left, top, width, height, callbackfn, bcapture) {
+		if (this._track_on == true) {
+			return;
+		}
+
+		this._track_capture = bcapture === false ? false : true;
+
 		this.returnvalue = "";
 		if (width == null && height == null) {
 			width = this._adjust_width;
@@ -179,10 +185,10 @@ if (!nexacro.PopupDiv) {
 		var _top = +top;
 		var _width = +width;
 		var _height = +height;
-		var mainframe = this._getMainFrame();
+		var window_frame = this._getWindowFrame();
 
-		var m_c_width = mainframe._adjust_width;
-		var m_c_height = mainframe._adjust_height;
+		var m_c_width = window_frame._adjust_width;
+		var m_c_height = window_frame._adjust_height;
 
 		if (_left + _width > m_c_width) {
 			var left_width = _left - _width;
@@ -236,8 +242,9 @@ if (!nexacro.PopupDiv) {
 
 		return (this.async ? true : this.returnvalue);
 	};
-	_pPopupDiv.trackPopupByComponent = function (obj, left, top, width, height, callbackfn) {
+	_pPopupDiv.trackPopupByComponent = function (obj, left, top, width, height, callbackfn, bcapture) {
 		this.returnvalue = "";
+		this._track_capture = bcapture === false ? false : true;
 
 		if (width == null && height == null) {
 			width = this._adjust_width;
@@ -332,24 +339,33 @@ if (!nexacro.PopupDiv) {
 		return pThis;
 	};
 
+	_pPopupDiv._getWindowFrame = function () {
+		var win = this._getWindow();
+		if (win) {
+			return win.frame;
+		}
+
+		return null;
+	};
+
 	_pPopupDiv._control_popup = function (_left, _top, _width, _height) {
-		var mainframe = this._getMainFrame();
+		var window_frame = this._getWindowFrame();
 
-		var m_c_width = mainframe._adjust_width;
-		var m_c_height = mainframe._adjust_height;
+		var frame_c_width = window_frame._adjust_width;
+		var frame_c_height = window_frame._adjust_height;
 
-		if (_left + _width > m_c_width) {
+		if (_left + _width > frame_c_width) {
 			var left_width = _left - _width;
 			if (left_width > 0) {
 				_left = left_width;
 			}
 			else {
-				_left = m_c_width - _width;
+				_left = frame_c_width - _width;
 			}
 		}
 
-		if (_top + _height > m_c_height) {
-			_top = m_c_height - _height;
+		if (_top + _height > frame_c_height) {
+			_top = frame_c_height - _height;
 		}
 		this._popup(_left, _top, _width, _height);
 	};
@@ -371,6 +387,7 @@ if (!nexacro.PopupDiv) {
 	};
 
 	_pPopupDiv._on_load = function () {
+		var control_element = this._control_element;
 		var ret = nexacro.Form.prototype._on_load.apply(this, arguments);
 
 		var popup_info = this._wait_pop_position;
@@ -384,6 +401,10 @@ if (!nexacro.PopupDiv) {
 
 			popup_info = null;
 			delete this._wait_pop_position;
+		}
+
+		if (!control_element) {
+			this.setFocus();
 		}
 
 		return ret;

@@ -1,0 +1,22 @@
+﻿@font-face {
+	font-family: 'notokr-regular';
+	src: url('notokr-regular.eot');
+	src: local(' '), url('notokr-regular.woff') format('woff'), url('notokr-regular.ttf') format('truetype'), url('notokr-regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'notokr-medium';
+	src: url('notokr-medium.eot');
+	src: local(' '), url('notokr-medium.woff') format('woff'), url('notokr-medium.ttf') format('truetype'), url('notokr-medium.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+div{
+	 font-family: 'notokr-regular',Sans-Serif;
+	 line-height:110% !important;
+}

@@ -1,0 +1,20 @@
+﻿{
+	"name": "NPLibrary",
+	"version": "1.0.0.0",
+	"description": "Nexa16Prototype Library for nexacro platform",
+	"license": "",
+	"scripts": [
+		"NPLibrary/rMateChartH5.js",
+		"NPLibrary/NPCcommon.js",
+		"NPLibrary/NPComp.js",
+		"NPLibrary/NPDataset.js",
+		"NPLibrary/NPDate.js",
+		"NPLibrary/NPForm.js",
+		"NPLibrary/NPFormat.js",
+		"NPLibrary/NPGrid.js",
+		"NPLibrary/NPPrint.js",
+		"NPLibrary/NPTransaction.js",
+		"NPLibrary/NPUtil.js"
+	]
+}
+//@ sourceURL=NPLibrary.json

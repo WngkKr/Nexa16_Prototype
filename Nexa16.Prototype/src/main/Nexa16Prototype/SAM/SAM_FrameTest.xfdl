@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="test" classname="test" left="0" top="0" width="1024" height="870" titletext="프레임 샘플">
+    <Layouts>
+      <Layout>
+        <Div id="Div00" taborder="0" text="Div00" left="0" top="0" right="0" height="40" style="border:1 solid #808080ff ;">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+        <Div id="Div01" taborder="1" text="Div00" left="0" top="42" right="0" style="border:1 solid #808080ff ;" url="SAM::SAM_DEXT5download.xfdl" bottom="120">
+          <Layouts/>
+        </Div>
+        <Div id="Div02" taborder="2" text="Div00" left="0" right="0" style="border:1 solid #808080ff ;" height="118" bottom="0" url="SAM::SAM_DEXT5download.xfdl"/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

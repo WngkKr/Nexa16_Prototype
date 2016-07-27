@@ -1,0 +1,636 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="frame_work" classname="frame_work" left="0" top="0" width="1400" height="700" titletext="표준프로세스">
+    <Layouts>
+      <Layout>
+        <Static id="Static42" taborder="96" text="20" left="1202" top="12" width="20" height="705" style="background:chartreuse;" visible="false"/>
+        <Static id="Static04" taborder="97" text="20" left="0" top="11" width="20" height="673" style="background:chartreuse;" visible="false"/>
+        <Static id="Static05" taborder="100" text="h13" left="20" top="37" width="1180" height="13" style="background:chartreuse;align:center middle;" visible="false"/>
+        <Static id="Static00" taborder="123" text="h10" visible="false" left="25" top="435" width="1164" height="10" style="background:#7fff00ee;color:darkred;align:center middle;"/>
+        <Static id="Static01" taborder="139" text="h7" visible="false" left="0" top="0" width="1220" height="7" style="background:chartreuse;align:center middle;"/>
+        <Static id="Static02" taborder="140" text="Static02" left="43.5%" top="12" right="56.43%" height="592" style="background:black;" visible="false"/>
+        <Grid id="Grid00" taborder="141" useinputpanel="false" autofittype="col" left="20" top="50" width="1180" height="387" style="border:1 solid #838383ff,1 solid #c9c6c3ff,1 solid #c9c6c3ff,1 solid #c9c6c3ff;" binddataset="ds_grid">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="130"/>
+                <Column size="58"/>
+                <Column size="50"/>
+                <Column size="50"/>
+                <Column size="80"/>
+                <Column size="150"/>
+                <Column size="200"/>
+              </Columns>
+              <Rows>
+                <Row size="45" band="head"/>
+                <Row size="24" band="head"/>
+                <Row size="60"/>
+              </Rows>
+              <Band id="head">
+                <Cell rowspan="2">
+                  <Cell displaytype="decoratetext" text="프로세스 &lt;fs v='8'&gt;&lt;fc v='red'&gt;1)&lt;/fc&gt;&lt;/fs&gt;"/>
+                  <Cell row="1" displaytype="button" style="padding:0 40 3 40;" text="Excel"/>
+                </Cell>
+                <Cell col="1" rowspan="2" text="내용"/>
+                <Cell col="2" rowspan="2" text="진행주체"/>
+                <Cell col="3" rowspan="2" text="의사결정"/>
+                <Cell col="4" rowspan="2" text="최종결재"/>
+                <Cell col="5" rowspan="2" displaytype="decoratetext" text="공식미팅&#13;&#10;(투자팀 외 참석자)"/>
+                <Cell col="6" rowspan="2" displaytype="decoratetext" text="문서&lt;b v='true'&gt;&lt;fs v='8'&gt;&lt;fc v='red'&gt;2)&lt;/fc&gt;&lt;/fs&gt;&lt;/b&gt;"/>
+                <Cell col="7" rowspan="2" text="다운로드"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="decoratetext" style="align:left middle;" text="bind:프로세스" wordwrap="char" suppress="1"/>
+                <Cell col="1" displaytype="decoratetext" style="align:left;padding:5 5 5 5;" text="bind:내용" wordwrap="char" suppress="0"/>
+                <Cell col="2" displaytype="decoratetext" style="padding:5 5 5 5;" text="bind:진행주체" wordwrap="char" suppress="0"/>
+                <Cell col="3" displaytype="decoratetext" style="padding:5 5 5 5;" text="bind:의사결정" wordwrap="char" suppress="0"/>
+                <Cell col="4" displaytype="decoratetext" style="padding:5 5 5 5;" text="bind:최종결재" wordwrap="char" suppress="0"/>
+                <Cell col="5" displaytype="decoratetext" style="padding:5 5 5 5;" text="bind:공식미팅" wordwrap="char" suppress="0"/>
+                <Cell col="6" displaytype="decoratetext" style="align:left;padding:5 5 5 5;" text="bind:문서" wordwrap="char" suppress="0"/>
+                <Cell col="7" displaytype="button" style="align:left;padding:5 5 5 5;background2: ;" text="bind:다운로드" wordwrap="char" suppress="0"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static03" taborder="143" text="     표준프로세스" onclick="Static05_onclick" cssclass="sta_WF_title1" left="21" top="7" width="238" height="30" style="background:transparent URL('IMG::h1.png');align:left middle;font:15 arial;"/>
+        <Static id="Static06" taborder="144" text="[참조]&#13;&#10;1) Bidding 딜, 상장사 딜 경우 프로세스 변경될 수 있음, 단, Lexpeed 기재, 법무 체크리스트 등 투자집행을 위해 필요한 항목은 이행 바람&#13;&#10;2) 내부 문서 양식으로는 DSC T(DST Template), RT(Recommended Template), ST(표준양식, STIC Template) 있음, 특별히 구분없는 문서는 자유양식 사용하면 됨&#13;&#10;3) 회사와의 계약(Non Binding &amp; Binding) 체결 시기는 유동적일 수 있음  &#13;&#10;   투자 계약(SPA, SHA), MOU 또는 Term Sheet(투자 대상, 투자 조건, 비구속력, 실사 비용 분담, 기간, 독점 검토권, 비밀유지 등)&#13;&#10;   대표이사 2인의 결재 필요, 단계별로 진행하되, 상황에 따라 시기 및 조건 조정함&#13;&#10;4) 업체 Lexpeed 등록 : 상장사일 경우, 이니셜 등으로 작성한 후, 공시(혹은 투자금 집행) 이후 반드시 내용 수정&#13;&#10;5) DSC : 파트너, OPS, 투자지원본부 각 팀장, 투자팀장&#13;&#10;6) OPG 방문은 1) 딜발굴 단계~3) IR 이후 Business DD 단계 사이에 진행됨&#13;&#10;7) 세션 전 필수 확인 항목 : 법인등기부등본, 정관, 주주명부, 주권 발행 상태, 사채 발행 한도, 대기업 여부 등 &#13;&#10;   준법확인서는 심사역이 펀드별 양식을 작성하여 Session전까지 법무팀에 제출요망&#13;&#10;8) 일정, 담당자, 실사 범위와 중점 실사 부분 논의 등에 대해 설명&#13;&#10;9) 계약서는 피투자사와 합의하에 투심위 전 작성을 원칙으로 함&#13;&#10;10) 각 자료 및 질의는 투자팀이 최사특성 및 투자형태에 맞게 가감, 조정 가능" left="20" top="445" right="14.21%" height="258" style="linespace:5;background:#eeeeeeff;padding:10 10 10 10;align:left top;" onclick="Static06_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_grid">
+        <ColumnInfo>
+          <Column id="프로세스" type="STRING" size="256"/>
+          <Column id="내용" type="STRING" size="256"/>
+          <Column id="진행주체" type="STRING" size="256"/>
+          <Column id="의사결정" type="STRING" size="256"/>
+          <Column id="최종결재" type="STRING" size="256"/>
+          <Column id="공식미팅" type="STRING" size="256"/>
+          <Column id="문서" type="STRING" size="256"/>
+          <Column id="다운로드" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="프로세스">1) 딜발굴/검토</Col>
+            <Col id="내용">회사 사전 방문&#13;
+(소개자, FA, 등 미팅)</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="공식미팅"/>
+            <Col id="다운로드"/>
+            <Col id="문서"/>
+          </Row>
+          <Row>
+            <Col id="내용">NDA&lt;b v='true'&gt;&lt;fs v='8'&gt;&lt;fc v='red'&gt;3)&lt;/fc&gt;&lt;/fs&gt;&lt;/b&gt;</Col>
+            <Col id="진행주체">투자/법무팀</Col>
+            <Col id="의사결정">본부장</Col>
+            <Col id="최종결재">본부장</Col>
+            <Col id="공식미팅"/>
+            <Col id="다운로드"/>
+            <Col id="문서">NDA(ST) 혹은 피투자사 양식</Col>
+            <Col id="프로세스">1) 딜발굴/검토</Col>
+          </Row>
+          <Row>
+            <Col id="내용">업체 등록</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="공식미팅"/>
+            <Col id="다운로드"/>
+            <Col id="문서">Lexpeed 등록&lt;b v='true'&gt;&lt;fs v='8'&gt;&lt;fc v='red'&gt;4)&lt;/fc&gt;&lt;/fs&gt;&lt;/b&gt;</Col>
+            <Col id="프로세스">1) 딜발굴/검토</Col>
+          </Row>
+          <Row>
+            <Col id="내용">1차 요청자료/질의사항 접수</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="공식미팅"/>
+            <Col id="문서">1차 요청자료 목록(RT)</Col>
+            <Col id="다운로드"/>
+            <Col id="프로세스">1) 딜발굴/검토</Col>
+          </Row>
+          <Row>
+            <Col id="내용">투자본부 내 발표</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="공식미팅"/>
+            <Col id="문서">DSC Report 1pg(ST) &amp; IM(RT)</Col>
+            <Col id="다운로드"/>
+            <Col id="프로세스">1) 딜발굴/검토</Col>
+          </Row>
+          <Row>
+            <Col id="프로세스">2) 딜 소개</Col>
+            <Col id="내용">DSC 양식 제출</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="공식미팅"/>
+            <Col id="문서">DSC Report 1pg(ST)</Col>
+            <Col id="다운로드"/>
+          </Row>
+          <Row>
+            <Col id="프로세스">2) 딜 소개</Col>
+            <Col id="내용">딜 소개 </Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="공식미팅">DSC&lt;b v='true'&gt;&lt;fs v='8'&gt;&lt;fc v='red'&gt;5)&lt;/fc&gt;&lt;/fs&gt;&lt;/b&gt;</Col>
+            <Col id="문서">IM(RT)</Col>
+            <Col id="다운로드"/>
+          </Row>
+          <Row>
+            <Col id="프로세스">2) 딜 소개</Col>
+            <Col id="내용">딜에 대한 진행 사항 발표</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="공식미팅">DSC</Col>
+            <Col id="문서"/>
+            <Col id="다운로드"/>
+          </Row>
+          <Row>
+            <Col id="프로세스">2) 딜 소개</Col>
+            <Col id="내용">투자 조건&lt;b v='true'&gt;&lt;fs v='8'&gt;&lt;fc v='red'&gt;3)&lt;/fc&gt;&lt;/fs&gt;&lt;/b&gt; 제안 &amp; 협의</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="의사결정">본부장</Col>
+            <Col id="최종결재"/>
+            <Col id="공식미팅"/>
+            <Col id="문서">제안서(RT)</Col>
+            <Col id="다운로드"/>
+          </Row>
+          <Row>
+            <Col id="프로세스">3) IR BusinessDD&lt;b v='true'&gt;&lt;fs v='8'&gt;&lt;fc v='red'&gt;2)&lt;/fc&gt;&lt;/fs&gt;&lt;/b&gt; 딜 소개</Col>
+            <Col id="내용">IR(회사소개/사업계획)</Col>
+            <Col id="진행주체">피투자사</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="공식미팅">DSC</Col>
+            <Col id="문서">검토회사 자유 양식</Col>
+            <Col id="다운로드"/>
+          </Row>
+          <Row>
+            <Col id="프로세스">3) IR BusinessDD&lt;b v='true'&gt;&lt;fs v='8'&gt;&lt;fc v='red'&gt;2)&lt;/fc&gt;&lt;/fs&gt;&lt;/b&gt; 딜 소개</Col>
+            <Col id="내용">IR평가</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="공식미팅">DSC</Col>
+            <Col id="문서">[투자팀] IR결과, Lexpeed Deal Log &#13;
+[IR참석자] "답글"로 평가의견 기재</Col>
+            <Col id="다운로드"/>
+          </Row>
+          <Row>
+            <Col id="프로세스">3) IR BusinessDD&lt;b v='true'&gt;&lt;fs v='8'&gt;&lt;fc v='red'&gt;2)&lt;/fc&gt;&lt;/fs&gt;&lt;/b&gt; 딜 소개</Col>
+            <Col id="내용">IR 보고&#13;
+(+향후 일정 및 추가검토 필요사항)</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="의사결정">파트너</Col>
+            <Col id="최종결재"/>
+            <Col id="공식미팅">DSC</Col>
+            <Col id="문서">IR Q&amp;A 정리 (DSC T)</Col>
+            <Col id="다운로드"/>
+          </Row>
+          <Row>
+            <Col id="내용">상세 요청자료 목록/질의사항 접수</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="공식미팅"/>
+            <Col id="문서">세부 요청자료 목록,&#13;
+질의사항</Col>
+            <Col id="다운로드"/>
+            <Col id="프로세스">3) IR BusinessDD&lt;b v='true'&gt;&lt;fs v='8'&gt;&lt;fc v='red'&gt;2)&lt;/fc&gt;&lt;/fs&gt;&lt;/b&gt; 딜 소개</Col>
+          </Row>
+          <Row>
+            <Col id="프로세스">3) IR BusinessDD&lt;b v='true'&gt;&lt;fs v='8'&gt;&lt;fc v='red'&gt;2)&lt;/fc&gt;&lt;/fs&gt;&lt;/b&gt; 딜 소개</Col>
+            <Col id="내용">Reference check</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="공식미팅"/>
+            <Col id="문서">Reference check 보고서</Col>
+            <Col id="다운로드"/>
+          </Row>
+          <Row>
+            <Col id="프로세스">3) IR BusinessDD&lt;b v='true'&gt;&lt;fs v='8'&gt;&lt;fc v='red'&gt;2)&lt;/fc&gt;&lt;/fs&gt;&lt;/b&gt; 딜 소개</Col>
+            <Col id="내용">회사 방문5) &amp; Biz DD&lt;b v='true'&gt;&lt;fs v='8'&gt;&lt;fc v='red'&gt;10)&lt;/fc&gt;&lt;/fs&gt;&lt;/b&gt;</Col>
+            <Col id="진행주체">고문단/투자팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="공식미팅"/>
+            <Col id="문서">중간보고</Col>
+            <Col id="다운로드"/>
+          </Row>
+          <Row>
+            <Col id="프로세스">3) IR BusinessDD&lt;b v='true'&gt;&lt;fs v='8'&gt;&lt;fc v='red'&gt;2)&lt;/fc&gt;&lt;/fs&gt;&lt;/b&gt; 딜 소개</Col>
+            <Col id="내용">MOU / Term Sheet&lt;b v='true'&gt;&lt;fs v='8'&gt;&lt;fc v='red'&gt;3)&lt;/fc&gt;&lt;/fs&gt;&lt;/b&gt;</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="의사결정">파트너</Col>
+            <Col id="최종결재">대표이사</Col>
+            <Col id="공식미팅">파트너회의</Col>
+            <Col id="문서">MOU(RT)</Col>
+            <Col id="다운로드"/>
+          </Row>
+          <Row>
+            <Col id="내용">필수 항목&lt;b v='true'&gt;&lt;fs v='8'&gt;&lt;fc v='red'&gt;7)&lt;/fc&gt;&lt;/fs&gt;&lt;/b&gt; 확인</Col>
+            <Col id="진행주체">투자/법무팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="공식미팅"/>
+            <Col id="문서"/>
+            <Col id="다운로드"/>
+            <Col id="프로세스">3) IR BusinessDD&lt;b v='true'&gt;&lt;fs v='8'&gt;&lt;fc v='red'&gt;2)&lt;/fc&gt;&lt;/fs&gt;&lt;/b&gt; 딜 소개</Col>
+          </Row>
+          <Row>
+            <Col id="내용">심층 보고(세션개최 주간, 월요일)</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="공식미팅">파트너회의</Col>
+            <Col id="문서">세션보고서 중, F/S 부분</Col>
+            <Col id="다운로드"/>
+            <Col id="프로세스">3) IR BusinessDD&lt;b v='true'&gt;&lt;fs v='8'&gt;&lt;fc v='red'&gt;2)&lt;/fc&gt;&lt;/fs&gt;&lt;/b&gt; 딜 소개</Col>
+          </Row>
+          <Row>
+            <Col id="프로세스">4) Session Shariah process (해당 펀드만 적용)</Col>
+            <Col id="내용">세션(수요일)</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="공식미팅">DSC</Col>
+            <Col id="문서">세션보고서(RT)&#13;
+문서 발송: 세션 개최 전, 금요일</Col>
+            <Col id="다운로드"/>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+          </Row>
+          <Row>
+            <Col id="내용">투자 진행 여부 결정</Col>
+            <Col id="진행주체">투심위</Col>
+            <Col id="의사결정">파트너</Col>
+            <Col id="최종결재"/>
+            <Col id="공식미팅"/>
+            <Col id="다운로드"/>
+            <Col id="문서"/>
+            <Col id="프로세스">4) Session Shariah process (해당 펀드만 적용)</Col>
+          </Row>
+          <Row>
+            <Col id="내용">외부 실사 진행 여부 결정</Col>
+            <Col id="진행주체">투심위</Col>
+            <Col id="의사결정">파트너</Col>
+            <Col id="최종결재"/>
+            <Col id="공식미팅"/>
+            <Col id="다운로드"/>
+            <Col id="문서"/>
+            <Col id="프로세스">4) Session Shariah process (해당 펀드만 적용)</Col>
+          </Row>
+          <Row>
+            <Col id="내용">Shariah Compliance check</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="공식미팅"/>
+            <Col id="다운로드"/>
+            <Col id="문서">F/S 포함한 영문 IM(RT)</Col>
+            <Col id="프로세스">4) Session Shariah process (해당 펀드만 적용)</Col>
+          </Row>
+          <Row>
+            <Col id="내용">LP commit 필요</Col>
+            <Col id="진행주체">지원팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="공식미팅"/>
+            <Col id="문서">Check List</Col>
+            <Col id="다운로드"/>
+            <Col id="프로세스">4) Session Shariah process (해당 펀드만 적용)</Col>
+          </Row>
+          <Row>
+            <Col id="프로세스">5) 실사</Col>
+            <Col id="내용">실사 Kick-off&lt;b v='true'&gt;&lt;fs v='8'&gt;&lt;fc v='red'&gt;8)&lt;/fc&gt;&lt;/fs&gt;&lt;/b&gt;</Col>
+            <Col id="진행주체">재무팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="공식미팅">투자팀/재무팀/법무팀/외부 실사기관</Col>
+            <Col id="문서"/>
+            <Col id="다운로드"/>
+          </Row>
+          <Row>
+            <Col id="내용">재무실사</Col>
+            <Col id="진행주체">외부</Col>
+            <Col id="공식미팅"/>
+            <Col id="문서">재무실사시 주요 검토 요구사항&#13;
+재무실사보고서(외부 양식)</Col>
+            <Col id="다운로드"/>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="프로세스">5) 실사</Col>
+          </Row>
+          <Row>
+            <Col id="내용">법무실사</Col>
+            <Col id="진행주체">외부</Col>
+            <Col id="다운로드"/>
+            <Col id="문서">법무부실사시 주요 검토 요구사항&#13;
+법무실사보고서 (외부 양식)</Col>
+            <Col id="공식미팅"/>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="프로세스">5) 실사</Col>
+          </Row>
+          <Row>
+            <Col id="내용">실사 결과 발표 회의</Col>
+            <Col id="진행주체">지원팀</Col>
+            <Col id="문서">외부 실사 업체 양식</Col>
+            <Col id="공식미팅">DSC</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="프로세스">5) 실사</Col>
+            <Col id="다운로드"/>
+          </Row>
+          <Row>
+            <Col id="프로세스">6) 투심위</Col>
+            <Col id="내용">투심위 공지(LP notice)</Col>
+            <Col id="진행주체">지원팀</Col>
+            <Col id="문서">투심위보고서(외부용, ST) &#13;
+영문 투심위보고서(외부용, ST)</Col>
+            <Col id="다운로드"/>
+            <Col id="공식미팅"/>
+            <Col id="최종결재"/>
+            <Col id="의사결정"/>
+          </Row>
+          <Row>
+            <Col id="프로세스">6) 투심위</Col>
+            <Col id="내용">투심위 (수요일)</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="의사결정">파트너</Col>
+            <Col id="공식미팅">DSC, 외부LP, 지원팀</Col>
+            <Col id="문서">투심위보고서(RT)&#13;
+문서 발송 : 투심위 개최 전, 금요일&#13;
+[지원팀] 투심위의사록</Col>
+            <Col id="다운로드"/>
+            <Col id="최종결재"/>
+          </Row>
+          <Row>
+            <Col id="프로세스">6) 투심위</Col>
+            <Col id="내용">투심위문서 Lexpeed 기재</Col>
+            <Col id="진행주체">지원팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="공식미팅"/>
+            <Col id="문서"/>
+            <Col id="다운로드"/>
+          </Row>
+          <Row>
+            <Col id="프로세스">7) 투자단계</Col>
+            <Col id="내용">계약서 작성&lt;b v='true'&gt;&lt;fs v='8'&gt;&lt;fc v='red'&gt;9)&lt;/fc&gt;&lt;/fs&gt;&lt;/b&gt;</Col>
+            <Col id="진행주체">투자/법무팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="공식미팅"/>
+            <Col id="문서">투자계약서(ST)</Col>
+            <Col id="다운로드"/>
+          </Row>
+          <Row>
+            <Col id="프로세스">7) 투자단계</Col>
+            <Col id="내용">계약서 체결 품의</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재">대표이사</Col>
+            <Col id="공식미팅"/>
+            <Col id="문서">부속서류 Check List (ST)</Col>
+            <Col id="다운로드"/>
+          </Row>
+          <Row>
+            <Col id="프로세스">7) 투자단계</Col>
+            <Col id="내용">Capital call</Col>
+            <Col id="진행주체">지원팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="공식미팅"/>
+            <Col id="문서"/>
+            <Col id="다운로드"/>
+          </Row>
+          <Row>
+            <Col id="프로세스">7) 투자단계</Col>
+            <Col id="내용">투자금 집행 품의</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재">대표이사</Col>
+            <Col id="문서"/>
+            <Col id="다운로드"/>
+            <Col id="공식미팅"/>
+          </Row>
+          <Row>
+            <Col id="프로세스">7) 투자단계</Col>
+            <Col id="내용">투자기여도 품의</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="다운로드"/>
+            <Col id="의사결정">본부장</Col>
+            <Col id="최종결재">대표이사</Col>
+            <Col id="공식미팅"/>
+            <Col id="문서">투자팀 정보 공유 → 지원팀 Lexpeed 기재</Col>
+          </Row>
+          <Row>
+            <Col id="프로세스">7) 투자단계</Col>
+            <Col id="내용">투자금 집행</Col>
+            <Col id="진행주체">지원팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="공식미팅"/>
+            <Col id="문서"/>
+            <Col id="다운로드"/>
+          </Row>
+          <Row>
+            <Col id="프로세스">8) 사후 관리</Col>
+            <Col id="내용">공시(필요시)</Col>
+            <Col id="진행주체">재무팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재"/>
+            <Col id="공식미팅"/>
+            <Col id="문서"/>
+            <Col id="다운로드"/>
+          </Row>
+          <Row>
+            <Col id="내용">100일 플랜 확정 및 완료 후 보고</Col>
+            <Col id="진행주체">VI/투자팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재">대표이사</Col>
+            <Col id="공식미팅"/>
+            <Col id="문서"/>
+            <Col id="다운로드"/>
+            <Col id="프로세스">8) 사후 관리</Col>
+          </Row>
+          <Row>
+            <Col id="내용">Compliance 보고</Col>
+            <Col id="진행주체">법무팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재">대표이사</Col>
+            <Col id="공식미팅"/>
+            <Col id="문서">주권 등 투자증빙서류 징구 완료 보고</Col>
+            <Col id="다운로드"/>
+            <Col id="프로세스">8) 사후 관리</Col>
+          </Row>
+          <Row>
+            <Col id="내용">실사 비용 집행 품의</Col>
+            <Col id="진행주체">지원팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재">대표이사</Col>
+            <Col id="공식미팅"/>
+            <Col id="문서">Lexpeed</Col>
+            <Col id="다운로드"/>
+            <Col id="프로세스">8) 사후 관리</Col>
+          </Row>
+          <Row>
+            <Col id="내용">이사회/주총 품의</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="의사결정"/>
+            <Col id="최종결재">대표이사</Col>
+            <Col id="공식미팅"/>
+            <Col id="문서">Lexpeed</Col>
+            <Col id="다운로드"/>
+            <Col id="프로세스">8) 사후 관리</Col>
+          </Row>
+          <Row>
+            <Col id="내용">경영협의회(월간 이사회 포함)</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="최종결재"/>
+            <Col id="의사결정"/>
+            <Col id="공식미팅"/>
+            <Col id="문서">Lexpeed</Col>
+            <Col id="다운로드"/>
+            <Col id="프로세스">8) 사후 관리</Col>
+          </Row>
+          <Row>
+            <Col id="내용">협안 발생 시, 절차 및 대응 방안</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="최종결재"/>
+            <Col id="의사결정"/>
+            <Col id="공식미팅">파트너회의</Col>
+            <Col id="문서">단계1, [투자팀] Lexpeed DealLog&#13;
+단계2, [투자지원본부] 검토 의견 "다글" 기재 &#13;
+단계3, 차주 ㅔ파트너] 회의에서 논의</Col>
+            <Col id="다운로드"/>
+            <Col id="프로세스">8) 사후 관리</Col>
+          </Row>
+          <Row>
+            <Col id="내용">월별/분기별 보고</Col>
+            <Col id="진행주체">재무팀</Col>
+            <Col id="최종결재"/>
+            <Col id="의사결정"/>
+            <Col id="공식미팅">DSC(회수회의</Col>
+            <Col id="문서">월별 CashFlow(sT), 경영현황(ST), 분기별보고(ST) 모두 \\STICDB 저장 9)</Col>
+            <Col id="다운로드"/>
+            <Col id="프로세스">8) 사후 관리</Col>
+          </Row>
+          <Row>
+            <Col id="내용">월별/분기별 현황 기재</Col>
+            <Col id="진행주체">투자팀</Col>
+            <Col id="최종결재"/>
+            <Col id="의사결정"/>
+            <Col id="공식미팅"/>
+            <Col id="문서">Lexpeed, LP 보고서</Col>
+            <Col id="다운로드"/>
+            <Col id="프로세스">8) 사후 관리</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_cmb_emp">
+        <ColumnInfo>
+          <Column id="emp_cd" type="STRING" size="256"/>
+          <Column id="kor_nm" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="kor_nm">전체</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00289</Col>
+            <Col id="kor_nm">한재준</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00251</Col>
+            <Col id="kor_nm">Mabel Zhu</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00326</Col>
+            <Col id="kor_nm">정금식</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00317</Col>
+            <Col id="kor_nm">한종훈</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00312</Col>
+            <Col id="kor_nm">Sheheryar Javaid</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00316</Col>
+            <Col id="kor_nm">최정원</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00026</Col>
+            <Col id="kor_nm">송정희</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00101</Col>
+            <Col id="kor_nm">강도현</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00088</Col>
+            <Col id="kor_nm">김영훈</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00093</Col>
+            <Col id="kor_nm">배선한</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00153</Col>
+            <Col id="kor_nm">Ly Hoang Duy</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00308</Col>
+            <Col id="kor_nm">한극우</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00309</Col>
+            <Col id="kor_nm">신동우</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00068</Col>
+            <Col id="kor_nm">김흥남</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00008</Col>
+            <Col id="kor_nm">곽동걸</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00103</Col>
+            <Col id="kor_nm">최진혁</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00034</Col>
+            <Col id="kor_nm">이성규</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00275</Col>
+            <Col id="kor_nm">최하나</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.Div00_Combo01_onitemchanged = function(obj:Combo, e:nexacro.ItemChangeEventInfo)
+{
+	
+}
+
+
+
+this.Static06_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+	
+}
+]]></Script>
+  </Form>
+</FDL>

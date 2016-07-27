@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="Component05" classname="Component05" left="0" top="0" width="1400" height="768" titletext="검색바">
+    <Layouts>
+      <Layout>
+        <Static id="Static07" taborder="36" left="35" top="42" width="587" height="88" style="background:white;"/>
+        <Static id="Static40" taborder="1" text="Search 영역 내 기본 Input type 컴포넌트는 클래스가 없는 Default이다.&#13;&#10;" usedecorate="true" left="55" top="54" width="802" height="18" style="background:transparent;border:0 solid #808080 ;align:left top;"/>
+        <Static id="Static20" taborder="2" text="Search 영역이 한줄 추가될때 24픽셀씩 높이가 추가된다." usedecorate="true" onclick="Static20_onclick" left="55" top="79" width="802" height="33" style="background:transparent;border:0 solid #808080 ;align:left top;"/>
+        <Static id="Static03" taborder="3" text="Search Area #01 - 클래스 및 레이블정의" cssclass="sta_WFDA_label" left="40" top="0" right="-40" height="34" style="background:transparent;border:0 solid #808080 ;font:bold 9 Dotum;"/>
+        <Static id="Static67" taborder="5" text="CheckBox와 Radio버튼은 실제 컴포넌트 높이인 20px을 기준으로 여백을 지정한다." usedecorate="true" left="55" top="104" width="802" height="18" style="background:transparent;border:0 solid #808080 ;align:left top;" class="sta_WF_Info01"/>
+        <Static id="Static16" taborder="18" text="글자수별 Label 사이즈" cssclass="sta_WF_title1" left="40" top="685" width="205" height="20" style="align:left middle;"/>
+        <Static id="Static08" taborder="19" text="Label과 Edit 컴포넌트 실제 간격은 0px" left="40" top="633" width="235" height="20"/>
+        <Static id="Static09" taborder="20" text="Lebel 의 너비는 기본 2자 40px에서 한글자 늘어날 때마다 12px씩 증가한다." left="40" top="653" width="451" height="28"/>
+        <Static id="Static18" taborder="28" text="CheckBox가 Label로 쓰인 경우" cssclass="sta_WF_title1" left="40" top="504" width="225" height="20" style="background:transparent;border:0 solid #808080ff ;align:left middle;"/>
+        <Div id="divSearch01" taborder="29" text="Div01" left="40" top="531" width="1340" height="42" scrollbars="none" cssclass="div_WF_SBLex02">
+          <Layouts>
+            <Layout>
+              <Static id="Static17" taborder="14" text="원" left="848" top="9" width="15" height="20" cssclass="sta_WF_Label"/>
+              <MaskEdit id="MaskEdit01" taborder="15" value="12000" mask="#,###" left="744" top="7" width="102" height="25"/>
+              <Static id="sta_Fund22" taborder="16" text="MaskEdit" cssclass="sta_WF_Label" left="652" top="7" width="92" height="25" ustext="Fund"/>
+              <Combo id="input_WF_Essential" taborder="17" displaynulltext="Combo" left="494" top="7" width="138" height="25" cssclass="cbo_WF_Essential"/>
+              <Edit id="edt_Fund09" taborder="19" displaynulltext="가나다라" left="77" top="7" width="203" height="25"/>
+              <Static id="sta_Fund25" taborder="20" text="Edit" cssclass="sta_WF_Label" left="21" top="7" width="37" height="25" ustext="Fund"/>
+              <CheckBox id="CheckBox02" taborder="22" text="Lebel" left="292" top="7" width="55" height="25" cssclass="cbox_SBfont"/>
+              <Static id="Static03" taborder="27" text="8" cssclass="sta_WF_GuideLine" left="32.88%" top="65" right="53.81%" height="8" visible="false"/>
+              <Static id="Static00" taborder="28" text="8" cssclass="sta_WF_GuideLine" left="32.88%" top="-1" right="53.81%" height="8" visible="false"/>
+              <Static id="Static01" taborder="29" text="8" cssclass="sta_WF_GuideLine" left="32.88%" top="32" right="53.81%" height="8" visible="false"/>
+              <Static id="sta_Fund24" taborder="31" text="필수입력 콤보" cssclass="sta_WF_Label" left="371" top="7" width="123" height="25" ustext="Fund"/>
+              <Button id="btnSetting01" taborder="32" text="조회" onclick="divInfo_btnSetting_onclick" cssclass="btn_WF_Search01" left="1239" top="0" width="103" height="44"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="divSearch02" taborder="30" text="Div02" left="40" top="712" width="1340" height="42" cssclass="div_WF_SBMan01">
+          <Layouts>
+            <Layout>
+              <Static id="sta_Fund05" taborder="16" text="일이" cssclass="sta_WF_Label" left="21" top="9" width="40" height="25" ustext="Fund"/>
+              <Edit id="edt_Fund01" taborder="17" displaynulltext="가나다라" left="109" top="9" width="79" height="25" cssclass="sta_WF_Label"/>
+              <Static id="sta_Fund06" taborder="18" text="일이삼" cssclass="sta_WF_Label" left="208" top="9" width="52" height="25" ustext="Fund"/>
+              <Edit id="edt_Fund02" taborder="19" displaynulltext="가나다라" left="308" top="9" width="79" height="25" cssclass="sta_WF_Label"/>
+              <Static id="sta_Fund07" taborder="20" text="일이삼사" cssclass="sta_WF_Label" left="407" top="9" width="64" height="25" ustext="Fund"/>
+              <Edit id="edt_Fund03" taborder="21" displaynulltext="가나다라" left="519" top="9" width="79" height="25" cssclass="sta_WF_Label"/>
+              <Static id="sta_Fund08" taborder="22" text="일이삼사오" cssclass="sta_WF_Label" left="618" top="9" width="92" height="25" ustext="Fund"/>
+              <Edit id="edt_Fund04" taborder="23" displaynulltext="가나다라" left="742" top="9" width="79" height="25" cssclass="sta_WF_Label"/>
+              <Static id="sta_Fund09" taborder="24" text="일이삼사오육" cssclass="sta_WF_Label" left="852" top="10" width="104" height="25" ustext="Fund"/>
+              <Edit id="edt_Fund05" taborder="25" displaynulltext="가나다라" left="980" top="10" width="79" height="25" cssclass="sta_WF_Label"/>
+              <Static id="sta_Fund10" taborder="26" text="일이삼사오육칠" cssclass="sta_WF_Label" left="1079" top="10" width="124" height="25" ustext="Fund"/>
+              <Edit id="edt_Fund06" taborder="27" displaynulltext="가나다라" left="1219" top="10" width="79" height="25" cssclass="sta_WF_Label"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="divSearch03" taborder="31" text="Div00" left="40" top="170" width="1340" height="42" scrollbars="none" cssclass="div_WF_SBLex01" tabstop="false">
+          <Layouts>
+            <Layout width="868" height="93">
+              <Static id="Static04" taborder="47" text="원" left="724" top="8" width="15" height="25" cssclass="sta_WF_Label"/>
+              <MaskEdit id="MaskEdit00" taborder="48" value="12000" mask="#,###" left="600" top="8" width="110" height="25"/>
+              <Static id="sta_Fund02" taborder="49" text="MaskEdit" cssclass="sta_WF_Label" left="519" top="8" width="92" height="25" ustext="Fund"/>
+              <Combo id="Combo00" taborder="51" displaynulltext="Combo" left="344" top="8" width="145" height="25"/>
+              <Static id="sta_Fund00" taborder="52" text="콤보" cssclass="sta_WF_Label" left="300" top="8" width="56" height="25" ustext="Fund"/>
+              <Edit id="edt_Fund00" taborder="53" displaynulltext="가나다라" left="72" top="8" width="200" height="25"/>
+              <Static id="sta_Fund" taborder="54" text="Edit" cssclass="sta_WF_Label" left="29" top="8" width="37" height="25" ustext="Fund"/>
+              <Static id="Static00" taborder="56" text="8" cssclass="sta_WF_GuideLine" left="14.03%" top="34" right="73.66%" height="8" visible="false"/>
+              <Button id="btnSetting01" taborder="57" text="조회" onclick="divInfo_btnSetting_onclick" cssclass="btn_WF_Search01" left="1239" top="0" width="103" height="44"/>
+              <Static id="Static01" taborder="58" text="30" visible="false" left="272" top="9" width="30" height="25" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;"/>
+              <Static id="Static02" taborder="59" text="15" visible="false" left="329" top="9" width="15" height="25" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;"/>
+              <Static id="Static03" taborder="60" text="15" visible="false" left="585" top="9" width="15" height="25" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;"/>
+              <Static id="Static05" taborder="61" text="30" visible="false" left="489" top="9" width="30" height="25" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;"/>
+              <Static id="Static06" taborder="62" text="15" visible="false" left="710" top="9" width="15" height="25" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="divSearch04" taborder="33" left="40" top="249" width="1340" height="74" scrollbars="none" cssclass="div_WF_SBInv02" text="7">
+          <Layouts>
+            <Layout width="868" height="93">
+              <Static id="Static05" taborder="92" left="44.17%" top="-1" right="41.93%" height="8" cssclass="sta_WF_GuideLine" text="8" visible="false"/>
+              <Static id="Static06" taborder="95" text="8" cssclass="sta_WF_GuideLine" left="44.17%" top="32" right="41.93%" height="8" visible="false"/>
+              <Static id="Static03" taborder="96" text="8" cssclass="sta_WF_GuideLine" left="44.32%" top="65" right="42.38%" height="8" visible="false"/>
+              <MaskEdit id="MaskEdit03" taborder="97" value="12000" mask="#,###" left="691" top="40" width="102" height="25"/>
+              <Edit id="edt_Fund03" taborder="98" displaynulltext="가나다라" left="151" top="40" width="193" height="25" cssclass="edit_WF_Essential"/>
+              <Combo id="Combo03" taborder="99" displaynulltext="Combo" left="434" top="40" width="145" height="25"/>
+              <Static id="sta_Fund07" taborder="100" text="Edit 필수입력" cssclass="sta_WF_Label" left="21" top="40" width="105" height="25" ustext="Fund"/>
+              <Static id="sta_Fund05" taborder="104" text="MaskEdit" cssclass="sta_WF_Label" left="599" top="40" width="92" height="25" ustext="Fund"/>
+              <Static id="Static01" taborder="106" text="원" left="795" top="41" width="15" height="25" cssclass="sta_WF_Label"/>
+              <Edit id="edt_Fund01" taborder="108" displaynulltext="가나다라" left="111" top="7" width="193" height="25"/>
+              <Combo id="Combo01" taborder="109" displaynulltext="Combo" left="394" top="7" width="145" height="25"/>
+              <Static id="sta_Fund" taborder="110" text="Edit" cssclass="sta_WF_Label" left="21" top="9" width="37" height="25" ustext="Fund"/>
+              <Static id="sta_Fund00" taborder="112" text="콤보" cssclass="sta_WF_Label" left="330" top="9" width="64" height="25" ustext="Fund"/>
+              <Static id="sta_Fund02" taborder="114" text="MaskEdit" cssclass="sta_WF_Label" left="559" top="9" width="92" height="25" ustext="Fund"/>
+              <Static id="Static04" taborder="116" text="원" left="755" top="7" width="15" height="25" cssclass="sta_WF_Label"/>
+              <Static id="sta_Fund06" taborder="117" text="콤보" cssclass="sta_WF_Label" left="370" top="40" width="64" height="25" ustext="Fund"/>
+              <MaskEdit id="MaskEdit01" taborder="118" value="12000" mask="#,###" left="651" top="7" width="102" height="25"/>
+              <Div id="divSearch04" taborder="119" text="7" left="16" top="145" width="1340" height="74" scrollbars="none" cssclass="div_WF_SearchBar02">
+                <Layouts>
+                  <Layout width="868" height="93">
+                    <Static id="Static05" taborder="119" text="8" cssclass="sta_WF_GuideLine" left="50.75%" top="-1" right="35.35%" height="8"/>
+                    <Button id="btnSetting00" taborder="120" onclick="divInfo_btnSetting_onclick" cssclass="btn_WF_Search02" left="1237" top="-1" width="103" height="76"/>
+                    <Static id="Static06" taborder="121" text="8" cssclass="sta_WF_GuideLine" left="50.75%" top="32" right="35.35%" height="8"/>
+                    <Static id="Static03" taborder="122" text="8" cssclass="sta_WF_GuideLine" left="49.1%" top="65" right="37.59%" height="8"/>
+                    <MaskEdit id="MaskEdit03" taborder="123" value="12000" mask="#,###" left="691" top="40" width="102" height="25"/>
+                    <Edit id="edt_Fund03" taborder="124" displaynulltext="가나다라" cssclass="input_WF_Essential" left="111" top="40" width="193" height="25"/>
+                    <Combo id="Combo03" taborder="125" displaynulltext="Combo" left="394" top="40" width="145" height="25"/>
+                    <Static id="sta_Fund07" taborder="126" text="Edit 필수입력" cssclass="sta_WF_Label" left="21" top="40" width="80" height="25" ustext="Fund"/>
+                    <Static id="sta_Fund05" taborder="127" text="MaskEdit" cssclass="sta_WF_Label" left="559" top="40" width="68" height="25" ustext="Fund"/>
+                    <Static id="Static01" taborder="128" text="원" left="795" top="41" width="15" height="25" style="background:#ffffffff;"/>
+                    <Edit id="edt_Fund01" taborder="129" displaynulltext="가나다라" left="111" top="7" width="193" height="25"/>
+                    <Combo id="Combo01" taborder="130" displaynulltext="Combo" left="394" top="7" width="145" height="25"/>
+                    <Static id="sta_Fund" taborder="131" text="Edit" cssclass="sta_WF_Label" left="21" top="9" width="37" height="25" ustext="Fund"/>
+                    <Static id="sta_Fund00" taborder="132" text="필수입력" cssclass="sta_WF_Label" left="330" top="9" width="64" height="25" ustext="Fund"/>
+                    <Static id="sta_Fund02" taborder="133" text="MaskEdit" cssclass="sta_WF_Label" left="583" top="9" width="68" height="25" ustext="Fund"/>
+                    <Static id="Static04" taborder="134" text="원" left="819" top="7" width="15" height="25" style="background:#ffffffff;"/>
+                    <Static id="sta_Fund06" taborder="135" text="필수입력" cssclass="sta_WF_Label" left="330" top="40" width="64" height="25" ustext="Fund"/>
+                    <MaskEdit id="MaskEdit01" taborder="136" value="12000" mask="#,###" left="715" top="7" width="102" height="25"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static00" taborder="120" text="조건검색 2줄" onclick="Static00_onclick" cssclass="sta_WF_title1" left="13" top="113" width="205" height="20" style="background:transparent;border:0 solid #808080ff ;align:left middle;"/>
+              <Button id="btnSetting00" taborder="121" text="조회" onclick="divInfo_btnSetting_onclick" cssclass="btn_WF_Search02" left="1239" top="0" width="103" height="76"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static04" taborder="34" text="조건검색 2줄" onclick="Static00_onclick" cssclass="sta_WF_title1" left="45" top="225" width="205" height="20" style="background:transparent;border:0 solid #808080ff ;align:left middle;"/>
+        <Static id="Static05" taborder="35" text="8" left="16.29%" top="170" right="72%" height="8" cssclass="sta_WF_GuideLine" visible="false"/>
+        <Div id="divSearch05" taborder="37" text="7" left="40" top="381" width="1340" height="107" scrollbars="none" cssclass="div_WF_SBMan03">
+          <Layouts>
+            <Layout width="868" height="93">
+              <Static id="Static05" taborder="121" text="8" cssclass="sta_WF_GuideLine" left="50.75%" top="-1" right="35.35%" height="8" visible="false"/>
+              <Static id="Static06" taborder="123" text="8" cssclass="sta_WF_GuideLine" left="50.75%" top="32" right="35.35%" height="8" visible="false"/>
+              <Static id="Static03" taborder="124" text="8" cssclass="sta_WF_GuideLine" left="51.35%" top="65" right="35.35%" height="8" visible="false"/>
+              <MaskEdit id="MaskEdit03" taborder="125" value="12000" mask="#,###" left="763" top="40" width="102" height="25" cssclass="medit_WF_Essential"/>
+              <Edit id="edt_Fund03" taborder="126" displaynulltext="가나다라" cssclass="edit_WF_Essential" left="135" top="40" width="193" height="25"/>
+              <Combo id="Combo03" taborder="127" displaynulltext="Combo" left="418" top="40" width="145" height="25"/>
+              <Static id="sta_Fund07" taborder="128" text="Edit 필수입력" cssclass="sta_WF_Label" left="21" top="40" width="120" height="25" ustext="Fund"/>
+              <Static id="sta_Fund05" taborder="129" text="MaskEdit 필수입력" cssclass="sta_WF_Label" left="607" top="40" width="140" height="25" ustext="Fund"/>
+              <Static id="Static01" taborder="130" text="원" left="867" top="41" width="15" height="25" cssclass="sta_WF_Label"/>
+              <Edit id="edt_Fund01" taborder="131" displaynulltext="가나다라" left="111" top="7" width="193" height="25"/>
+              <Combo id="Combo01" taborder="132" displaynulltext="Combo" left="394" top="7" width="145" height="25"/>
+              <Static id="sta_Fund" taborder="133" text="Edit" cssclass="sta_WF_Label" left="21" top="9" width="37" height="25" ustext="Fund"/>
+              <Static id="sta_Fund00" taborder="134" text="콤보" cssclass="sta_WF_Label" left="330" top="9" width="64" height="25" ustext="Fund"/>
+              <Static id="sta_Fund02" taborder="135" text="MaskEdit" cssclass="sta_WF_Label" left="583" top="9" width="68" height="25" ustext="Fund"/>
+              <Static id="Static04" taborder="136" text="원" left="819" top="7" width="15" height="25" cssclass="sta_WF_Label"/>
+              <Static id="sta_Fund06" taborder="137" text="콤보" cssclass="sta_WF_Label" left="354" top="40" width="64" height="25" ustext="Fund"/>
+              <MaskEdit id="MaskEdit01" taborder="138" value="12000" mask="#,###" left="715" top="7" width="102" height="25"/>
+              <Static id="Static02" taborder="141" text="조건검색 2줄" onclick="Static00_onclick" cssclass="sta_WF_title1" left="5" top="-24" width="205" height="20" style="background:transparent;border:0 solid #808080ff ;align:left middle;"/>
+              <Static id="Static07" taborder="142" text="8" cssclass="sta_WF_GuideLine" left="50.22%" top="98" right="35.87%" height="8" visible="false"/>
+              <Static id="sta_Fund01" taborder="145" text="기간" cssclass="sta_WF_Label" left="21" top="73" width="80" height="25" ustext="Fund"/>
+              <Div id="calFromTo" taborder="150" url="" left="110" top="72" width="193" height="25" scrollbars="none"/>
+              <Static id="sta_Fund04" taborder="151" text="CheckBox" cssclass="sta_WF_Label" left="333" top="77" width="92" height="21" ustext="Fund"/>
+              <CheckBox id="CheckBox00" taborder="152" text="CheckBox01" left="439" top="77" width="100" height="21" cssclass="cbox_SBfont"/>
+              <CheckBox id="CheckBox01" taborder="153" text="CheckBox02" left="549" top="77" width="100" height="21" cssclass="cbox_SBfont"/>
+              <Static id="sta_Fund03" taborder="154" text="Radio" cssclass="sta_WF_Label" left="674" top="77" width="48" height="20" style="background:transparent;border:0 solid #808080ff ;" ustext="Fund"/>
+              <Radio id="Radio00" taborder="155" columncount="2" index="0" codecolumn="codecolumn" datacolumn="datacolumn" value="0" left="738" top="77" width="163" height="20" cssclass="rio_SBfont">
+                <Dataset id="innerdataset">
+                  <ColumnInfo>
+                    <Column id="codecolumn" size="256"/>
+                    <Column id="datacolumn" size="256"/>
+                  </ColumnInfo>
+                  <Rows>
+                    <Row>
+                      <Col id="codecolumn">0</Col>
+                      <Col id="datacolumn">select01</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">1</Col>
+                      <Col id="datacolumn">select02</Col>
+                    </Row>
+                  </Rows>
+                </Dataset>
+              </Radio>
+              <Button id="btnSetting00" taborder="156" text="조회" onclick="divInfo_btnSetting_onclick" cssclass="btn_WF_Search03" left="1239" top="0" width="103" height="109"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static06" taborder="38" text="조건검색 3줄" onclick="Static00_onclick" cssclass="sta_WF_title1" left="45" top="349" width="205" height="20" style="background:transparent;border:0 solid #808080ff ;align:left middle;"/>
+        <Div id="calFromTo" taborder="39" url="" left="95" top="-501" width="215" height="20" scrollbars="none"/>
+        <Static id="Static01" taborder="40" text="공통업무 검색바 CSS" onclick="Static00_onclick" left="694" top="54" width="205" height="20" style="background:transparent;border:0 solid #808080ff ;align:left middle;"/>
+        <Div id="Div00" taborder="41" text="div_WF_SBLex01" left="694" top="82" width="155" height="41" cssclass="div_WF_SBLex01"/>
+        <Static id="Static00" taborder="42" text="조건검색 1줄" onclick="Static00_onclick" cssclass="sta_WF_title1" left="45" top="145" width="205" height="20" style="background:transparent;border:0 solid #808080ff ;align:left middle;"/>
+        <Static id="Static02" taborder="43" text="투자본부업무 검색바 CSS" onclick="Static00_onclick" left="920" top="54" width="205" height="20" style="background:transparent;border:0 solid #808080ff ;align:left middle;"/>
+        <Div id="Div01" taborder="44" text="div_WF_SBInv01" left="920" top="82" width="155" height="41" cssclass="div_WF_SBInv01"/>
+        <Static id="Static10" taborder="45" text="경영지원본부 검색바 CSS" onclick="Static00_onclick" left="1135" top="54" width="205" height="20" style="background:transparent;border:0 solid #808080ff ;align:left middle;"/>
+        <Div id="Div02" taborder="46" text="div_WF_SBMan01" left="1135" top="82" width="155" height="41" cssclass="div_WF_SBMan01"/>
+        <Static id="Static11" taborder="47" text="8" cssclass="sta_WF_GuideLine" visible="false" left="16.29%" top="803" right="72%" height="8"/>
+        <Static id="Static12" taborder="48" text="조건검색 1줄 + 서브버튼 영역" onclick="Static00_onclick" cssclass="sta_WF_title1" left="45" top="777" width="205" height="20" style="background:transparent;border:0 solid #808080ff ;align:left middle;"/>
+        <Div id="divSearch00" taborder="49" tabstop="false" text="Div00" left="40" top="802" width="1340" height="42" scrollbars="none" cssclass="div_WF_SBMan01">
+          <Layouts>
+            <Layout width="868" height="93">
+              <Static id="Static04" taborder="57" text="원" left="755" top="8" width="15" height="25" cssclass="sta_WF_Label"/>
+              <MaskEdit id="MaskEdit00" taborder="58" value="12000" mask="#,###" left="651" top="8" width="102" height="25"/>
+              <Static id="sta_Fund02" taborder="59" text="MaskEdit" cssclass="sta_WF_Label" left="559" top="8" width="92" height="25" ustext="Fund"/>
+              <Combo id="Combo00" taborder="60" displaynulltext="Combo" left="394" top="8" width="145" height="25"/>
+              <Static id="sta_Fund00" taborder="61" text="콤보" cssclass="sta_WF_Label" left="330" top="8" width="64" height="25" ustext="Fund"/>
+              <Edit id="edt_Fund00" taborder="62" displaynulltext="가나다라" left="95" top="8" width="193" height="25"/>
+              <Static id="sta_Fund" taborder="63" text="Edit" cssclass="sta_WF_Label" left="21" top="8" width="37" height="25" ustext="Fund"/>
+              <Static id="Static00" taborder="65" text="8" cssclass="sta_WF_GuideLine" visible="false" left="14.05%" top="33" right="73.69%" height="8"/>
+              <Button id="btnSetting01" taborder="66" onclick="divInfo_btnSetting_onclick" cssclass="btn_WF_Search01" left="1239" top="0" width="103" height="44" text="조회"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static13" taborder="50" text="서브버튼 영역" left="40" top="843" width="1340" height="42" cssclass="sta_WF_SearchBarSub"/>
+        <Static id="Static17" taborder="51" text="30" visible="false" left="40" top="179" width="30" height="25" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;"/>
+        <Static id="Static15" taborder="53" text="15" visible="false" left="97" top="179" width="15" height="25" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+this.Static00_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+	
+}
+]]></Script>
+  </Form>
+</FDL>

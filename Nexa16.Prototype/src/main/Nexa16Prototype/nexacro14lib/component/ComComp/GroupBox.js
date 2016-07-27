@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -159,12 +159,18 @@ if (!nexacro.GroupBox) {
 		var titlepadding = this.on_find_CurrentStyle_titlePadding(pseudo);
 		var titleview = this.on_find_CurrentStyle_titleView(pseudo);
 		var font = this.on_find_CurrentStyle_font(pseudo);
+		var letterspace = this.on_find_CurrentStyle_letterspace(pseudo);
 		var color = this.on_find_CurrentStyle_color(pseudo);
 		var align = this.on_find_CurrentStyle_align(pseudo);
 
 		if (curstyle.font != font) {
 			curstyle.font = font;
 			this.on_apply_style_font(font);
+		}
+
+		if (curstyle.letterspace != letterspace) {
+			curstyle.letterspace = letterspace;
+			this.on_apply_style_letterspace(letterspace);
 		}
 
 		if (curstyle.color != color) {
@@ -270,189 +276,6 @@ if (!nexacro.GroupBox) {
 	};
 
 
-	_pGroupBox.on_apply_titlealign = function (titlealign) {
-		this.titlealign = titlealign;
-		var titleButton = this.titleButton;
-		var mainStatic = this.mainStatic;
-		var leftStatic = this.leftStatic;
-		var rightStatic = this.rightStatic;
-
-		var _bordertype = this.on_find_CurrentStyle_bordertype(this._pseudo);
-		var title_w_gap = parseInt(_bordertype.radiusx);
-		var title_h_gap = parseInt(_bordertype.radiusy);
-
-		if (!this.currentstyle.border && !titleButton || !mainStatic || !leftStatic || !rightStatic) {
-			return false;
-		}
-
-		var rc_w = this._adjust_width;
-		var rc_h = this._adjust_height;
-
-		var title_l = titleButton._adjust_left;
-		var title_t = titleButton._adjust_top;
-		var title_w = titleButton._adjust_width;
-		var title_h = titleButton._adjust_height;
-
-		var titlepadding = this.on_find_CurrentStyle_titlePadding(this._pseudo);
-
-		if (titlepadding) {
-			title_w += (titlepadding.left + titlepadding.right);
-			title_h += (titlepadding.top + titlepadding.bottom);
-		}
-
-		var mini_w = rc_w - 20;
-		var mini_h = rc_h - 20;
-		if (mini_w < title_w) {
-			title_w = mini_w > 0 ? mini_w : 0;
-		}
-		if (mini_h < title_h) {
-			title_h = mini_h > 0 ? mini_h : 0;
-		}
-
-		var _border = this.on_find_CurrentStyle_border(this._pseudo);
-		var border_width = parseInt(_border.width);
-
-		var border_l_width = parseInt(_border.left_width);
-		var border_t_width = parseInt(_border.top_width);
-		var border_r_width = parseInt(_border.right_width);
-		var border_b_width = parseInt(_border.bottom_width);
-
-		if (this.titlealign == "topcenter") {
-			var static_width = Math.floor((rc_w - title_w) / 2);
-			var static_top = Math.floor(title_h / 2);
-			var static_height = rc_h - static_top;
-			var r_static_left = static_width + title_w + border_r_width;
-			var r_static_width = rc_w - static_width - title_w;
-
-			this.mainStatic.move(0, static_top, rc_w, static_height);
-			this.leftStatic.move(0, static_top, static_width, static_height);
-			this.rightStatic.move(r_static_left, static_top, r_static_width, static_height);
-			titleButton.move(static_width, 0, title_w, title_h);
-		}
-		else if (this.titlealign == "topright") {
-			var static_width = rc_w - title_w_gap - title_w - border_width;
-			var static_top = Math.floor(title_h / 2);
-			var static_height = rc_h - static_top;
-			var r_static_left = rc_w - title_w_gap - border_width;
-			var r_static_width = rc_w - r_static_left;
-
-			this.mainStatic.move(0, static_top, rc_w, static_height);
-			this.leftStatic.move(0, static_top, static_width, static_height);
-			this.rightStatic.move(r_static_left, static_top, r_static_width, static_height);
-			titleButton.move(static_width, 0, title_w, title_h);
-		}
-		else if (this.titlealign == "righttop") {
-			var static_width = rc_w - Math.floor(title_w / 2);
-			var b_static_top = title_h_gap + title_h;
-
-
-			this.mainStatic.move(0, 0, static_width, rc_h);
-			this.leftStatic.move(0, 0, static_width, title_h_gap);
-			this.rightStatic.move(0, b_static_top, static_width, rc_h - b_static_top);
-			titleButton.move(rc_w - title_w, title_h_gap, title_w, title_h);
-		}
-		else if (this.titlealign == "rightcenter") {
-			var static_width = rc_w - Math.floor(title_w / 2);
-			var t_static_height = Math.floor((rc_h - title_h) / 2);
-
-			this.mainStatic.move(0, 0, static_width, rc_h - border_b_width);
-			this.leftStatic.move(0, 0, static_width, t_static_height);
-			this.rightStatic.move(0, t_static_height + title_h, static_width, t_static_height);
-			titleButton.move(rc_w - title_w, t_static_height, title_w, title_h);
-		}
-		else if (this.titlealign == "rightbottom") {
-			var static_width = rc_w - Math.floor(title_w / 2);
-			var t_static_h = title_h_gap + title_h;
-
-			this.mainStatic.move(0, 0, static_width, rc_h);
-			this.leftStatic.move(0, 0, static_width, rc_h - t_static_h);
-			this.rightStatic.move(0, rc_h - title_h_gap, static_width, title_h_gap);
-			titleButton.move(rc_w - title_w, rc_h - t_static_h, title_w, title_h);
-		}
-		else if (this.titlealign == "bottomright") {
-			var static_width = rc_w - title_w_gap - title_w;
-			var static_height = rc_h - Math.floor(title_h / 2);
-			var r_static_left = rc_w - title_w_gap;
-
-
-			this.mainStatic.move(0, 0, rc_w, static_height);
-			this.leftStatic.move(0, 0, static_width, static_height);
-			this.rightStatic.move(r_static_left, 0, title_w_gap, static_height);
-			titleButton.move(static_width, rc_h - title_h, title_w, title_h);
-		}
-		else if (this.titlealign == "bottomcenter") {
-			var static_width = Math.floor((rc_w - title_w) / 2);
-			var static_height = rc_h - Math.floor(title_h / 2);
-			var r_static_left = static_width + title_w + border_r_width;
-			var r_static_width = rc_w - static_width - title_w;
-
-			this.mainStatic.move(0, 0, rc_w, static_height);
-			this.leftStatic.move(0, 0, static_width, static_height);
-			this.rightStatic.move(r_static_left, 0, r_static_width, static_height);
-			titleButton.move(static_width, rc_h - title_h, title_w, title_h);
-		}
-		else if (this.titlealign == "bottomleft") {
-			var static_width = rc_w - title_w_gap - title_w;
-			var static_height = rc_h - Math.floor(title_h / 2);
-			var r_static_left = title_w_gap + title_w;
-			var r_static_width = rc_w - r_static_left + border_r_width;
-
-
-			this.mainStatic.move(0, 0, rc_w, static_height);
-			this.leftStatic.move(0, 0, title_w_gap, static_height);
-			this.rightStatic.move(r_static_left, 0, r_static_width, static_height);
-			titleButton.move(title_w_gap, rc_h - title_h, title_w, title_h);
-		}
-		else if (this.titlealign == "leftbottom") {
-			var static_left = Math.floor(title_w / 2);
-			var static_width = rc_w - static_left;
-			var t_static_h = title_h_gap + title_h;
-
-			this.mainStatic.move(static_left, 0, static_width, rc_h);
-			this.leftStatic.move(static_left, 0, static_width, rc_h - t_static_h);
-			this.rightStatic.move(static_left, rc_h - title_h_gap, static_width, title_h_gap);
-			titleButton.move(0, rc_h - t_static_h, title_w, title_h);
-		}
-		else if (this.titlealign == "leftcenter") {
-			var static_left = Math.floor(title_w / 2);
-			var static_width = rc_w - static_left;
-			var t_static_height = Math.floor((rc_h - title_h) / 2);
-			var r_static_height = rc_h - t_static_height - title_h - border_b_width;
-
-			this.mainStatic.move(static_left, 0, static_width, rc_h - border_b_width);
-			this.leftStatic.move(static_left, 0, static_width, t_static_height);
-			this.rightStatic.move(static_left, t_static_height + title_h, static_width, r_static_height);
-			titleButton.move(0, t_static_height, title_w, title_h);
-		}
-		else if (this.titlealign == "lefttop") {
-			var static_left = Math.floor(title_w / 2);
-			var static_width = rc_w - static_left;
-			var b_static_top = title_h_gap + title_h;
-
-
-			this.mainStatic.move(static_left, 0, static_width, rc_h);
-			this.leftStatic.move(static_left, 0, static_width, title_h_gap);
-			this.rightStatic.move(static_left, b_static_top, static_width, rc_h - b_static_top);
-			titleButton.move(0, title_h_gap, title_w, title_h);
-		}
-		else {
-			var static_top = Math.floor(title_h / 2);
-			var static_height = rc_h - static_top;
-
-			var l_static_width = title_w_gap + border_l_width;
-			var r_static_left = l_static_width + title_w;
-			var r_static_width = rc_w - r_static_left + border_r_width;
-			title_l = title_l + l_static_width;
-
-			this.mainStatic.move(0, static_top, rc_w, static_height);
-			this.leftStatic.move(0, static_top, l_static_width, static_height + 10);
-			this.rightStatic.move(r_static_left, static_top, r_static_width, static_height);
-			titleButton.move(title_l, title_t, title_w, title_h);
-		}
-
-		this._title_Border();
-	};
-
 	_pGroupBox.on_apply_style_titlebackground = function (titlebackground) {
 		if (this.titleButton && titlebackground) {
 			this.titleButton.style.set_background(titlebackground);
@@ -505,6 +328,13 @@ if (!nexacro.GroupBox) {
 		}
 	};
 
+	_pGroupBox.on_apply_style_letterspace = function (letterspace) {
+		if (this.titleButton) {
+			this.titleButton.style.set_letterspace(this.currentstyle.letterspace);
+			this._applyTitleSize();
+		}
+	};
+
 	_pGroupBox.on_apply_prop_rtldirection = function () {
 		nexacro.Component.prototype.on_apply_prop_rtldirection.call(this);
 		this.on_change_containerRect();
@@ -541,6 +371,7 @@ if (!nexacro.GroupBox) {
 				text_elem.setElementColor(this.currentstyle.color);
 				text_elem.setElementFont(this.currentstyle.font);
 				text_elem.setElementAlignXY(halign, valign);
+				text_elem.setElementLetterSpace(this.currentstyle.letterspace);
 			}
 		}
 	};
@@ -559,6 +390,7 @@ if (!nexacro.GroupBox) {
 		this.on_apply_text(this.text);
 		this.on_apply_style_color(this.currentstyle.color);
 		this.on_apply_style_font(this.currentstyle.font);
+		this.on_apply_style_letterspace(this.currentstyle.letterspace);
 		this.on_apply_style_titleimage(this.currentstyle.titleimage);
 		this._applyTitleSize();
 		this.on_apply_style_titlepadding(this.currentstyle.titlepadding);
@@ -595,8 +427,193 @@ if (!nexacro.GroupBox) {
 	_pGroupBox.set_titlealign = function (v) {
 		var val = v.toString();
 		if (val != this.titlealign) {
-			this.on_apply_titlealign(val);
+			this.titlealign = v;
+			this.on_apply_titlealign();
 		}
+	};
+
+	_pGroupBox.on_apply_titlealign = function () {
+		var titlealign = this.titlealign;
+
+		var titleButton = this.titleButton;
+		var mainStatic = this.mainStatic;
+		var leftStatic = this.leftStatic;
+		var rightStatic = this.rightStatic;
+
+		var _bordertype = this.on_find_CurrentStyle_bordertype(this._pseudo);
+		var title_w_gap = parseInt(_bordertype.radiusx);
+		var title_h_gap = parseInt(_bordertype.radiusy);
+
+		if (!this.currentstyle.border && !titleButton || !mainStatic || !leftStatic || !rightStatic) {
+			return false;
+		}
+
+		var rc_w = this._adjust_width;
+		var rc_h = this._adjust_height;
+
+		var title_l = titleButton._adjust_left;
+		var title_t = titleButton._adjust_top;
+		var title_w = titleButton._adjust_width;
+		var title_h = titleButton._adjust_height;
+
+		var titlepadding = this.on_find_CurrentStyle_titlePadding(this._pseudo);
+
+		if (titlepadding) {
+			title_w += (titlepadding.left + titlepadding.right);
+			title_h += (titlepadding.top + titlepadding.bottom);
+		}
+
+		var mini_w = rc_w - 20;
+		var mini_h = rc_h - 20;
+		if (mini_w < title_w) {
+			title_w = mini_w > 0 ? mini_w : 0;
+		}
+		if (mini_h < title_h) {
+			title_h = mini_h > 0 ? mini_h : 0;
+		}
+
+		var _border = this.on_find_CurrentStyle_border(this._pseudo);
+		var border_width = parseInt(_border.width);
+
+		var border_l_width = parseInt(_border.left_width);
+		var border_t_width = parseInt(_border.top_width);
+		var border_r_width = parseInt(_border.right_width);
+		var border_b_width = parseInt(_border.bottom_width);
+
+		if (titlealign == "topcenter") {
+			var static_width = Math.floor((rc_w - title_w) / 2);
+			var static_top = Math.floor(title_h / 2);
+			var static_height = rc_h - static_top;
+			var r_static_left = static_width + title_w + border_r_width;
+			var r_static_width = rc_w - static_width - title_w;
+
+			this.mainStatic.move(0, static_top, rc_w, static_height);
+			this.leftStatic.move(0, static_top, static_width, static_height);
+			this.rightStatic.move(r_static_left, static_top, r_static_width, static_height);
+			titleButton.move(static_width, 0, title_w, title_h);
+		}
+		else if (titlealign == "topright") {
+			var static_width = rc_w - title_w_gap - title_w - border_width;
+			var static_top = Math.floor(title_h / 2);
+			var static_height = rc_h - static_top;
+			var r_static_left = rc_w - title_w_gap - border_width;
+			var r_static_width = rc_w - r_static_left;
+
+			this.mainStatic.move(0, static_top, rc_w, static_height);
+			this.leftStatic.move(0, static_top, static_width, static_height);
+			this.rightStatic.move(r_static_left, static_top, r_static_width, static_height);
+			titleButton.move(static_width, 0, title_w, title_h);
+		}
+		else if (titlealign == "righttop") {
+			var static_width = rc_w - Math.floor(title_w / 2);
+			var b_static_top = title_h_gap + title_h;
+
+
+			this.mainStatic.move(0, 0, static_width, rc_h);
+			this.leftStatic.move(0, 0, static_width, title_h_gap);
+			this.rightStatic.move(0, b_static_top, static_width, rc_h - b_static_top);
+			titleButton.move(rc_w - title_w, title_h_gap, title_w, title_h);
+		}
+		else if (titlealign == "rightcenter") {
+			var static_width = rc_w - Math.floor(title_w / 2);
+			var t_static_height = Math.floor((rc_h - title_h) / 2);
+
+			this.mainStatic.move(0, 0, static_width, rc_h - border_b_width);
+			this.leftStatic.move(0, 0, static_width, t_static_height);
+			this.rightStatic.move(0, t_static_height + title_h, static_width, t_static_height);
+			titleButton.move(rc_w - title_w, t_static_height, title_w, title_h);
+		}
+		else if (titlealign == "rightbottom") {
+			var static_width = rc_w - Math.floor(title_w / 2);
+			var t_static_h = title_h_gap + title_h;
+
+			this.mainStatic.move(0, 0, static_width, rc_h);
+			this.leftStatic.move(0, 0, static_width, rc_h - t_static_h);
+			this.rightStatic.move(0, rc_h - title_h_gap, static_width, title_h_gap);
+			titleButton.move(rc_w - title_w, rc_h - t_static_h, title_w, title_h);
+		}
+		else if (titlealign == "bottomright") {
+			var static_width = rc_w - title_w_gap - title_w;
+			var static_height = rc_h - Math.floor(title_h / 2);
+			var r_static_left = rc_w - title_w_gap;
+
+
+			this.mainStatic.move(0, 0, rc_w, static_height);
+			this.leftStatic.move(0, 0, static_width, static_height);
+			this.rightStatic.move(r_static_left, 0, title_w_gap, static_height);
+			titleButton.move(static_width, rc_h - title_h, title_w, title_h);
+		}
+		else if (titlealign == "bottomcenter") {
+			var static_width = Math.floor((rc_w - title_w) / 2);
+			var static_height = rc_h - Math.floor(title_h / 2);
+			var r_static_left = static_width + title_w + border_r_width;
+			var r_static_width = rc_w - static_width - title_w;
+
+			this.mainStatic.move(0, 0, rc_w, static_height);
+			this.leftStatic.move(0, 0, static_width, static_height);
+			this.rightStatic.move(r_static_left, 0, r_static_width, static_height);
+			titleButton.move(static_width, rc_h - title_h, title_w, title_h);
+		}
+		else if (titlealign == "bottomleft") {
+			var static_width = rc_w - title_w_gap - title_w;
+			var static_height = rc_h - Math.floor(title_h / 2);
+			var r_static_left = title_w_gap + title_w;
+			var r_static_width = rc_w - r_static_left + border_r_width;
+
+
+			this.mainStatic.move(0, 0, rc_w, static_height);
+			this.leftStatic.move(0, 0, title_w_gap, static_height);
+			this.rightStatic.move(r_static_left, 0, r_static_width, static_height);
+			titleButton.move(title_w_gap, rc_h - title_h, title_w, title_h);
+		}
+		else if (titlealign == "leftbottom") {
+			var static_left = Math.floor(title_w / 2);
+			var static_width = rc_w - static_left;
+			var t_static_h = title_h_gap + title_h;
+
+			this.mainStatic.move(static_left, 0, static_width, rc_h);
+			this.leftStatic.move(static_left, 0, static_width, rc_h - t_static_h);
+			this.rightStatic.move(static_left, rc_h - title_h_gap, static_width, title_h_gap);
+			titleButton.move(0, rc_h - t_static_h, title_w, title_h);
+		}
+		else if (titlealign == "leftcenter") {
+			var static_left = Math.floor(title_w / 2);
+			var static_width = rc_w - static_left;
+			var t_static_height = Math.floor((rc_h - title_h) / 2);
+			var r_static_height = rc_h - t_static_height - title_h - border_b_width;
+
+			this.mainStatic.move(static_left, 0, static_width, rc_h - border_b_width);
+			this.leftStatic.move(static_left, 0, static_width, t_static_height);
+			this.rightStatic.move(static_left, t_static_height + title_h, static_width, r_static_height);
+			titleButton.move(0, t_static_height, title_w, title_h);
+		}
+		else if (titlealign == "lefttop") {
+			var static_left = Math.floor(title_w / 2);
+			var static_width = rc_w - static_left;
+			var b_static_top = title_h_gap + title_h;
+
+
+			this.mainStatic.move(static_left, 0, static_width, rc_h);
+			this.leftStatic.move(static_left, 0, static_width, title_h_gap);
+			this.rightStatic.move(static_left, b_static_top, static_width, rc_h - b_static_top);
+			titleButton.move(0, title_h_gap, title_w, title_h);
+		}
+		else {
+			var static_top = Math.floor(title_h / 2);
+			var static_height = rc_h - static_top;
+
+			var l_static_width = title_w_gap + border_l_width;
+			var r_static_left = l_static_width + title_w;
+			var r_static_width = rc_w - r_static_left + border_r_width;
+			title_l = l_static_width;
+
+			this.mainStatic.move(0, static_top, rc_w, static_height);
+			this.leftStatic.move(0, static_top, l_static_width, static_height + 10);
+			this.rightStatic.move(r_static_left, static_top, r_static_width, static_height);
+			titleButton.move(title_l, title_t, title_w, title_h);
+		}
+
+		this._title_Border();
 	};
 
 	_pGroupBox.set_text = function (v) {
@@ -616,7 +633,7 @@ if (!nexacro.GroupBox) {
 			this.on_apply_style_color(this.currentstyle.color);
 			this.on_apply_style_font(this.currentstyle.font);
 			this.on_apply_style_align(this.currentstyle.align);
-			this.on_apply_titlealign(this.titlealign);
+			this.on_apply_titlealign();
 
 			if (titleButton) {
 				this._applyTitleSize();
@@ -625,9 +642,11 @@ if (!nexacro.GroupBox) {
 		}
 		return this.text;
 	};
+
 	_pGroupBox.on_apply_text = function (text) {
 		var val = text;
 		if (this.titleButton != null) {
+			this.titleButton.style.set_letterspace(this.currentstyle.letterspace);
 			this.titleButton.set_text(val);
 		}
 	};
@@ -666,6 +685,7 @@ if (!nexacro.GroupBox) {
 
 	_pGroupBox._applyTitleSize = function () {
 		var title_size = this._GetTextSize(this._display_text);
+		title_size[0] = title_size[0] < 0 ? 0 : title_size[0];
 		var titleButton = this.titleButton;
 		var imgwidth = titleButton._image_width;
 		var imgheight = titleButton._image_height;
@@ -692,7 +712,7 @@ if (!nexacro.GroupBox) {
 			this.titleButton._adjust_top = title_t;
 			this.titleButton._adjust_width = title_w;
 			this.titleButton._adjust_height = title_h;
-			this.on_apply_titlealign(this.titlealign);
+			this.on_apply_titlealign();
 		}
 	};
 
@@ -731,7 +751,8 @@ if (!nexacro.GroupBox) {
 			return;
 		}
 		var font = this.titleButton.on_find_CurrentStyle_font(this._pseudo) || nexacro.Component._default_font;
-		return nexacro._getTextSize2(text, font);
+		var letterspace = this.titleButton.on_find_CurrentStyle_letterspace(this._pseudo);
+		return nexacro._getTextSize2(letterspace, text, font);
 	};
 
 	nexacro.TitleCtrl = function (id, position, left, top, width, height, right, bottom, parent) {
@@ -768,7 +789,7 @@ if (!nexacro.GroupBox) {
 	};
 
 	_pTitleCtrl.on_find_CurrentStyle_font = function (pseudo) {
-		return this.parent._find_pseudo_obj("font", pseudo, "font");
+		return this.parent.on_find_CurrentStyle_font(pseudo);
 	};
 
 	_pTitleCtrl.on_find_CurrentStyle_background = function (pseudo) {

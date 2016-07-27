@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -817,14 +817,21 @@ if (!nexacro.GridFormat) {
 	};
 	_pGridCellInfo.on_update_style_font = function () {
 	};
+	_pGridCellInfo.on_update_style_letterspace = function () {
+	};
 	_pGridCellInfo.on_update_style_padding = function () {
 	};
 
-	_pGridCellInfo._getSuppressInfo = function (disprowidx) {
+	_pGridCellInfo._getSuppressInfo = function (disprowidx, make) {
+		if (disprowidx == undefined) {
+			return this._suppress_infos;
+		}
+
 		if (disprowidx < 0) {
 			disprowidx = 0;
 		}
-		if (!this._suppress_infos[disprowidx]) {
+
+		if (make && !this._suppress_infos[disprowidx]) {
 			var suppress_info = {
 				text_proc : 0, 
 				border_proc : 0, 
@@ -960,29 +967,31 @@ if (!nexacro.GridFormat) {
 					val = dataset.getColumn(rowidx, propobj._bindexpr);
 				}
 				else {
+					var bindexpr = propobj._bindexpr;
 					var value = propobj._value;
 					var s = value.toLowerCase().indexOf("bind:");
 
 					if (s >= 0) {
-						var bindexpr = propobj._bindexpr;
 						bindexpr = bindexpr.substring(s, bindexpr.length);
-						val = dataset.getColumn(rowidx, bindexpr);
+						bindexpr = dataset.getColumn(rowidx, bindexpr);
 					}
 
-					var exprfn = grid._exprcache[propobj._bindexpr];
+					var exprfn = grid._exprcache[bindexpr];
 					if (exprfn == null) {
-						exprfn = dataset._createExprFunc(propobj._bindexpr);
-						grid._exprcache[propobj._bindexpr] = exprfn;
+						exprfn = dataset._createExprFunc(bindexpr);
+						grid._exprcache[bindexpr] = exprfn;
 					}
 
 					if ((typeof exprfn) == "function") {
+						this.col = this._col;
+						this.row = this._row;
 						val = exprfn.call(this, rowidx, rowidx, grid, dataset);
 						if (val) {
 							val = val.toString();
 						}
 					}
 					else {
-						val = propobj._bindexpr;
+						val = bindexpr;
 					}
 
 					if (val == "default") {
@@ -1070,7 +1079,7 @@ if (!nexacro.GridFormat) {
 			usecache = true;
 		}
 
-		if (styles[pseudo] && !selected) {
+		if (styles[pseudo]) {
 			style = styles[pseudo];
 		}
 
@@ -1360,6 +1369,57 @@ if (!nexacro.GridFormat) {
 				else {
 					return result;
 				}
+			}
+		}
+
+		else if (propid == "letterspace") {
+			var letterspace;
+
+			letterspace = style.letterspace;
+			result = this._resultStyleProc(styleid, propid, letterspace, exprbind, rowidx, usecache);
+
+			if (this.isStyleEmpty(result)) {
+				if (style != enablestyle) {
+					letterspace = enablestyle.letterspace;
+					result = this._resultStyleProc(styleid, propid, letterspace, exprbind, rowidx, usecache);
+				}
+			}
+			else {
+				return result;
+			}
+
+			if (this.isStyleEmpty(result)) {
+				letterspace = bandstyle.cellletterspace;
+				result = this._resultStyleProc(styleid, propid, letterspace, exprbind, rowidx, usecache);
+			}
+			else {
+				return result;
+			}
+
+			if (this.isStyleEmpty(result)) {
+				letterspace = enablebandstyle.cellletterspace;
+				result = this._resultStyleProc(styleid, propid, letterspace, exprbind, rowidx, usecache);
+			}
+			else {
+				return result;
+			}
+
+			if (this.isStyleEmpty(result)) {
+				if (this.cssclass) {
+					letterspace = this._findcss_ctrl._find_pseudo_obj("letterspace", pseudo, "letterspace");
+					result = this._resultStyleProc(styleid, propid, letterspace, exprbind, rowidx, usecache);
+				}
+			}
+			else {
+				return result;
+			}
+
+			if (this.isStyleEmpty(result)) {
+				letterspace = bandinfo._find_gridpseudo_obj("cellletterspace", pseudo, this.celltype, "letterspace", false, "letterspace");
+				result = this._resultStyleProc(styleid, propid, letterspace, exprbind, rowidx, usecache, lastcache);
+			}
+			else {
+				return result;
 			}
 		}
 
@@ -2008,10 +2068,6 @@ if (!nexacro.GridFormat) {
 	_pGridCellInfo._query_pseudo_background = function (rowidx, odd, selected, pseudo) {
 		selected = (this.grid.useselcolor && selected);
 
-		if (pseudo == "selected") {
-			pseudo = "normal";
-		}
-
 		var styleidbase = [(odd != 0), selected, pseudo].join("");
 		var styleid = "background" + styleidbase;
 		var styleid2 = "backgroundimage" + styleidbase;
@@ -2251,10 +2307,6 @@ if (!nexacro.GridFormat) {
 			supptype = "c";
 		}
 
-		if (pseudo == "selected") {
-			pseudo = "normal";
-		}
-
 		var styleidbase = [selected, disp_type, pseudo, supptype, parentcolspan, parentrowspan].join("");
 		var styleid = "linetype" + styleidbase;
 		var styleid2 = "line" + styleidbase;
@@ -2469,10 +2521,6 @@ if (!nexacro.GridFormat) {
 	_pGridCellInfo._query_pseudo_gradation = function (rowidx, odd, selected, pseudo) {
 		selected = (this.grid.useselcolor && selected);
 
-		if (pseudo == "selected") {
-			pseudo = "normal";
-		}
-
 		var styleid = ["gradation", (odd != 0), selected, pseudo].join("");
 		var gradation = this._stylecache[styleid];
 
@@ -2484,10 +2532,6 @@ if (!nexacro.GridFormat) {
 	};
 
 	_pGridCellInfo._query_pseudo_cursor = function (rowidx, pseudo) {
-		if (pseudo == "selected") {
-			pseudo = "normal";
-		}
-
 		var styleid = ["cursor", pseudo].join("");
 		var cursor = this._stylecache[styleid];
 
@@ -2503,10 +2547,6 @@ if (!nexacro.GridFormat) {
 	};
 
 	_pGridCellInfo._query_pseudo_padding = function (rowidx, pseudo) {
-		if (pseudo == "selected") {
-			pseudo = "normal";
-		}
-
 		var styleid = ["padding", pseudo].join("");
 		var padding = this._stylecache[styleid];
 
@@ -2531,12 +2571,9 @@ if (!nexacro.GridFormat) {
 	_pGridCellInfo._query_pseudo_font = function (rowidx, selected, pseudo) {
 		selected = (this.grid.useselcolor && selected);
 
-		if (pseudo == "selected") {
-			pseudo = "normal";
-		}
-
 		var styleid = ["font", selected, pseudo].join("");
 		var font = this._stylecache[styleid];
+		var org_font = this._stylecache[styleid];
 
 		if (!font || font._bindtype > 0) {
 			font = this._searchStyleValue("font", styleid, rowidx, false, selected, pseudo, true, null, false);
@@ -2547,12 +2584,12 @@ if (!nexacro.GridFormat) {
 			this._addStyleCache(styleid, font);
 		}
 
-		if (!font || font._bindtype == 0) {
+		if (!org_font || org_font._bindtype == 0) {
 			if (!selected) {
-				this._curfont = font;
+				this._curfont = org_font;
 			}
 			else {
-				this._curselfont = font;
+				this._curselfont = org_font;
 			}
 		}
 		else {
@@ -2567,12 +2604,26 @@ if (!nexacro.GridFormat) {
 		return font;
 	};
 
-	_pGridCellInfo._query_pseudo_color = function (rowidx, odd, selected, pseudo) {
+	_pGridCellInfo._query_pseudo_letterspace = function (rowidx, selected, pseudo) {
 		selected = (this.grid.useselcolor && selected);
 
-		if (pseudo == "selected") {
-			pseudo = "normal";
+		var styleid = ["letterspace", selected, pseudo].join("");
+		var letterspace = this._stylecache[styleid];
+
+		if (!letterspace || letterspace._bindtype > 0) {
+			letterspace = this._searchStyleValue("letterspace", styleid, rowidx, false, selected, pseudo, true, null, false);
 		}
+
+		if (!letterspace || letterspace._is_empty) {
+			letterspace = this.grid.on_find_CurrentStyle_letterspace(pseudo);
+			this._addStyleCache(styleid, letterspace);
+		}
+
+		return letterspace;
+	};
+
+	_pGridCellInfo._query_pseudo_color = function (rowidx, odd, selected, pseudo) {
+		selected = (this.grid.useselcolor && selected);
 
 		var styleid = ["color", (odd != 0), selected, pseudo].join("");
 		var color = this._stylecache[styleid];
@@ -2589,10 +2640,6 @@ if (!nexacro.GridFormat) {
 	};
 
 	_pGridCellInfo._query_pseudo_accessibility = function (rowidx, pseudo) {
-		if (pseudo == "selected") {
-			pseudo = "normal";
-		}
-
 		var style = this.style;
 		var styles = this._styles;
 		var enablestyle = this.style;
@@ -2633,10 +2680,6 @@ if (!nexacro.GridFormat) {
 	};
 
 	_pGridCellInfo._query_pseudo_align = function (rowidx, displayType, pseudo) {
-		if (pseudo == "selected") {
-			pseudo = "normal";
-		}
-
 		var styleid = ["align", pseudo, displayType].join("");
 		var align = this._stylecache[styleid];
 
@@ -2800,6 +2843,9 @@ if (!nexacro.GridFormat) {
 
 	_pGridCellInfo.set_tooltiptype = function (v) {
 		if (v != this.tooltiptype) {
+			if (!v) {
+				v = "";
+			}
 			this.tooltiptype = v;
 			this.grid._clearBindTypeFlag();
 		}
@@ -2807,6 +2853,9 @@ if (!nexacro.GridFormat) {
 
 	_pGridCellInfo.set_tooltiptext = function (v) {
 		if (v != this.tooltiptext._value) {
+			if (!v) {
+				v = "";
+			}
 			this.tooltiptext._set(v);
 			this.grid._clearBindTypeFlag();
 		}
@@ -2966,7 +3015,7 @@ if (!nexacro.GridFormat) {
 	};
 
 	_pGridCellInfo.set_text = function (v) {
-		if (v != this.text._value) {
+		if (v !== this.text._value) {
 			this.text._set(v);
 			this.grid._clearBindTypeFlag();
 		}
@@ -3471,7 +3520,7 @@ if (!nexacro.GridFormat) {
 				return this._getDisplayText_image(rowidx);
 			}
 			else if (d == "date") {
-				return this._getDisplayText_date(rowidx);
+				return this._getDisplayText_date2(rowidx);
 			}
 			else if (d == "combo") {
 				return this._getDisplayText_combo(rowidx);
@@ -3519,13 +3568,11 @@ if (!nexacro.GridFormat) {
 		return v;
 	};
 	_pGridCellInfo.__find_idx_dot = function (text, pos) {
-		this._number_type = 0;
 		this._idx_dot = -1;
 		var txtLen = text.length;
 		for (var i = 0; i < pos; i++) {
 			var ch = text.charAt(i);
 			if (ch == ".") {
-				this._number_type = 1;
 				this._idx_dot = i;
 				break;
 			}
@@ -3535,7 +3582,6 @@ if (!nexacro.GridFormat) {
 			for (var i = pos; i < txtLen; i++) {
 				var ch = text.charAt(i);
 				if (ch == '.') {
-					this._number_type = 0;
 					this._idx_dot = i;
 					break;
 				}
@@ -3794,6 +3840,16 @@ if (!nexacro.GridFormat) {
 					}
 				}
 			}
+			else if (mask_ch == "\\") {
+				mask_ch = mask.charAt(i + 1);
+				if (mask_ch == "\'") {
+					new_text += mask_ch;
+					i++;
+				}
+				else {
+					new_text += ch;
+				}
+			}
 			else {
 				new_text += ch;
 			}
@@ -3810,8 +3866,7 @@ if (!nexacro.GridFormat) {
 
 		var len = v.length;
 
-		if (this._m_idx_dot != undefined && this._m_idx_dot != -1 && 
-			this._idx_dot != -1) {
+		if (this._m_idx_dot != undefined && this._m_idx_dot != -1 && this._idx_dot != -1) {
 			var mask_decimal_len = mask.length - this._m_idx_dot - 1;
 			var decimal_len = len - this._idx_dot - 1;
 			if (mask_decimal_len != decimal_len) {
@@ -3853,10 +3908,12 @@ if (!nexacro.GridFormat) {
 		var text = "";
 		var valueLen = value.length;
 		var maskLen = mask.length;
+		var maskCharCnt = 0;
 		var n = 0;
 		var isValid = true;
 		var startPassword = false;
 		var startBackslash = false;
+		var startApostrop = false;
 
 		for (var i = 0; i < maskLen; i++) {
 			var maskCh = mask.charAt(i);
@@ -3876,11 +3933,26 @@ if (!nexacro.GridFormat) {
 				}
 
 				if (startBackslash) {
-					if (maskCh == "\\" || maskCh == "\"" || maskCh == "\'") {
-						text += maskCh;
-						continue;
-					}
 					startBackslash = false;
+					text += maskCh;
+					continue;
+				}
+
+				if (maskCh == "\'" && startApostrop == false) {
+					startApostrop = true;
+					text += maskchar;
+					continue;
+				}
+
+				if (startApostrop) {
+					if (maskCh == "\'") {
+						text += maskchar;
+						startApostrop = false;
+					}
+					else {
+						text += maskCh;
+					}
+					continue;
 				}
 
 				if (n < valueLen) {
@@ -3911,8 +3983,34 @@ if (!nexacro.GridFormat) {
 						}
 					}
 					else {
-						n--;
-						text += maskchar;
+						while (n < valueLen) {
+							ch = value.charAt(n++);
+							isValid = this.__testMask(ch, maskCh);
+							if (isValid) {
+								if (ch == " ") {
+									if (this.editclipmode._value == "excludespace") {
+										if (startPassword) {
+											text += "*";
+										}
+										else {
+											text += ch;
+										}
+									}
+									else {
+										text += maskchar;
+									}
+								}
+								else {
+									if (startPassword) {
+										text += "*";
+									}
+									else {
+										text += ch;
+									}
+								}
+								break;
+							}
+						}
 					}
 				}
 				else {
@@ -3920,15 +4018,12 @@ if (!nexacro.GridFormat) {
 				}
 			}
 			else {
-				if (isValid && n < valueLen) {
-					var ch = value.charAt(n);
-
-					if (ch == maskCh) {
-						n++;
-					}
-				}
 				text += maskCh;
 			}
+		}
+
+		for (i = 0; i < maskCharCnt; i++) {
+			text += maskchar;
 		}
 
 
@@ -3965,8 +4060,15 @@ if (!nexacro.GridFormat) {
 	_pGridCellInfo._org_val = null;
 	_pGridCellInfo._getDisplayText_number = function (rowidx) {
 		var v = this._getTextValueForDisp(rowidx);
-		var mask_info = this._getPureNumberMask(this._getAttrValue(this.mask, rowidx));
+		var locale = this._getAttrValue(this.locale, rowidx);
+		var org_mask = this._getAttrValue(this.mask, rowidx);
+		var mask_info = this._getPureNumberMask(org_mask);
 		var mask = mask_info.pure_mask;
+		var bApplyLocale = false;
+
+		if (!locale && this.grid) {
+			locale = this.grid._getLocale();
+		}
 
 		if (mask == undefined) {
 			mask = "";
@@ -3974,61 +4076,43 @@ if (!nexacro.GridFormat) {
 
 		this._org_val = v;
 		if (v == undefined) {
-			var ret = this.__get_view_zeromask(mask);
-			var ninemask = mask;
-			if (ret.nineidx > -1) {
-				mask = ninemask.replace('9', '#');
-			}
 			v = "";
 		}
 
-		var num = v;
-		if (isFinite(num) == false) {
-			v = this.__update_dot_display(v, mask);
-			v = this.__make_text_zeromask(v, mask);
-
-			v = this.__update_empty_decimal(v);
-			return v;
+		var masknumber_api = this.grid._masknumber_api;
+		if (!masknumber_api) {
+			masknumber_api = this.grid._masknumber_api = new nexacro.EditMaskNumber(null);
 		}
 
-		num += "";
-
-		if (this._m_hascomma || !mask) {
-			var temp = parseFloat(num);
-
-			if (num != "" && isNaN(temp)) {
-				return num;
-			}
-
-			if (num == "") {
-				temp = "";
-			}
-
-			num = temp;
-			num += "";
-
-			if (mask && mask.length > 0) {
-				num = this.__update_dot_display(num, mask);
-				num = this.__make_text_zeromask(num, mask);
-				num = this.__update_empty_decimal(num);
-			}
-
-			var reg = /(^[+-]?\d+)(\d{3})/;
-			while (reg.test(num)) {
-				num = num.replace(reg, "$1" + "," + "$2");
-			}
+		masknumber_api._setLocale(locale);
+		masknumber_api.setDisplayMask(mask);
+		if (v instanceof nexacro.Decimal || v instanceof nexacro.Number) {
+			v = v.toLocaleString(locale);
+			bApplyLocale = true;
 		}
-		else if (mask && mask.length > 0) {
-			num = this.__update_dot_display(num, mask);
-			num = this.__make_text_zeromask(num, mask);
-			num = this.__update_empty_decimal(num);
+		else {
+			v = v.toString();
 		}
+
+		if (!isNaN(v)) {
+			v = masknumber_api.removeMask(v);
+		}
+
+		var val = masknumber_api.normalizeValue(v, true);
+
+		if (bApplyLocale || (!mask && isNaN(val))) {
+			masknumber_api._dispComma = false;
+		}
+
+		var num = masknumber_api.makeDisplayText(val, bApplyLocale);
+
 		num = mask_info.pre_str + num + mask_info.post_str;
-		mask_info = null;
+
 		return num;
 	};
+
 	_pGridCellInfo._getPureNumberMask = function (mask) {
-		var len = mask.length, ch, idx_dot = -1, pre_str = "", pure_mask = "", post_str = "";
+		var ch, idx_dot = -1, pre_str = "", pure_mask = "", post_str = "", len = mask ? mask.length : 0;
 		for (var i = 0; i < len; i++) {
 			ch = mask.charAt(i);
 			switch (mask.charAt(i)) {
@@ -4080,8 +4164,11 @@ if (!nexacro.GridFormat) {
 		if (!locale && this.grid) {
 			locale = this.grid._getLocale();
 		}
-		var nexanum = new nexacro.Number(v);
-		v = nexanum.toLocaleCurrencyString(locale);
+
+		if (!isNaN(v)) {
+			var nexanum = new nexacro.Number(v);
+			v = nexanum.toLocaleCurrencyString(locale);
+		}
 
 		return v;
 	};
@@ -4140,7 +4227,7 @@ if (!nexacro.GridFormat) {
 					v._timecheck = true;
 				}
 
-				date = this.__parseDate(strVal, colType);
+				date = this.__parseDate(strVal, colType, rowidx);
 			}
 			else {
 				if (colType == 1) {
@@ -4176,11 +4263,13 @@ if (!nexacro.GridFormat) {
 			locale = this.grid._getLocale();
 		}
 
-		if (this.mask == "SHORTDATE" || this.mask == "LONGDATE") {
+		var mask = this._getAttrValue(this.mask, rowidx);
+
+		if (mask == "SHORTDATE" || mask == "LONGDATE") {
 			var locale_info = nexacro.Locale.getLocaleInfo(locale);
 			var format = "";
 
-			if (this.mask == "SHORTDATE") {
+			if (mask == "SHORTDATE") {
 				format = locale_info.shortdate_format;
 			}
 			else {
@@ -4207,8 +4296,10 @@ if (!nexacro.GridFormat) {
 
 			var locale_info = nexacro.Locale.getLocaleInfo(locale);
 			displaycalendarctrl._datelistL = locale_info.weekday_names_long;
+			displaycalendarctrl._datelistS = locale_info.weekday_names_short;
 
-			var ddd = displaycalendarctrl._datelistL[date.getDay()];
+			var ddd = displaycalendarctrl._datelistS[date.getDay()];
+			var dddd = displaycalendarctrl._datelistL[date.getDay()];
 			var dd = date.getDate();
 			dd = (dd < 10 ? "0" : "") + dd;
 
@@ -4235,13 +4326,11 @@ if (!nexacro.GridFormat) {
 				second = s = "00";
 			}
 
-			var format = this._getAttrValue(this.mask, rowidx);
+			var format = mask;
 
 			if (format == null || format.length == 0 || !format.match(/[yMdHhms]/)) {
 				format = "yyyy-MM-dd";
 			}
-
-
 
 			if (nullmask) {
 				var maskchar1 = this.maskchar;
@@ -4251,12 +4340,12 @@ if (!nexacro.GridFormat) {
 
 				dateStr = format.replace("yyyy", maskchar4);
 				dateStr = dateStr.replace("MM", maskchar2);
+				dateStr = dateStr.replace("dddd", "weekL");
 				dateStr = dateStr.replace("ddd", "week");
 				dateStr = dateStr.replace("dd", maskchar2);
 				dateStr = dateStr.replace("yy", maskchar2);
 				dateStr = dateStr.replace("M", maskchar1);
 				dateStr = dateStr.replace("d", maskchar1);
-				dateStr = dateStr.replace("week", maskchar3);
 				dateStr = dateStr.replace("tt", maskchar2);
 				dateStr = dateStr.replace("HH", maskchar2);
 				dateStr = dateStr.replace("hh", maskchar2);
@@ -4266,23 +4355,26 @@ if (!nexacro.GridFormat) {
 				dateStr = dateStr.replace("m", maskchar1);
 				dateStr = dateStr.replace("ss", maskchar2);
 				dateStr = dateStr.replace("s", maskchar1);
+				dateStr = dateStr.replace("weekL", maskchar4);
+				dateStr = dateStr.replace("week", maskchar3);
 			}
 			else {
 				dateStr = format.replace("yyyy", yyyy);
 				dateStr = dateStr.replace("MM", MM);
+				dateStr = dateStr.replace("dddd", "weekL");
 				dateStr = dateStr.replace("ddd", "week");
 				dateStr = dateStr.replace("dd", dd);
 				dateStr = dateStr.replace("yy", yy);
 				dateStr = dateStr.replace("M", M);
 				dateStr = dateStr.replace("d", d);
-				dateStr = dateStr.replace("week", ddd);
 
 				var hh = hour;
 				var tt = "오전";
 				if (hour > 12 && hour < 25) {
-					hh = hour - 12;
+					hh = hour < 22 ? "0" + (hour - 12) : hour - 12;
 					tt = "오후";
 				}
+
 				dateStr = dateStr.replace("tt", tt);
 				dateStr = dateStr.replace("HH", hour);
 				dateStr = dateStr.replace("hh", hh);
@@ -4292,6 +4384,8 @@ if (!nexacro.GridFormat) {
 				dateStr = dateStr.replace("m", mn);
 				dateStr = dateStr.replace("ss", second);
 				dateStr = dateStr.replace("s", s);
+				dateStr = dateStr.replace("weekL", dddd);
+				dateStr = dateStr.replace("week", ddd);
 			}
 		}
 
@@ -4310,7 +4404,7 @@ if (!nexacro.GridFormat) {
 		return this._getDisplayText_date(rowidx, 0);
 	};
 
-	_pGridCellInfo.__parseDate = function (v, dFlag) {
+	_pGridCellInfo.__parseDate = function (v, dFlag, rowidx) {
 		var regexp;
 		switch (dFlag) {
 			case 0:
@@ -4325,8 +4419,18 @@ if (!nexacro.GridFormat) {
 		}
 
 		if (regexp.test(v) == false) {
-			return undefined;
+			var mask = this._getAttrValue(this.mask, rowidx);
+			if (mask && mask.length) {
+				var tempcal = new nexacro.Calendar("tempcal", "absolute", 0, 0, 0, 0, null, null, this);
+				v = tempcal._makeDateObj(v);
+				v = v.toString();
+				delete tempcal;
+			}
+			else {
+				return undefined;
+			}
 		}
+
 		var date = new nexacro.Date();
 
 		if (dFlag > 0) {
@@ -4775,17 +4879,19 @@ if (!nexacro.GridFormat) {
 				return dataset.getColumn(rowidx, attr._bindexpr);
 			}
 			else {
+				var bindexpr = attr._bindexpr;
 				var val = attr._value;
 				var s = val.toLowerCase().indexOf("bind:");
 				if (s >= 0) {
-					var bindexpr = attr._bindexpr;
 					bindexpr = bindexpr.substring(s, bindexpr.length);
-					return dataset.getColumn(rowidx, bindexpr);
+					bindexpr = dataset.getColumn(rowidx, bindexpr);
 				}
-				var exprfn = grid._exprcache[attr._bindexpr];
+
+				var exprfn = grid._exprcache[bindexpr];
+
 				if (exprfn == null) {
-					exprfn = dataset._createExprFunc(attr._bindexpr);
-					grid._exprcache[attr._bindexpr] = exprfn;
+					exprfn = dataset._createExprFunc(bindexpr);
+					grid._exprcache[bindexpr] = exprfn;
 				}
 				if ((typeof exprfn) == "function") {
 					if (cellinfo) {
@@ -4968,7 +5074,7 @@ if (!nexacro.GridFormat) {
 		}
 	};
 
-	_pGridFormat._resetOrgColSize = function (is_keep_area) {
+	_pGridFormat._resetOrgColSize = function (is_keep_area, autofitcol_rate) {
 		if (this._cols) {
 			var _cols = this._cols;
 			var _colsLen = this._cols.length;
@@ -4976,18 +5082,39 @@ if (!nexacro.GridFormat) {
 
 			leftwidth = bodywidth = rightwidth = 0;
 
-			for (var i = 0; i < _colsLen; i++) {
-				_cols[i].size = _cols[i].orgsize;
-				_cols[i].left = _cols[i].orgleft;
-				_cols[i].right = _cols[i].orgright;
+			if (!autofitcol_rate.length) {
+				for (var i = 0; i < _colsLen; i++) {
+					_cols[i].size = _cols[i].orgsize;
+					_cols[i].left = _cols[i].orgleft;
+					_cols[i].right = _cols[i].orgright;
 
-				if (_cols[i]._area == "left") {
-					leftwidth += _cols[i].size;
+					if (_cols[i]._area == "left") {
+						leftwidth += _cols[i].size;
+					}
+					else if (_cols[i]._area == "right") {
+						rightwidth += _cols[i].size;
+					}
+					else {
+						bodywidth += _cols[i].size;
+					}
 				}
-				else if (_cols[i]._area == "right") {
-					rightwidth += _cols[i].size;
-				}
-				else {
+			}
+			else {
+				var left = 0;
+				for (var i = 0; i < _colsLen; i++) {
+					if (_cols[i]._area == "left") {
+						leftwidth += _cols[i].size;
+						continue;
+					}
+					else if (_cols[i]._area == "right") {
+						rightwidth += _cols[i].size;
+						continue;
+					}
+
+					_cols[i].size = Math.round(autofitcol_rate[i] * this._orgbodyWidth);
+					_cols[i].left = left;
+					_cols[i].right = left + _cols[i].size;
+					left = _cols[i].right;
 					bodywidth += _cols[i].size;
 				}
 			}
@@ -5757,14 +5884,16 @@ if (!nexacro.GridFormat) {
 						strContents += "\" cssclass=\"" + nexacro._encodeXml(cells[i].cssclass);
 					}
 
-					strContents += "\"/>\n";
-
 					var subcells = cells[i]._subcells;
 					var subcellsLen = subcells.length;
 
 					if (subcellsLen > 0) {
-						strContents += "    ";
+						strContents += "\">\n";
 						_makeCellstr(subcells);
+						strContents += "</Cell>\n";
+					}
+					else {
+						strContents += "\"/>\n";
 					}
 				}
 			}
@@ -5826,7 +5955,7 @@ if (!nexacro.GridFormat) {
 			strContents += "</Format>\n";
 		}
 		else {
-			strContents = "<Format id=\"" + this.id + "\">\n";
+			strContents = "<Format id=\"" + this.id + "\"></Format>\n";
 		}
 
 		var contentsElem = nexacro._parseXMLDocument(strContents);
@@ -6328,20 +6457,25 @@ if (!nexacro.GridFormat) {
 		return false;
 	};
 
-	_pGridFormat._adjustColWidth = function (bodywidth) {
-		if (bodywidth == 0) {
+	_pGridFormat._adjustColWidth = function (bodywidth, autofitcol_rate) {
+		if (bodywidth <= 0) {
 			return false;
 		}
 
+		var retn = false;
 		if (this._bodyWidth != bodywidth) {
-			this._bodyWidth = bodywidth;
-			var factor = bodywidth / this.bodyWidth;
-			this.bodyWidth = this._bodyWidth;
-			var len = this._cols.length;
-			var col;
-			var pos = 0;
-			var cur_width = 0;
+			retn = true;
+		}
 
+		this._bodyWidth = bodywidth;
+		var factor = bodywidth / this.bodyWidth;
+		this.bodyWidth = this._bodyWidth;
+		var len = this._cols.length;
+		var col, bodylastcol, bodylastcolidx = -1;
+		var pos = 0;
+		var tot = 0;
+
+		if (!autofitcol_rate.length) {
 			for (var i = 0; i < len; i++) {
 				col = this._cols[i];
 				if (col._area != "body") {
@@ -6349,19 +6483,64 @@ if (!nexacro.GridFormat) {
 				}
 
 				col.left = pos;
-				cur_width += col.size;
-				col.size = Math.round(cur_width * factor) - pos;
 
-				if (col.size <= 0 && col.orgsize > 0) {
-					col.size = 0.2;
+				if (col.tempsize != undefined) {
+					col.size = col.tempsize;
+					col.tempsize = undefined;
 				}
 
+				col.size *= factor;
+
+				autofitcol_rate[i] = col.size / bodywidth;
+
+				if (col.size >= 0.5) {
+					col.size = Math.round(col.size);
+				}
+
+				tot += col.size;
 				pos = pos + col.size;
 				col.right = pos;
+
+				if (col.size > 0) {
+					bodylastcol = col;
+					bodylastcolidx = i;
+				}
 			}
-			return true;
 		}
-		return false;
+		else {
+			for (var i = 0; i < len; i++) {
+				col = this._cols[i];
+				if (col._area != "body") {
+					continue;
+				}
+
+				col.left = pos;
+				col.size = bodywidth * autofitcol_rate[i];
+
+				if (col.size >= 0.5) {
+					col.size = Math.round(col.size);
+				}
+
+				tot += col.size;
+				pos = pos + col.size;
+				col.right = pos;
+				bodylastcol = col;
+				bodylastcolidx = i;
+			}
+		}
+
+		if (bodylastcol && bodylastcol.size > 0) {
+			bodylastcol.tempsize = bodylastcol.size;
+			bodylastcol.size += (bodywidth - tot);
+			bodylastcol.right += (bodywidth - tot);
+
+			if (bodylastcol.size <= 0) {
+				bodylastcol.size = 1;
+				bodylastcol.right = bodylastcol.left + bodylastcol.size;
+			}
+		}
+
+		return retn;
 	};
 
 	_pGridFormat._adjustRowHeight = function (bodyheight) {
@@ -7137,6 +7316,7 @@ if (!nexacro.GridFormat) {
 			this._body_height = this.bodyHeight -= size;
 		}
 
+		this._updateFormatStr(band);
 		return row;
 	};
 
@@ -7168,6 +7348,7 @@ if (!nexacro.GridFormat) {
 				return -1;
 			}
 		}
+
 		return this._deleteRow(bandtype, nSubRowIndex);
 	};
 
@@ -8072,27 +8253,27 @@ if (!nexacro.GridFormat) {
 				else {
 					var val;
 
-					if (strPropID == "expr") {
-						val = prop._bindexpr;
-					}
-					else {
-						if (prop._bindtype == 2) {
+					if (prop instanceof nexacro.BindableValue) {
+						if (strPropID == "expr") {
 							val = prop._bindexpr;
-							if (val.indexOf("expr:") < 0) {
-								val = "expr:" + val;
-							}
 						}
 						else {
-							val = prop._value;
+							if (prop._bindtype == 2) {
+								val = prop._bindexpr;
+								if (val.indexOf("expr:") < 0) {
+									val = "expr:" + val;
+								}
+							}
+							else {
+								val = prop._value;
+							}
 						}
 					}
-
-					if (val) {
-						return val;
-					}
 					else {
-						return prop;
+						val = prop;
 					}
+
+					return val;
 				}
 			}
 		}

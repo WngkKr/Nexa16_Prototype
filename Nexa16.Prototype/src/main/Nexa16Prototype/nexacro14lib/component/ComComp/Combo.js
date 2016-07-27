@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -45,6 +45,7 @@ if (!nexacro.Combo) {
 		this.buttonsize = null;
 		this.itemaccessibility = null;
 		this.popuptype = null;
+		this.displaynulltextcolor = null;
 	};
 
 	var _pComboStyle = nexacro._createPrototype(nexacro.Style, nexacro.Combo_Style);
@@ -62,6 +63,8 @@ if (!nexacro.Combo) {
 	eval(nexacro._createValueAttributeEvalStr("_pComboStyle", "buttonsize"));
 	eval(nexacro._createAccessibilityAttributeEvalStr("_pComboStyle", "itemaccessibility"));
 	eval(nexacro._createValueAttributeEvalStr("_pComboStyle", "popuptype"));
+	eval(nexacro._createColorAttributeEvalStr("_pComboStyle", "displaynulltextcolor"));
+
 
 	_pComboStyle.__custom_emptyObject = function () {
 		this.itemheight = null;
@@ -75,6 +78,7 @@ if (!nexacro.Combo) {
 		this.buttonsize = null;
 		this.itemaccessibility = null;
 		this.popuptype = null;
+		this.displaynulltextcolor = null;
 	};
 
 	_pComboStyle.__get_custom_style_value = function () {
@@ -139,6 +143,11 @@ if (!nexacro.Combo) {
 			val += "popuptype:" + style._value + "; ";
 		}
 
+		style = this.displaynulltextcolor;
+		if (style && style._is_empty) {
+			val += "displaynulltextcolor:" + style._value + "; ";
+		}
+
 		style = null;
 
 		return val;
@@ -158,6 +167,7 @@ if (!nexacro.Combo) {
 		this.buttonsize = null;
 		this.itemaccessibility = null;
 		this.popuptype = null;
+		this.displaynulltextcolor = null;
 	};
 
 	var _pComboCurrentStyle = nexacro._createPrototype(nexacro.CurrentStyle, nexacro.Combo_CurrentStyle);
@@ -210,6 +220,7 @@ if (!nexacro.Combo) {
 		this.inputtype = "normal";
 		this.useime = "global";
 		this.selectchangetype = "noboundup";
+		this.usecontextmenu = true;
 
 		this._exprcache = {
 		};
@@ -375,6 +386,12 @@ if (!nexacro.Combo) {
 			this.on_apply_style_font(style);
 		}
 
+		style = this.on_find_CurrentStyle_letterspace(pseudo);
+		if (style != curstyle.letterspace) {
+			curstyle.letterspace = style;
+			this.on_apply_style_letterspace(style);
+		}
+
 		style = this.on_find_CurrentStyle_color(pseudo);
 		if (style != curstyle.color) {
 			curstyle.color = style;
@@ -382,6 +399,12 @@ if (!nexacro.Combo) {
 			if (style != null) {
 				this.on_apply_style_color(style);
 			}
+		}
+
+		style = this.on_find_CurrentStyle_displaynulltextcolor(pseudo);
+		if (style != curstyle.displaynulltextcolor) {
+			curstyle.displaynulltextcolor = style;
+			this.on_apply_style_displaynulltextcolor(style);
 		}
 
 		var popuptype = this.on_find_CurrentStyle_popuptype(pseudo);
@@ -477,10 +500,25 @@ if (!nexacro.Combo) {
 
 	_pCombo.on_find_CurrentStyle_font = function (pseudo, childctrl) {
 		if (childctrl) {
-			return childctrl._find_pseudo_obj("font", pseudo, "font") || this._find_pseudo_obj("font", pseudo, "font");
+			var font = childctrl._find_pseudo_obj("font", pseudo, "font");
+			if (font) {
+				return font;
+			}
 		}
 
-		return this._find_pseudo_obj("font", pseudo, "font");
+		return nexacro.Component.prototype.on_find_CurrentStyle_font.call(this, pseudo);
+	};
+
+	_pCombo.on_find_CurrentStyle_displaynulltextcolor = function (pseudo, childctrl) {
+		var displaynulltextcolor = this._find_pseudo_obj("displaynulltextcolor", pseudo, "color");
+		if (!displaynulltextcolor) {
+			displaynulltextcolor = this._find_pseudo_obj("color", pseudo, "color");
+		}
+		if (!displaynulltextcolor) {
+			displaynulltextcolor = this._find_inherit_pseudo_obj("color", pseudo, "color");
+		}
+
+		return (displaynulltextcolor) ? displaynulltextcolor : nexacro.Component._default_color;
 	};
 
 	_pCombo.on_find_CurrentStyle_gradation = function (pseudo, childctrl) {
@@ -509,6 +547,10 @@ if (!nexacro.Combo) {
 
 	_pCombo.on_update_style_itemcolor = function () {
 		this.on_apply_style_itemcolor(this.currentstyle.itemcolor = this.on_find_CurrentStyle_itemcolor(this._pseudo));
+	};
+
+	_pCombo.on_update_style_displaynulltextcolor = function () {
+		this.on_apply_style_displaynulltextcolor(this.currentstyle.displaynulltextcolor = this.on_find_CurrentStyle_displaynulltextcolor(this._pseudo));
 	};
 
 	_pCombo.on_update_style_itemfont = function () {
@@ -549,9 +591,21 @@ if (!nexacro.Combo) {
 		}
 	};
 
+	_pCombo.on_apply_style_displaynulltextcolor = function (color) {
+		if (this.comboedit) {
+			this.comboedit.on_apply_style_displaynulltextcolor(color);
+		}
+	};
+
 	_pCombo.on_apply_style_font = function (font) {
 		if (this.comboedit) {
 			this.comboedit.on_apply_style_font(font);
+		}
+	};
+
+	_pCombo.on_apply_style_letterspace = function (letterspace) {
+		if (this.comboedit) {
+			this.comboedit.on_apply_style_letterspace(letterspace);
 		}
 	};
 
@@ -562,18 +616,6 @@ if (!nexacro.Combo) {
 
 		if (this.comboedit) {
 			this.comboedit.style.set_align(align);
-		}
-	};
-
-	_pCombo.on_apply_style_cursor = function (cursor) {
-		nexacro.Component.prototype.on_apply_style_cursor.call(this, cursor);
-
-		if (this.comboedit) {
-			this.comboedit.on_apply_style_cursor(cursor);
-		}
-
-		if (this.dropbutton) {
-			this.dropbutton.on_apply_style_cursor(cursor);
 		}
 	};
 
@@ -658,6 +700,7 @@ if (!nexacro.Combo) {
 		this.on_apply_imemode();
 		this.on_apply_type();
 		this.on_apply_autoselect();
+		this.on_apply_style_displaynulltextcolor(this.currentstyle.displaynulltextcolor);
 
 		if (this.value !== undefined) {
 			this.on_apply_value();
@@ -666,8 +709,15 @@ if (!nexacro.Combo) {
 			this.on_apply_index();
 		}
 		else if (this.text !== "") {
-			this.on_apply_text();
+			if (!this._innerdataset) {
+				this.on_apply_text();
+			}
+			else {
+				this.on_apply_index();
+			}
 		}
+
+		this.on_apply_usecontextmenu();
 
 		this._setEventHandler("onmousewheel", this.on_notify_combo_mousewheel, this);
 
@@ -677,7 +727,8 @@ if (!nexacro.Combo) {
 		this.comboedit._setEventHandler("onchar", this.on_notify_edit_onchar, this);
 		this.comboedit._setEventHandler("cancharchange", this.on_notify_edit_cancharchange, this);
 		this.comboedit._setEventHandler("ontap", this.on_notify_ondropdown, this);
-		if (!(nexacro.isTouchInteraction && nexacro.SupportTouch)) {
+
+		if ((!nexacro.isTouchInteraction && !nexacro.SupportTouch)) {
 			this.comboedit._setEventHandler("onlbuttondown", this.on_notify_edit_onlbuttondown, this);
 			this.dropbutton._setEventHandler("onlbuttondown", this.on_notify_ondropdown, this);
 		}
@@ -697,6 +748,7 @@ if (!nexacro.Combo) {
 
 		this.on_apply_style_align(this.currentstyle.align);
 		this.on_apply_style_cursor(this.currentstyle.cursor);
+		this.on_apply_style_letterspace(this.currentstyle.letterspace);
 
 		this.on_apply_prop_rtldirection();
 
@@ -755,7 +807,7 @@ if (!nexacro.Combo) {
 
 		try {
 			comboedit._stat_change("focus", "focused");
-			if (!(nexacro.isTouchInteraction && nexacro.SupportTouch)) {
+			if (!(nexacro.isTouchInteraction && nexacro.SupportTouch) || !nexacro.SupportTouch) {
 				comboedit.on_apply_custom_setfocus(evt_name);
 			}
 			else {
@@ -993,6 +1045,10 @@ if (!nexacro.Combo) {
 		return _readlabel;
 	};
 
+	_pCombo._isItemAccessibilityEnable = function () {
+		return false;
+	};
+
 	_pCombo.set_visible = function (v) {
 		if (v === undefined || v === null) {
 			return;
@@ -1009,12 +1065,25 @@ if (!nexacro.Combo) {
 
 	_pCombo.set_value = function (v) {
 		if (v != this.value) {
-			var ret = this.applyto_bindSource("value", v);
-			if (ret) {
-				this._prevalue = this.value;
-				this.value = v;
-				this.on_apply_value();
+			var fds = this._filtereddataset ? this._filtereddataset : this._getFilteredDataset();
+			var ds = this.type == "filter" ? fds : this._innerdataset;
+
+			if (ds) {
+				var row_count = ds.getRowCount();
+				var is_same = false;
+				for (var i = 0; i < row_count; i++) {
+					var item_value = this._getItemValue(i);
+					if (item_value == v) {
+						is_same = true;
+						break;
+					}
+				}
 			}
+
+			this._prevalue = this.value;
+			this.value = v;
+			this.on_apply_value();
+			this.applyto_bindSource("value", this.value);
 		}
 	};
 
@@ -1052,10 +1121,12 @@ if (!nexacro.Combo) {
 					}
 				}
 
+				this.value = undefined;
 				this.index = -1;
 				this.text = "";
 				this._refreshAccessibilityValue();
 			}
+
 			this._preindex = this.index;
 			this._prevalue = this.value;
 			this.redraw();
@@ -1074,12 +1145,18 @@ if (!nexacro.Combo) {
 			}
 
 			if (ds) {
-				v = parseInt(v, 10) | 0;
+				if (v !== undefined) {
+					v = parseInt(v, 10) | 0;
+				}
 
 				this._preindex = this.index;
 				this._pretext = this.text;
 				this._prevalue = this.value;
 				this.index = v;
+				if (v >= 0 && ds && v < ds.getRowCount()) {
+					this.value = this._getItemValue(v);
+					this.text = this._getItemText(v);
+				}
 				this.on_apply_index();
 			}
 		}
@@ -1108,8 +1185,8 @@ if (!nexacro.Combo) {
 				}
 
 				this.redraw();
-				this._cancelSelect();
 				this._refreshAccessibilityValue();
+
 				return;
 			}
 
@@ -1421,6 +1498,23 @@ if (!nexacro.Combo) {
 		}
 	};
 
+
+	_pCombo.set_usecontextmenu = function (v) {
+		v = nexacro._toBoolean(v);
+
+		if (v != this.usecontextmenu) {
+			this.usecontextmenu = v;
+			this.on_apply_usecontextmenu();
+		}
+	};
+
+	_pCombo.on_apply_usecontextmenu = function () {
+		var comboedit = this.comboedit;
+		if (comboedit) {
+			comboedit.set_usecontextmenu(this.usecontextmenu);
+		}
+	};
+
 	_pCombo.set_useime = function (v) {
 	};
 
@@ -1431,6 +1525,7 @@ if (!nexacro.Combo) {
 	_pCombo.redraw = function () {
 		var combolist = this.combolist;
 
+
 		if (this.comboedit) {
 			if (this.text) {
 				this._setEditValue(this.text);
@@ -1440,11 +1535,6 @@ if (!nexacro.Combo) {
 			}
 		}
 
-		if (combolist) {
-			var idx = this._getRawToListindex(this.index);
-			combolist._overeditemindex = idx;
-			combolist.set_index(idx);
-		}
 		this._moverindex = this.index;
 		combolist = null;
 	};
@@ -1551,12 +1641,18 @@ if (!nexacro.Combo) {
 		if (this.readonly) {
 			return false;
 		}
+
 		var ds = this._innerdataset;
 
 		if (this._isPopupVisible() == true) {
 			this.popupwindow._closePopup();
 		}
 		else {
+			var comboedit = this.comboedit;
+			if (comboedit) {
+				comboedit.setSelect(0, 0);
+			}
+
 			if (this.combolist && this.type == "filter") {
 				if (this._filtereddataset) {
 					this._filtereddataset.set_filterstr("");
@@ -1645,7 +1741,9 @@ if (!nexacro.Combo) {
 					win._removeFromCurrentFocusPath(this, true);
 				}
 			}
-			this.comboedit._setFocus(false);
+			if (this.parent && (this.parent._last_focused && (this.parent._last_focused.id == this.id))) {
+				this.comboedit._setFocus(false);
+			}
 		}
 
 		return retv;
@@ -1684,6 +1782,9 @@ if (!nexacro.Combo) {
 							win._removeFromCurrentFocusPath(this, true);
 						}
 					}
+					this.comboedit._setFocus(false);
+				}
+				else {
 					this._setFocus(false);
 				}
 			}
@@ -1754,7 +1855,9 @@ if (!nexacro.Combo) {
 					win._removeFromCurrentFocusPath(this, true);
 				}
 			}
-			this.comboedit._setFocus(false);
+			if (this.parent && (this.parent._last_focused && (this.parent._last_focused.id == this.id))) {
+				this.comboedit._setFocus(false);
+			}
 		}
 
 		return false;
@@ -1815,7 +1918,7 @@ if (!nexacro.Combo) {
 		};
 
 		if (keycode == E.KEY_ENTER) {
-			if (curidx >= 0) {
+			if (curidx >= 0 && curidx == this._moverindex) {
 				if (this.type == "filter") {
 					rawidx = this._getRawIndex(ds, curidx);
 					rawidx = (rawidx == -1) ? curidx : rawidx;
@@ -1824,6 +1927,9 @@ if (!nexacro.Combo) {
 				else {
 					rawidx = curidx;
 				}
+			}
+			else {
+				return false;
 			}
 
 			ei.postindex = rawidx;
@@ -1874,12 +1980,14 @@ if (!nexacro.Combo) {
 							nextidx = 0;
 						}
 						this._downkey = false;
-						combolist._reset_item(nextidx);
-						combolist._overeditemindex = nextidx;
-						this._moverindex = nextidx;
+
 						text = ds.getColumn(nextidx, datacol || codecol);
 						text = text == undefined ? "" : text;
 						this._setEditValue(text);
+
+						combolist._reset_item(nextidx);
+						combolist._overeditemindex = nextidx;
+						this._moverindex = nextidx;
 					}
 					else {
 						var overidx = 0;
@@ -1898,13 +2006,14 @@ if (!nexacro.Combo) {
 						}
 
 						if (nextidx < ds.getRowCount()) {
+							text = ds.getColumn(nextidx, datacol || codecol);
+							text = text == undefined ? "" : text;
+							this._setEditValue(text);
+
 							this._downkey = true;
 							combolist._reset_item(nextidx);
 							combolist._overeditemindex = nextidx;
 							this._moverindex = nextidx;
-							text = ds.getColumn(nextidx, datacol || codecol);
-							text = text == undefined ? "" : text;
-							this._setEditValue(text);
 						}
 					}
 				}
@@ -2102,7 +2211,7 @@ if (!nexacro.Combo) {
 					}
 
 					if (comboedit) {
-						if (!(nexacro.isTouchInteraction && nexacro.SupportTouch)) {
+						if (!(nexacro.isTouchInteraction && nexacro.SupportTouch) || !nexacro.SupportTouch) {
 							comboedit.on_apply_custom_setfocus();
 						}
 					}
@@ -2116,6 +2225,48 @@ if (!nexacro.Combo) {
 		comboedit = null;
 
 		return ret;
+	};
+
+	_pCombo.on_fire_sys_onrbuttonup = function (button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, from_comp, from_refer_comp, from_elem) {
+		if (from_refer_comp && (from_refer_comp instanceof nexacro.ScrollBarCtrl || (from_refer_comp.parent && from_refer_comp.parent instanceof nexacro.ScrollBarCtrl))) {
+			return;
+		}
+
+		if (this._is_fling_stop) {
+			return;
+		}
+
+		if (this.isDropdown()) {
+			var sel_info_list = this.combolist._selectinfo_list;
+
+			if (this._scroll_proc) {
+				if (sel_info_list.length) {
+					var last = sel_info_list.length - 1;
+					var info = sel_info_list[last];
+
+					if (info.index != this.index) {
+						info.obj._keep_selecting = false;
+						info.obj._stat_change("notselect", "normal");
+						sel_info_list.splice(last, 1);
+					}
+				}
+				return;
+			}
+
+			while (sel_info_list.length) {
+				var down_item = sel_info_list[0].obj;
+				if (down_item) {
+					down_item._keep_selecting = false;
+
+
+					if (!down_item.selected) {
+						down_item._stat_change("notselect", "normal");
+					}
+				}
+				sel_info_list.shift();
+			}
+		}
+		return;
 	};
 
 	_pCombo.on_fire_user_onkeydown = function (keycode, alt_key, ctrl_key, shift_key, fire_comp, refer_comp) {
@@ -2205,7 +2356,7 @@ if (!nexacro.Combo) {
 
 	_pCombo.on_notify_edit_onchar = function (obj, e) {
 		if (this.onchar && this.onchar._has_handlers) {
-			var evt = new nexacro.TextChangeEventInfo(obj, e.chartext, e.pretext, e.posttext);
+			var evt = new nexacro.CharEventInfo(obj, "onchar", e.chartext, e.pretext, e.posttext);
 			var ret = this.onchar._fireCheckEvent(this, evt);
 			return nexacro._toBoolean(ret);
 		}
@@ -2248,9 +2399,12 @@ if (!nexacro.Combo) {
 
 
 	_pCombo.on_notify_edit_oneditclick = function (obj, e) {
-		if (nexacro.isTouchInteraction && nexacro.SupportTouch && !application.enabletouchevent) {
+		if (nexacro.isTouchInteraction || nexacro.SupportTouch) {
 			var evt = new nexacro.EventInfo(this, "oneditclick");
-			this.on_notify_edit_onlbuttondown(this, evt);
+
+			if ((nexacro.isTouchInteraction && !application.enabletouchevent) || (!nexacro.isTouchInteraction && application.enabletouchevent) || (nexacro.Browser != "IE" && !application.enabletouchevent && e.button == "lbutton") || (nexacro.Browser == "IE" && !application.enabletouchevent)) {
+				this.on_notify_edit_onlbuttondown(this, evt);
+			}
 		}
 
 		if (this.oneditclick && this.oneditclick._has_handlers) {
@@ -2321,7 +2475,21 @@ if (!nexacro.Combo) {
 				break;
 			case "filter":
 				ds.set_filterstr("");
-				ds.set_filterstr(col + ".match('" + keyval + "')");
+
+				var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
+				var parse_val = "";
+				var keyval_len = keyval.length;
+				for (var i = 0; i < keyval_len; i++) {
+					var c = keyval.charAt(i);
+
+					if (regExp.test(c)) {
+						parse_val += "\\";
+					}
+					parse_val += c;
+				}
+
+				ds.set_filterstr(col + ".match(/^(" + parse_val + ")/)");
+
 
 				if (ds.getRowCount() > 0) {
 					this.combolist._overeditemindex = 0;
@@ -2516,7 +2684,7 @@ if (!nexacro.Combo) {
 				this.on_fire_onitemchanged(this, this._eventinfo.preindex, this._eventinfo.pretext, this._eventinfo.prevalue, this._eventinfo.postindex, this._eventinfo.posttext, this._eventinfo.postvalue);
 			}
 		}
-
+		this._cancelSelect();
 		return v;
 	};
 
@@ -2642,7 +2810,6 @@ if (!nexacro.Combo) {
 		var popupwindow = this.popupwindow;
 		if (!popupwindow) {
 			popupwindow = this.popupwindow = new nexacro.ComboPopupWindow("combopopup", "absolute", 0, 0, 0, 0, null, null, this);
-			popupwindow._track_capture = false;
 		}
 
 		if (!popupwindow._is_created) {
@@ -2723,14 +2890,20 @@ if (!nexacro.Combo) {
 				t = ((rootframe.height / 2) - (popup_control_elem.height / 2));
 
 				t = t < 0 ? 0 : t;
+				popup_control_elem.setElementPosition(l / scale, t);
 			}
-
-			popup_control_elem.setElementPosition(l / scale, t);
+			else {
+				popup_control_elem.setElementPosition(l, t);
+			}
 			popupwindow = null;
 		}
 	};
 
 	_pCombo._showPopup = function (ds, index) {
+		if (this._isPopupVisible()) {
+			this._closePopup();
+		}
+
 		var is_change_index = false;
 		var pre_idx = this.index;
 
@@ -2783,6 +2956,7 @@ if (!nexacro.Combo) {
 
 		var combolist = this.combolist;
 		var popupwindow = this.popupwindow;
+		popupwindow._track_capture = true;
 
 		this.on_apply_prop_rtldirection();
 
@@ -2806,12 +2980,6 @@ if (!nexacro.Combo) {
 				combolist.getElement().setElementVScrollPos(0);
 			}
 
-			var _window = this._getWindow();
-			if (_window && this._track_capture) {
-				if (_window._getCaptureComp(true, false) != this) {
-					_window._setCaptureLock(this, true, false);
-				}
-			}
 
 			if (nexacro._enableaccessibility) {
 				if (nexacro._accessibilitytype == 4) {
@@ -3087,7 +3255,7 @@ if (!nexacro.Combo) {
 		return -1;
 	};
 
-	if (nexacro.Browser == "IE") {
+	if (nexacro.Browser == "Edge" || nexacro.Browser == "IE") {
 		_pCombo._cancelSelect = function () {
 			if (this.comboedit) {
 				this.comboedit._cancelSelect();
@@ -3184,7 +3352,7 @@ if (!nexacro.Combo) {
 			return;
 		}
 
-		if (nexacro.isTouchInteraction) {
+		if (nexacro.isTouchInteraction || nexacro.SupportTouch) {
 			if (this._is_fling_stop) {
 				return;
 			}
@@ -3364,6 +3532,88 @@ if (!nexacro.Combo) {
 		return ret;
 	};
 
+	_pComboListCtrl.on_fire_sys_ontouchcancel = function (touchinfos, changedtouchinfos, from_comp, from_refer_comp) {
+		if (from_refer_comp && (from_refer_comp instanceof nexacro.ScrollBarCtrl || (from_refer_comp.parent && from_refer_comp.parent instanceof nexacro.ScrollBarCtrl))) {
+			return;
+		}
+
+		if (this._is_fling_stop) {
+			return;
+		}
+
+		var sel_info_list = this._selectinfo_list;
+
+		if (this.parent._scroll_proc) {
+			if (sel_info_list.length) {
+				var last = sel_info_list.length - 1;
+				var info = sel_info_list[last];
+
+				if (info.index != this.parent.index) {
+					info.obj._keep_selecting = false;
+					info.obj._stat_change("notselect", "normal");
+					sel_info_list.splice(last, 1);
+				}
+			}
+			return;
+		}
+
+		while (sel_info_list.length) {
+			var down_item = sel_info_list[0].obj;
+			if (down_item) {
+				down_item._keep_selecting = false;
+
+
+				if (!down_item.selected) {
+					down_item._stat_change("notselect", "normal");
+				}
+			}
+			sel_info_list.shift();
+		}
+
+		return;
+	};
+
+	_pComboListCtrl.on_fire_sys_ontouchcancel = function (touchinfos, changedtouchinfos, from_comp, from_refer_comp) {
+		if (from_refer_comp && (from_refer_comp instanceof nexacro.ScrollBarCtrl || (from_refer_comp.parent && from_refer_comp.parent instanceof nexacro.ScrollBarCtrl))) {
+			return;
+		}
+
+		if (this._is_fling_stop) {
+			return;
+		}
+
+		var sel_info_list = this._selectinfo_list;
+
+		if (this.parent._scroll_proc) {
+			if (sel_info_list.length) {
+				var last = sel_info_list.length - 1;
+				var info = sel_info_list[last];
+
+				if (info.index != this.parent.index) {
+					info.obj._keep_selecting = false;
+					info.obj._stat_change("notselect", "normal");
+					sel_info_list.splice(last, 1);
+				}
+			}
+			return;
+		}
+
+		while (sel_info_list.length) {
+			var down_item = sel_info_list[0].obj;
+			if (down_item) {
+				down_item._keep_selecting = false;
+
+
+				if (!down_item.selected) {
+					down_item._stat_change("notselect", "normal");
+				}
+			}
+			sel_info_list.shift();
+		}
+
+		return;
+	};
+
 	_pComboListCtrl.on_vscroll = function (obj, e) {
 		if (e._evtkind == "fling" || e._evtkind == "slide") {
 			if (e.pos != this.parent._start_vscroll_pos) {
@@ -3380,7 +3630,7 @@ if (!nexacro.Combo) {
 
 	_pComboListCtrl._is_fling_stop = false;
 	_pComboListCtrl.on_lbuttondown_basic_action = function (elem, button, alt_key, ctrl_key, shift_key, canvasX, canvasY, screenX, screenY, event_bubbles, fire_comp, refer_comp, bubble_scope) {
-		if (!nexacro.isTouchInteraction) {
+		if (!nexacro.isTouchInteraction && !nexacro.SupportTouch) {
 			return;
 		}
 
@@ -3418,7 +3668,7 @@ if (!nexacro.Combo) {
 	};
 
 	_pComboListCtrl.on_notify_item_onlbuttondown = function (obj, e) {
-		if (nexacro.isTouchInteraction) {
+		if (nexacro.isTouchInteraction || nexacro.SupportTouch) {
 			if (this._is_fling_stop = this.parent._is_fling) {
 				return;
 			}
@@ -3427,7 +3677,7 @@ if (!nexacro.Combo) {
 		this.parent._start_vscroll_pos = this.vscroll && this.vscroll.pos > 0 ? this.vscroll.pos : 0;
 		this.parent._scroll_proc = false;
 
-		if (!nexacro.isTouchInteraction) {
+		if (!nexacro.isTouchInteraction && !nexacro.SupportTouch) {
 			var items = this.getSelectedItems();
 			var items_len = items.length;
 
@@ -3615,7 +3865,7 @@ if (!nexacro.Combo) {
 				}
 
 				if (parent._isPopupVisible() && !change_by_script) {
-					if (!this.parent._scroll_proc) {
+					if (!parent._scroll_proc) {
 						parent.popupwindow._closePopup();
 					}
 				}
@@ -3646,7 +3896,7 @@ if (!nexacro.Combo) {
 	nexacro.ComboListItemCtrl.prototype = _pComboListItemCtrl;
 
 	_pComboListItemCtrl.on_mousemove_basic_action = function () {
-		if (nexacro.isTouchInteraction) {
+		if (nexacro.isTouchInteraction || nexacro.SupportTouch) {
 			return;
 		}
 
@@ -3861,7 +4111,7 @@ if (!nexacro.Combo) {
 		var parent = this.parent;
 		if (parent) {
 			if (parent.comboedit) {
-				if (!(nexacro.isTouchInteraction && nexacro.SupportTouch)) {
+				if (!(nexacro.isTouchInteraction || nexacro.SupportTouch)) {
 					parent.comboedit.on_apply_custom_setfocus(evt_name);
 				}
 				else {
@@ -3873,9 +4123,11 @@ if (!nexacro.Combo) {
 	};
 
 	_pComboButtonCtrl.on_fire_onclick = function (button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, from_comp, from_refer_comp) {
-		if (nexacro.isTouchInteraction && nexacro.SupportTouch && !application.enabletouchevent) {
+		if (nexacro.isTouchInteraction || nexacro.SupportTouch) {
 			var evt = new nexacro.EventInfo(this, "ondropdown");
-			this.parent.on_notify_ondropdown(this, evt);
+			if (!application.enabletouchevent || (application.enabletouchevent && button == "lbutton")) {
+				this.parent.on_notify_ondropdown(this, evt);
+			}
 		}
 
 		return this.parent.on_fire_onclick(button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, from_comp, from_refer_comp);
@@ -3926,7 +4178,15 @@ if (!nexacro.Combo) {
 		if (nexacro._enableaccessibility) {
 			this.parent._want_arrows = false;
 		}
+
 		nexacro.PopupComponent.prototype._closePopup.call(this);
+
+		var _window = this._getWindow();
+		if (_window && this._track_capture) {
+			_window._releaseCaptureLock(this);
+			_window._releaseCaptureLock(this._attached_comp);
+			this._track_capture = false;
+		}
 	};
 	_pPopupWindow._getMainFrame = function () {
 		var form = this;
@@ -3981,6 +4241,9 @@ if (!nexacro.Combo) {
 
 		var below_space_height = 0;
 		if (screen_avail_height > body_height && mainframe_ctrl_elem_screen_pos.y + body_height > screen_avail_height) {
+			below_space_height = screen_avail_height - mainframe_ctrl_elem_screen_pos.y - (combo_ctrl_elem_pos.y + combo_height);
+		}
+		else if (screen_avail_height <= body_height) {
 			below_space_height = screen_avail_height - mainframe_ctrl_elem_screen_pos.y - (combo_ctrl_elem_pos.y + combo_height);
 		}
 		else {
@@ -4092,6 +4355,10 @@ if (!nexacro.Combo) {
 			if (combolist.vscrollbar) {
 				_left -= vscroll_width;
 			}
+
+			if (_left < (mainframe_ctrl_elem_pos.x - combo_ctrl_elem_pos.x)) {
+				_left = mainframe_ctrl_elem_pos.x - combo_ctrl_elem_pos.x;
+			}
 		}
 
 		return {
@@ -4160,6 +4427,14 @@ if (!nexacro.Combo) {
 	_pComboCtrl._type_name = "ComboControl";
 
 	nexacro._setForControlStyleFinder(_pComboCtrl);
+
+	_pComboCtrl.on_created_contents = function () {
+		nexacro.Combo.prototype.on_created_contents.call(this);
+
+		if (nexacro._enableaccessibility && nexacro._accessibilitytype == 4) {
+			this._control_element.setElementAccessibilityHidden(true);
+		}
+	};
 
 	delete _pComboCtrl;
 	_pComboCtrl = null;

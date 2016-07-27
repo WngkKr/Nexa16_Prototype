@@ -1,0 +1,3047 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="Grid_method" classname="Grid_method" left="0" top="0" width="1024" height="768" titletext="데이터셋 그리드 메소드" onload="Grid_method_onload">
+    <Layouts>
+      <Layout>
+        <Grid id="grd_list" taborder="0" binddataset="ds_output" useinputpanel="false" nodatatext="No Data" left="6" top="281" u_usestatus="Y" u_menu="export,import,usergrid,usercure" oncellclick="grd_list_oncellclick" width="490" height="167">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+              </Columns>
+              <Rows>
+                <Row size="40" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="사원번호"/>
+                <Cell col="1" text="사원명"/>
+                <Cell col="2" text="직급"/>
+                <Cell col="3" text="직속상관"/>
+                <Cell col="4" text="입사일"/>
+                <Cell col="5" text="연봉"/>
+                <Cell col="6" text="커미션"/>
+                <Cell col="7" text="부서코드"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="text" text="bind:num"/>
+                <Cell col="1" displaytype="expr:getRowType(currow) == 2 ? &quot;text&quot; : &quot;normal&quot;" edittype="expr:dataset.getRowType(currow) == 2 ? &quot;text&quot; : &quot;none&quot;" text="bind:company" editdisplay="expr:dataset.getRowType(currow) == 2 ? &quot;display&quot; : &quot;edit&quot;"/>
+                <Cell col="2" displaytype="text" edittype="text" text="bind:registration"/>
+                <Cell col="3" displaytype="text" text="bind:president"/>
+                <Cell col="4" displaytype="date" edittype="date" text="bind:date" mask="####-##-##" calendardisplaynulltype="nulltext"/>
+                <Cell col="5" displaytype="text" text="bind:cash"/>
+                <Cell col="6" displaytype="text" text="bind:cash"/>
+                <Cell col="7" displaytype="text" text="bind:date"/>
+              </Band>
+            </Format>
+            <Format id="format_copy">
+              <Columns>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+              </Columns>
+              <Rows>
+                <Row size="40" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="사원번호"/>
+                <Cell col="1" text="사원명"/>
+                <Cell col="2" text="직급"/>
+                <Cell col="3" text="직속상관"/>
+                <Cell col="4" text="입사일"/>
+                <Cell col="5" text="연봉"/>
+                <Cell col="6" text="커미션"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="text" text="bind:갱신일"/>
+                <Cell col="1" displaytype="text" text="bind:대표자"/>
+                <Cell col="2" displaytype="text" text="bind:등록공종"/>
+                <Cell col="3" displaytype="text" text="bind:등록구분"/>
+                <Cell col="4" displaytype="date" text="bind:등록일" calendardisplaynulltype="nulltext"/>
+                <Cell col="5" displaytype="text" text="bind:번호"/>
+                <Cell col="6" displaytype="text" text="bind:보유면허"/>
+              </Band>
+            </Format>
+            <Format id="format_copy_2"/>
+          </Formats>
+        </Grid>
+        <Button id="Button00" taborder="1" text="getColumn" left="660" top="6" width="120" height="50" onclick="Button00_onclick"/>
+        <TextArea id="TextArea00" taborder="2" left="16" top="16" width="630" height="201"/>
+        <Button id="Button01" taborder="3" text="setColumn" left="660" top="165" width="120" height="50" onclick="Button01_onclick"/>
+        <Grid id="grd_list00" taborder="4" binddataset="ds_output00" useinputpanel="false" oncellclick="grd_list_oncellclick" left="507" top="281" width="490" height="167" u_usestatus="Y" u_menu="export,import,usergrid,usercure" nodatatext="akljjsdlfj">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+              </Columns>
+              <Rows>
+                <Row size="40" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="사원번호"/>
+                <Cell col="1" text="사원명"/>
+                <Cell col="2" text="직급"/>
+                <Cell col="3" text="직속상관"/>
+                <Cell col="4" text="입사일"/>
+                <Cell col="5" text="연봉"/>
+                <Cell col="6" text="커미션"/>
+                <Cell col="7" text="부서코드"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="text" text="bind:num"/>
+                <Cell col="1" displaytype="text" text="bind:company"/>
+                <Cell col="2" displaytype="text" edittype="text" text="bind:company_num"/>
+                <Cell col="3" displaytype="text" text="bind:president"/>
+                <Cell col="4" displaytype="date" text="bind:date" calendardisplaynulltype="nulltext"/>
+                <Cell col="5" displaytype="text" text="bind:cash"/>
+                <Cell col="6" displaytype="text" text="bind:cash"/>
+                <Cell col="7" displaytype="text" text="bind:date"/>
+              </Band>
+            </Format>
+            <Format id="format_copy">
+              <Columns>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+              </Columns>
+              <Rows>
+                <Row size="40" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="사원번호"/>
+                <Cell col="1" text="사원명"/>
+                <Cell col="2" text="직급"/>
+                <Cell col="3" text="직속상관"/>
+                <Cell col="4" text="입사일"/>
+                <Cell col="5" text="연봉"/>
+                <Cell col="6" text="커미션"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="text" text="bind:갱신일"/>
+                <Cell col="1" displaytype="text" text="bind:대표자"/>
+                <Cell col="2" displaytype="text" text="bind:등록공종"/>
+                <Cell col="3" displaytype="text" text="bind:등록구분"/>
+                <Cell col="4" displaytype="date" text="bind:등록일" calendardisplaynulltype="nulltext"/>
+                <Cell col="5" displaytype="text" text="bind:번호"/>
+                <Cell col="6" displaytype="text" text="bind:보유면허"/>
+              </Band>
+            </Format>
+            <Format id="format_copy_2"/>
+          </Formats>
+        </Grid>
+        <Button id="Button02" taborder="5" text="copyData" left="812" top="59" width="120" height="50" onclick="Button02_onclick"/>
+        <Button id="Button03" taborder="6" text="clearData" left="812" top="112" width="120" height="50" onclick="Button03_onclick"/>
+        <Button id="Button04" taborder="7" text="rowcount" left="812" top="6" width="120" height="50" onclick="Button04_onclick"/>
+        <Button id="Button05" taborder="8" text="deleteRow" left="660" top="218" width="120" height="50" onclick="Button05_onclick" titletext="데이터셋 그리드 메소드"/>
+        <Button id="Button06" taborder="9" text="addRow" left="660" top="59" width="120" height="50" onclick="Button06_onclick"/>
+        <Button id="Button07" taborder="10" text="insertRow" left="660" top="112" width="120" height="50" onclick="Button07_onclick"/>
+        <Button id="Button08" taborder="11" text="filter" left="812" top="165" width="120" height="50" onclick="Button08_onclick"/>
+        <Button id="Button09" taborder="12" text="filter 해제" left="812" top="218" width="120" height="50" onclick="Button09_onclick"/>
+        <Static id="Static00" taborder="13" text="데이터셋" left="940" top="28" width="68" height="204"/>
+        <Edit id="Edit00" taborder="14" left="95" top="241" width="140" height="20"/>
+        <Grid id="Grid00" taborder="15" useinputpanel="false" left="33" top="472" width="407" height="180" binddataset="Dataset00">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="73"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+                <Row size="24" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+                <Cell col="2" text="Column2"/>
+                <Cell col="3" text="Column3"/>
+                <Cell col="4" text="Column4"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column1"/>
+                <Cell col="2" text="bind:Column2"/>
+                <Cell col="3" text="bind:Column3"/>
+                <Cell col="4" text="expr:comp.parent.fn_sum(currow)"/>
+              </Band>
+              <Band id="summary">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+                <Cell col="4" text="expr:dataset.getSum(&quot;column4&quot;)"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button10" taborder="16" text="addColumn" left="512" top="480" width="120" height="50" onclick="Button10_onclick"/>
+        <Button id="Button11" taborder="17" text="Button11" left="512" top="552" width="120" height="50" onclick="Button11_onclick"/>
+        <Button id="Button12" taborder="18" text="Button12" left="512" top="638" width="120" height="50"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_output" firefirstcount="0" firenextcount="0" cancolumnchange="ds_output_cancolumnchange" onvaluechanged="ds_output_onvaluechanged">
+        <ColumnInfo>
+          <Column id="chk" type="STRING" size="256"/>
+          <Column id="num" type="STRING" size="256"/>
+          <Column id="company" type="STRING" size="256"/>
+          <Column id="president" type="STRING" size="256"/>
+          <Column id="registration" type="STRING" size="256"/>
+          <Column id="registration_" type="STRING" size="256"/>
+          <Column id="licence" type="STRING" size="256"/>
+          <Column id="credit" type="STRING" size="256"/>
+          <Column id="cash" type="STRING" size="256"/>
+          <Column id="cashrate" type="STRING" size="256"/>
+          <Column id="date" type="STRING" size="256"/>
+          <Column id="dudate" type="STRING" size="256"/>
+          <Column id="etc" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="num">1</Col>
+            <Col id="company">(주)신세계산업</Col>
+            <Col id="president">황봉일</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근/콘크리트공사업(주면허)/철근,콘크리트공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">0</Col>
+            <Col id="date">1998/02/20</Col>
+            <Col id="dudate">2015/03/12</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">1</Col>
+            <Col id="company">(주)신세계산업</Col>
+            <Col id="president">황봉일</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근/콘크리트공사업(주면허)/철근,콘크리트공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">0</Col>
+            <Col id="date">1998/02/20</Col>
+            <Col id="dudate">2015/03/12</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">1</Col>
+            <Col id="company">(주)신세계산업</Col>
+            <Col id="president">황봉일</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근/콘크리트공사업(주면허)/철근,콘크리트공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">0</Col>
+            <Col id="date">1998/02/20</Col>
+            <Col id="dudate">2015/03/12</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">1</Col>
+            <Col id="company">(주)신세계산업</Col>
+            <Col id="president">황봉일</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근/콘크리트공사업(주면허)/철근,콘크리트공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">0</Col>
+            <Col id="date">1998/02/20</Col>
+            <Col id="dudate">2015/03/12</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">2</Col>
+            <Col id="company">남웅건설(주)</Col>
+            <Col id="president">황웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="credit"/>
+            <Col id="cash"/>
+            <Col id="cashrate">165004684</Col>
+            <Col id="date">2007/08/07</Col>
+            <Col id="dudate">2015/06/15</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">3</Col>
+            <Col id="company">삼지건설(주)</Col>
+            <Col id="president">이태원</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">A</Col>
+            <Col id="cashrate">116756012</Col>
+            <Col id="date">2000/09/01</Col>
+            <Col id="dudate">2015/05/22</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">4</Col>
+            <Col id="company">원영건업(주)</Col>
+            <Col id="president">노석순</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BBB-</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">265681650</Col>
+            <Col id="date">2007/08/09</Col>
+            <Col id="dudate">2014/06/17</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">5</Col>
+            <Col id="company">일우건업(주)</Col>
+            <Col id="president">이길웅</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">철근콘크리트공사</Col>
+            <Col id="licence">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="credit">BB</Col>
+            <Col id="cash">B</Col>
+            <Col id="cashrate">63943358</Col>
+            <Col id="date">2011/08/16</Col>
+            <Col id="dudate">2011/08/16</Col>
+            <Col id="etc"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="num">6</Col>
+            <Col id="company">(주)삼환까뮤</Col>
+            <Col id="president">손병재</Col>
+            <Col id="registration">A</Col>
+            <Col id="registration_">PC공사</Col>
+            <Col id="licence">토목건축공사업(주면허)/</Col>
+            <Col id="credit">BBB+</Col>
+            <Col id="cash">C+</Col>
+            <Col id="cashrate">129324000</Col>
+            <Col id="date">2006/06/01</Col>
+            <Col id="dudate">2015/05/26</Col>
+            <Col id="etc"/>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_output00"/>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">2</Col>
+            <Col id="Column2">3</Col>
+            <Col id="Column3">4</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">6</Col>
+            <Col id="Column1">7</Col>
+            <Col id="Column2">8</Col>
+            <Col id="Column3">9</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">10</Col>
+            <Col id="Column1">11</Col>
+            <Col id="Column2">12</Col>
+            <Col id="Column3">13</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Edit00" propid="value" datasetid="ds_output" columnid="company"/>
+    </Bind>
+    <Script type="xscript5.0"><![CDATA[//include "LIB::LIB_COMMON.xjs";  	// 공통 js
+this.grd_list_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	this.TextArea00.set_value(
+		"사원명 : " + this.ds_output.getColumn(e.row, "company") +
+		"\n직급 : " +this.ds_output.getColumn(e.row, "company_num") +
+		"\n직속상광 : " + this.ds_output.getColumn(e.row, "president") +
+		"\n입사일 : " + this.ds_output.getColumn(e.row, "date")
+	);
+}
+
+this.Button00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{	
+	this.TextArea00.set_value("사원명 : " + this.ds_output.getColumn(3, "company"));
+}
+
+this.Button06_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.TextArea00.set_value("마지막에 row 추가 함");
+	this.ds_output.addRow();
+}
+
+this.Button07_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.TextArea00.set_value("원하는 row에 추가 함");
+	this.ds_output.insertRow(0);
+}
+
+this.Button01_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds_output.setColumn(0, "company", "사원명");
+}
+
+this.Button02_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.TextArea00.set_value("두번째 그리드로 dataset 복사");
+	this.ds_output00.copyData(this.ds_output);
+}
+
+this.Button03_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.TextArea00.set_value("데이터셋 데이터 삭제");
+	this.ds_output00.clearData();
+}
+
+this.Button04_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.TextArea00.set_value("두개중 하나사용 rowcount 를 많이 사용함 " +	
+	"\n datasetrow rowcount getRowCount() : " + this.ds_output.getRowCount() +
+	"\n datasetrow rowcount rowcount : " + this.ds_output.rowcount);
+}
+
+this.Button05_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.TextArea00.set_value("0번째 row 삭제 함");
+	this.ds_output.deleteRow(0);
+}
+
+this.Button08_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds_output.filter("cash == 'B'");
+}
+
+this.Button09_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds_output.filter("");
+}
+
+this.ds_output_cancolumnchange = function(obj:Dataset, e:nexacro.DSColChangeEventInfo)
+{
+	this.TextArea00.set_value(this.TextArea00.value + "\n 데이터셋 내용이 바뀌기전 ds_output_cancolumnchange Event");
+}
+
+this.ds_output_onvaluechanged = function(obj:Dataset,  e:nexacro.DSColChangeEventInfo)
+{
+	this.TextArea00.set_value(this.TextArea00.value + "\n 데이터셋 내용이 바뀐 다음  ds_output_onvaluechanged Event");
+}
+
+
+this.Grid_method_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	this.gfn_initForm(obj);
+}
+
+this.Button10_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.Dataset00.addColumn( "column4", "INT" );
+}
+
+
+this.fn_sum = function(row)
+{
+	var sum = parseInt(this.Dataset00.getColumn(row, "Column0")) + parseInt(this.Dataset00.getColumn(row, "Column1")) + parseInt(this.Dataset00.getColumn(row, "Column2")) + parseInt(this.Dataset00.getColumn(row, "Column3"));
+	
+	this.Dataset00.setColumn(row, "column4", sum);
+	return sum;
+}
+this.Button11_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	trace(this.Dataset00.getSum("column4"));
+}
+]]></Script>
+  </Form>
+</FDL>

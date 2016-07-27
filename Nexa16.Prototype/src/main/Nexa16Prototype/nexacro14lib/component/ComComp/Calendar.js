@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -85,6 +85,7 @@ if (!nexacro.Calendar) {
 		this.viewmonthspin = null;
 
 		this.popuptype = null;
+		this.displaynulltextcolor = null;
 	};
 
 	var _pCalendarStyle = nexacro._createPrototype(nexacro.Style, nexacro.Calendar_Style);
@@ -111,6 +112,7 @@ if (!nexacro.Calendar) {
 	eval(nexacro._createAccessibilityAttributeEvalStr("_pCalendarStyle", "itemaccessibility"));
 	eval(nexacro._createValueAttributeEvalStr("_pCalendarStyle", "popuptype"));
 	eval(nexacro._createValueAttributeEvalStr("_pCalendarStyle", "popupalign"));
+	eval(nexacro._createColorAttributeEvalStr("_pCalendarStyle", "displaynulltextcolor"));
 
 	_pCalendarStyle.__custom_emptyObject = function () {
 		this.daysize = null;
@@ -134,6 +136,7 @@ if (!nexacro.Calendar) {
 		this.viewyearspin = null;
 		this.viewmonthspin = null;
 		this.popuptype = null;
+		this.displaynulltextcolor = null;
 	};
 
 	_pCalendarStyle.__get_custom_style_value = function () {
@@ -196,6 +199,9 @@ if (!nexacro.Calendar) {
 		if (this.popuptype && this.popuptype._is_empty) {
 			val += "popuptype:" + this.popuptype._value + "; ";
 		}
+		if (this.displaynulltextcolor && this.displaynulltextcolor._is_empty) {
+			val += "displaynulltextcolor:" + this.displaynulltextcolor._value + "; ";
+		}
 
 		return val;
 	};
@@ -224,6 +230,7 @@ if (!nexacro.Calendar) {
 		this.viewyearspin = null;
 		this.viewmonthspin = null;
 		this.popuptype = null;
+		this.displaynulltextcolor = null;
 	};
 
 	var _pCalendarCurrentStyle = nexacro._createPrototype(nexacro.CurrentStyle, nexacro.Calendar_CurrentStyle);
@@ -330,7 +337,7 @@ if (!nexacro.Calendar) {
 		};
 		this._caret_pos.begin = 0;
 		this._caret_pos.end = 0;
-		this._editformat_info = this._makeFormatInfo(this.editformat);
+		this._editformat_info = this._makeFormatInfo(this.editformat, true);
 		this._dateformat_info = this._makeFormatInfo(this.dateformat);
 		this._prevalue = null;
 		this._postvalue = null;
@@ -364,6 +371,7 @@ if (!nexacro.Calendar) {
 		this._want_arrows = false;
 		this._has_inputElement = true;
 		this._locale = "";
+		this._is_dropbutton = false;
 	};
 
 	var _pCalendar = nexacro._createPrototype(nexacro.Component, nexacro.Calendar);
@@ -390,6 +398,11 @@ if (!nexacro.Calendar) {
 		if (curstyle.font != font) {
 			curstyle.font = font;
 			this.on_apply_style_font(font);
+		}
+		var letterspace = this.on_find_CurrentStyle_letterspace(pseudo);
+		if (curstyle.letterspace != letterspace) {
+			curstyle.letterspace = letterspace;
+			this.on_apply_style_letterspace(letterspace);
 		}
 		var color = this.on_find_CurrentStyle_color(pseudo);
 		if (curstyle.color != color) {
@@ -456,6 +469,11 @@ if (!nexacro.Calendar) {
 		var popuptype = this.on_find_CurrentStyle_popuptype(pseudo);
 		if (curstyle.popuptype != popuptype) {
 			curstyle.popuptype = popuptype;
+		}
+		var displaynulltextcolor = this.on_find_CurrentStyle_displaynulltextcolor(pseudo);
+		if (curstyle.displaynulltextcolor != displaynulltextcolor) {
+			curstyle.displaynulltextcolor = displaynulltextcolor;
+			this.on_apply_style_displaynulltextcolor(displaynulltextcolor);
 		}
 	};
 
@@ -615,6 +633,18 @@ if (!nexacro.Calendar) {
 		return this._find_pseudo_obj("popuptype", pseudo);
 	};
 
+	_pCalendar.on_find_CurrentStyle_displaynulltextcolor = function (pseudo) {
+		var displaynulltextcolor = this._find_pseudo_obj("displaynulltextcolor", pseudo, "color");
+		if (!displaynulltextcolor) {
+			displaynulltextcolor = this._find_pseudo_obj("color", pseudo, "color");
+		}
+		if (!displaynulltextcolor) {
+			displaynulltextcolor = this._find_inherit_pseudo_obj("color", pseudo, "color");
+		}
+
+		return (displaynulltextcolor) ? displaynulltextcolor : nexacro.Component._default_color;
+	};
+
 
 	_pCalendar.on_update_style_daycolor = function () {
 		this.on_apply_style_daycolor(this.currentstyle.daycolor = this.on_find_CurrentStyle_daycolor(this._pseudo));
@@ -695,13 +725,17 @@ if (!nexacro.Calendar) {
 	_pCalendar.on_update_style_popuptype = function () {
 		this.currentstyle.popuptype = this.on_find_CurrentStyle_popuptype(this._pseudo);
 
-		if (this._getPopupType() == "system") {
+		if (this._getPopupType() == "system" && this.type != "monthonly") {
 			if ((nexacro._isMobile && nexacro._isMobile()) || (nexacro._isHybrid && nexacro._isHybrid()) || (!nexacro._isDesktop() && nexacro.OS == "Android" && nexacro.Browser == "Runtime")) {
 				this.type = "system";
 				this.on_apply_type();
 				return;
 			}
 		}
+	};
+
+	_pCalendar.on_update_style_displaynulltextcolor = function () {
+		this.on_apply_style_displaynulltextcolor(this.currentstyle.displaynulltextcolor = this.on_find_CurrentStyle_displaynulltextcolor(this._pseudo));
 	};
 
 
@@ -887,10 +921,22 @@ if (!nexacro.Calendar) {
 		}
 	};
 
+	_pCalendar.on_apply_style_displaynulltextcolor = function (v) {
+		if (this.calendaredit) {
+			this.calendaredit.on_apply_style_displaynulltextcolor(v);
+		}
+	};
+
+	_pCalendar.on_apply_style_letterspace = function (letterspace) {
+		if (this.calendaredit) {
+			this.calendaredit.on_apply_style_letterspace(letterspace);
+		}
+	};
+
 	_pCalendar.on_create_contents = function () {
 		var control_elem = this.getElement();
 		if (control_elem) {
-			if (this._getPopupType() == "system") {
+			if (this._getPopupType() == "system" && this.type != "monthonly") {
 				if ((nexacro._isMobile && nexacro._isMobile()) || (nexacro._isHybrid && nexacro._isHybrid()) || (!nexacro._isDesktop() && nexacro.OS == "Android" && nexacro.Browser == "Runtime")) {
 					this.type = "system";
 				}
@@ -917,10 +963,13 @@ if (!nexacro.Calendar) {
 
 	_pCalendar.on_created_contents = function () {
 		this._currentformat = "dateformat";
+		this.on_apply_autoskip();
 		this.on_apply_autoselect();
 		this.on_apply_locale();
 		this.on_apply_displaynulltext();
 		this.on_apply_editformat();
+		this.on_apply_usecontextmenu();
+		this.on_apply_style_displaynulltextcolor(this.currentstyle.displaynulltextcolor);
 
 		this._currentformat = "dateformat";
 
@@ -928,7 +977,9 @@ if (!nexacro.Calendar) {
 			this.on_apply_expr();
 		}
 		else {
-			this._setValue(this._primitivevalue);
+			if (!this.value && this._primitivevalue) {
+				this._setValue(this._primitivevalue);
+			}
 		}
 
 		this.on_apply_dateformat();
@@ -951,6 +1002,12 @@ if (!nexacro.Calendar) {
 				}
 				break;
 			case "system":
+				if (nexacro._enableaccessibility && nexacro._accessibilitytype == 4) {
+					var control_elem = this.getElement();
+					if (control_elem) {
+						control_elem.setElementAccessibilityHidden(false);
+					}
+				}
 				this._setEventHandlerToCalendarEdit();
 				this.calendaredit.on_created();
 				this._setAccessibilityActiveDescendant(this.calendaredit);
@@ -966,10 +1023,22 @@ if (!nexacro.Calendar) {
 				this._setAccessibilityActiveDescendant(this.calendaredit);
 				this.calendaredit.style.set_align(this.currentstyle.align);
 				this.on_apply_style_popupborder(this.currentstyle.popupborder);
+				this.dropbutton._control_element.setElementAccessibilityHidden(true);
+		}
+
+		if (!nexacro._isDesktop() && this.calendaredit && this.calendaredit._input_element) {
+			this.calendaredit._input_element.setElementInputType("tel");
+			this.calendaredit._input_element.setElementInputTypeKeypad("tel");
+		}
+
+		if (this.cssclass) {
+			this.on_apply_prop_class();
+			this.on_apply_pseudo();
+			this.on_apply_custom_pseudo();
 		}
 
 		this.on_apply_innerdataset();
-
+		this.on_apply_style_letterspace(this.currentstyle.letterspace);
 		this.on_apply_prop_rtldirection();
 
 		if (nexacro._enableaccessibility && this.calendaredit && this.calendaredit._input_element) {
@@ -1032,9 +1101,14 @@ if (!nexacro.Calendar) {
 				}
 			}
 
-			edit.on_apply_custom_setfocus(evt_name);
-
-
+			if (!this._is_dropbutton) {
+				edit.on_apply_custom_setfocus(evt_name);
+			}
+			else {
+				this._is_dropbutton = false;
+				edit_api._changeFocusText(edit._input_element);
+				nexacro.Component.prototype.on_apply_custom_setfocus.call(this, evt_name);
+			}
 
 			edit._stat_change("focus", "focused");
 		}
@@ -1197,6 +1271,14 @@ if (!nexacro.Calendar) {
 		return nexacro.Component.prototype._setAccessibilityStatFocus.call(this, evt_name);
 	};
 
+	_pCalendar._getAccessibilityRole = function (accessibility) {
+		var role = nexacro.Component.prototype._getAccessibilityRole.call(this, accessibility);
+		if (nexacro._accessibilitytype == 4 && this._getPopupType() == "system") {
+			role = "none";
+		}
+		return role;
+	};
+
 	_pCalendar.set_text = nexacro._emptyFn;
 
 	_pCalendar.set_autoselect = function (v) {
@@ -1291,7 +1373,7 @@ if (!nexacro.Calendar) {
 	};
 
 	_pCalendar.set_type = function (v) {
-		if (this._getPopupType() == "system") {
+		if (this._getPopupType() == "system" && v != "monthonly") {
 			if ((nexacro._isMobile && nexacro._isMobile()) || (nexacro._isHybrid && nexacro._isHybrid()) || (!nexacro._isDesktop() && nexacro.OS == "Android" && nexacro.Browser == "Runtime")) {
 				this.type = "system";
 				this.on_apply_type();
@@ -1336,6 +1418,9 @@ if (!nexacro.Calendar) {
 					this.resize(popupsize.width, popupsize.height);
 					break;
 				case "system":
+					if (nexacro._enableaccessibility && nexacro._accessibilitytype == 4) {
+						control_elem.setElementAccessibilityHidden(false);
+					}
 					this._createSystemtypeControl();
 			}
 
@@ -1595,7 +1680,7 @@ if (!nexacro.Calendar) {
 			this._editformat_info = this._makeFormatInfo("yyyy-MM-dd");
 		}
 		else {
-			this._editformat_info = this._makeFormatInfo(this.editformat);
+			this._editformat_info = this._makeFormatInfo(this.editformat, true);
 		}
 	};
 
@@ -1698,8 +1783,18 @@ if (!nexacro.Calendar) {
 	};
 
 	_pCalendar.set_usecontextmenu = function (v) {
+		v = nexacro._toBoolean(v);
+
 		if (v != this.usecontextmenu) {
 			this.usecontextmenu = v;
+			this.on_apply_usecontextmenu();
+		}
+	};
+
+	_pCalendar.on_apply_usecontextmenu = function () {
+		var calendaredit = this.calendaredit;
+		if (calendaredit) {
+			calendaredit.set_usecontextmenu(this.usecontextmenu);
 		}
 	};
 
@@ -1723,6 +1818,40 @@ if (!nexacro.Calendar) {
 
 	_pCalendar.dropdown = function () {
 		if (this.enable != true || this.readonly == true || this.visible == false || this.type != "normal") {
+			return false;
+		}
+
+		this._currentformat = "editformat";
+		var calendaredit = this.calendaredit;
+		var value = this._makeNormalValue1(calendaredit.text);
+		var pre_value = this._makeDateObj(this.value);
+		var post_value = this._makeDateObj(value);
+		var str_preval = pre_value ? pre_value.toString() : pre_value;
+		var str_postval = post_value ? post_value.toString() : post_value;
+
+		if (str_preval != str_postval) {
+			if (!((str_preval === undefined || str_preval === null) && str_postval === "")) {
+				this._setPreValueAndText(pre_value);
+				this._setPostValueAndText(post_value);
+
+				var ret = this.on_fire_canchange(this, this._pretext, this._prevalue, this._posttext, this._postvalue);
+				if (ret || ret === undefined) {
+					var val_ret = this._setValue(this._postvalue);
+					if (val_ret === false) {
+						this._setValue(this._prevalue);
+					}
+					else {
+						this._fireOnchangedEvent(pre_value, this.value);
+					}
+				}
+				else {
+					this._setValue(this._prevalue);
+					this.setCaretPos(0);
+				}
+			}
+		}
+
+		if (this.isDropdown()) {
 			return false;
 		}
 
@@ -2359,7 +2488,7 @@ if (!nexacro.Calendar) {
 		this._setPreValueAndText(this._makeDateObj(value));
 		this._setPostValueAndText(this._makeDateObj(date));
 
-		var ret = this.on_fire_onspin(this, true);
+		var ret = this.on_fire_onspin(this, this._pretext, this._posttext, this._prevalue, this._postvalue, true);
 		if (ret || ret === undefined) {
 			this.on_apply_fake_value(this._postvalue);
 		}
@@ -2406,7 +2535,7 @@ if (!nexacro.Calendar) {
 		this._setPreValueAndText(this._makeDateObj(value));
 		this._setPostValueAndText(this._makeDateObj(date));
 
-		var ret = this.on_fire_onspin(this, true);
+		var ret = this.on_fire_onspin(this, this._pretext, this._posttext, this._prevalue, this._postvalue, true);
 		if (ret || ret == undefined) {
 			this.on_apply_fake_value(this._postvalue);
 		}
@@ -2444,7 +2573,7 @@ if (!nexacro.Calendar) {
 		this._setPreValueAndText(this._makeDateObj(value));
 		this._setPostValueAndText(this._makeDateObj(date));
 
-		var ret = this.on_fire_onspin(this, true);
+		var ret = this.on_fire_onspin(this, this._pretext, this._posttext, this._prevalue, this._postvalue, false);
 		if (ret || ret == undefined) {
 			this.on_apply_fake_value(this._postvalue);
 		}
@@ -2490,7 +2619,7 @@ if (!nexacro.Calendar) {
 		this._setPreValueAndText(this._makeDateObj(value));
 		this._setPostValueAndText(this._makeDateObj(date));
 
-		var ret = this.on_fire_onspin(this, true);
+		var ret = this.on_fire_onspin(this, this._pretext, this._posttext, this._prevalue, this._postvalue, false);
 		if (ret || ret == undefined) {
 			this.on_apply_fake_value(this._postvalue);
 		}
@@ -2549,28 +2678,123 @@ if (!nexacro.Calendar) {
 		}
 	};
 
+	_pCalendar._getEditformat2DateformatValue = function (pre_value) {
+		var date_y_idx = -1;
+		var dateformat_format_list = this._dateformat_info.format_list;
+		for (var i = 0; i < dateformat_format_list.length; i++) {
+			if (dateformat_format_list[i] && dateformat_format_list[i].mask.charAt(i) == "y") {
+				date_y_idx = i;
+				break;
+			}
+		}
+
+		var edit_y_idx = -1;
+		var editformat_format_list = this._editformat_info.format_list;
+		for (var i = 0; i < editformat_format_list.length; i++) {
+			if (editformat_format_list[i] && editformat_format_list[i].mask.charAt(i) == "y") {
+				edit_y_idx = i;
+				break;
+			}
+		}
+
+		var year_same = true;
+		var d_f_y_len = 0;
+		var e_f_y_len = 0;
+		if (date_y_idx >= 0 && edit_y_idx >= 0) {
+			d_f_y_len = dateformat_format_list[date_y_idx].length;
+			e_f_y_len = editformat_format_list[edit_y_idx].length;
+			if (d_f_y_len != e_f_y_len) {
+				year_same = false;
+			}
+		}
+
+		if (d_f_y_len <= e_f_y_len) {
+			return null;
+		}
+
+		var add_val = "";
+		var pre_value_str = pre_value.toString();
+		if (!year_same) {
+			add_val = pre_value_str.substr(date_y_idx, d_f_y_len - e_f_y_len);
+		}
+
+		return {
+			year_same : year_same, 
+			d_y_idx : date_y_idx, 
+			d_y_len : d_f_y_len, 
+			e_y_idx : edit_y_idx, 
+			e_y_len : e_f_y_len, 
+			diff_len : (d_f_y_len - e_f_y_len), 
+			add_val : add_val
+		};
+	};
+
+	_pCalendar._convEditformat2DateformatValue = function (info_ret, value) {
+		var new_value = "";
+		var strFront = "";
+		if (info_ret.e_y_idx == 0) {
+			strFront = value.substr(0, info_ret.e_y_len);
+			new_value = info_ret.add_val + strFront;
+		}
+		else {
+			strFront = value.substr(0, info_ret.e_y_idx + 1);
+			new_value = strFront + conv_ret.add_val;
+		}
+
+		var strRear = "";
+		if (info_ret.e_y_idx == 0) {
+			strRear = value.substr(info_ret.e_y_len, value.length - info_ret.e_y_len);
+		}
+		else {
+			strRear = value.substr(info_ret.e_y_idx + info_ret.e_y_len, value.length - (info_ret.e_y_idx + info_ret.e_y_len));
+		}
+
+		new_value += strRear;
+
+		return new_value;
+	};
+
 	_pCalendar._on_killfocus = function (new_focus, new_ref_focus) {
-		if (!this._is_alive) {
+		if (!this._is_alive || application._is_on_alert) {
 			return;
 		}
 
 		if (this.type != "monthonly") {
 			var pre_value = this._makeDateObj(this.value);
 
-			var text = this._changeYearValue();
+			var text = this._changeYearValue(true);
 			if (this.popupcalendar) {
 				this._currentformat = "editformat";
 			}
+
 			var value = this._makeNormalValue1(text);
+
+			var info_ret = this._getEditformat2DateformatValue(pre_value);
 
 			var post_value = this._makeDateObj(value);
 			this._currentformat = "dateformat";
+
+			if (info_ret && !info_ret.year_same) {
+				var new_value = this._convEditformat2DateformatValue(info_ret, value);
+
+				post_value = this._makeDateObj(new_value);
+			}
 
 			var str_preval = pre_value ? pre_value.toString() : pre_value;
 			var str_postval = post_value ? post_value.toString() : post_value;
 
 			if (str_preval != str_postval) {
 				if ((str_preval === undefined || str_preval === null) && str_postval === "") {
+					this.closeDropdown();
+
+					if (this.calendaredit) {
+						this.calendaredit._stat_change("notfocus", "normal");
+
+						if (nexacro.Browser == "IE" && nexacro.BrowserVersion == 8) {
+							this.calendaredit._is_focusing = false;
+						}
+					}
+
 					return;
 				}
 
@@ -2617,6 +2841,10 @@ if (!nexacro.Calendar) {
 
 		if (this.calendaredit) {
 			this.calendaredit._stat_change("notfocus", "normal");
+
+			if (nexacro.Browser == "IE" && nexacro.BrowserVersion == 8) {
+				this.calendaredit._is_focusing = false;
+			}
 		}
 	};
 
@@ -2689,7 +2917,7 @@ if (!nexacro.Calendar) {
 
 	_pCalendar.on_fire_onspin = function (obj, pretext, posttext, prevalue, postvalue, isUp) {
 		if (this.onspin && this.onspin._has_handlers) {
-			var evt = new nexacro.CalendarSpinEventInfo(this, "onspin", this._pretext, this._posttext, this._prevalue, this._postvalue, isUp);
+			var evt = new nexacro.CalendarSpinEventInfo(this, "onspin", pretext, posttext, prevalue, postvalue, isUp);
 			return this.onspin._fireEvent(this, evt);
 		}
 		return true;
@@ -2785,7 +3013,6 @@ if (!nexacro.Calendar) {
 
 	_pCalendar._createPopupwindow = function () {
 		var popupwindow = new nexacro.CalendarPopupWindow("calendarpopup", "absolute", 0, 0, 0, 0, null, null, this);
-		popupwindow._track_capture = false;
 		popupwindow.createComponent(true);
 		this.popupwindow = popupwindow;
 		popupwindow = null;
@@ -2798,7 +3025,6 @@ if (!nexacro.Calendar) {
 		calendaredit.set_displaynulltext(this.displaynulltext);
 
 		calendaredit.createComponent(true);
-		calendaredit._input_element.setElementInputType("date");
 		this.calendaredit = calendaredit;
 		this.calendaredit.setCaretPos(0);
 
@@ -2938,7 +3164,6 @@ if (!nexacro.Calendar) {
 		calendaredit._setEventHandler("ontextchanged", this.on_notify_ontextchanged, this);
 		calendaredit._setEventHandler("cancharchange", this.on_notify_cancharchange, this);
 		calendaredit._setEventHandler("onchar", this.on_notify_onchar, this);
-		calendaredit._setEventHandler("onkillfocus", this.on_notify_oneditkillfocus, this);
 	};
 
 	_pCalendar._setEventHandlerToDropButton = function () {
@@ -3174,18 +3399,29 @@ if (!nexacro.Calendar) {
 	_pCalendar._update_popupwindow_position = function () {
 		var popupwindow = this.popupwindow;
 		if (popupwindow) {
+			var _window = this._getWindow();
+			var popupsize = this._getPopupSizeArr();
 			var popup_control_elem = popupwindow._control_element;
 
 			var pos = nexacro._getElementPositionInFrame(this._control_element);
+			var scale = this._getCumulativeZoomFactor() / 100.0;
+
 			var cal_winpos_left = pos.x;
 			var cal_winpos_top = pos.y;
+			var cal_height = this._adjust_height * scale;
 
-			var scale = this._getCumulativeZoomFactor() / 100.0;
-			var left = cal_winpos_left;
-			var top = cal_winpos_top + (this._adjust_height * scale);
+			var popup_left = cal_winpos_left;
+			var popup_top = cal_winpos_top + cal_height;
+			var popup_width = popupsize.width;
+			var popup_height = popupsize.height * scale;
 
-			var l = pos.x;
-			var t = pos.y;
+			var popup_winpos_right = cal_winpos_left + popup_width;
+			var popup_winpos_bottom = cal_winpos_top + cal_height + popup_height;
+
+			var win_width = _window.clientWidth;
+			var win_height = _window.clientHeight;
+
+			var width_gap = popup_winpos_right - win_width;
 
 			if (this._getPopupType() == "center") {
 				var rootframe = this._getOwnerFrame();
@@ -3199,21 +3435,25 @@ if (!nexacro.Calendar) {
 					return;
 				}
 
-				l = ((rootframe.width / 2) - (popup_control_elem.width / 2));
-				t = ((rootframe.height / 2) - (popup_control_elem.height / 2));
+				popup_left = ((rootframe.width / 2) - (popup_control_elem.width / 2));
+				popup_top = ((rootframe.height / 2) - (popup_control_elem.height / 2));
 
-				t = t < 0 ? 0 : t;
+				popup_top = popup_top < 0 ? 0 : popup_top;
 			}
 
-			var popupsize = this._getPopupSizeArr();
-			var popup_height = popupsize.height * scale;
-			var cal_height = (this._adjust_height * scale);
-			var win_height = this._getWindow().clientHeight;
-			if (pos.y > popup_height && pos.y + cal_height + popup_height > win_height) {
-				top = top - popup_height - cal_height;
+			if (popup_winpos_right > win_width && cal_winpos_left > width_gap) {
+				popup_left = popup_left - width_gap;
 			}
 
-			popup_control_elem.setElementPosition(left, top);
+			if (cal_winpos_left < 0) {
+				popup_left = -cal_winpos_left;
+			}
+
+			if (cal_winpos_top > popup_height && cal_winpos_top + cal_height + popup_height > win_height) {
+				popup_top = popup_top - popup_height - cal_height;
+			}
+
+			popup_control_elem.setElementPosition(popup_left, popup_top);
 		}
 	};
 
@@ -3277,7 +3517,7 @@ if (!nexacro.Calendar) {
 		}
 
 		if (cal_winpos_top > popup_height && popup_winpos_bottom > win_height) {
-			popup_top = -popup_height;
+			popup_top = -(popup_height * scale);
 		}
 
 		var elem = popupwindow.getElement();
@@ -3304,7 +3544,8 @@ if (!nexacro.Calendar) {
 	};
 
 	_pCalendar._setMask = function (v, bApply, value) {
-		if ((value == null || value == undefined || value == "") && nexacro._enableaccessibility && nexacro._accessibilitytype == 4) {
+		if (this._getPopupType() != "system" && nexacro._enableaccessibility && nexacro._accessibilitytype == 4
+			 && (value == null || value == undefined || value == "")) {
 			return;
 		}
 
@@ -3746,6 +3987,9 @@ if (!nexacro.Calendar) {
 			year = v.substr(0, 4);
 			month = v.substr(4, 2);
 			day = v.substr(6, 2);
+			year = year != "" ? year : "0000";
+			month = month != "" ? month : "00";
+			day = day != "" ? day : "00";
 			hour = v.length >= 9 ? v.substr(8, 2) : "00";
 			min = v.length >= 11 ? v.substr(10, 2) : "00";
 			sec = v.length >= 13 ? v.substr(12, 2) : "00";
@@ -4010,11 +4254,23 @@ if (!nexacro.Calendar) {
 		var date = this._getSplitDate(v);
 
 		if (mask == "SHORTDATE" || mask == "LONGDATE") {
-			var locale = this.locale;
+			var locale = this._getLocale();
 			if (!locale) {
 				locale = nexacro.BrowserLang;
 			}
+
 			mask = nexacro.Locale._makeDateMaskString(locale, mask);
+
+			var mon_index = mask.indexOf("M");
+			var day_index = mask.indexOf("d");
+
+			if (mask.slice(mon_index, mon_index + 2) != "MM") {
+				mask = mask.replace("M", "MM");
+			}
+
+			if (mask.slice(day_index, day_index + 2) != "dd") {
+				mask = mask.replace("d", "dd");
+			}
 
 			if (date.mon == "MM") {
 				date.mon = nexacro._toString(this.value.getMonth() + 1).padLeft(2, "0");
@@ -4336,14 +4592,13 @@ if (!nexacro.Calendar) {
 			day = "";
 		}
 
-
 		var hour = _info._hour ? edit_value.substr(_info._hour.index, _info._hour.length).padLeft(2, "0") : "";
 		var min = _info._min ? edit_value.substr(_info._min.index, _info._min.length).padLeft(2, "0") : "";
 		var sec = _info._sec ? edit_value.substr(_info._sec.index, _info._sec.length).padLeft(2, "0") : "";
 		var millisec = _info._millisec ? edit_value.substr(_info._millisec.index, _info._millisec.length).padLeft(3, "0") : "";
 
 		var normal_value = year + mon + day + hour + min + sec + millisec;
-		return (this.value === "" && this.displaynulltext !== "") ? "" : normal_value;
+		return (normal_value === "" && this.displaynulltext !== "") ? "" : normal_value;
 	};
 
 	_pCalendar._makeCalendarText = function (value) {
@@ -4409,6 +4664,7 @@ if (!nexacro.Calendar) {
 		var mask_value = "";
 		var date = null;
 
+		var val = v;
 		var v = this._makeMaskValue(v, true);
 
 		var len = 0;
@@ -4421,12 +4677,24 @@ if (!nexacro.Calendar) {
 			if (_info._mon && _info._mon.index == i) {
 				len = _info._mon.length;
 
-				if (_info._mon.length == 1 && !_info._mon.single_digit) {
-					mon = v.substr(idx, 2);
-					len = 2;
+				if (len == 1) {
+					if (_info._mon.single_digit) {
+						mon = v.substr(idx, len);
+					}
+					else {
+						mon = v.substr(idx, 2);
+						len = 2;
+					}
+				}
+				else if (len == 2) {
+					mon = v.substr(idx, len);
 				}
 				else {
-					mon = v.substr(idx, _info._mon.length);
+					var dateObj = this._getDateObj(val);
+					mon = dateObj.getMonth();
+					month = this._monthlistL[mon];
+					mon = mon + 1;
+					len = month.length;
 				}
 
 				idx += len;
@@ -4444,14 +4712,21 @@ if (!nexacro.Calendar) {
 				idx += len;
 			}
 			if (_info._date && _info._date.index == i) {
-				var dateObj = this._getDateObj(v);
-				var dateofweek = dateObj.getDay();
-
-				date = this._datelistS[dateofweek];
-				if (_info._date.mask === "dddd") {
-					date = this._datelistL[dateofweek];
+				len = _info._date.length;
+				if (this._currentformat == "editformat") {
+					date = v.substr(idx, len);
 				}
-				idx += _info._date.length;
+				else {
+					var dateObj = this._getDateObj(val);
+					var dateofweek = dateObj.getDay();
+
+					date = this._datelistS[dateofweek];
+					if (_info._date.mask === "dddd") {
+						date = this._datelistL[dateofweek];
+					}
+					len = date.length;
+				}
+				idx += len;
 			}
 			if (_info._hour && _info._hour.index == i) {
 				hour = v.substr(idx, _info._hour.length).padLeft(_info._hour.length, "0");
@@ -4513,6 +4788,9 @@ if (!nexacro.Calendar) {
 		}
 		else {
 			date = new nexacro.Date(ret.year, ret.mon, ret.day, ret.hour, ret.min, ret.sec, ret.millisec);
+			if (this._isTimeMask() && !this._is_subcontrol) {
+				date._timeonly = true;
+			}
 			date._timecheck = true;
 		}
 		ret = null;
@@ -4581,26 +4859,28 @@ if (!nexacro.Calendar) {
 
 		var mask_value = "";
 
-		if (_info._year) {
-			year = str_v.substr(idx, 4);
-			mask_value += year;
+		if (!this._isTimeMask() || this._is_subcontrol) {
+			if (_info._year) {
+				year = str_v.substr(idx, 4);
+				mask_value += year;
+			}
+
+			idx += 4;
+
+			if (_info._mon) {
+				month = str_v.substr(idx, 2);
+				mask_value += month;
+			}
+
+			idx += 2;
+
+			if (_info._day) {
+				day = str_v.substr(idx, 2);
+				mask_value += day;
+			}
+
+			idx += 2;
 		}
-
-		idx += 4;
-
-		if (_info._mon) {
-			month = str_v.substr(idx, 2);
-			mask_value += month;
-		}
-
-		idx += 2;
-
-		if (_info._day) {
-			day = str_v.substr(idx, 2);
-			mask_value += day;
-		}
-
-		idx += 2;
 
 		if (_info._hour) {
 			hour = str_v.substr(idx, 2);
@@ -4631,10 +4911,10 @@ if (!nexacro.Calendar) {
 		return mask_value;
 	};
 
-	_pCalendar._makeFormatInfo = function (format) {
+	_pCalendar._makeFormatInfo = function (format, is_editformat) {
 		var pass_char = null;
 		if (format == "SHORTDATE" || format == "LONGDATE") {
-			var locale = this.locale;
+			var locale = this._getLocale();
 			if (!locale) {
 				locale = nexacro.BrowserLang;
 			}
@@ -4656,7 +4936,36 @@ if (!nexacro.Calendar) {
 					r : "a"
 				};
 			}
+
+			if (is_editformat) {
+				var mon_index = format.indexOf("M");
+				var day_index = format.indexOf("d");
+
+				if (format.slice(mon_index, mon_index + 4) == "MMMM") {
+					format = format.replace("MMMM", "MM");
+				}
+				else if (format.slice(mon_index, mon_index + 3) == "MMM") {
+					foramt = format.replace("MMM", "MM");
+				}
+				else if (format.slice(mon_index, mon_index + 2) != "MM") {
+					format = format.replace("M", "MM");
+				}
+
+				if (format.slice(day_index, day_index + 4) == "dddd") {
+					day_index = format.slice(day_index + 4, format.length - 4).indexOf("d") + 4;
+				}
+				else if (format.slice(day_index, day_index + 3) == "ddd") {
+					day_index = format.slice(day_index + 3, format.length - 3).indexOf("d") + 3;
+				}
+
+				if (format.slice(day_index, day_index + 2) != "dd") {
+					format = format.replace("d", "dd");
+				}
+
+				mon_index = day_index = null;
+			}
 		}
+
 		var format_real = format;
 		var format_len = format_real.length;
 		var char_info = [];
@@ -4914,7 +5223,7 @@ if (!nexacro.Calendar) {
 		};
 	};
 
-	_pCalendar._changeYearValue = function () {
+	_pCalendar._changeYearValue = function (origin_year) {
 		var _info = this._editformat_info;
 		var edit = this.calendaredit;
 		var edit_api = edit._edit_base_api;
@@ -4949,18 +5258,19 @@ if (!nexacro.Calendar) {
 					}
 				}
 				else if (year_trim.length != 4) {
-					if (year_len === 1) {
-						year = "000" + year;
+					if (!origin_year) {
+						if (year_len === 1) {
+							year = "000" + year;
+						}
+						else if (year_len === 2) {
+							year = "00" + year;
+						}
+						else if (year_len === 3) {
+							year = "0" + year;
+						}
+						text = text.replace(year_str, year);
 					}
-					else if (year_len === 2) {
-						year = "00" + year;
-					}
-					else if (year_len === 3) {
-						year = "0" + year;
-					}
-					text = text.replace(year_str, year);
 				}
-				;
 			}
 		}
 
@@ -5027,7 +5337,12 @@ if (!nexacro.Calendar) {
 				date_obj = "";
 			}
 			else {
-				this._currentformat = "editformat";
+				if (this._is_primitivevalue) {
+					this._is_primitivevalue = false;
+				}
+				else {
+					this._currentformat = "editformat";
+				}
 				date_obj = this._makeDateObj(v);
 			}
 
@@ -5244,6 +5559,20 @@ if (!nexacro.Calendar) {
 		}
 	};
 
+	_pCalendarDropButtonCtrl.on_tap_basic_action = function (elem, canvasX, canvasY, screenX, screenY, event_bubbles, fire_comp, refer_comp) {
+		if (!nexacro._enableaccessibility) {
+			this.parent._is_dropbutton = true;
+		}
+		return nexacro.Component.prototype.on_tap_basic_action.call(this, elem, canvasX, canvasY, screenX, screenY, event_bubbles, fire_comp, refer_comp);
+	};
+
+	_pCalendarDropButtonCtrl.on_tap_basic_action = function (elem, canvasX, canvasY, screenX, screenY, event_bubbles, fire_comp, refer_comp) {
+		if (!nexacro._enableaccessibility) {
+			this.parent._is_dropbutton = true;
+		}
+		return nexacro.Component.prototype.on_tap_basic_action.call(this, elem, canvasX, canvasY, screenX, screenY, event_bubbles, fire_comp, refer_comp);
+	};
+
 	_pCalendarDropButtonCtrl._on_drag = function (elem, button, alt_key, ctrl_key, shift_key, canvasX, canvasY, screenX, screenY, event_bubbles, fire_comp, refer_comp) {
 	};
 
@@ -5280,6 +5609,20 @@ if (!nexacro.Calendar) {
 				}
 			}
 		}
+	};
+
+	_pCalendarSpinButtonCtrl.on_tap_basic_action = function (elem, canvasX, canvasY, screenX, screenY, event_bubbles, fire_comp, refer_comp) {
+		if (!nexacro._enableaccessibility) {
+			this.parent._is_dropbutton = true;
+		}
+		return nexacro.Component.prototype.on_tap_basic_action.call(this, elem, canvasX, canvasY, screenX, screenY, event_bubbles, fire_comp, refer_comp);
+	};
+
+	_pCalendarSpinButtonCtrl.on_tap_basic_action = function (elem, canvasX, canvasY, screenX, screenY, event_bubbles, fire_comp, refer_comp) {
+		if (!nexacro._enableaccessibility) {
+			this.parent._is_dropbutton = true;
+		}
+		return nexacro.Component.prototype.on_tap_basic_action.call(this, elem, canvasX, canvasY, screenX, screenY, event_bubbles, fire_comp, refer_comp);
 	};
 
 	_pCalendarSpinButtonCtrl._on_drag = function (elem, button, alt_key, ctrl_key, shift_key, canvasX, canvasY, screenX, screenY, event_bubbles, fire_comp, refer_comp) {
@@ -5336,6 +5679,58 @@ if (!nexacro.Calendar) {
 		return this.parent._getFormChildById(id);
 	};
 
+	_pCalendarEditCtrl._getFromComponent = function (comp) {
+		var parent = comp.parent;
+		if (parent && parent._isPopupVisible()) {
+			return parent;
+		}
+		else {
+			return nexacro.Component.prototype._getFromComponent.call(this, comp);
+		}
+	};
+
+	_pCalendarEditCtrl._getAccessibilityRole = function (accessibility) {
+		var calendar = this.parent;
+		if (calendar) {
+			var accessibility = calendar.on_find_CurrentStyle_accessibility(calendar._pseudo);
+			return calendar._getAccessibilityRole(accessibility);
+		}
+		return nexacro.Component.prototype._getAccessibilityRole.call(this, accessibility);
+	};
+
+	_pCalendarEditCtrl._getAccessibilityLabel = function (accessibility) {
+		var calendar = this.parent;
+		if (calendar) {
+			var accessibility = calendar.on_find_CurrentStyle_accessibility(calendar._pseudo);
+			return calendar._getAccessibilityLabel(accessibility);
+		}
+		return nexacro.Component.prototype._getAccessibilityLabel.call(this, accessibility);
+	};
+
+	_pCalendarEditCtrl._getAccessibilityDescription = function (accessibility) {
+		var calendar = this.parent;
+		if (calendar) {
+			var accessibility = calendar.on_find_CurrentStyle_accessibility(calendar._pseudo);
+			return calendar._getAccessibilityDescription(accessibility);
+		}
+		return nexacro.Component.prototype._getAccessibilityDescription.call(this, accessibility);
+	};
+
+	_pCalendarEditCtrl._getAccessibilityAction = function (accessibility) {
+		var calendar = this.parent;
+		if (calendar) {
+			var accessibility = calendar.on_find_CurrentStyle_accessibility(calendar._pseudo);
+			return calendar._getAccessibilityAction(accessibility);
+		}
+		return nexacro.Component.prototype._getAccessibilityAction.call(this, accessibility);
+	};
+
+	_pCalendarEditCtrl._on_getAccessibilityAdditionalLabel = function () {
+		if (nexacro.OS == "iOS" && nexacro.OSVersion >= 8) {
+			return this.value ? this.text : "";
+		}
+	};
+
 	_pCalendarEditCtrl.set_value = function (v) {
 		nexacro.MaskEdit.prototype.set_value.call(this, v);
 		this._setAccessibilityValue(this.value);
@@ -5364,16 +5759,6 @@ if (!nexacro.Calendar) {
 		return true;
 	};
 
-	_pCalendarEditCtrl._getFromComponent = function (comp) {
-		var parent = comp.parent;
-		if (parent && parent._isPopupVisible()) {
-			return parent;
-		}
-		else {
-			return nexacro.Component.prototype._getFromComponent.call(this, comp);
-		}
-	};
-
 	_pCalendarEditCtrl._on_input_keyinput = function (elem) {
 		var api = this._edit_base_api;
 		if (api) {
@@ -5387,7 +5772,7 @@ if (!nexacro.Calendar) {
 			api._on_input_keyinput_after();
 
 			var calendar = this.parent;
-			if (calendar && calendar._getPopupType() == "system") {
+			if (calendar && calendar.type == "system") {
 				calendar._setValue(api._getValue());
 			}
 		}
@@ -5459,6 +5844,14 @@ if (!nexacro.Calendar) {
 					this._setValue(this._postvalue);
 				}
 			}
+		}
+	};
+
+	_pCalendarCtrl.on_created_contents = function () {
+		nexacro.Calendar.prototype.on_created_contents.call(this);
+
+		if (nexacro._enableaccessibility && nexacro._accessibilitytype == 4) {
+			this._control_element.setElementAccessibilityHidden(true);
 		}
 	};
 

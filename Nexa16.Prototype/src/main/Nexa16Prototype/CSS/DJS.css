@@ -1,0 +1,151 @@
+﻿
+/* ---------------------------
+    파일업로드 다운로드 
+ ------------------------------*/
+
+/* 파일업다운 그리드  */
+Grid.grid_WF_upDownLoadGrid{
+	accessibility		: ;
+	align			: left middle;
+	background		: #ffffffff;
+	border			: 1 solid #bdc5d2ff;
+	bordertype		: ;
+	color			: #333333ff;
+	cursor			: ;
+	font			: 9 notokr-regular, dotum;
+	gradation		: ;
+	line			: ;
+	opacity			: ;
+	padding			: 0 5 0 5;
+	selectline		: ;
+	selectlinetype		: ;
+	shadow			: ;
+	treeclosebuttonimage	: ;
+	treecollapseimage	: ;
+	treeexpandimage		: ;
+	treeitemimage		: ;
+	treeitemmargin		: ;
+	treelinetype		: ;
+	treeopenbuttonimage	: ;
+}
+Grid.grid_WF_upDownLoadGrid>#head
+{
+	accessibility		: ;
+	background		: #dfe7f2ff;
+	border			: 0 none, 0 none, 1 solid #bdc5d2ff, 0 none;
+	bordertype		: ;
+	cellalign		: ;
+	cellbackground		: #dfe7f2ff;
+	cellbackground2		: #dfe7f2ff;
+	cellcolor		: #6e6e63ff;
+	cellcolor2		: #6e6e63ff;
+	cellfont		: ;
+	cellgradation		: ;
+	cellgradation2		: ;
+	cellline		: 1 solid #bdc5d2ff;
+	celllinespace		: ;
+	celllinetype		: ;
+	cellpadding		: ;
+	gradation		: linear 0,0 #f9f9f8 0,100 #dadad3;
+	selectbackground	: ;
+	selectborder		: ;
+	selectcolor		: #000000ff;
+	selectfont		: ;
+	selectgradation		: ;
+	selectline		: ;
+	selectlinetype		: ;
+}
+Grid.grid_WF_upDownLoadGrid>#body
+{
+	accessibility		: ;
+	background		: #ffffffff;
+	border			: 0 none;
+	bordertype		: ;
+	cellalign		: left middle;
+	cellbackground		: #ffffffff;
+	cellbackground2		: #ffffffff;
+	cellcolor		: #6e6e63;
+	cellcolor2		: #6e6e63;
+	cellfont		: ;
+	cellgradation		: ;
+	cellgradation2		: ;
+	cellline		: 0 none #f4f4f4;
+	celllinespace		: ;
+	celllinetype		: exhor;
+	cellpadding		: ;
+	gradation		: ;
+	selectbackground	: #ffffffff;
+	selectborder		: ;
+	selectcolor		: #000000ff;
+	selectfont		: ;
+	selectgradation		: ;
+	selectline		: 0 none;
+	selectlinetype		: ;
+}
+
+Grid.grid_WF_upDownLoadGrid>#summ
+{
+	accessibility		: ;
+	background		: #f2f0f1ff;
+	border			: 1 solid #bdc5d2ff, 0 none, 0 none,  0 none;
+	bordertype		: ;
+	cellalign		: ;
+	cellbackground		: #f2f0f1ff;
+	cellbackground2		: #f2f0f1ff;
+	cellcolor		: #6e6e63ff;
+	cellcolor2		: #6e6e63ff;
+	cellfont		: ;
+	cellgradation		: ;
+	cellgradation2		: ;
+	cellline		: 0 none #f4f4f4;
+	celllinespace		: ;
+	celllinetype		: ;
+	cellpadding		: ;
+	gradation		: linear 0,0 #f9f9f8 0,100 #dadad3;
+	selectbackground	: ;
+	selectborder		: ;
+	selectcolor		: #000000ff;
+	selectfont		: ;
+	selectgradation		: ;
+	selectline		: ;
+	selectlinetype		: ;
+}
+
+
+/* 파일업다운 버튼영역  */
+Div.div_WF_btnAreaFile
+{
+	accessibility		: ;
+	align			: ;
+	background		: #dfe7f2ff;
+	border			: 0 none, 1 solid #bdc5d2ff, 1 solid #bdc5d2ff,  1 solid #bdc5d2ff;
+	bordertype		: normal 0 0;
+	color			: ;
+	cursor			: ;
+	font			: ;
+	gradation		: ;
+	opacity			: ;
+	padding			: ;
+	shadow			: ;
+}
+
+/* 파일다운 추가 삭제  버튼 */
+Button.btn_WF_downLoad, Button.btn_WF_downLoad:mouseover, Button.btn_WF_downLoad:focused, Button.btn_WF_downLoad:selected, Button.btn_WF_downLoad:pushed,
+Button.btn_WF_fileAdd, Button.btn_WF_fileAdd:mouseover, Button.btn_WF_fileAdd:focused, Button.btn_WF_fileAdd:selected, Button.btn_WF_fileAdd:pushed,
+Button.btn_WF_fileDel, Button.btn_WF_fileDel:mouseover, Button.btn_WF_fileDel:focused, Button.btn_WF_fileDel:selected, Button.btn_WF_fileDel:pushed
+{
+	accessibility		: ;
+	align			: center middle ;
+	background 		: #dfe7f2ff ;
+	border			: 1 solid #bcc9d9ff ;
+	bordertype		: round 3 3  ;
+	color			: #333333ff ;
+	cursor			: hand ;
+	font 			: 10 notokr-regular, dotum ;
+	gradation		: ;
+	image			: ;
+	imagealign		: ;
+	opacity			: ;
+	padding			: ;
+	shadow			: ;
+}

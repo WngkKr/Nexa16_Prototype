@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="LOGIN" classname="LOGIN" left="0" top="0" width="1400" height="768" titletext="login" onload="LOGIN_onload">
+    <Layouts>
+      <Layout>
+        <Static id="Static01" taborder="3" left="384" top="329" width="579" height="100" cssclass="sta_WF_Caption"/>
+        <Static id="Static02" taborder="5" text="Login-id" cssclass="sta_WF_Caption" left="384" top="354" width="168" height="25"/>
+        <Static id="Static03" taborder="6" text="password" cssclass="sta_WF_Caption" left="384" top="379" width="168" height="25"/>
+        <Edit id="Edit00" taborder="0" left="552" top="354" width="304" height="25" value="admin"/>
+        <Edit id="Edit01" taborder="1" left="552" top="379" width="304" height="25"/>
+        <Button id="bnt_login" taborder="2" text="LogIn" cssclass="btn_WF_Etc" top="354" height="50" userRW="Y" left="858" width="95" onclick="bnt_login_onclick"/>
+        <WebBroswer id="web_cookie" left="472" top="231" width="8" height="9" taborder="9" tabstop="false" onloadcompleted="web_cookie_onloadcompleted" visible="false"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[/**
+*  인트라넷 고도화[Lexpeed3]구축 사업
+*
+*  @MenuPath       
+*  @FileName       FRM_LOGIN.xfdl
+*  @Creator        송원창
+*  @CreateDate     2016.05.16
+*  @LastModifier   
+*  @LastModifyDate 
+*  @Version        1.0
+*  @Outline        LOGIN Frame
+*  @Description       
+*
+*
+************** 소스 수정 이력 *************************************************
+*    date          Modifier            Description
+*******************************************************************************
+*  2016.05.16      송원창              클래스 최초 생성
+*******************************************************************************
+*/
+/*----------------------------------------------------------------------------------------------
+ * 공통 라이브러리 INCLUDE 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+//include "LIB::LIB_COMMON.xjs";  	// 공통 js
+/*----------------------------------------------------------------------------------------------
+ * FORM 변수 선언 영역
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * FORM EVENT 영역
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  화면 로드시 이벤트
+ */
+this.LOGIN_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	
+	//공통초기화 필수
+	this.gfn_initForm(obj);
+	
+	
+	
+	// MDI execute 여부 확인
+	application.gv_mdiFlg = true;
+}
+
+/*----------------------------------------------------------------------------------------------
+ * 공통기능 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * TRANSACTION 및 CallBack 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  Push 수신 여부 저장 서비스 callback
+ * @param sTrId  	   - service ID
+ * @param nErrorCode   - error CODE
+ * @param sErrorMsg    - error MESSAGE
+ * @return       N/A
+ */
+this.fn_callback = function(sTrId, nErrorCode, sErrorMsg)
+{
+	trace("sTrId: " + sTrId + " " + "nErrorCode: " + nErrorCode + " " +  "sErrorMsg: " + sErrorMsg);
+	
+	if ( nErrorCode < 0 ) return;
+	
+	switch(sTrId)
+	{
+		case "login":
+			//trace(this.ds_output01.saveXML());
+			
+			//로그인 성공시 실행
+			//this.fn_setApllicatonUrl();
+			break;
+		
+		default:
+			 break;
+	}
+}
+
+/*----------------------------------------------------------------------------------------------
+ * 각 COMPONENT 별 EVENT 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  로그인 버튼
+ * @return       N/A
+ */
+ this.bnt_login_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	//로그인 하기전에 아이디가 맞는지 서비스 호출
+	//세션 정보를 먼저 가져와야 한다.
+	//세션 정보는 화면이 끝나기 전까지 가지고 있어야 한다.
+	this.fn_loginService();
+	
+	//////////////////////////////////////////////
+	// application Frmae URL 세팅
+	// fn_loginService 가 호출이 완료되는 시점 사용자가 일치할 때 callback에서 호출되어야함
+	// 
+	//////////////////////////////////////////////	
+	this.fn_setApllicatonUrl();	
+	
+}
+
+/**
+ * @description  탭 메뉴 이동
+ * @return       N/A
+ */
+this.web_cookie_onloadcompleted = function(obj:WebBroswer, e:nexacro.WebLoadCompEventInfo)
+{
+	this.getElement()._handle.getElementsByTagName("iframe")[0].contentWindow.setCallback(this, "webCallBack");
+	
+	this.setCookie("get","");
+}
+
+/*----------------------------------------------------------------------------------------------
+ * 사용자 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @class      	application Frmae URL setting
+ * @return      {} N/A
+ */
+this.fn_setApllicatonUrl = function()
+{
+	application.av_vFrameSet.set_separatesize("0,90,*,60");
+	
+	application.av_TopFrame.set_formurl("FRM::FRM_TOP.xfdl");
+	application.av_BottomFrame.set_formurl("FRM::FRM_BOTTOM.xfdl");
+}
+
+/**
+ * @class      	로그인 서비스 호출
+ * @return      {} N/A
+ */
+this.fn_loginService = function()
+{
+//     var sInDs  = "";
+//     var sOutDs = "ds_output01=output";
+//     this.gfn_transaction("retrieveEmp", "http://localhost:8080/Lexpeed3/nexacrojsp.jsp", sInDs, sOutDs, "", "fn_callback", "R", true);
+}
+]]></Script>
+  </Form>
+</FDL>

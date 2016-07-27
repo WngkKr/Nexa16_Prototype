@@ -1,0 +1,1978 @@
+﻿/* ---------------------------------------------- 
+    Top frame
+-------------------------------------------------- */
+
+/* TopFrame 영역 */
+Form.frm_TF_gnb
+{
+	accessibility	: ;
+	background	:transparent URL('IMG::bg_gnb.png') repeat-x left top ;
+	border	: ;
+	bordertype	: ;
+	color	: ;
+	cursor	: ;
+	font	: ;
+	gradation	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+	stepalign	: ;
+	stepshowtype	: ;
+}
+
+/* gnb logo */
+Static.sta_TF_logo
+{
+	accessibility	: ;
+	align	: ;
+	background	:transparent URL('IMG::img_logo.jpg');
+	border	: ;
+	bordertype	: ;
+	color	: ;
+	cursor	: hand;
+	font	: ;
+	gradation	: ;
+	letterspace	: ;
+	linespace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+
+
+/* gnb 왼쪽 영역  */
+Div.div_TF_gnbLeftArea
+{
+	accessibility	: ;
+	align	: ;
+	background	: #ffffffff;
+	border	: 0 none #bdbdbdff;
+	bordertype	: normal 0 0;
+	color	: ;
+	cursor	: ;
+	font	: ;
+	gradation	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+	stepalign	: ;
+}
+
+Div.div_TF_gnbLeftAreaIn
+{
+	accessibility	: ;
+	align	: ;
+	background	:transparent ;
+	border	: 0 none #bdbdbdff;
+	bordertype	: normal 0 0;
+	color	: ;
+	cursor	: ;
+	font	: ;
+	gradation	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+	stepalign	: ;
+}
+
+
+Static.sta_TF_gnbLeftAreaBG
+{
+	accessibility	: ;
+	align	: ;
+	background	:transparent URL('IMG::bg_gnbTop.png');
+	border	: 0 none #808080ff;
+	bordertype	: ;
+	color	: ;
+	cursor	: ;
+	font	: ;
+	gradation	: ;
+	letterspace	: ;
+	linespace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+
+
+/* 통합검색 */
+Div.div_TF_combineSearchArea
+{
+	accessibility	: ;
+	align	: ;
+	background	:#ffffffff URL('IMG::bg_search.gif') repeat-x left top ;
+	border	: 2 solid #315fa5ff ;
+	bordertype	: round 15 15  lefttop righttop leftbottom rightbottom;
+	color	: ;
+	cursor	: ;
+	font	: ;
+	gradation	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+	stepalign	: ;
+}
+
+Edit.edit_TF_combineSearch, Edit.edit_TF_combineSearch:mouseover,Edit.edit_TF_combineSearch:focused, Edit.edit_TF_combineSearch:selected
+{
+	accessibility	: ;
+	align	: ;
+	background	: transparent;
+	border	: 0 none #808080ff;
+	bordertype	: round 50 50  lefttop leftbottom;
+	color	: #666666ff;
+	cursor	: ;
+	displaynulltextcolor	: ;
+	font	: 9 notokr-regular, dotum;
+	gradation	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	:0 8 0 15 ;
+	selectbackground	: ;
+	selectcolor	: ;
+	shadow	: ;
+}
+
+Button.btn_TF_combineSearch, Button.btn_TF_combineSearch:mouseover, Button.btn_TF_combineSearch:focused, Button.btn_TF_combineSearch:selected, Button.btn_TF_combineSearch:pushed
+{
+	accessibility	: ;
+	align	: ;
+	background	: transparent URL('IMG::btn_combineSearch.png');
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0 ;
+	color	: ;
+	cursor	: hand;
+	font	: ;
+	gradation	: ;
+	image	: ;
+	imagealign	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+
+
+/* edms 버튼  */
+Button.btn_TF_edms, Button.btn_TF_edms:mouseover, Button.btn_TF_edms:focused, Button.btn_TF_edms:selected, Button.btn_TF_edms:pushed
+{
+	accessibility	: ;
+	align	: left middle;
+	background	: transparent URL('IMG::icon_EDMS.png');
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0 ;
+	color	: #a0a0a0ff;
+	cursor	: hand;
+	font	: 9 notokr-medium, dotum ;
+	gradation	: ;
+	image	: ;
+	imagealign	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: 0 0 0 25;
+	shadow	: ;
+}
+
+
+/* 사용자명  */
+Static.sta_TF_userName
+{
+	accessibility	: ;
+	align	: ;
+	background	:transparent URL('IMG::icon_user.png');
+	border	: 0 none #808080ff;
+	bordertype	: ;
+	color	: #575757ff;
+	cursor	: ;
+	font	: 11 notokr-medium, dotum ;
+	gradation	: ;
+	letterspace	: ;
+	linespace	: ;
+	opacity	: ;
+	padding	: 2 2 0 25;
+	shadow	: ;
+}
+
+
+/* gnb 오른쪽 영역 */
+
+Div.div_TF_gnbRightArea
+{
+	accessibility	: ;
+	align	: ;
+	background	:transparent ;
+	border	: 0 none #315fa5ff ;
+	bordertype	: normal 0 0;
+	color	: ;
+	cursor	: ;
+	font	: ;
+	gradation	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+	stepalign	: ;
+}
+
+
+/* 외출등록 */
+Static.sta_TF_addOut
+{
+	accessibility	: ;
+	align	: left middle ;
+	background	: transparent URL('IMG::icon_addOut.png');
+	border	: 0 none #b1b1b1ff ;
+	bordertype	: normal 0 0;
+	color	:  ;
+	cursor	: ;
+	font	: ;
+	gradation	: ;
+	letterspace	: ;
+	linespace	: ;
+	opacity	: ;
+	padding	:0 0 0 25 ;
+	shadow	: ;
+}
+
+/* 영문/로그아웃버튼  */
+Button.btn_TF_engBtn, Button.btn_TF_engBtn:mouseover, Button.btn_TF_engBtn:focused, Button.btn_TF_engBtn:selected, Button.btn_TF_engBtn:pushed,
+Button.btn_TF_logoutBtn, Button.btn_TF_logoutBtn:mouseover, Button.btn_TF_logoutBtn:focused, Button.btn_TF_logoutBtn:selected, Button.btn_TF_logoutBtn:pushed
+{
+	accessibility	: ;
+	align	: center middle;
+	background	: #82858bff;
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0 ;
+	color	: #ffffffff;
+	cursor	: hand;
+	font	: 9 notokr-medium, dotum ;
+	gradation	: ;
+	image	: ;
+	imagealign	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+
+
+
+/* 설정버튼  */
+Button.btn_TF_setUp, Button.btn_TF_setUp:mouseover, Button.btn_TF_setUp:focused, Button.btn_TF_setUp:selected, Button.btn_TF_setUp:pushed
+{
+	accessibility	: ;
+	align	: center middle;
+	background	: URL('IMG::btn_setUp.png') no-repeat 0,0;
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0 ;
+	color	: ;
+	cursor	: hand;
+	font	: ;
+	gradation	: ;
+	image	: ;
+	imagealign	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+
+/* 전체메뉴버튼  */
+Button.btn_TF_allMenu, Button.btn_TF_allMenu:mouseover, Button.btn_TF_allMenu:focused, Button.btn_TF_allMenu:selected, Button.btn_TF_allMenu:pushed
+{
+	accessibility	: ;
+	align	: center middle;
+	background	: URL('IMG::btn_allmenu.png') no-repeat;
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0 ;
+	color	: ;
+	cursor	: hand;
+	font	: ;
+	gradation	: ;
+	image	: ;
+	imagealign	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+
+
+
+/* 즐겨찾기팝업 버튼  */
+Button.btn_TF_funLink, Button.btn_TF_funLink:pushed
+{
+	accessibility	: ;
+	align	: center middle;
+	background	: URL('IMG::btn_funLink.png') no-repeat;
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0 ;
+	color	: ;
+	cursor	: hand;
+	font	: ;
+	gradation	: ;
+	image	: ;
+	imagealign	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+
+/* 즐겨찾기팝업 버튼  */
+Button.btn_TF_funLink:mouseover, Button.btn_TF_funLink:focused, Button.btn_TF_funLink:selected
+{
+	accessibility	: ;
+	align	: center middle;
+	background	: URL('IMG::btn_funLink_on.png') no-repeat;
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0 ;
+	color	: ;
+	cursor	: hand;
+	font	: ;
+	gradation	: ;
+	image	: ;
+	imagealign	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+
+
+
+/* 외부사이트팝업 버튼  */
+Button.btn_TF_outLink, Button.btn_TF_outLink:pushed
+{
+	accessibility	: ;
+	align	: center middle;
+	background	: URL('IMG::btn_outLink.png') no-repeat;
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0 ;
+	color	: ;
+	cursor	: hand;
+	font	: ;
+	gradation	: ;
+	image	: ;
+	imagealign	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+
+/* 외부사이트팝업 버튼  */
+Button.btn_TF_outLink:mouseover, Button.btn_TF_outLink:focused, Button.btn_TF_outLink:selected
+{
+	accessibility	: ;
+	align	: center middle;
+	background	: URL('IMG::btn_outLink_on.png') no-repeat;
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0 ;
+	color	: ;
+	cursor	: hand;
+	font	: ;
+	gradation	: ;
+	image	: ;
+	imagealign	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+
+
+/* 메뉴영역 */
+Div.div_TF_menuArea
+{
+	accessibility	: ;
+	align	: ;
+	background	: transparent URL('IMG::bg_menu03.png') repeat-x;
+	border	: ;
+	bordertype	: ;
+	color	: ;
+	cursor	: ;
+	font	: ;
+	gradation	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+	stepalign	: ;
+}
+
+/* 메뉴그룹 */
+Div.div_TF_menuGroup
+{
+	accessibility	: ;
+	align	: ;
+	background	: transparent;
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0;
+	color	: ;
+	cursor	: ;
+	font	: ;
+	gradation	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+	stepalign	: ;
+}
+
+/* 메뉴그룹1 사선배경 */
+Static.sta_TF_menuGroup01BG
+{
+	accessibility	: ;
+	align	: ;
+	background	:transparent URL('IMG::bg_menubar01.png');
+	border	: ;
+	bordertype	: ;
+	color	: ;
+	cursor	: ;
+	font	: ;
+	gradation	: ;
+	letterspace	: ;
+	linespace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+
+/* 메뉴그룹2 사선배경 */
+Static.sta_TF_menuGroup02BG
+{
+	accessibility	: ;
+	align	: ;
+	background	:transparent URL('IMG::bg_menubar02.png');
+	border	: ;
+	bordertype	: ;
+	color	: ;
+	cursor	: ;
+	font	: ;
+	gradation	: ;
+	letterspace	: ;
+	linespace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+
+Button.btn_TF_taborder0, Button.btn_TF_taborder0:mouseover,Button.btn_TF_taborder0:focused, Button.btn_TF_taborder0:selected, Button.btn_TF_taborder0:pushed
+{
+	accessibility	: ;
+	align	: ;
+	background	: transparent;
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0;
+	color	: #ffffffff;
+	cursor	: ;
+	font	: ;
+	gradation	: ;
+	image	: ;
+	imagealign	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+
+Button.btn_TF_menu01, Button.btn_TF_menu01:mouseover, Button.btn_TF_menu01:focused, Button.btn_TF_menu01:selected, Button.btn_TF_menu01:pushed
+{
+	accessibility	: ;
+	align	: ;
+	background	: #011b58ff URL('IMG::bg_menu01.png') repeat-x left top;
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0;
+	color	: #ffffffff;
+	cursor	: hand;
+	font	: 11 notokr-medium, dotum ;
+	gradation	: ;
+	image	: ;
+	imagealign	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+
+Button.btn_TF_menu02, Button.btn_TF_menu02:mouseover, Button.btn_TF_menu02:focused, Button.btn_TF_menu02:selected, Button.btn_TF_menu02:pushed
+{
+	accessibility	: ;
+	align	: ;
+	background	: #011b58ff URL('IMG::bg_menu01.png') repeat-x left top;
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0;
+	color	: #ffffffff;
+	cursor	: hand;
+	font	: 11 notokr-medium, dotum ;
+	gradation	: ;
+	image	: URL('IMG::line_menuBar.png');
+	imagealign	: left middle;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+
+Button.btn_TF_menu03, Button.btn_TF_menu03:mouseover, Button.btn_TF_menu03:focused, Button.btn_TF_menu03:selected, Button.btn_TF_menu03:pushed
+{
+	accessibility	: ;
+	align	: ;
+	background	: #2c4a91ff URL('IMG::bg_menu02.png') repeat-x left top;
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0;
+	color	: #ffffffff;
+	cursor	: hand;
+	font	: 11 notokr-medium, dotum ;
+	gradation	: ;
+	image	: ;
+	imagealign	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+
+Button.btn_TF_menu04, Button.btn_TF_menu04:mouseover, Button.btn_TF_menu04:focused, Button.btn_TF_menu04:selected, Button.btn_TF_menu04:pushed
+{
+	accessibility	: ;
+	align	: ;
+	background	: #2c4a91ff URL('IMG::bg_menu02.png') repeat-x left top;
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0;
+	color	: #ffffffff;
+	cursor	: hand;
+	font	: 11 notokr-medium, dotum ;
+	gradation	: ;
+	image	: URL('IMG::line_menuBar.png');
+	imagealign	: left middle;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+
+Button.btn_TF_menu05, Button.btn_TF_menu05:mouseover, Button.btn_TF_menu05:focused, Button.btn_TF_menu05:selected, Button.btn_TF_menu05:pushed
+{
+	accessibility	: ;
+	align	: ;
+	background	: #01bcdeff URL('IMG::bg_menu03.png') repeat-x left top;
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0;
+	color	: #ffffffff;
+	cursor	: hand;
+	font	: 11 notokr-medium, dotum ;
+	gradation	: ;
+	image	: ;
+	imagealign	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+
+/* 경로형태 메뉴영역  */
+Div.div_TF_locationArea
+{
+	accessibility	: ;
+	align	: ;
+	background	: transparent;
+	border	: 1 solid #bdbdbdff;
+	bordertype	: normal 0 0;
+	color	: ;
+	cursor	: ;
+	font	: ;
+	gradation	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+	stepalign	: ;
+}
+
+/* home icon */
+Static.sta_TF_locationHome
+{
+	accessibility	: ;
+	align	: ;
+	background	:transparent URL('IMG::icon_home.gif');
+	border	: 0 none #808080ff,1 solid #bdbdbdff,0 none #808080ff,0 none #808080ff;
+	bordertype	: ;
+	color	: ;
+	cursor	: hand ;
+	font	: ;
+	gradation	: ;
+	letterspace	: ;
+	linespace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+
+
+Combo.cbo_TF_locationSelect
+{
+	accessibility	: ;
+	align	: left middle;
+	background	: ;
+	border	: 0 none #808080ff,1 solid #bdbdbdff,0 none #808080ff,0 none #808080ff;
+	bordertype	: ;
+	buttonsize	: ;
+	color	: #3e4149ff ;
+	cursor	: ;
+	displaynulltextcolor	: ;
+	font	: 9 notokr-regular, dotum;
+	gradation	: ;
+	itemaccessibility	: ;
+	itembackground	: ;
+	itemborder	: ;
+	itembordertype	: ;
+	itemcolor	: ;
+	itemfont	: ;
+	itemgradation	: ;
+	itemheight	: ;
+	itempadding	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	popuptype	: ;
+	shadow	: ;
+}
+
+
+
+
+
+/* 서브메뉴 팝업 */
+PopupDiv.pdiv_TF_menuArea
+{
+	accessibility	: ;
+	align	: ;
+	background	: transparent;
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0;
+	color	: ;
+	cursor	: ;
+	font	: ;
+	gradation	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+	stepalign	: ;
+}
+
+/* 서브메뉴닫기 버튼 */
+Button.btn_TF_menuOutBtn, Button.btn_TF_menuOutBtn:mouseover, Button.btn_TF_menuOutBtn:focused, Button.btn_TF_menuOutBtn:selected, Button.btn_TF_menuOutBtn:pushed
+{
+	accessibility	: ;
+	align	: ;
+	background	: transparent;
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0;
+	color	: ;
+	cursor	: ;
+	font	: ;
+	gradation	: ;
+	image	: ;
+	imagealign	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+/* 서브메뉴 그리드 */
+Grid.grid_TF_subMenu{
+	accessibility		: ;
+	align			: left middle;
+	background		: #f4f4f4ff;
+	border			: 1 solid #666666ff;
+	bordertype		: ;
+	color			: #333333ff;
+	cursor			: ;
+	font			: 9 notokr-regular, dotum;
+	gradation		: ;
+	line			: ;
+	opacity			: ;
+	padding			: 0 20 0 20;
+	selectline		: ;
+	selectlinetype		: ;
+	shadow			: ;
+	treeclosebuttonimage	: ;
+	treecollapseimage	: ;
+	treeexpandimage		: ;
+	treeitemimage		: ;
+	treeitemmargin		: ;
+	treelinetype		: ;
+	treeopenbuttonimage	: ;
+}
+Grid.grid_TF_subMenu>#head
+{
+	accessibility		: ;
+	background		: #f4f4f4;
+	border			: 0 none, 1 solid #e5e5e5;
+	bordertype		: ;
+	cellalign		: ;
+	cellbackground		: transparent;
+	cellbackground2		: ;
+	cellcolor		: #6e6e63ff;
+	cellcolor2		: #6e6e63ff;
+	cellfont		: ;
+	cellgradation		: ;
+	cellgradation2		: ;
+	cellline		: 0 none #f4f4f4, 1 solid #e5e5e5;
+	celllinespace		: ;
+	celllinetype		: ;
+	cellpadding		: ;
+	gradation		: linear 0,0 #f9f9f8 0,100 #dadad3;
+	selectbackground	: ;
+	selectborder		: ;
+	selectcolor		: #000000ff;
+	selectfont		: ;
+	selectgradation		: ;
+	selectline		: ;
+	selectlinetype		: ;
+}
+Grid.grid_TF_subMenu>#body
+{
+	accessibility		: ;
+	background		: #f4f4f4;
+	border			: 0 none, 1 solid #e5e5e5, 1 solid #e5e5e5, 1 solid #e5e5e5;
+	bordertype		: ;
+	cellalign		: left middle;
+	cellbackground		: ;
+	cellbackground2		: ;
+	cellcolor		: #6e6e63;
+	cellcolor2		: #6e6e63;
+	cellfont		: ;
+	cellgradation		: ;
+	cellgradation2		: ;
+	cellline		: 0 none #f4f4f4, 1 solid #e5e5e5;
+	celllinespace		: ;
+	celllinetype		: exhor;
+	cellpadding		: 5 20 5 20;
+	gradation		: ;
+	selectbackground	: #ffffffff;
+	selectborder		: ;
+	selectcolor		: #000000ff;
+	selectfont		: ;
+	selectgradation		: ;
+	selectline		: 1 solid #e5e5e5;
+	selectlinetype		: ;
+}
+
+
+Static.sta_TF_subMenubg
+{
+	accessibility		: ;
+	align			: left middle;
+	background		: #f4f4f4ff;
+	border			: 1 solid #666666ff;
+	bordertype		: ;
+	color			: #333333ff;
+	cursor			: ;
+	font			: 9 notokr-regular, dotum;
+	gradation		: ;
+	line			: ;
+	opacity			: ;
+	padding			: 10 10 10 10;
+	selectline		: ;
+	selectlinetype		: ;
+	shadow			: ;
+	treeclosebuttonimage	: ;
+	treecollapseimage	: ;
+	treeexpandimage		: ;
+	treeitemimage		: ;
+	treeitemmargin		: ;
+	treelinetype		: ;
+	treeopenbuttonimage	: ;
+}
+
+Static.sta_TF_Menu_level02:mouseover, Static.sta_TF_Menu_level02:focused, Static.sta_TF_Menu_level02:selected, Static.sta_TF_Menu_level02:pushed
+{
+	background		: #fcfcfcff;
+	font			: 9 notokr-medium, dotum;
+	color			: #2c4a91ff;
+	padding			: 0 10 0 10;
+}
+
+Static.sta_TF_Menu_level02
+{
+	background		: #fcfcfcff;
+	font			: 9 notokr-medium, dotum;
+	color			: #555555ff;
+	padding			: 0 10 0 10;
+}
+
+Static.sta_TF_Menu_level03
+{
+	background		: transparent;
+	font			: 9 notokr-regular, dotum;
+	color			: #333333ff;
+	padding			: 0 10 0 10;
+}
+Static.sta_TF_Menu_level02:mouseover, Static.sta_TF_Menu_level02:focused, Static.sta_TF_Menu_level02:selected, Static.sta_TF_Menu_level02:pushed
+{
+	background		: transparent;
+	font			: underline 9 notokr-medium, dotum;
+	color			: #2291f0ff;
+	padding			: 0 10 0 10;
+}
+
+Static.sta_TF_Menu_level03:mouseover, Static.sta_TF_Menu_level03:focused, Static.sta_TF_Menu_level03:selected, Static.sta_TF_Menu_level03:pushed
+{
+	background		: transparent;
+	font			: underline 9 notokr-regular, dotum;
+	color			: #2291f0ff;
+	padding			: 0 10 0 10;
+
+}
+
+/* 메뉴1 hover시 버튼 */
+Button.btn_TF_menu01Ov, Button.btn_TF_menu01Ov:mouseover, Button.btn_TF_menu01Ov:focused, Button.btn_TF_menu01Ov:selected, Button.btn_TF_menu01Ov:pushed
+{
+	accessibility	: ;
+	align	: ;
+	background	: #1d2848ff URL('IMG::bg_menu01.png') repeat-x left top;
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0;
+	color	: #68fdffff;
+	cursor	: hand;
+	font	: 11 notokr-medium, dotum ;
+	gradation	: ;
+	image	: ;
+	imagealign	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+} 
+
+/* 메뉴2 hover시 버튼 */
+Button.btn_TF_menu02Ov, Button.btn_TF_menu02Ov:mouseover, Button.btn_TF_menu02Ov:focused, Button.btn_TF_menu02Ov:selected, Button.btn_TF_menu02Ov:pushed
+{
+	accessibility	: ;
+	align	: ;
+	background	: #1d2848ff URL('IMG::bg_menu01.png') repeat-x left top;
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0;
+	color	: #68fdffff;
+	cursor	: hand;
+	font	: 11 notokr-medium, dotum ;
+	gradation	: ;
+	image	: URL('IMG::line_menuBar.png');
+	imagealign	: left middle;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+} 
+
+/* 메뉴3 hover시 버튼 */
+Button.btn_TF_menu03Ov, Button.btn_TF_menu03Ov:mouseover, Button.btn_TF_menu03Ov:focused, Button.btn_TF_menu03Ov:selected, Button.btn_TF_menu03Ov:pushed
+{
+	accessibility	: ;
+	align	: ;
+	background	: #4969a4ff URL('IMG::bg_menu02.png') repeat-x left top;
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0;
+	color	: #68fdffff;
+	cursor	: hand;
+	font	: 11 notokr-medium, dotum ;
+	gradation	: ;
+	image	: ;
+	imagealign	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+} 
+
+/* 메뉴4 hover시 버튼 */
+Button.btn_TF_menu04Ov, Button.btn_TF_menu04Ov:mouseover, Button.btn_TF_menu04Ov:focused, Button.btn_TF_menu04Ov:selected, Button.btn_TF_menu04Ov:pushed
+{
+	accessibility	: ;
+	align	: ;
+	background	: #4969a4ff URL('IMG::bg_menu02.png') repeat-x left top;
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0;
+	color	: #68fdffff;
+	cursor	: hand;
+	font	: 11 notokr-medium, dotum ;
+	gradation	: ;
+	image	: URL('IMG::line_menuBar.png');
+	imagealign	: left middle;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+
+
+/* 메뉴5 hover시 버튼 */
+Button.btn_TF_menu05Ov, Button.btn_TF_menu05Ov:mouseover, Button.btn_TF_menu05Ov:focused, Button.btn_TF_menu05Ov:selected, Button.btn_TF_menu05Ov:pushed
+{
+	accessibility	: ;
+	align	: ;
+	background	: #4969a4ff URL('IMG::bg_menu03.png') repeat-x left top;
+	border	: 0 none #808080ff;
+	bordertype	: normal 0 0;
+	color	: #68fdffff;
+	cursor	: hand;
+	font	: 11 notokr-medium, dotum ;
+	gradation	: ;
+	image	: ;
+	imagealign	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+} 
+
+/* 외부사이트 즐겨찾기 팝업 */
+PopupDiv.pdiv_TF_popLink
+{
+	accessibility	: ;
+	align	: ;
+	background	: transparent URL('IMG::bg_popOutLink_top.png') no-repeat left top;
+	border	: 0 none #b1b1b1ff ;
+	bordertype	: normal 0 0;
+	color	: ;
+	cursor	: ;
+	font	: ;
+	gradation	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+	stepalign	: ;
+}
+
+/* 외부사이트 즐겨찾기 하단bg */
+Static.sta_TF_popLinkBg
+{
+	accessibility	: ;
+	align	: ;
+	background	:transparent URL('IMG::bg_popOutLink_bottom.png');
+	border	: 0 none #b1b1b1ff ;
+	bordertype	: normal 0 0;
+	color	: ;
+	cursor	: ;
+	font	: ;
+	gradation	: ;
+	letterspace	: ;
+	linespace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+
+/* 외부사이트 즐겨찾기 팝업 본문 */
+Div.div_TF_popLinkIn
+{
+	accessibility	: ;
+	align	: ;
+	background	: transparent URL('IMG::bg_popOutLink_mid.png') repeat-y left top;
+	border	: 0 none #b1b1b1ff ;
+	bordertype	: normal 0 0;
+	color	: ;
+	cursor	: ;
+	font	: ;
+	gradation	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+	stepalign	: ;
+}
+
+/* 외부사이트 로고 */
+ImageViewer.img_TF_outLink
+{
+	accessibility	: ;
+	align	: ;
+	background	: ;
+	border	: 1 solid #d6d6d6ff 
+	bordertype	: ;
+	color	: ;
+	cursor	: hand ;
+	font	: ;
+	gradation	: ;
+	letterspace	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+}
+
+/* 즐겨찾기 리스트 */
+Static.sta_TF_funLinkList
+{
+	accessibility	: ;
+	align	: left middle ;
+	background	: transparent URL('IMG::icon_funLink.gif') left middle;
+	border	:1 solid #d7e7fcff,0 none #d7e7fcff,1 solid #c6dbfcff,0 none #808080ff ;
+	bordertype	: ;
+	color	: #575757ff ;
+	cursor	: hand;
+	font	: 9 notokr-regular, dotum;
+	gradation	: ;
+	letterspace	: ;
+	linespace	: ;
+	opacity	: ;
+	padding	:0 0 0 15 ;
+	shadow	: ;
+}
+
+
+
+
+/* ---------------------------------------------- 
+    Bottom frame
+-------------------------------------------------- */
+/* Bottom 영역 */
+Form.frm_BF_bottom
+{
+	background		: #cececeff;
+}
+
+/* Bottom Tab */
+Tab.tab_BF_tab
+{
+	background		: transparent;
+	border			:0 none #a8a8a2, 0 none #ffffff, 0 none #ffffff, 0 none #ffffff;
+	bordertype		: normal 0 0;
+	buttonbackground	: #274dbcff;
+	buttonborder		: 0 none #cececeff,2 solid #cececeff,2 solid #cececeff,2 solid #cececeff;
+	buttonbordertype	: round 6 6  leftbottom rightbottom;
+	buttongradation		: ;
+	buttonpadding		: 10 10 10 10;
+	color			: #ffffffff;
+	cursor			: hand;
+	font			: 9 notokr-regular, dotum;
+	gradation		: ;
+	opacity			: ;
+	shadow			: ;
+	showextrabutton		: true;
+	stepalign		: ;
+	stepshowtype		: ;
+}
+Tab.tab_BF_tab:mouseover
+{
+	accessibility	: ;
+	background	: ;
+	border	: ;
+	bordertype	: ;
+	buttonbackground	: #274dbcff;
+	buttonborder	: 0 none #cececeff,2 solid #cececeff,2 solid #cececeff,2 solid #cececeff;
+	buttonbordertype	:round 6 6  leftbottom rightbottom;
+	buttongradation	: ;
+	buttonpadding	: 10 10 10 10;
+	color	: #ffffffff;
+	cursor	: ;
+	focusborder	: ;
+	font	: 9 notokr-regular, dotum;
+	gradation	: ;
+	opacity	: ;
+	padding	: ;
+	shadow	: ;
+	showextrabutton	: ;
+	stepalign	: ;
+	stepshowtype	: ;
+}
+Tab.tab_BF_tab:selected, .tab_BF_tab:focused
+{
+	color			: #000000;
+	buttonbackground	: #ffffff;
+	buttonborder 		: 0 none #cececeff,2 solid #cececeff,2 solid #cececeff,2 solid #cececeff;
+	buttonbordertype	: round 6 6  leftbottom rightbottom;
+	buttonpadding		: 10 10 10 10;
+	font			: 9 notokr-regular, dotum;
+
+}
+Tab.tab_BF_tab:disabled
+{
+	color			: #889caa ;
+	buttonborder		: 0 none #cececeff,2 solid #cececeff,2 solid #cececeff,2 solid #cececeff;
+	buttonbordertype	: round 6 6  leftbottom rightbottom;
+	buttonbackground	: #dfe4e8 ;
+	font			: 9 notokr-regular, dotum;
+
+}
+
+/*The Controlbutton was fixed at  W:14px H:14px */
+Tab.tab_BF_tab>#spindownbutton
+{
+	accessibility		: ;
+	align			: ;
+	background		: transparent;
+	border			: 0 none;
+	bordertype		: normal 0 0;
+	color			: ;
+	cursor			: ;
+	font			: ;
+	gradation		: ;
+	image			: URL('theme://images/img_tabspindown_N.png');
+	imagealign		: ;
+	opacity			: ;
+	padding			: ;
+	shadow			: ;
+}
+Tab.tab_BF_tab>#spindownbutton:mouseover,Tab.tab_BF_tab>#spindownbutton:pushed,Tab.tab_BF_tab>#spindownbutton:focused
+{
+	image			: URL('theme://images/img_tabspindown_O.png');	
+}
+Tab.tab_BF_tab>#spindownbutton:disabled
+{
+	image			: URL('theme://images/img_tabspindown_D.png');	
+}
+Tab.tab_BF_tab>#spinupbutton
+{
+	accessibility		: ;
+	align			: ;
+	background		: transparent;
+	border			: 0 none;
+	bordertype		: normal 0 0;
+	color			: ;
+	cursor			: ;
+	font			: ;
+	gradation		: ;
+	image			: URL('theme://images/img_tabspinup_N.png');
+	imagealign		: ;
+	opacity			: ;
+	padding			: ;
+	shadow			: ;
+}
+Tab.tab_BF_tab>#spinupbutton:mouseover,Tab.tab_BF_tab>#spinupbutton:pushed,Tab.tab_BF_tab>#spinupbutton:focused
+{
+	image			: URL('theme://images/img_tabspinup_O.png');	
+}
+Tab.tab_BF_tab>#spinupbutton:disabled
+{
+	image			: URL('theme://images/img_tabspinup_D.png');	
+}
+
+/*The Controlbutton was fixed at  W:24px H:12px */
+Tab.tab_BF_tab>#extrabutton,Tab.tab_BF_tab>#extrabutton:mouseover,Tab.tab_BF_tab>#extrabutton:focused, Tab.tab_BF_tab>#extrabutton:selected,
+Tab.tab_BF_tab>#extrabutton:pushed,Tab.tab_BF_tab>#extrabutton:disabled
+{
+	align			: center middle;
+	background		: transparent;
+	border			: 0 none;
+	bordertype		: normal;
+	image			: URL('IMG::tab_extra2.png');
+	imagealign		: center middle;
+}
+
+/* TabControl */
+TabControl.tabControl_BF_tabControl
+{
+	accessibility		: ;
+	background		: transparent;
+	border			: 1 solid #9f8f71, 1 solid #d5d5d5, 1 solid #d5d5d5, 1 solid #d5d5d5;
+	bordertype		: normal;
+	buttonbackground	: @gradation;
+	buttonborder		: 1 solid #a8a8a2;
+	buttonbordertype	: round 3 3  lefttop righttop;
+	buttongradation		: liner 0,0 #feffff 0,100 #e1e1df [60% #f2f2ef][70% #ecece9];
+	buttonpadding		: 5 10 4 10;
+	color			: #777777;
+	cursor			: ;
+	focusborder		: ;
+	font			: ;
+	gradation		: ;
+	opacity			: ;
+	padding			: ;
+	shadow			: true;
+	showextrabutton		: ;
+	stepalign		: ;
+	stepshowtype		: ;
+}
+TabControl.tabControl_BF_tabControl:mouseover
+{
+	color			: #0065b2;
+	buttonborder		: 1 solid #9f8f71;
+}
+TabControl.tabControl_BF_tabControl:selected, TabControl.tabControl_BF_tabControl:focused
+{
+	color			: #ffffff;
+	buttonbackground	: #9f8f71;
+	buttonborder 		: 1 solid #ffffff00;
+	buttonpadding		: 5 10 4 10;
+}
+TabControl.tabControl_BF_tabControl:disabled
+{
+	color			: #889caa ;
+	buttonborder		: 1 solid #b1c0cb ;
+	buttonbackground	: #dfe4e8 ;
+}
+
+/*The Controlbutton was fixed at  W:14px H:14px */
+TabControl.tabControl_BF_tabControl>#spinupbutton
+{
+	accessibility		: ;
+	align			: ;
+	background		: ;
+	border			: ;
+	bordertype		: ;
+	color			: ;
+	cursor			: ;
+	font			: ;
+	gradation		: ;
+	image			: URL('theme://images/tab_spinup.png');
+	imagealign		: center middle;
+	opacity			: ;
+	padding			: ;
+	shadow			: ;
+}
+TabControl.tabControl_BF_tabControl>#spinupbutton:disabled
+{
+	image			: URL('theme://images/tab_spinup_D.png');
+	imagealign		: center middle;
+}
+TabControl.tabControl_BF_tabControl>#spindownbutton
+{
+	accessibility		: ;
+	align			: ;
+	background		: ;
+	border			: ;
+	bordertype		: ;
+	color			: ;
+	cursor			: ;
+	font			: ;
+	gradation		: ;
+	image			: URL('theme://images/tab_spindn.png');
+	imagealign		: center middle;
+	opacity			: ;
+	padding			: ;
+	shadow			: ;
+}
+TabControl.tabControl_BF_tabControl>#spindownbutton:disabled
+{
+	image			: URL('theme://images/tab_spindn_D.png');
+	imagealign		: center middle;
+}
+
+/*The Controlbutton was fixed at  W:24px H:12px */
+TabControl.tabControl_BF_tabControl>#extrabutton,TabControl.tabControl_BF_tabControl>#extrabutton:mouseover,TabControl.tabControl_BF_tabControl>#extrabutton:focused, TabControl.tabControl_BF_tabControl>#extrabutton:selected,
+TabControl.tabControl_BF_tabControl>#extrabutton:pushed,TabControl.tabControl_BF_tabControl>#extrabutton:disabled
+{
+	align			: center middle;
+	background		: transparent;
+	border			: 0 none;
+	bordertype		: normal;
+	image			: URL('IMG::tab_extra2.png');
+	imagealign		: center middle;
+}
+
+/* Tabpage */
+Tabpage.tabpage_BF_tabpage
+{
+	accessibility		: ;
+	background		: #ffffffff;
+	cursor			: ;
+	cursor			: ;
+	gradation		: ;
+	opacity			: ;
+	padding			: ;
+	stepalign		: ;
+	stepshowtype		: ;
+}
+
+
+/* copyright */
+Static.sta_BF_copyright
+{
+	align			: right middle;
+	color			:#6e6e6eff;
+	font			:10 notokr-regular, dotum;
+}
+
+/* BottomFrame */
+Static.sta_BF_access
+{
+	align 			: center middle;
+	background		: #555151ff;
+	border			: 1 solid #4b4747ff,1 solid #4b4747ff,0 none,1 solid #4b4747ff;
+	bordertype		: normal 0 0;
+	font 			: bold 8 Tahoma;
+	color			: #939090ff;
+}
+Static.sta_BF_bg
+{
+	background		: #f0f0f0ff;
+	border			: 1 solid #bababaff,0 none,0 none,0 none;
+	bordertype		: normal 0 0;
+}
+Static.sta_BF_time
+{
+	align 			: right middle;	
+	background		: transparent;
+	border			: 0 none;
+	bordertype		: normal 0 0;
+	font 			: 8 dotum;
+	color			: #6b6b6bff;	
+}
+Button.btn_BF_delay
+{
+	background		: @gradation;
+	border			: 1 solid #8a8a8aff;
+	bordertype		: round 2 2;
+	color			: #4b4b4bff;
+	font			: 8 dotum;
+	gradation		: linear 0,0 #ffffffff 0,100 #f4f4f4ff;
+}
+Button.btn_BF_delay:mouseover,Button.btn_BF_delay:focused,Button.btn_BF_delay:pushed
+{
+	background		: @gradation;
+	border			: 1 solid #8a8a8aff;
+	bordertype		: round 2 2;
+	color			: #4b4b4bff;
+	font			: underline 8 dotum;
+	gradation		: linear 0,0 #ffffffff 0,100 #f4f4f4ff;
+}
+Button.btn_BF_delay:disabled
+{
+	opacity			: 30;
+}
+/* ---------------------------------------------- 
+    Body frame
+-------------------------------------------------- */
+
+/* ImageViewer */
+
+ImageViewer.imgV_TF_logo
+{
+	border			: 1 dotted #cccccc00 ;
+	background		: ;
+}
+
+ImageViewer.imgV_TF_userTxt
+{
+	color			: #dbdbdb;
+	font			: 10 notokr-medium, dotum ;
+	align			: right middle;
+}
+
+ImageViewer.imgV_LF_title
+{
+	background		: ;
+	color			: #ffffff;
+	font			: 10 notokr-medium, dotum ;
+	align			: left middle;
+	padding			: 0 0 0 24;
+}
+
+ImageViewer.imgV_LOGIN_bg
+{
+	background		: #000000;
+}
+
+ImageViewer.alert_error
+{
+	background		: #ffffffff URL('IMG::img_sta_alertError.png') stretch;
+	color			: #ffffff;
+	font			: 10 notokr-medium, dotum ;
+	align			: left middle;
+	padding			: 0 0 0 0;
+}
+
+ImageViewer.alert_information
+{
+	background		: #ffffffff URL('IMG::img_sta_alertConfirm.png') stretch;
+	color			: #ffffff;
+	font			: 10 notokr-medium, dotum ;
+	align			: left middle;
+	padding			: 0 0 0 0;
+}
+ImageViewer.alert_question
+{
+	background		: #ffffffff URL('IMG::img_sta_alertQuestion.png') stretch;
+	color			: #ffffff;
+	font			: 10 notokr-medium, dotum ;
+	align			: left middle;
+	padding			: 0 0 0 0;
+}
+ImageViewer.alert_warning
+{
+	background		: #ffffffff URL('IMG::img_sta_alertWaring.png') stretch;
+	color			: #ffffff;
+	font			: 10 notokr-medium, dotum ;
+	align			: left middle;
+	padding			: 0 0 0 0;
+}
+
+
+/* Static */
+
+Static.sta_WF_Title1
+{
+	background :  ;
+	align			: left middle;
+	color			: #252525;
+	padding			: 0 0 0 0;
+	font : 23 notokr-medium, dotum ;
+	border : 0 solid #808080  ;
+	
+}Static.sta_WF_Title2
+{
+	background : white ;
+	align			: left middle;
+	color			: #3357aa;
+	padding			: 0 0 0 0;
+	font : 21 notokr-medium, dotum ;
+	border : 0 solid #808080  ;
+	
+
+}Static.sta_WF_Title3
+{
+	background : URL('IMG::icon_3depth.png') left middle ;
+	align			: left middle;
+	color			: #3e4149;
+	padding			: 0 0 0 30;
+	font : 16 notokr-medium, dotum ;
+	border : 0 solid #808080  ;
+}
+Static.sta_WF_TitleEtc
+{
+	background : #ffffff URL('IMG::icon_etctitle.png') left middle ;
+	align			: left middle;
+	color			: #3e4149;
+	padding			: 0 0 0 10;
+	font : 13 notokr-medium, dotum ;
+	border : 0 solid #808080  ;
+}Static.sta_POP_tit
+{
+	background : #293451ff URL('IMG::icon_3depth.png') left middle ;
+	align			: left middle;
+	color			: white;
+	padding			: 0 0 0 30;
+	font : 16 notokr-medium, dotum;
+}
+Static.sta_POP_tit2
+{
+	background : #293451ff left middle ;
+	align			: left middle;
+	color			: white;
+	padding			: 0 0 0 15;
+	font : 16 notokr-medium, dotum;
+}
+
+
+Static.sta_WF_Title_Intab
+{
+	background : #ffffff ;
+	align			: left middle;
+	color			: #2c4a91ff;
+	padding			: 0 0 0 0;
+	font : 13 notokr-medium, dotum ;
+	border : 0 solid #808080  ;
+}
+
+Static.sta_WF_GuideLine
+{
+	font			: 8 Dotum;
+	color			: #ffffff;
+	align			: center middle;
+	background		: #fe006665;
+	visible : false;
+}
+
+
+
+Static.sta_POP_Alertbg
+{
+	background : transparent URL('IMG::sta_pop_alertbg.png') repeat-x left top ;
+	border 			: 0 solid #293451ff, 2 solid #293451ff, 2 solid #293451ff, 2 solid #293451ff ;
+	padding: 0 0 0 0 ;
+}
+
+Static.sta_WF_Label
+{
+	background		: transparent;
+	color			: #ffffff;
+	font			: 12 notokr-medium, dotum ;
+	border 			: 0 solid #e9e9e9ff ;
+}
+
+Static.sta_WF_SearchBarSub
+{
+	background : transparent URL('IMG::SearchBarSub_bg.png') left top;
+	color : #ffffffff;
+}
+
+
+
+Static.sta_WF_Caption
+{
+	background		: #f6f6f6ff;
+	border 			: 0 solid #e9e9e9ff, 0 solid #e9e9e9ff, 1 solid #e9e9e9ff, 0 solid #e9e9e9ff;
+	font			: 10 notokr-medium, dotum;
+	padding : 0 0 0 15 ;
+	
+}Static.sta_WF_Basic
+{
+	background		: #ffffffff;
+	border 			: 0 solid #e9e9e9ff, 0 solid #e9e9e9ff, 1 solid #e9e9e9ff, 0 solid #e9e9e9ff;
+}
+
+
+Static.sta_WF_EtcbtnArea
+{
+	background		: #ffffffff;
+	border 			: 1 solid #d9e3ebff ;
+	bordertype		: round 10 10 lefttop righttop;
+}
+
+/* Edit */
+Edit.edit_WF_Essential
+{	
+	background 		: #fff8d0ff URL('IMG::input_essential_bg.png') left top;	
+	border : 1 solid #e9e9e9ff ;
+}
+
+/* MasiEdit */
+MaskEdit.medit_WF_Essential
+{	
+	background 		: #fff8d0ff URL('IMG::input_essential_bg.png') left top;
+}
+
+
+/* Combo */
+Combo.cbo_WF_Essential>#comboedit, Combo.cbo_WF_Essential>#comboedit:mouseover,Combo.cbo_WF_Essential>#comboedit:focused
+{	
+	background 		: #fff8d0ff URL('IMG::input_essential_bg.png') left top;
+}
+Combo.cbo_WF_Essential>#dropbutton, Combo.cbo_WF_Essential>#dropbutton:mouseover,Combo.cbo_WF_Essential>#dropbutton:focused
+{	
+	background		: #fff8d0ff ;	
+	border 			: 0 none #808080 ;	
+	bordertype 		: normal 0 0  ;	
+	image 			: URL('theme://images/img_cmbdropbtn_N.png') ;
+	
+}
+Combo.cbo_WF_Essential>#dropbutton:pushed
+{	
+	image 			: URL('theme://images/img_cmbdropbtn_P.png') ;
+}
+Combo.cbo_WF_Essential>#dropbutton:disabled
+{	
+	background		:#edededff;
+	image 			: URL('theme://images/img_cmbdropbtn_D.png') ;
+}
+
+/* Spin */
+Spin.spin_WF_Essential>#spinedit, Spin.spin_WF_Essential>#spinedit:focused, Spin.spin_WF_Essential>#spinedit:mouseover
+{	
+	background 		: #fff8d0ff URL('IMG::input_essential_bg.png') left top;
+}
+
+/* CheckBox */
+CheckBox.cbox_SBfont
+{
+	color:#ffffffff;
+}
+
+/* Radio */
+Radio.rio_SBfont
+{
+	color:#ffffffff;
+}
+
+/* Button */
+Button.btn_WF_Search01
+{	
+	background 		: transparent URL('IMG::btn_search01.png') stretch 4,4 ;
+	color			: #ffffffff ;
+	font : 13 notokr-medium, dotum;
+	padding : 0 0 5 42 ;
+}
+Button.btn_WF_Search01:mouseover, Button.btn_WF_Search01:focused
+{
+	background 		: transparent URL('IMG::btn_search01.png') stretch 4,4 ;
+	color			: #ffffffff ;
+	font : 13 notokr-medium, dotum ;
+	padding : 0 0 5 42 ;		
+}
+Button.btn_WF_Search01:pushed
+{
+	background 		: transparent URL('IMG::btn_search01.png') stretch 4,4 ;
+	color			: #ffffffff ;
+	font : 13 notokr-medium, dotum;
+	padding : 0 0 5 42 ;			
+}
+Button.btn_WF_Search02
+{	
+	background 		: transparent URL('IMG::btn_search02.png') stretch 4,4 ;
+	color			: #ffffffff ;
+	font : 13 notokr-medium, dotum;
+	padding : 0 0 5 42 ;
+}
+Button.btn_WF_Search02:mouseover, Button.btn_WF_Search02:focused
+{
+	background 		: transparent URL('IMG::btn_search02.png') stretch 4,4 ;
+	color			: #ffffffff ;
+	font : 13 notokr-medium, dotum ;
+	padding : 0 0 5 42 ;		
+}
+Button.btn_WF_Search02:pushed
+{
+	background 		: transparent URL('IMG::btn_search02.png') stretch 4,4 ;
+	color			: #ffffffff ;
+	font : 13 notokr-medium, dotum  ;
+	padding : 0 0 5 42 ;		
+}
+Button.btn_WF_Search03
+{	
+	background 		: transparent URL('IMG::btn_search03.png') stretch 4,4 ;
+	color			: #ffffffff ;
+	font : 13 notokr-medium, dotum ;
+	padding : 0 0 5 42 ;
+}
+Button.btn_WF_Search03:mouseover, Button.btn_WF_Search03:focused
+{
+	background 		: transparent URL('IMG::btn_search03.png') stretch 4,4 ;
+	color			: #ffffffff ;
+	font : 13 notokr-medium, dotum ;
+	padding : 0 0 5 42 ;		
+}
+Button.btn_WF_Search03:pushed
+{
+	background 		: transparent URL('IMG::btn_search03.png') stretch 4,4 ;
+	color			: #ffffffff ;
+	font : 13 notokr-medium, dotum ;
+	padding : 0 0 5 42 ;		
+}
+Button.btn_POP_AlertClose, Button.btn_POP_AlertClose:mouseover, Button.btn_POP_AlertClose:focused, Button.btn_POP_AlertClose:pushed
+{
+	background 		: transparent URL('IMG::btn_POP_Close.png');
+	color:#ffffffff;
+	font : 15 notokr-regular, dotum ;
+}
+
+Button.btn_WF_calDrop
+{	
+	background 		: transparent ;
+	border : 0 none #e9e9e9ff ;	
+	bordertype 		: normal 0 0  ;	
+	image 			: URL('IMG::img_caldropbtn_N.png') ;
+	padding 		: 0 0 0 0;
+}
+
+Button.btn_WF_Favorite
+{	
+	background 		: transparent URL('IMG::btn_bigfavorite_gray.png') stretch 4,4 ;
+	padding : 0 0 0 0 ;
+}
+Button.btn_WF_Favorite:mouseover, Button.btn_WF_Favorite:focused, Button.btn_WF_Favorite:pushed
+{
+	background 		: transparent URL('IMG::btn_bigfavorite_gray_on.png') stretch 4,4 ;
+	padding : 0 0 0 0 ;
+}
+
+Button.btn_WF_AllPrint
+{	
+	background 		: transparent URL('IMG::btn_print_page.png') stretch 4,4 ;
+	padding : 0 0 0 0 ;
+}
+Button.btn_WF_AllPrint:mouseover, Button.btn_WF_AllPrint:focused, Button.btn_WF_AllPrint:pushed
+{
+	background 		: transparent URL('IMG::btn_print_page_on.png') stretch 4,4 ;
+	padding : 0 0 0 0 ;		
+}
+
+Button.btn_WF_Bigist
+{	
+	background 		: transparent URL('IMG::btn_biglist_gray.png') stretch 4,4 ;
+	padding : 0 0 0 0 ;
+}
+Button.btn_WF_Bigist:mouseover, Button.btn_WF_Bigist:focused, Button.btn_WF_Bigist:pushed
+{
+	background 		: transparent URL('IMG::btn_biglist_gray_on.png') stretch 4,4 ;
+	padding : 0 0 0 0 ;		
+}
+
+Button.btn_WF_DetailExcelDown, Button.btn_WF_DetailExcelDown:mouseover, Button.btn_WF_DetailExcelDown:focused, Button.btn_WF_DetailExcelDown:pushed
+{
+	image 			: URL('IMG::btn_cntexcel_download_bg.png');
+	padding 		: 0 0 0 0;
+}
+Button.btn_WF_DetailExcelUp, Button.btn_WF_DetailExcelUp:mouseover, Button.btn_WF_DetailExcelUp:focused, Button.btn_WF_DetailExcelUp:pushed
+{
+	image 			: URL('IMG::btn_cntexcel_upload_bg.png');
+	padding 		: 0 0 0 0;
+}
+
+Button.btn_WF_CntPrint, Button.btn_WF_CntPrint:mouseover, Button.btn_WF_CntPrint:focused, Button.btn_WF_CntPrint:pushed
+{
+	image 			: URL('IMG::btn_cnt_print_bg.png');
+	padding 		: 0 0 0 0;
+}
+
+Button.btn_WF_CntList, Button.btn_WF_CntList:mouseover, Button.btn_WF_CntList:focused, Button.btn_WF_CntList:pushed
+{
+	image 			: URL('IMG::btn_cntlist_bg.png');
+	padding 		: 0 0 0 0;
+}
+
+
+Button.btn_WF_DataZoom
+{
+	background 		: transparent ;
+	image 			: URL('IMG::btn_detail_gray.png');
+	padding 		: 0 0 0 0;
+	border			: 0;
+}
+
+Button.btn_WF_DataZoom:mouseover, Button.btn_WF_DataZoom:focused, Button.btn_WF_DataZoom:pushed
+{
+	background 		: transparent ;
+	image 			: URL('IMG::btn_detail_blue.png');
+	padding 		: 0 0 0 0;
+	border			: 0;
+}
+
+Button.btn_WF_Comment, Button.btn_WF_Comment:mouseover, Button.btn_WF_Comment:focused, Button.btn_WF_Comment:pushed
+{
+	background 		: #585858ff ;
+	border 			: 1 solid #787878ff ;
+	padding 		: 0 0 0 0;
+	color			: #ffffffff;
+	bordertype 		: round 3 3 ;
+}
+
+Button.btn_WF_CommentDel, Button.btn_WF_CommentDel:mouseover, Button.btn_WF_CommentDel:focused, Button.btn_WF_CommentDel:pushed
+{
+	background 		: transparent ;
+	image 			: URL('IMG::btn_comment_delet.png');
+	padding 		: 0 0 0 0;
+}
+
+Button.btn_WF_Etc, Button.btn_WF_Etc:mouseover, Button.btn_WF_Etc:focused, Button.btn_WF_Etc:pushed
+{
+	background 		: #2291f0ff ;
+	bordertype 		: round 3 3 ;
+	color			: #ffffffff;
+
+}
+
+/* Div */
+Div.div_WF_SBLex01, Div.div_WF_SBLex02, Div.div_WF_SBLex03
+{
+	background 		: #011b58ff ;
+	color : #ffffffff;
+	bordertype : round 3 3 ;
+	border : 0 none #808080ff ;
+	
+}Div.div_WF_SBInv01, Div.div_WF_SBInv02, Div.div_WF_SBInv03
+{
+	background 		: #2c4a91ff ;
+	color : #ffffffff;
+	bordertype : round 3 3 ;
+	border : 0 none #808080ff ;
+}
+Div.div_WF_SBMan01, Div.div_WF_SBMan02, Div.div_WF_SBMan03 
+{
+	background 		: #01bcdeff ;
+	color : #ffffffff;
+	bordertype : round 3 3 ;
+	border : 0 none #808080ff ;
+}
+
+/* TextArea */
+TextArea.txt_WF_MSG, TextArea.txt_WF_MSG:mouseover, TextArea.txt_WF_MSG:focused, TextArea.txt_WF_MSG:disabled
+{
+	accessibility		: ;
+	align			: left top;
+	background		: #ffffffff;
+	border			: 0 solid #e9e9e9ff;
+	bordertype		: normal 0 0;
+	color			: #343434;
+	cursor			: ;
+	font			: 10 notokr-regular, dotum;
+	gradation		: ;
+	linespace 		: 3 ;	
+	opacity			: ;
+	padding			: 3 3 3 3;
+	selectbackground	: #ffffffff;
+	selectcolor		: #ffffffff;	
+	shadow			: ;
+}
+
+/* Grid */
+Grid.grid_WF_Upstyle, Grid.grid_WF_Downstyle
+{
+	background		: transparent;
+	border			: 0 solid #4b4747ff,0 solid #444040ff,0 none,0 solid #444040ff;
+	bordertype		: normal 0 0;
+	color			: #ffffffff;
+	font			: 10 notokr-medium, dotum;
+	treeclosebuttonimage	:  ;
+	treecollapseimage	: ;
+	treeexpandimage		: ;
+	treeitemimage		: ;
+	treeopenbuttonimage	: ;
+}
+
+
+Grid.grid_WF_Rclick
+{
+	border			: 1 solid #b1b1b1ff,1 solid #b1b1b1ff,1 solid #b1b1b1ff,1 solid #b1b1b1ff;
+	padding			: 0 0 0 0;
+}
+
+
+/* ---------------------------
+    파일업로드 다운로드 
+ ------------------------------*/
+
+/* 파일업다운 그리드  */
+Grid.grid_WF_upDownLoadGrid{
+	accessibility		: ;
+	align			: left middle;
+	background		: #ffffffff;
+	border			: 1 solid #bdc5d2ff;
+	bordertype		: ;
+	color			: #333333ff;
+	cursor			: ;
+	font			: 9 notokr-regular, dotum;
+	gradation		: ;
+	line			: ;
+	opacity			: ;
+	padding			: 0 5 0 5;
+	selectline		: ;
+	selectlinetype		: ;
+	shadow			: ;
+	treeclosebuttonimage	: ;
+	treecollapseimage	: ;
+	treeexpandimage		: ;
+	treeitemimage		: ;
+	treeitemmargin		: ;
+	treelinetype		: ;
+	treeopenbuttonimage	: ;
+}
+Grid.grid_WF_upDownLoadGrid>#head
+{
+	accessibility		: ;
+	background		: #dfe7f2ff;
+	border			: 0 none, 0 none, 1 solid #bdc5d2ff, 0 none;
+	bordertype		: ;
+	cellalign		: ;
+	cellbackground		: #dfe7f2ff;
+	cellbackground2		: #dfe7f2ff;
+	cellcolor		: #6e6e63ff;
+	cellcolor2		: #6e6e63ff;
+	cellfont		: ;
+	cellgradation		: ;
+	cellgradation2		: ;
+	cellline		: 1 solid #bdc5d2ff;
+	celllinespace		: ;
+	celllinetype		: ;
+	cellpadding		: ;
+	gradation		: linear 0,0 #f9f9f8 0,100 #dadad3;
+	selectbackground	: ;
+	selectborder		: ;
+	selectcolor		: #000000ff;
+	selectfont		: ;
+	selectgradation		: ;
+	selectline		: ;
+	selectlinetype		: ;
+}
+Grid.grid_WF_upDownLoadGrid>#body
+{
+	accessibility		: ;
+	background		: #ffffffff;
+	border			: 0 none;
+	bordertype		: ;
+	cellalign		: left middle;
+	cellbackground		: #ffffffff;
+	cellbackground2		: #ffffffff;
+	cellcolor		: #6e6e63;
+	cellcolor2		: #6e6e63;
+	cellfont		: ;
+	cellgradation		: ;
+	cellgradation2		: ;
+	cellline		: 0 none #f4f4f4;
+	celllinespace		: ;
+	celllinetype		: exhor;
+	cellpadding		: ;
+	gradation		: ;
+	selectbackground	: #ffffffff;
+	selectborder		: ;
+	selectcolor		: #000000ff;
+	selectfont		: ;
+	selectgradation		: ;
+	selectline		: 0 none;
+	selectlinetype		: ;
+}
+
+Grid.grid_WF_upDownLoadGrid>#summ
+{
+	accessibility		: ;
+	background		: #f2f0f1ff;
+	border			: 1 solid #bdc5d2ff, 0 none, 0 none,  0 none;
+	bordertype		: ;
+	cellalign		: ;
+	cellbackground		: #f2f0f1ff;
+	cellbackground2		: #f2f0f1ff;
+	cellcolor		: #6e6e63ff;
+	cellcolor2		: #6e6e63ff;
+	cellfont		: ;
+	cellgradation		: ;
+	cellgradation2		: ;
+	cellline		: 0 none #f4f4f4;
+	celllinespace		: ;
+	celllinetype		: ;
+	cellpadding		: ;
+	gradation		: linear 0,0 #f9f9f8 0,100 #dadad3;
+	selectbackground	: ;
+	selectborder		: ;
+	selectcolor		: #000000ff;
+	selectfont		: ;
+	selectgradation		: ;
+	selectline		: ;
+	selectlinetype		: ;
+}
+
+
+/* 파일업다운 버튼영역  */
+Div.div_WF_btnAreaFile
+{
+	accessibility		: ;
+	align			: ;
+	background		: #dfe7f2ff;
+	border			: 0 none, 1 solid #bdc5d2ff, 1 solid #bdc5d2ff,  1 solid #bdc5d2ff;
+	bordertype		: normal 0 0;
+	color			: ;
+	cursor			: ;
+	font			: ;
+	gradation		: ;
+	opacity			: ;
+	padding			: ;
+	shadow			: ;
+}
+
+/* 파일다운 추가 삭제  버튼 */
+Button.btn_WF_downLoad, Button.btn_WF_downLoad:mouseover, Button.btn_WF_downLoad:focused, Button.btn_WF_downLoad:selected, Button.btn_WF_downLoad:pushed,
+Button.btn_WF_fileAdd, Button.btn_WF_fileAdd:mouseover, Button.btn_WF_fileAdd:focused, Button.btn_WF_fileAdd:selected, Button.btn_WF_fileAdd:pushed,
+Button.btn_WF_fileDel, Button.btn_WF_fileDel:mouseover, Button.btn_WF_fileDel:focused, Button.btn_WF_fileDel:selected, Button.btn_WF_fileDel:pushed
+{
+	accessibility		: ;
+	align			: center middle ;
+	background 		: #dfe7f2ff ;
+	border			: 1 solid #bcc9d9ff ;
+	bordertype		: round 3 3  ;
+	color			: #333333ff ;
+	cursor			: hand ;
+	font 			: 10 notokr-regular, dotum ;
+	gradation		: ;
+	image			: ;
+	imagealign		: ;
+	opacity			: ;
+	padding			: ;
+	shadow			: ;
+}

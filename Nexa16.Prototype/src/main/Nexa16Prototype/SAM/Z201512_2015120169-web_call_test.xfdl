@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="web_call_test" classname="web_call_test" left="0" top="0" width="519" height="394" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Button id="Button00" taborder="0" text="넘기기" left="43.35%" top="16" right="32.18%" height="32" onclick="Button00_onclick"/>
+        <WebBrowser id="WebBrowser00" left="3.85%" top="73" right="5.97%" height="297" taborder="1" url="http://172.10.13.75:9090/Say_main/projects/test.html" onusernotify="WebBrowser00_onusernotify"/>
+        <Edit id="Edit00" taborder="2" left="6.17%" top="18" right="61.46%" height="30" value="Nexacro"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+this.Button00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.WebBrowser00.callMethod("setContent", this.Edit00.value);
+}
+
+this.WebBrowser00_onusernotify = function(obj:WebBrowser, e:nexacro.WebTitleChangeEventInfo)
+{
+	trace("nexacro : " + e.userdata);
+	
+}
+]]></Script>
+  </Form>
+</FDL>

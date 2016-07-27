@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="UCCP_GRID_IMPORT" ontimer="UCCP4004PU_OnTimer" left="0" top="0" width="743" height="290" scrollbars="none" style="color:#999999ff;" onload="form_onload">
+    <Layouts>
+      <Layout>
+        <Static id="Static01" taborder="39" cssclass="sta_WF_GridBox" left="15" top="15" right="15" height="32"/>
+        <Static id="Static94" taborder="16" text="W&#13;&#10;15" visible="false" left="0" top="0" width="15" height="145" style="background:green;align:center;opacity:30;"/>
+        <Static id="Static92" taborder="17" text="H15" visible="false" left="0" top="0" width="738" height="15" style="background:green;align:center middle;opacity:30;"/>
+        <Static id="Static02" taborder="18" text="W&#13;&#10;15" visible="false" left="728" top="0" width="15" height="329" style="background:green;align:center;opacity:30;"/>
+        <Static id="Static03" taborder="19" text="H15" visible="false" left="0" top="275" width="738" height="15" style="background:green;align:center middle;opacity:30;"/>
+        <Button id="btn_close" taborder="33" text="취소" cssclass="btn_WF_Del" width="69" height="24" right="15" bottom="15" onclick="btn_close_onclick"/>
+        <Grid id="grd_list" taborder="34" useinputpanel="false" left="15" top="47" right="15" bottom="49" autofittype="col" cellsizingtype="col" u_menu="none" binddataset="ds_import" autoenter="select">
+          <Formats>
+            <Format id="default"/>
+          </Formats>
+        </Grid>
+        <Button id="btn_excelUp" taborder="35" text="엑셀업로드" onclick="btn_excelUp_onclick" cssclass="btn_WF_ExcelUp" width="93" height="21" top="21" right="25"/>
+        <Button id="btn_add" taborder="36" text="신규" onclick="fn_add" cssclass="btn_WF_Add" right="157" width="69" height="24" bottom="15"/>
+        <Button id="btn_remove" taborder="37" text="삭제" onclick="fn_remove" cssclass="btn_WF_Del" right="86" width="69" height="24" bottom="15"/>
+        <Static id="stc_cnt" taborder="38" text="총 0 건" top="21" height="21" left="25" width="120"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_import" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="title" type="STRING" size="256"/>
+          <Column id="sorttype" type="STRING" size="256"/>
+          <Column id="columid" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_combo" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false"/>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[/**
+* NBSS (New Business Support System) version 1.0
+*
+*  Copyright ⓒ 2015 kt corp. All rights reserved.
+*
+*  This is a proprietary software of kt corp, and you may not use this file except in
+*  compliance with license agreement with kt corp. Any redistribution or use of this
+*  software, with or without modification shall be strictly prohibited without prior written
+*  approval of kt corp, and the copyright notice above does not evidence any actual or
+*  intended publication of such software.
+*
+*  @MenuPath       /NBSS/UCCP/UCCP_GRID_IMPORT.xfdl
+*  @FileName       UCCP_GRID_IMPORT.xfdl
+*  @Creator        최현수
+*  @CreateDate     2015.07.27
+*  @LastModifier   
+*  @LastModifyDate 
+*  @Version        1.0
+*  @Outline        그리드 엑셀업로드 공통팝업
+*  @Desction 
+* 
+************** 소스 수정 이력 *************************************************
+*    date          Modifier            Description
+*******************************************************************************
+*  2015.07.27      최현수              클래스 최초 생성
+*******************************************************************************
+*/
+ 
+ 
+/*----------------------------------------------------------------------------------------------
+ * 공통 라이브러리 INCLUDE 영역
+----------------------------------------------------------------------------------------------*/
+//include "LIB::LIB_COMMON.xjs";      // 공통 js
+
+
+/*----------------------------------------------------------------------------------------------
+ * FORM 변수 선언 영역
+----------------------------------------------------------------------------------------------*/
+this.P_GRID;              // 대상 그리드 Object
+this.P_CALLBACK;          // 콜백함수 
+this.P_EXCELFILE;         // 엑셀파일
+this.P_GRIDFORM;          // 그리드가 속한 폼 Object
+this.P_SHEETNUM;          // SHEET INDEX( 1부터 시작)
+this.F_COMBODATA = {};    // 그리드에서 사용하는 콤보에 대한 Dataset의 목록을 JSON OBJECT형태로 만든다.
+this.F_COLUMMAP  = {};    // 컬럼매핑정보
+
+/*----------------------------------------------------------------------------------------------
+ * FORM EVENT 영역
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description    화면 로드시 이벤트
+ */
+this.form_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+    // Form Load 시 공통 기능 처리
+    this.gfn_initForm(obj);
+    
+    var objParams = this.gfn_getVariable("GRID_IMPORT_PARAMS");    
+    this.P_GRID        = objParams.P_GRID;
+    this.P_CALLBACK    = objParams.P_CALLBACK;
+    this.P_GRIDFORM    = objParams.P_GRIDFORM;
+    this.P_EXCELFILE   = objParams.P_EXCELFILE;
+    this.P_SHEETNUM    = objParams.P_SHEETNUM;
+
+    // 포맷을 원본그리드와 동일하게 처리한다. 
+    this.grd_list.set_formats(this.P_GRID.getCurFormatString(false));
+    this.grd_list.set_formatid(this.P_GRID.formatid);
+    this.grd_list.set_cssclass(this.P_GRID.cssclass);    
+    this.grd_list.set_nodatatext("");
+    
+    // 바디의 컬럼을 처리한다. (모두 TEXT로 처리한다)
+    for(var i=0;i<this.P_GRID.getCellCount("Body");i++)
+    {
+        var gridtext    = this.P_GRID.getCellProperty("Body", i, "text");
+        var displaytype = this.P_GRID.getCellProperty("Body", i, "displaytype");
+        var columinfo   = {};
+        
+        // 바인드컬럼이고.. CUD 상태표시처리컬럼이 아닌경우에만 컬럼을 편집으로 설정한다.
+        // TRM-13322 : 2015-09-21 by khh 수정 ==> gridtext -> gridtext.toString()
+        if( gridtext.toString().indexOf("theme://images/sta_n.png") == -1 && gridtext.toString().indexOf("bind:") != -1 )
+        {
+            columinfo.displaytype = displaytype;
+            columinfo.columid     = gridtext.toString().substring(5);		// TRM-13308 : 2015-09-21 by khh 수정 ==> gridtext -> gridtext.toString()
+            columinfo.excelcolum  = "Column"+i;
+        
+            if( displaytype == "combo" )
+            {
+                var combodataset = this.P_GRIDFORM.lookup(this.P_GRID.getCellProperty("Body", i, "combodataset"));
+                var combocodecol = this.P_GRID.getCellProperty("Body", i, "combocodecol");
+                var combodatacol = this.P_GRID.getCellProperty("Body", i, "combodatacol");
+                
+                var combodata = {};
+                this.ds_combo.copyData(combodataset, false);
+                for(var m=0;m<this.ds_combo.getRowCount();m++)
+                {
+                    combodata[this.ds_combo.getColumn(m, combodatacol)] = this.ds_combo.getColumn(m, combocodecol);
+                }                
+                this.F_COMBODATA[gridtext.substring(5)] = combodata;
+                
+                this.grd_list.setCellProperty("Body", i, "displaytype", "text");
+                this.grd_list.setCellProperty("Body", i, "edittype", "normal");
+            }
+            else if( displaytype == "date" )
+            {
+                this.grd_list.setCellProperty("Body", i, "edittype", "date");
+            }
+            else
+            {
+                this.grd_list.setCellProperty("Body", i, "edittype", "normal");
+            }
+            
+            // 컬럼바인딩처리 
+            this.grd_list.setCellProperty("Body", i, "text", "bind:Column"+i);
+            
+            // 리턴처리할때의 엑셀컬럼대비 실제컬럼의 정보 매핑
+            this.F_COLUMMAP["Column"+i] = columinfo;            
+        }        
+    }
+    
+    // 엑셀임포트 처리 
+	var excelimport = new ImportObjectEx();
+	excelimport.objExtURL = this.gfn_getDLLPath("NexaXlsAutomation.dll");
+ 	excelimport.load_Module(); 
+ 	excelimport.excelImportByIndex(this.P_EXCELFILE, this.P_SHEETNUM, this.ds_import, false);
+	excelimport.unload_Module();
+	
+    this.gfn_setGridCount(this.grd_list, this.stc_cnt);
+}
+
+/**
+ * @description 행추가
+ */
+this.fn_add = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+    this.ds_import.addRow();
+    this.gfn_setGridCount(this.grd_list, this.stc_cnt);
+}
+
+/**
+ * @description 행삭제
+ */
+this.fn_remove = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+    this.gfn_remove(this.grd_list);
+    this.gfn_setGridCount(this.grd_list, this.stc_cnt);
+}
+
+
+/*----------------------------------------------------------------------------------------------
+ * 사용자 FUNCTION 영역
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * COMPONENT EVENT 영역
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description 창닫기
+ */
+this.btn_close_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+    this.close();
+}
+
+/**
+ * @description 엑셀업로드 적용
+ */
+this.btn_excelUp_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+    var arrRtnval = new Array();    
+    var griddataset = this.P_GRID.getBindDataset();    
+    
+    // 콜백함수가 없으면 해당 공통에서 다 처리를 해준다. 
+    if( this.gfn_isNull(this.P_CALLBACK) )
+    {
+        griddataset.set_enableevent(false);
+        
+        for(var i=0;i<this.ds_import.getRowCount();i++)
+        {
+            var nrow = griddataset.addRow();        
+            for(columid in this.F_COLUMMAP)
+            {
+                var columinfo   = this.F_COLUMMAP[columid];   
+                var targetcolum = columinfo.columid;
+                var excelvalue = this.ds_import.getColumn(i, columinfo.excelcolum);
+                
+                if( this.gfn_isNull(excelvalue) ) continue;
+                
+                if( columinfo.displaytype == "combo" )
+                {
+                    griddataset.setColumn(nrow, targetcolum, this.F_COMBODATA[targetcolum][excelvalue] );
+                }
+                else if( columinfo.displaytype == "date" )
+                {
+                    griddataset.setColumn(nrow, targetcolum, nexacro.replaceAll(excelvalue, "-", ""));
+                }
+                else
+                {
+                    griddataset.setColumn(nrow, targetcolum, excelvalue);
+                }
+            }
+        }
+
+        griddataset.set_enableevent(true);    
+    }
+    // 화면에서 호출한 콜백함수에다 리턴값을 넘기고 끝을 낸다. 
+    else
+    {
+        var rtnval = new Array();        
+        for(var i=0;i<this.ds_import.getRowCount();i++)
+        {
+            var rowdata = {};            
+            for(columid in this.F_COLUMMAP)
+            {
+                var columinfo   = this.F_COLUMMAP[columid];   
+                var targetcolum = columinfo.columid;
+                var excelvalue  = this.ds_import.getColumn(i, columinfo.excelcolum);
+                
+                if( this.gfn_isNull(excelvalue) )
+                {
+                    rowdata[targetcolum] = "";
+                    continue;
+                }
+                
+                if( columinfo.displaytype == "combo" )
+                {
+                    rowdata[targetcolum] = this.F_COMBODATA[targetcolum][excelvalue];
+                }
+                else if( columinfo.displaytype == "date" )
+                {
+                    rowdata[targetcolum] = nexacro.replaceAll(excelvalue, "-", "");
+                }
+                else
+                {
+                    rowdata[targetcolum] = excelvalue;
+                }
+            }
+            
+            rtnval.push(rowdata);
+        }
+        
+        // 콜백함수를 실행한다.  
+        if( this.P_CALLBACK.indexOf(")") == -1 )
+        {
+            eval("this.P_GRIDFORM."+this.P_CALLBACK+"(rtnval)");
+        }
+        else
+        {
+            eval("this.P_GRIDFORM."+nexacro.replaceAll(this.P_CALLBACK, ")", ", rtnval)"));
+        }
+    }        
+    
+    this.close();
+}
+
+
+
+]]></Script>
+  </Form>
+</FDL>

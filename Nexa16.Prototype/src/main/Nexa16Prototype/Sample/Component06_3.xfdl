@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="Component06" classname="Component06" left="0" top="0" width="600" height="400" titletext="그리드우클릭">
+    <Layouts>
+      <Layout>
+        <Grid id="Grid00" taborder="2" useinputpanel="false" left="264" top="72" width="140" height="221" binddataset="Dataset00" scrollbars="none" cssclass="grid_WF_Rclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="29"/>
+                <Column size="110"/>
+              </Columns>
+              <Rows>
+                <Row size="22"/>
+              </Rows>
+              <Band id="body">
+                <Cell celltype="head" displaytype="image" style="background: ;" text="bind:Column0" autosizerow="default" autosizecol="default"/>
+                <Cell col="1" style="align:left;padding:0 0 0 10;" text="bind:Column1"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">IMG::img_grid_Rclick01.png</Col>
+            <Col id="Column1">복사</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">IMG::img_grid_Rclick02.png</Col>
+            <Col id="Column1">붙여넣기</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">IMG::img_grid_Rclick03.png</Col>
+            <Col id="Column1">정렬</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">IMG::img_grid_Rclick04.png</Col>
+            <Col id="Column1">찾기</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">IMG::img_grid_Rclick05.png</Col>
+            <Col id="Column1">필터</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">IMG::img_grid_Rclick06.png</Col>
+            <Col id="Column1">틀고정</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">IMG::img_grid_Rclick07.png</Col>
+            <Col id="Column1">엑셀 내려받기</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">IMG::img_grid_Rclick08.png</Col>
+            <Col id="Column1">엑셀 올리기</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">IMG::img_grid_Rclick09.png</Col>
+            <Col id="Column1">컬럼 숨기기</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">IMG::img_grid_Rclick10.png</Col>
+            <Col id="Column1">컬럼 초기화</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.Static50_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+	
+}
+]]></Script>
+  </Form>
+</FDL>

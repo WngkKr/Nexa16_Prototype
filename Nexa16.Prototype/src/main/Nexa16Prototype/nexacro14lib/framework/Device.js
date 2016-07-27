@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -19,6 +19,8 @@ if (!nexacro.DeviceI) {
 	var _pDeviceI = nexacro.DeviceI.prototype = nexacro._createPrototype(nexacro.EventSinkObject, nexacro.DeviceI);
 	_pDeviceI._type_name = "Device";
 
+	_pDeviceI.apkversion = {
+	};
 	_pDeviceI.libraryversion = {
 	};
 
@@ -76,29 +78,16 @@ if (!nexacro.DeviceI) {
 		element.innerHTML = element.innerHTML + strPrint + '<br />';
 	};
 	_pDeviceI.publicNumCheck = function (v) {
-		try {
-			var strlength = v.toString().split(" ").join("");
-		}
-		catch (e) {
+		if (v == null || v == undefined) {
 			return false;
 		}
-
-		if (strlength.length == 0) {
+		if (typeof (v) == "string" && v.length <= 0) {
 			return false;
 		}
-
-		try {
-			var numberss = Number(v.toString());
+		if (typeof (v) == "number") {
+			return true;
 		}
-		catch (e) {
-			return false;
-		}
-
-		if ((+numberss) != (+numberss)) {
-			return false;
-		}
-
-		return true;
+		return isFinite(Number(v));
 	};
 
 
@@ -644,6 +633,10 @@ if (nexacro.System) {
 		}
 	};
 
+	nexacro.System.getPackageVersion = function () {
+		return nexacro._getPackageVersion();
+	};
+
 
 
 	nexacro.System._setAccessibilityStatus = function (v) {
@@ -774,6 +767,30 @@ if (nexacro.System) {
 	};
 
 	nexacro.System.setOrientation = function (nOrientation) {
+		if ((nOrientation == null || typeof (nOrientation) == "undefined")) {
+			return false;
+		}
+
+		if (typeof (nOrientation) == "string") {
+			nOrientation = Number(nOrientation);
+		}
+
+		if (nOrientation < 0 || nOrientation > 3) {
+			return false;
+		}
+
+		if (nexacro.Device.curDevice == 0) {
+			nexacro._setOrientation(nOrientation);
+		}
+		else {
+			var jsonstr = "";
+			jsonstr = "ORIENTATION:" + nOrientation;
+			nexacro.Device.exec(jsonstr);
+		}
+		return true;
+	};
+
+	nexacro.System._setOrientation = function (nOrientation) {
 		this.mobileorientation = nOrientation;
 		if (nexacro.Device.curDevice == 1) {
 			nexacro.System.mobileorientation = nOrientation;

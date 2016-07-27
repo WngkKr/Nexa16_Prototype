@@ -1,0 +1,2347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="FRM_TOP" classname="FRM_TOP" left="0" top="0" width="1400" height="120" titletext="TopFrame" cssclass="frm_TF_gnb" onload="FRM_TOP_onload">
+    <Layouts>
+      <Layout>
+        <Div id="div_menuArea" taborder="0" left="176" top="47" width="1224" height="37" scrollbars="none" dragscrolltype="all" cssclass="div_TF_menuArea">
+          <Layouts>
+            <Layout width="403" height="50">
+              <Div id="div_menuGroup3" taborder="2" left="576" top="0" width="180" height="37" scrollbars="none" cssclass="div_TF_menuGroup">
+                <Layouts>
+                  <Layout>
+                    <Button id="btn_ment" taborder="0" text="지원 / 관리" cssclass="btn_TF_menu05" left="6" top="0" width="180" height="37" style="color:#ffffffff;" onclick="btn_menu_onmouseenter"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Div id="div_menuGroup2" taborder="3" left="242" top="0" width="366" height="37" scrollbars="none" cssclass="div_TF_menuGroup">
+                <Layouts>
+                  <Layout width="350" height="50">
+                    <Button id="btn_fundLp" taborder="3" text="Fund / LP" cssclass="btn_TF_menu03" left="-1" top="0" width="155" height="37" onclick="btn_menu_onmouseenter"/>
+                    <Static id="Static00" taborder="5" cssclass="sta_TF_menuGroup02BG" top="0" right="1" width="26" height="37"/>
+                    <Button id="btn_dealPortfolio" taborder="4" text="Deal / Portfolio" cssclass="btn_TF_menu04" left="154" top="0" width="186" height="37" onclick="btn_menu_onmouseenter"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Div id="div_menuGroup1" taborder="4" text="Div00" left="0" top="0" width="266" height="37" scrollbars="none" cssclass="div_TF_menuGroup">
+                <Layouts>
+                  <Layout width="374" height="39">
+                    <Static id="Static00" taborder="3" onclick="Div00_Div00_Static00_onclick" cssclass="sta_TF_menuGroup01BG" top="0" right="0" width="25" height="37"/>
+                    <Button id="btn_LEXPEED" taborder="4" text="LEXPEED" cssclass="btn_TF_menu01" left="0" top="0" width="130" height="37" onclick="btn_menu_onmouseenter"/>
+                    <Button id="btn_pay" taborder="5" text="전자결재" cssclass="btn_TF_menu02" left="130" top="0" width="112" height="37" onclick="btn_menu_onmouseenter"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div01" taborder="1" left="176" top="0" width="631" height="47" scrollbars="none" cssclass="div_TF_gnbLeftArea">
+          <Layouts>
+            <Layout width="805" height="50">
+              <Div id="div_leftArea" taborder="2" text="         " left="0" top="0" width="631" height="47" scrollbars="none" cssclass="div_TF_gnbLeftAreaIn">
+                <Layouts>
+                  <Layout width="783" height="50">
+                    <Div id="Div00" taborder="7" left="5" top="10" width="279" height="31" scrollbars="none" cssclass="div_TF_combineSearchArea">
+                      <Layouts>
+                        <Layout width="668" height="36">
+                          <Button id="Button00" taborder="2" cssclass="btn_TF_combineSearch" top="0" right="10" width="27" height="27"/>
+                          <Edit id="Edit00" taborder="3" displaynulltext="통합검색" cssclass="edit_TF_combineSearch" left="0" top="0" width="230" height="27"/>
+                        </Layout>
+                      </Layouts>
+                    </Div>
+                    <Static id="Static04" taborder="8" text="홍길동 님" onclick="Div01_Div00_Static04_onclick" cssclass="sta_TF_userName" top="11" right="37" width="100" height="24"/>
+                    <Button id="Button00" taborder="9" text="EDMS" cssclass="btn_TF_edms" left="296" top="16" width="65" height="18"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static01" taborder="3" onclick="Div01_Static01_onclick" cssclass="sta_TF_gnbLeftAreaBG" top="0" right="0" width="28" height="50"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="div_rightArea" taborder="2" left="810" top="12" width="560" height="27" scrollbars="none" cssclass="div_TF_gnbRightArea">
+          <Layouts>
+            <Layout>
+              <Button id="Button00" taborder="12" text="ENG" onclick="Div02_Button00_onclick" cssclass="btn_TF_engBtn" top="0" right="0" width="43" height="27"/>
+              <Button id="Button01" taborder="13" text="로그아웃" onclick="Div02_Button00_onclick" cssclass="btn_TF_logoutBtn" top="0" right="49" width="70" height="27"/>
+              <Button id="Button02" taborder="14" cssclass="btn_TF_setUp" top="0" right="132" width="25" height="25"/>
+              <Button id="Button03" taborder="15" onclick="Div02_Button03_onclick" cssclass="btn_TF_allMenu" top="4" right="164" width="23" height="17"/>
+              <Button id="btn_favorate" taborder="16" cssclass="btn_TF_funLink" top="-1" right="196" width="25" height="24" onclick="div_rightArea_btn_onclick"/>
+              <Button id="btn_outLink" taborder="17" cssclass="btn_TF_outLink" top="-1" right="228" width="28" height="26" onclick="div_rightArea_btn_onclick"/>
+              <Static id="Static00" taborder="18" text="결재요청" onclick="Div02_Static00_onclick" left="0" top="-2" width="55" height="25" style="background:transparent;border:0 solid #808080ff ;"/>
+              <Static id="Static01" taborder="19" text="[&lt;fc v='#0080d2ff'&gt;12&lt;/fc&gt;]" usedecorate="true" top="-2" right="475" width="30" height="25" style="background:transparent;border:0 solid #808080ff ;font:bold 10 arial;"/>
+              <Static id="Static02" taborder="20" text="결재완료" top="-2" right="412" width="55" height="25" style="background:transparent;border:0 solid #808080ff ;"/>
+              <Static id="Static03" taborder="21" text="[&lt;fc v='#0080d2ff'&gt;0&lt;/fc&gt;]" usedecorate="true" top="-2" right="377" width="30" height="25" style="background:transparent;border:0 solid #808080ff ;font:bold 10 arial;"/>
+              <Static id="Static04" taborder="22" text="외출등록" cssclass="sta_TF_addOut" top="0" right="300" width="75" height="23" style="align:left;"/>
+              <Static id="Static05" taborder="23" text="[&lt;fc v='#0080d2ff'&gt;1&lt;/fc&gt;]" usedecorate="true" top="-2" right="268" width="30" height="25" style="background:transparent;border:0 solid #808080ff ;font:bold 10 arial;"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="sta_title" taborder="3" cssclass="sta_TF_logo" left="0" top="0" width="176" height="84"/>
+        <Div id="div_localArea" taborder="4" left="30" top="92" width="1340" height="28" scrollbars="none" cssclass="div_TF_locationArea">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="4" cssclass="sta_TF_locationHome" left="0" top="0" width="39" height="28"/>
+              <Combo id="Combo00" taborder="5" value="4" text="Dashboard" innerdataset="@location01" codecolumn="code" datacolumn="data" index="3" cssclass="cbo_TF_locationSelect" left="238" top="0" width="200" height="28" visible="false"/>
+              <Combo id="Combo01" taborder="6" value="1" text="펀드현황" innerdataset="@location0101" codecolumn="code" datacolumn="data" index="0" cssclass="cbo_TF_locationSelect" left="438" top="0" width="199" height="28" visible="false"/>
+              <Combo id="Combo02" taborder="7" value="1" text="LEXPEED" innerdataset="@location" codecolumn="code" datacolumn="data" index="0" cssclass="cbo_TF_locationSelect" left="39" top="0" width="199" height="28" visible="false"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <PopupDiv id="pdv_LEXPEED" left="70" top="131" width="1080" height="236" cssclass="pdiv_TF_menuArea" onmouseleave="pdv_onmouseleave">
+          <Layouts>
+            <Layout width="1175" height="252">
+              <Grid id="grd_LEXPEED" taborder="3" binddataset="ds_menu1" scrollbars="none" readonly="true" useinputpanel="false" selecttype="cell" useselcolor="false" left="0" top="37" width="962" height="185" onmouseenter="pdv_grd_onmouseenter" oncellclick="pdv_grd_oncellclick" cssclass="grid_TF_subMenu">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="125"/>
+                      <Column size="125"/>
+                      <Column size="125"/>
+                      <Column size="125"/>
+                      <Column size="125"/>
+                      <Column size="140"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="42" band="head"/>
+                      <Row size="30"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell style="background:EXPR(currow == 0 ? &quot;#fcfcfcff&quot; : &quot;&quot;);color:EXPR(currow == 0 ? &quot;#333333ff&quot; : &quot;&quot;);font:EXPR(currow == 0 ? &quot;10 notokr-regular, dotum&quot; : &quot;&quot;);" text="사내소식"/>
+                      <Cell col="1" text="인사"/>
+                      <Cell col="2" text="신청예약"/>
+                      <Cell col="3" text="Dashboard"/>
+                      <Cell col="4" text="보고회의"/>
+                      <Cell col="5" text="KnowledgeDepot"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:사내소식"/>
+                      <Cell col="1" text="bind:인사"/>
+                      <Cell col="2" text="bind:신청예약"/>
+                      <Cell col="3" text="bind:Dashboard"/>
+                      <Cell col="4" text="bind:보고회의"/>
+                      <Cell col="5" text="bind:KnowledgeDepot"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_LEXPEED" taborder="4" text="LEXPEED" cssclass="btn_TF_menu01Ov" left="106" top="0" width="130" height="37" MENU_CD="Lexpeed"/>
+              <Button id="bnt_closepopdiv" taborder="5" cssclass="btn_TF_menuOutBtn" left="237" top="0" width="721" height="37" onmouseenter="pdv_bnt_closepopdiv_onmouseenter"/>
+            </Layout>
+          </Layouts>
+        </PopupDiv>
+        <PopupDiv id="pdv_pay" left="70" top="375" width="1080" height="195" cssclass="pdiv_TF_menuArea" onmouseleave="pdv_onmouseleave">
+          <Layouts>
+            <Layout width="1175" height="252">
+              <Grid id="grd_pay" cssclass="grid_TF_subMenu" taborder="7" binddataset="ds_menu2" scrollbars="none" readonly="true" useinputpanel="false" selecttype="cell" useselcolor="false" left="0" top="37" width="962" height="133" onmouseenter="pdv_grd_onmouseenter" oncellclick="pdv_grd_oncellclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="120"/>
+                      <Column size="120"/>
+                      <Column size="120"/>
+                      <Column size="120"/>
+                      <Column size="120"/>
+                      <Column size="162"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="42" band="head"/>
+                      <Row size="28"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="결재함"/>
+                      <Cell col="1" text="폼의보고"/>
+                      <Cell col="2" text="출장연수"/>
+                      <Cell col="3" text="휴가"/>
+                      <Cell col="4" text="공문"/>
+                      <Cell col="5" text="심사역배정및평가"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:결재함"/>
+                      <Cell col="1" text="bind:폼의보고"/>
+                      <Cell col="2" text="bind:출장연수"/>
+                      <Cell col="3" text="bind:휴가"/>
+                      <Cell col="4" text="bind:공문"/>
+                      <Cell col="5" text="bind:심사역배정및평가"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_pay" taborder="8" text="전자결재" cssclass="btn_TF_menu02Ov" left="236" top="0" width="112" height="37" MENU_CD="전자결재"/>
+              <Button id="bnt_closepopdiv00" taborder="9" cssclass="btn_TF_menuOutBtn" left="0" top="0" width="236" height="37" onmouseenter="pdv_bnt_closepopdiv_onmouseenter"/>
+              <Button id="bnt_closepopdiv01" taborder="10" cssclass="btn_TF_menuOutBtn" left="349" top="0" width="609" height="37" onmouseenter="pdv_bnt_closepopdiv_onmouseenter"/>
+            </Layout>
+          </Layouts>
+        </PopupDiv>
+        <PopupDiv id="pdv_fundLp" left="70" top="565" width="1080" height="175" cssclass="pdiv_TF_menuArea" onmouseleave="pdv_onmouseleave">
+          <Layouts>
+            <Layout width="1175" height="252">
+              <Grid id="grd_fundLp" cssclass="grid_TF_subMenu" taborder="12" binddataset="ds_menu3" scrollbars="none" readonly="true" useinputpanel="false" selecttype="cell" useselcolor="false" left="0" top="37" width="962" height="106" onmouseenter="pdv_grd_onmouseenter" oncellclick="pdv_grd_oncellclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="120"/>
+                      <Column size="120"/>
+                      <Column size="120"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="42" band="head"/>
+                      <Row size="28"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="펀딩"/>
+                      <Cell col="1" text="펀드관리"/>
+                      <Cell col="2" text="LP관리"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:펀딩"/>
+                      <Cell col="1" text="bind:펀드관리"/>
+                      <Cell col="2" text="bind:LP관리"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_fundLp" taborder="13" text="Fund / LP" onclick="PopupDiv02_Button00_onclick" cssclass="btn_TF_menu03Ov" left="347" top="0" width="155" height="37" MENU_CD="Fund/LP"/>
+              <Button id="bnt_closepopdiv00" taborder="14" cssclass="btn_TF_menuOutBtn" left="0" top="0" width="347" height="37" onmouseenter="pdv_bnt_closepopdiv_onmouseenter"/>
+              <Button id="bnt_closepopdiv01" taborder="15" cssclass="btn_TF_menuOutBtn" left="502" top="0" width="459" height="37" onmouseenter="pdv_bnt_closepopdiv_onmouseenter"/>
+              <Static id="Static00" taborder="16" cssclass="sta_TF_menuGroup01BG" left="347" top="0" width="25" height="37"/>
+            </Layout>
+          </Layouts>
+        </PopupDiv>
+        <PopupDiv id="pdv_dealPortfolio" left="70" top="735" width="1080" height="161" cssclass="pdiv_TF_menuArea" onmouseleave="pdv_onmouseleave">
+          <Layouts>
+            <Layout width="1175" height="252">
+              <Grid id="grd_dealPortfolio" cssclass="grid_TF_subMenu" taborder="15" binddataset="ds_menu4" scrollbars="none" readonly="true" useinputpanel="false" selecttype="cell" useselcolor="false" left="0" top="37" width="962" height="105" onmouseenter="pdv_grd_onmouseenter" oncellclick="pdv_grd_oncellclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="120"/>
+                      <Column size="120"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="42" band="head"/>
+                      <Row size="28"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="Deal_Flow"/>
+                      <Cell col="1" text="업체관리"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:Deal_Flow"/>
+                      <Cell col="1" text="bind:업체관리"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_dealPortfolio" taborder="16" text="Deal / Portfolio" onclick="PopupDiv03_Button00_onclick" cssclass="btn_TF_menu04Ov" left="502" top="0" width="186" height="37" MENU_CD="Deal/Portfolio"/>
+              <Button id="bnt_closepopdiv00" taborder="17" cssclass="btn_TF_menuOutBtn" left="0" top="0" width="502" height="37" onmouseenter="pdv_bnt_closepopdiv_onmouseenter"/>
+              <Button id="bnt_closepopdiv01" taborder="18" cssclass="btn_TF_menuOutBtn" left="688" top="0" width="273" height="37" onmouseenter="pdv_bnt_closepopdiv_onmouseenter"/>
+            </Layout>
+          </Layouts>
+        </PopupDiv>
+        <PopupDiv id="pdv_ment" left="71" top="910" width="1080" height="161" cssclass="pdiv_TF_menuArea" onmouseleave="pdv_onmouseleave">
+          <Layouts>
+            <Layout width="1175" height="252">
+              <Grid id="grd_ment" cssclass="grid_TF_subMenu" taborder="20" binddataset="ds_menu5" scrollbars="none" readonly="true" useinputpanel="false" selecttype="cell" useselcolor="false" left="0" top="37" width="962" height="92" onmouseenter="pdv_grd_onmouseenter" oncellclick="pdv_grd_oncellclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="120"/>
+                      <Column size="120"/>
+                      <Column size="120"/>
+                      <Column size="120"/>
+                      <Column size="120"/>
+                      <Column size="120"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="42" band="head"/>
+                      <Row size="28"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="인사관리"/>
+                      <Cell col="1" text="성과관리"/>
+                      <Cell col="2" text="지출관리"/>
+                      <Cell col="3" text="도서관리"/>
+                      <Cell col="4" text="차량관리"/>
+                      <Cell col="5" text="재물관리"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:인사관리"/>
+                      <Cell col="1" text="bind:성과관리"/>
+                      <Cell col="2" text="bind:지출관리"/>
+                      <Cell col="3" text="bind:도서관리"/>
+                      <Cell col="4" text="bind:차량관리"/>
+                      <Cell col="5" text="bind:재물관리"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_ment" taborder="21" text="지원 / 관리" cssclass="btn_TF_menu05Ov" left="688" top="0" width="180" height="37" MENU_CD="지원/관리"/>
+              <Button id="bnt_closepopdiv01" taborder="22" cssclass="btn_TF_menuOutBtn" left="868" top="0" width="94" height="37" onmouseenter="pdv_bnt_closepopdiv_onmouseenter"/>
+              <Button id="bnt_closepopdiv00" taborder="23" cssclass="btn_TF_menuOutBtn" left="0" top="0" width="688" height="37" onmouseenter="pdv_bnt_closepopdiv_onmouseenter"/>
+              <Static id="Static00" taborder="24" cssclass="sta_TF_menuGroup02BG" left="688" top="-1" width="25" height="37"/>
+            </Layout>
+          </Layouts>
+        </PopupDiv>
+        <Button id="Button00" taborder="10" cssclass="btn_TF_taborder0" left="71.86%" top="415" right="26.21%" height="32"/>
+        <PopupDiv id="pdv_popLink" left="73.21%" top="40" width="204" height="240" scrollbars="none" cssclass="pdiv_TF_popLink">
+          <Layouts>
+            <Layout width="204" height="234">
+              <Static id="Static00" taborder="2" cssclass="sta_TF_popLinkBg" left="0" bottom="0" width="204" height="13"/>
+              <Div id="Div00" taborder="3" left="0" top="21" width="204" height="206" cssclass="div_TF_popLinkIn">
+                <Layouts>
+                  <Layout>
+                    <ImageViewer id="ImageViewer00" taborder="13" image="URL('IMG::logo_outlink_stic.png')" cssclass="img_TF_outLink" left="20" top="2" width="80" height="20"/>
+                    <ImageViewer id="ImageViewer01" taborder="14" image="URL('IMG::logo_outlink_thomson.png')" cssclass="img_TF_outLink" left="106" top="2" width="80" height="20"/>
+                    <ImageViewer id="ImageViewer02" taborder="15" image="URL('IMG::logo_outlink_vrdeoorice.png')" cssclass="img_TF_outLink" left="20" top="26" width="80" height="20"/>
+                    <ImageViewer id="ImageViewer03" taborder="16" image="URL('IMG::logo_outlink_outlook.png')" cssclass="img_TF_outLink" left="106" top="26" width="80" height="20"/>
+                    <ImageViewer id="ImageViewer04" taborder="17" image="URL('IMG::logo_outlink_hrms.png')" cssclass="img_TF_outLink" left="20" top="50" width="80" height="20"/>
+                    <ImageViewer id="ImageViewer05" taborder="18" image="URL('IMG::logo_outlink_apc.png')" cssclass="img_TF_outLink" left="106" top="50" width="80" height="20"/>
+                    <ImageViewer id="ImageViewer06" taborder="19" image="URL('IMG::logo_outlink_dgx.png')" cssclass="img_TF_outLink" left="20" top="75" width="80" height="20"/>
+                    <ImageViewer id="ImageViewer07" taborder="20" image="URL('IMG::logo_outlink_fnguide.png')" cssclass="img_TF_outLink" left="106" top="75" width="80" height="20"/>
+                    <ImageViewer id="ImageViewer08" taborder="21" image="URL('IMG::logo_outlink_thebell.png')" cssclass="img_TF_outLink" left="20" top="101" width="80" height="20"/>
+                    <ImageViewer id="ImageViewer09" taborder="22" image="URL('IMG::logo_outlink_invest.png')" cssclass="img_TF_outLink" left="106" top="101" width="80" height="20"/>
+                    <ImageViewer id="ImageViewer10" taborder="23" image="URL('IMG::logo_outlink_insite.png')" cssclass="img_TF_outLink" left="20" top="126" width="80" height="20"/>
+                    <ImageViewer id="ImageViewer11" taborder="24" image="URL('IMG::logo_outlink_invest2.png')" cssclass="img_TF_outLink" left="106" top="126" width="80" height="20"/>
+                    <ImageViewer id="ImageViewer12" taborder="25" image="URL('IMG::logo_outlink_kisline.png')" cssclass="img_TF_outLink" left="20" top="151" width="80" height="20"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+            </Layout>
+          </Layouts>
+        </PopupDiv>
+        <PopupDiv id="pdv_favorate" left="1060" top="300" width="204" height="234" scrollbars="none" cssclass="pdiv_TF_popLink">
+          <Layouts>
+            <Layout width="204" height="234">
+              <Static id="Static00" taborder="4" cssclass="sta_TF_popLinkBg" left="0" bottom="0" width="204" height="13"/>
+              <Div id="Div00" taborder="5" left="0%" top="21" width="204" height="200" scrollbars="none" cssclass="div_TF_popLinkIn">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static00" taborder="8" text="회사규정집/매뉴얼" cssclass="sta_TF_funLinkList" left="14" top="0" width="174" height="24"/>
+                    <Static id="Static01" taborder="9" text="출장연수/신청서" cssclass="sta_TF_funLinkList" left="14" top="24" width="174" height="24"/>
+                    <Static id="Static02" taborder="10" text="회의실 예약" cssclass="sta_TF_funLinkList" left="14" top="48" width="174" height="24"/>
+                    <Static id="Static03" taborder="11" text="IRR 산출" cssclass="sta_TF_funLinkList" left="14" top="72" width="174" height="24"/>
+                    <Static id="Static04" taborder="12" cssclass="sta_TF_funLinkList" left="14" top="96" width="174" height="24"/>
+                    <Static id="Static05" taborder="13" cssclass="sta_TF_funLinkList" left="14" top="120" width="174" height="24"/>
+                    <Static id="Static06" taborder="14" cssclass="sta_TF_funLinkList" left="14" top="144" width="174" height="24"/>
+                    <Static id="Static07" taborder="15" cssclass="sta_TF_funLinkList" left="14" top="168" width="174" height="24"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+            </Layout>
+          </Layouts>
+        </PopupDiv>
+        <PopupDiv id="pdv_ment00" left="71" top="1102" width="1080" height="225" cssclass="pdiv_TF_menuArea">
+          <Layouts>
+            <Layout width="1175" height="252">
+              <Button id="btn_ment" taborder="26" text="지원 / 관리" cssclass="btn_TF_menu05Ov" left="688" top="0" width="180" height="37" MENU_CD="지원/관리"/>
+              <Button id="bnt_closepopdiv01" taborder="27" cssclass="btn_TF_menuOutBtn" left="868" top="0" width="94" height="37" onmouseenter="pdv_bnt_closepopdiv_onmouseenter"/>
+              <Button id="bnt_closepopdiv00" taborder="28" cssclass="btn_TF_menuOutBtn" left="0" top="0" width="688" height="37" onmouseenter="pdv_bnt_closepopdiv_onmouseenter"/>
+              <Static id="sta_btn_bg" taborder="29" cssclass="sta_TF_menuGroup02BG" left="688" top="-1" width="25" height="37"/>
+              <Static id="sta_bg" taborder="30" cssclass="sta_TF_subMenubg" left="0" top="37" width="1080" height="165"/>
+              <Static id="sta_bar0" taborder="31" left="180" top="38" width="1" height="100" style="background:#e5e5e5ff;"/>
+              <Static id="sta_bar1" taborder="32" left="360" top="38" width="1" height="100" style="background:#e5e5e5ff;"/>
+              <Static id="sta_bar2" taborder="33" left="540" top="38" width="1" height="100" style="background:#e5e5e5ff;"/>
+              <Static id="sta_bar3" taborder="34" left="720" top="38" width="1" height="100" style="background:#e5e5e5ff;"/>
+              <Static id="sta_bar4" taborder="35" left="900" top="38" width="1" height="100" style="background:#e5e5e5ff;"/>
+            </Layout>
+          </Layouts>
+        </PopupDiv>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_menu1">
+        <ColumnInfo>
+          <Column id="MENU_CD" type="STRING" size="256"/>
+          <Column id="MENU_NM" type="STRING" size="256"/>
+          <Column id="ENG_MENU_NM" type="STRING" size="256"/>
+          <Column id="PGM_ID" type="STRING" size="256"/>
+          <Column id="UP_CD" type="STRING" size="256"/>
+          <Column id="ORDER_SEQ" type="STRING" size="256"/>
+          <Column id="CD_LEV" type="STRING" size="256"/>
+          <Column id="LOW_YN" type="STRING" size="256"/>
+          <Column id="USE_YN" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_menu2">
+        <ColumnInfo>
+          <Column id="MENU_CD" type="STRING" size="256"/>
+          <Column id="MENU_NM" type="STRING" size="256"/>
+          <Column id="ENG_MENU_NM" type="STRING" size="256"/>
+          <Column id="PGM_ID" type="STRING" size="256"/>
+          <Column id="UP_CD" type="STRING" size="256"/>
+          <Column id="ORDER_SEQ" type="STRING" size="256"/>
+          <Column id="CD_LEV" type="STRING" size="256"/>
+          <Column id="LOW_YN" type="STRING" size="256"/>
+          <Column id="USE_YN" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_menu3">
+        <ColumnInfo>
+          <Column id="MENU_CD" type="STRING" size="256"/>
+          <Column id="MENU_NM" type="STRING" size="256"/>
+          <Column id="ENG_MENU_NM" type="STRING" size="256"/>
+          <Column id="PGM_ID" type="STRING" size="256"/>
+          <Column id="UP_CD" type="STRING" size="256"/>
+          <Column id="ORDER_SEQ" type="STRING" size="256"/>
+          <Column id="CD_LEV" type="STRING" size="256"/>
+          <Column id="LOW_YN" type="STRING" size="256"/>
+          <Column id="USE_YN" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_menu4">
+        <ColumnInfo>
+          <Column id="MENU_CD" type="STRING" size="256"/>
+          <Column id="MENU_NM" type="STRING" size="256"/>
+          <Column id="ENG_MENU_NM" type="STRING" size="256"/>
+          <Column id="PGM_ID" type="STRING" size="256"/>
+          <Column id="UP_CD" type="STRING" size="256"/>
+          <Column id="ORDER_SEQ" type="STRING" size="256"/>
+          <Column id="CD_LEV" type="STRING" size="256"/>
+          <Column id="LOW_YN" type="STRING" size="256"/>
+          <Column id="USE_YN" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_menu5">
+        <ColumnInfo>
+          <Column id="MENU_CD" type="STRING" size="256"/>
+          <Column id="MENU_NM" type="STRING" size="256"/>
+          <Column id="ENG_MENU_NM" type="STRING" size="256"/>
+          <Column id="PGM_ID" type="STRING" size="256"/>
+          <Column id="UP_CD" type="STRING" size="256"/>
+          <Column id="ORDER_SEQ" type="STRING" size="256"/>
+          <Column id="CD_LEV" type="STRING" size="256"/>
+          <Column id="LOW_YN" type="STRING" size="256"/>
+          <Column id="USE_YN" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows/>
+      </Dataset>
+      <Dataset id="ds_menu6">
+        <ColumnInfo>
+          <Column id="MENU_CD" type="STRING" size="256"/>
+          <Column id="MENU_NM" type="STRING" size="256"/>
+          <Column id="ENG_MENU_NM" type="STRING" size="256"/>
+          <Column id="PGM_ID" type="STRING" size="256"/>
+          <Column id="UP_CD" type="STRING" size="256"/>
+          <Column id="ORDER_SEQ" type="STRING" size="256"/>
+          <Column id="CD_LEV" type="STRING" size="256"/>
+          <Column id="LOW_YN" type="STRING" size="256"/>
+          <Column id="USE_YN" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows/>
+      </Dataset>
+      <Dataset id="ds_menu7">
+        <ColumnInfo>
+          <Column id="MENU_CD" type="STRING" size="256"/>
+          <Column id="MENU_NM" type="STRING" size="256"/>
+          <Column id="ENG_MENU_NM" type="STRING" size="256"/>
+          <Column id="PGM_ID" type="STRING" size="256"/>
+          <Column id="UP_CD" type="STRING" size="256"/>
+          <Column id="ORDER_SEQ" type="STRING" size="256"/>
+          <Column id="CD_LEV" type="STRING" size="256"/>
+          <Column id="LOW_YN" type="STRING" size="256"/>
+          <Column id="USE_YN" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows/>
+      </Dataset>
+      <Dataset id="location01">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="data" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">1</Col>
+            <Col id="data">사내소식</Col>
+          </Row>
+          <Row>
+            <Col id="code">2</Col>
+            <Col id="data">인사</Col>
+          </Row>
+          <Row>
+            <Col id="code">3</Col>
+            <Col id="data">신청예약</Col>
+          </Row>
+          <Row>
+            <Col id="code">4</Col>
+            <Col id="data">Dashboard</Col>
+          </Row>
+          <Row>
+            <Col id="code">5</Col>
+            <Col id="data">보고회의</Col>
+          </Row>
+          <Row>
+            <Col id="code">6</Col>
+            <Col id="data">KnowledgeDepot</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="location0101">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="data" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">1</Col>
+            <Col id="data">펀드현황</Col>
+          </Row>
+          <Row>
+            <Col id="code">2</Col>
+            <Col id="data">업체현황</Col>
+          </Row>
+          <Row>
+            <Col id="code">3</Col>
+            <Col id="data">LP현황</Col>
+          </Row>
+          <Row>
+            <Col id="code">4</Col>
+            <Col id="data">심사역별현황</Col>
+          </Row>
+          <Row>
+            <Col id="code">5</Col>
+            <Col id="data">보고서</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="location">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="data" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">1</Col>
+            <Col id="data">LEXPEED</Col>
+          </Row>
+          <Row>
+            <Col id="code">2</Col>
+            <Col id="data">전자결재</Col>
+          </Row>
+          <Row>
+            <Col id="code">3</Col>
+            <Col id="data">Fund &amp; LP</Col>
+          </Row>
+          <Row>
+            <Col id="code">4</Col>
+            <Col id="data">Deal &amp; Portfolio</Col>
+          </Row>
+          <Row>
+            <Col id="code">5</Col>
+            <Col id="data">지원 &amp; 관리</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="GDS_MENU">
+        <ColumnInfo>
+          <Column id="GROUP_CD" type="STRING" size="256"/>
+          <Column id="MENU_CD" type="STRING" size="256"/>
+          <Column id="MENU_NM" type="STRING" size="256"/>
+          <Column id="ENG_MENU_NM" type="STRING" size="256"/>
+          <Column id="PGM_ID" type="STRING" size="256"/>
+          <Column id="UP_CD" type="STRING" size="256"/>
+          <Column id="ORDER_SEQ" type="STRING" size="256"/>
+          <Column id="CD_LEV" type="STRING" size="256"/>
+          <Column id="LOW_YN" type="STRING" size="256"/>
+          <Column id="USE_YN" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="GROUP_CD">10</Col>
+            <Col id="MENU_CD">1000000</Col>
+            <Col id="MENU_NM">Lexpeed</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">0</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">1</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">10</Col>
+            <Col id="MENU_CD">1010000</Col>
+            <Col id="MENU_NM">사내소식</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">1000000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">10</Col>
+            <Col id="MENU_CD">1020000</Col>
+            <Col id="MENU_NM">규정/매뉴얼</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">1000000</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">10</Col>
+            <Col id="MENU_CD">1020100</Col>
+            <Col id="MENU_NM">회사규정집/매뉴얼</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">1020000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">10</Col>
+            <Col id="MENU_CD">1020200</Col>
+            <Col id="MENU_NM">파트너쉽 규약</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">1020000</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">10</Col>
+            <Col id="MENU_CD">1020300</Col>
+            <Col id="MENU_NM">표준프로세스</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">1020000</Col>
+            <Col id="ORDER_SEQ">3</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">10</Col>
+            <Col id="MENU_CD">1030000</Col>
+            <Col id="MENU_NM">Knowledge Depot</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">1000000</Col>
+            <Col id="ORDER_SEQ">3</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">10</Col>
+            <Col id="MENU_CD">1040000</Col>
+            <Col id="MENU_NM">행사정보</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">1000000</Col>
+            <Col id="ORDER_SEQ">4</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">10</Col>
+            <Col id="MENU_CD">1050000</Col>
+            <Col id="MENU_NM">인사정보</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">1000000</Col>
+            <Col id="ORDER_SEQ">5</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">10</Col>
+            <Col id="MENU_CD">1050100</Col>
+            <Col id="MENU_NM">임직원 현황</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">1050000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">10</Col>
+            <Col id="MENU_CD">1050200</Col>
+            <Col id="MENU_NM">인사조회</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">1050000</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">10</Col>
+            <Col id="MENU_CD">1050300</Col>
+            <Col id="MENU_NM">비상연락망</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">1050000</Col>
+            <Col id="ORDER_SEQ">3</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">10</Col>
+            <Col id="MENU_CD">1050400</Col>
+            <Col id="MENU_NM">베트남지사</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">1050000</Col>
+            <Col id="ORDER_SEQ">4</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">10</Col>
+            <Col id="MENU_CD">1060000</Col>
+            <Col id="MENU_NM">신청/예약</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">1000000</Col>
+            <Col id="ORDER_SEQ">6</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">10</Col>
+            <Col id="MENU_CD">1060100</Col>
+            <Col id="MENU_NM">회의실예약</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">1060000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">10</Col>
+            <Col id="MENU_CD">1060200</Col>
+            <Col id="MENU_NM">도서대여</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">1060000</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">10</Col>
+            <Col id="MENU_CD">1060300</Col>
+            <Col id="MENU_NM">차량예약</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">1060000</Col>
+            <Col id="ORDER_SEQ">3</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">20</Col>
+            <Col id="MENU_CD">2000000</Col>
+            <Col id="MENU_NM">전자결재</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">0</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">1</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">20</Col>
+            <Col id="MENU_CD">2010000</Col>
+            <Col id="MENU_NM">결재함</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">2000000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">20</Col>
+            <Col id="MENU_CD">2020000</Col>
+            <Col id="MENU_NM">품의/보고</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">2000000</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">20</Col>
+            <Col id="MENU_CD">2030000</Col>
+            <Col id="MENU_NM">출장/연수</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">2000000</Col>
+            <Col id="ORDER_SEQ">3</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">20</Col>
+            <Col id="MENU_CD">2040000</Col>
+            <Col id="MENU_NM">휴가신청</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">2000000</Col>
+            <Col id="ORDER_SEQ">4</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">20</Col>
+            <Col id="MENU_CD">2050000</Col>
+            <Col id="MENU_NM">공문대장</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">2000000</Col>
+            <Col id="ORDER_SEQ">5</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">20</Col>
+            <Col id="MENU_CD">2050100</Col>
+            <Col id="MENU_NM">수신대장</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">2050000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">20</Col>
+            <Col id="MENU_CD">2050200</Col>
+            <Col id="MENU_NM">발신대장</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">2050000</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">20</Col>
+            <Col id="MENU_CD">2060000</Col>
+            <Col id="MENU_NM">지출품의</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">2000000</Col>
+            <Col id="ORDER_SEQ">6</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">20</Col>
+            <Col id="MENU_CD">2060100</Col>
+            <Col id="MENU_NM">지출품의</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">2060000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">20</Col>
+            <Col id="MENU_CD">2060200</Col>
+            <Col id="MENU_NM">사용내역</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">2060000</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">30</Col>
+            <Col id="MENU_CD">3000000</Col>
+            <Col id="MENU_NM">Fund/LP</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">0</Col>
+            <Col id="ORDER_SEQ">3</Col>
+            <Col id="CD_LEV">1</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">30</Col>
+            <Col id="MENU_CD">3010000</Col>
+            <Col id="MENU_NM">펀드통합정보</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">3000000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">40</Col>
+            <Col id="MENU_CD">4000000</Col>
+            <Col id="MENU_NM">Deal/Portfolio</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">0</Col>
+            <Col id="ORDER_SEQ">4</Col>
+            <Col id="CD_LEV">1</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">40</Col>
+            <Col id="MENU_CD">4010000</Col>
+            <Col id="MENU_NM">Deal Flow</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">4000000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">40</Col>
+            <Col id="MENU_CD">4020000</Col>
+            <Col id="MENU_NM">Portfolio</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">4000000</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">40</Col>
+            <Col id="MENU_CD">4020100</Col>
+            <Col id="MENU_NM">통합정보</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">4020000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">40</Col>
+            <Col id="MENU_CD">4020200</Col>
+            <Col id="MENU_NM">행사일정</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">4020000</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">50</Col>
+            <Col id="MENU_CD">5000000</Col>
+            <Col id="MENU_NM">경영자정보</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">0</Col>
+            <Col id="ORDER_SEQ">5</Col>
+            <Col id="CD_LEV">1</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">50</Col>
+            <Col id="MENU_CD">5010000</Col>
+            <Col id="MENU_NM">펀드통합정보</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">5000000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">50</Col>
+            <Col id="MENU_CD">5020000</Col>
+            <Col id="MENU_NM">Deal Flow</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">5000000</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">50</Col>
+            <Col id="MENU_CD">5030000</Col>
+            <Col id="MENU_NM">업체매출현황</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">5000000</Col>
+            <Col id="ORDER_SEQ">3</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">50</Col>
+            <Col id="MENU_CD">5040000</Col>
+            <Col id="MENU_NM">투자기업권리 및 실적현황</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">5000000</Col>
+            <Col id="ORDER_SEQ">4</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">50</Col>
+            <Col id="MENU_CD">5050000</Col>
+            <Col id="MENU_NM">임직원 겸임현황</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">5000000</Col>
+            <Col id="ORDER_SEQ">5</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">50</Col>
+            <Col id="MENU_CD">5060000</Col>
+            <Col id="MENU_NM">핵심운용인력 및 투심위원현황</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">5000000</Col>
+            <Col id="ORDER_SEQ">6</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">50</Col>
+            <Col id="MENU_CD">5070000</Col>
+            <Col id="MENU_NM">경영실적</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">5000000</Col>
+            <Col id="ORDER_SEQ">7</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">50</Col>
+            <Col id="MENU_CD">5080000</Col>
+            <Col id="MENU_NM">회의록</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">5000000</Col>
+            <Col id="ORDER_SEQ">8</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6000000</Col>
+            <Col id="MENU_NM">지원/관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">0</Col>
+            <Col id="ORDER_SEQ">6</Col>
+            <Col id="CD_LEV">1</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6010000</Col>
+            <Col id="MENU_NM">펀드관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6000000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6010100</Col>
+            <Col id="MENU_NM">펀드정보</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6010000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6010200</Col>
+            <Col id="MENU_NM">출자/배분</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6010000</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6010300</Col>
+            <Col id="MENU_NM">SPC</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6010000</Col>
+            <Col id="ORDER_SEQ">3</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6020000</Col>
+            <Col id="MENU_NM">업체관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6000000</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6020100</Col>
+            <Col id="MENU_NM">업체정보관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6020000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6020200</Col>
+            <Col id="MENU_NM">매매내역현황</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6020000</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6020300</Col>
+            <Col id="MENU_NM">투자내역관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6020000</Col>
+            <Col id="ORDER_SEQ">3</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6020400</Col>
+            <Col id="MENU_NM">종목관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6020000</Col>
+            <Col id="ORDER_SEQ">4</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6020500</Col>
+            <Col id="MENU_NM">평가관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6020000</Col>
+            <Col id="ORDER_SEQ">5</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6020600</Col>
+            <Col id="MENU_NM">일정관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6020000</Col>
+            <Col id="ORDER_SEQ">6</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6020700</Col>
+            <Col id="MENU_NM">분기별업체현황 입력현황</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6020000</Col>
+            <Col id="ORDER_SEQ">7</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6020800</Col>
+            <Col id="MENU_NM">월별업체현황 입력현황</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6020000</Col>
+            <Col id="ORDER_SEQ">8</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6030000</Col>
+            <Col id="MENU_NM">LP관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6000000</Col>
+            <Col id="ORDER_SEQ">3</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6040000</Col>
+            <Col id="MENU_NM">인사관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6000000</Col>
+            <Col id="ORDER_SEQ">4</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6040100</Col>
+            <Col id="MENU_NM">인사정보</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6040000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6040200</Col>
+            <Col id="MENU_NM">발령정보</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6040000</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6040300</Col>
+            <Col id="MENU_NM">조직관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6040000</Col>
+            <Col id="ORDER_SEQ">3</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6040400</Col>
+            <Col id="MENU_NM">비상연락망</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6040000</Col>
+            <Col id="ORDER_SEQ">4</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6040500</Col>
+            <Col id="MENU_NM">인원현황</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6040000</Col>
+            <Col id="ORDER_SEQ">5</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6040600</Col>
+            <Col id="MENU_NM">주주현황</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6040000</Col>
+            <Col id="ORDER_SEQ">6</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6050000</Col>
+            <Col id="MENU_NM">성과관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6000000</Col>
+            <Col id="ORDER_SEQ">5</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6050100</Col>
+            <Col id="MENU_NM">심사역</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6050000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6050200</Col>
+            <Col id="MENU_NM">성과평가</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6050000</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6060000</Col>
+            <Col id="MENU_NM">지출관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6000000</Col>
+            <Col id="ORDER_SEQ">6</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6060100</Col>
+            <Col id="MENU_NM">법인카드 발급</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6060000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6060200</Col>
+            <Col id="MENU_NM">지출내역</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6060000</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6070000</Col>
+            <Col id="MENU_NM">도서관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6000000</Col>
+            <Col id="ORDER_SEQ">7</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6080000</Col>
+            <Col id="MENU_NM">문서고관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6000000</Col>
+            <Col id="ORDER_SEQ">8</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6090000</Col>
+            <Col id="MENU_NM">차량관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6000000</Col>
+            <Col id="ORDER_SEQ">9</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6100000</Col>
+            <Col id="MENU_NM">재물관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6000000</Col>
+            <Col id="ORDER_SEQ">10</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6100100</Col>
+            <Col id="MENU_NM">재물관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6100000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6100200</Col>
+            <Col id="MENU_NM">재물코드관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6100000</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">60</Col>
+            <Col id="MENU_CD">6110000</Col>
+            <Col id="MENU_NM">주간업무</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">6000000</Col>
+            <Col id="ORDER_SEQ">11</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">70</Col>
+            <Col id="MENU_CD">7000000</Col>
+            <Col id="MENU_NM">시스템관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">0</Col>
+            <Col id="ORDER_SEQ">7</Col>
+            <Col id="CD_LEV">1</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">70</Col>
+            <Col id="MENU_CD">7010000</Col>
+            <Col id="MENU_NM">사용자관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">7000000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">70</Col>
+            <Col id="MENU_CD">7010100</Col>
+            <Col id="MENU_NM">사용자그룹관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">7010000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">70</Col>
+            <Col id="MENU_CD">7010200</Col>
+            <Col id="MENU_NM">사용자관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">7010000</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">70</Col>
+            <Col id="MENU_CD">7010300</Col>
+            <Col id="MENU_NM">LP사용자관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">7010000</Col>
+            <Col id="ORDER_SEQ">3</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">70</Col>
+            <Col id="MENU_CD">7020000</Col>
+            <Col id="MENU_NM">화면관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">7000000</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">70</Col>
+            <Col id="MENU_CD">7020100</Col>
+            <Col id="MENU_NM">화면관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">7020000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">70</Col>
+            <Col id="MENU_CD">7020200</Col>
+            <Col id="MENU_NM">화면타이틀관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">7020000</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">70</Col>
+            <Col id="MENU_CD">7030000</Col>
+            <Col id="MENU_NM">메뉴/권한관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">7000000</Col>
+            <Col id="ORDER_SEQ">3</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">70</Col>
+            <Col id="MENU_CD">7030100</Col>
+            <Col id="MENU_NM">메뉴관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">7030000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">70</Col>
+            <Col id="MENU_CD">7030200</Col>
+            <Col id="MENU_NM">그룹별메뉴관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">7030000</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">70</Col>
+            <Col id="MENU_CD">7030300</Col>
+            <Col id="MENU_NM">그룹별화면관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">7030000</Col>
+            <Col id="ORDER_SEQ">3</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">70</Col>
+            <Col id="MENU_CD">7040000</Col>
+            <Col id="MENU_NM">코드관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">7000000</Col>
+            <Col id="ORDER_SEQ">4</Col>
+            <Col id="CD_LEV">2</Col>
+            <Col id="LOW_YN">Y</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">70</Col>
+            <Col id="MENU_CD">7040100</Col>
+            <Col id="MENU_NM">공통코드관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">7040000</Col>
+            <Col id="ORDER_SEQ">1</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="GROUP_CD">70</Col>
+            <Col id="MENU_CD">7040200</Col>
+            <Col id="MENU_NM">업종코드관리</Col>
+            <Col id="ENG_MENU_NM"/>
+            <Col id="PGM_ID"/>
+            <Col id="UP_CD">7040000</Col>
+            <Col id="ORDER_SEQ">2</Col>
+            <Col id="CD_LEV">3</Col>
+            <Col id="LOW_YN">N</Col>
+            <Col id="USE_YN">Y</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[/**
+*  인트라넷 고도화[Lexpeed3]구축 사업
+*
+*  @MenuPath       
+*  @FileName       FRM/FRM_TOP.xfdl
+*  @Creator        송원창
+*  @CreateDate     2016.05.11
+*  @LastModifier   
+*  @LastModifyDate 
+*  @Version        1.0
+*  @Outline        TOP Frame(메뉴,검색,사용자,즐겨찾기)
+*  @Description       
+*
+*
+************** 소스 수정 이력 *************************************************
+*    date          Modifier            Description
+*******************************************************************************
+*  2016.05.11      송원창              클래스 최초 생성
+*******************************************************************************
+*/
+/*----------------------------------------------------------------------------------------------
+ * 공통 라이브러리 INCLUDE 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * FORM 변수 선언 영역
+----------------------------------------------------------------------------------------------*/
+this.x = parseInt(0);
+this.y = parseInt(0);
+
+/*----------------------------------------------------------------------------------------------
+ * FORM EVENT 영역
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  화면 로드시 이벤트
+ */
+ this.FRM_TOP_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	//공통초기화 필수
+	this.gfn_initForm(obj);
+	
+	this.fn_menuSeparate(this.GDS_MENU);
+	//this.fn_menuSeparate(application.GDS_MENU);
+}
+
+/*----------------------------------------------------------------------------------------------
+ * 공통기능 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * TRANSACTION 및 CallBack 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  Push 수신 여부 저장 서비스 callback
+ * @param sTrId  	   - service ID
+ * @param nErrorCode   - error CODE
+ * @param sErrorMsg    - error MESSAGE
+ * @return       N/A
+ */
+
+
+/*----------------------------------------------------------------------------------------------
+ * 각 COMPONENT 별 EVENT 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+/**
+ * @description  메뉴 팝업호출
+ * @return       N/A
+ */
+this.btn_menu_onmouseenter = function(obj:Button, e:nexacro.MouseEventInfo)
+{
+	var pDivMenuGroup;
+	var x;
+	switch(obj.name)
+	{
+		case "btn_LEXPEED":
+			this.pdv_pay.closePopup();
+			this.pdv_fundLp.closePopup();
+			this.pdv_dealPortfolio.closePopup();
+			this.pdv_ment.closePopup();
+			pDivMenuGroup = this.pdv_LEXPEED;
+			
+			x = -parseInt(obj.width)+24;
+			break;
+			
+		case "btn_pay":
+			this.pdv_LEXPEED.closePopup();
+			this.pdv_fundLp.closePopup();
+			this.pdv_dealPortfolio.closePopup();
+			this.pdv_ment.closePopup();
+			pDivMenuGroup = this.pdv_pay;
+			
+			x = -parseInt(obj.width)+6;
+			break;
+			
+		case "btn_fundLp":
+			this.pdv_LEXPEED.closePopup();
+			this.pdv_pay.closePopup();
+			this.pdv_dealPortfolio.closePopup();
+			this.pdv_ment.closePopup();
+			pDivMenuGroup = this.pdv_fundLp;
+			
+			x = -parseInt(obj.width)+49;
+			break;
+			
+		case "btn_dealPortfolio":
+			this.pdv_LEXPEED.closePopup();
+			this.pdv_pay.closePopup();
+			this.pdv_fundLp.closePopup();
+			this.pdv_ment.closePopup();
+			pDivMenuGroup = this.pdv_dealPortfolio;
+			
+			x = -parseInt(obj.width)+80;
+			break;
+		
+		case "btn_ment":
+			this.pdv_LEXPEED.closePopup();
+			this.pdv_pay.closePopup();
+			this.pdv_fundLp.closePopup();
+			this.pdv_dealPortfolio.closePopup();
+			this.pdv_ment.closePopup();
+			pDivMenuGroup = this.pdv_ment00;
+			
+			x = -parseInt(obj.width)+74;
+			break;
+		
+		default:
+			break;
+	}
+	
+	pDivMenuGroup.trackPopupByComponent(this.div_menuArea, x, this.y);
+}
+
+/**
+ * @description  팝업된 grid에서 onmouseenter event 호출
+ * @return       N/A
+ */
+this.pdv_grd_onmouseenter = function(obj:Grid, e:nexacro.MouseEventInfo)
+{	
+	
+	var pDivMenuArea;
+	var x;
+	switch(obj.name)
+	{
+		case "grd_LEXPEED":
+			this.pdv_pay.closePopup();
+			this.pdv_fundLp.closePopup();
+			this.pdv_dealPortfolio.closePopup();
+			this.pdv_ment.closePopup();
+			pDivMenuArea = this.pdv_LEXPEED;
+			
+			x = -parseInt(this.div_menuArea.div_menuGroup1.btn_LEXPEED.width)+24;
+			break;
+			
+		case "grd_pay":
+			this.pdv_LEXPEED.closePopup();
+			this.pdv_fundLp.closePopup();
+			this.pdv_dealPortfolio.closePopup();
+			this.pdv_ment.closePopup();
+			pDivMenuArea = this.pdv_pay;
+			
+			x = -parseInt(this.div_menuArea.div_menuGroup1.btn_pay.width)+6;
+			break;
+			
+		case "grd_fundLp":
+			this.pdv_LEXPEED.closePopup();
+			this.pdv_pay.closePopup();
+			this.pdv_dealPortfolio.closePopup();
+			this.pdv_ment.closePopup();
+			pDivMenuArea = this.pdv_fundLp;
+			
+			x = -parseInt(this.div_menuArea.div_menuGroup2.btn_fundLp.width)+49;
+			break;
+			
+		case "grd_dealPortfolio":
+			this.pdv_LEXPEED.closePopup();
+			this.pdv_pay.closePopup();
+			this.pdv_fundLp.closePopup();
+			this.pdv_ment.closePopup();
+			pDivMenuArea = this.pdv_dealPortfolio;
+			
+			x = -parseInt(this.div_menuArea.div_menuGroup2.btn_dealPortfolio.width)+80;
+			break;
+		
+		case "grd_ment":
+			this.pdv_LEXPEED.closePopup();
+			this.pdv_pay.closePopup();
+			this.pdv_fundLp.closePopup();
+			this.pdv_dealPortfolio.closePopup();
+			pDivMenuArea = this.pdv_ment00;
+			
+			x = -parseInt(this.div_menuArea.div_menuGroup3.btn_ment.width)+74;
+			break;
+		
+		default:
+			break;
+	}
+	
+	pDivMenuArea.trackPopupByComponent(this.div_menuArea, x, this.y);
+}
+
+//메뉴닫힘
+this.pdv_onmouseleave = function(obj:PopupDiv, e:nexacro.MouseEventInfo)
+{
+	obj.closePopup();
+}
+
+//메뉴 닫힘
+this.pdv_bnt_closepopdiv_onmouseenter = function(obj:Button, e:nexacro.MouseEventInfo)
+{
+	obj.parent.closePopup();
+}
+
+//링크
+this.div_rightArea_btn_outLink_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var x = parseInt(obj.getOffsetLeft()) - ( parseInt(this.pdv_popLink.width)/2 ) + ( parseInt(obj.width)/2 );
+	var y = parseInt(this.div_rightArea.top)+parseInt(this.div_rightArea.height)-11;
+	
+	trace(obj.getOffsetLeft());
+	trace(this.pdv_popLink.width);
+	this.pdv_popLink.trackPopupByComponent(this.div_rightArea, x, y);
+}
+
+//즐겨찾기
+this.div_rightArea_btn_favorate_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var x = parseInt(obj.getOffsetLeft()) - ( parseInt(this.pdv_favorate.width)/2 ) + ( parseInt(obj.width)/2 );
+	var y = parseInt(this.div_rightArea.top)+parseInt(this.div_rightArea.height)-11;
+	
+	trace(obj.getOffsetLeft());
+	trace(this.pdv_favorate.width);
+	this.pdv_favorate.trackPopupByComponent(this.div_rightArea, x, y);
+}
+
+//rightArea Popup (링크, 즐겨찾기)
+this.div_rightArea_btn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var objPopupDiv;
+	
+	switch(obj.name)
+	{
+		case "btn_outLink":	//링크
+			objPopupDiv = this.pdv_popLink;
+			break;
+		
+		case "btn_favorate":	//즐겨찾기
+			objPopupDiv = this.pdv_favorate;
+			break;
+	}
+	
+	
+	var x = parseInt(obj.getOffsetLeft()) - ( parseInt(objPopupDiv.width)/2 ) + ( parseInt(obj.width)/2 );
+	var y = parseInt(this.div_rightArea.top)+parseInt(this.div_rightArea.height)-11;
+	
+	objPopupDiv.trackPopupByComponent(this.div_rightArea, x, y);
+}
+
+
+/*----------------------------------------------------------------------------------------------
+ * 사용자 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  전체 메뉴 분리
+ * @param objDs  - dataset
+ * @return       N/A
+ */
+this.fn_menuSeparate = function(objDs)
+{
+	var nDs = new Dataset;
+	this.addChild("nDs", nDs);
+	nDs.copyData(objDs);
+	
+	/////////////////////////////////////////////////
+	// 각 메뉴 분리
+	/////////////////////////////////////////////////
+	nDs.set_enableevent(false);
+	nDs.filter( "GROUP_CD == '10'");
+	this.ds_menu1.copyData(nDs, true);
+	
+		
+	nDs.filter( "GROUP_CD == '20'");
+	this.ds_menu2.copyData(nDs, true);
+	
+	
+	nDs.filter( "GROUP_CD == '30'");
+	this.ds_menu3.copyData(nDs, true);
+	
+	
+	nDs.filter( "GROUP_CD == '40'");
+	this.ds_menu4.copyData(nDs, true);
+	
+	
+	nDs.filter( "GROUP_CD == '50'");
+	this.ds_menu5.copyData(nDs, true);
+	
+	
+	nDs.filter( "GROUP_CD == '60'");
+	this.ds_menu6.copyData(nDs, true);
+	
+	
+	nDs.filter( "GROUP_CD == '70'");
+	this.ds_menu7.copyData(nDs, true);
+	/////////////////////////////////////////////////
+	
+	var del = this.removeChild("nDs");
+	del.destroy();
+	del = null;
+	
+	/////////////////////////////////////////////////
+	// 각 메뉴 세팅
+	/////////////////////////////////////////////////
+	var ret;
+	var ret = this.fn_descMenuSeparate(this.ds_menu1);
+	this.fn_popupMenuSet(this.pdv_LEXPEED.grd_LEXPEED, ret);	//메뉴 binddataset, formats, resize
+	
+	
+ 	ret = this.fn_descMenuSeparate(this.ds_menu2);
+ 	this.fn_popupMenuSet(this.pdv_pay.grd_pay, ret);	//메뉴 binddataset, formats, resize
+ 	
+ 	
+	ret = this.fn_descMenuSeparate(this.ds_menu3);
+	this.fn_popupMenuSet(this.pdv_fundLp.grd_fundLp, ret);	//메뉴 binddataset, formats, resize
+	
+	
+	ret = this.fn_descMenuSeparate(this.ds_menu4);
+	this.fn_popupMenuSet(this.pdv_dealPortfolio.grd_dealPortfolio, ret);	//메뉴 binddataset, formats, resize
+	
+	
+	ret = this.fn_descMenuSeparate(this.ds_menu5);
+	//this.fn_popupMenuSet(this.pdv_dealPortfolio.grd_dealPortfolio, ret);	//메뉴 binddataset, formats, resize
+	
+	
+	ret = this.fn_descMenuSeparate(this.ds_menu6);
+	ret = this.fn_fn_descMenuSeparateStatic(this.pdv_ment00, ret);
+
+	//var size = this.fn_popupMenuSet(this.pdv_ment.grd_ment, ret);	//메뉴 binddataset, formats, resize
+	this.fn_popupMenuStaticSet(ret);
+	
+	
+	ret = this.fn_descMenuSeparate(this.ds_menu7);
+	//this.fn_popMenuResize(this.pdv_ment.grd_ment, ret);	//메뉴 binddataset, formats, resize
+	/////////////////////////////////////////////////
+}
+
+/**
+ * @description  분리 된 메뉴, binddataset, formats, resize 변경
+ * @param objGrd  - Grid
+ * @param arr  	  - array
+ * @return       N/A
+ */
+this.fn_popupMenuSet = function(objGrd, arr)
+{
+	var grdHeight = (26 * arr[2]) + 30;
+	var grdWidth = (180 * 6);
+	//trace(arr[3]);
+	objGrd.set_binddataset( arr[1] );
+	objGrd.set_formats( arr[0] );
+	objGrd.set_height( grdHeight );
+	
+	
+	var popupDivHeight = 37 + grdHeight + 5;
+	var popupDivWidth = grdWidth;
+		
+	objGrd.set_width( grdWidth );
+	objGrd.parent.set_height( popupDivHeight );
+	objGrd.parent.set_width( popupDivWidth );
+	//objGrd.parent.set_scrollbars("none");
+}
+
+this.fn_popupMenuStaticSet = function(arr)
+{
+	var sum = 0;
+	var height = 26;
+	var menuBtnheight = 37;
+	for(var i = 0; i < arr.length; i++)
+		sum = sum + arr[i]+1;
+
+	sum = (sum * height) + (10*arr.length);
+
+	this.pdv_ment00.set_height(sum+menuBtnheight+5);
+	this.pdv_ment00.sta_bg.set_height(sum);	
+	//this.pdv_ment00.set_scrollbars("none");
+	
+	for(var i = 0; i < 5; i++)
+	{
+		eval("this.pdv_ment00.sta_bar"+i).set_height(sum-2);
+		eval("this.pdv_ment00.sta_bar"+i).bringToFront();
+	}
+}
+
+/**
+ * @description  전체 메뉴 레벨 별로 분리
+ * @param objGrd  - Grid
+ * @return       N/A
+ */
+this.fn_descMenuSeparate = function(objDs)
+{
+	var nDs = new Dataset;
+	this.addChild("nDs", nDs);
+	nDs.copyData(objDs);
+	
+	var newDs = new Dataset;
+	this.addChild(nDs.name+nDs.name, newDs);
+	
+	nDs.set_enableevent(false);
+	nDs.filter( "CD_LEV == '2'");
+	var cnt1 = nDs.rowcount;
+	
+	var formats = this.fn_gridMenuForamtsCreate(nDs);	// grid format 생성 grid bind dataset
+	
+	for(var i = 1; i <= cnt1; i++)
+	{
+		newDs.addColumn( "column0"+(i-1), "STRING" );
+	}
+	var nRow = 0;
+	nRow = newDs.addRow();
+	newDs.setColumn(0, "column00", nDs.getColumn(0, "MENU_NM"));
+	
+	nDs.filter( "" );
+	nDs.set_enableevent(true);
+	
+	var fixlev = nDs.getColumn(1, "CD_LEV");
+	cnt1 = nDs.rowcount;
+	var cnt2 = newDs.getColCount();
+	var lev;
+	var col = 0;
+	var MENU_NM;
+	var preRow = 1;
+	
+	for(var j = 2; j < cnt1; j++)
+	{
+		lev = nDs.getColumn(j, "CD_LEV");
+		
+		if(fixlev == lev)
+		{
+			col = col+1;
+			MENU_NM = nDs.getColumn(j, "MENU_NM")
+			newDs.setColumn(0, "column0"+col, MENU_NM);
+			nRow = 1;
+		}
+		else
+		{
+			//trace("1) "+"newDs.rowcount: "+ (newDs.rowcount) + " preRow: " + preRow +" nRow: "+ nRow + "   " + nDs.getColumn(j, "MENU_NM"));
+			if(newDs.rowcount == nRow)
+			{
+				nRow = newDs.addRow();
+			}
+			
+			MENU_NM = nDs.getColumn(j, "MENU_NM");
+			newDs.setColumn(nRow, "column0"+col, MENU_NM);
+			nRow++;
+		}
+	}
+	
+	var del = this.removeChild("nDs");
+	del.destroy();
+	del = null;
+	
+	return [formats, newDs, newDs.rowcount-1, newDs.colcount];
+}
+
+
+/**
+ * @description  그리드 formats 생성
+ * @param objDs  - dataset
+ * @return       N/A
+ */
+this.fn_gridMenuForamtsCreate = function(objDs)
+{
+	var formats = "";
+	var nColumn = '   <Column size="180" />\n';
+	var bodyCol = '   <Cell style="background:EXPR(currow&#32;==&#32;0&#32;?&#32;&quot;#fcfcfcff&quot;&#32;:&#32;&quot;&quot;);color:EXPR(currow&#32;==&#32;0&#32;?&#32;&quot;#333333ff&quot;&#32;:&#32;&quot;&quot;);font:EXPR(currow&#32;==&#32;0&#32;?&#32;&quot;10&#32;notokr-regular,&#32;dotum&quot;&#32;:&#32;&quot;&quot;);" text="bind:column00"/>\n';
+	//var headCol = '   <Cell style="color:#333333ff;font:9&#32;notokr-medium,&#32;dotum;" text="'+objDs.getColumn(0, "MENU_NM")+'"/>\n';
+
+
+	for(var i = 1; i < objDs.rowcount; i++)
+	{
+		nColumn += '    <Column size="180" />\n';		
+		bodyCol += '    <Cell col="'+ i +'" style="background:EXPR(currow&#32;==&#32;0&#32;?&#32;&quot;#fcfcfcff&quot;&#32;:&#32;&quot;&quot;);color:EXPR(currow&#32;==&#32;0&#32;?&#32;&quot;#333333ff&quot;&#32;:&#32;&quot;&quot;);font:EXPR(currow&#32;==&#32;0&#32;?&#32;&quot;10&#32;notokr-regular,&#32;dotum&quot;&#32;:&#32;&quot;&quot;);" text="bind:column0'+ i +'"/>\n';
+		//headCol += '    <Cell col="'+ i +'" style="color:#333333ff;font:9&#32;notokr-medium,&#32;dotum;" text="'+ objDs.getColumn(i, "MENU_NM")+ '"/>\n';
+	}
+
+	formats = '<Formats>\n';
+	formats += '<Format id="default">\n';
+	formats += '  <Columns>\n';
+
+	formats += nColumn;
+
+	formats += '  </Columns>\n';
+	formats += '  <Rows>\n';
+	//formats += '    <Row size="35" band="head" />\n';
+	formats += '    <Row size="26" />\n';
+	formats += '  </Rows>\n';	
+	//formats += '  <Band id="head">\n';
+	
+	//formats += headCol;
+	
+	//formats += '  </Band>\n';
+	formats += '  <Band id="body">\n';
+
+	formats += bodyCol;
+
+	formats += '  </Band>\n';
+	formats += '</Format>\n';
+	formats += '</Formats>\n';
+	
+	return formats;
+}
+
+
+this.fn_fn_descMenuSeparateStatic = function(objPdv, objArr)
+{
+ 	var nDs = objArr[1];
+ 	var colCnt =  objArr[3];
+ 	var rowCnt =  nDs.rowcount;
+ 	var objStatic;	// static object
+ 	var staId;		// static id
+ 	var sta = 0;	// static id naming count
+ 	var colId;		// column id
+ 	var staText;	// static text
+ 	
+ 	var fixWidth = 180;	// static width 	
+ 	var fixTop1 = 39;	// static 생성위치 top
+ 	var fixTop2 = 26;	// static height size
+ 	var fixTop3 = 0;	// 2 depth menu top
+	
+ 	var fixLeft = 0;	// static fixed left 	
+ 	var max = 6;		// 최대 매뉴 생성 width
+ 	var maxsum = max;
+ 	var arrCnt = Math.ceil(colCnt/max);	// 2 depth menu max count
+ 	var arrHeight = new Array(); 		// 2depth menu top size count
+ 	var top;			// static top
+ 	var lev = 0;		// 2depth menu height level
+ 	var levCnt = 0;		// level count
+ 	
+ 	var widCnt = 0;		// 가로 배치 보정 값
+ 	var leftCnt = 0;	// 가로 배치 보정 값
+ 	
+ 	var last = 0;		// 마지막 번째줄 보정값
+ 	var levGap = 10;	// level 과 level 공간
+
+ 	for(var i = 0; i < colCnt; i++)
+ 	{
+		for(var j = 0; j < rowCnt; j++)
+		{
+			sta++;
+			staId = "Static0"+sta;
+			colId = "column0"+i;
+			staText = nDs.getColumn(j, colId);
+			
+			if(this.gfn_isNull( staText ))	// text 값이 없으면 3depth 메뉴가 없음.
+			{
+				j = rowCnt;
+			}
+			else
+			{
+				if(i < maxsum)	// 6개씩 비교 하여 3depth 하위에 2depth 를 left=0 부터 다시 생성
+				{
+					widCnt = maxsum - i;
+					leftCnt = max - widCnt;
+										
+					fixLeft = fixWidth * leftCnt;	// static left cacl
+					
+					//첫번째 마지막 위치보정
+					if(leftCnt == 0)
+					{
+						fixLeft = fixLeft+1;
+					}
+					else if(leftCnt == (max-1))
+					{
+						fixLeft = fixLeft-1;
+					}
+					
+					top = fixTop1 + (fixTop2*j) + fixTop3 + last;	// static top cacl
+					
+					//trace("leftCnt: " + leftCnt + " j: " + j);
+					
+					if(lev == j || lev < j)	// 3depth 최대 생성 값 저장
+					{
+						lev = j;
+						arrHeight[levCnt] = lev;
+					}
+ 				}
+ 				else
+ 				{
+					//trace(arrHeight[levCnt]);
+					levCnt++;
+					if(arrCnt == (levCnt+1))	//마지막 보정값
+					{
+						if(2 == arrCnt)
+						{
+							last = -fixTop2;
+						}
+						else if(levCnt < arrCnt)
+						{							
+							last = levGap;
+						}
+
+					}
+					else
+					{
+						fixTop1 = fixTop2;
+					}
+					
+					var sum = 0;
+					
+					for(var k = 0; k < arrHeight.length; k++)
+						sum = sum + arrHeight[k] + 1;
+					
+					fixTop3 = fixTop1 +(sum * fixTop2);
+					top = fixTop1 + (fixTop2*j) + fixTop3 + last;
+					
+					fixLeft = 1;
+					lev = 0;
+					widCnt = 0;
+					
+ 					maxsum = maxsum + max;	//6개씩 나누기 위해 더함
+ 					
+ 					if(arrHeight.length < arrCnt)	// height 값 보정
+						arrHeight[levCnt] = 0;
+
+ 				}
+ 				
+				objStatic = new Static(staId, "absolute", fixLeft, top, fixWidth, 26, null, null);	
+				objPdv.addChild(staId, objStatic);
+				//this.Div00.addChild(staId, objStatic);
+				
+				if(j == 0)	// 2depth style
+				{
+					objStatic.set_cssclass("sta_TF_Menu_level02");
+					objStatic.style.set_font("10 notokr-regular, dotum" );	 
+				}
+				else	//3depth style
+				{
+					objStatic.set_cssclass("sta_TF_Menu_level03");
+				}
+				
+				objStatic.set_text(staText);
+				objStatic.show();
+			}
+		}
+ 	}
+ 	
+ 	return arrHeight;	// popupsize 보정을 위해 return
+}
+
+
+
+
+this.pdv_grd_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	trace(e.col);
+	trace(e.row);
+	obj.parent.closePopup();
+	
+	var nDs = obj.getBindDataset();
+	
+	
+	trace(nDs.getColumn(e.row, "column0"+e.col));
+	
+	
+}
+
+]]></Script>
+  </Form>
+</FDL>

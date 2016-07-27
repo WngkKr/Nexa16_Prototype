@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="FRM_BOTTOM" classname="FRM_BOTTOM" left="0" top="0" width="1400" height="65" titletext="BottomFrame" onload="FRM_BOTTOM_onload" cssclass="frm_BF_bottom" scrollbars="none">
+    <Layouts>
+      <Layout>
+        <Static id="Static00" taborder="0" text="ⓒ STIC INVESMENTS INC. ALL RIGHT RESERVED." cssclass="sta_BF_copyright" top="37" right="27" width="350" height="21" style="background:transparent;border:0 solid #808080 ;"/>
+        <Tab id="tab_navi" taborder="2" left="28" width="1340" tabindex="0" scrollbars="autoboth" cssclass="tab_BF_tab" tabposition="bottom" top="0" height="32" onchanged="tab_navi_onchanged" onextrabuttonclick="tab_navi_onextrabuttonclick">
+          <Tabpages>
+            <Tabpage id="tabpage1" text="home" left="28" top="0" width="371" height="40" style="background:#ffffffff;"/>
+          </Tabpages>
+        </Tab>
+      </Layout>
+    </Layouts>
+    <InitValue/>
+    <Script type="xscript5.0"><![CDATA[/**
+*  인트라넷 고도화[Lexpeed3]구축 사업
+*
+*  @MenuPath       
+*  @FileName       FRM_WORK.xfdl
+*  @Creator        송원창
+*  @CreateDate     2016.05.16
+*  @LastModifier   
+*  @LastModifyDate 
+*  @Version        1.0
+*  @Outline        work Frame
+*  @Description       
+*
+*
+************** 소스 수정 이력 *************************************************
+*    date          Modifier            Description
+*******************************************************************************
+*  2016.05.16      송원창              클래스 최초 생성
+*******************************************************************************
+*/
+/*----------------------------------------------------------------------------------------------
+ * 공통 라이브러리 INCLUDE 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+//include "LIB::LIB_COMMON.xjs";  	// 공통 js
+/*----------------------------------------------------------------------------------------------
+ * FORM 변수 선언 영역
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * FORM EVENT 영역
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  화면 로드시 이벤트
+ */
+this.FRM_BOTTOM_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	
+	//공통초기화 필수
+	this.gfn_initForm(obj);
+	
+	//로그인후 사용자가 home나오든지 home2 가 나오든지 아니면 모두 나오든지? 사용자 확인필수
+	
+	
+	if("어떤 사용자는 home")
+	{
+	}
+	else if("어떤 사용자는 home2")
+	{
+	}
+	else if("모든 사용자는 home home2");
+	{
+	}
+	
+	this.tab_navi.removeTabpage(0);
+	//초기 메뉴
+	var menucd = "home";
+	var menunm = "홈";
+	var engNm 	= "home";
+	var pgmurl 	= "SAM::SAM006.xfdl";
+	var upCd 	= "0"
+	this.gfn_menuOpen(menucd, menunm, engNm, pgmurl, upCd);
+	
+	
+}
+
+/*----------------------------------------------------------------------------------------------
+ * 공통기능 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * TRANSACTION 및 CallBack 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * 각 COMPONENT 별 EVENT 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  탭 메뉴 이동
+ * @return       N/A
+ */
+this.tab_navi_onchanged = function(obj:Tab, e:nexacro.TabIndexChangeEventInfo)
+{
+	var winId = obj.tabpages[e.postindex].name;
+	
+	if(e.postindex == 0)
+	{
+		winId = "home";
+	}
+	
+	this.gfn_activeWin(winId);
+}
+
+/**
+ * @description  탭 메뉴 닫기(home은 return)
+ * @return       N/A
+ */
+this.tab_navi_onextrabuttonclick = function(obj:Tab, e:nexacro.TabMouseEventInfo)
+{
+	var tIdx = obj.getIndex(e.clientX, e.clientY);
+	var winId = obj.tabpages[tIdx].name;
+	
+	
+	if(tIdx == 0)
+		return;
+	
+	var bSucc = obj.removeTabpage(tIdx);
+	
+	var workFrame = application.mainframe.VFrameSet.BottomVFrameSet.WorkFrameSet;
+	
+	if (bSucc == 0)
+	{
+		workFrame[winId].form.close();
+		
+		var nRow = application.GDS_OPENMENU.findRow("MENU_CD", winId);
+		application.GDS_OPENMENU.deleteRow(nRow);
+	}
+}
+
+
+/*----------------------------------------------------------------------------------------------
+ * 사용자 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+]]></Script>
+  </Form>
+</FDL>

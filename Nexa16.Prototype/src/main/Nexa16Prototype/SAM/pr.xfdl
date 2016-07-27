@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="pr" classname="pr" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Grid id="Grid00" taborder="0" useinputpanel="false" left="88" top="63" width="454" height="227" binddataset="upload" autofittype="col" cssclass="grid_WF_upDownLoadGrid">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="40"/>
+                <Column size="40"/>
+                <Column size="40"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+                <Row size="24" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="체크박스"/>
+                <Cell col="1" text="파일이름"/>
+                <Cell col="2" text="파일크기"/>
+                <Cell col="3" text="파일단위"/>
+                <Cell col="4" colspan="2" text="ASDFASDF"/>
+                <Cell col="6"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="image" text="bind:체크박스"/>
+                <Cell col="1" text="bind:파일이름"/>
+                <Cell col="2" text="bind:파일크기"/>
+                <Cell col="3" text="bind:파일단위"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+                <Cell col="6"/>
+              </Band>
+              <Band id="summary">
+                <Cell text="2134"/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3" text="34"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+                <Cell col="6"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button00" taborder="1" text="Button00" onclick="Button00_onclick" left="248" top="7" width="120" height="50"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="upload">
+        <ColumnInfo>
+          <Column id="체크박스" type="STRING" size="256"/>
+          <Column id="파일이름" type="STRING" size="256"/>
+          <Column id="파일크기" type="FLOAT" size="256"/>
+          <Column id="파일단위" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="파일크기">2.5</Col>
+            <Col id="파일이름">파일이름1</Col>
+            <Col id="파일단위">KB</Col>
+            <Col id="체크박스">IMG::img_sta_alertError.png</Col>
+          </Row>
+          <Row>
+            <Col id="파일크기">4</Col>
+            <Col id="파일이름">파일이름2</Col>
+            <Col id="파일단위">MB</Col>
+          </Row>
+          <Row>
+            <Col id="파일크기">12</Col>
+            <Col id="파일단위">KB</Col>
+            <Col id="파일이름">파일이름3</Col>
+          </Row>
+          <Row>
+            <Col id="파일크기">74.5</Col>
+            <Col id="파일단위">KB</Col>
+            <Col id="파일이름">파일이름4</Col>
+          </Row>
+          <Row>
+            <Col id="파일크기">130.9</Col>
+            <Col id="파일단위">KB</Col>
+            <Col id="파일이름">파일이름5</Col>
+          </Row>
+          <Row>
+            <Col id="파일이름">파일이름6</Col>
+            <Col id="파일크기">10</Col>
+            <Col id="파일단위">MB</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.Button00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.printPreView(this, "인력정보", "A4", "portrait");
+}
+]]></Script>
+  </Form>
+</FDL>

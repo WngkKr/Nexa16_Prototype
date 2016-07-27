@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -39,7 +39,7 @@ if (!nexacro.PopupMenuItem) {
 		this.userdata = null;
 		this.buttonalign = "";
 
-		this._txt_elem = null;
+		this._text_elem = null;
 		this._hotkey_txtelem = null;
 		this._hotkey_string = "";
 		this._accessibility_role = "menuitem";
@@ -75,8 +75,8 @@ if (!nexacro.PopupMenuItem) {
 	};
 
 	_pPopupMenuItem.on_apply_style_color = function (v) {
-		if (this._txt_elem) {
-			this._txt_elem.setElementColor(v);
+		if (this._text_elem) {
+			this._text_elem.setElementColor(v);
 		}
 		if (this._hotkey_txtelem) {
 			this._hotkey_txtelem.setElementColor(v);
@@ -84,11 +84,20 @@ if (!nexacro.PopupMenuItem) {
 	};
 
 	_pPopupMenuItem.on_apply_style_font = function (v) {
-		if (this._txt_elem) {
-			this._txt_elem.setElementFont(v);
+		if (this._text_elem) {
+			this._text_elem.setElementFont(v);
 		}
 		if (this._hotkey_txtelem) {
 			this._hotkey_txtelem.setElementFont(v);
+		}
+	};
+
+	_pPopupMenuItem.on_apply_style_letterspace = function (v) {
+		if (this._text_elem) {
+			this._text_elem.setElementLetterSpace(v);
+		}
+		if (this._hotkey_txtelem) {
+			this._hotkey_txtelem.setElementLetterSpace(v);
 		}
 	};
 
@@ -124,15 +133,17 @@ if (!nexacro.PopupMenuItem) {
 			}
 
 			if (this.text) {
-				var txtelem = this._txt_elem = new nexacro.TextBoxElement(control_elem);
+				var txtelem = this._text_elem = new nexacro.TextBoxElement(control_elem);
 				txtelem.setElementFont(curstyle.font);
 				txtelem.setElementColor(curstyle.color);
+				txtelem.setElementLetterSpace(curstyle.letterspace);
 			}
 
 			if (this._hotkey_string) {
 				var hotkey_txt_elem = this._hotkey_txtelem = new nexacro.TextBoxElement(control_elem);
 				hotkey_txt_elem.setElementFont(curstyle.font);
 				hotkey_txt_elem.setElementColor(curstyle.color);
+				hotkey_txt_elem.setElementLetterSpace(curstyle.letterspace);
 			}
 
 			var exp_img_url = this.expandimage;
@@ -143,7 +154,7 @@ if (!nexacro.PopupMenuItem) {
 	};
 
 	_pPopupMenuItem.on_created_contents = function () {
-		var txtelem = this._txt_elem;
+		var txtelem = this._text_elem;
 		var hotkey_txtelem = this._hotkey_txtelem;
 		var chkimgctrl = this.chkimgctrl;
 		var imgctrl = this.imgctrl;
@@ -181,9 +192,9 @@ if (!nexacro.PopupMenuItem) {
 			this.chkimgctrl.destroy();
 			this.chkimgctrl = null;
 		}
-		if (this._txt_elem) {
-			this._txt_elem.destroy();
-			this._txt_elem = null;
+		if (this._text_elem) {
+			this._text_elem.destroy();
+			this._text_elem = null;
 		}
 
 		if (this._hotkey_txtelem) {
@@ -198,7 +209,7 @@ if (!nexacro.PopupMenuItem) {
 	};
 
 	_pPopupMenuItem.on_change_containerRect = function (width, height) {
-		var txtelem = this._txt_elem, hotkey_txtelem = this._hotkey_txtelem;
+		var txtelem = this._text_elem, hotkey_txtelem = this._hotkey_txtelem;
 		var text_height = 0, parent_height = 0;
 
 		if (this.parent && this.parent.text_height) {
@@ -294,13 +305,14 @@ if (!nexacro.PopupMenuItem) {
 	_pPopupMenuItem.on_apply_text = function () {
 		var control_elem = this._control_element;
 		if (control_elem) {
-			var txtelem = this._txt_elem;
+			var txtelem = this._text_elem;
 			if (!txtelem) {
 				txtelem = new nexacro.TextBoxElement(control_elem);
-				this._txt_elem = txtelem;
+				this._text_elem = txtelem;
 				txtelem.setElementSize(this._width, this._client_height);
 				txtelem.setElementColor(this.currentstyle.color);
 				txtelem.setElementFont(this.currentstyle.font);
+				txtelem.setElementLetterSpace(this.curstyle.letterspace);
 
 				if (this._is_created) {
 					txtelem.create();
@@ -331,6 +343,7 @@ if (!nexacro.PopupMenuItem) {
 				elem.setElementSize(this._width, this._client_height);
 				elem.setElementColor(this.currentstyle.color);
 				elem.setElementFont(this.currentstyle.font);
+				elem.setElementLetterSpace(this.currentstyle.letterspace);
 
 				if (this._is_created) {
 					elem.create();
@@ -350,10 +363,6 @@ if (!nexacro.PopupMenuItem) {
 	};
 
 	_pPopupMenuItem.on_apply_mouseover = function (isovered) {
-		if (this.selected) {
-			return;
-		}
-
 		if (isovered) {
 			this._stat_change("normal", "mouseover");
 		}
@@ -457,7 +466,7 @@ if (!nexacro.PopupMenuItem) {
 			return;
 		}
 
-		var txtelem = this._txt_elem;
+		var txtelem = this._text_elem;
 
 		if (txtelem) {
 			var client_width = this._client_width;
@@ -565,6 +574,8 @@ if (!nexacro.PopupMenu_Style) {
 	eval(nexacro._createValueAttributeEvalStr("_pPopupMenuStyle", "expandimage"));
 	eval(nexacro._createAccessibilityAttributeEvalStr("_pPopupMenuStyle", "itemaccessibility"));
 	eval(nexacro._createValueAttributeEvalStr("_pPopupMenuStyle", "popuptype"));
+	eval(nexacro._createValueAttributeEvalStr("_pPopupMenuStyle", "buttonsize"));
+	eval(nexacro._createValueAttributeEvalStr("_pPopupMenuStyle", "buttonalign"));
 
 	_pPopupMenuStyle.__custom_emptyObject = function () {
 		this.itemalign = null;
@@ -578,6 +589,8 @@ if (!nexacro.PopupMenu_Style) {
 		this.expandimage = null;
 		this.itemaccessibility = null;
 		this.popuptype = null;
+		this.buttonsize = null;
+		this.buttonalign = null;
 	};
 
 	_pPopupMenuStyle.__get_custom_style_value = function () {
@@ -637,6 +650,16 @@ if (!nexacro.PopupMenu_Style) {
 			val += "itemaccessibility:" + popuptype._value + "; ";
 		}
 
+		var buttonsize = this.buttonsize;
+		if (buttonsize && buttonsize._value.length) {
+			val += "buttonsize:" + buttonsize._value + "; ";
+		}
+
+		var buttonalign = this.buttonalign;
+		if (buttonalign && buttonalign._value.length) {
+			val += "buttonalign:" + buttonalign._value + "; ";
+		}
+
 		return val;
 	};
 
@@ -653,6 +676,8 @@ if (!nexacro.PopupMenu_Style) {
 		this.expandimage = null;
 		this.itemaccessibility = null;
 		this.popuptype = null;
+		this.buttonsize = null;
+		this.buttonalign = null;
 	};
 
 	var _pPopupMenuCurrentStyle = nexacro.PopupMenu_CurrentStyle.prototype = nexacro._createPrototype(nexacro.CurrentStyle, nexacro.PopupMenu_CurrentStyle);
@@ -793,6 +818,9 @@ if (!nexacro.PopupMenu) {
 
 	_pPopupMenu._type_name = "PopupMenu";
 
+	nexacro.PopupMenu._default_buttonsize = nexacro._getCachedStyleObj("buttonsize", -1);
+	nexacro.PopupMenu._default_buttonalign = nexacro._getCachedStyleObj("buttonalign", "auto");
+
 
 	_pPopupMenu.on_create_custom_style = function () {
 		return new nexacro.PopupMenu_Style(this);
@@ -809,6 +837,11 @@ if (!nexacro.PopupMenu) {
 		if (curstyle.font != font) {
 			curstyle.font = font;
 			this.on_apply_style_font(font);
+		}
+		var letterspace = this.on_find_CurrentStyle_letterspace(pseudo);
+		if (curstyle.letterspace != letterspace) {
+			curstyle.letterspace = letterspace;
+			this.on_apply_style_letterspace(letterspace);
 		}
 		var color = this.on_find_CurrentStyle_color(pseudo);
 		if (curstyle.color != color) {
@@ -879,6 +912,18 @@ if (!nexacro.PopupMenu) {
 		if (rtlimagemirroring != curstyle.rtlimagemirroring) {
 			curstyle.rtlimagemirroring = rtlimagemirroring;
 			this.on_apply_style_rtlimagemirroring(rtlimagemirroring);
+		}
+
+		var buttonsize = this.on_find_CurrentStyle_buttonsize(pseudo);
+		if (buttonsize != curstyle.buttonsize) {
+			curstyle.buttonsize = buttonsize;
+			this.on_apply_style_buttonsize(buttonsize);
+		}
+
+		var buttonalign = this.on_find_CurrentStyle_buttonalign(pseudo);
+		if (buttonalign != curstyle.buttonalign) {
+			curstyle.buttonalign = buttonalign;
+			this.on_apply_style_buttonalign(buttonalign);
 		}
 
 		if (this.spinupbutton) {
@@ -1055,6 +1100,25 @@ if (!nexacro.PopupMenu) {
 		return this._find_inherit_pseudo_obj("font", pseudo, "font");
 	};
 
+	_pPopupMenu.on_find_CurrentStyle_letterspace = function (pseudo) {
+		if (this.parent instanceof nexacro.Menu) {
+			return this.parent.on_find_CurrentStyle_letterspace(pseudo);
+		}
+		else if (this.parent instanceof nexacro.PopupMenu) {
+			if (this.selfpopup) {
+				var p = this;
+				while (p._is_subcontrol != false) {
+					p = p.parent;
+				}
+				return p._find_inherit_pseudo_obj("letterspace", pseudo, "letterspace");
+			}
+			else {
+				return this._getMenuObj()._find_pseudo_obj("letterspace", pseudo, "letterspace");
+			}
+		}
+		return this._find_inherit_pseudo_obj("letterspace", pseudo, "letterspace");
+	};
+
 	_pPopupMenu.on_find_CurrentStyle_color = function (pseudo) {
 		if (this.parent instanceof nexacro.Menu) {
 			return this.parent.on_find_CurrentStyle_popupcolor(pseudo);
@@ -1151,6 +1215,12 @@ if (!nexacro.PopupMenu) {
 		return nexacro.Component.prototype.on_find_CurrentStyle_rtlimagemirroring.apply(rootComp, arguments);
 	};
 
+	_pPopupMenu.on_find_CurrentStyle_buttonsize = function (pseudo) {
+		return this._find_pseudo_obj("buttonsize", pseudo) || nexacro.PopupMenu._default_buttonsize;
+	};
+	_pPopupMenu.on_find_CurrentStyle_buttonalign = function (pseudo) {
+		return this._find_pseudo_obj("buttonalign", pseudo) || nexacro.PopupMenu._default_buttonalign;
+	};
 	_pPopupMenu.on_apply_custom_class = function () {
 		if (this._popupmenu) {
 			this._popupmenu.on_apply_prop_class();
@@ -1177,6 +1247,18 @@ if (!nexacro.PopupMenu) {
 			for (var i = 0; i < len; i++) {
 				font = this.on_find_CurrentStyle_font(items[i]._pseudo);
 				items[i].on_apply_style_font(font);
+			}
+		}
+	};
+
+	_pPopupMenu.on_apply_style_letterspace = function (letterspace) {
+		var items = this._items;
+		if (items) {
+			var len = items.length;
+
+			for (var i = 0; i < len; i++) {
+				letterspace = this.on_find_CurrentStyle_letterspace(items[i]._pseudo);
+				items[i].on_apply_style_letterspace(letterspace);
 			}
 		}
 	};
@@ -1362,6 +1444,40 @@ if (!nexacro.PopupMenu) {
 		if (popupmenu) {
 			popupmenu._setRtlDirection(_rtldirection);
 		}
+	};
+
+	_pPopupMenu.on_apply_style_buttonsize = function (buttonsize) {
+		if (buttonsize && buttonsize._value != -1) {
+			this._spin_height = parseInt(buttonsize._value);
+		}
+		else {
+			this._spin_height = 20;
+		}
+		this._reCalcSize();
+		this._calcSpinButton();
+		this._updateMenuItemPosition();
+	};
+
+	_pPopupMenu.on_apply_style_buttonalign = function (buttonalign) {
+		if (buttonalign) {
+			var align = buttonalign._value;
+			if (align == "none") {
+				this._spin_height = 0;
+			}
+			else {
+				var buttonsize = this.on_find_CurrentStyle_buttonsize(this._pseudo);
+				if (buttonsize && buttonsize._value != -1) {
+					this._spin_height = parseInt(buttonsize._value);
+				}
+				else {
+					this._spin_height = 20;
+				}
+			}
+		}
+
+		this._reCalcSize();
+		this._calcSpinButton();
+		this._updateMenuItemPosition();
 	};
 
 	_pPopupMenu.on_update_style_color = function () {
@@ -1576,6 +1692,13 @@ if (!nexacro.PopupMenu) {
 		}
 	};
 
+	_pPopupMenu.on_update_style_buttonsize = function () {
+		this.on_apply_style_buttonsize(this.currentstyle.buttonsize = this.on_find_CurrentStyle_buttonsize(this._pseudo));
+	};
+
+	_pPopupMenu.on_update_style_buttonalign = function () {
+		this.on_apply_style_buttonalign(this.currentstyle.buttonalign = this.on_find_CurrentStyle_buttonalign(this._pseudo));
+	};
 
 	_pPopupMenu.on_create_contents = function () {
 		var control_elem = this.getElement();
@@ -1966,6 +2089,7 @@ if (!nexacro.PopupMenu) {
 	_pPopupMenu.on_fire_user_onmouseleave = function (button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, from_comp, from_refer_comp) {
 		if (this.onmouseleave && this.onmouseleave._has_handlers) {
 			var iteminfo = this._last_mouseleave_iteminfo;
+			var refer_comp = from_refer_comp._overedobj || from_refer_comp;
 			var evt = new nexacro.MenuMouseEventInfo(this, "onmouseleave", refer_comp.id, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, from_comp, from_refer_comp, iteminfo.level, iteminfo.index, iteminfo.bindindex);
 			return this.onmouseleave._fireUserEvent(this, evt);
 		}
@@ -2048,7 +2172,7 @@ if (!nexacro.PopupMenu) {
 						this._closePopup();
 					}
 					else {
-						pThis._item_killfocus(item[pThis._popupitemindex]);
+						pThis._item_focus(item[pThis._popupitemindex], false);
 						if (shift_key == false) {
 							this._popupitemindex++;
 						}
@@ -2070,7 +2194,7 @@ if (!nexacro.PopupMenu) {
 				}
 				else {
 					if (!shift_key && pThis._popupitemindex == item_len || shift_key && pThis._popupitemindex == 0) {
-						pThis._item_killfocus(item[pThis._popupitemindex]);
+						pThis._item_focus(item[pThis._popupitemindex], false);
 						pThis._closePopup();
 						var pThis = this._popupmenu_find(this);
 						var item = this._item_find(pThis);
@@ -2078,7 +2202,7 @@ if (!nexacro.PopupMenu) {
 						pThis._popupitemindex = pThis._previousitem;
 					}
 					else {
-						pThis._item_killfocus(item[pThis._popupitemindex]);
+						pThis._item_focus(item[pThis._popupitemindex], false);
 						if (shift_key) {
 							pThis._popupitemindex--;
 						}
@@ -2112,211 +2236,102 @@ if (!nexacro.PopupMenu) {
 			var rootComp = this._getRootComponent(this);
 			var E = nexacro.Event;
 
-			if (nexacro._enableaccessibility) {
-				switch (keycode) {
-					case E.KEY_UP:
-						this._popupitemindex = rootComp._popupitemindex;
-						this._item_killfocus(item[this._popupitemindex]);
-						this._popupitemindex--;
+			switch (keycode) {
+				case E.KEY_UP:
+					this._popupitemindex = rootComp._popupitemindex;
+					this._item_focus(item[this._popupitemindex], false);
+					this._popupitemindex--;
 
-						if (this._popupitemindex < 0) {
-							this._popupitemindex = item_len;
-						}
+					if (this._popupitemindex < 0) {
+						this._popupitemindex = item_len;
+					}
+
+					rootComp._menuitemonmouseenter = item[this._popupitemindex];
+					pThis._previousitem = this._popupitemindex;
+					pThis._item_focus(item[this._popupitemindex], true);
+					break;
+				case E.KEY_DOWN:
+					this._popupitemindex = rootComp._popupitemindex;
+					this._item_focus(item[this._popupitemindex], false);
+					this._popupitemindex++;
+
+					if (this._popupitemindex > item_len) {
+						this._popupitemindex = 0;
+					}
+
+					rootComp._menuitemonmouseenter = item[this._popupitemindex];
+					pThis._previousitem = this._popupitemindex;
+					pThis._item_focus(item[this._popupitemindex], true);
+					break;
+				case E.KEY_LEFT:
+					if ((pThis.parent instanceof nexacro.PopupMenu) == false) {
+						break;
+					}
+					else {
+						pThis._closePopup();
+						this._popupitemindex = pThis.parent._previousitem;
+						var item = this._item_find(pThis.parent);
 
 						rootComp._menuitemonmouseenter = item[this._popupitemindex];
-						pThis._previousitem = this._popupitemindex;
-						pThis._item_focus(item[this._popupitemindex], true);
+						item[this._popupitemindex].parent._item_focus(item[this._popupitemindex], true);
+						item[this._popupitemindex].parent._popupitemindex = this._popupitemindex;
+					}
+					break;
+				case E.KEY_RIGHT:
+					if (popuptype == "none" || this._popupitemindex == -1) {
 						break;
-					case E.KEY_DOWN:
-						this._popupitemindex = rootComp._popupitemindex;
-						this._item_killfocus(item[this._popupitemindex]);
-						this._popupitemindex++;
+					}
 
-						if (this._popupitemindex > item_len) {
-							this._popupitemindex = 0;
-						}
+					this._popupitemindex = rootComp._popupitemindex;
+					var popupexpand = this._popupmenuitem_extend(item[this._popupitemindex]);
+
+					if (popupexpand == false) {
+						pThis._previousitem = this._popupitemindex;
+
+						pThis.on_notify_menuitem_onmouseenter(item[this._popupitemindex]);
+
+						this._item_focus(item[this._popupitemindex], false);
+
+						this._popupitemindex = 0;
+
+						var rThis = this._popupmenu_find(this);
+						var item = this._item_find(pThis);
 
 						rootComp._menuitemonmouseenter = item[this._popupitemindex];
-						pThis._previousitem = this._popupitemindex;
-						pThis._item_focus(item[this._popupitemindex], true);
+						rThis._item_focus(item[this._popupitemindex], true);
+						rThis._popupitemindex = this._popupitemindex;
+					}
+					break;
+				case E.KEY_ENTER:
+					if (popuptype == "none") {
 						break;
-					case E.KEY_LEFT:
-						if ((pThis.parent instanceof nexacro.PopupMenu) == false) {
-							break;
-						}
-						else {
-							pThis._closePopup();
-							this._popupitemindex = pThis.parent._previousitem;
-							var item = this._item_find(pThis.parent);
+					}
 
-							rootComp._menuitemonmouseenter = item[this._popupitemindex];
-							item[this._popupitemindex].parent._item_focus(item[this._popupitemindex], true);
-							item[this._popupitemindex].parent._popupitemindex = this._popupitemindex;
-						}
-						break;
-					case E.KEY_RIGHT:
-						if (popuptype == "none" || this._popupitemindex == -1) {
-							break;
+					var rThis = rootComp._menuitemonmouseenter.parent;
+
+					if (pThis instanceof nexacro.Menu) {
+						pThis.on_notify_menuitem_onlbuttondown(rootComp._menuitemonmouseenter);
+					}
+					else {
+						var popupexpand = this._popupmenuitem_extend(rootComp._menuitemonmouseenter);
+						if (!popupexpand) {
+							this._item_focus(rootComp._menuitemonmouseenter, false);
 						}
 
-						this._popupitemindex = rootComp._popupitemindex;
-						var popupexpand = this._popupmenuitem_extend(item[this._popupitemindex]);
+						rThis.on_notify_menuitem_onlbuttondown(rootComp._menuitemonmouseenter);
 
-						if (popupexpand == false) {
-							pThis.on_notify_menuitem_onmouseenter(item[this._popupitemindex]);
-
-							this._item_killfocus(item[this._popupitemindex]);
-
-							pThis._previousitem = this._popupitemindex;
-							this._popupitemindex = 0;
-
-							var rThis = this._popupmenu_find(this);
-							var item = this._item_find(pThis);
-
-							rootComp._menuitemonmouseenter = item[this._popupitemindex];
-							rThis._item_focus(item[this._popupitemindex], true);
-							rThis._popupitemindex = this._popupitemindex;
-						}
-						break;
-					case E.KEY_ENTER:
-						if (popuptype == "none") {
-							break;
-						}
-
-						var rThis = rootComp._menuitemonmouseenter.parent;
-
-						if (pThis instanceof nexacro.Menu) {
-							pThis.on_notify_menuitem_onlbuttondown(rootComp._menuitemonmouseenter);
-						}
-						else {
-							var popupexpand = this._popupmenuitem_extend(rootComp._menuitemonmouseenter);
-							if (!popupexpand) {
-								this._item_killfocus(rootComp._menuitemonmouseenter);
-							}
-							rThis.on_notify_menuitem_onlbuttondown(rootComp._menuitemonmouseenter);
-						}
-						break;
-					default:
-						break;
-				}
-			}
-			else {
-				switch (keycode) {
-					case E.KEY_UP:
-						this._popupitemindex--;
-
-
-						if (this._popupitemindex < 0) {
-							this._popupitemindex = item_len;
-						}
+						var eThis = this._popupmenu_find(this);
+						var item = this._item_find(eThis);
+						this._popupitemindex = 0;
 
 						rootComp._menuitemonmouseenter = item[this._popupitemindex];
-						pThis._previousitem = this._popupitemindex;
-						pThis._item_focus(item[this._popupitemindex], true);
-
-						if (this._popupitemindex > -2 && nitemindex != -1) {
-							if (item_len <= nitemindex) {
-								nitemindex = item_len;
-							}
-
-							if (item_len > 0) {
-								item[nitemindex].on_apply_mouseover(false);
-							}
-						}
-
+						eThis._item_focus(item[this._popupitemindex], true);
+						eThis._popupitemindex = this._popupitemindex;
 						this._popupitempreviousindex = this._popupitemindex;
-						break;
-					case E.KEY_DOWN:
-						this._popupitemindex++;
-
-						if (this._popupitemindex > item_len) {
-							this._popupitemindex = 0;
-						}
-
-						rootComp._menuitemonmouseenter = item[this._popupitemindex];
-						pThis._previousitem = this._popupitemindex;
-						pThis._item_focus(item[this._popupitemindex], true);
-
-						if (this._popupitemindex >= 0 && nitemindex != -1) {
-							if (item_len <= nitemindex) {
-								nitemindex = item_len;
-							}
-
-							if (item_len > 0) {
-								item[nitemindex].on_apply_mouseover(false);
-							}
-						}
-
-						this._popupitempreviousindex = this._popupitemindex;
-						break;
-					case E.KEY_LEFT:
-						if (pThis.parent instanceof nexacro.PopupMenu) {
-							break;
-						}
-						else {
-							pThis._closePopup();
-							this._popupitemindex = pThis.parent._previousitem;
-							var item = this._item_find(pThis.parent);
-
-							rootComp._menuitemonmouseenter = item[this._popupitemindex];
-							item[this._popupitemindex].parent._item_focus(item[this._popupitemindex], true);
-							item[this._popupitemindex].parent._popupitemindex = this._popupitemindex;
-							this._popupitempreviousindex = this._popupitemindex;
-						}
-						break;
-					case E.KEY_RIGHT:
-						if (popuptype == "none" || this._popupitemindex == -1) {
-							break;
-						}
-						var popupexpand = this._popupmenuitem_extend(item[this._popupitemindex]);
-
-						if (popupexpand == false) {
-							pThis._closeflag = true;
-							pThis._showPopup(item[this._popupitemindex]);
-
-							this._item_killfocus(item[this._popupitemindex]);
-
-							pThis._previousitem = this._popupitemindex;
-							this._popupitemindex = 0;
-
-							var rThis = this._popupmenu_find(this);
-							var item = this._item_find(rThis);
-
-							rootComp._menuitemonmouseenter = item[this._popupitemindex];
-							rThis._item_focus(item[this._popupitemindex], true);
-							rThis._popupitemindex = this._popupitemindex;
-							this._popupitempreviousindex = this._popupitemindex;
-						}
-						break;
-					case E.KEY_ENTER:
-						if (popuptype == "none") {
-							break;
-						}
-
-						var rThis = rootComp._menuitemonmouseenter.parent;
-
-						if (pThis instanceof nexacro.Menu) {
-							pThis.on_notify_menuitem_onlbuttondown(rootComp._menuitemonmouseenter);
-						}
-						else {
-							var popupexpand = this._popupmenuitem_extend(rootComp._menuitemonmouseenter);
-							if (!popupexpand) {
-							}
-							rThis.on_notify_menuitem_onlbuttondown(rootComp._menuitemonmouseenter);
-
-							var eThis = this._popupmenu_find(this);
-							var item = this._item_find(eThis);
-							this._popupitemindex = 0;
-
-							rootComp._menuitemonmouseenter = item[this._popupitemindex];
-							eThis._item_focus(item[this._popupitemindex], true);
-							eThis._popupitemindex = this._popupitemindex;
-							this._popupitempreviousindex = this._popupitemindex;
-						}
-						break;
-					default:
-						break;
-				}
+					}
+					break;
+				default:
+					break;
 			}
 
 			return nexacro.Component.prototype.on_fire_sys_onkeydown.call(this, keycode, alt_key, ctrl_key, shift_key, fire_comp, refer_comp);
@@ -2388,7 +2403,7 @@ if (!nexacro.PopupMenu) {
 			var item = this._items;
 			var pitem = this.parent._items;
 
-			item[obj.index].on_apply_mouseover(true);
+			this._item_focus(item[obj.index], true);
 
 			if (this._popupitempreviousindex == -1 || this._popupitemindex == -1) {
 				this._popupitempreviousindex = 0;
@@ -2401,14 +2416,15 @@ if (!nexacro.PopupMenu) {
 			}
 
 			if (item[this._popupitemindex]) {
-				item[this._popupitemindex].on_apply_mouseover(false);
+				this._item_focus(item[this._popupitemindex], false);
 			}
 			if (item[this._previousitem]) {
-				item[this._previousitem].on_apply_mouseover(false);
+				this._item_focus(item[this._previousitem], false);
 			}
 
+
 			if (pitem && pitem[this.parent._previousitem]) {
-				pitem[this.parent._previousitem].on_apply_mouseover(true);
+				this._item_focus(pitem[this.parent._previousitem], true);
 			}
 
 			if (popupmenu && popupmenu._is_popup() == true) {
@@ -2430,9 +2446,13 @@ if (!nexacro.PopupMenu) {
 	};
 
 	_pPopupMenu.on_notify_menuitem_onlbuttondown = function (obj, e) {
-		var popupmenu = this._popupmenu;
+		this._item_focus(this._items[this._previousitem], false);
+		this._item_focus(this._items[this._selected_itemindex], false);
+
 		this._menuitemonmouseenter = obj;
 		this._previousitem = obj.index;
+
+		var popupmenu = this._popupmenu;
 		if (popupmenu) {
 			if (popupmenu._is_popup()) {
 				if (this.beforeindex != obj.index) {
@@ -2452,6 +2472,7 @@ if (!nexacro.PopupMenu) {
 				this._getRootComponent(obj)._popupitemindex = obj.index;
 			}
 		}
+		this._item_focus(obj, true);
 	};
 
 	_pPopupMenu.on_fire_onitemclick = function (obj, id, itemid, itemuserdata, index, level) {
@@ -2469,7 +2490,7 @@ if (!nexacro.PopupMenu) {
 			if (rootComp instanceof nexacro.Menu) {
 				var items = rootComp._items;
 				for (var i = 0; i < items.length; i++) {
-					items[i].on_apply_mouseover(false);
+					this._item_focus(items[i], false);
 				}
 			}
 		}
@@ -2482,6 +2503,16 @@ if (!nexacro.PopupMenu) {
 	_pPopupMenu.trackPopup = function (x, y, align, bcapture) {
 		this._selected_itemindex = -1;
 		this._track_capture = bcapture === false ? false : true;
+
+		this._destroySpinButton();
+		this._createSpinbutton();
+
+		var alignPosition = this._getAlignPosition(x, y, align);
+
+		if (this._adjust_width == 0 && this._adjust_height == 0) {
+			this._adjust_left = alignPosition[0];
+			this._adjust_top = alignPosition[1];
+		}
 
 		this._reCalcSize();
 		this.on_created();
@@ -2503,6 +2534,7 @@ if (!nexacro.PopupMenu) {
 
 		this._track_on = true;
 		var alignPosition = this._getAlignPosition(x, y, align);
+		this._updateMenuItemPosition();
 		this._popupBy(obj, alignPosition[0], alignPosition[1], this._width, this._height);
 
 		this._closeflag = true;
@@ -2526,19 +2558,70 @@ if (!nexacro.PopupMenu) {
 		};
 	};
 
+	_pPopupMenu._get_apply_padding_size = function () {
+		var padding = this.on_find_CurrentStyle_padding(this._pseudo);
+		var padding_l = 0, padding_r = 0, padding_b = 0, padding_t = 0;
+		if (padding) {
+			padding_l = padding.left;
+			padding_r = padding.right;
+			padding_b = padding.bottom;
+			padding_t = padding.top;
+		}
+		var _width = this._width + (padding_l + padding_r);
+		var _height = this._height + (padding_t + padding_b);
+
+		return {
+			width : _width, 
+			height : _height
+		};
+	};
+
 	_pPopupMenu._loaded_expImage = function (imgurl, w, h) {
 		this._expImage_width = w;
 		this._expImage_height = h;
+
+		if (this._is_popup()) {
+			var _control_element = this.getElement();
+
+			if (_control_element) {
+				this._reCalcSize();
+				this._updateMenuItemPosition();
+				var size = this._get_apply_padding_size();
+				_control_element.setElementSize(size.width, size.height);
+			}
+		}
 	};
 
 	_pPopupMenu._loaded_chkImage = function (imgurl, w, h) {
 		this._chkImage_width = w;
 		this._chkImage_height = h;
+
+		if (this._is_popup()) {
+			var _control_element = this.getElement();
+
+			if (_control_element) {
+				this._reCalcSize();
+				this._updateMenuItemPosition();
+				var size = this._get_apply_padding_size();
+				_control_element.setElementSize(size.width, size.height);
+			}
+		}
 	};
 
 	_pPopupMenu._loaded_iconImage = function (imgurl, w, h) {
 		this._iconImage_width = w;
 		this._iconImage_height = h;
+
+		if (this._is_popup()) {
+			var _control_element = this.getElement();
+
+			if (_control_element) {
+				this._reCalcSize();
+				this._updateMenuItemPosition();
+				var size = this._get_apply_padding_size();
+				_control_element.setElementSize(size.width, size.height);
+			}
+		}
 	};
 
 	_pPopupMenu._load_image = function (image, strflag) {
@@ -2551,21 +2634,21 @@ if (!nexacro.PopupMenu) {
 
 				var size;
 				if (strflag == "exp") {
-					size = nexacro._getImageSize(val, this._loaded_expImage, this);
+					size = nexacro._getImageSize(val, this._loaded_expImage, this, undefined, (image ? image._value : ""));
 					if (size) {
 						this._expImage_width = size.width;
 						this._expImage_height = size.height;
 					}
 				}
 				else if (strflag == "chk") {
-					size = nexacro._getImageSize(val, this._loaded_chkImage, this);
+					size = nexacro._getImageSize(val, this._loaded_chkImage, this, undefined, (image ? image._value : ""));
 					if (size) {
 						this._chkImage_width = size.width;
 						this._chkImage_height = size.height;
 					}
 				}
 				else if (strflag == "icon") {
-					size = nexacro._getImageSize(val, this._loaded_iconImage, this);
+					size = nexacro._getImageSize(val, this._loaded_iconImage, this, undefined, (image ? image._value : ""));
 					if (size) {
 						this._iconImage_width = size.width;
 						this._iconImage_height = size.height;
@@ -2587,13 +2670,14 @@ if (!nexacro.PopupMenu) {
 			if (items) {
 				var len = items.length;
 				var font = this.on_find_CurrentStyle_font(this._pseudo);
+				var letterspace = this.on_find_CurrentStyle_letterspace(this._pseudo);
 				for (var i = 0; i < len; i++) {
 					var text = ds.getColumn(items[i].datarow, column);
 					if (text === undefined) {
 						break;
 					}
 
-					var size2 = nexacro._getTextSize2(text, font);
+					var size2 = nexacro._getTextSize2(letterspace, text, font);
 
 					size[0] = size2[0] > size[0] ? size2[0] : size[0];
 					size[1] = size2[1] > size[1] ? size2[1] : size[1];
@@ -2642,6 +2726,7 @@ if (!nexacro.PopupMenu) {
 						popupmenuitem._bindindex = rowlength;
 						popupmenuitem.index = index++;
 						popupmenuitem.datarow = rowlength;
+						popupmenuitem.level = level;
 
 						var enable = ds.getColumn(rowlength, this.enablecolumn);
 						popupmenuitem.set_enable(enable == false || enable == "false" ? false : true);
@@ -2771,18 +2856,20 @@ if (!nexacro.PopupMenu) {
 
 	_pPopupMenu._createSpinbutton = function () {
 		if (!this.spinupbutton) {
-			this.spinupbutton = new nexacro.ImageButtonCtrl("decbutton", this.position, 0, 0, 0, 0, null, null, this);
+			this.spinupbutton = new nexacro.ImageButtonCtrl("spinupbutton", this.position, 0, 0, 0, 0, null, null, this);
 			this.spinupbutton.createComponent();
 			this.spinupbutton.set_visible(false);
 			this.spinupbutton._setEventHandler("onclick", this.on_notify_spinup_onclick, this);
 			this.spinupbutton.on_created();
+			this.spinupbutton._is_focus_accept = false;
 		}
 		if (!this.spindownbutton) {
-			this.spindownbutton = new nexacro.ImageButtonCtrl("incbutton", this.position, 0, 0, 0, 0, null, null, this);
+			this.spindownbutton = new nexacro.ImageButtonCtrl("spindownbutton", this.position, 0, 0, 0, 0, null, null, this);
 			this.spindownbutton.createComponent();
 			this.spindownbutton.set_visible(false);
 			this.spindownbutton._setEventHandler("onclick", this.on_notify_spindown_onclick, this);
 			this.spindownbutton.on_created();
+			this.spindownbutton._is_focus_accept = false;
 		}
 	};
 
@@ -2914,6 +3001,16 @@ if (!nexacro.PopupMenu) {
 		}
 
 		this._track_on = true;
+
+		var scale = this._getCumulativeZoomFactor() / 100.0;
+		var elem = this.getElement();
+		if (elem.setZoom) {
+			elem.setZoom(scale * 100);
+		}
+		else if (nexacro.ScrollableContainerElement.prototype.setZoom) {
+			nexacro.ScrollableContainerElement.prototype.setZoom.call(elem, scale * 100);
+		}
+
 		this._popup(popup_left, popup_top, popup_width, popup_height);
 	};
 
@@ -2989,6 +3086,8 @@ if (!nexacro.PopupMenu) {
 				if (tmp > bodyHeight) {
 					_top = bodyHeight - tmp;
 				}
+
+				_top = _top * scale;
 			}
 			else {
 				_top = y;
@@ -3002,6 +3101,8 @@ if (!nexacro.PopupMenu) {
 						_left = -popup_width;
 					}
 				}
+
+				_left = _left * scale;
 			}
 			else {
 				_left = x;
@@ -3025,17 +3126,20 @@ if (!nexacro.PopupMenu) {
 						_top = 10;
 					}
 				}
+
+				_top = _top * scale;
 			}
 			else {
 				_top = y;
 			}
-
 
 			if (!x) {
 				var px = p.x;
 				if (px + popup_width > bodyWidth) {
 					_left = bodyWidth - px - popup_width;
 				}
+
+				_left = _left * scale;
 			}
 			else {
 				_left = x;
@@ -3094,6 +3198,10 @@ if (!nexacro.PopupMenu) {
 			var rootComp = this._getRootComponent(this);
 			var chkimgwidth = 0, expimgwidth = 0, expimgheight = 0, iconimgwidth = 0;
 
+			var curstyle = this.currentstyle;
+			var h = this.on_find_CurrentStyle_itemheight(this._pseudo);
+			var item_h = h ? parseInt(h._value, 10) : 20;
+
 			var _expandimage = rootComp.on_find_CurrentStyle_expandimage(this._pseudo);
 			if (_expandimage) {
 				expimgwidth = rootComp._expImage_width ? rootComp._expImage_width : item_h;
@@ -3110,12 +3218,6 @@ if (!nexacro.PopupMenu) {
 				size = this._getMaxTextSize(this.hotkeycolumn);
 				hotkeywidth = size[0];
 			}
-
-			var curstyle = this.currentstyle;
-			var h = this.on_find_CurrentStyle_itemheight(this._pseudo);
-			var item_h = h ? parseInt(h._value, 10) : 20;
-
-			this._spin_height = item_h;
 
 			for (var i = 0; i < len; i++) {
 				if (items[i].value) {
@@ -3153,7 +3255,16 @@ if (!nexacro.PopupMenu) {
 			var _default_gap = 20;
 
 			var width = itempadding_l + chkimgwidth + iconimgwidth + textwidth + (hotkeywidth == 0 ? 0 : _default_gap + hotkeywidth) + item_h + expimgwidth + itempadding_r;
-			var height = item_h * len;
+
+			var lineCnt = 0;
+			for (var i = 0; i < this._lineItems.length; i++) {
+				var item = this._lineItems[i];
+				if (item._bLine) {
+					lineCnt++;
+				}
+			}
+
+			var height = (item_h * len) + lineCnt;
 
 			var mainframe = this._getMainFrame();
 
@@ -3190,8 +3301,12 @@ if (!nexacro.PopupMenu) {
 				}
 			}
 
+			var is_root_menu = false;
 			while (comp) {
-				if (comp instanceof nexacro.Menu) {
+				if (comp instanceof nexacro.Menu || comp instanceof nexacro.Form) {
+					if (comp instanceof nexacro.Menu) {
+						is_root_menu = true;
+					}
 					menu_bottom = form_top + comp._adjust_top + comp._adjust_height;
 					break;
 				}
@@ -3199,13 +3314,22 @@ if (!nexacro.PopupMenu) {
 				comp = comp.parent;
 			}
 
-			if (resize_height > (bodyHeight - menu_bottom)) {
-				if (form_top + comp._adjust_top < (bodyHeight - menu_bottom)) {
-					resize_height = bodyHeight - menu_bottom;
+			if (!is_root_menu) {
+				menu_bottom = resize_height;
+
+				if (menu_bottom > (bodyHeight - comp._adjust_top - this._adjust_top)) {
+					resize_height = bodyHeight - comp._adjust_top - this._adjust_top;
 				}
-				else {
-					if (form_top + comp._adjust_top < resize_height) {
-						resize_height = form_top + comp._adjust_top;
+			}
+			else {
+				if (resize_height > (bodyHeight - menu_bottom)) {
+					if (form_top + comp._adjust_top < (bodyHeight - menu_bottom)) {
+						resize_height = bodyHeight - menu_bottom;
+					}
+					else {
+						if (form_top + comp._adjust_top < resize_height) {
+							resize_height = form_top + comp._adjust_top;
+						}
 					}
 				}
 			}
@@ -3251,9 +3375,9 @@ if (!nexacro.PopupMenu) {
 					rect.left = 0;
 					rect.top = _item_top;
 					rect.right = this._width;
-					rect.bottom = _item_top + item_h;
+					rect.bottom = _item_top + 1;
 					rect.width = this._width;
-					rect.height = item_h;
+					rect.height = 1;
 					_buttonRect[i] = rect;
 
 					var rect1 = {
@@ -3335,7 +3459,7 @@ if (!nexacro.PopupMenu) {
 
 		var _buttonRect = this._buttonRect;
 		var len = _buttonRect.length;
-		if (_buttonRect[len - 1].bottom - gap_height > this._adjust_height || this._is_spin_visible) {
+		if (this._spin_height > 0 && len > 0 && _buttonRect[len - 1].bottom - gap_height > this._adjust_height || this._is_spin_visible) {
 			this.spinupbutton.set_visible(true);
 			this.spinupbutton.move(0, 0, this._client_width, this._spin_height);
 
@@ -3482,13 +3606,13 @@ if (!nexacro.PopupMenu) {
 
 		var items = this._item_find(this);
 		if (nexacro._enableaccessibility) {
-			this._item_killfocus(items[this._popupitemindex]);
+			this._item_focus(items[this._popupitemindex], false);
 			this._popupitemindex = -1;
 		}
 		else {
 			var itemLen = items.length;
 			for (var i = 0; i < itemLen; i++) {
-				items[i].on_apply_mouseover(false);
+				this._item_focus(items[i], false);
 			}
 			this._popupitemindex = -1;
 		}
@@ -3559,31 +3683,24 @@ if (!nexacro.PopupMenu) {
 	_pPopupMenu._item_focus = function (obj, bflag) {
 		if (obj) {
 			if (nexacro._enableaccessibility) {
-				if (obj instanceof nexacro.PopupMenuItem) {
-					obj._on_focus(false);
+				if (bflag) {
+					if (obj instanceof nexacro.PopupMenuItem) {
+						obj._on_focus(false);
+					}
+					else {
+						obj._on_focus(true);
+					}
 				}
 				else {
-					obj._on_focus(true);
+					var _window = this._getWindow();
+					if (_window) {
+						_window._removeFromCurrentFocusPath(obj, true);
+					}
 				}
 			}
 
 			if (obj.on_apply_mouseover) {
 				obj.on_apply_mouseover(bflag);
-			}
-		}
-	};
-
-	_pPopupMenu._item_killfocus = function (obj) {
-		if (obj) {
-			if (nexacro._enableaccessibility) {
-				var _window = this._getWindow();
-				if (_window) {
-					_window._removeFromCurrentFocusPath(obj, true);
-				}
-			}
-
-			if (obj.on_apply_mouseover) {
-				obj.on_apply_mouseover(false);
 			}
 		}
 	};

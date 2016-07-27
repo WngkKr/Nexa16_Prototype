@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="FRM_MAIN" classname="FRM_MAIN" left="0" top="0" width="1400" height="880" titletext="MainFrame">
+    <Layouts>
+      <Layout>
+        <Div id="div_login" taborder="0" left="0" top="0" right="0" bottom="9" url="FRM::FRM_LOGIN.xfdl"/>
+        <Div id="div_mainFrame" taborder="1" left="0" top="0" right="0" bottom="0">
+          <Layouts>
+            <Layout>
+              <Div id="div_top" taborder="0" text="div_top" left="0" top="0" height="90" right="0" url="FRM::FRM_TOP.xfdl" scrollbars="none"/>
+              <Div id="div_work" taborder="1" text="div_work" left="0" top="90" right="0" bottom="65" url="FRM::FRM_WORK.xfdl"/>
+              <Div id="div_bottom" taborder="2" text="div_bottom" left="0" right="0" height="65" bottom="0" url="FRM::FRM_BOTTOM.xfdl"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="STRING" size="256"/>
+          <Column id="Column4" type="STRING" size="256"/>
+          <Column id="Column5" type="STRING" size="256"/>
+          <Column id="Column6" type="STRING" size="256"/>
+          <Column id="Column7" type="STRING" size="256"/>
+          <Column id="Column8" type="STRING" size="256"/>
+          <Column id="Column9" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

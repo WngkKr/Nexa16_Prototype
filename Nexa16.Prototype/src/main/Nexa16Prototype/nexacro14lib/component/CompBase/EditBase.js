@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -127,6 +127,7 @@ if (!nexacro.EditBase) {
 	_pEditBase._stat_mouse = null;
 	_pEditBase._stat_focus = null;
 	_pEditBase._stat_composition = null;
+	_pEditBase._mouseflag = false;
 
 	_pEditBase._is_undo = false;
 	_pEditBase._undoStack = null;
@@ -151,6 +152,7 @@ if (!nexacro.EditBase) {
 	_pEditBase._on_input_focus = null;
 	_pEditBase._on_input_blur = null;
 
+	_pEditBase._on_input_copy = null;
 	_pEditBase._on_input_cut = null;
 	_pEditBase._on_input_paste = null;
 
@@ -191,6 +193,7 @@ if (!nexacro.EditBase) {
 		this._on_input_focus = this._on_default_input_focus;
 		this._on_input_blur = this._on_default_input_blur;
 
+		this._on_input_copy = this._on_default_input_copy;
 		this._on_input_cut = this._on_default_input_cut;
 		this._on_input_paste = this._on_default_input_paste;
 
@@ -257,6 +260,8 @@ if (!nexacro.EditBase) {
 	};
 
 	_pEditBase._destroy = function () {
+		this.comp = null;
+
 		this._old_value = null;
 		this._value = null;
 		this._focus_value = null;
@@ -476,17 +481,19 @@ if (!nexacro.EditBase) {
 			this._setValue(v);
 			this._undoStack.push(v);
 
-			if (elem && nexacro._checkActiveElement(elem)) {
-				this.setElementCaretPos(0, 0, elem);
-			}
-			else {
-				this.setElementCaretPos(0, 0);
+			if (elem) {
+				if (nexacro.Browser == "Runtime") {
+					this.setElementCaretPos(0, 0, elem);
+				}
+				else {
+					this.setElementCaretPos(0, 0);
+				}
 			}
 		}
 		else {
 			this._setText(v);
 			this._setValue(v);
-			this._undoStack.push(v);
+			this._undoStack.push(v, v, this._begin_pos, this._end_pos);
 		}
 
 		if (elem) {
@@ -517,7 +524,9 @@ if (!nexacro.EditBase) {
 	};
 
 	_pEditBase._on_default_input_mousemove = function (elem) {
-		this._setCaret(elem);
+		if (this._text == elem.getElementValue()) {
+			this._setCaret(elem);
+		}
 	};
 
 	_pEditBase._on_default_input_mouseup = function (elem, altkey, ctrlkey, shiftkey) {
@@ -560,7 +569,9 @@ if (!nexacro.EditBase) {
 			return;
 		}
 
-		this._setCaret(elem);
+		if (nexacro.Browser != "Edge") {
+			this._setCaret(elem);
+		}
 
 		if (this._text && (this._begin_pos != this._end_pos)) {
 			this._select_text = this._text.substring(this._begin_pos, this._end_pos);
@@ -597,7 +608,7 @@ if (!nexacro.EditBase) {
 		}
 
 		if (mouseflag) {
-			if (nexacro.Browser != "IE") {
+			if (nexacro.Browser != "Edge" && nexacro.Browser != "IE") {
 				elem._event_stop = true;
 			}
 		}
@@ -608,6 +619,19 @@ if (!nexacro.EditBase) {
 		}
 
 		this.comp._activate_flag = false;
+
+		if (((nexacro.Browser == "Runtime") || (nexacro.Browser != "Runtime" && this._mouseflag && mouse_stat == "mousedown")) && 
+			focus_status != nexacro.EditBase.Status.Focus && 
+			this._stat_focus.getCurrentStatus() == nexacro.EditBase.Status.Focus) {
+			var win = this.comp._getWindow();
+			var focus_idx = win ? win._indexOfCurrentFocusPaths(this.comp) : 0;
+			if (focus_idx < 0 && this.comp._is_subcontrol) {
+				focus_idx = win ? win._indexOfCurrentFocusPaths(this.comp.parent) : 0;
+			}
+			if (focus_idx < 0 && !application._is_on_alert) {
+				this.comp._on_focus(true);
+			}
+		}
 	};
 
 	_pEditBase._on_default_input_blur = function (elem, target) {
@@ -667,7 +691,7 @@ if (!nexacro.EditBase) {
 						editbase_value = editbase_value.replace(/\n/g, "");
 					}
 
-					if (element_value == editbase_text && element_value == editbase_value) {
+					if (element_value == editbase_text && element_value == editbase_value && (element_value && (comp.maxlength == 0 || comp.maxlength >= element_value.length))) {
 						this._setCaret(elem);
 						return false;
 					}
@@ -790,7 +814,7 @@ if (!nexacro.EditBase) {
 						editbase_value = editbase_value.replace(/\n/g, "");
 					}
 
-					if (element_value == editbase_text && element_value == editbase_value) {
+					if (element_value == editbase_text && element_value == editbase_value && (element_value && (comp.maxlength == 0 || comp.maxlength >= element_value.length))) {
 						this._setCaret(elem);
 						return false;
 					}
@@ -898,7 +922,7 @@ if (!nexacro.EditBase) {
 						}
 					}
 
-					if (element_value == editbase_text && element_value == editbase_value) {
+					if (element_value == editbase_text && element_value == editbase_value && (element_value && (comp.maxlength == 0 || comp.maxlength >= element_value.length))) {
 						this._setCaret(elem);
 						return false;
 					}
@@ -1016,7 +1040,7 @@ if (!nexacro.EditBase) {
 					editbase_value = editbase_value.replace(/\n/g, "");
 				}
 
-				if (element_value == editbase_text && element_value == editbase_value) {
+				if (element_value == editbase_text && element_value == editbase_value && (element_value && (comp.maxlength == 0 || comp.maxlength >= element_value.length))) {
 					this._setCaret(elem);
 					return false;
 				}
@@ -1085,7 +1109,10 @@ if (!nexacro.EditBase) {
 		}
 	}
 	else if (nexacro.OS == "iOS") {
-		if (nexacro.OSVersion.charAt(0) < 7) {
+		var ver_arr = nexacro.OSVersion.split(".");
+		var major_ver = ver_arr[0];
+
+		if (major_ver < 7) {
 			_pEditBase._on_default_input_keyinput = function (elem) {
 				if (this._accept_keyinput_event === false) {
 					this._accept_keyinput_event = true;
@@ -1104,7 +1131,7 @@ if (!nexacro.EditBase) {
 				var base_text = this._text;
 				var base_value = this._value;
 
-				if (this._is_composition() && this._imefirsttxt == elem_value) {
+				if (this._is_composition() && this._imefirsttxt == elem_value && (elem_value && (comp.maxlength == 0 || comp.maxlength >= elem_value.length))) {
 					return false;
 				}
 
@@ -1193,7 +1220,7 @@ if (!nexacro.EditBase) {
 				var base_text = this._text;
 				var base_value = this._value;
 
-				if (this._is_composition() && this._imefirsttxt == elem_value) {
+				if (this._is_composition() && this._imefirsttxt == elem_value && (elem_value && (comp.maxlength == 0 || comp.maxlength >= elem_value.length))) {
 					return false;
 				}
 
@@ -1241,8 +1268,10 @@ if (!nexacro.EditBase) {
 					}
 				}
 				else {
-					var data = this.getCompositionData(elem);
-					this._on_input_compositionend(data);
+					var data = this._stat_composition.getData(elem);
+					if (this._is_composition() && this._is_hangul(data)) {
+						this._on_input_compositionend(data);
+					}
 				}
 
 				var insertText = this.getInsertText(elem);
@@ -1276,7 +1305,8 @@ if (!nexacro.EditBase) {
 			}
 
 			var comp = this.comp;
-			var element_value = elem.getElementValue();
+			var elem_value = elem.getElementValue();
+			var elem_pos = elem.getElementCaretPos();
 			var editbase_text = this._text;
 			var editbase_value = this._value;
 
@@ -1287,7 +1317,7 @@ if (!nexacro.EditBase) {
 				editbase_value = "";
 			}
 
-			if (!this._is_composition() && element_value == editbase_text && element_value == editbase_value) {
+			if (!this._is_composition() && elem_value == editbase_text && elem_value == editbase_value && (elem_value && (comp.maxlength == 0 || comp.maxlength >= elem_value.length))) {
 				this._setCaret(elem);
 				this.onUpdateStyle(comp);
 				return false;
@@ -1301,6 +1331,10 @@ if (!nexacro.EditBase) {
 			if (this._is_selected()) {
 				this.clearBuffer(this._text, this._begin_pos, this._end_pos);
 				this.syncValue();
+			}
+
+			if (this._check_backspace(elem)) {
+				this.restoreBuffer(elem_value, elem_pos.begin, elem_pos.end);
 			}
 
 			var insertText = this.getInsertText(elem);
@@ -1320,6 +1354,39 @@ if (!nexacro.EditBase) {
 		if (this._isPasteActionComplete) {
 			this._pasteAction = false;
 			this._cutAction = false;
+		}
+	};
+
+	_pEditBase._on_default_input_copy = function (elem) {
+		if (application._input_paste_comp) {
+			application._input_paste_comp = null;
+		}
+	};
+
+	_pEditBase._on_default_input_cut = function (elem) {
+		this._cutAction = true;
+
+		var pos = elem.getElementCaretPos();
+		var val = elem.getElementValue();
+
+		if (!pos || pos == -1) {
+			this._undoStack.push(val, val, 0, 0);
+		}
+		else {
+			this._begin_pos = pos.begin;
+			this._end_pos = pos.end;
+			this._undoStack.push(val, val, pos.begin, pos.end);
+		}
+
+		if (application._input_paste_comp) {
+			application._input_paste_comp = null;
+		}
+
+		if (nexacro.Browser == "Edge" || nexacro.Browser == "IE") {
+			var pThis = this;
+			nexacro.OnceCallbackTimer.callonce(pThis.comp, function () {
+				pThis._on_input_keyinput(elem);
+			});
 		}
 	};
 
@@ -1351,30 +1418,7 @@ if (!nexacro.EditBase) {
 		}
 	};
 
-	_pEditBase._on_default_input_cut = function (elem) {
-		this._cutAction = true;
-
-		var pos = elem.getElementCaretPos();
-		var val = elem.getElementValue();
-
-		if (!pos || pos == -1) {
-			this._undoStack.push(val, val, 0, 0);
-		}
-		else {
-			this._begin_pos = pos.begin;
-			this._end_pos = pos.end;
-			this._undoStack.push(val, val, pos.begin, pos.end);
-		}
-
-		if (nexacro.Browser == "IE") {
-			var pThis = this;
-			nexacro.OnceCallbackTimer.callonce(pThis.comp, function () {
-				pThis._on_input_keyinput(elem);
-			});
-		}
-	};
-
-	if (nexacro.Browser == "IE" && nexacro.BrowserVersion == 11) {
+	if (nexacro.Browser == "Edge" || nexacro.Browser == "IE" && nexacro.BrowserVersion == 11) {
 		_pEditBase._on_default_input_compositionstart = function (data) {
 			var elem = this.comp._input_element;
 			var val = elem.getElementValue();
@@ -1434,7 +1478,7 @@ if (!nexacro.EditBase) {
 		};
 	}
 
-	if (nexacro.Browser == "IE" && nexacro.BrowserVersion == 11) {
+	if (nexacro.Browser == "Edge" || nexacro.Browser == "IE" && nexacro.BrowserVersion == 11) {
 		_pEditBase._on_default_input_compositionupdate = function (data) {
 			var elem = this.comp._input_element;
 			var val = elem.getElementValue();
@@ -1478,7 +1522,7 @@ if (!nexacro.EditBase) {
 		};
 	}
 
-	if (nexacro.Browser == "IE" && nexacro.BrowserVersion == 11) {
+	if (nexacro.Browser == "Edge" || (nexacro.Browser == "IE" && nexacro.BrowserVersion == 11)) {
 		_pEditBase._on_default_input_compositionend = function (data) {
 			this._compositionstart_value = "";
 			this._stat_composition.setStatus(nexacro.EditBase.Status.CompositionEnd, data);
@@ -1561,6 +1605,7 @@ if (!nexacro.EditBase) {
 				bCancel = true;
 				chartext = this._select_text;
 			}
+
 			this._select_text = "";
 
 			if (!bCancel) {
@@ -1602,7 +1647,7 @@ if (!nexacro.EditBase) {
 						this.syncValue();
 
 						if (!this._is_undo) {
-							var undo_pos = begin_pos + text_info.chartext.length;
+							var undo_pos = begin_pos + chartext.length;
 							this._undoStack.push(this._value, this._value, undo_pos, undo_pos);
 						}
 					}
@@ -1668,7 +1713,7 @@ if (!nexacro.EditBase) {
 		return ret;
 	};
 
-	if (nexacro.Browser == "IE") {
+	if (nexacro.Browser == "Edge" || nexacro.Browser == "IE") {
 		if (nexacro.OSVersion >= 6.0) {
 			if (nexacro.SystemLang == "ja") {
 				if (nexacro.BrowserVersion >= 9) {
@@ -2094,25 +2139,42 @@ if (!nexacro.EditBase) {
 						this.setElementCaretPos(this._old_begin_pos, this._old_end_pos, elem);
 					};
 
-					_pEditBase._not_insert_from_text_event = function (begin_pos, end_pos) {
-						var elem = this.comp._input_element;
+					if (nexacro.Browser == "Edge") {
+						_pEditBase._not_insert_from_text_event = function (begin_pos, end_pos) {
+							var elem = this.comp._input_element;
 
-						if (this._is_composition()) {
-							this._accept_keyinput_event = false;
-							this._accept_focus_event = false;
-							this._accept_blur_event = false;
+							if (this._is_composition()) {
+								this._accept_keyinput_event = false;
 
-							this._stat_composition.setStatus(nexacro.EditBase.Status.CompositionEnd, "");
+								this._stat_composition.setStatus(nexacro.EditBase.Status.CompositionEnd, "");
+							}
 
-							elem.setElementBlur();
-							elem.setElementFocus();
-						}
+							elem.setElementValue(this._text);
+							this.setElementCaretPos(begin_pos, begin_pos, elem);
+						};
+					}
+					else {
+						_pEditBase._not_insert_from_text_event = function (begin_pos, end_pos) {
+							var elem = this.comp._input_element;
 
-						elem.setElementValue(this._text);
-						this.setElementCaretPos(begin_pos, begin_pos, elem);
-					};
+							if (this._is_composition()) {
+								this._accept_keyinput_event = false;
+								this._accept_focus_event = false;
+								this._accept_blur_event = false;
+
+								this._stat_composition.setStatus(nexacro.EditBase.Status.CompositionEnd, "");
+
+								elem.setElementBlur();
+								elem.setElementFocus();
+							}
+
+							elem.setElementValue(this._text);
+							this.setElementCaretPos(begin_pos, begin_pos, elem);
+						};
+					}
 
 					_pEditBase._cut_from_text_event = function (begin_pos, end_pos) {
+						var pThis = this;
 						var elem = this.comp._input_element;
 
 						this._setText(this._text);
@@ -2130,8 +2192,16 @@ if (!nexacro.EditBase) {
 							elem.setElementFocus();
 						}
 
-						elem.setElementValue(this._text);
-						this.setElementCaretPos(begin_pos, begin_pos, elem);
+						if (this._pasteAction && (nexacro.BrowserVersion == 9 || nexacro.BrowserVersion == 10)) {
+							elem.setElementValue(this._text);
+							nexacro.OnceCallbackTimer.callonce(pThis.comp, function () {
+								pThis.setElementCaretPos(begin_pos, begin_pos, elem);
+							});
+						}
+						else {
+							elem.setElementValue(this._text);
+							this.setElementCaretPos(begin_pos, begin_pos, elem);
+						}
 					};
 
 					_pEditBase._cancel_from_text_event = function (newText, begin_pos, end_pos) {
@@ -3149,7 +3219,7 @@ if (!nexacro.EditBase) {
 		}
 	};
 
-	if (nexacro.Browser == "IE") {
+	if (nexacro.Browser == "Edge" || nexacro.Browser == "IE") {
 		_pEditBase._apply_autoselect = function (elem) {
 			var comp = this.comp;
 
@@ -3188,7 +3258,7 @@ if (!nexacro.EditBase) {
 		};
 	}
 
-	if (nexacro.Browser == "Safari" || nexacro.Browser == "MobileSafari" || nexacro.Browser == "IE") {
+	if (nexacro.Browser == "Edge" || nexacro.Browser == "Safari" || nexacro.Browser == "MobileSafari" || nexacro.Browser == "IE") {
 		_pEditBase._apply_autoskip = function () {
 			var pThis = this;
 			nexacro.OnceCallbackTimer.callonce(pThis.comp, function () {
@@ -3318,6 +3388,49 @@ if (!nexacro.EditBase) {
 		}
 	};
 
+	_pEditBase._check_backspace = function (elem) {
+		var elem_value = elem.getElementValue();
+		if (elem_value.length == (this._text.length - 1)) {
+			if (this._keycode == 0) {
+				if (!this._cutAction && !this._pasteAction && !this._is_composition()) {
+					return true;
+				}
+			}
+		}
+
+		return false;
+	};
+
+	_pEditBase._setAccessibilityNotifyLabel = function () {
+		var comp = this.comp;
+		if (comp) {
+			comp._refreshAccessibilityValue();
+			var accessibility = comp.on_find_CurrentStyle_accessibility(comp._pseudo);
+			var label = comp._getAccessibilityLabel(accessibility);
+			if (comp.value == null && comp.displaynulltext.length > 0) {
+				label = label + " " + comp.displaynulltext;
+				comp._setAccessibilityLabel(label);
+			}
+			return label;
+		}
+		return null;
+	};
+
+	_pEditBase._setAccessibilityNotifyLabel = function () {
+		var comp = this.comp;
+		if (comp) {
+			comp._refreshAccessibilityValue();
+			var accessibility = comp.on_find_CurrentStyle_accessibility(comp._pseudo);
+			var label = comp._getAccessibilityLabel(accessibility);
+			if (comp.value == null && comp.displaynulltext.length > 0) {
+				label = label + " " + comp.displaynulltext;
+				comp._setAccessibilityLabel(label);
+			}
+			return label;
+		}
+		return null;
+	};
+
 	_pEditBase._setAccessibilityNotifyLabel = function () {
 		var comp = this.comp;
 		if (comp) {
@@ -3370,7 +3483,7 @@ if (!nexacro.EditBase) {
 		digit : "0-9", 
 		dot : ".", 
 		english : "a-zA-Z", 
-		symbol : "!\"#$%&'()*\\/;:<=>?@[\\\\\\]\\^_`{|}~'\\u20a9", 
+		symbol : "!\"#$%&+,.'()*\\-/;:<=>?@[\\\\\\]\\^_`{|}~'\\u20a9", 
 		number : "0-9\\-.,", 
 		numberandenglish : "0-9\\-.,\\a-zA-Z", 
 		sign : "+\\-", 
@@ -3380,12 +3493,6 @@ if (!nexacro.EditBase) {
 	};
 
 	_pEditNormal._destroy = function () {
-		if (application._input_paste_comp == this.comp) {
-			application._input_paste_comp = null;
-		}
-
-		this.comp = null;
-
 		this._filterRegexMap = null;
 		this._typeRegexMap = null;
 
@@ -3546,17 +3653,18 @@ if (!nexacro.EditBase) {
 			var selText = comp.getSelectedText();
 			var str = ret.join("");
 			if (str.length > 0) {
-				this._text = curTxt.substring(0, start) + str + curTxt.substr(end);
+				var newText = curTxt.substring(0, start) + str + curTxt.substr(end);
+				if (this._text != newText) {
+					this._setText(newText);
 
-				this.writeBuffer(elem);
-				this._setValue(this._text);
-				this.syncValue();
+					this.writeBuffer(elem);
+					this._setValue(this._text);
+					this.syncValue();
 
-				this._begin_pos = start;
-				this._end_pos = start + str.length;
+					this._begin_pos = start;
+					this._end_pos = start + str.length;
 
-				if (!elem.setElementSetSelect(this._begin_pos, this._end_pos)) {
-					this._accept_focus_event = false;
+					elem.setElementSetSelect(this._begin_pos, this._end_pos);
 				}
 
 				return selText;
@@ -3817,21 +3925,11 @@ if (!nexacro.EditBase) {
 		if (bBack) {
 			if (begin_pos == end_pos) {
 				begin_pos--;
-				if (text.length > 0 && begin_pos > 0) {
-					if (text.substring(begin_pos - 1, begin_pos) == '\r') {
-						begin_pos--;
-					}
-				}
 			}
 		}
 		else {
 			if (begin_pos == end_pos) {
 				end_pos++;
-				if (text.length > 0 && end_pos < text.length) {
-					if (text.substring(end_pos, end_pos + 1) == '\n') {
-						end_pos++;
-					}
-				}
 			}
 		}
 
@@ -3868,17 +3966,19 @@ if (!nexacro.EditBase) {
 		}
 
 		if (keyCode == nexacro.KeyCode_ImeInput) {
-			if (nexacro.Browser == "IE") {
+			if (nexacro.Browser == "Edge" || nexacro.Browser == "IE") {
 				if (nexacro.OSVersion < 6.0 && !this._is_composition()) {
 					this._input_begin_pos = this._old_begin_pos;
 				}
 			}
 		}
 		else {
-			if (this._is_composition() && (keyCode == 8 || keyCode == 46 || (keyCode >= 33 && keyCode <= 40))) {
-				this._on_input_compositionend("");
-				this._stat_composition.init();
-				this._compositionend_value = "";
+			if (this._is_composition() && (keyCode == 8 || keyCode == 46 || keyCode == 32 || (keyCode >= 33 && keyCode <= 40))) {
+				if (this._is_hangul(this.getCompositionData(elem))) {
+					this._on_input_compositionend("");
+					this._stat_composition.init();
+					this._compositionend_value = "";
+				}
 			}
 
 			if (keyCode == 9) {
@@ -3900,6 +4000,7 @@ if (!nexacro.EditBase) {
 			if (ctrlkey && (keyCode == 90)) {
 				this._is_undo = true;
 				this._undoStack.doUndo();
+				this._setCaret(elem);
 				this._on_input_keyinput(elem);
 				this._is_undo = false;
 
@@ -3909,6 +4010,7 @@ if (!nexacro.EditBase) {
 			else if (ctrlkey && (keyCode == 89)) {
 				this._is_undo = true;
 				this._undoStack.doRedo();
+				this._setCaret(elem);
 				this._on_input_keyinput(elem);
 				this._is_undo = false;
 
@@ -3994,13 +4096,16 @@ if (!nexacro.EditBase) {
 						bMaxlength = true;
 					}
 					bFireEvt = true;
+					if (nexacro.Browser == "MobileSafari") {
+						this._accept_keyinput_event = false;
+					}
 				}
-			}
 
-			if (nexacro.Browser == "IE" && keyCode == 27) {
-				if (cur_text != text) {
-					text_info.setTextInfo("", text, cur_text, "", "", text);
-					bFireEvt = true;
+				if ((nexacro.Browser == "Edge" || nexacro.Browser == "IE") && keyCode == 27) {
+					if (cur_text != text) {
+						text_info.setTextInfo("", text, cur_text, "", "", text);
+						bFireEvt = true;
+					}
 				}
 			}
 		}
@@ -4028,7 +4133,9 @@ if (!nexacro.EditBase) {
 								this._undoStack.push(this._value, this._text, undo_pos, undo_pos);
 							}
 
+							comp._textchanging = true;
 							comp.on_fire_ontextchanged(comp, text_info.pretext, text_info.posttext);
+							comp._textchanging = false;
 						}
 						else {
 							ret = false;
@@ -4049,7 +4156,7 @@ if (!nexacro.EditBase) {
 				this.setElementCaretPos(this._old_begin_pos, this._old_end_pos);
 			}
 		}
-		else if ((nexacro.OS == "iOS" && !(keyCode == nexacro.Event.KEY_ENTER)) || keyCode == nexacro.Event.KEY_SPACE) {
+		else if ((nexacro.OS == "iOS" && ((this.comp.inputtype == "number" && !(keyCode == nexacro.Event.KEY_ENTER)) || (charCode >= 12593 && charCode <= 12643))) || keyCode == nexacro.Event.KEY_SPACE) {
 			bPrevent = this._check_keypressPrevent(keyCode);
 			if (bPrevent) {
 				ret = false;
@@ -4079,13 +4186,13 @@ if (!nexacro.EditBase) {
 			this._select_text = "";
 		}
 
-		if (nexacro.Browser == "IE" && nexacro.BrowserVersion >= 9 && (k == 8 || k == 46)) {
+		if ((nexacro.Browser == "Edge" || nexacro.Browser == "IE") && nexacro.BrowserVersion >= 9 && (k == 8 || k == 46)) {
 			this._text = elem.getElementValue();
 		}
 
 		if ((k == 0 || k == 13) || (ctrlkey && k == 90)) {
 			if (!curTxt || (curTxt && !this._is_hangul(curTxt.charAt(this._begin_pos)))) {
-				if (nexacro.Browser == "IE") {
+				if (nexacro.Browser == "Edge" || nexacro.Browser == "IE") {
 					if (this._is_composition()) {
 						var data = this.getCompositionData(elem);
 						this._on_input_compositionend(data);
@@ -4102,7 +4209,7 @@ if (!nexacro.EditBase) {
 		}
 
 		if (k == 27) {
-			if (nexacro.Browser == "IE") {
+			if (nexacro.Browser == "Edge" || nexacro.Browser == "IE") {
 				if (this._is_composition()) {
 					var data = this._stat_composition.getData();
 
@@ -4119,7 +4226,7 @@ if (!nexacro.EditBase) {
 		}
 
 		if (k == 8) {
-			if (nexacro.Browser == "IE" && nexacro.OSVersion >= 6.0) {
+			if ((nexacro.Browser == "Edge" || nexacro.Browser == "IE") && nexacro.OSVersion >= 6.0) {
 				if (this._is_composition() && (pos.begin != this._begin_pos)) {
 					if ((this._compositionstart_value == this._text) && (this.getCompositionData(elem) == "")) {
 						this._on_input_compositionend("");
@@ -4164,9 +4271,11 @@ if (!nexacro.EditBase) {
 			if (!bInsert) {
 				var maxlength = this.comp.maxlength;
 				if (maxlength && this._text.length > maxlength) {
-					var text = this._text.substr(0, maxlength);
+					if (!(this._is_composition() && !this._is_hangul(this.getCompositionData(elem)))) {
+						var text = this._text.substr(0, maxlength);
 
-					elem.setElementValue(text);
+						elem.setElementValue(text);
+					}
 				}
 			}
 
@@ -4344,11 +4453,12 @@ if (!nexacro.EditBase) {
 
 	_pEditNormal._focus_process = function (elem, mflag) {
 		var comp = this.comp;
+		var win = comp._getWindow();
 		var cur_text = elem.getElementValue();
 
 		this._setText(cur_text);
 
-		if (!mflag && comp._setcaret) {
+		if (win && win._keydown_element && comp._setcaret) {
 			this.setElementCaretPos(comp._caret_pos.begin, comp._caret_pos.end, elem);
 			comp._setcaret = false;
 		}
@@ -4379,6 +4489,8 @@ if (!nexacro.EditBase) {
 			}
 			var proc_fire_text_event = this._on_input_compositionend(data);
 
+			elem.setInputElementCompositeClear();
+
 			if (!proc_fire_text_event) {
 				this._fire_text_event(data);
 			}
@@ -4387,6 +4499,13 @@ if (!nexacro.EditBase) {
 			this._compositionend_value = "";
 
 			this.onUpdateStyle(this.comp);
+		}
+
+		if (nexacro.OS == "iOS" && (elem._keypad_type == "change" || elem._keypad_type == "changed")) {
+			elem.setElementInputType(elem._orgtype, true);
+			elem.setElementInputTypeKeypad(elem._orgtype);
+			elem._tap_blocked = false;
+			elem._is_longpressed = false;
 		}
 
 		this._setCaret(elem);
@@ -4401,12 +4520,33 @@ if (!nexacro.EditBase) {
 	};
 
 	_pEditNormal._mouseup_process = function (elem) {
-		if (this._is_composition()) {
+		var caret = elem.getElementCaretPos();
+
+		if (this._is_composition() || (caret.begin != this._begin_pos && caret.end != this._end_pos)) {
+			elem._useTimer = false;
 			this._setCaret(elem);
+
+			if (nexacro.Browser == "Edge" && caret.begin == caret.end) {
+				this.comp._setcaret = false;
+			}
+		}
+		else if (nexacro._isDesktop() && nexacro.Browser == "Runtime") {
+			elem._useTimer = false;
+			this._setCaret(elem);
+
+			if (this._text) {
+				if (this._begin_pos == this._end_pos) {
+					this._select_text = "";
+				}
+				else {
+					this._select_text = this._text.substring(this._begin_pos, this._end_pos);
+				}
+			}
 		}
 		else {
-			var pThis = this;
+			elem._useTimer = true;
 
+			var pThis = this;
 			nexacro.OnceCallbackTimer.callonce(pThis.comp, function () {
 				if (nexacro.Browser == "IE" && nexacro.BrowserVersion <= 9) {
 					var cur_text = elem.getElementValue();
@@ -4432,7 +4572,7 @@ if (!nexacro.EditBase) {
 	};
 
 	_pEditNormal._mousedown_process = function (elem) {
-		if (nexacro.Browser == "IE") {
+		if (nexacro.Browser == "Edge" || nexacro.Browser == "IE") {
 			if (this._is_composition()) {
 				var data = this._stat_composition.getData();
 
@@ -4488,16 +4628,6 @@ if (!nexacro.EditBase) {
 
 	_pMultilineEdit._type_name = "MultilineEdit";
 
-	_pMultilineEdit._destroy = function () {
-		if (application._input_paste_comp == this.comp) {
-			application._input_paste_comp = null;
-		}
-
-		this.comp = null;
-
-		nexacro.EditBase.prototype._destroy.call(this);
-	};
-
 	_pMultilineEdit.setPosition = function () {
 		var comp = this.comp;
 		var elem = comp._input_element;
@@ -4519,8 +4649,12 @@ if (!nexacro.EditBase) {
 
 			elem.setElementPosition(0, 0);
 			elem.setElementSize(container_width, container_height);
-			control.setElementPadding(padding);
-			elem.setElementPadding(p);
+			if (padding && (padding.top || padding.right || padding.bottom || padding.left)) {
+				elem.setElementPadding(padding);
+			}
+			else {
+				elem.setElementPadding(p);
+			}
 			elem.setElementAlignXY(halign, valign);
 		}
 	};
@@ -4528,14 +4662,15 @@ if (!nexacro.EditBase) {
 	_pMultilineEdit.onUpdateStyle = function (comp) {
 		this.setPosition();
 
-		if (nexacro.Browser == "IE" && nexacro.BrowserVersion == 11) {
-			comp._update_scroll();
-		}
-		else {
-			nexacro.OnceCallbackTimer.callonce(comp, function () {
+		if (nexacro.SystemLang == "ja") {
+			if (nexacro.Browser == "IE" && nexacro.BrowserVersion == 11) {
 				comp._update_scroll();
-			});
+			}
 		}
+
+		nexacro.OnceCallbackTimer.callonce(comp, function () {
+			comp._update_scroll();
+		});
 	};
 
 	_pMultilineEdit.onResetHScroll = function (comp) {
@@ -4630,6 +4765,10 @@ if (!nexacro.EditBase) {
 		"^" : /[uAC00-\uFAFF]/
 	};
 
+	_pEditMaskString._on_default_input_compositionstart = nexacro._emptyFn;
+	_pEditMaskString._on_default_input_compositionupdate = nexacro._emptyFn;
+	_pEditMaskString._on_default_input_compositionend = nexacro._emptyFn;
+
 	_pEditMaskString._init = function () {
 		nexacro.EditBase.prototype._init.call(this);
 
@@ -4650,12 +4789,6 @@ if (!nexacro.EditBase) {
 	};
 
 	_pEditMaskString._destroy = function () {
-		if (application._input_paste_comp == this.comp) {
-			application._input_paste_comp = null;
-		}
-
-		this.comp = null;
-
 		this._cPassChar = null;
 		this._cMaskChar = null;
 
@@ -5288,7 +5421,7 @@ if (!nexacro.EditBase) {
 		return insertText;
 	};
 
-	if (nexacro.Browser == "IE") {
+	if (nexacro.Browser == "Edge" || nexacro.Browser == "IE") {
 		_pEditMaskString._setElementValue = function (elem, begin, end, caretApply, valApply) {
 			if (valApply) {
 				elem.setElementValue(this._text, true);
@@ -5364,6 +5497,17 @@ if (!nexacro.EditBase) {
 		}
 	};
 
+	_pEditMaskString._check_backspace = function (elem) {
+		var elem_value = elem.getElementValue();
+		if (this._select_text.length == 0 && (elem_value.length == (this._text.length - 1))) {
+			if (!this._cutAction && !this._pasteAction && !this._is_composition()) {
+				return true;
+			}
+		}
+
+		return false;
+	};
+
 	_pEditMaskString._mousedown_process = function (elem) {
 		this._oldMaskedValue = this._strMaskedValue.concat();
 	};
@@ -5406,6 +5550,7 @@ if (!nexacro.EditBase) {
 
 	_pEditMaskString._focus_process = function (elem, mflag) {
 		var comp = this.comp;
+		var win = comp._getWindow();
 		var cur_text = elem.getElementValue();
 
 		if (!this._bChangeFocusText) {
@@ -5416,7 +5561,7 @@ if (!nexacro.EditBase) {
 			this._setText(cur_text);
 		}
 
-		if (!mflag && comp._setcaret) {
+		if (win && win._keydown_element && comp._setcaret) {
 			this.setElementCaretPos(comp._caret_pos.begin, comp._caret_pos.end, elem);
 			comp._setcaret = false;
 		}
@@ -5476,6 +5621,7 @@ if (!nexacro.EditBase) {
 		if (ctrlkey && (keyCode == 90)) {
 			this._is_undo = true;
 			this._undoStack.doUndo();
+			this._setCaret(elem);
 			this._on_input_keyinput(elem);
 			this._is_undo = false;
 
@@ -5485,6 +5631,7 @@ if (!nexacro.EditBase) {
 		else if (ctrlkey && (keyCode == 89)) {
 			this._is_undo = true;
 			this._undoStack.doRedo();
+			this._setCaret(elem);
 			this._on_input_keyinput(elem);
 			this._is_undo = false;
 
@@ -5539,7 +5686,9 @@ if (!nexacro.EditBase) {
 							this._undoStack.push(this._value, this._text, this._begin_pos, this._begin_pos);
 						}
 
+						comp._textchanging = true;
 						comp.on_fire_ontextchanged(comp, text_info.pretext, text_info.posttext);
+						comp._textchanging = false;
 					}
 				}
 			}
@@ -5578,7 +5727,7 @@ if (!nexacro.EditBase) {
 		this._setCaret(elem);
 	};
 
-	if (nexacro.Browser == "IE") {
+	if (nexacro.Browser == "Edge" || nexacro.Browser == "IE") {
 		if (nexacro.BrowserVersion == 10) {
 			_pEditMaskString._on_default_input_keyinput = function (elem) {
 				if (this._accept_keyinput_event === false) {
@@ -5742,6 +5891,7 @@ if (!nexacro.EditBase) {
 			}
 
 			var elem_value = elem.getElementValue();
+			var elem_pos = elem.getElementCaretPos();
 			var text = this._text;
 			if (!text) {
 				text = "";
@@ -5757,6 +5907,10 @@ if (!nexacro.EditBase) {
 
 			if (this._is_selected()) {
 				this.clearBuffer2(this._text, this._strMaskedValue, this._begin_pos, this._end_pos);
+			}
+
+			if (this._check_backspace(elem)) {
+				this.clearBuffer2(elem_value, this._strMaskedValue, elem_pos.begin, elem_pos.begin + 1);
 			}
 
 			if (elem._type == "date") {
@@ -5856,11 +6010,13 @@ if (!nexacro.EditBase) {
 			this.comp = comp;
 		}
 
+		this._dispComponent = false;
 		this._dispComma = false;
 		this._nMin = 0;
 		this._nMax = 0;
 		this._nDecimalMin = -1;
 		this._nDecimalMax = 0;
+
 		this._default_grouping = [3];
 		this._default_decimal_point = ".";
 		this._default_thousands_sep = ",";
@@ -5885,14 +6041,15 @@ if (!nexacro.EditBase) {
 
 	_pEditMaskNumber._type_name = "EditMaskNumber";
 
-	_pEditMaskNumber._destroy = function () {
-		if (application._input_paste_comp == this.comp) {
-			application._input_paste_comp = null;
-		}
+	_pEditMaskNumber._init = function () {
+		nexacro.EditBase.prototype._init.call(this);
 
-		this.comp = null;
-
-		nexacro.EditBase.prototype._destroy.call(this);
+		this._dispComponent = false;
+		this._dispComma = false;
+		this._nMin = 0;
+		this._nMax = 0;
+		this._nDecimalMin = -1;
+		this._nDecimalMax = 0;
 	};
 
 	_pEditMaskNumber.isFilled = function () {
@@ -5972,7 +6129,6 @@ if (!nexacro.EditBase) {
 		this._nMax = 0;
 		this._nDecimalMax = 0;
 		this._nDecimalMin = 0;
-		this._strMask = strMask;
 		this._dispComma = (strMask.indexOf(",") >= 0);
 
 		var c;
@@ -5995,6 +6151,79 @@ if (!nexacro.EditBase) {
 					}
 
 					this._nMax++;
+				}
+			}
+		}
+	};
+
+	_pEditMaskNumber.setDisplayMask = function (strMask) {
+		var c, i;
+		var bFindNineMask = false;
+		var bFindPoint = false;
+		var strMaskLen = strMask.length;
+		var strSMask = this.trimLeft(strMask);
+		var cSignMask = strSMask.charAt(0);
+		var intNineMaskCnt = 0;
+		var decNineMaskCnt = 0;
+
+		this._init();
+
+		this._dispComponent = true;
+
+		if (cSignMask == '!') {
+			this._nSignType = 2;
+		}
+		else if (cSignMask == '+') {
+			this._nSignType = 1;
+		}
+		else if (cSignMask == '-') {
+			this._nSignType = 0;
+		}
+		else {
+			this._nSignType = 3;
+		}
+
+		if (strMask.length <= 0) {
+			this._dispComma = true;
+
+			this._nDecimalMax = -1;
+			this._nDecimalMin = 0;
+		}
+		else {
+			this._dispComma = (strMask.indexOf(this._strSeparator) >= 0);
+
+			for (i = 0; i < strMaskLen; i++) {
+				c = strMask.charAt(i);
+				if (c == ".") {
+					bFindPoint = true;
+				}
+				else if (c == "#" || c == "0" || c == "9") {
+					if (bFindPoint) {
+						this._nDecimalMax++;
+						if (c == "0") {
+							this._nDecimalMin = this._nDecimalMax;
+						}
+						else if (c == "9") {
+							decNineMaskCnt++;
+						}
+					}
+					else {
+						if (c == "9") {
+							intNineMaskCnt++;
+							this._nMin = 1;
+						}
+						else if (c == "0" || this._nMin > 0) {
+							this._nMin++;
+						}
+
+						this._nMax++;
+					}
+				}
+			}
+
+			if (this._nMax == intNineMaskCnt) {
+				if (this._nDecimalMax == decNineMaskCnt) {
+					this._nMin = 0;
 				}
 			}
 		}
@@ -6160,8 +6389,95 @@ if (!nexacro.EditBase) {
 		return strNumber;
 	};
 
+	_pEditMaskNumber.makeDisplayText = function (strValue, bApplyLocale) {
+		var ret = this.split(strValue, bApplyLocale);
+
+		var i, zeroLen;
+		var tmpStr = "";
+		var nSignPos = -1;
+		var nSign = ret.sign;
+		var bPoint = ret.pointexist;
+		var strInteger = ret.numVal;
+		var strDecimal = ret.decVal;
+		var nIntegerLen = strInteger.length;
+		var nDecimalLen = strDecimal ? strDecimal.length : 0;
+
+		if (this._nMin > nIntegerLen) {
+			zeroLen = this._nMin - nIntegerLen;
+			for (i = 0; i < zeroLen; i++) {
+				tmpStr += "0";
+			}
+
+			strInteger = tmpStr + strInteger;
+		}
+		else if (this._nMin == 0 && this._nMin != this._nMax) {
+			if (strInteger == "0") {
+				strInteger = "";
+			}
+		}
+
+		if (this._nDecimalMin > nDecimalLen) {
+			tmpStr = "";
+			zeroLen = this._nDecimalMin - nDecimalLen;
+			for (i = 0; i < zeroLen; i++) {
+				tmpStr += "0";
+			}
+
+			strDecimal = strDecimal + tmpStr;
+		}
+		else if (this._nDecimalMax != -1 && this._nDecimalMax < nDecimalLen) {
+			if ((this._nLimitType != 3 + 1 || this._nDecimalMax == 0)) {
+				strDecimal = strDecimal.substring(0, this._nDecimalMax) + strDecimal.substr(nDecimalLen, strDecimal.length);
+			}
+		}
+
+		if (this._dispComma) {
+			strInteger = this.applyComma(strInteger);
+		}
+
+		if (strDecimal.length > 0) {
+			strInteger += this._strPoint;
+			strInteger += strDecimal;
+		}
+
+		if (nSign < 0) {
+			strSign = this._negative_sign;
+			nSignPos = this._negative_sign_posn;
+		}
+		else if (nSign > 0) {
+			strSign = this._positive_sign;
+			nSignPos = this._negative_sign_posn;
+		}
+		else {
+			strSign = "";
+		}
+
+		switch (nSignPos) {
+			case 0:
+				strInteger = "(" + strInteger + ")";
+				break;
+			case 1:
+			case 3:
+			case 4:
+				strInteger = strSign + strInteger;
+				break;
+			case 2:
+				strInteger += strSign;
+				break;
+			default:
+				strInteger = strSign + strInteger;
+				break;
+		}
+
+		return strInteger;
+	};
+
 	_pEditMaskNumber.normalizeValue = function (strValue, bTrim) {
 		if (strValue.length <= 0) {
+			return strValue;
+		}
+
+		if (this._dispComponent && isFinite(strValue) == false) {
 			return strValue;
 		}
 
@@ -6209,7 +6525,7 @@ if (!nexacro.EditBase) {
 		return strValue;
 	};
 
-	_pEditMaskNumber.split = function (strText) {
+	_pEditMaskNumber.split = function (strText, bApplyLocale) {
 		var nBegin = 0;
 		var nSign;
 		if ((nBegin = strText.indexOf('+')) >= 0) {
@@ -6225,7 +6541,14 @@ if (!nexacro.EditBase) {
 			nBegin = 0;
 		}
 
-		var nPoint = strText.indexOf(this._default_decimal_point, nBegin);
+		var nPoint;
+		if (bApplyLocale) {
+			nPoint = strText.indexOf(this._strPoint, nBegin);
+		}
+		else {
+			nPoint = strText.indexOf(this._default_decimal_point, nBegin);
+		}
+
 		var strNumber = "", bPoint, strDecimal = "";
 		if (nPoint < 0) {
 			strNumber = strText.substr(nBegin);
@@ -6721,11 +7044,31 @@ if (!nexacro.EditBase) {
 		return "";
 	};
 
-	_pEditMaskNumber._apply_sign_filter = function (c) {
-		var text = this._text;
-		var value = this._value ? this._value : "";
+	_pEditMaskNumber._apply_filter = function (ch) {
+		var bChange = false;
+		var ret = {
+			value : null, 
+			text : "", 
+			begin_pos : this._input_begin_pos, 
+			bChange : false
+		};
+		var filterChar = this._is_maskchar(ch);
+
+		if (this.isSign(filterChar)) {
+			ret = this._apply_sign_filter(filterChar, (this._value ? this._value : ""), this._text, this._input_begin_pos);
+		}
+		else if (this.isComma(filterChar)) {
+			ret = this._apply_comma_filter(filterChar, (this._value ? this._value : ""), this._text, this._input_begin_pos);
+		}
+		else if (this.isDigit(filterChar)) {
+			ret = this._apply_digit_filter(filterChar, (this._value ? this._value : ""), this._text, this._input_begin_pos);
+		}
+
+		return ret;
+	};
+
+	_pEditMaskNumber._apply_sign_filter = function (c, value, text, begin_pos) {
 		var firstText = text.charAt(0);
-		var begin_pos = this._input_begin_pos;
 
 		if (this.isPlusSign(c) && (this._nSignType == 1 || this._nSignType == 3)) {
 			if (this.isPlusSign(firstText)) {
@@ -6741,10 +7084,6 @@ if (!nexacro.EditBase) {
 				text = c + this.makeText(value);
 				begin_pos += 1;
 			}
-
-			this._setValue(value);
-			this._setText(text);
-			this.setElementCaretPos(begin_pos, begin_pos);
 		}
 		else if (this.isMinusSign(c) && (this._nSignType == 0 || this._nSignType == 3)) {
 			if (this.isMinusSign(firstText)) {
@@ -6761,17 +7100,17 @@ if (!nexacro.EditBase) {
 				text = this.makeText(value);
 				begin_pos += 1;
 			}
-
-			this._setValue(value);
-			this._setText(text);
-			this.setElementCaretPos(begin_pos, begin_pos);
 		}
+
+		return {
+			value : value, 
+			text : text, 
+			caret : begin_pos, 
+			bChange : true
+		};
 	};
 
-	_pEditMaskNumber._apply_comma_filter = function (c) {
-		var value = this._value ? this._value : "";
-		var text = this._text;
-		var begin_pos = this._input_begin_pos;
+	_pEditMaskNumber._apply_comma_filter = function (c, value, text, begin_pos) {
 		var bNormalize = true;
 		var comma_idx = value.indexOf(c);
 
@@ -6805,24 +7144,31 @@ if (!nexacro.EditBase) {
 			begin_pos = text.indexOf(c) + 1;
 		}
 
-		this._setValue(value);
-		this._setText(text);
-		this.setElementCaretPos(begin_pos, begin_pos);
+		return {
+			value : value, 
+			text : text, 
+			caret : begin_pos, 
+			bChange : true
+		};
 	};
 
-	_pEditMaskNumber._apply_digit_filter = function (c) {
-		var ret = this.onInputDigit(this._text, c, this._input_begin_pos);
+	_pEditMaskNumber._apply_digit_filter = function (c, value, text, begin_pos) {
+		var ret = this.onInputDigit(text, c, begin_pos);
 		var text = ret.text;
 
-		this._setValue(this.normalizeValue(text));
-		this._setText(text);
-		this.setElementCaretPos(ret.pos, ret.pos);
+		return {
+			value : this.normalizeValue(text), 
+			text : text, 
+			caret : ret.pos, 
+			bChange : true
+		};
 	};
-
 
 	_pEditMaskNumber._setLocale = function (locale) {
 		var locale_info = nexacro.Locale.getLocaleInfo(locale);
+
 		this._strPoint = locale_info.decimal_point;
+
 		if (locale_info.thousands_sep) {
 			this._strSeparator = locale_info.thousands_sep;
 		}
@@ -6877,7 +7223,6 @@ if (!nexacro.EditBase) {
 
 		var old_text = this._text;
 		var cur_text = elem.getElementValue();
-		var str_mask = this._strMask;
 
 		if (this._pasteAction || this._keycode == 13 || this._stat_composition.getCurrentStatus() == nexacro.EditBase.Status.None) {
 			var len = element_text.length - text.length;
@@ -6907,7 +7252,7 @@ if (!nexacro.EditBase) {
 		return insertText;
 	};
 
-	if (nexacro.Browser == "IE") {
+	if (nexacro.Browser == "Edge" || nexacro.Browser == "IE") {
 		_pEditMaskNumber._setElementValue = function (elem, begin, end, caretApply, valApply) {
 			if (valApply) {
 				elem.setElementValue(this._text, true);
@@ -6987,6 +7332,37 @@ if (!nexacro.EditBase) {
 		}
 	};
 
+	_pEditMaskNumber._check_keypressPrevent = function (keyCode) {
+		var ret = false;
+		var filter_ret = {
+			value : null, 
+			text : "", 
+			begin_pos : this._input_begin_pos, 
+			bChange : false
+		};
+		var chartext = String.fromCharCode(keyCode);
+		var old_chartext = chartext;
+
+		filter_ret = this._apply_filter(chartext);
+
+		if (!filter_ret.bChange) {
+			ret = true;
+		}
+
+		return ret;
+	};
+
+	_pEditMaskNumber._check_backspace = function (elem) {
+		var elem_value = elem.getElementValue();
+		if (elem_value.length == (this._text.length - 1)) {
+			if (!this._cutAction && !this._pasteAction && !this._is_composition()) {
+				return true;
+			}
+		}
+
+		return false;
+	};
+
 	_pEditMaskNumber._mouseup_process = function (elem) {
 		if (this._is_composition()) {
 			this._setCaret(elem);
@@ -7025,6 +7401,7 @@ if (!nexacro.EditBase) {
 
 	_pEditMaskNumber._focus_process = function (elem, mflag) {
 		var comp = this.comp;
+		var win = comp._getWindow();
 		var cur_text = elem.getElementValue();
 
 		if (!this._bChangeFocusText) {
@@ -7035,7 +7412,7 @@ if (!nexacro.EditBase) {
 			this._setText(cur_text);
 		}
 
-		if (!mflag && comp._setcaret) {
+		if (win && win._keydown_element && comp._setcaret) {
 			this.setElementCaretPos(comp._caret_pos.begin, comp._caret_pos.end, elem);
 			comp._setcaret = false;
 		}
@@ -7091,6 +7468,7 @@ if (!nexacro.EditBase) {
 		if (ctrlkey && (keyCode == 90)) {
 			this._is_undo = true;
 			this._undoStack.doUndo();
+			this._setCaret(elem);
 			this._on_input_keyinput(elem);
 			this._is_undo = false;
 
@@ -7100,6 +7478,7 @@ if (!nexacro.EditBase) {
 		else if (ctrlkey && (keyCode == 89)) {
 			this._is_undo = true;
 			this._undoStack.doRedo();
+			this._setCaret(elem);
 			this._on_input_keyinput(elem);
 			this._is_undo = false;
 
@@ -7172,7 +7551,9 @@ if (!nexacro.EditBase) {
 							this._undoStack.push(this._value, this._text, this._end_pos, this._end_pos);
 						}
 
+						comp._textchanging = true;
 						comp.on_fire_ontextchanged(comp, text_info.pretext, text_info.posttext);
+						comp._textchanging = false;
 					}
 				}
 			}
@@ -7187,6 +7568,13 @@ if (!nexacro.EditBase) {
 
 			this._select_text = "";
 			elem._event_stop = true;
+		}
+		else if (nexacro.OS == "iOS") {
+			bPrevent = this._check_keypressPrevent(keyCode);
+
+			if (bPrevent) {
+				elem._event_stop = true;
+			}
 		}
 
 		return ret;
@@ -7223,7 +7611,7 @@ if (!nexacro.EditBase) {
 		}
 	};
 
-	if (nexacro.Browser == "IE") {
+	if (nexacro.Browser == "Edge" || nexacro.Browser == "IE") {
 		if (nexacro.BrowserVersion == 10) {
 			_pEditMaskNumber._on_default_input_keyinput = function (elem) {
 				if (this._accept_keyinput_event === false) {
@@ -7394,6 +7782,7 @@ if (!nexacro.EditBase) {
 			}
 
 			var elem_value = elem.getElementValue();
+			var elem_pos = elem.getElementCaretPos();
 			var text = this._text;
 			if (!text) {
 				text = "";
@@ -7409,6 +7798,10 @@ if (!nexacro.EditBase) {
 
 			if (this._is_selected()) {
 				this.clearBuffer(text, this._begin_pos, this._end_pos);
+			}
+
+			if (this._check_backspace(elem)) {
+				this.clearBuffer(elem_value, elem_pos.begin, elem_pos.end);
 			}
 
 			insertText = this.getInsertText(elem);
@@ -7431,6 +7824,12 @@ if (!nexacro.EditBase) {
 		var bFilter = false;
 		var bFilled = false;
 		var changeChartext = false;
+		var ret = {
+			value : null, 
+			text : "", 
+			begin_pos : this._input_begin_pos, 
+			bChange : false
+		};
 
 		if (this._is_undo) {
 			this._setText(elem_value);
@@ -7440,31 +7839,25 @@ if (!nexacro.EditBase) {
 			var i = 0;
 			while (i < chartext.length) {
 				var ch = chartext.charAt(i);
-				var filterChar = this._is_maskchar(ch);
 
-				if (this.isSign(filterChar)) {
-					this._apply_sign_filter(filterChar);
+				ret = this._apply_filter(ch);
+
+				if (ret.bChange) {
+					this._setValue(ret.value);
+					this._setText(ret.text);
+					this.setElementCaretPos(ret.caret, ret.caret);
 				}
-				else if (this.isComma(filterChar)) {
-					this._apply_comma_filter(filterChar);
-				}
-				else if (this.isDigit(filterChar)) {
-					this._apply_digit_filter(filterChar);
-				}
+
 				i++;
 			}
 		}
 		else {
-			var filterChar = this._is_maskchar(chartext);
+			ret = this._apply_filter(chartext);
 
-			if (this.isSign(filterChar)) {
-				this._apply_sign_filter(filterChar);
-			}
-			else if (this.isComma(filterChar)) {
-				this._apply_comma_filter(filterChar);
-			}
-			else if (this.isDigit(filterChar)) {
-				this._apply_digit_filter(filterChar);
+			if (ret.bChange) {
+				this._setValue(ret.value);
+				this._setText(ret.text);
+				this.setElementCaretPos(ret.caret, ret.caret);
 			}
 		}
 
@@ -7667,14 +8060,19 @@ if (!nexacro.EditBase) {
 				text = value;
 			}
 		}
+
 		var undoItem = {
 			value : value, 
 			text : text, 
 			selectionStart : start, 
 			selectionEnd : end
 		};
+		var curUndoItem = this.undoStack[this.undoPosition];
 
-		if (this.undoStack[this.undoPosition].value !== value) {
+		if (curUndoItem.value === value) {
+			this.refreshUndoItem(undoItem);
+		}
+		else {
 			this.undoStack.length = ++this.undoPosition;
 			this.undoStack.push(undoItem);
 		}
@@ -7688,6 +8086,19 @@ if (!nexacro.EditBase) {
 
 			elem._updateInputValue();
 			elem.setElementSetSelect(item.selectionStart, item.selectionEnd);
+		}
+	};
+
+	_pEditBaseUndoStack.refreshUndoItem = function (item) {
+		var bChange = false;
+		var curUndoItem = this.undoStack[this.undoPosition];
+
+		if (curUndoItem.value !== item.value || curUndoItem.text !== item.text || curUndoItem.selectionStart !== item.selectionStart || curUndoItem.selectionEnd !== item.selectionEnd) {
+			bChange = true;
+		}
+
+		if (bChange) {
+			this.undoStack[this.undoPosition] = item;
 		}
 	};
 

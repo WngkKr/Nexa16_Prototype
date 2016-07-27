@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -41,6 +41,7 @@ if (!nexacro.Spin) {
 		this.buttonalign = null;
 		this.buttonsize = null;
 		this.accessibility = null;
+		this.displaynulltextcolor = null;
 	};
 
 	var _pSpinStyle = nexacro._createPrototype(nexacro.Style, nexacro.Spin_Style);
@@ -49,10 +50,12 @@ if (!nexacro.Spin) {
 	eval(nexacro._createAlignAttributeEvalStr("_pSpinStyle", "buttonalign"));
 	eval(nexacro._createValueAttributeEvalStr("_pSpinStyle", "buttonsize"));
 	eval(nexacro._createAccessibilityAttributeEvalStr("_pSpinStyle", "accessibility"));
+	eval(nexacro._createColorAttributeEvalStr("_pSpinStyle", "displaynulltextcolor"));
 
 	_pSpinStyle.__custom_emptyObject = function () {
 		this.buttonalign = null;
 		this.buttonsize = null;
+		this.displaynulltextcolor = null;
 	};
 
 	_pSpinStyle.__get_custom_style_value = function () {
@@ -66,6 +69,9 @@ if (!nexacro.Spin) {
 		if (this.accessibility && !this.accessibility._is_empty) {
 			val += "accessibility:" + this.accessibility._value + "; ";
 		}
+		if (this.displaynulltextcolor && !this.displaynulltextcolor._is_empty) {
+			val += "displaynulltextcolor" + this.displaynulltextcolor._value + "; ";
+		}
 		return val;
 	};
 
@@ -75,6 +81,7 @@ if (!nexacro.Spin) {
 		this.buttonalign = null;
 		this.buttonsize = null;
 		this.accessibility = null;
+		this.displaynulltextcolor = null;
 	};
 
 	var _pSpinCurrentStyle = nexacro._createPrototype(nexacro.CurrentStyle, nexacro.Spin_CurrentStyle);
@@ -105,10 +112,11 @@ if (!nexacro.Spin) {
 		this.increment = 1;
 		this.max = 10000;
 		this.min = 0;
-		this.displaymask = "9,999";
+		this.displaymask = "9,999.9999999";
 		this.circulation = false;
 		this.displaycomma = false;
 		this.textchangebindflag = false;
+		this.usecontextmenu = true;
 
 		this._old_value = undefined;
 		this._accessibility_role = "spin";
@@ -185,6 +193,11 @@ if (!nexacro.Spin) {
 			curstyle.font = font;
 			this.on_apply_style_font(font);
 		}
+		var letterspace = this.on_find_CurrentStyle_letterspace(pseudo);
+		if (curstyle.letterspace != letterspace) {
+			curstyle.letterspace = letterspace;
+			this.on_apply_style_letterspace(letterspace);
+		}
 		var color = this.on_find_CurrentStyle_color(pseudo);
 		if (curstyle.color != color) {
 			curstyle.color = color;
@@ -206,6 +219,12 @@ if (!nexacro.Spin) {
 			curstyle.rtlimagemirroring = rtlimagemirroring;
 			this.on_apply_style_rtlimagemirroring(rtlimagemirroring);
 		}
+
+		var displaynulltextcolor = this.on_find_CurrentStyle_displaynulltextcolor(pseudo);
+		if (displaynulltextcolor != curstyle.displaynulltextcolor) {
+			curstyle.displaynulltextcolor = displaynulltextcolor;
+			this.on_apply_style_displaynulltextcolor(displaynulltextcolor);
+		}
 	};
 
 	_pSpin.on_create_custom_style = function () {
@@ -226,6 +245,18 @@ if (!nexacro.Spin) {
 		return (size) ? size : nexacro.Spin._default_buttonsize;
 	};
 
+	_pSpin.on_find_CurrentStyle_displaynulltextcolor = function (pseudo) {
+		var displaynulltextcolor = this._find_pseudo_obj("displaynulltextcolor", pseudo, "color");
+		if (!displaynulltextcolor) {
+			displaynulltextcolor = this._find_pseudo_obj("color", pseudo, "color");
+		}
+		if (!displaynulltextcolor) {
+			displaynulltextcolor = this._find_inherit_pseudo_obj("color", pseudo, "color");
+		}
+
+		return (displaynulltextcolor) ? displaynulltextcolor : nexacro.Component._default_color;
+	};
+
 	_pSpin.on_update_style_buttonsize = function () {
 		var buttonsize = this.currentstyle.buttonsize = this.on_find_CurrentStyle_buttonsize(this._pseudo);
 		this.on_apply_style_buttonsize();
@@ -234,6 +265,11 @@ if (!nexacro.Spin) {
 	_pSpin.on_update_style_buttonalign = function () {
 		var buttonalign = this.currentstyle.buttonalign = this.on_find_CurrentStyle_buttonalign(this._pseudo);
 		this.on_apply_style_buttonalign();
+	};
+
+	_pSpin.on_update_style_displaynulltextcolor = function () {
+		var displaynulltextcolor = this.currentstyle.displaynulltextcolor = this.on_find_CurrentStyle_displaynulltextcolor(this._pseudo);
+		this.on_apply_style_displaynulltextcolor(displaynulltextcolor);
 	};
 
 	_pSpin.on_apply_style_align = function (align) {
@@ -276,15 +312,23 @@ if (!nexacro.Spin) {
 		nexacro.Component.prototype.on_apply_style_rtlimagemirroring.call(this, rtlimagemirroring);
 	};
 
+	_pSpin.on_apply_style_letterspace = function (letterspace) {
+		if (this.spinedit) {
+			this.spinedit.on_apply_style_letterspace(letterspace);
+		}
+	};
+
+	_pSpin.on_apply_style_displaynulltextcolor = function (displaynulltextcolor) {
+		if (this.spinedit) {
+			this.spinedit.on_apply_style_displaynulltextcolor(displaynulltextcolor);
+		}
+	};
+
 	_pSpin.on_create_contents = function () {
 		if (this._control_element) {
 			this.spinupbutton = new nexacro.SpinButtonCtrl("spinupbutton", "absolute", 0, 0, 0, 0, null, null, this);
 			this.spindownbutton = new nexacro.SpinButtonCtrl("spindownbutton", "absolute", 0, 0, 0, 0, null, null, this);
 			var spinedit = this.spinedit = new nexacro.SpinEditCtrl("spinedit", "absolute", 0, 0, 0, 0, null, null, this);
-
-			if (this.displaycomma) {
-				spinedit.set_mask(this.displaymask);
-			}
 
 			this.spinedit.createComponent();
 			this.spinupbutton.createComponent();
@@ -298,6 +342,8 @@ if (!nexacro.Spin) {
 		this.on_apply_displaycomma();
 		this.on_apply_displaynulltext();
 		this.on_apply_type();
+		this.on_apply_usecontextmenu();
+		this.on_apply_style_displaynulltextcolor(this.currentstyle.displaynulltextcolor);
 
 		this.spinupbutton._setEventHandler("onclick", this.on_notify_spinupbutton_click, this);
 		this.spindownbutton._setEventHandler("onclick", this.on_notify_spindownbutton_click, this);
@@ -312,6 +358,7 @@ if (!nexacro.Spin) {
 		this.spinupbutton.on_created();
 		this.spindownbutton.on_created();
 		this.spinedit.on_created();
+		this.on_apply_style_letterspace(this.currentstyle.letterspace);
 
 		this._setAccessibilityInfoValueMax(this.max);
 		this._setAccessibilityInfoValueMin(this.min);
@@ -368,6 +415,13 @@ if (!nexacro.Spin) {
 
 			if (isNaN(v)) {
 				v = ds_val;
+			}
+			else if (this.min > v || this.max < v) {
+				v = (this.min > v) ? this.min : this.max;
+				var ret = this.applyto_bindSource("value", v);
+				if (ret == false) {
+					return false;
+				}
 			}
 
 			this._setValue(v);
@@ -471,6 +525,12 @@ if (!nexacro.Spin) {
 			if (isNaN(v)) {
 				return;
 			}
+			else if (this.min > v) {
+				v = this.min;
+			}
+			else if (this.max < v) {
+				v = this.max;
+			}
 
 			var ret = this.applyto_bindSource("value", v);
 			if (ret == false) {
@@ -492,9 +552,6 @@ if (!nexacro.Spin) {
 	};
 
 	_pSpin.on_apply_value = function () {
-		if (this.displaycomma) {
-			this.text = this._getCommaString(this.value);
-		}
 		if (this.spinedit) {
 			if (this.value === null || this.value === undefined) {
 				this.spinedit.set_value(undefined);
@@ -502,18 +559,10 @@ if (!nexacro.Spin) {
 			else {
 				this.spinedit.set_value(this.value);
 			}
+			this.text = this.spinedit.text;
 		}
 	};
 
-	_pSpin.on_apply_text = function () {
-		if (this.displaycomma) {
-			this.text = this._getCommaString(this.text);
-		}
-
-		if (this.spinedit) {
-			this.spinedit.set_text(this.text);
-		}
-	};
 
 	_pSpin.set_readonly = function (v) {
 		v = nexacro._toBoolean(v);
@@ -651,6 +700,19 @@ if (!nexacro.Spin) {
 	};
 
 	_pSpin.set_usecontextmenu = function (v) {
+		v = nexacro._toBoolean(v);
+
+		if (v != this.usecontextmenu) {
+			this.usecontextmenu = v;
+			this.on_apply_usecontextmenu();
+		}
+	};
+
+	_pSpin.on_apply_usecontextmenu = function () {
+		var spinedit = this.spinedit;
+		if (spinedit) {
+			spinedit.set_usecontextmenu(this.usecontextmenu);
+		}
 	};
 
 	_pSpin.set_locale = function (v) {
@@ -738,9 +800,9 @@ if (!nexacro.Spin) {
 				value = (decvalue < this.min) ? this.min : (decvalue > this.max) ? this.max : decvalue;
 			}
 
-			var strPreText = (this.displaycomma) ? this._getCommaString(preValue) : preValue.toString();
+			var strPreText = preValue.toString();
 			var postValue = this.value = value;
-			var strPostText = (this.displaycomma) ? this._getCommaString(value) : value.toString();
+			var strPostText = value.toString();
 
 			bcheck = this.on_fire_onspin(this, strPreText, preValue, strPostText, postValue, false);
 			this.spinedit.on_fire_ontextchanged(this, preValue, postValue);
@@ -751,6 +813,7 @@ if (!nexacro.Spin) {
 			else {
 				this.value = preValue;
 			}
+			this._on_focus(true);
 			this._updateToText();
 		}
 	};
@@ -780,9 +843,9 @@ if (!nexacro.Spin) {
 				value = (incvalue > this.max) ? this.max : (incvalue < this.min) ? this.min : incvalue;
 			}
 
-			var strPreText = (this.displaycomma) ? this._getCommaString(preValue) : preValue.toString();
+			var strPreText = preValue.toString();
 			var postValue = this.value = value;
-			var strPostText = (this.displaycomma) ? this._getCommaString(value) : value.toString();
+			var strPostText = value.toString();
 
 			bcheck = this.on_fire_onspin(this, strPreText, preValue, strPostText, postValue, true);
 			this.spinedit.on_fire_ontextchanged(this, preValue, postValue);
@@ -793,6 +856,8 @@ if (!nexacro.Spin) {
 			else {
 				this.value = preValue;
 			}
+
+			this._on_focus(true);
 			this._updateToText();
 		}
 	};
@@ -942,6 +1007,7 @@ if (!nexacro.Spin) {
 		return false;
 	};
 
+
 	_pSpin.on_fire_onspin = function (obj, preText, preValue, postText, postValue, isUp) {
 		if (this.onspin && this.onspin._has_handlers) {
 			var evt = new nexacro.SpinEventInfo(obj, "onspin", preText, preValue, postText, postValue, isUp);
@@ -956,6 +1022,12 @@ if (!nexacro.Spin) {
 			return;
 		}
 		this._valuechange();
+
+		if (nexacro.Browser == "IE" && nexacro.BrowserVersion == 8) {
+			if (this.spinedit) {
+				this.spinedit._is_focusing = false;
+			}
+		}
 	};
 
 	_pSpin._recalcLayout = function () {
@@ -969,7 +1041,8 @@ if (!nexacro.Spin) {
 			var down_top_margin = 0, down_left_margin = 0, down_right_margin = 0, down_bottom_margin = 0;
 			var edit_top_margin = 0, edit_left_margin = 0, edit_right_margin = 0, edit_bottom_margin = 0;
 
-			var upmargin;
+			var upmargin = this.spinupbutton.on_find_CurrentStyle_margin();
+			;
 			if (upmargin) {
 				up_top_margin = upmargin.top;
 				up_left_margin = upmargin.left;
@@ -993,8 +1066,8 @@ if (!nexacro.Spin) {
 				edit_right_margin = editmargin.right;
 			}
 
-			var button_gap = h % 2 == 0 ? 2 : 3;
-			var button_size_x = 0, button_size_y = ch - button_gap;
+			var button_size_x = 0;
+			var button_size_y = ch;
 
 			if (this.type == "spinonly") {
 				button_size_x = cw;
@@ -1017,14 +1090,16 @@ if (!nexacro.Spin) {
 			var curbuttonalign = this.on_find_CurrentStyle_buttonalign();
 
 			if (curbuttonalign.halign != "left") {
-				l = cw - button_size_x - up_right_margin;
+				l = cw - button_size_x;
 				t = up_top_margin;
-				w = button_size_x;
-				h = button_size_y / 2 - up_bottom_margin;
+				w = button_size_x - up_right_margin;
+				h = button_size_y / 2 - 1;
 
 				this.spinupbutton.move(l, t, w, h, null, null);
 
-				t = t + h + up_bottom_margin + down_top_margin + button_gap;
+				w = button_size_x - down_right_margin;
+				t = t + h + down_top_margin + 1;
+				h = button_size_y / 2 - 1 - down_bottom_margin;
 
 				this.spindownbutton.move(l, t, w, h, null, null);
 
@@ -1041,11 +1116,13 @@ if (!nexacro.Spin) {
 				l = up_left_margin;
 				t = up_top_margin;
 				w = button_size_x - up_right_margin;
-				h = button_size_y / 2 - up_bottom_margin;
+				h = button_size_y / 2 - 1;
 
 				this.spinupbutton.move(l, t, w, h, null, null);
 
-				t = t + h + up_bottom_margin + down_top_margin + button_gap;
+				w = button_size_x - down_right_margin;
+				t = t + h + up_bottom_margin + down_top_margin + 1;
+				h = button_size_y / 2 - 1 - down_bottom_margin;
 
 				this.spindownbutton.move(l, t, w, h, null, null);
 
@@ -1133,17 +1210,12 @@ if (!nexacro.Spin) {
 			this.text = "";
 		}
 		else {
-			if (this.displaycomma) {
-				v = this._getCommaString(this.value);
-			}
-			else {
-				v = this._commaStrToStr(this.value);
-			}
-			this.text = v;
+			v = this._commaStrToStr(this.value);
 		}
 		if (this.spinedit) {
 			if (!skip_setvalue) {
 				this.spinedit.set_value(v);
+				this.text = this.spinedit.text;
 			}
 			this._setAccessibilityInfoValueCur(v);
 		}
@@ -1152,56 +1224,11 @@ if (!nexacro.Spin) {
 
 	_pSpin._commaStrToStr = function (v) {
 		var strComma = nexacro._toString(v);
-		var strValue = "";
+
 		if (v == undefined) {
 			strComma = "";
 		}
-
-		if (strComma.indexOf(",") >= 0) {
-			var strSplit = strComma.split(",");
-			var strLen = strSplit.length;
-
-			for (var i = 0; i < strLen; i++) {
-				strValue += strSplit[i];
-			}
-		}
-		else {
-			strValue = strComma;
-		}
-
-		return strValue;
-	};
-
-	_pSpin._removeComma = function (text) {
-		if (text === undefined || text === "" || text === null) {
-			return "";
-		}
-
-		var v = text + "";
-		var v_regExp = new RegExp(",", "g");
-		var v_ret = v.replace(v_regExp, "");
-		v_regExp = null;
-		return v_ret;
-	};
-
-	_pSpin._getCommaString = function (v) {
-		if (v === undefined) {
-			v = "";
-		}
-
-		v = this._removeComma(v);
-		var len = v.length;
-		pos = v.length - 3;
-		for (var i = pos; i >= 0; i -= 3) {
-			if (i > 0) {
-				var beforeText = v.substring(0, i);
-				var afterText = v.substring(i);
-				if (afterText) {
-					v = beforeText + "," + afterText;
-				}
-			}
-		}
-		return v;
+		return strComma.replace(/","/g, "");
 	};
 
 	_pSpin._valuechange = function () {
@@ -1224,10 +1251,10 @@ if (!nexacro.Spin) {
 		}
 
 		var postValue = this.value;
-		var strPostText = (this.displaycomma) ? this._getCommaString(this.value) : nexacro._toString(this.value);
+		var strPostText = nexacro._toString(this.value);
 
 		var preValue = this._old_value;
-		var strPreText = (this.displaycomma) ? this._getCommaString(this._old_value) : nexacro._toString(this._old_value);
+		var strPreText = nexacro._toString(this._old_value);
 
 		var ret = this.on_fire_canchange(this, strPreText, preValue, strPostText, postValue);
 		if (ret === false) {

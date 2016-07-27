@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="UCCP_GRID_FIND" ontimer="UCCP4004PU_OnTimer" left="0" top="0" width="468" height="186" scrollbars="none" style="color:#999999ff;" onload="form_onload" onkeydown="UCCP_GRID_FIND_onkeydown" titletext="그리드 찾기 팝업" onbeforeclose="UCCP_GRID_FIND_onbeforeclose" cssclass="frm_POPUP_BG">
+    <Layouts>
+      <Layout>
+        <Static id="Static133" taborder="33" onclick="Static23_onclick" cssclass="sta_WF_Box" left="15" top="39" right="15" bottom="25"/>
+        <Static id="Static94" taborder="16" text="W&#13;&#10;15" visible="false" left="0" top="0" width="15" height="145" style="background:green;align:center;opacity:30;"/>
+        <Static id="Static02" taborder="18" text="W&#13;&#10;15" visible="false" left="453" top="0" width="15" height="145" style="background:green;align:center;opacity:30;"/>
+        <Static id="Static03" taborder="19" text="H15" visible="false" left="0" top="171" width="463" height="15" style="background:green;align:center middle;opacity:30;"/>
+        <Static id="Static00" taborder="25" text="검색어" left="25" top="49" width="64" height="21"/>
+        <Edit id="edt_keywd" taborder="26" left="69" top="49" width="310" height="21" onkeydown="edt_keywd_onkeydown"/>
+        <Button id="btn_findNext" taborder="27" text="찾기(F)" top="49" width="54" height="21" onclick="btn_findNext_onclick" cssclass="btn_WF_Support" left="384"/>
+        <Button id="btn_findPrev" taborder="28" text="이전(P)" height="21" top="73" width="54" onclick="btn_findPrev_onclick" cssclass="btn_WF_Support" left="384"/>
+        <CheckBox id="chk_ignoreCase" taborder="29" text="대소문자 구분" left="25" top="73" width="109" height="21"/>
+        <CheckBox id="chk_fullName" taborder="30" text="온전한 단어" left="129" top="73" width="109" height="21"/>
+        <Button id="btn_close" taborder="31" cssclass="btn_WF_Del" height="24" userdata="" onclick="btn_close_onclick" width="69" text="닫기" right="15" bottom="15"/>
+        <Static id="stc_msg" taborder="32" left="15" top="109" width="438" height="21" visible="false" text="처리메세지" cssclass="sta_WF_Caution"/>
+        <Static id="Static92" taborder="34" text="H30" visible="false" left="0" top="36" right="0" height="10" style="background:green;align:center middle;opacity:30;"/>
+        <Button id="bnt_close1" taborder="35" onclick="gfn_close" cssclass="btn_POP_AlertClose" top="8" right="15" width="20" height="20"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.0"><![CDATA[/**
+*  인트라넷 고도화[Lexpeed3]구축 사업
+*
+*  @MenuPath       
+*  @FileName       UCCP_GRID_FIND.xfdl
+*  @Creator        송원창
+*  @CreateDate     2016.04.08
+*  @LastModifier   
+*  @LastModifyDate 
+*  @Version        1.0
+*  @Outline        그리드 공통 검색팝업
+*  @Desction 
+* 
+************** 소스 수정 이력 *************************************************
+*    date          Modifier            Description
+*******************************************************************************
+*  2016.04.18      송원창              클래스 최초 생성
+*******************************************************************************
+*/
+ 
+ 
+/*----------------------------------------------------------------------------------------------
+ * 공통 라이브러리 INCLUDE 영역
+----------------------------------------------------------------------------------------------*/
+//include "LIB::LIB_COMMON.xjs";      // 공통 js
+
+
+/*----------------------------------------------------------------------------------------------
+ * FORM 변수 선언 영역
+----------------------------------------------------------------------------------------------*/
+this.P_TARGET_GRID;              // 대상 그리드 Object
+this.F_TARGET_GRID_SELECTTYPE;   // 찾기는 셀 셀렉트를 cell 로 변경해서 작업한다. 
+this.F_CURRSEARCHTYPE;           // 현재의 찾기 (아래로 / 위로)
+this.F_FINDKEYWD = "";                // 찾기 검색어
+this.F_FINDINFO  = "";                 // 찾기 검색어
+this.F_CURROW;                   // 현재의 ROW
+this.F_CURCELL   = -1;
+
+/*----------------------------------------------------------------------------------------------
+ * FORM EVENT 영역
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description    화면 로드시 이벤트
+ */
+this.form_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+    this.set_titletext("찾기");
+
+    // Form Load 시 공통 기능 처리
+    this.gfn_initForm(obj);
+
+    this.P_TARGET_GRID            = this.gfn_getParam("P_TARGET_GRID");
+    this.F_TARGET_GRID_SELECTTYPE = this.P_TARGET_GRID.selecttype;
+    this.F_CURROW                 = this.P_TARGET_GRID.getBindDataset().rowposition;
+    
+    this.P_TARGET_GRID.set_selecttype("cell");
+    
+    this.edt_keywd.setFocus();
+    
+}
+
+/*----------------------------------------------------------------------------------------------
+ * 사용자 FUNCTION 영역
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * COMPONENT EVENT 영역
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description    버튼 Click시 
+ */
+this.btn_close_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+    this.close();
+}
+
+/**
+ * @description    엔터키 자동검색
+ */
+this.UCCP_GRID_FIND_onkeydown = function(obj:Form, e:nexacro.KeyEventInfo)
+{
+    // Alt+(F)
+    if( e.keycode == 70 && e.altKey == true )
+    {
+        this.btn_findNext_onclick();
+    }
+    // Alt+(P)
+    else if( e.keycode == 80  && e.altKey == true )
+    {
+        this.btn_findPrev_onclick();
+    }
+    // Enter 검색
+    else if( e.keycode == 13 )
+    {
+        if( !this.gfn_isNull(this.edt_keywd.value) )
+        {
+            // 다음검색으로 처리 
+            if( this.gfn_isNull(this.F_CURRSEARCHTYPE) || this.F_CURRSEARCHTYPE == "N" )
+            {
+                this.btn_findNext_onclick();
+            }
+            // 이전검색으로 처리 
+            else
+            {
+                this.btn_findPrev_onclick();
+            }
+        }        
+    }    
+}
+
+/**
+ * @description    다음검색처리 
+ */
+this.btn_findNext_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+    this.stc_msg.set_visible(false);
+
+    this.F_FINDKEYWD = this.edt_keywd.value;
+    
+    // 현재조회방식을 다음으로 설정
+    this.CURRSEARCHTYPE = "N";
+    
+    if( this.gfn_isNull(this.F_FINDKEYWD) )
+    {
+        this.edt_keywd.setFocus();
+        return;
+    }
+    
+    var cellcount = this.P_TARGET_GRID.getCellCount("Body");
+    var startrow  = this.F_CURROW;
+    var startcell = parseInt(this.F_CURCELL)+1;
+    var checkcount= 0;
+    
+    for(var i=startrow;i<this.P_TARGET_GRID.rowcount;i++)
+    {
+        this.F_CURROW = i;
+        
+        // 처음에는 시작 ROW 부터 cell 을 증가시킨다. 
+        if( ++checkcount == 1 )
+        {
+            for(var j=startcell;j<cellcount;j++)
+            {
+                this.F_CURCELL = j;
+                
+                // 검색이 일치하면 리턴처리
+                if( this.fn_checkFindStr(this.P_TARGET_GRID.getCellText(i, j)) )
+                {
+                    this.fn_setCellFocus(i, j);
+                    if( this.F_FINDINFO == this.F_FINDKEYWD+":"+i+"-"+j )
+                    {
+                        // 더이상 일치하는 단어가 존재하지 않습니다.
+                        this.fn_showMsgBox("COMI0003");
+                    }
+                    this.F_FINDINFO = this.F_FINDKEYWD+":"+i+"-"+j;                    
+                    return;
+                }
+            }
+        }
+        else
+        {
+            for(var j=0;j<cellcount;j++)
+            {            
+                this.F_CURCELL = j;
+
+                // 검색이 일치하면 리턴처리
+                if( this.fn_checkFindStr(this.P_TARGET_GRID.getCellText(i, j)) )
+                {
+                    this.fn_setCellFocus(i, j);
+                    if( this.F_FINDINFO == this.F_FINDKEYWD+":"+i+"-"+j )
+                    {
+                        // 더이상 일치하는 단어가 존재하지 않습니다.
+                        this.fn_showMsgBox("COMI0003");
+                    }
+                    this.F_FINDINFO = this.F_FINDKEYWD+":"+i+"-"+j;                    
+                    return;
+                }
+            }
+        }
+    }
+
+    this.F_CURROW  = 0;    
+    this.F_CURCELL = -1;
+    
+    // 검색어로 아무것도 찾지 못했을경우 
+    if( checkcount >= this.P_TARGET_GRID.rowcount )
+    {   
+        // 다음 문자열을 찾을 수 없습니다. - ${}
+        this.fn_showMsgBox("COMI0002", this.F_FINDKEYWD);
+    }
+    else
+    {
+        // 첨부터 다시 찾는다. 
+        this.btn_findNext_onclick();
+    }     
+}
+
+/**
+ * @description    이전검색처리 
+ */
+this.btn_findPrev_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+    this.stc_msg.set_visible(false);
+    
+    this.F_FINDKEYWD = this.edt_keywd.value;
+    
+    // 현재조회방식을 다음으로 설정
+    this.CURRSEARCHTYPE = "P";
+    
+    if( this.gfn_isNull(this.F_FINDKEYWD) )
+    {
+        this.edt_keywd.setFocus();
+        return;
+    }
+    
+    // 처음일때는 마지막에서 부터 찾는다. 
+    if( this.F_CURROW == 0 && this.F_CURCELL == -1 )
+    {
+        this.F_CURROW = this.P_TARGET_GRID.rowcount-1;
+        this.F_CURCELL= this.P_TARGET_GRID.getCellCount("Body")-1;
+    }
+    
+    var cellcount = this.P_TARGET_GRID.getCellCount("Body");
+    var startrow  = this.F_CURROW;
+    var startcell = parseInt(this.F_CURCELL)-1;
+    var checkcount= 0;
+    
+    for(var i=startrow;i>=0;i--)
+    {
+        this.F_CURROW = i;
+        
+        // 처음에는 시작 ROW 부터 cell 을 증가시킨다. 
+        if( ++checkcount == 1 )
+        {
+            for(var j=startcell;j>=0;j--)
+            {
+                this.F_CURCELL = j;
+            
+                // 검색이 일치하면 리턴처리
+                if( this.fn_checkFindStr(this.P_TARGET_GRID.getCellText(i, j)) )
+                {                
+                    this.fn_setCellFocus(i, j);
+                    if( this.F_FINDINFO == this.F_FINDKEYWD+":"+i+"-"+j )
+                    {
+                        // 더이상 일치하는 단어가 존재하지 않습니다.
+                        this.fn_showMsgBox("COMI0003");
+                    }
+                    this.F_FINDINFO = this.F_FINDKEYWD+":"+i+"-"+j;                    
+                    return;
+                }
+            }
+        }
+        else
+        {
+            for(var j=cellcount-1;j>=0;j--)
+            {            
+                this.F_CURCELL = j;
+
+                // 검색이 일치하면 리턴처리
+                if( this.fn_checkFindStr(this.P_TARGET_GRID.getCellText(i, j)) )
+                {
+                    this.fn_setCellFocus(i, j);
+                    if( this.F_FINDINFO == this.F_FINDKEYWD+":"+i+"-"+j )
+                    {
+                        // 더이상 일치하는 단어가 존재하지 않습니다.
+                        this.fn_showMsgBox("COMI0003");
+                    }
+                    this.F_FINDINFO = this.F_FINDKEYWD+":"+i+"-"+j;                    
+                    return;
+                }
+            }
+        }
+    }
+
+    this.F_CURROW  = this.P_TARGET_GRID.rowcount-1;    
+    this.F_CURCELL = this.P_TARGET_GRID.getCellCount("Body")-1;
+    
+    // 검색어로 아무것도 찾지 못했을경우 
+    if( checkcount >= this.P_TARGET_GRID.rowcount )
+    {    
+        // 다음 문자열을 찾을 수 없습니다. - ${}
+        this.fn_showMsgBox("COMI0002", this.F_FINDKEYWD);
+    }
+    else
+    {
+        // 첨부터 다시 찾는다. 
+        this.btn_findPrev_onclick();
+    }    
+}
+
+
+/**
+ * @description   단어검색옵션에 따라 검색판별처리 
+ */
+this.fn_checkFindStr = function(gridtext)
+{
+    var findflag = false;
+    
+    if( this.chk_ignoreCase.value )
+    {
+        // 대소분자구별하고 전체일치
+        if( this.chk_fullName.value )
+        {
+            if( gridtext == this.F_FINDKEYWD ) 
+                return true;
+            else
+                return false;
+        }
+        // 대소분자구별하고 like검색
+        else
+        {
+            if( gridtext.indexOf(this.F_FINDKEYWD) != -1 ) 
+                return true;
+            else
+                return false;
+        }
+    }
+    else
+    {
+        // 대소분자구별없이 전체일치
+        if( this.chk_fullName.value )
+        {
+            if( gridtext.toLowerCase() == this.F_FINDKEYWD.toLowerCase() ) 
+                return true;
+            else
+                return false;
+        }
+        // 대소분자구별없이 like 검색
+        else
+        {
+            if( gridtext.toLowerCase().indexOf(this.F_FINDKEYWD.toLowerCase()) != -1 ) 
+                return true;
+            else
+                return false;
+        }
+    }
+    
+    return findflag;
+}
+
+/**
+ * @description   찾은단어에 대해서 포커싱처리를 한다. 
+ */
+this.fn_setCellFocus = function(row, cell)
+{
+    this.P_TARGET_GRID.getBindDataset().set_rowposition(-1);
+    this.P_TARGET_GRID.getBindDataset().set_rowposition(row);
+    this.P_TARGET_GRID.setCellPos(cell);    
+}
+
+/**
+ * @description   창이닫힐때 그리드의 원래 셀렉트 타입으로 원복시킨다. 
+ */
+this.UCCP_GRID_FIND_onbeforeclose = function(obj:Form, e:nexacro.CloseEventInfo)
+{
+    this.P_TARGET_GRID.set_selecttype(this.F_TARGET_GRID_SELECTTYPE);
+}
+
+
+/**
+ * @description 메세지팝업을 뛰울수없기 때문에 static 에 빨간색으로 메세지를 뿌린다.
+ */
+this.fn_showMsgBox = function(msgid)
+{
+    this.stc_msg.set_text(this.gfn_getMessage(msgid, arguments[1]));
+    this.stc_msg.set_visible(true);
+}]]></Script>
+  </Form>
+</FDL>

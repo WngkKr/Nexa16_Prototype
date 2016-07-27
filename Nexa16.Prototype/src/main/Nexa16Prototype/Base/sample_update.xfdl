@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="sample_update" classname="sample_form" left="0" top="0" width="1024" height="768" titletext="샘플 수정 화면" onload="form_onload">
+    <Layouts>
+      <Layout width="1024" height="768">
+        <Static id="Static00" taborder="0" text="제목" onclick="Static00_onclick" left="44" top="32" width="52" height="20" style="font:12 arial;"/>
+        <Static id="Static01" taborder="1" text="내용" onclick="Static00_onclick" left="44" top="58" width="52" height="20" style="font:12 arial;"/>
+        <Edit id="title" taborder="2" left="90" top="32" width="400" height="20" readonly="false"/>
+        <TextArea id="content" taborder="3" left="90" top="61" width="400" height="210"/>
+        <Button id="update_btn" taborder="4" text="수정" left="406" top="288" width="39" height="20" onclick="update_btn_onclick"/>
+        <Button id="cancel_btn" taborder="5" text="취소" onclick="fn_cancel" left="451" top="288" width="39" height="20"/>
+      </Layout>
+      <Layout name="Layout00" screenid="desktop_desktop" width="1024" height="768"/>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_search">
+        <ColumnInfo>
+          <ConstColumn id="pageIndex" type="INT" size="30" value="1"/>
+          <ConstColumn id="pageSize" type="INT" size="30" value="5"/>
+          <ConstColumn id="pageUnit" type="INT" size="30" value="5"/>
+          <Column id="search_title" type="STRING" size="100"/>
+          <Column id="search_update_nm" type="STRING" size="100"/>
+          <Column id="search_update_by" type="STRING" size="100"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_sample">
+        <ColumnInfo>
+          <ConstColumn id="seq" type="INT" size="30" value="0"/>
+          <Column id="title" type="STRING" size="256"/>
+          <Column id="content" type="STRING" size="0"/>
+          <Column id="del_yn" type="STRING" size="1"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind/>
+    <Script type="xscript5.0"><![CDATA[/***********************************************************************************
+* SYSTEM      : Lexpeed3
+* BUSINESS    : Lexpeed3
+* FILE NAME   : sample
+* PROGRAMMER  : 
+* DATE        : 
+* DESCRIPTION : 샘플 등록
+*------------------------------------------------------------------
+* MODIFY DATE   PROGRAMMER			DESCRIPTION
+*------------------------------------------------------------------
+* 
+*------------------------------------------------------------------
+***********************************************************************************/
+
+/***********************************************************************************
+* Common Library
+***********************************************************************************/
+include "Lib::Comm.xjs";
+
+/***********************************************************************************
+* Form Event
+***********************************************************************************/
+/**
+ * form onload 함수
+ * @return 
+ * @example
+ *
+ * @memberOf this
+ */
+this.form_onload = function(obj:Form, e:LoadEventInfo)
+{
+	Iject.formOnload(obj);  //form onload
+	this.ds_sample.clearData();
+	this.ds_sample.addRow();
+	this.ds_sample.setConstColumn("seq", "10"); //목록에서 넘어온 키 값 설정
+	this.fn_search();
+}
+
+/**
+ * 정보 조회
+ * @return 
+ * @example
+ *
+ * @memberOf this
+ */
+this.fn_search = function(){
+	var oDatas =  {
+			svcid : "search",
+			sController : "viewSample.do",
+			inds :["ds_sample=ds_sample"],
+			outds :[
+					"ds_sample=ds_sample"
+					],
+			args  : [],
+			bAsync : true,    // 비동기여부 (true : async  false: sync)
+			nDataType : 2,   // (0: XML타입, 1: 이진 타입, 2: SSV 타입)
+			bCompress :false,	 //
+		};
+	
+	//공통 transaction 함수 호츨   //function callback 
+	Iject.transaction(this,oDatas,function(){
+		/*  
+		*   callback argument
+		*   @param : {string}    this.svcid       서비스 ID
+		*   @param : {object}    this.fobj        : 현재 form object
+		*   @param : {number}    this.errorcode  : 서비스 에러 코드
+		*   @param : {string}    this.errormsg   : 서비스 에러 메세지
+		*/
+		if(this.errorcode < 0)
+		{
+			Iject.alert(this.errorMsg,"알림");
+			return;
+		}
+		
+		var pThis = this.fobj;	//form object
+		pThis.fn_search_post();	//조회후 처리
+	});
+}
+
+/**
+ * 정보 출력
+ * @return 
+ * @example
+ *
+ * @memberOf this
+ */
+this.fn_search_post = function(){
+	this.title.set_value(this.ds_sample.getColumn(0, "title"));
+	this.content.set_value(this.ds_sample.getColumn(0, "content"));
+	
+	this.alert("조회가 완료 됐습니다.");
+}
+
+/**
+ * 저장 save
+ * @return 
+ * @example
+ *
+ * @memberOf this
+ */
+this.fn_save = function(strSvcId)
+{
+	var oDatas =  {
+			svcid : strSvcId,
+			sController : "modifySample.do",
+			inds :[
+				"ds_search=ds_search",
+				"ds_sample=ds_sample:U"
+			],
+			outds :[],
+			args  : [],
+			bAsync : true,    // 비동기여부 (true : async  false: sync)
+			nDataType : 2,   // (0: XML타입, 1: 이진 타입, 2: SSV 타입)
+			bCompress :false,	 //
+		};
+	
+	//공통 transaction 함수 호츨   //function callback 
+	Iject.transaction(this,oDatas,function(){
+		/*  
+		*   callback argument
+		*   @param : {string}    this.svcid       서비스 ID
+		*   @param : {object}    this.fobj        : 현재 form object
+		*   @param : {number}    this.errorcode  : 서비스 에러 코드
+		*   @param : {string}    this.errormsg   : 서비스 에러 메세지
+		*/
+		if(this.errorcode < 0)
+		{
+			Iject.alert(this.errorMsg,"알림");			
+			return;
+		}
+		
+		switch(strSvcId)
+		{
+			case "save" :
+				Iject.alert("저장완료");
+				break;
+			case "update" :
+				Iject.alert("수정완료");
+				break;
+			case "delete" :
+				Iject.alert("삭제완료");
+				break;
+		}
+
+		var pThis = this.fobj;	//form object
+		pThis.fn_search();
+		
+		//저장/삭제 후 목록으로 이동 처리
+		//application.mainframe.childframe.set_formurl("Base::sample_list.xfdl");
+	});
+}
+
+this.update_btn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds_sample.setColumn(0, "title", this.title.value);
+	this.ds_sample.setColumn(0, "content", this.content.value);
+	this.fn_save("update");
+}
+
+/**
+ * 취소 save
+ * @return 
+ * @example
+ *
+ * @memberOf this
+ */
+this.fn_cancel = function()
+{
+	application.mainframe.childframe.set_formurl("Base::sample_list.xfdl");
+}
+]]></Script>
+  </Form>
+</FDL>

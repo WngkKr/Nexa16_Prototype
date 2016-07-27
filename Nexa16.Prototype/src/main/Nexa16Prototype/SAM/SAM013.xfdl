@@ -1,0 +1,2845 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="SAM013" classname="SAM013" left="0" top="0" width="1024" height="768" titletext="그리드 Rbutton 기능" onload="SAM013_onload">
+    <Layouts>
+      <Layout>
+        <Grid id="grd_list00" taborder="0" binddataset="ds_output00" useinputpanel="false" cellsizingtype="col" nodatatext="No Data" left="40" top="332" right="40" height="420" u_usestatus="Y" u_menu="export,import,usergrid,usercure">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+              </Columns>
+              <Rows>
+                <Row size="40" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="사원번호"/>
+                <Cell col="1" text="사원명"/>
+                <Cell col="2" text="직급"/>
+                <Cell col="3" text="직속상관"/>
+                <Cell col="4" text="입사일"/>
+                <Cell col="5" text="연봉"/>
+                <Cell col="6" text="커미션"/>
+                <Cell col="7" text="부서코드"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="text" text="bind:갱신일"/>
+                <Cell col="1" displaytype="text" text="bind:대표자"/>
+                <Cell col="2" displaytype="text" edittype="text" text="bind:등록공종"/>
+                <Cell col="3" displaytype="text" text="bind:등록구분"/>
+                <Cell col="4" displaytype="date" text="bind:등록일" calendardisplaynulltype="nulltext"/>
+                <Cell col="5" displaytype="text" text="bind:번호"/>
+                <Cell col="6" displaytype="text" text="bind:보유면허"/>
+                <Cell col="7" displaytype="text" text="bind:신용"/>
+              </Band>
+            </Format>
+            <Format id="format_copy">
+              <Columns>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+              </Columns>
+              <Rows>
+                <Row size="40" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="사원번호"/>
+                <Cell col="1" text="사원명"/>
+                <Cell col="2" text="직급"/>
+                <Cell col="3" text="직속상관"/>
+                <Cell col="4" text="입사일"/>
+                <Cell col="5" text="연봉"/>
+                <Cell col="6" text="커미션"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="text" text="bind:갱신일"/>
+                <Cell col="1" displaytype="text" text="bind:대표자"/>
+                <Cell col="2" displaytype="text" text="bind:등록공종"/>
+                <Cell col="3" displaytype="text" text="bind:등록구분"/>
+                <Cell col="4" displaytype="date" text="bind:등록일" calendardisplaynulltype="nulltext"/>
+                <Cell col="5" displaytype="text" text="bind:번호"/>
+                <Cell col="6" displaytype="text" text="bind:보유면허"/>
+              </Band>
+            </Format>
+            <Format id="format_copy_2"/>
+          </Formats>
+        </Grid>
+        <Static id="Static00" taborder="1" text="1. 그리드를 선택하고 오른쪽--&gt;Properties에서 마우스 우클릭 후&#13;&#10;Add User Property 를 선택한 후에 u_menu 를 추가 한다.&#13;&#10;u_menu에는&#13;&#10;export,import,usergrid,usercure 값을 넣을수 있다.&#13;&#10;u_menu에 값을 넣지 않으면 &#13;&#10;복사, 붙여넣기, 정렬, 찾기, 필터  기본 메뉴가 나온다&#13;&#10;&#13;&#10;export, 엑셀 다운로드&#13;&#10;import,&#9;엑셀 업로드&#13;&#10;usergrid, 틀고정&#13;&#10;usercure  틀고정 해제&#13;&#10;&#13;&#10;2. 1번과 같이 u_usestatus 를 추가 하면 그리드 첫번째 컬럼에&#13;&#10;체크 박스가 자동으로 생성 하게 한다.&#13;&#10;u_usestatus 에 Y 값을 넣는다.&#13;&#10;&#13;&#10;&#13;&#10;화면 on_load 시에 &#13;&#10;//공통초기화 필수&#13;&#10;this.gfn_initForm(obj);&#13;&#10;를 넣어야 한다." left="12" top="4" width="452" height="324" cssclass="sta_WF_Caption"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_output00" firefirstcount="0" firenextcount="0">
+        <ColumnInfo>
+          <Column id="chk" type="STRING" size="256"/>
+          <Column id="번호" type="STRING" size="256"/>
+          <Column id="협력회사명" type="STRING" size="256"/>
+          <Column id="대표자" type="STRING" size="256"/>
+          <Column id="등록구분" type="STRING" size="256"/>
+          <Column id="등록공종" type="STRING" size="256"/>
+          <Column id="보유면허" type="STRING" size="256"/>
+          <Column id="신용" type="STRING" size="256"/>
+          <Column id="현금" type="STRING" size="256"/>
+          <Column id="시평액" type="STRING" size="256"/>
+          <Column id="등록일" type="STRING" size="256"/>
+          <Column id="갱신일" type="STRING" size="256"/>
+          <Column id="제재사항" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="번호">1</Col>
+            <Col id="협력회사명">(주)신세계산업</Col>
+            <Col id="대표자">황봉일</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근/콘크리트공사업(주면허)/철근,콘크리트공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">0</Col>
+            <Col id="등록일">1998/02/20</Col>
+            <Col id="갱신일">2015/03/12</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">1650046</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">5681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">639358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">29320</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">1</Col>
+            <Col id="협력회사명">(주)신세계산업</Col>
+            <Col id="대표자">황봉일</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근/콘크리트공사업(주면허)/철근,콘크리트공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">0</Col>
+            <Col id="등록일">1998/02/20</Col>
+            <Col id="갱신일">2015/03/12</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">500684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">1165601</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">2668165</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">694335</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">932400</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">1</Col>
+            <Col id="협력회사명">(주)신세계산업</Col>
+            <Col id="대표자">황봉일</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근/콘크리트공사업(주면허)/철근,콘크리트공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">0</Col>
+            <Col id="등록일">1998/02/20</Col>
+            <Col id="갱신일">2015/03/12</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">1</Col>
+            <Col id="협력회사명">(주)신세계산업</Col>
+            <Col id="대표자">황봉일</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근/콘크리트공사업(주면허)/철근,콘크리트공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">0</Col>
+            <Col id="등록일">1998/02/20</Col>
+            <Col id="갱신일">2015/03/12</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">2</Col>
+            <Col id="협력회사명">남웅건설(주)</Col>
+            <Col id="대표자">황웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/철근/콘크리트공사업/비계,구조물해체공사업/비계/구조물해체공사업/</Col>
+            <Col id="신용"/>
+            <Col id="현금"/>
+            <Col id="시평액">165004684</Col>
+            <Col id="등록일">2007/08/07</Col>
+            <Col id="갱신일">2015/06/15</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">3</Col>
+            <Col id="협력회사명">삼지건설(주)</Col>
+            <Col id="대표자">이태원</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/시설물유지관리업/도장공사업/토공사업/보링,그라우팅공사업/포장공사업/상,하수도설비공사업/수중공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">A</Col>
+            <Col id="시평액">116756012</Col>
+            <Col id="등록일">2000/09/01</Col>
+            <Col id="갱신일">2015/05/22</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">4</Col>
+            <Col id="협력회사명">원영건업(주)</Col>
+            <Col id="대표자">노석순</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BBB-</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">265681650</Col>
+            <Col id="등록일">2007/08/09</Col>
+            <Col id="갱신일">2014/06/17</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">5</Col>
+            <Col id="협력회사명">일우건업(주)</Col>
+            <Col id="대표자">이길웅</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">철근콘크리트공사</Col>
+            <Col id="보유면허">철근,콘크리트공사업(주면허)/미장,방수,조적공사업/비계,구조물해체공사업/</Col>
+            <Col id="신용">BB</Col>
+            <Col id="현금">B</Col>
+            <Col id="시평액">63943358</Col>
+            <Col id="등록일">2011/08/16</Col>
+            <Col id="갱신일">2011/08/16</Col>
+            <Col id="제재사항"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="번호">6</Col>
+            <Col id="협력회사명">(주)삼환까뮤</Col>
+            <Col id="대표자">손병재</Col>
+            <Col id="등록구분">A</Col>
+            <Col id="등록공종">PC공사</Col>
+            <Col id="보유면허">토목건축공사업(주면허)/</Col>
+            <Col id="신용">BBB+</Col>
+            <Col id="현금">C+</Col>
+            <Col id="시평액">129324000</Col>
+            <Col id="등록일">2006/06/01</Col>
+            <Col id="갱신일">2015/05/26</Col>
+            <Col id="제재사항"/>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+/**
+*  인트라넷 고도화[Lexpeed3]구축 사업
+*
+*  @MenuPath       
+*  @FileName       SAM013.xfdl
+*  @Creator        송원창
+*  @CreateDate     2016.04.15
+*  @LastModifier   
+*  @LastModifyDate 
+*  @Version        1.0
+*  @Outline        그리드 Rbutton 기능
+*  @Description       
+*
+*
+************** 소스 수정 이력 *************************************************
+*    date          Modifier            Description
+*******************************************************************************
+*  2016.04.15      송원창              클래스 최초 생성
+*******************************************************************************
+*/
+/*----------------------------------------------------------------------------------------------
+ * 공통 라이브러리 INCLUDE 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------------------------
+ * FORM 변수 선언 영역
+----------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------------------------
+ * FORM EVENT 영역
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  화면 로드시 이벤트
+ */
+this.SAM013_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	//공통초기화 필수
+	this.gfn_initForm(obj);
+}
+
+
+/*----------------------------------------------------------------------------------------------
+ * 공통기능 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * TRANSACTION 및 CallBack 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * 각 COMPONENT 별 EVENT 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------
+ * 사용자 FUNCTION 영역 (필수)
+----------------------------------------------------------------------------------------------*/]]></Script>
+  </Form>
+</FDL>

@@ -7,7 +7,7 @@
 //  NOTICE: TOBESOFT permits you to use, modify, and distribute this file 
 //          in accordance with the terms of the license agreement accompanying it.
 //
-//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.0.html	
+//  Readme URL: http://www.nexacro.co.kr/legal/nexacro-public-license-readme-1.1.html	
 //
 //==============================================================================
 
@@ -227,11 +227,13 @@ if (!nexacro.Sketch) {
 				text_elem.setElementSize(this._client_width, this._client_height);
 				curstyle.font = this.textedit.on_find_CurrentStyle_font(this._pseudo);
 				curstyle.color = this.textedit.on_find_CurrentStyle_color(this._pseudo);
+				curstyle.letterspace = this.textedit.on_find_CurrentStyle_letterspace(this._pseudo);
 
 				text_elem.setElementFont(curstyle.font);
 				text_elem.setElementColor(curstyle.color);
 				text_elem.setElementAlignXY(halign, valign);
 				text_elem.setElementText(this.text);
+				text_elem.setElementLetterSpace(curstyle.letterspace);
 				this._text_elem = text_elem;
 
 				text_elem = null;
@@ -440,7 +442,7 @@ if (!nexacro.Sketch) {
 	_pSketch.on_apply_applystyletype = function () {
 		var control_elem = this.getElement();
 		if (control_elem) {
-			var applystyles = ["align", "background", "border", "bordertype", "color", "cursor", "font", "glow", "gradation", "margin", "opacity", "padding", "shadow", "accessibility"];
+			var applystyles = ["align", "background", "border", "bordertype", "color", "cursor", "font", "letterspace", "glow", "gradation", "margin", "opacity", "padding", "shadow", "accessibility"];
 			var findstyle;
 			if (!this._url || this._url.length == 0) {
 				this._oldstyletype = this._styletype;
@@ -500,6 +502,7 @@ if (!nexacro.Sketch) {
 				text_elem.setElementColor(curstyle.color);
 				text_elem.setElementFont(curstyle.font);
 				text_elem.setElementAlignXY(halign, valign);
+				text_elem.setElementLetterSpace(curstyle.letterspace);
 
 				if (this._is_created) {
 					text_elem.create();
@@ -631,6 +634,7 @@ if (!nexacro.Sketch) {
 		this.on_apply_style_color(styleObj.color);
 		this.on_apply_style_cursor(styleObj.cursor);
 		this.on_apply_style_font(styleObj.font);
+		this.on_apply_style_letterspace(styleObj.letterspace);
 		this.on_apply_style_glow(styleObj.glow);
 		this.on_apply_style_gradation(styleObj.gradation);
 		this.on_apply_style_margin(styleObj.margin);
@@ -695,6 +699,11 @@ if (!nexacro.Sketch) {
 					style["font"] = this.on_find_CurrentStyle_font(pseudo);
 					if (!style["font"]) {
 						style["font"] = nexacro._getCachedFontObj("");
+					}
+				case "letterspace":
+					style["letterspace"] = this.on_find_CurrentStyle_letterspace(pseudo);
+					if (!style["letterspace"]) {
+						style["letterspace"] = nexacro._getCachedStyleObj("letterspace", "0");
 					}
 				case "glow":
 					style["glow"] = this.on_find_CurrentStyle_glow(pseudo);
@@ -1376,34 +1385,36 @@ if (!nexacro.Sketch) {
 			this._image = null;
 		}
 
-		this._setImageType(url);
+		var _url = url;
+
+		this._setImageType(_url);
 
 		var img_type = this._img_type;
 		if (img_type == "url") {
-			url = nexacro._getURIValue(url);
-			url = nexacro._getImageLocation(url, this._getRefFormBaseUrl());
+			_url = nexacro._getURIValue(_url);
+			_url = nexacro._getImageLocation(url, this._getRefFormBaseUrl());
 		}
 
-		if (url == undefined || arguments.length > 1) {
+		if (_url == undefined || arguments.length > 1) {
 			var errormsg = nexacro._GetSystemErrorMsg(this, this._const_code_parameter_msg);
-			this.on_fire_onerror(this, this._const_code_parameter, errormsg, this._const_errortype_obj, this._getRefFormBaseUrl(), url, this._const_code_parameter);
+			this.on_fire_onerror(this, this._const_code_parameter, errormsg, this._const_errortype_obj, this._getRefFormBaseUrl(), _url, this._const_code_parameter);
 			return false;
 		}
 
-		if (url && url !== undefined) {
-			var imgformat = url.substring(url.lastIndexOf(".") + 1).toLowerCase();
+		if (_url && _url !== undefined) {
+			var imgformat = _url.substring(_url.lastIndexOf(".") + 1).toLowerCase();
 			if ((this._image_format).indexOf(imgformat) == -1) {
 				var errormsg = nexacro._GetSystemErrorMsg(this, this._const_code_incorrectfile_msg);
-				this.on_fire_onerror(this, this._const_code_incorrectfile, errormsg, this._const_errortype_type, this._getRefFormBaseUrl(), url, this._const_code_incorrectfile);
+				this.on_fire_onerror(this, this._const_code_incorrectfile, errormsg, this._const_errortype_type, this._getRefFormBaseUrl(), _url, this._const_code_incorrectfile);
 				return false;
 			}
 		}
 
-		var imgsize = nexacro._getImageSize(url, this._imageload, this, this.parent._getRefFormBaseUrl());
+		var imgsize = nexacro._getImageSize(_url, this._imageload, this, this.parent._getRefFormBaseUrl(), url);
 
 		if (imgsize) {
 			this._clearCanvas(this._isEnableRedraw());
-			return this._drawImage(url);
+			return this._drawImage(_url);
 		}
 	};
 

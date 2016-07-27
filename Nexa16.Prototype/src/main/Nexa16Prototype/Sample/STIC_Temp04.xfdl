@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="STIC_Temp01" classname="STIC_Temp01" left="0" top="0" width="1400" height="700" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Tab id="tab_navi" taborder="1" left="20" top="100" tabindex="0" scrollbars="autoboth" cssclass="Tab_tabF" tooltiptype="default" multiline="false" tabjustify="true" width="1180" height="600">
+          <Tabpages>
+            <Tabpage id="tabpage1" text="tabpage1">
+              <Layouts>
+                <Layout width="1178" height="574">
+                  <Static id="Static00" taborder="0" text="* 지분율은 해당 조합에 대한 Partially diluted base 입니다.(보통주+우선주+ 해당 조합의 미행사 주식수) / (총 주식수 + 전체 조합의 미행사 주식수) " left="1.36%" top="26" right="22.24%" height="18"/>
+                  <Static id="Static01" taborder="1" text="단위 : KRW" left="93.8%" top="26" right="0.85%" height="18"/>
+                  <Grid id="Grid00" taborder="2" binddataset="Dataset00" useinputpanel="false" autofittype="col" left="17" top="45" width="1153" height="480">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="30" band="head"/>
+                          <Row size="30"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="no"/>
+                          <Cell col="1" text="시작"/>
+                          <Cell col="2" text="둘"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell text="bind:no"/>
+                          <Cell col="1" text="bind:시작"/>
+                          <Cell col="2" text="bind:둘"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Button id="btnExcel01" taborder="3" text="엑셀" cssclass="btn_wf_print" top="533" right="1104" width="55" height="25" userRW="Y"/>
+                  <Button id="btnReport00" taborder="4" text="출력" cssclass="btn_wf_print" top="533" right="1043" width="55" height="25" userRW="Y"/>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="tabpage2" text="tabpage2"/>
+            <Tabpage id="tabpage3" text="tabpage3"/>
+            <Tabpage id="tabpage4" text="tabpage4"/>
+            <Tabpage id="tabpage5" text="tabpage5"/>
+            <Tabpage id="tabpage6" text="tabpage6"/>
+            <Tabpage id="tabpage7" text="tabpage7"/>
+            <Tabpage id="tabpage8" text="tabpage8"/>
+          </Tabpages>
+        </Tab>
+        <Static id="Static42" taborder="8" text="여백" left="1200" top="0" width="20" height="700" style="background:chartreuse;" cssclass="sta_WF_guidline"/>
+        <Static id="Static04" taborder="9" text="여백" left="0" top="0" width="20" height="700" style="background:chartreuse;" cssclass="sta_WF_guidline"/>
+        <PopupDiv id="PopupDiv00" text="PopupDiv00" positionstep="0" left="1230" bottom="40" height="660" right="1400"/>
+        <Button id="btnReport03" taborder="17" text="출력" cssclass="btn_wf_print" top="10" right="202" width="55" height="25" userRW="Y"/>
+        <Button id="btnExcel00" taborder="18" text="엑셀" cssclass="btn_wf_print" top="10" right="267" width="55" height="25" userRW="Y"/>
+        <PopupDiv id="PopupDiv01" text="PopupDiv00" left="1220" bottom="40" width="180" height="660"/>
+        <Div id="divSearch04" taborder="21" text="Div00" left="20" top="43" width="1180" height="42" scrollbars="none" cssclass="div_sa_bg">
+          <Layouts>
+            <Layout width="868" height="93">
+              <Button id="btnFind" taborder="111" cssclass="btn_WF_srcS" left="290" top="8" width="20" height="25"/>
+              <Combo id="Combo00" taborder="115" displaynulltext="Combo" left="394" top="8" width="145" height="25"/>
+              <Static id="sta_Fund00" taborder="116" text="필수입력" cssclass="sta_SA_labelP" left="330" top="8" width="64" height="25" ustext="Fund"/>
+              <Edit id="edt_Fund00" taborder="117" displaynulltext="가나다라" left="95" top="8" width="193" height="25"/>
+              <Static id="sta_Fund" taborder="118" text="Edit" cssclass="sta_SA_label" left="21" top="8" width="37" height="25" ustext="Fund"/>
+              <CheckBox id="CheckBox01" taborder="119" text="청산펀드포함" left="563" top="11" width="147" height="19"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="btnSetting01" taborder="22" text="조회" onclick="divInfo_btnSetting_onclick" cssclass="btn_wf_search" left="1097" top="49" width="85" height="30"/>
+        <Static id="Static05" taborder="23" text="2depth title" onclick="Static05_onclick" cssclass="sta_WF_title2" left="21" top="5" width="238" height="35" style="background:transparent;border:0 solid #808080ff ;padding:0 0 0 0;align:left middle;font:23 arial;"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="no" type="STRING" size="256"/>
+          <Column id="시작" type="STRING" size="256"/>
+          <Column id="둘" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="no">001</Col>
+            <Col id="시작">1</Col>
+            <Col id="둘">2</Col>
+          </Row>
+          <Row>
+            <Col id="no">002</Col>
+            <Col id="시작">3</Col>
+            <Col id="둘">4</Col>
+          </Row>
+          <Row>
+            <Col id="no">003</Col>
+            <Col id="시작">5</Col>
+            <Col id="둘"/>
+          </Row>
+          <Row>
+            <Col id="no">004</Col>
+            <Col id="시작">01</Col>
+            <Col id="둘">08</Col>
+          </Row>
+          <Row>
+            <Col id="no">005</Col>
+            <Col id="시작">02</Col>
+            <Col id="둘">09</Col>
+          </Row>
+          <Row>
+            <Col id="no">006</Col>
+            <Col id="시작">03</Col>
+            <Col id="둘">10</Col>
+          </Row>
+          <Row>
+            <Col id="no">007</Col>
+            <Col id="시작">04</Col>
+            <Col id="둘">11</Col>
+          </Row>
+          <Row>
+            <Col id="no">008</Col>
+            <Col id="시작">05</Col>
+            <Col id="둘">12</Col>
+          </Row>
+          <Row>
+            <Col id="no">009</Col>
+            <Col id="시작">06</Col>
+            <Col id="둘">13</Col>
+          </Row>
+          <Row>
+            <Col id="no">010</Col>
+            <Col id="시작">07</Col>
+            <Col id="둘">14</Col>
+          </Row>
+          <Row>
+            <Col id="no">011</Col>
+            <Col id="시작">08</Col>
+            <Col id="둘">15</Col>
+          </Row>
+          <Row>
+            <Col id="no">012</Col>
+            <Col id="시작">09</Col>
+            <Col id="둘">16</Col>
+          </Row>
+          <Row>
+            <Col id="no">013</Col>
+            <Col id="시작">10</Col>
+            <Col id="둘">17</Col>
+          </Row>
+          <Row>
+            <Col id="no">014</Col>
+            <Col id="시작">11</Col>
+            <Col id="둘">18</Col>
+          </Row>
+          <Row>
+            <Col id="no">015</Col>
+            <Col id="시작">12</Col>
+            <Col id="둘">19</Col>
+          </Row>
+          <Row>
+            <Col id="no">016</Col>
+            <Col id="시작">13</Col>
+            <Col id="둘">20</Col>
+          </Row>
+          <Row>
+            <Col id="no">017</Col>
+            <Col id="시작">14</Col>
+            <Col id="둘">21</Col>
+          </Row>
+          <Row>
+            <Col id="no">018</Col>
+            <Col id="시작">15</Col>
+            <Col id="둘">22</Col>
+          </Row>
+          <Row>
+            <Col id="no">019</Col>
+            <Col id="시작">16</Col>
+            <Col id="둘">23</Col>
+          </Row>
+          <Row>
+            <Col id="no">020</Col>
+            <Col id="시작">17</Col>
+            <Col id="둘">24</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="" propid="" datasetid="Dataset00" columnid=""/>
+    </Bind>
+    <Script type="xscript5.0"><![CDATA[
+this.Tab03_tabpage1_Static05_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+	
+}
+
+this.Div00_Static00_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+	
+}
+
+this.Edit00_oneditclick = function(obj:Edit,  e:nexacro.EditClickEventInfo)
+{
+	
+}
+
+this.Static04_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+	
+}
+]]></Script>
+  </Form>
+</FDL>
