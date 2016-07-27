@@ -1,0 +1,707 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="frame_work" classname="frame_work" left="0" top="0" width="1400" height="700" titletext="Knowledge Depot" onload="KnowledgeList_onload">
+    <Layouts>
+      <Layout>
+        <Div id="Div00" taborder="9" left="20" top="50" width="1180" height="45" style="border:1 solid #b1b1b1ff ;">
+          <Layouts>
+            <Layout>
+              <Static id="Static01" taborder="50" text="제목" cssclass="sta_WF_label" left="29" top="11" width="54" height="18" style="border:0 none #808080ff ;"/>
+              <Static id="Static00" taborder="51" text="작성자" onclick="Div00_Static00_onclick" cssclass="sta_WF_label" left="280" top="11" width="53" height="18"/>
+              <Combo id="Combo01" taborder="52" codecolumn="emp_cd" datacolumn="kor_nm" left="440" top="9" width="123" height="25" index="0" innerdataset="@ds_cboUserList" text="전체"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="btnSetting01" taborder="13" text="조회" onclick="divInfo_btnSetting_onclick" cssclass="btn_wf_search" left="1097" top="58" width="85" height="30" positionstep="0"/>
+        <Static id="Static42" taborder="96" text="20" left="1200" top="11" width="20" height="705" style="background:chartreuse;" visible="false"/>
+        <Static id="Static04" taborder="97" text="20" left="0" top="11" width="20" height="673" style="background:chartreuse;" visible="false"/>
+        <PopupDiv id="PopupDiv00" text="PopupDiv00" left="1220" width="180" bottom="33" height="660"/>
+        <Edit id="Edit05" taborder="98" left="360" top="60" width="88" height="25"/>
+        <CheckBox id="CheckBox02" taborder="99" text="퇴사자포함" left="597" top="62" width="87" height="20"/>
+        <Static id="Static05" taborder="100" text="h13" left="20" top="37" width="1180" height="13" style="background:chartreuse;align:center middle;" visible="false"/>
+        <Static id="Static15" taborder="102" left="25" top="51" width="664" height="9" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;" text="9" visible="false"/>
+        <Static id="Static16" taborder="103" text="9" left="25" top="85" width="664" height="9" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;" visible="false"/>
+        <Static id="Static17" taborder="104" text="30" left="20" top="60" width="30" height="25" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;" visible="false"/>
+        <Static id="Static18" taborder="105" text="30" left="271" top="60" width="30" height="25" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;" visible="false"/>
+        <Static id="Static19" taborder="106" text="17" left="1182" top="58" width="17" height="24" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;" visible="false"/>
+        <Static id="Static21" taborder="107" text="13" visible="false" left="448" top="59" width="13" height="26" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;"/>
+        <Static id="Static23" taborder="108" text="13" visible="false" left="584" top="59" width="13" height="26" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;"/>
+        <Static id="Static00" taborder="123" text="h20" visible="false" left="25" top="590" width="1164" height="20" style="background:#7fff00ee;color:darkred;align:center middle;"/>
+        <Edit id="Edit00" taborder="124" left="102" top="60" width="170" height="25"/>
+        <Button id="Button18" taborder="125" text="8" cssclass="btn_WF_page" left="775" top="610" width="14" height="14"/>
+        <Button id="Button19" taborder="126" text="7" cssclass="btn_WF_page" left="760" top="610" width="14" height="14"/>
+        <Button id="Button17" taborder="127" text="9" cssclass="btn_WF_page" left="790" top="610" width="14" height="14"/>
+        <Button id="Button16" taborder="128" text="10" cssclass="btn_WF_page" left="805" top="610" width="14" height="14"/>
+        <Button id="Button15" taborder="129" text="4" cssclass="btn_WF_page" left="715" top="610" width="14" height="14"/>
+        <Button id="Button14" taborder="130" text="5" cssclass="btn_WF_page" left="730" top="610" width="14" height="14"/>
+        <Button id="Button13" taborder="131" text="6" cssclass="btn_WF_page" left="745" top="610" width="14" height="14"/>
+        <Button id="Button12" taborder="132" text="3" cssclass="btn_WF_page" left="700" top="610" width="14" height="14"/>
+        <Button id="Button11" taborder="133" text="2" cssclass="btn_WF_page" left="685" top="610" width="14" height="14"/>
+        <Button id="Button10" taborder="134" text="1" cssclass="btn_WF_page" left="670" top="610" width="14" height="14"/>
+        <Button id="Button09" taborder="135" cssclass="btn_WF_end" left="845" top="610" width="14" height="14"/>
+        <Button id="Button08" taborder="136" cssclass="btn_WF_next" left="829" top="610" width="14" height="14"/>
+        <Button id="Button07" taborder="137" cssclass="btn_WF_prev" left="645" top="610" width="14" height="14"/>
+        <Button id="Button05" taborder="138" cssclass="btn_WF_start" left="629" top="610" width="14" height="14"/>
+        <Static id="Static01" taborder="139" text="h7" visible="false" left="0" top="0" width="1220" height="7" style="background:chartreuse;align:center middle;"/>
+        <Static id="Static02" taborder="140" text="Static02" left="43.5%" top="12" right="56.43%" height="592" style="background:black;" visible="false"/>
+        <Grid id="Grid00" taborder="141" binddataset="ds_grid" useinputpanel="false" autofittype="col" left="292" top="108" width="906" height="482" style="border:1 solid #838383ff,1 solid #c9c6c3ff,1 solid #c9c6c3ff,1 solid #c9c6c3ff;" titletext="Knowledge Depot">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="307"/>
+                <Column size="65"/>
+                <Column size="70"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="번호"/>
+                <Cell col="1" text="제목"/>
+                <Cell col="2" text="작성자"/>
+                <Cell col="3" text="등록일"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:DOC_NO"/>
+                <Cell col="1" style="align:left;" text="bind:DOC_SUBJECT_NM"/>
+                <Cell col="2" text="bind:EMP_NM"/>
+                <Cell col="3" displaytype="date" text="bind:WRITE_YMD"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static14" taborder="142" text="h13" visible="false" left="24" top="95" width="1180" height="13" style="background:#7fff00ee;color:darkred;align:center middle;"/>
+        <Static id="Static03" taborder="143" text="     Knowledge Depot" onclick="Static05_onclick" cssclass="sta_WF_title1" left="20" top="7" width="238" height="30" style="background:transparent URL('IMG::h1.png');align:left middle;font:15 arial;"/>
+        <Grid id="Grid01" taborder="144" tabstop="false" binddataset="ds_grd_tree" useinputpanel="false" autofittype="col" treeuseline="false" treeusecheckbox="false" treeinitstatus="expand,null" left="20" top="108" width="260" height="506">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="223"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Knowledge Depot"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="tree" edittype="tree" text="bind:caption" treelevel="bind:level"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static06" taborder="145" text="13" visible="false" left="279" top="108" width="13" height="26" style="background:#ffdab9b3;border:1 solid darkred ;align:center middle;font:8 dotum;"/>
+        <Button id="btnCancel" taborder="146" text="등록" cssclass="btn_wf_setting" left="1140" top="609" width="60" height="24"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_knowledgeList">
+        <ColumnInfo>
+          <Column id="DOC_NO" type="STRING" size="256"/>
+          <Column id="DOC_CLASS_CD" type="STRING" size="256"/>
+          <Column id="DOC_SUBJECT_NM" type="STRING" size="256"/>
+          <Column id="WRITE_YMD" type="STRING" size="256"/>
+          <Column id="EMP_CD" type="STRING" size="256"/>
+          <Column id="EMP_NM" type="STRING" size="256"/>
+          <Column id="UPDATE_DATE" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="DOC_NO">PR039-897</Col>
+            <Col id="DOC_CLASS_CD">039</Col>
+            <Col id="DOC_SUBJECT_NM">2003 China venture Capital Forum소개</Col>
+            <Col id="WRITE_YMD">20030314</Col>
+            <Col id="EMP_CD">00001</Col>
+            <Col id="EMP_NM">도용환</Col>
+            <Col id="UPDATE_DATE">2008-09-28 오후 4:08:03</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR039-898</Col>
+            <Col id="DOC_CLASS_CD">039</Col>
+            <Col id="DOC_SUBJECT_NM">2002년 창업투잦회사 결산보고서 제출의 건</Col>
+            <Col id="WRITE_YMD">20030317</Col>
+            <Col id="EMP_CD">00001</Col>
+            <Col id="EMP_NM">도용환</Col>
+            <Col id="UPDATE_DATE">2008-09-28 오후 4:08:03</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR039-900</Col>
+            <Col id="DOC_CLASS_CD">039</Col>
+            <Col id="DOC_SUBJECT_NM">비젼코리아 제9차 국민보고대회 자료 송부</Col>
+            <Col id="WRITE_YMD">20030318</Col>
+            <Col id="EMP_CD">00008</Col>
+            <Col id="EMP_NM">곽동걸</Col>
+            <Col id="UPDATE_DATE">2008-09-28 오후 4:08:03</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR039-910</Col>
+            <Col id="DOC_CLASS_CD">039</Col>
+            <Col id="DOC_SUBJECT_NM">회비납부 안내(2003년 1/4분기0</Col>
+            <Col id="WRITE_YMD">20030319</Col>
+            <Col id="EMP_CD">00011</Col>
+            <Col id="EMP_NM">박기홍</Col>
+            <Col id="UPDATE_DATE">2008-09-28 오후 4:08:03</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR039-911</Col>
+            <Col id="DOC_CLASS_CD">039</Col>
+            <Col id="DOC_SUBJECT_NM">2003년도 IT벤처캐피탈리스트 전문성강화 프로그램 수요조사</Col>
+            <Col id="WRITE_YMD">20030320</Col>
+            <Col id="EMP_CD">00034</Col>
+            <Col id="EMP_NM">이성규</Col>
+            <Col id="UPDATE_DATE">2008-09-28 오후 4:08:03</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR039-912</Col>
+            <Col id="DOC_CLASS_CD">039</Col>
+            <Col id="DOC_SUBJECT_NM">IT전문투자조합 자산위탁관리제 도입 계획 통보</Col>
+            <Col id="WRITE_YMD">20030321</Col>
+            <Col id="EMP_CD">00009</Col>
+            <Col id="EMP_NM">권민정</Col>
+            <Col id="UPDATE_DATE">2008-09-28 오후 4:08:03</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR039-917</Col>
+            <Col id="DOC_CLASS_CD">039</Col>
+            <Col id="DOC_SUBJECT_NM">화의개시결정 고지(해동정보통신)</Col>
+            <Col id="WRITE_YMD">20030326</Col>
+            <Col id="EMP_CD">00011</Col>
+            <Col id="EMP_NM">박기홍</Col>
+            <Col id="UPDATE_DATE">2008-09-28 오후 4:08:03</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR039-921</Col>
+            <Col id="DOC_CLASS_CD">039</Col>
+            <Col id="DOC_SUBJECT_NM">감사원 감사 관련 협조 요청</Col>
+            <Col id="WRITE_YMD">20030327</Col>
+            <Col id="EMP_CD">00012</Col>
+            <Col id="EMP_NM">최병원</Col>
+            <Col id="UPDATE_DATE">2008-09-28 오후 4:08:03</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR039-923</Col>
+            <Col id="DOC_CLASS_CD">039</Col>
+            <Col id="DOC_SUBJECT_NM">2003년 1/4/분기 결산관련 지분법 평가 자료 요청</Col>
+            <Col id="WRITE_YMD">20030328</Col>
+            <Col id="EMP_CD">00019</Col>
+            <Col id="EMP_NM">구경철</Col>
+            <Col id="UPDATE_DATE">2008-09-28 오후 4:08:03</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR039-924</Col>
+            <Col id="DOC_CLASS_CD">039</Col>
+            <Col id="DOC_SUBJECT_NM">세무조사 결과통지서</Col>
+            <Col id="WRITE_YMD">20030328</Col>
+            <Col id="EMP_CD">00009</Col>
+            <Col id="EMP_NM">권민정</Col>
+            <Col id="UPDATE_DATE">2008-09-28 오후 4:08:03</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR074-1078</Col>
+            <Col id="DOC_CLASS_CD">074</Col>
+            <Col id="DOC_SUBJECT_NM">사학-주식1호 월말보고</Col>
+            <Col id="WRITE_YMD">20051010</Col>
+            <Col id="EMP_CD">00091</Col>
+            <Col id="EMP_NM">박지영</Col>
+            <Col id="UPDATE_DATE">2008-09-28 오후 5:15:10</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR074-1079</Col>
+            <Col id="DOC_CLASS_CD">074</Col>
+            <Col id="DOC_SUBJECT_NM">군인공제회 월말보고</Col>
+            <Col id="WRITE_YMD">20051010</Col>
+            <Col id="EMP_CD">00091</Col>
+            <Col id="EMP_NM">박지영</Col>
+            <Col id="UPDATE_DATE">2008-09-28 오후 5:15:10</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR074-1080</Col>
+            <Col id="DOC_CLASS_CD">074</Col>
+            <Col id="DOC_SUBJECT_NM">총회연금(스틱6호) 월말보고</Col>
+            <Col id="WRITE_YMD">20051010</Col>
+            <Col id="EMP_CD">00091</Col>
+            <Col id="EMP_NM">박지영</Col>
+            <Col id="UPDATE_DATE">2008-09-28 오후 5:15:10</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR074-1122</Col>
+            <Col id="DOC_CLASS_CD">074</Col>
+            <Col id="DOC_SUBJECT_NM">월말보고</Col>
+            <Col id="WRITE_YMD">20060104</Col>
+            <Col id="EMP_CD">00091</Col>
+            <Col id="EMP_NM">박지영</Col>
+            <Col id="UPDATE_DATE">2008-09-28 오후 5:15:10</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR039-23692</Col>
+            <Col id="DOC_CLASS_CD">039</Col>
+            <Col id="DOC_SUBJECT_NM">VC관련 주요기사 발췌(2009.3.19) [한국벤처캐피탈협회]</Col>
+            <Col id="WRITE_YMD">20090319</Col>
+            <Col id="EMP_CD">00026</Col>
+            <Col id="EMP_NM">송정희</Col>
+            <Col id="UPDATE_DATE">2009-03-19 오후 2:55:02</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR039-1824</Col>
+            <Col id="DOC_CLASS_CD">039</Col>
+            <Col id="DOC_SUBJECT_NM">2005년 3월 업무진행상황 보고 전송</Col>
+            <Col id="WRITE_YMD">20050408</Col>
+            <Col id="EMP_CD">00034</Col>
+            <Col id="EMP_NM">이성규</Col>
+            <Col id="UPDATE_DATE">2008-09-28 오후 4:08:03</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR039-1830</Col>
+            <Col id="DOC_CLASS_CD">039</Col>
+            <Col id="DOC_SUBJECT_NM">스틱투자조합6호 조합원 총회 소집의 건</Col>
+            <Col id="WRITE_YMD">20050411</Col>
+            <Col id="EMP_CD">00009</Col>
+            <Col id="EMP_NM">권민정</Col>
+            <Col id="UPDATE_DATE">2008-09-28 오후 4:08:03</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR039-1836</Col>
+            <Col id="DOC_CLASS_CD">039</Col>
+            <Col id="DOC_SUBJECT_NM">MIC2003-2스틱투자조합13호 조합원총회 결과보고</Col>
+            <Col id="WRITE_YMD">20050413</Col>
+            <Col id="EMP_CD">00019</Col>
+            <Col id="EMP_NM">구경철</Col>
+            <Col id="UPDATE_DATE">2008-09-28 오후 4:08:03</Col>
+          </Row>
+          <Row>
+            <Col id="DOC_NO">PR039-1903</Col>
+            <Col id="DOC_CLASS_CD">039</Col>
+            <Col id="DOC_SUBJECT_NM">2005년 4월 업무운용현황 보고에 관한 건</Col>
+            <Col id="WRITE_YMD">20050510</Col>
+            <Col id="EMP_CD">00034</Col>
+            <Col id="EMP_NM">이성규</Col>
+            <Col id="UPDATE_DATE">2008-09-28 오후 4:08:03</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_docClassList" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="id" type="STRING" size="256"/>
+          <Column id="caption" type="STRING" size="256"/>
+          <Column id="level" type="STRING" size="256"/>
+          <Column id="Column0" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="id">1</Col>
+            <Col id="caption">Knowledge Depot</Col>
+            <Col id="level">0</Col>
+          </Row>
+          <Row>
+            <Col id="id">2</Col>
+            <Col id="caption">업무관련자료</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">3</Col>
+            <Col id="caption">법률/제도</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">4</Col>
+            <Col id="caption">준법확인서 양식</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">5</Col>
+            <Col id="caption">준법확인서 발급</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">6</Col>
+            <Col id="caption">투자서식 모음</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">7</Col>
+            <Col id="caption">지원업무서식</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">40</Col>
+            <Col id="caption">회사규정집/매뉴얼</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">41</Col>
+            <Col id="caption">파트너쉽규약</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">8</Col>
+            <Col id="caption">권리서류/증빙</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">9</Col>
+            <Col id="caption">펀드서류(조합규약)</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">10</Col>
+            <Col id="caption">투자계약서</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">11</Col>
+            <Col id="caption">일반계약서</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">12</Col>
+            <Col id="caption">사내소식</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">13</Col>
+            <Col id="caption">사내소식</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">14</Col>
+            <Col id="caption">그래픽 뉴스</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">15</Col>
+            <Col id="caption">인사 및 규정성 공지</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">16</Col>
+            <Col id="caption">사후관리</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">17</Col>
+            <Col id="caption">투자기업소식</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">18</Col>
+            <Col id="caption">언론보도 및 기관자료</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">19</Col>
+            <Col id="caption">금융기관 자료</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">20</Col>
+            <Col id="caption">언론 보도 자료</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">21</Col>
+            <Col id="caption">정부 기관 자료</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">22</Col>
+            <Col id="caption">CSI 자료</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">23</Col>
+            <Col id="caption">홍보자료</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">24</Col>
+            <Col id="caption">언론 보도</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">25</Col>
+            <Col id="caption">BROCHURE</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">26</Col>
+            <Col id="caption">교양</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">27</Col>
+            <Col id="caption">투자업무</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">28</Col>
+            <Col id="caption">투자심사보고서</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">29</Col>
+            <Col id="caption">LEXPEED</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">30</Col>
+            <Col id="caption">개발자 노트</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">31</Col>
+            <Col id="caption">건의</Col>
+            <Col id="level">2</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_cboUserList"/>
+      <Dataset id="ds_pagingInfo" firefirstcount="1000" firenextcount="1000" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="currentPageNo" type="INT" size="256"/>
+          <Column id="pageSize" type="INT" size="256"/>
+          <Column id="recordCountPerPage" type="INT" size="256"/>
+          <Column id="totalRecordCount" type="INT" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_search">
+        <ColumnInfo>
+          <ConstColumn id="pageIndex" type="INT" size="256" value="1"/>
+          <ConstColumn id="pageSize" type="INT" size="256" value="10"/>
+          <ConstColumn id="pageUnit" type="INT" size="256" value="10"/>
+          <Column id="search_doc_subject_nm" type="STRING" size="100"/>
+          <Column id="search_emp_cd" type="STRING" size="100"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="search_doc_subject_nm">1</Col>
+            <Col id="search_emp_cd">2</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_cboUserList00">
+        <ColumnInfo>
+          <Column id="emp_cd" type="STRING" size="256"/>
+          <Column id="kor_nm" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="kor_nm">전체</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00289</Col>
+            <Col id="kor_nm">한재준</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00251</Col>
+            <Col id="kor_nm">Mabel Zhu</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00326</Col>
+            <Col id="kor_nm">정금식</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00317</Col>
+            <Col id="kor_nm">한종훈</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00312</Col>
+            <Col id="kor_nm">Sheheryar Javaid</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00316</Col>
+            <Col id="kor_nm">최정원</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00026</Col>
+            <Col id="kor_nm">송정희</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00101</Col>
+            <Col id="kor_nm">강도현</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00088</Col>
+            <Col id="kor_nm">김영훈</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00093</Col>
+            <Col id="kor_nm">배선한</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00153</Col>
+            <Col id="kor_nm">Ly Hoang Duy</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00308</Col>
+            <Col id="kor_nm">한극우</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00309</Col>
+            <Col id="kor_nm">신동우</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00068</Col>
+            <Col id="kor_nm">김흥남</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00008</Col>
+            <Col id="kor_nm">곽동걸</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00103</Col>
+            <Col id="kor_nm">최진혁</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00034</Col>
+            <Col id="kor_nm">이성규</Col>
+          </Row>
+          <Row>
+            <Col id="emp_cd">00275</Col>
+            <Col id="kor_nm">최하나</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[/***********************************************************************************
+* SYSTEM      : Lexpeed3
+* BUSINESS    : Lex
+* FILE NAME   : KnowledgeList.xfdl
+* PROGRAMMER  : Knowledge Depot 목록
+* DATE        : 2016.05.26
+* DESCRIPTION : Knowledge Depot 목록 출력
+*------------------------------------------------------------------
+*   수정일      수정자			         수정내용
+*------------------------------------------------------------------
+* 2016.05.26     아무개            최초생성
+*------------------------------------------------------------------
+***********************************************************************************/
+
+/*----------------------------------------------------------------------------------------------
+ * 공통 라이브러리 INCLUDE 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+//include "LIB::LIB_COMMON.xjs";  	// 공통 js
+
+/*----------------------------------------------------------------------------------------------
+ * FORM 변수 선언 영역
+----------------------------------------------------------------------------------------------*/
+this.fv_sId;
+
+/*----------------------------------------------------------------------------------------------
+ * FORM EVENT 영역
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  화면 로드시 이벤트
+ */
+this.KnowledgeList_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	//공통초기화 필수
+	this.gfn_initForm(obj);
+	
+	
+	trace("KnowledgeList_onload");
+}
+
+/*----------------------------------------------------------------------------------------------
+ * TRANSACTION 및 CallBack 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description  조회 서비스 callback
+ * @param sTrId  	   - service ID
+ * @param nErrorCode   - error CODE
+ * @param sErrorMsg    - error MESSAGE
+ * @return       N/A
+ */
+this.fn_callback = function(sTrId, nErrorCode, sErrorMsg)
+{
+	trace("sTrId: " + sTrId + " " + "nErrorCode: " + nErrorCode + " " +  "sErrorMsg: " + sErrorMsg);
+	
+	if ( nErrorCode < 0 ) return;
+	
+	switch(sTrId)
+	{
+		case "knowledgeList":
+			trace(this.ds_cboUserList.saveXML());
+			break;
+		
+		default:
+			 break;
+	}
+}
+
+/*----------------------------------------------------------------------------------------------
+ * 각 COMPONENT 별 EVENT 영역 (필수)
+----------------------------------------------------------------------------------------------*/
+/**
+ * @description 데이터 조회
+ * @return N/A
+ */
+this.fn_retrieve = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	trace("KnowledgeList fn_retrieve1");
+	//var sInDs = "ds_search=ds_search";
+	var sInDs = "ds_search=ds_search";
+	var sOutDs = "ds_knowledgeList=ds_knowledgeList ds_pagingInfo=ds_pagingInfo ds_docClassList=ds_docClassList ds_cboUserList=ds_cboUserList";
+	var sUrl = "http://localhost:8080/selectKnowledgeList.do"
+	
+	//strSvcId : Transaction을 구분하기 위한 ID 값입니다.
+	//strSvcUrl : Transaction을 요청할 주소 값입니다.
+	//inData : 입력값으로 보낼 Dataset 의 ID, a=b의 형태로 실제이름과 입력이름을 매칭.
+	//outData : 처리결과를 받을 Dataset 의 ID, a=b의 형태로 실제이름과 입력이름을 매칭.
+	//strArg : 입력값으로 보낼 arguments, strFromDate="20120607"
+	//callBackFnc : transaction의 결과를 돌려줄 Function의 이름.
+	//svcType : Transaction 유형 R:조회,C:등록,U:수정,D:삭제,S:저장, N:성공 실패시 메세지 처리 안함(무시)
+	//isAsync : 비동기 여부를 지정.	-> Default : true(ASync) 
+	//bWait : WaitCursor true/false
+	this.gfn_transaction("knowledgeList", sUrl, sInDs, sOutDs, "", "fn_callback", "R");
+	trace("KnowledgeList fn_retrieve2");
+}
+
+
+
+
+// /**
+//  * 목록조회 Search
+//  * @return 
+//  * @example
+//  *
+//  * @memberOf this
+//  */
+// this.fn_search = function()
+// {
+// 	// 조회조건(Condition)
+// 	this.ds_search.clearData();
+// 	var rowIdx = this.ds_search.addRow();
+// 	if(this.search_doc_subject_nm.value)
+// 	{
+// 		this.ds_search.setColumn(rowIdx, "search_doc_subject_nm", this.search_doc_subject_nm.value);
+// 	}
+// 	if(this.search_emp_cd.value)
+// 	{
+// 		this.ds_search.setColumn(rowIdx, "search_emp_cd", this.search_emp_cd.value);
+// 	}
+// 	
+// }
+// 
+// /**
+//  * 조회 후처리
+//  * @return 
+//  * @example
+//  *
+//  * @memberOf this
+//  */
+// this.fn_search_post = function()
+// {
+// 	//페이징 없는 경우
+// 	//var nTotalCnt = this.ds_pagingInfo.getColumn(0, "totalRecordCount");
+// 	//this.totalCount.set_text(nTotalCnt);
+// }
+this.divInfo_btnSetting_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.fn_retrieve();
+}]]></Script>
+  </Form>
+</FDL>
