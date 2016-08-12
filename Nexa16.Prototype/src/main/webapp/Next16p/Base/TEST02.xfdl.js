@@ -17,7 +17,9 @@
             }
             
             // Object(Dataset, ExcelExportObject) Initialize
-
+            obj = new Dataset("Dataset00", this);
+            obj._setContents("<ColumnInfo><Column id=\"Column0\" type=\"STRING\" size=\"256\"/><Column id=\"Column1\" type=\"STRING\" size=\"256\"/><Column id=\"Column2\" type=\"STRING\" size=\"256\"/><Column id=\"Column3\" type=\"STRING\" size=\"256\"/></ColumnInfo><Rows><Row><Col id=\"Column0\">z</Col><Col id=\"Column1\">zzzz</Col><Col id=\"Column2\">qww</Col><Col id=\"Column3\">fsdfds</Col></Row><Row><Col id=\"Column0\">sdf</Col><Col id=\"Column1\">erere</Col><Col id=\"Column2\">dfsdq</Col><Col id=\"Column3\">rrrr</Col></Row><Row><Col id=\"Column0\">fsdfsdf</Col><Col id=\"Column1\">qweqwe</Col><Col id=\"Column2\">gsdsfd</Col><Col id=\"Column3\">sss</Col></Row><Row><Col id=\"Column0\">sdfhhhj</Col><Col id=\"Column1\">fsdfsdf</Col><Col id=\"Column2\">yyyy</Col><Col id=\"Column3\">zzz</Col></Row></Rows>");
+            this.addChild(obj.name, obj);
             
             // UI Components Initialize
             obj = new Menu("Menu00","absolute","19","15","374","82",null,null,this);
@@ -31,7 +33,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new ListBox("ListBox00","absolute","22","183","477","131",null,null,this);
+            obj = new ListBox("ListBox00","absolute","15","183","477","131",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
@@ -50,6 +52,15 @@
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("4");
+            });
+            this.addChild(obj.name, obj);
+
+            obj = new Grid("Grid00","absolute","511","120","345","194",null,null,this);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_taborder("5");
+                obj.set_binddataset("Dataset00");
+                obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"80\"/><Column size=\"80\"/><Column size=\"80\"/><Column size=\"80\"/></Columns><Rows><Row band=\"head\" size=\"24\"/><Row size=\"24\"/></Rows><Band id=\"head\"><Cell text=\"Column0\"/><Cell col=\"1\" text=\"Column1\"/><Cell col=\"2\" text=\"Column2\"/><Cell col=\"3\" text=\"Column3\"/></Band><Band id=\"body\"><Cell text=\"bind:Column0\"/><Cell col=\"1\" text=\"bind:Column1\"/><Cell col=\"2\" text=\"bind:Column2\"/><Cell col=\"3\" text=\"bind:Column3\"/></Band></Format></Formats>");
             });
             this.addChild(obj.name, obj);
             

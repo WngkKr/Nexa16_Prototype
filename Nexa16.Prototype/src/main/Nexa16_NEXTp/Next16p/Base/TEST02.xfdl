@@ -5,10 +5,74 @@
       <Layout height="810" width="1078">
         <Menu id="Menu00" taborder="0" left="19" top="15" width="374" height="82" right="" bottom=""/>
         <Spin id="Spin00" taborder="1" left="15" top="107" width="424" height="65" right="" bottom=""/>
-        <ListBox id="ListBox00" taborder="2" left="22" top="183" width="477" height="131" right="" bottom=""/>
+        <ListBox id="ListBox00" taborder="2" left="15" top="183" width="477" height="131" right="" bottom=""/>
         <CheckBox id="CheckBox00" taborder="3" text="CheckBox00" left="406" top="20" width="168" height="65" right="" bottom=""/>
         <Radio id="Radio00" taborder="4" left="475" top="115" width="104" height="57" right="" bottom=""/>
+        <Grid id="Grid00" taborder="5" left="511" top="120" width="345" height="194" right="" bottom="" binddataset="Dataset00">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+                <Cell col="2" text="Column2"/>
+                <Cell col="3" text="Column3"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column1"/>
+                <Cell col="2" text="bind:Column2"/>
+                <Cell col="3" text="bind:Column3"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
       </Layout>
     </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">z</Col>
+            <Col id="Column1">zzzz</Col>
+            <Col id="Column2">qww</Col>
+            <Col id="Column3">fsdfds</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">sdf</Col>
+            <Col id="Column1">erere</Col>
+            <Col id="Column2">dfsdq</Col>
+            <Col id="Column3">rrrr</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">fsdfsdf</Col>
+            <Col id="Column1">qweqwe</Col>
+            <Col id="Column2">gsdsfd</Col>
+            <Col id="Column3">sss</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">sdfhhhj</Col>
+            <Col id="Column1">fsdfsdf</Col>
+            <Col id="Column2">yyyy</Col>
+            <Col id="Column3">zzz</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
   </Form>
 </FDL>
