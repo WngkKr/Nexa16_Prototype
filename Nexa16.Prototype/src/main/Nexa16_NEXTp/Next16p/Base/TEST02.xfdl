@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="TEST02" left="0" top="0" width="1078" height="810" titletext="New Form">
+    <Layouts>
+      <Layout height="810" width="1078">
+        <Menu id="Menu00" taborder="0" left="19" top="15" width="374" height="82" right="" bottom=""/>
+        <Spin id="Spin00" taborder="1" left="15" top="107" width="424" height="65" right="" bottom=""/>
+        <ListBox id="ListBox00" taborder="2" left="22" top="183" width="477" height="131" right="" bottom=""/>
+        <CheckBox id="CheckBox00" taborder="3" text="CheckBox00" left="406" top="20" width="168" height="65" right="" bottom=""/>
+        <Radio id="Radio00" taborder="4" left="475" top="115" width="104" height="57" right="" bottom=""/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

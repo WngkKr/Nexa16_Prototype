@@ -94,7 +94,7 @@
             <Col id="MENU_NM">지원인력요청승인</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="PGM_ID">Acce</Col>
-            <Col id="PGM_PATH">BM_PROJECT::BM_Project.xfdl</Col>
+            <Col id="PGM_PATH">Base::TEST02.xfdl</Col>
           </Row>
           <Row>
             <Col id="UP_MENU_CD">a0000005</Col>
