@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BMProjectTech" left="0" top="0" width="900" height="648" titletext="New Form">
+    <Layouts>
+      <Layout height="648" width="900">
+        <Static id="Static00" taborder="0" text="지원내용" left="5" top="5" width="120" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Grid id="Grid00" taborder="1" left="5" top="40" width="440" height="352" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static01" taborder="0" text="첨부파일(더블클릭하세요)" left="5" top="397" width="163" height="30" right="" bottom="" topbase="" leftbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Grid id="Grid01" taborder="2" left="5" top="432" width="440" height="" right="" bottom="5" topbase="" leftbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button00" taborder="3" text="저장" left="400" top="5" width="45" height="29" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static02" taborder="0" text="작업요청내용" left="455" top="5" width="120" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <TextArea id="TextArea00" taborder="4" left="455" top="40" width="" height="280" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static03" taborder="0" text="작업완료내용" left="455" top="328" width="120" height="30" right="" bottom=""/>
+        <TextArea id="TextArea01" taborder="4" left="455" top="363" height="" right="5" width="" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

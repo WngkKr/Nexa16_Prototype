@@ -3,7 +3,24 @@
   <Form id="TEST01" left="0" top="0" width="1078" height="810" titletext="New Form">
     <Layouts>
       <Layout height="810" width="1078">
-        <ImageViewer id="ImageViewer00" taborder="1" text="" left="16" top="8" width="1056" height="600" right="" bottom="" image="URL(&quot;..\..\..\..\..\..\..\Desktop\oncellClickEvent.png&quot;)"/>
+        <Tab id="Tab00" taborder="0" tabindex="0" left="120" top="57" width="719" height="421" right="" bottom="">
+          <Tabpages>
+            <Tabpage id="Tabpage1" text="Tabpage1">
+              <Layouts>
+                <Layout/>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="Tabpage2" text="Tabpage2">
+              <Layouts>
+                <Layout/>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="Tabpage3" text="Tabpage3"/>
+            <Tabpage id="Tabpage4" text="Tabpage4"/>
+            <Tabpage id="Tabpage5" text="Tabpage5"/>
+            <Tabpage id="Tabpage6" text="Tabpage6"/>
+          </Tabpages>
+        </Tab>
       </Layout>
     </Layouts>
   </Form>

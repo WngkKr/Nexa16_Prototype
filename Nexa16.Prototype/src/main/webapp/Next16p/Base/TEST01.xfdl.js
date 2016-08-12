@@ -20,14 +20,55 @@
 
             
             // UI Components Initialize
-            obj = new ImageViewer("ImageViewer00","absolute","16","8","1056","600",null,null,this);
+            obj = new Tab("Tab00","absolute","120","57","719","421",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
-                obj.set_taborder("1");
-                obj.set_text("");
-                obj.set_image("URL(\"../../../../../../../Desktop/oncellClickEvent.png\")");
+                obj.set_taborder("0");
+                obj.set_tabindex("0");
             });
             this.addChild(obj.name, obj);
+
+            obj = new Tabpage("Tabpage1",this.Tab00);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_text("Tabpage1");
+            });
+            this.Tab00.addChild(obj.name, obj);
+
+            obj = new Tabpage("Tabpage2",this.Tab00);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_text("Tabpage2");
+            });
+            this.Tab00.addChild(obj.name, obj);
+
+            obj = new Tabpage("Tabpage3",this.Tab00);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_text("Tabpage3");
+            });
+            this.Tab00.addChild(obj.name, obj);
+
+            obj = new Tabpage("Tabpage4",this.Tab00);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_text("Tabpage4");
+            });
+            this.Tab00.addChild(obj.name, obj);
+
+            obj = new Tabpage("Tabpage5",this.Tab00);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_text("Tabpage5");
+            });
+            this.Tab00.addChild(obj.name, obj);
+
+            obj = new Tabpage("Tabpage6",this.Tab00);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_text("Tabpage6");
+            });
+            this.Tab00.addChild(obj.name, obj);
             
             // Positionbase Setting
 

@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BMSaleProgramSuju" left="0" top="0" width="900" height="648" titletext="New Form">
+    <Layouts>
+      <Layout height="648" width="900">
+        <Div id="Div00" taborder="0" text="Div00" left="2" top="5" width="342" height="46" right="" bottom="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="고객사" left="4" top="9" width="96" height="24" right="" bottom=""/>
+              <Edit id="Edit00" taborder="1" left="48" top="7" width="118" height="29" right="" bottom=""/>
+              <Button id="Button01" taborder="2" left="314" top="12" width="16" height="18" background="URL(&quot;theme://images\ico_zoom.png&quot;)" right="" bottom=""/>
+              <Edit id="Edit01" taborder="1" left="217" top="7" width="118" height="29" right="" bottom=""/>
+              <Static id="Static01" taborder="0" text="계약명" left="173" top="9" width="96" height="24" right="" bottom=""/>
+              <Button id="Button00" taborder="2" text="" left="146" top="12" width="16" height="18" right="" bottom="" background="URL(&quot;theme://images\ico_zoom.png&quot;)"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <CheckBox id="CheckBox00" taborder="1" text="추가용역" left="348" top="16" width="99" height="27" right="" bottom="" wordSpacing="0px"/>
+        <Grid id="Grid00" taborder="2" left="2" top="58" width="444" height="328" right="" bottom="" binddataset="dsList" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="48"/>
+                <Column size="80"/>
+                <Column size="48"/>
+                <Column size="80"/>
+                <Column size="21"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+                <Row size="24" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="고객사"/>
+                <Cell col="1" text="계약명"/>
+                <Cell col="2" text="제품"/>
+                <Cell col="3" text="예상매출"/>
+                <Cell col="4" text="PIPE"/>
+                <Cell col="5" text="계약예정일"/>
+                <Cell col="6" text="G"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column1"/>
+                <Cell col="2" text="bind:Column2"/>
+                <Cell col="3" text="bind:Column3" displaytype="number" edittype="masknumber" mask="999,999,999,999"/>
+                <Cell col="4" text="bind:Column4" displaytype="checkbox" edittype="checkbox"/>
+                <Cell col="5" text="bind:Column5" displaytype="date" edittype="date"/>
+                <Cell col="6" text="bind:Column6"/>
+              </Band>
+              <Band id="summary">
+                <Cell colspan="3" text="합계"/>
+                <Cell col="3" expr="bind:Column3" displaytype="number" edittype="masknumber"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+                <Cell col="6"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Tab id="Tab00" taborder="3" tabindex="0" left="3" top="397" width="442" height="241" right="" bottom="">
+          <Tabpages>
+            <Tabpage id="Tabpage1" text="진행사항">
+              <Layouts>
+                <Layout>
+                  <Grid id="Grid00" taborder="0" left="2" top="5" width="87" height="210" right="" bottom="">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="80"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="일자"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Static id="Static00" taborder="1" text="구분" left="91" top="15" width="120" height="14" right="" bottom=""/>
+                  <Combo id="Combo00" taborder="2" text="Combo00" left="128" top="10" width="150" height="20" right="" bottom=""/>
+                  <Static id="Static01" taborder="1" text="일자" left="91" top="39" width="120" height="14" right="" bottom=""/>
+                  <Calendar id="Calendar00" taborder="3" left="128" top="37" width="150" height="20" right="" bottom=""/>
+                  <CheckBox id="CheckBox00" taborder="4" text="보고" left="287" top="9" width="150" height="20" right="" bottom=""/>
+                  <Static id="Static02" taborder="5" text="중요도" left="288" top="39" width="120" height="18" right="" bottom=""/>
+                  <Combo id="Combo01" taborder="6" text="Combo01" left="329" top="36" width="91" height="22" right="" bottom=""/>
+                  <CheckBox id="CheckBox01" taborder="7" text="일정반영" left="99" top="65" width="150" height="20" right="" bottom=""/>
+                  <CheckBox id="CheckBox02" taborder="8" text="공개" left="291" top="65" width="117" height="20" right="" bottom=""/>
+                  <TextArea id="TextArea00" taborder="9" left="97" top="92" width="335" height="118" right="" bottom=""/>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="Tabpage2" text="담당자">
+              <Layouts>
+                <Layout>
+                  <Grid id="Grid00" taborder="0" left="3" top="6" width="432" height="207" right="" bottom="" binddataset="dsPerson">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="128"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell colspan="2" text="회사"/>
+                          <Cell col="2" text="부서"/>
+                          <Cell col="3" text="담당자"/>
+                          <Cell col="4" text="직급"/>
+                          <Cell col="5" text="역할"/>
+                          <Cell col="6" rowspan="2" text="핸드폰"/>
+                          <Cell row="1" text="현황"/>
+                          <Cell row="1" col="1" text="유선"/>
+                          <Cell row="1" col="2" colspan="3" text="이메일"/>
+                          <Cell row="1" col="5" text="비고"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell colspan="2" text="bind:회사"/>
+                          <Cell col="2" text="bind:부서"/>
+                          <Cell col="3" text="bind:담당자"/>
+                          <Cell col="4" text="bind:직급"/>
+                          <Cell col="5" text="bind:역할"/>
+                          <Cell col="6" rowspan="2" text="bind:핸드폰"/>
+                          <Cell row="1" text="bind:현황"/>
+                          <Cell row="1" col="1" text="bind:부서"/>
+                          <Cell row="1" col="2" colspan="3" text="bind:이메일"/>
+                          <Cell row="1" col="5" text="bind:비고"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+          </Tabpages>
+        </Tab>
+        <Div id="Div01" taborder="4" text="Div01" left="450" top="1" right="5" bottom="9" width="" height="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="계약구분" left="1" top="5" width="120" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static01" taborder="0" text="고객사" left="1" top="29" width="120" height="20" right="" bottom=""/>
+              <Static id="Static02" taborder="0" text="계약처" left="1" top="58" width="120" height="20" right="" bottom=""/>
+              <Static id="Static03" taborder="0" text="계약예정일" left="1" top="86" width="120" height="20" right="" bottom=""/>
+              <Static id="Static04" taborder="0" text="비고" left="1" top="120" width="120" height="20" right="" bottom=""/>
+              <Combo id="Combo00" taborder="1" text="Combo00" left="73" top="4" width="76" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="Edit00" taborder="2" left="73" top="28" width="100" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="Edit01" taborder="3" left="73" top="56" width="100" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Calendar id="Calendar00" taborder="4" left="73" top="85" width="76" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <TextArea id="TextArea00" taborder="5" left="73" top="114" width="217" height="56" right="" bottom=""/>
+              <Static id="Static05" taborder="0" text="계약구분" left="158" top="5" width="120" height="20" right="" bottom=""/>
+              <Combo id="Combo01" taborder="1" text="Combo00" left="214" top="4" width="76" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static06" taborder="0" text="영업상태" left="297" top="5" width="120" height="20" right="" bottom=""/>
+              <Combo id="Combo02" taborder="1" text="Combo00" left="351" top="4" width="76" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Button id="Button00" taborder="2" text="" left="174" top="30" width="16" height="18" right="" bottom="" background="URL(&quot;theme://images\ico_zoom.png&quot;)"/>
+              <Button id="Button01" taborder="2" text="" left="174" top="58" width="16" height="18" right="" bottom="" background="URL(&quot;theme://images\ico_zoom.png&quot;)"/>
+              <Static id="Static07" taborder="0" text="예상매출액" left="158" top="85" width="120" height="20" right="" bottom=""/>
+              <Edit id="Edit02" taborder="6" left="213" top="86" width="77" height="20" right="" bottom=""/>
+              <Static id="Static08" taborder="0" text="담당영업" left="297" top="86" width="120" height="20" right="" bottom=""/>
+              <Combo id="Combo03" taborder="1" text="Combo00" left="351" top="85" width="76" height="20" right="" bottom=""/>
+              <Static id="Static09" taborder="0" text="프로젝트" left="198" top="29" width="120" height="20" right="" bottom=""/>
+              <Static id="Static10" taborder="0" text="계약명" left="198" top="54" width="120" height="20" right="" bottom=""/>
+              <Edit id="Edit03" taborder="7" left="252" top="30" width="49" height="20" right="" bottom=""/>
+              <Edit id="Edit04" taborder="8" left="302" top="30" width="127" height="20" right="" bottom=""/>
+              <Edit id="Edit05" taborder="9" left="252" top="55" width="177" height="20" right="" bottom=""/>
+              <Static id="Static11" taborder="0" text="인센티브" left="297" top="116" width="120" height="20" right="" bottom=""/>
+              <Combo id="Combo04" taborder="1" text="Combo00" left="351" top="115" width="76" height="20" right="" bottom=""/>
+              <CheckBox id="CheckBox00" taborder="10" text="PIPE라인" left="301" top="148" width="100" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static12" taborder="11" text="매출상세내역" left="7" top="198" width="120" height="28" right="" bottom=""/>
+              <CheckBox id="CheckBox01" taborder="12" text="[제품+상품계약일 경우 체크]" left="101" top="203" width="328" height="20" right="" bottom="" font="0 &quot;                  &quot;" color="red"/>
+              <Grid id="Grid00" taborder="13" left="7" top="227" width="422" height="91" right="" bottom="" binddataset="dsList3">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="200"/>
+                      <Column size="200"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="항목"/>
+                      <Cell col="1" text="예상매출액"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:항목"/>
+                      <Cell col="1" text="bind:예상매출액"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Grid id="Grid01" taborder="13" left="7" top="358" width="420" height="91" binddataset="Dataset00" right="" bottom="">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row band="head" size="24"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="역할"/>
+                      <Cell col="1" text="등급"/>
+                      <Cell col="2" text="예상단가"/>
+                      <Cell col="3" text="MM"/>
+                      <Cell col="4" text="금액"/>
+                      <Cell col="5" text="근무지역"/>
+                      <Cell col="6" text="비고"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:역할"/>
+                      <Cell col="1" text="bind:등급"/>
+                      <Cell col="2" text="bind:예상단가"/>
+                      <Cell col="3" text="bind:MM"/>
+                      <Cell col="4" text="bind:금액"/>
+                      <Cell col="5" text="bind:근무지역"/>
+                      <Cell col="6" text="bind:비고"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static13" taborder="11" text="용역매출 상세내역" left="7" top="329" width="120" height="28" right="" bottom=""/>
+              <Combo id="Combo05" taborder="14" text="Combo05" left="123" top="336" width="231" height="20" right="" bottom=""/>
+              <Grid id="Grid02" taborder="13" left="7" top="491" width="420" height="91" binddataset="dsList5" right="" bottom="">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="102"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="항목"/>
+                      <Cell col="1" text="예상매입액"/>
+                      <Cell col="2" text="매입처"/>
+                      <Cell col="3" text="판매수수료율"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:항목"/>
+                      <Cell col="1" text="bind:예상매입액"/>
+                      <Cell col="2" text="bind:매입처"/>
+                      <Cell col="3" text="bind:판매수수료율"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static14" taborder="11" text="용역매출 상세내역" left="7" top="462" width="120" height="28" right="" bottom=""/>
+              <Button id="Button02" taborder="15" text="+" left="382" top="205" width="21" height="19" right="" bottom=""/>
+              <Button id="Button03" taborder="15" left="406" top="205" width="21" height="19" right="" bottom="" text="-"/>
+              <Button id="Button04" taborder="15" text="+" left="382" top="338" width="21" height="19" right="" bottom=""/>
+              <Button id="Button05" taborder="15" left="406" top="338" width="21" height="19" text="-" right="" bottom=""/>
+              <Button id="Button06" taborder="15" text="+" left="382" top="470" width="21" height="19" right="" bottom=""/>
+              <Button id="Button07" taborder="15" left="406" top="470" width="21" height="19" text="-" right="" bottom=""/>
+              <Button id="Button08" taborder="16" text="엑셀" left="13" top="596" width="47" height="22" right="" bottom=""/>
+              <Combo id="Combo06" taborder="17" text="Combo06" left="157" top="594" width="76" height="20" right="" bottom=""/>
+              <Button id="Button09" taborder="18" text="인력요청" left="370" top="592" width="56" height="22" right="" bottom=""/>
+              <Button id="Button10" taborder="18" text="수주확정" left="311" top="592" width="56" height="22" right="" bottom=""/>
+              <Button id="Button11" taborder="18" text="매출원가표" left="238" top="592" width="70" height="22" right="" bottom=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>
