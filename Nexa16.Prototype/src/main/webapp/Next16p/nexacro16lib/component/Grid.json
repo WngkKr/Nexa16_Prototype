@@ -1,0 +1,31 @@
+﻿{
+	"name": "Grid",
+	"version": "16,0,0,1",
+	"description": "nexacro platform 16 Unified Framework Library",
+	"license": "",
+    "scripts": [
+        "Grid/GridInfo.js",
+        "Grid/Grid.js"
+    ],
+	"objInfo": [
+	    "Grid/metainfo/Grid.info",
+		"Grid/metainfo/BandControl.info",
+		"Grid/metainfo/RowControl.info",
+		"Grid/metainfo/CellControl.info",
+		"Grid/metainfo/ColumnControl.info",
+		"Grid/metainfo/CellTreeItemControl.info",
+		"Grid/metainfo/TreeItemIconControl.info",
+		"Grid/metainfo/GridClickEventInfo.info",
+		"Grid/metainfo/GridDragEventInfo.info",
+		"Grid/metainfo/GridEditEventInfo.info",
+		"Grid/metainfo/GridMouseEventInfo.info",
+		"Grid/metainfo/GridSelectEventInfo.info",
+		"Grid/metainfo/GridSizeChangedEventInfo.info",
+		"Grid/metainfo/GridTreeStatusEventInfo.info"
+
+	],
+	"designscripts": [
+		"Grid/Design/DesignGrid.js"
+	]
+}
+//# sourceURL=Grid.json

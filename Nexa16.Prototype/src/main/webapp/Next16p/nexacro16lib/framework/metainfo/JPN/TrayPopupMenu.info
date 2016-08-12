@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.TrayPopupMenu">
+    <ObjectInfo inheritance="" classname="nexacro.TrayPopupMenu" shorttypename="" csstypename="" csscontrolname="" group="Component" subgroup="Component ( default )" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="" defaultheight="" registration="system" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="nexacro browser (Windows)" description="TrayのPopupMenuです。&#xA;システムが提供するAPI PopupMenuを使用します。" />
+    <PropertyInfo>
+      <Property name="captioncolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows)" description="innerdatasetにバインドされたデータカラムの中でメニューからアイテムテキストを出力するために使用されるカラムを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="captioncolumn" />
+      <Property name="checkboxcolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows)" description="innerdatasetにバインドされたデータカラムの中でメニューアイテムにチェックボックスを適用するために使用するカラムを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="checkboxcolumn" />
+      <Property name="enablecolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows)" description="innerdatasetにバインドされたデータカラムの中でアイテムを有効にするかどうかを指定するために使用されるカラムを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="enablecolumn" />
+      <Property name="iconcolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows)" description="innerdatasetにバインドされたデータカラムのメニューからアイコンを指定するために使用されるカラムを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="iconcolumn" />
+      <Property name="id" group="Information" subgroup="" edittype="ID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows)" description="" csspropertyname="" csselementname="" normalpropertyname="id" />
+      <Property name="idcolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows)" description="innerdatasetにバインドされたデータカラムの中でメニューからidとして使用されるカラムを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="idcolumn" />
+      <Property name="innerdataset" group="Binding" subgroup="bind(innerdataset)" edittype="InnerDatasetID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows)" description="Datasetを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="innerdataset" />
+      <Property name="levelcolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows)" description="" csspropertyname="" csselementname="" normalpropertyname="levelcolumn" />
+      <Property name="userdatacolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows)" description="innerdatasetにバインドされたデータカラムの中でユーザーデータとして使用するカラムを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="userdatacolumn" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo>
+      <Method name="trackPopup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="トレイポップアップメニューをマウスカーソルの位置で表示させるメソッドです。">
+        <Syntax text="">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+    </MethodInfo>
+    <EventHandlerInfo>
+      <EventHandler name="onmenuclick" group="" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="メニューアイテムがクリックされたときに発生するイベントです。">
+        <Syntax text="TrayPopupMenu.onmenuclick(obj:nexacro.TrayPopupMenu,e:nexacro.MenuClickEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="MenuClickEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+    </EventHandlerInfo>
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

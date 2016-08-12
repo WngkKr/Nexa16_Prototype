@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.Dataset">
+    <ObjectInfo inheritance="" classname="nexacro.NormalDataset" shorttypename="Dataset" csstypename="Dataset" csscontrolname="" group="Object" subgroup="Dataset" csspseudo="false" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="" defaultheight="" registration="deny" edittype="dataset" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="onload" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="This object is used to save data in the form of a table.&#xA;It is closely related to the engine and data used inside takes the form of a dataset.&#xA;Components are informed of the changes in data through bound datasets. &#xA;It is used as a format to transfer data in communications.&#xA;&#xA;It supports the methods  to add, delete, or modify columns. It also supports the methods to group, sort, and filter records as well as statistical methods (Sum, Max, Min, Avg, Count). In addition, it provides features to merge, append, and copy another dataset. &#xA;&#xA;If an expression is specified through the filterstr property, records of a dataset will be filtered. &#xA;You can group or sort data through the keystring property." />
+    <PropertyInfo>
+      <Property name="arguments" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The arguments Property sets the Argument to deliver the relevant url when calling url in case url is set in Dataset." csspropertyname="" csselementname="" normalpropertyname="arguments" />
+      <Property name="colcount" group="Hidden" subgroup="" edittype="" defaultvalue="" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The colcount Property has a column count value of current Dataset.&#xA;(It is a count value including const column count)" csspropertyname="" csselementname="" normalpropertyname="colcount" />
+      <Property name="colinfos" group="Hidden" subgroup="" edittype="" defaultvalue="" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The colinfos property returns Column Info object of this Dataset to a list." csspropertyname="" csselementname="" normalpropertyname="colinfos" />
+      <Property name="constcount" group="Hidden" subgroup="" edittype="" defaultvalue="" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The constcount Property has a const column count value of current Dataset." csspropertyname="" csselementname="" normalpropertyname="constcount" />
+      <Property name="enableevent" group="Misc." subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The enableevent Property sets whether to generate Event of Dataset." csspropertyname="" csselementname="" normalpropertyname="enableevent" />
+      <Property name="filterstr" group="Misc." subgroup="" edittype="" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The filterstr property designates expression which shall filter Dataset." csspropertyname="" csselementname="" normalpropertyname="filterstr" />
+      <Property name="firefirstcount" group="Misc." subgroup="" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate Count which shall generates first onload Event when communicating in the form of FirstRow." csspropertyname="" csselementname="" normalpropertyname="firefirstcount" />
+      <Property name="keystring" group="Misc." subgroup="" edittype="" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The keystring property designates Column ID which shall become Group of Dataset." csspropertyname="" csselementname="" normalpropertyname="keystring" />
+      <Property name="loadfiltermode" group="Misc." subgroup="" edittype="Enum" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="LoadMode" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The loadfiltermode Property sets application method of filterstr attribution when Dataset is loaded." csspropertyname="" csselementname="" normalpropertyname="loadfiltermode" />
+      <Property name="loadkeymode" group="Misc." subgroup="" edittype="Enum" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="LoadMode" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The loadkeymode Property sets the application method of keystring attribution when Dataset is loaded." csspropertyname="" csselementname="" normalpropertyname="loadkeymode" />
+      <Property name="name" group="Information" subgroup="" edittype="String" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It designates names of components." csspropertyname="" csselementname="" normalpropertyname="name" />
+      <Property name="preload" group="Misc." subgroup="" edittype="Boolean" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The preload Property sets whether to load data of Dataset before loading a screen in case of url is set in Dataset." csspropertyname="" csselementname="" normalpropertyname="preload" />
+      <Property name="reversesubsum" group="Misc." subgroup="" edittype="Boolean" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The reverseubsum property designates whether to indicate subtotal of groups at the first Row of the groups when it is indicated by keystring attribution of Dataset." csspropertyname="" csselementname="" normalpropertyname="reversesubsum" />
+      <Property name="rowcount" group="Hidden" subgroup="" edittype="" defaultvalue="" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The rowcount property has a record count value of current Dataset." csspropertyname="" csselementname="" normalpropertyname="rowcount" />
+      <Property name="rowposition" group="Hidden" subgroup="" edittype="" defaultvalue="" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The rowposition Property designates the Current Row in the Dataset." csspropertyname="" csselementname="" normalpropertyname="rowposition" />
+      <Property name="serverdatasetid" group="Misc." subgroup="" edittype="" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The serverdatasetid Property designates the Dataset which shall be actually used in case there are plural Dataset of results from conducting Service by values set in url of Dataset." csspropertyname="" csselementname="" normalpropertyname="serverdatasetid" />
+      <Property name="updatecontrol" group="Misc." subgroup="" edittype="Boolean" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The updatecontrol Property sets whether to automatically change each RowType if Insert, Update, or Delete occurs to Row of Datatset." csspropertyname="" csselementname="" normalpropertyname="updatecontrol" />
+      <Property name="url" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The dataset property sets an URL of a business service when the relevant service is connected to a dataset." csspropertyname="" csselementname="" normalpropertyname="url" />
+      <Property name="useclientlayout" group="Misc." subgroup="" edittype="Boolean" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The useclientlayout property designates whether to apply Column Layout of Dataset which is received from a server when conducting transaction()." csspropertyname="" csselementname="" normalpropertyname="useclientlayout" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo>
+      <Method name="addColumn" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Method to add Column to Dataset.">
+        <Syntax text="Dataset.addColumn( strColID, strColType [,nColSize] )">
+          <Return type="Integer" description="Index of added Column.&#xA;If failed, it shall return -1." />
+          <Arguments>
+            <Argument name="nColSize" type="Integer" in="false" out="false" option="false" variable="false" description="It is Column size to add to Dataset.&#xA; Default : 256" />
+            <Argument name="strColID" type="String" in="false" out="false" option="false" variable="false" description="It is Column ID to add to Dataset." />
+            <Argument name="strColType" type="String" in="false" out="false" option="false" variable="false" description="It is Column type to add to Dataset." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="addColumnInfo" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Method to add Column to Dataset by using ColumnInfo object.">
+        <Syntax text="Dataset.addColumnInfo( strID, objColInfo )">
+          <Return type="Integer" description="Index of added Column.&#xA;If failed, it shall return -1." />
+          <Arguments>
+            <Argument name="objColInfo" type="Object" in="false" out="false" option="false" variable="false" description="It is a ColumnInfo object to add." />
+            <Argument name="strID" type="String" in="false" out="false" option="false" variable="false" description="It is ID of ColumnInfo to add." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="addConstColumn" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Method to add a const column to a dataset.">
+        <Syntax text="Dataset.addConstColumn( strColID, varVal )">
+          <Return type="Integer" description="If successful, it returns the index value of an added const column.   &#xA;If failed, it shall return -1." />
+          <Arguments>
+            <Argument name="strColID" type="String" in="false" out="false" option="false" variable="false" description="It is const column ID to add." />
+            <Argument name="varVal" type="Variant" in="false" out="false" option="false" variable="false" description="It is a value to set in an added const column." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It adds an event handler function.">
+        <Syntax text="Dataset.addEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns the changed index, otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="true" out="true" option="true" variable="true" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It adds an event handler as a result searched with a designated event ID.">
+        <Syntax text="Dataset.addEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns an added index value. Otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="addRow" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="To add new Row to the last of Dataset.">
+        <Syntax text="Dataset.addRow()">
+          <Return type="Integer" description="Position value of added Row (Zero-based)&#xA;If failed, it shall return -1." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="appendData" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The appendData Method adds records of designated Dataset to the next to the last record of Dataset which is conducted.">
+        <Syntax text="Dataset.appendData( objDataset [,bCheckCol [,bUpdateConstCol]] )">
+          <Return type="Integer" description="Row Count of Dataset after conducting appendData." />
+          <Arguments>
+            <Argument name="bCheckCol" type="Boolean" in="false" out="false" option="false" variable="false" description="Whether to check Column ID&#xA;(default: false)" />
+            <Argument name="bUpdateConstCol" type="Boolean" in="false" out="false" option="false" variable="false" description="Whether to modify a value of ConstColumn&#xA;(default: false)" />
+            <Argument name="objDataset" type="Object" in="false" out="false" option="false" variable="false" description="It is Dataset which has a record to add." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="applyChange" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The applyChange Method changes all RowType of Dataset to &quot;normal&quot;.">
+        <Syntax text="Dataset.applyChange()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="assign" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The assign Method assigns all Row and Column information including Column Type, Row Type, and Data of designated Dataset.">
+        <Syntax text="Dataset.assign( objDataset )">
+          <Return type="Integer" description="It is number of assigned Row." />
+          <Arguments>
+            <Argument name="objDataset" type="Object" in="false" out="false" option="false" variable="false" description="It is Dataset Object to assign." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="clear" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The clear Method deletes Column information and Row of Dataset.">
+        <Syntax text="Dataset.clear()">
+          <Return type="Integer" description="It returns deleted Row Count." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="clearData" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The clearData Method deletes all Rows except for Column information of Dataset.">
+        <Syntax text="Dataset.clearData()">
+          <Return type="Integer" description="The clearData method returns deleted Row Count." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It clears all set event handler functions.">
+        <Syntax text="Dataset.clearEventHandler( strEventID )">
+          <Return type="Integer" description="It returns the number of deleted event handler functions." />
+          <Arguments>
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="copyData" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The copyData Method copies Row data of designated Dataset.">
+        <Syntax text="Dataset.copyData( objDataset [, bFilteredOnly] )">
+          <Return type="Integer" description="It is number of copied Row.&#xA;If there is not Dataset to copy, null shall be returned." />
+          <Arguments>
+            <Argument name="bFilteredOnly" type="Boolean" in="false" out="false" option="false" variable="false" description="Whether to copy only Filtered Row&#xA;(Default: false)" />
+            <Argument name="objDataset" type="Object" in="false" out="false" option="false" variable="false" description="It is Dataset Object to copy." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="copyRow" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The copyRow method copies a specific row of a certain dataset into a designated row position of a current dataset.">
+        <Syntax text="Dataset.copyRow( nToRow, objDataset, nFromRow [,strColInfo] )">
+          <Return type="Boolean" description="If it succeeds, it returns true, and&#xD;&#xA;if not, it returns false." />
+          <Arguments>
+            <Argument name="nFromRow" type="Integer" in="false" out="false" option="false" variable="false" description="A row position to copy of Dataset which shall be copied." />
+            <Argument name="nToRow" type="Integer" in="false" out="false" option="false" variable="false" description="A row position to change by copying it form the current dataset" />
+            <Argument name="objDataset" type="Object" in="false" out="false" option="false" variable="false" description="The dataset object to copy" />
+            <Argument name="strColInfo" type="String" in="false" out="false" option="false" variable="false" description="It is a condition to copy.&#xA;Default : a value of the same column ID&#xA;Format : ToColumnID=FromColumnID,ToColumnID1=FromColumnID1" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="deleteAll" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The deleteAll method deletes all Rows in Dataset.">
+        <Syntax text="Dataset.deleteAll()">
+          <Return type="Integer" description="It returns deleted Row Count." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="deleteColumn" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The deleteColumn Medthod deletes designated Column or Const Column in Dataset.">
+        <Syntax text="Dataset.deleteColumn(nCol)&#xD;&#xA;Dataset.deleteColumn(strColID)">
+          <Return type="Boolean" description="If successful, it shall return true and if failed it shall return false." />
+          <Arguments>
+            <Argument name="nCol" type="Integer" in="false" out="false" option="false" variable="false" description="Column Index to delete" />
+            <Argument name="strColID" type="String" in="false" out="false" option="false" variable="false" description="Column ID text string to delete" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="deleteMultiRows" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The deleteMultiRows Method deletes relevant rows from a row list received as the array object.">
+        <Syntax text="Dataset.deleteMultiRows( arrRowlist );">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="arrRowlist" type="Array" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="deleteRow" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The deleterow Method deletes designated Rows in Dataset.">
+        <Syntax text="Dataset.deleteRow(nRow)">
+          <Return type="Boolean" description="If successful, it shall return true and if failed it shall return false." />
+          <Arguments>
+            <Argument name="nRow" type="Integer" in="false" out="false" option="false" variable="false" description="It is Row Position to delete." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="exchangeRow" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The exchangeRow Method changes Rowposition of designated two Rows in Dataset.">
+        <Syntax text="Dataset.exchangeRow(nRow1,nRow2)">
+          <Return type="Boolean" description="It shall return whether to be successful." />
+          <Arguments>
+            <Argument name="nRow1" type="Integer" in="false" out="false" option="false" variable="false" description="It is Row Position1 to change." />
+            <Argument name="nRow2" type="Integer" in="false" out="false" option="false" variable="false" description="It is Row Position2 to change." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="filter" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The filter method shows only rows which meet a conditional formula in a dataset.">
+        <Syntax text="Dataset.filter([strFilterExpr])">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="strFilterExpr" type="String" in="false" out="false" option="false" variable="false" description="Conditional formula to conduct.&#xA;There is no default value." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="filterRow" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The filterRow Method makes designated Rows invisible in Dataset.">
+        <Syntax text="Dataset.filterRow(nRow)">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="nRow" type="Integer" in="false" out="false" option="false" variable="false" description="It is Row Position to filter." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It finds a designated event handler function and returns the index.">
+        <Syntax text="Dataset.findEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="Index of a designated function" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function object to find" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="findRow" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The findRow Method brings the first Row position which has data which is same as a value to be input at a designated Column of Dataset.">
+        <Syntax text="Dataset.findRow( strColID,strVal[,nStartIdx[,nEndIdx]] )">
+          <Return type="Integer" description="It is first Row Position to have data which is same as input value.&#xA;If there is not record to satisfy, it shall return -1." />
+          <Arguments>
+            <Argument name="nEndIdx" type="Integer" in="false" out="false" option="false" variable="false" description="It is a value of last Row Position plus 1 to search.&#xA;It searches up to the record which is less than a designated value by 1.&#xA;If nEndIdx is less than 0, it searches from nStartIdx to the end.&#xA;Default : -1" />
+            <Argument name="nStartIdx" type="Integer" in="false" out="false" option="false" variable="false" description="It is Row Position to start search.&#xA;If nStartIdx is less than 0, it searches entire part.&#xA;Default : 0" />
+            <Argument name="strColID" type="String" in="false" out="false" option="false" variable="false" description="It is Column ID or column index of Dataset to search." />
+            <Argument name="strVal" type="String" in="false" out="false" option="false" variable="false" description="It is Column Value of Dataset to search." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="findRowAs" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The findRowAs Method brings the first Row position which has data which begin with a value to be input at a designated Column of Dataset. (Like &quot;LIKE%&quot;)">
+        <Syntax text="Dataset.findRowAs(strColID,strVal,[nStartIdx[,nEndIdx]])">
+          <Return type="Integer" description="It is first Row Position to have data which is same as input value.&#xA;If there is not record to satisfy, it shall return -1." />
+          <Arguments>
+            <Argument name="nEndIdx" type="Integer" in="false" out="false" option="false" variable="false" description="It is a value of Index of last record to search +1.&#xA;It searches up to the record which is less than a designated value by 1.&#xA;If nEndIdx is less than 0, it searches from nStartIdx to the end.&#xA;Default : -1" />
+            <Argument name="nStartIdx" type="Integer" in="false" out="false" option="false" variable="false" description="It is Row Position to start search.&#xA;If nStartIdx is less than 0, it searches entire part.&#xA;Default : 0" />
+            <Argument name="strColID" type="String" in="false" out="false" option="false" variable="false" description="It is Column ID or column index of Dataset to search." />
+            <Argument name="strVal" type="String" in="false" out="false" option="false" variable="false" description="It is a value to search." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="findRowExpr" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The findRowExpr Method returns Index of first column to meet a given conditional formula.">
+        <Syntax text="Dataset.findRowExpr(strExpr[,nStartIdx[,nEndIdx]])">
+          <Return type="Integer" description="Index of column. If failed to find same Row, it shall return -1." />
+          <Arguments>
+            <Argument name="nEndIdx" type="Integer" in="false" out="false" option="false" variable="false" description="It is a value of last Row Position plus 1 to search.&#xA;It searches up to the record which is less than a designated value by 1.&#xA;If nEndIdx is less than 0, it searches from nStartIdx to the end.&#xA;Default : -1" />
+            <Argument name="nStartIdx" type="Integer" in="false" out="false" option="false" variable="false" description="It is Row Position to start search. &#xA;If nStartIdx is less than 0, it searches entire part.&#xA;Default : 0" />
+            <Argument name="strExpr" type="String" in="false" out="false" option="false" variable="false" description="Regular expression" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getAvg" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getAvg Method calculates Column value or an average of the values within the designated scope in Dataset.">
+        <Syntax text="Dataset.getAvg(strExpr[,nStart[,nEnd]])">
+          <Return type="Decimal" description="It is calculated average value.&#xA;If average can't calculated, it shall return POSITIVE_INFINITY." />
+          <Arguments>
+            <Argument name="nEnd" type="Integer" in="false" out="false" option="false" variable="false" description="It is a value of last Row Position plus 1 for average.&#xA;It includes up to the Row which is less than a designated value by 1.&#xA;If nEnd is less than 0, it includes from nStart to the end.&#xA;Default : -1" />
+            <Argument name="nStart" type="Integer" in="false" out="false" option="false" variable="false" description="It is Row Position to start to calculate average.&#xA;Row Position of Dataset to start is 0.&#xA;Default : 0" />
+            <Argument name="strExpr" type="String" in="false" out="false" option="false" variable="false" description="It is Column ID or formula to calculate average value." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getAvgNF" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getAvgNF Method calculates Column value or an average of the values within the designated scope including filtered Rows in Dataset.">
+        <Syntax text="Dataset.getAvgNF(strExpr[,nStart[,nEnd]])">
+          <Return type="Decimal" description="It is calculated average value.&#xA;If average can't calculated, it shall return POSITIVE_INFINITY." />
+          <Arguments>
+            <Argument name="nEnd" type="Integer" in="false" out="false" option="false" variable="false" description="It is a value of last Row Position plus 1 for average.&#xA;It includes up to the Row which is less than a designated value by 1.&#xA;If nEnd is less than 0, it includes from nStart to the end.&#xA;Default : -1" />
+            <Argument name="nStart" type="Integer" in="false" out="false" option="false" variable="false" description="It is Row Position to start to calculate average.&#xA;Row Position of Dataset to start is 0.&#xA;Default : 0" />
+            <Argument name="strExpr" type="String" in="false" out="false" option="false" variable="false" description="It is Column ID or formula to calculate average value." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getCaseAvg" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getCaseAvg Method calculates Column value or an average of the values of Rows to meet a condition within the designated scope in Dataset.">
+        <Syntax text="Dataset.getCaseAvg(strCmpExpr,strValExpr[,nStart[,nEnd]])">
+          <Return type="Decimal" description="It is calculated average value.&#xA;If average can't calculated, it shall return POSITIVE_INFINITY." />
+          <Arguments>
+            <Argument name="nEnd" type="Integer" in="false" out="false" option="false" variable="false" description="It is a value of last Row Position plus 1 for average.&#xA;It includes up to the Row which is less than a designated value by 1.&#xA;If nEnd is less than 0, it includes from nStart to the end.&#xA;Default : -1" />
+            <Argument name="nStart" type="Integer" in="false" out="false" option="false" variable="false" description="It is Row Position to start to calculate average.&#xA;Start Row Position is 0.&#xA;Default : 0" />
+            <Argument name="strCmpExpr" type="String" in="false" out="false" option="false" variable="false" description="Is is a conditional formula to derive relevant Row within scope." />
+            <Argument name="strValExpr" type="String" in="false" out="false" option="false" variable="false" description="It is Column ID or formula to calculate average value." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getCaseCount" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getCaseCount Method calculates a Row value to meet a conditional formula within the designated scope in Dataset.">
+        <Syntax text="Dataset.getCaseCount(strCmpExpr[,nStart[,nEnd]])">
+          <Return type="Integer" description="It is number of calculated Row." />
+          <Arguments>
+            <Argument name="nEnd" type="Integer" in="false" out="false" option="false" variable="false" description="It is a value of last Row Position plus 1 in relevant scope.&#xA;It includes up to the Row which is less than a designated value by 1.&#xA;If nEnd is less than 0, it includes from nStart to the end.&#xA;Default : -1" />
+            <Argument name="nStart" type="Integer" in="false" out="false" option="false" variable="false" description="It is start position of relevant Row.&#xA;Row Position of Dataset to start is 0.&#xA;Default : 0" />
+            <Argument name="strCmpExpr" type="String" in="false" out="false" option="false" variable="false" description="Is is a conditional formula to derive relevant Row." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getCaseMax" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getCaseMax Method calculates Column value or a maximum value by using a Row to meet a condition within the requested scope in Dataset.">
+        <Syntax text="Dataset.getCaseMax(strCmpExpr,strValExpr[,nStart[,nEnd]])">
+          <Return type="Integer" description="It is calculated maximum value.&#xA;If maximum value can not be calculated, undefined shall be returned." />
+          <Arguments>
+            <Argument name="nEnd" type="Integer" in="false" out="false" option="false" variable="false" description="It is a value of last Row Position plus 1 in relevant scope.&#xA;It includes up to the Row which is less than a designated value by 1.&#xA;If nEnd is less than 0, it includes from nStart to the end.&#xA;Default : -1" />
+            <Argument name="nStart" type="Integer" in="false" out="false" option="false" variable="false" description="It is start Row Position to calculate maximum value.&#xA;Start Row Position is 0.&#xA;Default : 0" />
+            <Argument name="strCmpExpr" type="String" in="false" out="false" option="false" variable="false" description="Is is a conditional formula to derive relevant Row within scope." />
+            <Argument name="strValExpr" type="String" in="false" out="false" option="false" variable="false" description="It is calculus or Column ID to calculate maximum value." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getCaseMin" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getCaseMin Method calculates Column value or a minimum value by using a Row to meet a condition within the requested scope in Dataset.">
+        <Syntax text="Dataset.getCaseMin(strCmpExpr,strValExpr[,nStart[,nEnd]])">
+          <Return type="Integer" description="It is calculated minimum value.&#xA;If minimum value can not be calculated, undefined shall be returned." />
+          <Arguments>
+            <Argument name="nEnd" type="Integer" in="false" out="false" option="false" variable="false" description="It is a value of last Row Position plus 1 in relevant scope.&#xA;It includes up to the Row which is less than a designated value by 1.&#xA;If nEnd is less than 0, it includes from nStart to the end.&#xA;Default : -1" />
+            <Argument name="nStart" type="Integer" in="false" out="false" option="false" variable="false" description="It is Row Position to calculate minimum value.&#xA;Start Row Position is 0.&#xA;Default : 0" />
+            <Argument name="strCmpExpr" type="String" in="false" out="false" option="false" variable="false" description="Is is a conditional formula to derive relevant Row within scope." />
+            <Argument name="strValExpr" type="String" in="false" out="false" option="false" variable="false" description="It is calculus or Column ID to calculate minimum value." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getCaseSum" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getCaseSum Method calculates Column value or sum of the values of Rows to meet a condition within the designated scope in Dataset.">
+        <Syntax text="Dataset.getCaseSum(strCmpExpr,strValExpr[,nStart[,nEnd]])">
+          <Return type="Decimal" description="It is calculated total value. &#xA;If there is not Row to meet conditions nor value, it shall return 0." />
+          <Arguments>
+            <Argument name="nEnd" type="Integer" in="false" out="false" option="false" variable="false" description="It is a value of last Row Position plus 1 in relevant scope.&#xA;It includes up to the Row which is less than a designated value by 1.&#xA;If nEnd is less than 0, it includes from nStart to the end.&#xA;Default : -1" />
+            <Argument name="nStart" type="Integer" in="false" out="false" option="false" variable="false" description="It is start Row Position to calculate sum.&#xA;Start Row Position is 0.&#xA;Default : 0" />
+            <Argument name="strCmpExpr" type="String" in="false" out="false" option="false" variable="false" description="Is is a conditional formula to derive relevant Row within scope." />
+            <Argument name="strValExpr" type="String" in="false" out="false" option="false" variable="false" description="It is Column ID or formula to calculate sum." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getColCount" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getColCount Method calculates number of entire Columns including Const Column of Dataset.">
+        <Syntax text="Dataset.getColCount()">
+          <Return type="Integer" description="It is number of Column of Dataset" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getColID" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getColId Method calculates ID of column which is designated Index out of entire Columns including Const Column in Dataset.">
+        <Syntax text="Dataset.getColID(nColIdx)">
+          <Return type="String" description="It is Column ID which falls under designated Index.&#xA;If there is not relevant value, undefined shall be returned." />
+          <Arguments>
+            <Argument name="nColIdx" type="Integer" in="false" out="false" option="false" variable="false" description="It is Column Index to calculate ID." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getColumn" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getColumn Method calculates a value which is Column of designated Row in Dataset.">
+        <Syntax text="Dataset.getColumn(nRow,nColIdx)&#xD;&#xA;Dataset.getColumn(nRow,strColID)">
+          <Return type="Variant" description="It returns values of relevant Column.&#xA;If there is not designated Column, it shall return undefined." />
+          <Arguments>
+            <Argument name="nColIdx" type="Integer" in="false" out="false" option="false" variable="false" description="It is Column Index to calculate a value." />
+            <Argument name="nRow" type="Integer" in="false" out="false" option="false" variable="false" description="It is Row Position to calculate a value.&#xA;Start value of Row Position is 0." />
+            <Argument name="strColID" type="String" in="false" out="false" option="false" variable="false" description="It is Column ID to calculate a value." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getColumnInfo" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getcolumnInfo Method calculates designated ColumnInfo object in Dataset.">
+        <Syntax text="Dataset.getColumnInfo(nColIdx)&#xD;&#xA;Dataset.getColumnInfo(strColName)">
+          <Return type="Object" description="It is ColumnInfo object which falls under designated Index.&#xA;* if there is not relevant value, null shall be returned." />
+          <Arguments>
+            <Argument name="nColIdx" type="Integer" in="false" out="false" option="false" variable="false" description="Relevant Column Index." />
+            <Argument name="strColName" type="String" in="false" out="false" option="false" variable="false" description="Relevant Column name." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getConstColID" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getConstColId Method calculates Const Column ID which is designated Index in Dataset.">
+        <Syntax text="Dataset.getConstColID(nColIdx)">
+          <Return type="String" description="It is Const Column ID which falls under designated Index.&#xA;If there is not relevant value, undefined shall be returned." />
+          <Arguments>
+            <Argument name="nColIdx" type="Integer" in="false" out="false" option="false" variable="false" description="It is Const Column Index to calculate ID." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getConstColumn" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getConstColumn Method calculates a value of designated Const Column in Dataset.">
+        <Syntax text="Dataset.getConstColumn(nColIdx)&#xD;&#xA;Dataset.getConstColumn(strColID)">
+          <Return type="Variant" description="It shall return value of relevant Const Column.&#xA;If there is not designated Const Column, it shall return undefined." />
+          <Arguments>
+            <Argument name="nColIdx" type="Integer" in="false" out="false" option="false" variable="false" description="It is Const Column Index to calculate values." />
+            <Argument name="strColID" type="String" in="false" out="false" option="false" variable="false" description="It is Const Column ID to calculate values." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getConstCount" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getConstCount Method calculates the number of Const Column of Dataset.">
+        <Syntax text="Dataset.getConstCount()">
+          <Return type="Integer" description="It is number of Const Column of Dataset." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getCountNF" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getCountNF Method obtains number of Rows including filtered Row of Datatset.">
+        <Syntax text="Dataset.getCountNF()&#xA;Dataset.getCountNF([nColIdx])&#xA;Dataset.getCountNF([strColID])">
+          <Return type="Integer" description="Number of Row" />
+          <Arguments>
+            <Argument name="nColIdx" type="Integer" in="false" out="false" option="false" variable="false" description="It is Column Index to calculate a value." />
+            <Argument name="strColID" type="String" in="false" out="false" option="false" variable="false" description="It is Column ID to calculate a value." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getDeletedColumn" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getDeletedColumn Method calculates values of designated Row and Column among deleted Rows in Dataset.">
+        <Syntax text="Dataset.getDeletedColumn(nRow,nColIdx)&#xD;&#xA;Dataset.getDeletedColumn(nRow,strColID)">
+          <Return type="Variant" description="It is a value which falls under designated Row or Column out of deleted Rows.&#xA;If there is not relevant Row nor Column, it shall return undefined." />
+          <Arguments>
+            <Argument name="nColIdx" type="Integer" in="false" out="false" option="false" variable="false" description="It is Column Index to calculate a value out of deleted rows." />
+            <Argument name="nRow" type="Integer" in="false" out="false" option="false" variable="false" description="It is Row Position to calculate a value out of deleted rows." />
+            <Argument name="strColID" type="String" in="false" out="false" option="false" variable="false" description="It is Column ID to calculate a value out of deleted rows." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getDeletedRowCount" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getDeletedRowCount Method calculates the number of Rows which are deleted from Dataset.">
+        <Syntax text="Dataset.getDeletedRowCount()">
+          <Return type="Integer" description="It is number of deleted Row." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getDeletedRowset" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getDeletedRowset Method gets the rows deleted from a dataset.">
+        <Syntax text="Dataset.getDeletedRowset()">
+          <Return type="Array" description="It returns the contents of deleted rows as arrays" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="It is a method to return the specified event handler function.">
+        <Syntax text="Dataset.getEventHandler( strEventID, nIdx )">
+          <Return type="Object" description="It returns the object of the event handler function. If the specified index location is not valid, it returns &quot;null.&quot;" />
+          <Arguments>
+            <Argument name="nIdx" type="Integer" in="false" out="false" option="false" variable="false" description="Index of the event handler function (Zero-based index)" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getGroupRangeCount" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getGroupRangeCount Method calculates the number of Rows to refer to when the Row is created.">
+        <Syntax text="Dataset.getGroupRangeCount(nRow)">
+          <Return type="Integer" description="Number of referred Row.&#xA;If there is not designated Row, it shall return 0." />
+          <Arguments>
+            <Argument name="nRow" type="Integer" in="false" out="false" option="false" variable="false" description="Relevant Row Index (Zero-Based Index)" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getGroupRangeStart" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getGroupRangeStart method returns a start position of Row to refer when the Row is created.">
+        <Syntax text="Dataset.getGroupRangeStart(nRow)">
+          <Return type="Integer" description="Location of referred Row (Zero-Based Index)&#xD;&#xA;If the set row is not the row with group information, the set row's index is returned.&#xD;&#xA;If there is not designated Row, it shall return -1." />
+          <Arguments>
+            <Argument name="nRow" type="Integer" in="false" out="false" option="false" variable="false" description="Relevant Row Index (Zero-Based Index)" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getMax" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getMax method calculates the designated Column value or maximum value within the requested scope in Dataset.">
+        <Syntax text="Dataset.getMax(strExpr[,nStart[,nEnd]])">
+          <Return type="Integer" description="It is calculated maximum value.&#xA;If maximum value can not be calculated, undefined shall be returned." />
+          <Arguments>
+            <Argument name="nEnd" type="Integer" in="false" out="false" option="false" variable="false" description="It is a value of last Row Position plus 1 in relevant scope.&#xA;It includes up to the Row which is less than a designated value by 1.&#xA;If nEnd is less than 0, it includes from nStart to the end.&#xA;Default : -1" />
+            <Argument name="nStart" type="Integer" in="false" out="false" option="false" variable="false" description="It is start Row Position to calculate maximum values.&#xA;Start Row Position is 0.&#xA;Default : 0" />
+            <Argument name="strExpr" type="String" in="false" out="false" option="false" variable="false" description="It is calculus or Column ID." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getMaxNF" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getMaxNF method calculates the designated Column value or an maximum value within the requested scope including filtered Rows in Dataset.">
+        <Syntax text="Dataset.getMaxNF(strExpr[,nStart[,nEnd]])">
+          <Return type="Integer" description="It is calculated maximum value.&#xA;If maximum value can not be calculated, undefined shall be returned." />
+          <Arguments>
+            <Argument name="nEnd" type="Integer" in="false" out="false" option="false" variable="false" description="It is a value of last Row Position plus 1 in relevant scope.&#xA;It includes up to the Row which is less than a designated value by 1.&#xA;If nEnd is less than 0, it includes from nStart to the end.&#xA;Default : -1" />
+            <Argument name="nStart" type="Integer" in="false" out="false" option="false" variable="false" description="It is start Row Position to calculate maximum values.&#xA;Start Row Position is 0.&#xA;Default : 0" />
+            <Argument name="strExpr" type="String" in="false" out="false" option="false" variable="false" description="It is calculus or Column ID." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getMin" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getMin Method calculates the designated Column value or minimum value within the requested scope in Dataset.">
+        <Syntax text="Dataset.getMin(strExpr[,nStart[,nEnd]])">
+          <Return type="Variant" description="It is calculated minimum value.&#xA;If minimum value can not be calculated, undefined shall be returned." />
+          <Arguments>
+            <Argument name="nEnd" type="Integer" in="false" out="false" option="false" variable="false" description="It is a value of last Row Position plus 1 in relevant scope.&#xA;It includes up to the Row which is less than a designated value by 1.&#xA;If nEnd is less than 0, it includes from nStart to the end.&#xA;Default : -1" />
+            <Argument name="nStart" type="Integer" in="false" out="false" option="false" variable="false" description="It is start Row Position to calculate minimum values.&#xA;Start Row Position is 0.&#xA;Default : 0" />
+            <Argument name="strExpr" type="String" in="false" out="false" option="false" variable="false" description="It is calculus or Column ID." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getMinNF" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getMinNF Method calculates designated Column value or an minimum value within the requested scope including filtered Rows in Dataset.">
+        <Syntax text="Dataset.getMinNF(strExpr[,nStart[,nEnd]])">
+          <Return type="Integer" description="It is calculated minimum value.&#xA;If minimum value can not be calculated, undefined shall be returned." />
+          <Arguments>
+            <Argument name="nEnd" type="Integer" in="false" out="false" option="false" variable="false" description="It is a value of last Row Position plus 1 in relevant scope.&#xA;It includes up to the Row which is less than a designated value by 1.&#xA;If nEnd is less than 0, it includes from nStart to the end.&#xA;Default : -1" />
+            <Argument name="nStart" type="Integer" in="false" out="false" option="false" variable="false" description="It is start Row Position to calculate minimum values.&#xA;Start Row Position is 0.&#xA;Default : 0" />
+            <Argument name="strExpr" type="String" in="false" out="false" option="false" variable="false" description="It is calculus or Column ID." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getOrgColumn" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getOrgColumn calculates values of designated Row and Column before they are changed.">
+        <Syntax text="Dataset.getOrgColumn(nRow,nColIdx)&#xD;&#xA;Dataset.getOrgColumn(nRow,strColID)">
+          <Return type="Variant" description="It returns values of relevant Column.&#xA;If there is not designated Column, it shall return undefined." />
+          <Arguments>
+            <Argument name="nColIdx" type="Integer" in="false" out="false" option="false" variable="false" description="It is Column Index to calculate a value." />
+            <Argument name="nRow" type="Integer" in="false" out="false" option="false" variable="false" description="It is Row Position to calculate a value." />
+            <Argument name="strColID" type="String" in="false" out="false" option="false" variable="false" description="It is Column ID to calculate a value in Orgin Buffer." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getRowCount" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getRowCount Method obtains the number of Rows of a Dataset.">
+        <Syntax text="Dataset.getRowCount()">
+          <Return type="Integer" description="It is number of Row of Dataset" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getRowLevel" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getRowLevel Method calculates Level values of designated Rows if the Dataset is grouped.">
+        <Syntax text="Dataset.getRowLevel(nRow)">
+          <Return type="Integer" description="designated Row Level.&#xA;If there is not designated Row, it shall return 0." />
+          <Arguments>
+            <Argument name="nRow" type="Integer" in="false" out="false" option="false" variable="false" description="Index (Zero-Based Index) of relevant Row" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getRowType" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getRowType Method calculates the type of designated Row in Dataset.">
+        <Syntax text="Dataset.getRowType(nRow)">
+          <Return type="Integer" description="Type of designated Row.&#xD;&#xA;If the set row does not exist, ROWTYPE_EMPTY is returned." />
+          <Arguments>
+            <Argument name="nRow" type="Integer" in="false" out="false" option="false" variable="false" description="Position (Zero-Based Index) of relevant Row" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getSum" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getSum Method calculates designated Column value or sum of values within the requested scope in Dataset.">
+        <Syntax text="Dataset.getSum(strExpr[,nStart[,nEnd]])">
+          <Return type="Decimal" description="It is calculated total value.&#xA;If there is not Row to meet conditions nor value, it shall return 0." />
+          <Arguments>
+            <Argument name="nEnd" type="Integer" in="false" out="false" option="false" variable="false" description="It is a value of last Row Position plus 1 in relevant scope.&#xA;It includes up to the Row which is less than a designated value by 1.&#xA;If nEnd is less than 0, it includes from nStart to the end.&#xA;Default : -1" />
+            <Argument name="nStart" type="Integer" in="false" out="false" option="false" variable="false" description="It is start Row Position to calculate values.&#xA;Start Row Position is 0.&#xA;Default : 0" />
+            <Argument name="strExpr" type="String" in="false" out="false" option="false" variable="false" description="It is calculus or Column ID." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getSumNF" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getSumNF Method calculates designated Column value or sum of values within the requested scope including filtered Rows in Dataset.">
+        <Syntax text="Dataset.getSumNF(strExpr[,nStart[,nEnd]])">
+          <Return type="Decimal" description="It is calculated total value.&#xA;If there is not Row to meet conditions nor value, it shall return 0." />
+          <Arguments>
+            <Argument name="nEnd" type="Integer" in="false" out="false" option="false" variable="false" description="It is a value of last Row Position plus 1 in relevant scope.&#xA;It includes up to the Row which is less than a designated value by 1.&#xA;If nEnd is less than 0, it includes from nStart to the end.&#xA;Default : -1" />
+            <Argument name="nStart" type="Integer" in="false" out="false" option="false" variable="false" description="It is start Row Position to calculate values.&#xA;Start Row Position is 0.&#xA;[Default Value = 0]" />
+            <Argument name="strExpr" type="String" in="false" out="false" option="false" variable="false" description="It is calculus or Column ID." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="insertRow" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The insertRow Method inserts a new row to a designated row position of a dataset.">
+        <Syntax text="Dataset.insertRow(nRow)">
+          <Return type="Integer" description="It successes, it returns the position of an inserted row,&#xD;&#xA;if not, it shall return -1. (Zero-Based Index)" />
+          <Arguments>
+            <Argument name="nRow" type="Integer" in="false" out="false" option="false" variable="false" description="Row Position (Zero-Based Index) to insert" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="load" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The load method constitutes Dataset by using Dataset information of designated URL.">
+        <Syntax text="Dataset.load([bAsync [, bBinary]])">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="bAsync" type="Boolean" in="false" out="false" option="false" variable="false" description="Whether to communicate in sync or async for loading. (Defailt : true)" />
+            <Argument name="bBinary" type="Boolean" in="false" out="false" option="false" variable="false" description="It determines whether to send in binary.&#xA;Default : false" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="loadBIN" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows),Mobile Hybrid (Android)" description="It is Method to make Dataset by loading data in Binary format.">
+        <Syntax text="Dataset.loadBin(varBinData)">
+          <Return type="Integer" description="It is number of Dataset Row after loading." />
+          <Arguments>
+            <Argument name="varBinData" type="Object" in="false" out="false" option="false" variable="false" description="It is contents of Dataset in binary. &#xA;If bBinary is true, it should input data in the form of Binary." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="loadCSV" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The loadCSV Method constitutes a dataset by loading CSV Data.&#xA;CSV Data to input should be CSV format which has a dataset ID and column information as a header.">
+        <Syntax text="Dataset.loadCSV(varCsvData[,bClear])">
+          <Return type="Integer" description="It returns the number of dataset rows after loading CSV data." />
+          <Arguments>
+            <Argument name="bClear" type="Boolean" in="false" out="false" option="false" variable="false" description="Whether to delete contents of existing Dataset&#xA;Default : true" />
+            <Argument name="varCsvData" type="Object" in="false" out="false" option="false" variable="false" description="This is CSV data. &#xA;Dataset: It begins with a Dataset ID and you should input CSV data which has column information as a header.&#xA;CR/LF or LF are used to identify a dataset ID and Column info." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="loadSSV" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="It loads SSV data and composes a dataset.">
+        <Syntax text="Dataset.loadSSV(varSsvData[,bClear])">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="bClear" type="Boolean" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="varSsvData" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="loadXML" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The loadXML Method makes a Dataset by loading data in XML format.">
+        <Syntax text="Dataset.loadXML(strXmlData[,bClear]])">
+          <Return type="Integer" description="It is number of Dataset Row after loading." />
+          <Arguments>
+            <Argument name="bClear" type="Boolean" in="false" out="false" option="false" variable="false" description="Whether to delete contents of existing Dataset&#xA;Default : true" />
+            <Argument name="strXmlData" type="String" in="false" out="false" option="false" variable="false" description="XML type Dataset Data" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="lookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The lookup method finds a value to meet a condition among relevant columns and then calculate the designated column value of the relevant row.">
+        <Syntax text="Dataset.lookup(strColID,varCmpVal,strOutputColID)">
+          <Return type="Variant" description="It is calculated Column value.&#xD;&#xA;If there is not relevant Column, it shall return undefined." />
+          <Arguments>
+            <Argument name="strColID" type="String" in="false" out="false" option="false" variable="false" description="It is Column ID, column index, or expression formula of Dataset to search." />
+            <Argument name="strOutputColID" type="String" in="false" out="false" option="false" variable="false" description="It is Column ID to calculate." />
+            <Argument name="varCmpVal" type="String" in="false" out="false" option="false" variable="false" description="It is Column value to search." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="lookupAs" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The lookupAs method finds a beginning value  with a condition among relevant columns and then calculate the designated column value of the relevant row. (similar to &quot;LIKE%&quot;)">
+        <Syntax text="Dataset.lookupAs(strColID,varCmpVal,strOutputColID)">
+          <Return type="Variant" description="It returns a calculated Column value.&#xA;If there is not relevant Column, it shall return undefined." />
+          <Arguments>
+            <Argument name="strColID" type="String" in="false" out="false" option="false" variable="false" description="It is column ID, column index, or expression formula of a dataset to search." />
+            <Argument name="strOutputColID" type="String" in="false" out="false" option="false" variable="false" description="column ID to calculate." />
+            <Argument name="varCmpVal" type="Variant" in="false" out="false" option="false" variable="false" description="It is a column value to search." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="mergeData" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The mergeData Method integrates designated Dataset with Dataset.">
+        <Syntax text="Dataset.mergeData(objDataset)">
+          <Return type="Integer" description="It is number of Row of Dataset after conduction." />
+          <Arguments>
+            <Argument name="objDataset" type="Object" in="false" out="false" option="false" variable="false" description="It is Dataset Object to merge." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="moveRow" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The moveRow Method moves the designated Row to Row position in Dataset.">
+        <Syntax text="Dataset.moveRow(nOldRow,nNewRow)">
+          <Return type="Integer" description="It returns New Position of designated Row and if failed, it shall return -1." />
+          <Arguments>
+            <Argument name="nNewRow" type="Integer" in="false" out="false" option="false" variable="false" description="It is Row Position to move to.&#xA;Start Index is &quot;0&quot;." />
+            <Argument name="nOldRow" type="Integer" in="false" out="false" option="false" variable="false" description="It is Row Position to move to. &#xA;Start Index is &quot;0&quot;." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It removes a designated index or an event handler function.">
+        <Syntax text="Dataset.removeEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="It returns the number of removed event handler functions(if successful, 1. if fails, 0)" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="event handler function item to remove" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It removes an event handler lookup with a designated event ID.">
+        <Syntax text="Dataset.removeEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="It returns the number of deleted event handler functions. (if is successful, 1. if it fails, 0)" />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="reset" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The reset Method recovers the Row Data of the Dataset as status of being stored last.">
+        <Syntax text="Dataset.reset()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="saveBIN" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Method to output contents of Dataset in BIN file format.&#xA;BIN file format has column information and contents of a record in Binary format not XML.">
+        <Syntax text="Dataset.saveBIN([strID[,strSaveType]])">
+          <Return type="String" description="It is a text string to return contents of Dataset in BIN format. Binary Type" />
+          <Arguments>
+            <Argument name="strID" type="String" in="false" out="false" option="false" variable="false" description="Dataset ID used to store&#xA;Default : ID of current Dataset" />
+            <Argument name="strSaveType" type="String" in="false" out="false" option="false" variable="false" description="It is Row Type to save&#xA;Selecting among A(a, all, All), U(u, update, Update), N(n, normal, Normal), V(v, view, View)&#xA;Default : &quot;Normal&quot;" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="saveCSV" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The saveCSV method converts contents of a dataset to a CSV file.">
+        <Syntax text="Dataset.saveCSV([strID])">
+          <Return type="String" description="It is a text string to return contents of Dataset in CSV format." />
+          <Arguments>
+            <Argument name="strID" type="String" in="false" out="false" option="false" variable="false" description="Dataset ID used to store dataset contents &#xA;Default : ID of the current Dataset" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="saveSSV" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="It converts dataset contents to a SSV file.">
+        <Syntax text="Dataset.saveSSV([strID])">
+          <Return type="String" description="" />
+          <Arguments>
+            <Argument name="strID" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="saveXML" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The saveXML Method stores contents of a Dataset in XML format and obtain them in text format.&#xA;To encode XML by utf-8 when storing.">
+        <Syntax text="Dataset.saveXML([strID[,strSaveType]])">
+          <Return type="String" description="It is a text string to transform contents of Dataset" />
+          <Arguments>
+            <Argument name="strID" type="String" in="false" out="false" option="false" variable="false" description="Dataset ID used to store&#xA;Default : ID of current Dataset" />
+            <Argument name="strSaveType" type="String" in="false" out="false" option="false" variable="false" description="It is Row Type to save&#xA;Selecting among A(a, all, All), U(u, update, Update), N(n, normal, Normal), V(v, view, View)&#xA;Default : &quot;Normal&quot;" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setColumn" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The setColumn method changes a column value of a designated row in a dataset.">
+        <Syntax text="Dataset.setColumn(nRow,nColIdx,varVal)&#xD;&#xA;Dataset.setColumn(nRow,strColID,varVal)">
+          <Return type="Boolean" description="If successful, it returns true. If not, it returns false." />
+          <Arguments>
+            <Argument name="nColIdx" type="Integer" in="false" out="false" option="false" variable="false" description="It is a column Index you want to change." />
+            <Argument name="nRow" type="Integer" in="false" out="false" option="false" variable="false" description="It is a row position you want to change a value.&#xA; A start value of the row position is 0." />
+            <Argument name="strColID" type="String" in="false" out="false" option="false" variable="false" description="It is an ID of a column whose vale is to be changed." />
+            <Argument name="varVal" type="Variant" in="false" out="false" option="false" variable="false" description="It is a value you want to change." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setConstColumn" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The setConstColumn Method changes a constant value of Const Column in Dataset.">
+        <Syntax text="Dataset.setConstColumn(nColIdx,varVal)&#xD;&#xA;Dataset.setConstColumn(strColID,varVal)">
+          <Return type="Boolean" description="If successful, it shall return true and if failed it shall return false." />
+          <Arguments>
+            <Argument name="nColIdx" type="Integer" in="false" out="false" option="false" variable="false" description="Const Column Index to change." />
+            <Argument name="strColID" type="String" in="false" out="false" option="false" variable="false" description="Const Column ID to change." />
+            <Argument name="varVal" type="Variant" in="false" out="false" option="false" variable="false" description="A value to change" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It changes an event handler function.">
+        <Syntax text="Dataset.setEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="If it is success, it returns the changed index. Otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It sets an event handler lookup with a designated event ID.">
+        <Syntax text="Dataset.setEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns the changed index, otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setRowType" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The setRowType Method changes the Rowtype of designated Row in Dataset.">
+        <Syntax text="Dataset.setRowType(nRow, nRowType)&#xD;&#xA;Dataset.setRowType(nRow, strRowType)">
+          <Return type="Boolean" description="It shall return whether to be successful." />
+          <Arguments>
+            <Argument name="nRow" type="Integer" in="false" out="false" option="false" variable="false" description="It is Row Position to change RowType." />
+            <Argument name="nRowType" type="Integer" in="false" out="false" option="false" variable="false" description="It is RowType to change." />
+            <Argument name="strRowType" type="String" in="false" out="false" option="false" variable="false" description="It is RowType to change.&#xA;At this moment, 'i' or 'I&quot; is  insert, &quot;u' or 'U' is update,  and 'd' or &quot;D&quot; is delete&#xA;Other values are set as normal." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="updateColID" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The updateColId Method changes the ID of designated column out of entire Columns including Const Column of Dataset.">
+        <Syntax text="Dataset.updateColID(nCol, strNewColID)&#xD;&#xA;Dataset.updateColID(strOldColID, strNewColID)">
+          <Return type="Integer" description="Index of changed Column.  &#xD;&#xA;If designated Column does not exist or new text string to change is same as existing Column ID text string, -1 shall be returned." />
+          <Arguments>
+            <Argument name="nCol" type="Integer" in="false" out="false" option="false" variable="false" description="Index of relevant Column (Zero-Based)" />
+            <Argument name="strNewColID" type="String" in="false" out="false" option="false" variable="false" description="New ID text string of Column to change" />
+            <Argument name="strOldColID" type="String" in="false" out="false" option="false" variable="false" description="ID text string of relevant Column" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="updateConstColID" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The updateConstColID Method changes the ID of designated Const Column in Dataset.">
+        <Syntax text="Dataset.updateConstColID(nCol, strNewColID)&#xD;&#xA;Dataset.updateConstColID(strOldColID, strNewColID)">
+          <Return type="Integer" description="Index of changed Const Column.&#xD;&#xA;If designated Const Column does not exist or new text string to change is same as existing Const Column ID text string, -1 shall be returned." />
+          <Arguments>
+            <Argument name="nCol" type="Integer" in="false" out="false" option="false" variable="false" description="Index of relevant Const Column (Zero-Based)" />
+            <Argument name="strNewColID" type="String" in="false" out="false" option="false" variable="false" description="New ID text string of Const Column to change" />
+            <Argument name="strOldColID" type="String" in="false" out="false" option="false" variable="false" description="ID text string of relevant Const Column" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="updateSortGroup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The updateSortGroup method restructures the datasets in group datasets.">
+        <Syntax text="Dataset.updateSortGroup([strKeyString])">
+          <Return type="Boolean" description="It returns true for success and false for failure. &#xA;This method will not work if &quot;false&quot; is returned. &#xA;&quot;False&quot; is returned in the following case.&#xA;- Two or more parameters are set for the method.&#xA;- There is no keystring value while no parameter is set for the method." />
+          <Arguments>
+            <Argument name="strKeyString" type="String" in="false" out="false" option="false" variable="false" description="Text string of a conditional formula for arrangement or grouping" />
+          </Arguments>
+        </Syntax>
+      </Method>
+    </MethodInfo>
+    <EventHandlerInfo>
+      <EventHandler name="cancolumnchange" group="" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The caccolumnchange Event occurs before a Column value of Dataset is changed.">
+        <Syntax text="Dataset.cancolumnchange(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo);">
+          <Return type="Boolean" description="Whether to change values. &#xD;&#xA;&#xD;&#xA;If false value is returned, Column value can not be changed and &#xD;&#xA;if true is returned or return is omitted, it shall change Column value." />
+          <Arguments>
+            <Argument name="e" type="DSColChangeEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="canrowposchange" group="" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The canrowposchange event occurs before a row of a dataset is repositioned.">
+        <Syntax text="Dataset.canrowposchange(obj:nexacro.NormalDataset,e:nexacro.DSRowPosChangeEventInfo);">
+          <Return type="Boolean" description="According to a returned value, the rowposition property can be changed or not.&#xD;&#xA;If false is returned, the rowposition property shall not be changed, and &#xD;&#xA;if true is returned or return value is omitted, the property shall be changed." />
+          <Arguments>
+            <Argument name="e" type="DSRowPosChangeEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="oncolumnchanged" group="" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The oncolumnchanged Event occurs after a Column value of Dataset is changed.">
+        <Syntax text="Dataset.oncolumnchanged(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="DSColChangeEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onload" group="" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The onload Event occurs after all data which shall constitute Dataset are loaded.">
+        <Syntax text="Dataset.onload(obj:nexacro.NormalDataset,e:nexacro.DSLoadEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="DSLoadEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onrowposchanged" group="" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The onrowposchanged Event occurs after a Row Position of Dataset is changed.">
+        <Syntax text="Dataset.onrowposchanged(obj:nexacro.NormalDataset,e:nexacro.DSRowPosChangeEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="DSRowPosChangeEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onrowsetchanged" group="" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The onrowsetchanged Event occurs when a record of Dataset is added or deleted or a position or status of Row is changed.">
+        <Syntax text="Dataset.onrowsetchanged(obj:nexacro.NormalDataset,e:nexacro.DSRowsetChangeEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="DSRowsetChangeEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onvaluechanged" group="" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs when a displayed value of a dataset is changed.">
+        <Syntax text="Dataset.onvaluechanged(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="DSColChangeEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+    </EventHandlerInfo>
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

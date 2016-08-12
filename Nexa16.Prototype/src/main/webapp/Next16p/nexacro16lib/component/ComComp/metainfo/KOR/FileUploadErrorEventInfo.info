@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.FileUploadErrorEventInfo">
+    <ObjectInfo inheritance="" classname="nexacro.FileUploadErrorEventInfo" shorttypename="" csstypename="" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="deny" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="FileUpload 컴포넌트로 파일을 업로드하면서 오류가 생겼을 때 발생하는 EventInfo 오브젝트입니다." />
+    <PropertyInfo>
+      <Property name="errormsg" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="발생하는 오류 메시지를 보여주는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="errormsg" />
+      <Property name="errorobj" group="Misc." subgroup="" edittype="Object" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="스크립트로 오류를 발생시킨 오브젝트를 보여주는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="errorobj" />
+      <Property name="errortype" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="오류 유형을 반환하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="errortype" />
+      <Property name="eventid" group="Misc." subgroup="" edittype="ID" defaultvalue="0" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="이벤트 핸들러 이름을 나타내는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="eventid" />
+      <Property name="index" group="Misc." subgroup="" edittype="Number" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="통신에러가 발생한 아이템의 인덱스 정보를 가진 속성입니다." csspropertyname="" csselementname="" normalpropertyname="index" />
+      <Property name="locationuri" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="대상 URI가 다른 주소로 변경된 경우 Response Header의 Location Field의 값을 보여주는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="locationuri" />
+      <Property name="requesturi" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="통신 중 오류가 발생한 자원의 URI를 보여주는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="requesturi" />
+      <Property name="statuscode" group="Misc." subgroup="" edittype="Number" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="발생하는 오류 코드값을 보여주는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="statuscode" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo />
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

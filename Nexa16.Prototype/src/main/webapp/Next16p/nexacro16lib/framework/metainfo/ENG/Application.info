@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.Application">
+    <ObjectInfo inheritance="" classname="nexacro.Application" shorttypename="" csstypename="Application" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="system" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is an object which treats basic data for application on nexacro platform and environmental data which are set during initial creation. &#xA;In addition, it provides basic functions such as alert and trace etc." />
+    <PropertyInfo>
+      <Property name="all" group="" subgroup="" edittype="" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="The all property is used to access a mainframe, global variables and global objects of an application." csspropertyname="" csselementname="" normalpropertyname="all" />
+      <Property name="enginesetupkey" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is property to input ProductKey for creating Setup and a Key to update a engine." csspropertyname="" csselementname="" normalpropertyname="enginesetupkey" />
+      <Property name="engineurl" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is property to input a server route to update a engine." csspropertyname="" csselementname="" normalpropertyname="engineurl" />
+      <Property name="engineversion" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is property to input version information to update a engine." csspropertyname="" csselementname="" normalpropertyname="engineversion" />
+      <Property name="licenseurl" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android)" description="The license url property sets a route through which License information can be accessed" csspropertyname="" csselementname="" normalpropertyname="licenseurl" />
+      <Property name="mainframe" group="" subgroup="" edittype="" defaultvalue="" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="The main frame property accesses a main frame of an application." csspropertyname="" csselementname="" normalpropertyname="mainframe" />
+      <Property name="name" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="name" />
+      <Property name="onlyone" group="" subgroup="" edittype="" defaultvalue="" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to set whether to use same Instance for values of Key and XADL." csspropertyname="" csselementname="" normalpropertyname="onlyone" />
+      <Property name="screenid" group="Information" subgroup="" edittype="ScreenID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="screenid" />
+      <Property name="trays" group="" subgroup="" edittype="" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows)" description="The trays Property gives access Trays in Application." csspropertyname="" csselementname="" normalpropertyname="trays" />
+      <Property name="version" group="" subgroup="" edittype="" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="The version Property sets version of the Application." csspropertyname="" csselementname="" normalpropertyname="version" />
+      <Property name="xadl" group="" subgroup="" edittype="" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="The xadl property has the ADL path used in applications." csspropertyname="" csselementname="" normalpropertyname="xadl" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo>
+      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="이벤트 핸들러 함수를 추가하는 메소드입니다.">
+        <Syntax text="Application.addEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="성공하면 추가된 인덱스값을 반환하고 실패하면 -1을 반환합니다." />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="지정한 이벤트아이디로 검색된 결과 이벤트 핸들러를 추가하는 메소드입니다.">
+        <Syntax text="Application.addEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="성공하면 추가된 인덱스값을 반환하고 실패하면 -1을 반환합니다." />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="addTray" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="This method is used to add a dynamically-created tray to an application.">
+        <Syntax text="Application.addTray(strTrayID, objTray)">
+          <Return type="Integer" description="The index of an added tray&#xA;In case of unsuccessful addition, -1 will be returned." />
+          <Arguments>
+            <Argument name="objTray" type="Object" in="false" out="false" option="false" variable="false" description="Tray object to add to an application" />
+            <Argument name="strTrayID" type="String" in="false" out="false" option="false" variable="false" description="The ID of a tray to add to an application" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="addVariable" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="The addVariable method will add variables to the Global area.">
+        <Syntax text="Application.addVariable( strID, varValue )">
+          <Return type="Integer" description="If a variable is added to the area of Global successfully, it shall return 1, and if not, it shall return 0. &#xD;&#xA;If the variable already exists in the Global area, it shall return -1." />
+          <Arguments>
+            <Argument name="strID" type="String" in="false" out="false" option="false" variable="false" description="Variable name to add" />
+            <Argument name="varValue" type="String" in="false" out="false" option="false" variable="false" description="A value to be added in variables." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="alert" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="The alert method displays a warning dialog.">
+        <Syntax text="Application.alert( strText )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="strText" type="String" in="false" out="false" option="false" variable="false" description="It is a character string to indicate contents." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="cancelTransaction" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="This method is used to cancel an ongoing transaction.">
+        <Syntax text="cancelTransaction( [strSvcID] )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="strSvcID" type="String" in="false" out="false" option="false" variable="false" description="Transaction ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="설정된 이벤트 핸들러 함수를 모두 제거하는 메소드입니다.">
+        <Syntax text="Application.clearEventHandler( strEventID )">
+          <Return type="Integer" description="제거된 이벤트 핸들러 함수의 개수를 반환합니다." />
+          <Arguments>
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="confirm" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="The confirm method displays a selection dialog.">
+        <Syntax text="Application.confirm( strText [,strCaption [,strType]] )">
+          <Return type="Boolean" description="If the &quot;Confirm&quot; button is pressed, it returns true, and if the &quot;Cancel&quot; button is pressed, it returns false." />
+          <Arguments>
+            <Argument name="strCaption" type="String" in="false" out="false" option="false" variable="false" description="It is a text string to display in the title bar." />
+            <Argument name="strText" type="String" in="false" out="false" option="false" variable="false" description="It is a text string to display." />
+            <Argument name="strType" type="String" in="false" out="false" option="false" variable="false" description="Text strings to designate a icon type&#xA;&#xA;default : no icon&#xA;error : &quot;X&quot; icon&#xA;question : &quot;?&quot; icon&#xA;warning : Warning icon  &#xA;information : Information icon" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="enableOnlyOne" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Method to activate OnlyOne function to activate the application rather than a new application if same application is conducted.">
+        <Syntax text="[application.]enableOnlyOne()">
+          <Return type="Boolean" description="If successful, it shall return true. In case of being conducted in OnlyOne status or failure, it shall return false." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="exit" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="The exit method terminates nexacro platform.">
+        <Syntax text="Application.exit()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="지정한 이벤트 핸들러 함수를 찾아 인덱스를 반환하는 메소드입니다.">
+        <Syntax text="Application.findEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="지정한 함수의 인덱스" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getActiveForm" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="getActiveForm obtains an active form object.">
+        <Syntax text="Application.getActiveForm()">
+          <Return type="Object" description="It is an active form object." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getActiveFrame" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="The getActiveFrame obtains an active frame.">
+        <Syntax text="Application.getActiveFrame()">
+          <Return type="Object" description="Active frame object" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
+        <Syntax text="Application.getEventHandler( strEventID, nIdx )">
+          <Return type="Object" description="" />
+          <Arguments>
+            <Argument name="nIdx" type="Integer" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getTrustDomainList" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Method to obtain Trust Domain list.">
+        <Syntax text="[application.]getTrustDomainList()">
+          <Return type="Object" description="It is Array Object." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getTrustPathList" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Method to obtain Trust Path list.">
+        <Syntax text="[application.]getTrustPathList()">
+          <Return type="Object" description="It is Array Object." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="isExistVariable" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Method to confirm whether variables are in Global.">
+        <Syntax text="Application.isExistVariable( strID );">
+          <Return type="Boolean" description="If there is a variable, it shall return true and if not it shall return false." />
+          <Arguments>
+            <Argument name="strID" type="String" in="false" out="false" option="false" variable="false" description="Variable name to confirm whether a variable exists" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="lookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="The lookup method returns the object of the result of searching entire applications.">
+        <Syntax text="Application.lookup( strObjectID )">
+          <Return type="Object" description="The object of search result" />
+          <Arguments>
+            <Argument name="strObjectID" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="지정한 인덱스 또는 이벤트 핸들러 함수를 제거하는 메소드입니다.">
+        <Syntax text="Application.removeEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="제거된 이벤트 핸들러 함수의 개수를 반환합니다. (성공하면 1, 실패하면 0)" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="지정한 이벤트아이디로 검색된 결과 이벤트 핸들러를 제거하는 메소드입니다.">
+        <Syntax text="Application.removeEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="제거된 이벤트 핸들러 함수의 개수를 반환합니다. (성공하면 1, 실패하면 0)" />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeTray" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="This method is used to remove a dynamically-created tray.">
+        <Syntax text="application.removeTray([strID]);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="strId" type="String" in="false" out="false" option="false" variable="false" description="The ID string of a tray object&#xA;All trays will be removed if this parameter is not specified." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeVariable" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="The removeVariable method removes variables in the Global area.">
+        <Syntax text="Application.removeVariable( strID )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="strID" type="String" in="false" out="false" option="false" variable="false" description="Variable name to be deleted" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="The setEventHandler method changes the event handler function.">
+        <Syntax text="Application.setEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="If successful,a changed index is returned. If failed, -1 is returned." />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="The setEventHandlerLookup method sets an event handler function by looking up the function with the designated event ID.">
+        <Syntax text="Application.setEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="If successful, the added index value is returned. If failed, -1 is returned.." />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="Event handler function" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setVariable" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="The setVariable method adds variables in the Global area.">
+        <Syntax text="Application.setVariable( strID, varValue )">
+          <Return type="Integer" description="If a variable is added in the area successfully, it shall return 1. If not, it shall return 0.&#xD;&#xA;If the variable is already added in the area, it shall return -1." />
+          <Arguments>
+            <Argument name="strID" type="String" in="false" out="false" option="false" variable="false" description="Variable name to be added" />
+            <Argument name="varValue" type="String" in="false" out="false" option="false" variable="false" description="A value to  be added in variables." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="trace" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="The trace method leaves a trace dialog.">
+        <Syntax text="Application.trace( strLog )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="strLog" type="String" in="false" out="false" option="false" variable="false" description="Log character string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="transaction" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="The transaction method calls a service to update dataset values and conduct the CallBack function when transaction is finished.">
+        <Syntax text="Application.transaction(strSvcID,strURL,strInDatasets,strOutDatasets,strArgument,strCallbackFunc[,bAsync[,nDataType[,bCompress]]])">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="bAsync" type="Boolean" in="false" out="false" option="false" variable="false" description="It designates whether to be async.&#xA;Default : true" />
+            <Argument name="bCompress" type="Boolean" in="false" out="false" option="false" variable="false" description="It designates whether to compress PostData in communications.&#xA;Default : false" />
+            <Argument name="nDataType" type="Number" in="false" out="false" option="false" variable="false" description="It determines whether to send in binary.&#xD;&#xA;&#xA;Default: 0 (0: XML, 1: Binary, 2: SSV)" />
+            <Argument name="strArgument" type="String" in="false" out="false" option="false" variable="false" description="It is a printing value for transaction.&#xA;It inputs in the form of a=b and distinguishes with a blank." />
+            <Argument name="strCallbackFunc" type="String" in="false" out="false" option="false" variable="false" description="It is a Function name to return results of transaction." />
+            <Argument name="strInDatasets" type="String" in="false" out="false" option="false" variable="false" description="They are IDs of Dataset to send as input values when transaction is requested.&#xA;It can send Dataset more than 1.&#xA;Each set of ID is distinguished by the blank and an actual name matches an input name in the form of a=b." />
+            <Argument name="strOutDatasets" type="String" in="false" out="false" option="false" variable="false" description="It is ID of Dataset to receive results of transaction.&#xA;It can receive Dataset more than 1.&#xA;Each set of ID is distinguished by the blank and an actual name matches an input name in the form of a=b." />
+            <Argument name="strSvcID" type="String" in="false" out="false" option="false" variable="false" description="It is an ID value to distinguish transaction." />
+            <Argument name="strURL" type="String" in="false" out="false" option="false" variable="false" description="It is an address value to request transaction." />
+          </Arguments>
+        </Syntax>
+      </Method>
+    </MethodInfo>
+    <EventHandlerInfo>
+      <EventHandler name="onafteruserconfirm" group="" deprecated="false" unused="false" requirement="nexacro browser (Windows),Mobile Hybrid (Android)" description="The onafteruserconfirm event occurs before a UserConfirm dialog is  closed.">
+        <Syntax text="Application.onafteruserconfirm(obj:nexacro.Application,e:nexacro.EventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="EventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onbeforeexit" group="" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="The onbeforeexit event is raised before an application terminates.">
+        <Syntax text="Application.onbeforeexit(obj:nexacro.Application,e:nexacro.ExitEventInfo);">
+          <Return type="String" description="It determines whether to terminate an application. If it is true, the application terminates." />
+          <Arguments>
+            <Argument name="e" type="ExitEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onbeforeuserconfirm" group="" deprecated="false" unused="false" requirement="nexacro browser (Windows),Mobile Hybrid (Android)" description="The onbeforeuserconfirm event occurs before UserConfirm is processed.">
+        <Syntax text="Application.onbeforeuserconfirm(obj:nexacro.Application,e:nexacro.EventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="EventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onerror" group="" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It occurs when an error occurs.">
+        <Syntax text="Application.onerror(obj:nexacro.Application,e:nexacro.ErrorEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="ErrorEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onexit" group="" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It occurs when an application is shutting down.">
+        <Syntax text="Application.onexit(obj:nexacro.Application,e:nexacro.ExitEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="ExitEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onload" group="" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="The Onload method occurs after an initial loading of an application is completed.">
+        <Syntax text="Application.onload(obj:nexacro.Application,e:nexacro.LoadEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="LoadEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onloadforms" group="" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="The onload forms will occur after all the forms connected to a child frame are loaded.">
+        <Syntax text="Application.onloadforms(obj:nexacro.Application,e:nexacro.LoadEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="LoadEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onloadingappvariables" group="" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="The onloadingglobalvariables event occurs after all global variable objects are created.">
+        <Syntax text="Application.onloadingappvariables(obj:nexacro.Application,e:nexacro.LoadEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="LoadEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onnotification" group="" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This event occurs when a mobile notification takes place.">
+        <Syntax text="Application.onnotification(obj:nexacro.Application,e:nexacro.NotificationEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="NotificationEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+    </EventHandlerInfo>
+    <ContentsInfo />
+  </Object>
+</MetaInfo>
