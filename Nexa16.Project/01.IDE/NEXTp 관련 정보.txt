@@ -1,0 +1,19 @@
+개발 NEXTp 정보
+
+1. 접속 URL
+ - http://59.10.169.82:8181/ACEp/index.html
+
+2. FTP 접속 정보
+ - 59.10.169.82:21 
+ - nextdev / nextdev0701
+
+3. xup 배포 정보
+ - http://59.10.169.82:8181/FrontControllerServlet.do 
+ - xup / xup
+
+4. svn 접속 정보
+ - http://svn.tobesoft.com:9001/svn/NEXTp/
+ - nextdev / nextdev0701
+
+5. nexacro 14 xprj
+  - \NEXTp\ui\ACEp.xprj
