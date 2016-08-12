@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="TEST01" left="0" top="0" width="1078" height="810" titletext="New Form">
+    <Layouts>
+      <Layout height="810" width="1078">
+        <ImageViewer id="ImageViewer00" taborder="1" text="" left="16" top="8" width="1056" height="600" right="" bottom="" image="URL(&quot;..\..\..\..\..\..\..\Desktop\oncellClickEvent.png&quot;)"/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

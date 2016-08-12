@@ -78,7 +78,7 @@
             <Col id="MENU_NM">지원일정관리</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="PGM_ID">Acce</Col>
-            <Col id="PGM_PATH">Base::TEST01.xfdl</Col>
+            <Col id="PGM_PATH">Base::TEST00.xfdl</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">a0000007</Col>
@@ -86,7 +86,7 @@
             <Col id="MENU_NM">인력요청</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="PGM_ID">Acce</Col>
-            <Col id="PGM_PATH">BM_SUPPORT::BM_SupportRegister.xfdl</Col>
+            <Col id="PGM_PATH">Base::TEST01.xfdl</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">a0000008</Col>
