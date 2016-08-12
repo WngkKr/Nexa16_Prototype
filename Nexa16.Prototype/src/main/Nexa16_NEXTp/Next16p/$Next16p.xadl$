@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ADL version="2.0">
+  <Application id="Next16p" screenid="desktop_D">
+    <Layout>
+      <MainFrame id="mainframe" showtitlebar="false" showstatusbar="false" left="0" top="0" width="1280" height="880" titletext="LeftTopFrame" showtitleicon="false" showcascadetitletext="false">
+        <HFrameSet id="HFrameSet" separatesize="200,*" showtitlebar="false" showtitleicon="false" showcascadetitletext="false">
+          <Frames>
+            <ChildFrame id="LeftFrame" showtitlebar="false" showstatusbar="false" formurl="Frame::Frame_Left.xfdl" showcascadetitletext="false" showtitleicon="false"/>
+            <VFrameSet id="VFrameSet" separatesize="35,*" showcascadetitletext="false" showtitleicon="false" showtitlebar="false">
+              <Frames>
+                <ChildFrame id="TopFrame" showtitlebar="false" showstatusbar="false" formurl="Frame::Frame_Top.xfdl" showcascadetitletext="false" showtitleicon="false"/>
+                <VFrameSet id="VFrameSet1" separatesize="33,*" showtitleicon="false" showtitlebar="false" showcascadetitletext="false">
+                  <Frames>
+                    <ChildFrame id="TabFrame" formurl="Frame::Frame_Tab.xfdl" showcascadetitletext="false" showtitleicon="false" showtitlebar="false"/>
+                    <FrameSet id="WorkFrameSet" showcascadetitletext="false" showtitleicon="false" showtitlebar="false"/>
+                  </Frames>
+                </VFrameSet>
+              </Frames>
+            </VFrameSet>
+          </Frames>
+        </HFrameSet>
+      </MainFrame>
+    </Layout>
+  </Application>
+  <Script type="xscript5.0"><![CDATA[/******************************************************************************************
+전역변수선언
+******************************************************************************************/
+var objApp = nexacro.getApplication(); //application
+/******************************************************************************************
+application on load
+******************************************************************************************/
+this.Application_onload = function(obj,e)
+{
+	trace("application on load");
+};
+/******************************************************************************************
+gfn_openForm
+******************************************************************************************/
+this.gfn_openForm = function (sID,sURL)
+{
+	var objFrame = objApp.mainframe.HFrameSet.VFrameSet.VFrameSet1.WorkFrameSet;	//workFrameSet
+	var objTop 	= objApp.mainframe.HFrameSet.VFrameSet.VFrameSet1.TabFrame;         //Top(Tab영역)
+
+	var arrObj = objFrame.all;
+	for(var i=0; i<arrObj.length; i++)
+	{
+		if(arrObj[i].name == sID){
+			arrObj[i].setFocus();
+			this.gfn_tabSelect(sID);
+			return;
+		}
+	}
+
+	var objChildFrame = new ChildFrame(sID, "absolute", 0, 0, 1078, 810);
+	objChildFrame.set_formurl(sURL);
+
+	objFrame.addChild(sID, objChildFrame);
+	objChildFrame.set_showcascadetitletext(false);
+	objChildFrame.set_showstatusbar(false);
+	objChildFrame.set_showtitlebar(false);
+	objChildFrame.set_showtitleicon(false);
+
+	objChildFrame.show();
+
+	/*tab page 생성*/
+	objTop.form.TabMenu.insertTabpage(sID, 0, "", sID);
+};
+/****************************************************************
+	active tab change
+*****************************************************************/
+this.gfn_tabSelect = function(sID)
+{
+	var objTop 	= objApp.mainframe.HFrameSet.VFrameSet.VFrameSet1.TabFrame;         //Top(Tab영역)
+	var arrTab 	= objTop.form.TabMenu.tabpages;
+
+	for( var i=0; i<arrTab.length;i++)
+	{
+		if(arrTab[i].name == sID)
+		{
+			objTop.form.TabMenu.set_tabindex(i);
+			return;
+		}
+	}
+};]]></Script>
+</ADL>

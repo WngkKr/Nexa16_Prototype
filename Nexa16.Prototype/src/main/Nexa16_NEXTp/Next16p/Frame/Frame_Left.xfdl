@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Frame_Left" left="0" top="0" width="200" height="843" titletext="Frame_Left" background="aliceblue" onload="Form_onload">
+    <Layouts>
+      <Layout width="200" height="843">
+        <Button id="Button00" taborder="1" text="Menu" left="5" top="120" width="91" height="46" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button01" taborder="1" text="My Menu" left="" top="120" width="91" height="46" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Grid id="grdMenu" taborder="2" left="5" top="171" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" binddataset="dsMenu" treeinitstatus="expand,all" treeusecheckbox="false" oncellclick="grdMenu_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="188"/>
+              </Columns>
+              <Rows>
+                <Row size="24"/>
+              </Rows>
+              <Band id="body">
+                <Cell text="bind:MENU_NM" treelevel="bind:MENU_LVL" displaytype="tree" textAlign="left"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <TextArea id="TextArea00" taborder="3" left="5" top="5" width="" height="105" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsMenu">
+        <ColumnInfo>
+          <Column id="MENU_CD" type="STRING" size="256"/>
+          <Column id="UP_MENU_CD" type="STRING" size="256"/>
+          <Column id="MENU_NM" type="STRING" size="256"/>
+          <Column id="MENU_LVL" type="INT" size="256"/>
+          <Column id="PGM_ID" type="STRING" size="256"/>
+          <Column id="PGM_PATH" type="STRING" size="256"/>
+          <Column id="SYS_ID" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="MENU_CD">a0000001</Col>
+            <Col id="UP_MENU_CD">0</Col>
+            <Col id="MENU_NM">영업관리</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="PGM_ID"/>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">a0000002</Col>
+            <Col id="UP_MENU_CD">a0000001</Col>
+            <Col id="MENU_NM">영업현황</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_ID">Acce</Col>
+            <Col id="PGM_PATH">BM_PROJECT::BM_Project.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">a0000003</Col>
+            <Col id="UP_MENU_CD">a0000001</Col>
+            <Col id="MENU_NM">영업일정</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_ID">Acce</Col>
+            <Col id="PGM_PATH">BM_SALES::BM_SalesProgram.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">a0000004</Col>
+            <Col id="UP_MENU_CD">a0000001</Col>
+            <Col id="MENU_NM">영업관리</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_ID">Acce</Col>
+            <Col id="PGM_PATH">BM_SCHEDULE::BM_ScheduleProject.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">a0000005</Col>
+            <Col id="UP_MENU_CD">0</Col>
+            <Col id="MENU_NM">영업지원</Col>
+            <Col id="MENU_LVL">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">a0000006</Col>
+            <Col id="UP_MENU_CD">a0000005</Col>
+            <Col id="MENU_NM">지원일정관리</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_ID">Acce</Col>
+            <Col id="PGM_PATH">Base::TEST01.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">a0000007</Col>
+            <Col id="UP_MENU_CD">a0000005</Col>
+            <Col id="MENU_NM">인력요청</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_ID">Acce</Col>
+            <Col id="PGM_PATH">BM_SUPPORT::BM_SupportRegister.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">a0000008</Col>
+            <Col id="UP_MENU_CD">a0000005</Col>
+            <Col id="MENU_NM">지원인력요청승인</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_ID">Acce</Col>
+            <Col id="PGM_PATH">BM_PROJECT::BM_Project.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="UP_MENU_CD">a0000005</Col>
+            <Col id="MENU_CD">a0000009</Col>
+            <Col id="MENU_NM">SI인력요청승인</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_ID">Acce</Col>
+            <Col id="PGM_PATH">BM_PROJECT::BM_Project.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="UP_MENU_CD">a0000005</Col>
+            <Col id="MENU_CD">a0000010</Col>
+            <Col id="MENU_NM">교육인력요청승인</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_ID">Acce</Col>
+            <Col id="PGM_PATH">BM_PROJECT::BM_Project.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="UP_MENU_CD">a0000005</Col>
+            <Col id="MENU_CD">a0000011</Col>
+            <Col id="MENU_NM">기술지원현황</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_ID">Acce</Col>
+            <Col id="PGM_PATH">BM_PROJECT::BM_Project.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="UP_MENU_CD">a0000005</Col>
+            <Col id="MENU_CD">a0000012</Col>
+            <Col id="MENU_NM">라이센스발급현황</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_ID">Acce</Col>
+            <Col id="PGM_PATH">BM_PROJECT::BM_Project.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_NM">라이센스요청현황</Col>
+            <Col id="UP_MENU_CD">a0000005</Col>
+            <Col id="MENU_CD">a0000013</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_ID">Acce</Col>
+            <Col id="PGM_PATH">BM_PROJECT::BM_Project.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">a0000014</Col>
+            <Col id="UP_MENU_CD">0</Col>
+            <Col id="MENU_NM">인력관리</Col>
+            <Col id="MENU_LVL">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">a0000015</Col>
+            <Col id="UP_MENU_CD">a0000014</Col>
+            <Col id="MENU_NM">인력정보등록</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_ID">Acce</Col>
+            <Col id="PGM_PATH">BM_PROJECT::BM_Project.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">a0000016</Col>
+            <Col id="UP_MENU_CD">a0000014</Col>
+            <Col id="MENU_NM">인력투입관리</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_ID">Acce</Col>
+            <Col id="PGM_PATH">BM_PROJECT::BM_Project.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">a0000017</Col>
+            <Col id="UP_MENU_CD">a0000014</Col>
+            <Col id="MENU_NM">인력투입현황</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_ID">Acce</Col>
+            <Col id="PGM_PATH">BM_PROJECT::BM_Project.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">a0000018</Col>
+            <Col id="UP_MENU_CD">0</Col>
+            <Col id="MENU_NM">경영관리</Col>
+            <Col id="MENU_LVL">1</Col>
+          </Row>
+          <Row>
+            <Col id="UP_MENU_CD">a0000018</Col>
+            <Col id="MENU_CD">a0000019</Col>
+            <Col id="MENU_NM">직원검색</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_ID">Acce</Col>
+            <Col id="PGM_PATH">BM_PROJECT::BM_Project.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="UP_MENU_CD">a0000018</Col>
+            <Col id="MENU_CD">a0000020</Col>
+            <Col id="MENU_NM">협력사직원검색</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_ID">Acce</Col>
+            <Col id="PGM_PATH">BM_PROJECT::BM_Project.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">a0000021</Col>
+            <Col id="UP_MENU_CD">0</Col>
+            <Col id="MENU_NM">프로젝트관리</Col>
+            <Col id="MENU_LVL">1</Col>
+          </Row>
+          <Row>
+            <Col id="UP_MENU_CD">a0000021</Col>
+            <Col id="MENU_CD">a0000022</Col>
+            <Col id="MENU_NM">프로젝트관리</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_ID">Acce</Col>
+            <Col id="PGM_PATH">BM_PROJECT::BM_Project.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="UP_MENU_CD">a0000021</Col>
+            <Col id="MENU_CD">a0000023</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_ID">Acce</Col>
+            <Col id="MENU_NM">프로젝트진행현황</Col>
+            <Col id="PGM_PATH">BM_PROJECT::BM_Project.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="UP_MENU_CD">a0000021</Col>
+            <Col id="MENU_CD">a0000024</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_ID">Acce</Col>
+            <Col id="MENU_NM">프로젝트일정</Col>
+            <Col id="PGM_PATH">BM_PROJECT::BM_Project.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="UP_MENU_CD">a0000021</Col>
+            <Col id="MENU_CD">a0000025</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_ID">Acce</Col>
+            <Col id="MENU_NM">프로젝트현황</Col>
+            <Col id="PGM_PATH">BM_PROJECT::BM_Project.xfdl</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[/******************************************************************************************
+전역변수선언
+******************************************************************************************/
+var objApp = nexacro.getApplication(); //application
+/******************************************************************************************
+Form Onload
+******************************************************************************************/
+this.Form_onload = function(obj,e)
+{
+	this.TextArea00.set_value("가로 : " + this.width + " 세로 : " + this.height);
+	this.grdMenu.set_treeinitstatus( "expand,all");
+};
+/******************************************************************************************
+menu Grid Click Event
+******************************************************************************************/
+this.grdMenu_oncellclick = function(obj,e)
+{
+	var nRow = e.row;
+	trace("nRow : " +nRow);
+	var sID = this.dsMenu.getColumn(nRow,2);
+	var sURL = this.dsMenu.getColumn(nRow,5);
+	var sPgmId = this.dsMenu.getColumn(nRow,4);
+	trace("sID : " +sID + " sURL : " +sURL + " sPgmId : " +sPgmId);
+	if( sPgmId == null || sPgmId == "" || sPgmId == undefined )
+	{
+		return;
+	}
+	else
+	{
+		objApp.gfn_openForm(sID, sURL);
+	}
+};]]></Script>
+  </Form>
+</FDL>

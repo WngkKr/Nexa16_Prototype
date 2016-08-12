@@ -1,0 +1,3273 @@
+﻿
+		  
+
+        
+.Button
+{
+	background		:		#e5e5e5;
+	border		:		1px solid #cccccc;
+	border-radius		:		0px;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.Button .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Button[status=mouseover]
+{
+	background		:		#cccccc;
+	border		:		1px solid #666666;
+}
+.Button[status=focused]
+{
+	background		:		#e5e5e5;
+	border		:		2px solid #0078d6;
+}
+.Button[userstatus=pushed]
+{
+	background		:		#606060;
+	border		:		0px none;
+	color		:		#ffffff;
+}
+.Button[userstatus=selected]
+{
+	background		:		#e5e5e5;
+	border		:		2px solid #0078d6;
+}
+.Button[status=disabled]
+{
+	background		:		#cccccc;
+	border		:		0px none;
+	color		:		#999999;
+}
+.Calendar
+{
+	background		:		#ffffff;
+	border		:		1px solid #999999;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Calendar .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Calendar .calendaredit
+{
+	background		:		transparent;
+	border		:		0px none;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		auto;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Calendar .calendaredit .nexainput
+{
+	padding		:		0px 10px 0px 10px;
+	text-align		:		left;
+	text-decoration		:		none;
+}
+.Calendar .calendaredit .nexacontentsbox
+{
+	padding		:		0px 10px 0px 10px;
+	text-align		:		left;
+	text-decoration		:		none;
+}
+.Calendar .calendaredit[status=disabled]
+{
+	color		:		#999999;
+}
+.Calendar .dropbutton
+{
+	background		:		#f2f2f2;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.Calendar .dropbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Calendar .dropbutton[status=mouseover]
+{
+	background		:		#e5e5e5;
+}
+.Calendar .dropbutton[userstatus=pushed]
+{
+	background		:		#999999;
+}
+.Calendar .dropbutton[status=disabled]
+{
+	background		:		#f0f0f0;
+}
+.Calendar .spindownbutton
+{
+	background		:		#f2f2f2;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.Calendar .spindownbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Calendar .spindownbutton[status=mouseover]
+{
+	background		:		#e5e5e5;
+}
+.Calendar .spindownbutton[userstatus=pushed]
+{
+	background		:		#999999;
+}
+.Calendar .spindownbutton[status=disabled]
+{
+	background		:		#f0f0f0;
+}
+.Calendar .spinupbutton
+{
+	background		:		#f2f2f2;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.Calendar .spinupbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Calendar .spinupbutton[status=mouseover]
+{
+	background		:		#e5e5e5;
+}
+.Calendar .spinupbutton[userstatus=pushed]
+{
+	background		:		#999999;
+}
+.Calendar .spinupbutton[status=disabled]
+{
+	background		:		#f0f0f0;
+}
+.CalendarControl
+{
+	background		:		#ffffff;
+	border		:		1px solid #999999;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.CalendarControl .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.CalendarControl .calendaredit
+{
+	background		:		transparent;
+	border		:		0px none;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		auto;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.CalendarControl .calendaredit .nexainput
+{
+	padding		:		0px 10px 0px 10px;
+	text-align		:		left;
+	text-decoration		:		none;
+}
+.CalendarControl .calendaredit .nexacontentsbox
+{
+	padding		:		0px 10px 0px 10px;
+	text-align		:		left;
+	text-decoration		:		none;
+}
+.CalendarControl .calendaredit[status=disabled]
+{
+	color		:		#999999;
+}
+.CalendarControl .dropbutton
+{
+	background		:		#f2f2f2;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.CalendarControl .dropbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.CalendarControl .dropbutton[status=mouseover]
+{
+	background		:		#e5e5e5;
+}
+.CalendarControl .dropbutton[userstatus=pushed]
+{
+	background		:		#999999;
+}
+.CalendarControl .dropbutton[status=disabled]
+{
+	background		:		#f0f0f0;
+}
+.CalendarControl .spindownbutton
+{
+	background		:		#f2f2f2;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.CalendarControl .spindownbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.CalendarControl .spindownbutton[status=mouseover]
+{
+	background		:		#e5e5e5;
+}
+.CalendarControl .spindownbutton[userstatus=pushed]
+{
+	background		:		#999999;
+}
+.CalendarControl .spindownbutton[status=disabled]
+{
+	background		:		#f0f0f0;
+}
+.CalendarControl .spinupbutton
+{
+	background		:		#f2f2f2;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.CalendarControl .spinupbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.CalendarControl .spinupbutton[status=mouseover]
+{
+	background		:		#e5e5e5;
+}
+.CalendarControl .spinupbutton[userstatus=pushed]
+{
+	background		:		#999999;
+}
+.CalendarControl .spinupbutton[status=disabled]
+{
+	background		:		#f0f0f0;
+}
+.CheckBox
+{
+	background		:		transparent;
+	border		:		0px none;
+	border-radius		:		0px;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.CheckBox .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.CheckBox[status=mouseover]
+{
+}
+.CheckBox[userstatus=selected]
+{
+}
+.CheckBox[status=disabled]
+{
+	color		:		#999999;
+}
+.CheckBox[status=mouseover][userstatus=selected]
+{
+}
+.CheckBox[status=disabled][userstatus=selected]
+{
+	color		:		#999999;
+}
+.ChildFrame
+{
+	background		:		#ffffff;
+	border		:		0px none;
+	border-radius		:		0px;
+	cursor		:		default;
+}
+.Combo
+{
+	background		:		#ffffff;
+	border		:		1px solid #999999;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Combo .comboedit
+{
+	background		:		transparent;
+	border		:		0px none;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		auto;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Combo .comboedit .nexainput
+{
+	text-align		:		left;
+	padding		:		0px 0px 0px 10px;
+	text-decoration		:		none;
+}
+.Combo .comboedit .nexacontentsbox
+{
+	text-align		:		left;
+	padding		:		0px 0px 0px 10px;
+	text-decoration		:		none;
+}
+.Combo .comboedit[status=disabled]
+{
+	color		:		#999999;
+}
+.ListBoxControl.popupCombocombolist
+{
+	background		:		#f5f5f5;
+	border		:		1px solid #cccccc;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.ListBoxControl.popupCombocombolist .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.ListBoxControl.popupCombocombolist .listboxitem
+{
+	background		:		transparent;
+	border		:		0px none;
+	font		:		8pt "맑은 고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.ListBoxControl.popupCombocombolist .listboxitem .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Combo .dropbutton
+{
+	background		:		#f2f2f2;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.Combo .dropbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Combo .dropbutton[status=mouseover]
+{
+	background		:		#e5e5e5;
+}
+.Combo .dropbutton[userstatus=pushed]
+{
+	background		:		#999999;
+}
+.Combo .dropbutton[status=disabled]
+{
+	background		:		#f0f0f0;
+}
+.ComboControl
+{
+	background		:		#ffffff;
+	border		:		1px solid #999999;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.ComboControl .comboedit
+{
+	background		:		transparent;
+	border		:		0px none;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		auto;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.ComboControl .comboedit .nexainput
+{
+	text-align		:		left;
+	padding		:		0px 0px 0px 10px;
+	text-decoration		:		none;
+}
+.ComboControl .comboedit .nexacontentsbox
+{
+	text-align		:		left;
+	padding		:		0px 0px 0px 10px;
+	text-decoration		:		none;
+}
+.ComboControl .comboedit[status=disabled]
+{
+	color		:		#999999;
+}
+.ListBoxControl.popupComboControlcombolist
+{
+	background		:		#f5f5f5;
+	border		:		1px solid #cccccc;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.ListBoxControl.popupComboControlcombolist .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.ListBoxControl.popupComboControlcombolist .listboxitem
+{
+	background		:		transparent;
+	border		:		0px none;
+	font		:		8pt "맑은 고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.ListBoxControl.popupComboControlcombolist .listboxitem .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.ComboControl .dropbutton
+{
+	background		:		#f2f2f2;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.ComboControl .dropbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.ComboControl .dropbutton[status=mouseover]
+{
+	background		:		#e5e5e5;
+}
+.ComboControl .dropbutton[userstatus=pushed]
+{
+	background		:		#999999;
+}
+.ComboControl .dropbutton[status=disabled]
+{
+	background		:		#f0f0f0;
+}
+.DatePickerControl
+{
+	background		:		#ffffff;
+	border		:		1px solid #e5e5e5;
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.DatePickerControl .body
+{
+	background		:		#ffffff;
+	border		:		0px none;
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.DatePickerControl .body .dayitem
+{
+	background		:		#ffffff;
+	border		:		1px solid #e5e5e5;
+	font		:		8pt "맑은 고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.DatePickerControl .body .dayitem .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.DatePickerControl .body .dayitem[userstatus=selected]
+{
+	background		:		#0078d6;
+	border		:		1px solid #0078d6;
+	color		:		#ffffff;
+}
+.DatePickerControl .body .dayitem[userstatus=today]
+{
+	background		:		#e0effa;
+	border		:		1px solid #0078d6;
+}
+.DatePickerControl .body .dayitem[userstatus=trailingday]
+{
+	background		:		#f2f2f2;
+	border		:		1px solid #e5e5e5;
+}
+.DatePickerControl .body .dayitem[status=disabled]
+{
+	color		:		#999999;
+}
+.DatePickerControl .body .weekband
+{
+	background		:		#ffffff;
+	border		:		1px solid #e5e5e5, 0px none, 1px solid #e5e5e5, 0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.DatePickerControl .body .weekband .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.DatePickerControl .body .weekitem
+{
+	background		:		transparent;
+	border		:		0px none;
+	font		:		8pt "맑은 고딕";
+	color		:		#222222;
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.DatePickerControl .body .weekitem .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.DatePickerControl .body .weekitem[status=disabled]
+{
+	color		:		#999999;
+}
+.DatePickerControl .head
+{
+	background		:		transparent;
+	border		:		0px none, 0px none, 1px solid #e5e5e5, 0px none;
+	font		:		12pt "맑은 고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.DatePickerControl .head .nexacontentsbox
+{
+	text-align		:		center;
+}
+.DatePickerControl .head .monthspin
+{
+	background		:		#ffffff;
+	border		:		1px solid #cccccc;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.DatePickerControl .head .monthspin .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.DatePickerControl .head .monthspin .spindownbutton
+{
+	background		:		#ffffff;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.DatePickerControl .head .monthspin .spindownbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.DatePickerControl .head .monthspin .spindownbutton[status=mouseover]
+{
+	background		:		#e5e5e5;
+	border		:		0px none;
+}
+.DatePickerControl .head .monthspin .spindownbutton[userstatus=pushed]
+{
+	background		:		#999999;
+}
+.DatePickerControl .head .monthspin .spinedit
+{
+	background		:		#ffffff;
+	border		:		0px none;
+	font		:		8pt "맑은 고딕";
+	color		:		#333333;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		auto;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.DatePickerControl .head .monthspin .spinedit .nexainput
+{
+	text-align		:		center;
+	padding		:		0px 0px 0px 0px;
+	text-decoration		:		none;
+}
+.DatePickerControl .head .monthspin .spinedit .nexacontentsbox
+{
+	text-align		:		center;
+	padding		:		0px 0px 0px 0px;
+	text-decoration		:		none;
+}
+.DatePickerControl .head .monthspin .spinedit[status=disabled]
+{
+	color		:		#999999;
+}
+.DatePickerControl .head .monthspin .spinupbutton
+{
+	background		:		#ffffff;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.DatePickerControl .head .monthspin .spinupbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.DatePickerControl .head .monthspin .spinupbutton[status=mouseover]
+{
+	background		:		#e5e5e5;
+	border		:		0px none;
+}
+.DatePickerControl .head .monthspin .spinupbutton[userstatus=pushed]
+{
+	background		:		#999999;
+}
+.DatePickerControl .head .monthstatic
+{
+	background		:		transparent;
+	border		:		0px none, 0px none, 1px solid #e5e5e5, 0px none;
+	font		:		12pt "맑은 고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.DatePickerControl .head .monthstatic .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.DatePickerControl .head .nextbutton
+{
+	background		:		#ffffff;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.DatePickerControl .head .nextbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.DatePickerControl .head .nextbutton[status=mouseover]
+{
+	background		:		#e5e5e5;
+	border		:		0px none;
+}
+.DatePickerControl .head .nextbutton[userstatus=pushed]
+{
+	background		:		#999999;
+	border		:		0px none;
+}
+.DatePickerControl .head .prevbutton
+{
+	background		:		#ffffff;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.DatePickerControl .head .prevbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.DatePickerControl .head .prevbutton[status=mouseover]
+{
+	background		:		#e5e5e5;
+	border		:		0px none;
+}
+.DatePickerControl .head .prevbutton[userstatus=pushed]
+{
+	background		:		#999999;
+	border		:		0px none;
+}
+.DatePickerControl .head .yearspin
+{
+	background		:		#ffffff;
+	border		:		1px solid #cccccc;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.DatePickerControl .head .yearspin .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.DatePickerControl .head .yearspin .spindownbutton
+{
+	background		:		#ffffff;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.DatePickerControl .head .yearspin .spindownbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.DatePickerControl .head .yearspin .spindownbutton[status=mouseover]
+{
+	background		:		#e5e5e5;
+	border		:		0px none;
+}
+.DatePickerControl .head .yearspin .spindownbutton[userstatus=pushed]
+{
+	background		:		#999999;
+}
+.DatePickerControl .head .yearspin .spinedit
+{
+	background		:		#ffffff;
+	border		:		0px none;
+	font		:		8pt "맑은 고딕";
+	color		:		#333333;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		auto;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.DatePickerControl .head .yearspin .spinedit .nexainput
+{
+	text-align		:		center;
+	padding		:		0px 0px 0px 0px;
+	text-decoration		:		none;
+}
+.DatePickerControl .head .yearspin .spinedit .nexacontentsbox
+{
+	text-align		:		center;
+	padding		:		0px 0px 0px 0px;
+	text-decoration		:		none;
+}
+.DatePickerControl .head .yearspin .spinedit[status=disabled]
+{
+	color		:		#999999;
+}
+.DatePickerControl .head .yearspin .spinupbutton
+{
+	background		:		#ffffff;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.DatePickerControl .head .yearspin .spinupbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.DatePickerControl .head .yearspin .spinupbutton[status=mouseover]
+{
+	background		:		#e5e5e5;
+	border		:		0px none;
+}
+.DatePickerControl .head .yearspin .spinupbutton[userstatus=pushed]
+{
+	background		:		#999999;
+}
+.DatePickerControl .head .yearstatic
+{
+	background		:		transparent;
+	border		:		0px none, 0px none, 1px solid #e5e5e5, 0px none;
+	font		:		12pt "맑은 고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.DatePickerControl .head .yearstatic .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Div
+{
+	background		:		#ffffff;
+	border		:		1px solid #e5e5e5;
+	color		:		#000000;
+	font		:		10pt "맑은 고딕";
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Div .nexacontentsbox
+{
+	text-align		:		center;
+}
+.Div[status=mouseover]
+{
+	background		:		#ffffff;
+	border		:		1px solid #99c9ef;
+}
+.Div[status=disabled]
+{
+	background		:		#f2f2f2;
+	border		:		1px solid #e5e5e5;
+	color		:		#999999;
+}
+.Edit
+{
+	border		:		1px solid #999999;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	background		:		transparent;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		auto;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Edit .nexainput
+{
+	padding		:		0px 10px 0px 10px;
+	text-align		:		left;
+	text-decoration		:		none;
+}
+.Edit .nexacontentsbox
+{
+	padding		:		0px 10px 0px 10px;
+	text-align		:		left;
+	text-decoration		:		none;
+}
+.Edit[status=focused]
+{
+	border		:		1px solid #0078d6;
+	background		:		#ffffff;
+}
+.Edit[status=readonly]
+{
+	background		:		#f9f9f9;
+	border		:		1px solid #cccccc;
+}
+.Edit[status=mouseover]
+{
+	border		:		1px solid #0078d6;
+	background		:		#ffffff;
+}
+.Edit[status=disabled]
+{
+	color		:		#999999;
+	background		:		#f2f2f2;
+	border		:		1px solid #cccccc;
+}
+.FileDownload
+{
+	background		:		#e5e5e5;
+	border		:		1px solid #cccccc;
+	border-radius		:		0px;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.FileDownload .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.FileDownload[status=mouseover]
+{
+	background		:		#cccccc;
+	border		:		1px solid #666666;
+}
+.FileDownload[userstatus=pushed]
+{
+	background		:		#606060;
+	border		:		0px none;
+	color		:		#ffffff;
+}
+.FileDownload[status=disabled]
+{
+	background		:		#cccccc;
+	border		:		0px none;
+	color		:		#999999;
+}
+.FileUpload
+{
+	background		:		transparent;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.FileUpload .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.FileUpload .fileuploaditem .fileuploaditembutton
+{
+	background		:		#e5e5e5;
+	border		:		1px solid #cccccc;
+	border-radius		:		0px;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.FileUpload .fileuploaditem .fileuploaditembutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.FileUpload .fileuploaditem .fileuploaditembutton[status=mouseover]
+{
+	background		:		#cccccc;
+	border		:		1px solid #666666;
+	color		:		#000000;
+}
+.FileUpload .fileuploaditem .fileuploaditembutton[status=disabled]
+{
+	background		:		#cccccc;
+	border		:		1px solid #cccccc;
+	color		:		#999999;
+}
+.FileUpload .fileuploaditem .fileuploaditemedit
+{
+	background		:		#ffffff;
+	border		:		1px solid #cccccc;
+	font		:		10pt "맑은 고딕";
+	color		:		#666666;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		auto;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.FileUpload .fileuploaditem .fileuploaditemedit .nexainput
+{
+	padding		:		0px 5px 0px 10px;
+	text-align		:		center;
+	text-decoration		:		none;
+}
+.FileUpload .fileuploaditem .fileuploaditemedit .nexacontentsbox
+{
+	padding		:		0px 5px 0px 10px;
+	text-align		:		center;
+	text-decoration		:		none;
+}
+.FileUpload .fileuploaditem .fileuploaditemedit[status=mouseover]
+{
+	border		:		1px solid #0078d6;
+}
+.FileUpload .fileuploaditem .fileuploaditemedit[status=disabled]
+{
+	background		:		#f2f2f2;
+	border		:		1px solid #e5e5e5;
+}
+.FlashPlayer
+{
+	background		:		#ffffff;
+	border		:		1px solid #e5e5e5;
+	border-radius		:		0px;
+	font		:		10pt "맑은 고딕";
+	color		:		#666666;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.FlashPlayer .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.FlashPlayerControl
+{
+	background		:		#ffffff;
+	border		:		1px solid #e5e5e5;
+	border-radius		:		0px;
+	font		:		10pt "맑은 고딕";
+	color		:		#666666;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.FlashPlayerControl .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Form
+{
+	background		:		#ffffff;
+	border		:		0px none;
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.FrameSet
+{
+	background		:		#ffffff;
+	border		:		0px none;
+	border-radius		:		0px;
+	cursor		:		default;
+}
+.Grid
+{
+	background		:		transparent;
+	border		:		1px solid #cccccc;
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Grid .body
+{
+	background		:		transparent;
+	border		:		0px none;
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Grid .body .row .cell
+{
+	background		:		#ffffff;
+	border		:		1px solid #e5e5e5;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.Grid .body .row .cell .nexacontentsbox
+{
+	text-align		:		center;
+	vertical-align		:		middle;
+}
+.Grid .body .row .cell.oddcell
+{
+	background		:		#f7f7f7;
+}
+.Grid .body .row .cell[userstatus=selected]
+{
+	background		:		#99c9ef;
+}
+.Grid .body .row .cell .cellbutton
+{
+	background		:		#e5e5e5;
+	border		:		1px solid #cccccc;
+	border-radius		:		0px;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.Grid .body .row .cell .cellbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Grid .body .row .cell .cellbutton[status=mouseover]
+{
+	background		:		#cccccc;
+	border		:		1px solid #666666;
+}
+.Grid .body .row .cell .cellbutton[status=focused]
+{
+	background		:		#e5e5e5;
+	border		:		2px solid #0078d6;
+}
+.Grid .body .row .cell .cellbutton[userstatus=pushed]
+{
+	background		:		#606060;
+	border		:		0px none;
+	color		:		#ffffff;
+}
+.Grid .body .row .cell .cellbutton[userstatus=selected]
+{
+	background		:		#e5e5e5;
+	border		:		2px solid #0078d6;
+}
+.Grid .body .row .cell .cellbutton[status=disabled]
+{
+	background		:		#cccccc;
+	border		:		0px none;
+	color		:		#999999;
+}
+.Grid .body .row .cell .cellcheckbox
+{
+	background		:		transparent;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Grid .body .row .cell .cellcheckbox .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Grid .body .row .cell .cellcheckbox[status=mouseover]
+{
+}
+.Grid .body .row .cell .cellcheckbox[userstatus=selected]
+{
+}
+.Grid .body .row .cell .cellcheckbox[status=disabled]
+{
+}
+.Grid .body .row .cell .cellcheckbox[status=mouseover][userstatus=selected]
+{
+}
+.Grid .body .row .cell .cellcheckbox[status=disabled][userstatus=selected]
+{
+}
+.Grid .body .row .cell .celledit
+{
+	border		:		1px solid #999999;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	background		:		transparent;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		auto;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Grid .body .row .cell .celledit .nexainput
+{
+	padding		:		0px 10px 0px 10px;
+	text-align		:		left;
+	text-decoration		:		none;
+}
+.Grid .body .row .cell .celledit .nexacontentsbox
+{
+	padding		:		0px 10px 0px 10px;
+	text-align		:		left;
+	text-decoration		:		none;
+}
+.Grid .body .row .cell .celledit[status=focused]
+{
+	border		:		1px solid #0078d6;
+	background		:		#ffffff;
+}
+.Grid .body .row .cell .celledit[status=readonly]
+{
+	background		:		#f9f9f9;
+	border		:		1px solid #cccccc;
+}
+.Grid .body .row .cell .celledit[status=mouseover]
+{
+	border		:		1px solid #0078d6;
+	background		:		#ffffff;
+}
+.Grid .body .row .cell .celledit[status=disabled]
+{
+	color		:		#999999;
+	background		:		#f2f2f2;
+	border		:		1px solid #cccccc;
+}
+.Grid .body .row .cell .cellmaskEdit[status=disabled]
+{
+	color		:		#999999;
+	background		:		#f2f2f2;
+	border		:		1px solid #cccccc;
+}
+.Grid .body .row .cell .cellmaskedit
+{
+	border		:		1px solid #999999;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	background		:		transparent;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		auto;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Grid .body .row .cell .cellmaskedit .nexainput
+{
+	padding		:		0px 10px 0px 10px;
+	text-align		:		right;
+	text-decoration		:		none;
+}
+.Grid .body .row .cell .cellmaskedit .nexacontentsbox
+{
+	padding		:		0px 10px 0px 10px;
+	text-align		:		right;
+	text-decoration		:		none;
+}
+.Grid .body .row .cell .cellmaskedit[status=focused]
+{
+	border		:		1px solid #0078d6;
+	background		:		#ffffff;
+}
+.Grid .body .row .cell .cellmaskedit[status=readonly]
+{
+	background		:		#f9f9f9;
+	border		:		1px solid #cccccc;
+}
+.Grid .body .row .cell .cellmaskedit[status=mouseover]
+{
+	border		:		1px solid #0078d6;
+	background		:		#ffffff;
+}
+.Grid .body .row .cell .celltextarea[status=focused]
+{
+	border		:		1px solid #0078d6;
+	background		:		#ffffff;
+}
+.Grid .body .row .cell .celltextarea[status=readonly]
+{
+	background		:		#f9f9f9;
+	border		:		1px solid #cccccc;
+}
+.Grid .body .row .cell .celltextarea[status=mouseover]
+{
+	border		:		1px solid #0078d6;
+	background		:		#ffffff;
+}
+.Grid .body .row .cell .celltextarea[status=disabled]
+{
+	color		:		#999999;
+	background		:		#f2f2f2;
+	border		:		1px solid #cccccc;
+}
+.Grid .body .row .cell .celltreeitem .treeitembutton[userstatus=expand]
+{
+	background		:		transparent;
+	border		:		0px none;
+}
+.Grid .body .row .cell .celltreeitem .treeitembutton[userstatus=collapse]
+{
+	background		:		transparent;
+	border		:		0px none;
+}
+.Grid .body .row .cell .celltreeitem .treeitemcheckbox
+{
+	background		:		transparent;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Grid .body .row .cell .celltreeitem .treeitemcheckbox .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Grid .body .row .cell .celltreeitem .treeitemcheckbox[userstatus=selected]
+{
+}
+.Grid .body .row .cell .celltreeitem .treeitemimage[userstatus=leaf]
+{
+}
+.Grid .body .row .cell .celltreeitem .treeitemimage[userstatus=collapse]
+{
+}
+.Grid .body .row .cell .celltreeitem .treeitemimage[userstatus=expand]
+{
+}
+.Grid .body .row .cell .nexatreeline
+{
+	border		:		1px dotted #999999;
+	background		:		transparent;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.Grid .body .row .cell .nexatreeline .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Grid .head
+{
+	background		:		#dddddd;
+	border		:		1px solid #c6c6c6;
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Grid .head .row .cell
+{
+	background		:		transparent;
+	border		:		1px solid #c6c6c6;
+	font		:		11pt "맑은 고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.Grid .head .row .cell .nexacontentsbox
+{
+	text-align		:		center;
+	vertical-align		:		middle;
+}
+.Grid .summary
+{
+	background		:		transparent;
+	border		:		0px none;
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Grid .summary .row .cell
+{
+	background		:		#f7d09d;
+	border		:		1px solid #e5e5e5;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.Grid .summary .row .cell .nexacontentsbox
+{
+	text-align		:		center;
+	vertical-align		:		middle;
+}
+.GroupBox .groupboxcontents
+{
+	background		:		#ffffff;
+	border		:		1px solid #e5e5e5;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.GroupBox .groupboxcontents .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.GroupBox .groupboxcontents[status=disabled]
+{
+	background		:		#ffffff;
+	border		:		1px solid #f2f2f2;
+}
+.GroupBox .groupboxtitle
+{
+	background		:		#ffffff;
+	border		:		0px none;
+	color		:		#000000;
+	font		:		10pt "맑은 고딕";
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.GroupBox .groupboxtitle .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.GroupBox .groupboxtitle[status=disabled]
+{
+	background		:		#ffffff;
+	border		:		0px none;
+	color		:		#999999;
+}
+.HFrameSet
+{
+	background		:		#ffffff;
+	border		:		0px none;
+	border-radius		:		0px;
+	cursor		:		default;
+}
+.HScrollBarControl
+{
+	background		:		#f2f2f2;
+	border		:		0px none;
+	border-radius		:		0px;
+	cursor		:		default;
+}
+.HScrollBarControl .decbutton
+{
+	background		:		#f2f2f2;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.HScrollBarControl .decbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.HScrollBarControl .decbutton[status=mouseover]
+{
+	background		:		#cccccc;
+}
+.HScrollBarControl .decbutton[userstatus=pushed]
+{
+	background		:		#606060;
+}
+.HScrollBarControl .decbutton[status=disabled]
+{
+}
+.HScrollBarControl .incbutton
+{
+	background		:		#f2f2f2;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.HScrollBarControl .incbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.HScrollBarControl .incbutton[status=mouseover]
+{
+	background		:		#cccccc;
+}
+.HScrollBarControl .incbutton[userstatus=pushed]
+{
+	background		:		#606060;
+}
+.HScrollBarControl .incbutton[status=disabled]
+{
+}
+.HScrollBarControl .trackbar
+{
+	background		:		#cccccc;
+	border		:		2px solid transparent;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.HScrollBarControl .trackbar .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.HScrollBarControl .trackbar[status=mouseover]
+{
+	background		:		#999999;
+}
+.HScrollBarControl .trackbar[userstatus=pushed]
+{
+	background		:		#606060;
+}
+.HScrollIndicatorControl
+{
+	background		:		#f2f2f2;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.HScrollIndicatorControl .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.HScrollIndicatorControl .trackbar
+{
+	background		:		#cccccc;
+	border		:		2px solid transparent;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.HScrollIndicatorControl .trackbar .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.HScrollIndicatorControl .trackbar[status=mouseover]
+{
+	background		:		#999999;
+}
+.HScrollIndicatorControl .trackbar[userstatus=pushed]
+{
+	background		:		#606060;
+}
+.ImageViewer
+{
+	background		:		#ffffff;
+	border		:		1px solid #e5e5e5;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.ImageViewer[status=mouseover]
+{
+	background		:		#ffffff;
+	border		:		1px solid #99c9ef;
+}
+.ImageViewer[status=disabled]
+{
+	background		:		#f2f2f2;
+	border		:		1px solid #e5e5e5;
+}
+.ImageViewer .imagetext
+{
+	background		:		transparent;
+	border		:		0px none;
+	color		:		#000000;
+	font		:		10pt "맑은 고딕";
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.ImageViewer .imagetext .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.ImageViewer .imagetext[status=disabled]
+{
+	color		:		#999999;
+}
+.ListBox
+{
+	background		:		#f5f5f5;
+	border		:		1px solid #cccccc;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.ListBox .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.ListBox[status=disabled]
+{
+	background		:		#f2f2f2;
+	border		:		1px solid #cccccc;
+}
+.ListBox .listboxitem
+{
+	background		:		transparent;
+	border		:		0px none;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.ListBox .listboxitem .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.ListBox .listboxitem[status=mouseover]
+{
+	background		:		#cce4f7;
+}
+.ListBox .listboxitem[userstatus=selected]
+{
+	background		:		#99c9ef;
+}
+.ListBox .listboxitem[status=disabled]
+{
+	background		:		#e5e5e5;
+	color		:		#999999;
+}
+.ListBox .listboxitem[status=disabled][userstatus=selected]
+{
+	background		:		#e5e5e5;
+}
+.ListBoxControl
+{
+	background		:		#f5f5f5;
+	border		:		1px solid #cccccc;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.ListBoxControl .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.ListBoxControl[status=disabled]
+{
+	background		:		#f2f2f2;
+	border		:		1px solid #cccccc;
+}
+.ListBoxControl .listboxitem
+{
+	background		:		transparent;
+	border		:		0px none;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.ListBoxControl .listboxitem .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.ListBoxControl .listboxitem[status=mouseover]
+{
+	background		:		#cce4f7;
+}
+.ListBoxControl .listboxitem[userstatus=selected]
+{
+	background		:		#99c9ef;
+}
+.ListBoxControl .listboxitem[status=disabled]
+{
+	background		:		#e5e5e5;
+	color		:		#999999;
+}
+.ListBoxControl .listboxitem[status=disabled][userstatus=selected]
+{
+	background		:		#e5e5e5;
+}
+.MainFrame
+{
+	background		:		transparent;
+	border		:		1px solid #0078d6;
+	border-radius		:		0px;
+	cursor		:		default;
+	word-spacing		:		normal;
+}
+.MainFrame[status=deactivate]
+{
+	border		:		1px solid #e5e5e5;
+}
+.MaskEdit
+{
+	border		:		1px solid #999999;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	background		:		transparent;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		auto;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.MaskEdit .nexainput
+{
+	padding		:		0px 10px 0px 10px;
+	text-align		:		right;
+	text-decoration		:		none;
+}
+.MaskEdit .nexacontentsbox
+{
+	padding		:		0px 10px 0px 10px;
+	text-align		:		right;
+	text-decoration		:		none;
+}
+.MaskEdit[status=focused]
+{
+	border		:		1px solid #0078d6;
+	background		:		#ffffff;
+}
+.MaskEdit[status=readonly]
+{
+	background		:		#f9f9f9;
+	border		:		1px solid #cccccc;
+}
+.MaskEdit[status=mouseover]
+{
+	border		:		1px solid #0078d6;
+	background		:		#ffffff;
+}
+.MaskEdit[status=disabled]
+{
+	color		:		#999999;
+	background		:		#f2f2f2;
+	border		:		1px solid #cccccc;
+}
+.Menu
+{
+	background		:		#f5f5f5;
+	border		:		1px solid #cccccc;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Menu .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Menu .menuitem
+{
+	background		:		transparent;
+	border		:		0px none;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Menu .menuitem .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Menu .menuitem[status=mouseover]
+{
+	background		:		#cce4f7;
+}
+.Menu .menuitem[userstatus=selected]
+{
+	background		:		#99c9ef;
+}
+.Plugin
+{
+	background		:		#ffffff;
+	border		:		1px solid #e5e5e5;
+	border-radius		:		0px;
+	font		:		10pt "맑은 고딕";
+	color		:		#666666;
+	cursor		:		default;
+	word-spacing		:		normal;
+}
+.Plugin .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.PluginControl
+{
+	background		:		#ffffff;
+	border		:		1px solid #e5e5e5;
+	border-radius		:		0px;
+	font		:		10pt "맑은 고딕";
+	color		:		#666666;
+	cursor		:		default;
+	word-spacing		:		normal;
+}
+.PluginControl .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.PopupDiv
+{
+	background		:		#ffffff;
+	border		:		1px solid #e5e5e5;
+	color		:		#000000;
+	font		:		10pt "맑은 고딕";
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.PopupDiv .nexacontentsbox
+{
+	text-align		:		center;
+}
+.PopupDiv[status=mouseover]
+{
+	background		:		#ffffff;
+	border		:		1px solid #99c9ef;
+}
+.PopupDiv[status=disabled]
+{
+	background		:		#f2f2f2;
+	border		:		1px solid #e5e5e5;
+	color		:		#999999;
+}
+.PopupMenu
+{
+	background		:		#ffffff;
+	border		:		1px solid #cccccc;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.PopupMenu .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.PopupMenu .popupmenuitem
+{
+	background		:		transparent;
+	border		:		0px none;
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.PopupMenu .popupmenuitem .nexacontentsbox
+{
+	text-decoration		:		none;
+}
+.PopupMenu .popupmenuitem[status=mouseover]
+{
+	background		:		#cce4f7;
+}
+.PopupMenu .popupmenuitem[userstatus=selected]
+{
+	background		:		#99c9ef;
+}
+.PopupMenu .popupmenuitem .popupmenuitemcheckbox
+{
+	background		:		transparent;
+	border		:		0px none;
+	border-radius		:		0px;
+	cursor		:		default;
+}
+.PopupMenu .popupmenuitem .popupmenuitemcheckbox .nexacontentsbox
+{
+	text-align		:		left;
+	vertical-align		:		middle;
+}
+.PopupMenu .popupmenuitem .popupmenuitemexpandimage
+{
+	border		:		0px none;
+	background		:		transparent;
+	border-radius		:		0px;
+	cursor		:		default;
+}
+.PopupMenu .popupmenuitem .popupmenuitemexpandimage .nexacontentsbox
+{
+	text-align		:		left;
+	vertical-align		:		middle;
+}
+.PopupMenu .popupmenuitem .popupmenuitemhotkeytext
+{
+	background		:		transparent;
+	border		:		0px none;
+	font		:		8pt "맑은 고딕";
+	color		:		#7a7a7a;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.PopupMenu .popupmenuitem .popupmenuitemhotkeytext .nexacontentsbox
+{
+	text-align		:		right;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.PopupMenu .popupmenuitem .popupmenuitemicon
+{
+	background		:		transparent;
+	border		:		0px none;
+	border-radius		:		0px;
+	cursor		:		default;
+}
+.PopupMenu .popupmenuitem .popupmenuitemicon .nexacontentsbox
+{
+	text-align		:		left;
+	vertical-align		:		middle;
+}
+.PopupMenu .popupmenuitem .popupmenuitemtext
+{
+	background		:		transparent;
+	border		:		0px none;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.PopupMenu .popupmenuitem .popupmenuitemtext .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.PopupMenuControl
+{
+	background		:		#ffffff;
+	border		:		1px solid #cccccc;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.PopupMenuControl .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.PopupMenuControl .popupmenuitem
+{
+	background		:		transparent;
+	border		:		0px none;
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.PopupMenuControl .popupmenuitem .nexacontentsbox
+{
+	text-decoration		:		none;
+}
+.PopupMenuControl .popupmenuitem[status=mouseover]
+{
+	background		:		#cce4f7;
+}
+.PopupMenuControl .popupmenuitem[userstatus=selected]
+{
+	background		:		#99c9ef;
+}
+.PopupMenuControl .popupmenuitem .popupmenuitemcheckbox
+{
+	background		:		transparent;
+	border		:		0px none;
+	border-radius		:		0px;
+	cursor		:		default;
+}
+.PopupMenuControl .popupmenuitem .popupmenuitemcheckbox .nexacontentsbox
+{
+	text-align		:		left;
+	vertical-align		:		middle;
+}
+.PopupMenuControl .popupmenuitem .popupmenuitemexpandimage
+{
+	border		:		0px none;
+	background		:		transparent;
+	border-radius		:		0px;
+	cursor		:		default;
+}
+.PopupMenuControl .popupmenuitem .popupmenuitemexpandimage .nexacontentsbox
+{
+	text-align		:		left;
+	vertical-align		:		middle;
+}
+.PopupMenuControl .popupmenuitem .popupmenuitemhotkeytext
+{
+	background		:		transparent;
+	border		:		0px none;
+	font		:		8pt "맑은 고딕";
+	color		:		#7a7a7a;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.PopupMenuControl .popupmenuitem .popupmenuitemhotkeytext .nexacontentsbox
+{
+	text-align		:		right;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.PopupMenuControl .popupmenuitem .popupmenuitemicon
+{
+	background		:		transparent;
+	border		:		0px none;
+	border-radius		:		0px;
+	cursor		:		default;
+}
+.PopupMenuControl .popupmenuitem .popupmenuitemicon .nexacontentsbox
+{
+	text-align		:		left;
+	vertical-align		:		middle;
+}
+.PopupMenuControl .popupmenuitem .popupmenuitemtext
+{
+	background		:		transparent;
+	border		:		0px none;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.PopupMenuControl .popupmenuitem .popupmenuitemtext .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.ProgressBar
+{
+	background		:		#f2f2f2;
+	border		:		1px solid #e5e5e5;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+}
+.ProgressBar .nexacontentsbox
+{
+	text-decoration		:		none;
+}
+.ProgressBar[status=disabled]
+{
+	background		:		#e5e5e5;
+	border		:		1px solid #cccccc;
+}
+.ProgressBar .progressbaritem
+{
+	background		:		#4ca0e2;
+	border		:		0px none;
+	border-radius		:		0px;
+	cursor		:		default;
+}
+.ProgressBar .progressbaritem .nexacontentsbox
+{
+	text-align		:		center;
+	vertical-align		:		middle;
+}
+.ProgressBar .progressbaritem[status=disabled]
+{
+	background		:		#cccccc;
+}
+.ProgressBar .progressbartext
+{
+	background		:		transparent;
+	border		:		0px none;
+	font		:		8pt "맑은고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.ProgressBar .progressbartext .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.ProgressBarControl
+{
+	background		:		#f2f2f2;
+	border		:		1px solid #e5e5e5;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+}
+.ProgressBarControl .nexacontentsbox
+{
+	text-decoration		:		none;
+}
+.ProgressBarControl[status=disabled]
+{
+	background		:		#e5e5e5;
+	border		:		1px solid #cccccc;
+}
+.ProgressBarControl .progressbaritem
+{
+	background		:		#4ca0e2;
+	border		:		0px none;
+	border-radius		:		0px;
+	cursor		:		default;
+}
+.ProgressBarControl .progressbaritem .nexacontentsbox
+{
+	text-align		:		center;
+	vertical-align		:		middle;
+}
+.ProgressBarControl .progressbaritem[status=disabled]
+{
+	background		:		#cccccc;
+}
+.ProgressBarControl .progressbartext
+{
+	background		:		transparent;
+	border		:		0px none;
+	font		:		8pt "맑은고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.ProgressBarControl .progressbartext .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Radio
+{
+	background		:		transparent;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Radio .nexacontentsbox
+{
+	text-align		:		left;
+	vertical-align		:		middle;
+}
+.Radio .radioitem
+{
+	background		:		transparent;
+	border		:		0px none;
+	border-radius		:		0px;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Radio .radioitem .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Radio .radioitem[status=mouseover]
+{
+}
+.Radio .radioitem[userstatus=selected]
+{
+}
+.Radio .radioitem[status=disabled]
+{
+	color		:		#999999;
+}
+.Radio .radioitem[status=mouseover][userstatus=selected]
+{
+}
+.Radio .radioitem[status=disabled][userstatus=selected]
+{
+	color		:		#999999;
+}
+.Sketch
+{
+	background		:		#ffffff;
+	border		:		1px solid #e5e5e5;
+	border-radius		:		0px;
+	font		:		10pt "맑은 고딕";
+	color		:		#666666;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Sketch .nexacontentsbox
+{
+	text-align		:		center;
+}
+.Sketch[status=disabled]
+{
+	background		:		#f2f2f2;
+	border		:		1px solid #e5e5e5;
+	color		:		#999999;
+}
+.Spin
+{
+	background		:		#ffffff;
+	border		:		1px solid #999999;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Spin .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Spin[status=readonly]
+{
+	background		:		#f9f9f9;
+	border		:		1px solid #cccccc;
+}
+.Spin[status=mouseover]
+{
+	border		:		1px solid #0078d6;
+}
+.Spin[userstatus=pushed]
+{
+	border		:		1px solid #0078d6;
+}
+.Spin[status=disabled]
+{
+	border		:		1px solid #cccccc;
+}
+.Spin .spindownbutton
+{
+	background		:		#f2f2f2;
+	border		:		1px solid #f2f2f2;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.Spin .spindownbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Spin .spindownbutton[status=mouseover]
+{
+	background		:		#e5e5e5;
+}
+.Spin .spindownbutton[userstatus=pushed]
+{
+	background		:		#999999;
+}
+.Spin .spindownbutton[status=disabled]
+{
+	background		:		#f2f2f2;
+}
+.Spin .spinedit
+{
+	background		:		transparent;
+	border		:		0px none;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		auto;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Spin .spinedit .nexainput
+{
+	padding		:		0px 10px 0px 10px;
+	text-align		:		right;
+	text-decoration		:		none;
+}
+.Spin .spinedit .nexacontentsbox
+{
+	padding		:		0px 10px 0px 10px;
+	text-align		:		right;
+	text-decoration		:		none;
+}
+.Spin .spinedit[status=disabled]
+{
+	color		:		#999999;
+	background		:		#f2f2f2;
+}
+.Spin .spinupbutton
+{
+	background		:		#f2f2f2;
+	border		:		1px solid #f2f2f2;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.Spin .spinupbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Spin .spinupbutton[status=mouseover]
+{
+	background		:		#e5e5e5;
+}
+.Spin .spinupbutton[userstatus=pushed]
+{
+	background		:		#999999;
+}
+.Spin .spinupbutton[status=disabled]
+{
+	background		:		#f2f2f2;
+}
+.Static
+{
+	background		:		transparent;
+	border		:		0px none;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.Static .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Static[status=disabled]
+{
+	color		:		#999999;
+}
+.StaticControl
+{
+	background		:		transparent;
+	border		:		0px none;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.StaticControl .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.StaticControl[status=disabled]
+{
+	color		:		#999999;
+}
+.StatusBarControl
+{
+	background		:		#f2f2f2;
+	border		:		1px solid #cccccc;
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.StatusBarControl .nexacontentsbox
+{
+	text-align		:		left;
+}
+.StatusBarControl .progressbar
+{
+	background		:		#f2f2f2;
+	border		:		1px solid #e5e5e5;
+	border-radius		:		0px;
+	color		:		#ffffff;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+}
+.StatusBarControl .progressbar .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+}
+.StatusBarControl .progressbar .progressbaritem
+{
+	background		:		#4ca0e2;
+	border-radius		:		0px;
+	cursor		:		default;
+}
+.StatusBarControl .progressbar .progressbaritem .nexacontentsbox
+{
+	text-align		:		left;
+	vertical-align		:		middle;
+}
+.StatusBarControl .resizegrip
+{
+	background		:		transparent;
+	border		:		0px none;
+	border-radius		:		0px;
+	cursor		:		default;
+}
+.StatusBarControl .resizegrip .nexacontentsbox
+{
+	vertical-align		:		bottom;
+	text-align		:		left;
+}
+.StatusBarControl .statustext
+{
+	background		:		transparent;
+	border		:		0px none;
+	border-radius		:		0px;
+	font		:		8pt "맑은 고딕";
+	color		:		#000000;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.StatusBarControl .statustext .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.StepControl
+{
+	background		:		transparent;
+	border		:		0px none;
+	border-radius		:		0px;
+	cursor		:		default;
+}
+.StepControl .stepitem
+{
+	background		:		transparent;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.StepControl .stepitem .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.StepControl .stepitem[userstatus=selected]
+{
+}
+.Tab
+{
+	background		:		#ffffff;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Tab .spindownbuttonTab
+{
+	background		:		#e5e5e5;
+	border		:		1px solid #cccccc;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.Tab .spindownbuttonTab .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Tab .spindownbuttonTab[status=focused]
+{
+	background		:		#e5e5e5;
+	border		:		1px solid #cccccc;
+	border-radius		:		0px;
+}
+.Tab .spindownbuttonTab[status=focused] .nexacontentsbox
+{
+	text-align		:		center;
+}
+.Tab .spindownbuttonTab[status=mouseover]
+{
+	background		:		#cccccc;
+	border		:		1px solid #666666;
+}
+.Tab .spindownbuttonTab[userstatus=pushed]
+{
+	background		:		#606060;
+	border		:		1px solid #606060;
+}
+.Tab .spindownbuttonTab[status=disabled]
+{
+	background		:		#d9d9d9;
+	border		:		1px solid #f0f0f0;
+}
+.Tab .spindownbuttonTab[status=disabled] .nexacontentsbox
+{
+	text-align		:		center;
+}
+.Tab .spinupbuttonTab
+{
+	background		:		#e5e5e5;
+	border		:		1px solid #cccccc;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.Tab .spinupbuttonTab .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Tab .spinupbuttonTab[status=focused]
+{
+	background		:		#e5e5e5;
+	border		:		1px solid #cccccc;
+	border-radius		:		0px;
+}
+.Tab .spinupbuttonTab[status=focused] .nexacontentsbox
+{
+	text-align		:		center;
+}
+.Tab .spinupbuttonTab[status=mouseover]
+{
+	background		:		#cccccc;
+	border		:		1px solid #666666;
+}
+.Tab .spinupbuttonTab[userstatus=pushed]
+{
+	background		:		#606060;
+	border		:		1px solid #606060;
+}
+.Tab .spinupbuttonTab[status=disabled]
+{
+	background		:		#d9d9d9;
+	border		:		1px solid #f0f0f0;
+}
+.Tab .spinupbuttonTab[status=disabled] .nexacontentsbox
+{
+	text-align		:		center;
+}
+.Tab .tabbuttonitemTab
+{
+	background		:		#e5e5e5;
+	border		:		1px solid #cccccc;
+	border-radius		:		0px;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.Tab .tabbuttonitemTab .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Tab .tabbuttonitemTab[status=mouseover]
+{
+	background		:		#e0effa;
+	border		:		1px solid #4ca0e2;
+}
+.Tab .tabbuttonitemTab[userstatus=selected]
+{
+	background		:		#ffffff;
+	border		:		1px solid #cccccc, 1px solid #cccccc, 1px solid transparent, 1px solid #cccccc;
+	color		:		#000000;
+}
+.Tab .tabbuttonitemTab[status=disabled]
+{
+	background		:		#f2f2f2;
+	border		:		1px solid #e5e5e5;
+	color		:		#999999;
+}
+.Tab .tabbuttonitemTab[status=focused][userstatus=selected]
+{
+	background		:		#ffffff;
+	border		:		1px solid #cccccc, 1px solid #cccccc, 1px solid transparent, 1px solid #cccccc;
+	color		:		#000000;
+}
+.Tab .tabbuttonitemTab .extrabutton
+{
+	background		:		transparent;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.Tab .tabbuttonitemTab .extrabutton .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.Tab .tabbuttonitemTab .extrabutton[status=mouseover]
+{
+}
+.Tab .tabbuttonitemTab .extrabutton[status=disabled]
+{
+}
+.Tab .tabpageTab
+{
+	background		:		#ffffff;
+	border		:		1px solid #cccccc;
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.TextArea
+{
+	border		:		1px solid #999999;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	background		:		transparent;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		auto;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.TextArea .nexatextarea
+{
+	padding		:		10px 10px 10px 10px;
+	text-align		:		left;
+	text-decoration		:		none;
+}
+.TextArea .nexacontentsbox
+{
+	padding		:		10px 10px 10px 10px;
+	text-align		:		left;
+	text-decoration		:		none;
+}
+.TextArea[status=focused]
+{
+	border		:		1px solid #0078d6;
+	background		:		#ffffff;
+}
+.TextArea[status=readonly]
+{
+	background		:		#f9f9f9;
+	border		:		1px solid #cccccc;
+}
+.TextArea[status=mouseover]
+{
+	border		:		1px solid #0078d6;
+	background		:		#ffffff;
+}
+.TextArea[status=disabled]
+{
+	color		:		#999999;
+	background		:		#f2f2f2;
+	border		:		1px solid #cccccc;
+}
+.TextAreaControl
+{
+	border		:		1px solid #999999;
+	font		:		10pt "맑은 고딕";
+	color		:		#000000;
+	background		:		transparent;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		auto;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.TextAreaControl .nexatextarea
+{
+	padding		:		10px 10px 10px 10px;
+	text-align		:		left;
+	text-decoration		:		none;
+}
+.TextAreaControl .nexacontentsbox
+{
+	padding		:		10px 10px 10px 10px;
+	text-align		:		left;
+	text-decoration		:		none;
+}
+.TextAreaControl[status=focused]
+{
+	border		:		1px solid #0078d6;
+	background		:		#ffffff;
+}
+.TextAreaControl[status=readonly]
+{
+	background		:		#f9f9f9;
+	border		:		1px solid #cccccc;
+}
+.TextAreaControl[status=mouseover]
+{
+	border		:		1px solid #0078d6;
+	background		:		#ffffff;
+}
+.TextAreaControl[status=disabled]
+{
+	color		:		#999999;
+	background		:		#f2f2f2;
+	border		:		1px solid #cccccc;
+}
+.TileFrameSet
+{
+	background		:		#ffffff;
+	border		:		0px none;
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.TitleBarControl
+{
+	background		:		#f5f5f5;
+	border		:		1px solid #cccccc;
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.TitleBarControl .closebutton
+{
+	background		:		transparent;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.TitleBarControl .closebutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.TitleBarControl .closebutton[status=mouseover]
+{
+	background		:		#e81223;
+	border		:		0px none;
+}
+.TitleBarControl .closebutton[userstatus=pushed]
+{
+	background		:		#f1717b;
+	border		:		0px none;
+}
+.TitleBarControl .closebutton[status=disabled]
+{
+	border		:		0px none;
+}
+.TitleBarControl .maxbutton
+{
+	background		:		transparent;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.TitleBarControl .maxbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.TitleBarControl .maxbutton[status=mouseover]
+{
+	background		:		#e5e5e5;
+	border		:		0px none;
+}
+.TitleBarControl .maxbutton[userstatus=pushed]
+{
+	background		:		#cccccc;
+	border		:		0px none;
+}
+.TitleBarControl .maxbutton[status=disabled]
+{
+	border		:		0px none;
+}
+.TitleBarControl .minbutton
+{
+	background		:		transparent;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.TitleBarControl .minbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.TitleBarControl .minbutton[status=mouseover]
+{
+	background		:		#e5e5e5;
+	border		:		0px none;
+}
+.TitleBarControl .minbutton[userstatus=pushed]
+{
+	background		:		#cccccc;
+	border		:		0px none;
+}
+.TitleBarControl .minbutton[status=disabled]
+{
+	border		:		0px none;
+}
+.TitleBarControl .normalbutton
+{
+	background		:		transparent;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.TitleBarControl .normalbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.TitleBarControl .normalbutton[status=mouseover]
+{
+	background		:		#e5e5e5;
+	border		:		0px none;
+}
+.TitleBarControl .normalbutton[userstatus=pushed]
+{
+	background		:		#cccccc;
+	border		:		0px none;
+}
+.TitleBarControl .normalbutton[status=disabled]
+{
+	border		:		0px none;
+}
+.TitleBarControl .titleicon
+{
+	font		:		bold 10pt "맑은 고딕";
+	color		:		#000000;
+	background		:		transparent;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.TitleBarControl .titleicon .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.TitleBarControl .titleicon[status=deactivate]
+{
+	color		:		#adadad;
+}
+.VFrameSet
+{
+	background		:		#ffffff;
+	border		:		0px none;
+	border-radius		:		0px;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.VScrollBarControl
+{
+	background		:		#f2f2f2;
+	border		:		0px none;
+	border-radius		:		0px;
+	cursor		:		default;
+}
+.VScrollBarControl .decbutton
+{
+	background		:		#f2f2f2;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.VScrollBarControl .decbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.VScrollBarControl .decbutton[status=mouseover]
+{
+	background		:		#cccccc;
+}
+.VScrollBarControl .decbutton[userstatus=pushed]
+{
+	background		:		#606060;
+}
+.VScrollBarControl .decbutton[status=disabled]
+{
+}
+.VScrollBarControl .incbutton
+{
+	background		:		#f2f2f2;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.VScrollBarControl .incbutton .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.VScrollBarControl .incbutton[status=mouseover]
+{
+	background		:		#cccccc;
+}
+.VScrollBarControl .incbutton[userstatus=pushed]
+{
+	background		:		#606060;
+}
+.VScrollBarControl .incbutton[status=disabled]
+{
+}
+.VScrollBarControl .trackbar
+{
+	background		:		#cccccc;
+	border		:		2px solid transparent;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.VScrollBarControl .trackbar .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.VScrollBarControl .trackbar[status=mouseover]
+{
+	background		:		#999999;
+}
+.VScrollBarControl .trackbar[userstatus=pushed]
+{
+	background		:		#606060;
+}
+.VScrollIndicatorControl
+{
+	background		:		#f2f2f2;
+	border		:		0px none;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.VScrollIndicatorControl .nexacontentsbox
+{
+	text-align		:		left;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.VScrollIndicatorControl .trackbar
+{
+	background		:		#cccccc;
+	border		:		2px solid transparent;
+	border-radius		:		0px;
+	box-shadow		:		none;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	-nexa-word-wrap		:		none;
+	word-spacing		:		normal;
+}
+.VScrollIndicatorControl .trackbar .nexacontentsbox
+{
+	text-align		:		center;
+	text-decoration		:		none;
+	vertical-align		:		middle;
+}
+.VScrollIndicatorControl .trackbar[status=mouseover]
+{
+	background		:		#999999;
+}
+.VScrollIndicatorControl .trackbar[userstatus=pushed]
+{
+	background		:		#606060;
+}
+.WebBrowser
+{
+	background		:		#ffffff;
+	border		:		1px solid #e5e5e5;
+	border-radius		:		0px;
+	font		:		10pt "맑은 고딕";
+	color		:		#666666;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.WebBrowser .nexacontentsbox
+{
+	text-align		:		center;
+}
+.WebBrowserControl
+{
+	background		:		#ffffff;
+	border		:		1px solid #e5e5e5;
+	border-radius		:		0px;
+	font		:		10pt "맑은 고딕";
+	color		:		#666666;
+	cursor		:		default;
+	letter-spacing		:		normal;
+	word-spacing		:		normal;
+}
+.WebBrowserControl .nexacontentsbox
+{
+	text-align		:		center;
+}
