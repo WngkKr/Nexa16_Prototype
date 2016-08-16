@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.SmsMessage">
+    <ObjectInfo inheritance="" classname="nexacro.SmsMessage" shorttypename="" csstypename="SmsMessage" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="deny" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" />
+    <PropertyInfo>
+      <Property name="date" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Time of sending and receiving a message (Date Object)" csspropertyname="" csselementname="" normalpropertyname="date" />
+      <Property name="message" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Contents text of a message" csspropertyname="" csselementname="" normalpropertyname="message" />
+      <Property name="phonenumber" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Telephone number of a person who I am calling with" csspropertyname="" csselementname="" normalpropertyname="phonenumber" />
+      <Property name="smsid" group="Misc." subgroup="" edittype="Number" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Unique value of sent or received SMS messages. It consists of a number in 2 cipher." csspropertyname="" csselementname="" normalpropertyname="smsid" />
+      <Property name="type" group="Misc." subgroup="" edittype="Enum" defaultvalue="0" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Division of sent or received texts" csspropertyname="" csselementname="" normalpropertyname="type" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo />
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

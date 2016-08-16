@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.nexacroAPI">
+    <ObjectInfo inheritance="" classname="nexacro.nexacro" shorttypename="" csstypename="" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="" defaultheight="" registration="system" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It provides ECMAScript-standard extensions additionally." />
+    <PropertyInfo />
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo>
+      <Method name="addErrorMessage" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
+        <Syntax text="nexacro.addErrorMessage( enumLang, strCode, strMsg )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="enumLang" type="String" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strCode" type="String" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strMsg" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="base64Decode" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="This is a static method used to decode the data encoded in the Base64 scheme.">
+        <Syntax text="nexacro.base64Decode( strData )">
+          <Return type="String" description="A decoded result" />
+          <Arguments>
+            <Argument name="strData" type="String" in="false" out="false" option="false" variable="false" description="Data encoded in the Base64 scheme" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="base64Encode" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="This is a static method used to encode data in the Base64 scheme.">
+        <Syntax text="nexacro.base64Encode( strData )">
+          <Return type="Object" description="An object encoded in the Base64 scheme" />
+          <Arguments>
+            <Argument name="strData" type="String" in="false" out="false" option="false" variable="false" description="Data to be encoded in the Base64 scheme" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="ceil" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Method to return a smallest integer which is bigger than or same as numeric factor or a fixed point real number.">
+        <Syntax text="nexacro.ceil( nVal [,nFractionDigit] );">
+          <Return type="Integer" description="It is a value to be round up." />
+          <Arguments>
+            <Argument name="nFractionDigit" type="Number" in="false" out="false" option="false" variable="false" description="Space of a fixed decimal number  &#xD;&#xA;Default : 0" />
+            <Argument name="nVal" type="Number" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="deleteCacheDB" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="">
+        <Syntax text="nexacro.deleteCacheDB()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="flashWindow" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="">
+        <Syntax text="nexacro.flashWindow( enumType, nCount, [,nInterval] )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="enumType" type="String" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="nCount" type="Number" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="nInterval" type="Number" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="floor" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is a static method which returns the biggest integer which is smaller than or same as a numeric factor or a fixed point real number.">
+        <Syntax text="nexacro.floor( nVal [,nFractionDigit] );">
+          <Return type="Integer" description="A value to be round down is returned." />
+          <Arguments>
+            <Argument name="nFractionDigit" type="Integer" in="false" out="false" option="false" variable="false" description="Space of a fixed decimal number&#xA;Default : 0" />
+            <Argument name="nVal" type="Number" in="false" out="false" option="false" variable="false" description="It is a numeric value." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getApplication" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
+        <Syntax text="nexacro.getApplication()">
+          <Return type="Object" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getCookieVariable" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
+        <Syntax text="nexacro.getCookieVariable( strID )">
+          <Return type="String" description="" />
+          <Arguments>
+            <Argument name="strID" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getEnvironment" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
+        <Syntax text="nexacro.getEnvironment()">
+          <Return type="Object" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getEnvironmentVariable" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
+        <Syntax text="nexacro.getEnvironmentVariable( strID )">
+          <Return type="String" description="" />
+          <Arguments>
+            <Argument name="strID" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getPopupFrames" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
+        <Syntax text="nexacro.getPopupFrames()">
+          <Return type="Array" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getPrivateProfile" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
+        <Syntax text="nexacro.getPrivateProfile( strKey )">
+          <Return type="Variant" description="" />
+          <Arguments>
+            <Argument name="strKey" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getTextSize" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
+        <Syntax text="nexacro.getTextSize( strText, objFont [, nLimitWidth, strWordWrap ]);">
+          <Return type="Object" description="" />
+          <Arguments>
+            <Argument name="nLimitWidth" type="Integer" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="objFont" type="Object" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strText" type="String" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strWordWrap" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="isAlpha" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="To examine if a input text or a text string is Alphabet.">
+        <Syntax text="nexacro.isAlpha( nChar )&#xA;nexacro.isAlpha( strChar )">
+          <Return type="Boolean" description="If input letter or text string is Alphabet, it shall return true and if not, it shall return false." />
+          <Arguments>
+            <Argument name="nChar" type="Integer" in="false" out="false" option="false" variable="false" description="Relevant text code (decimal number)" />
+            <Argument name="strChar" type="String" in="false" out="false" option="false" variable="false" description="Relevant text string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="isAlphaNumeric" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="To examine if a input text or a text string is Alphabet or numeric.">
+        <Syntax text="nexacro.isAlphaNumeric( nChar )&#xA;nexacro.isAlphaNumeric( strChar )">
+          <Return type="Boolean" description="If input letter or text string is Alphabet or number, it shall return true and if not, it shall return false." />
+          <Arguments>
+            <Argument name="nChar" type="Integer" in="false" out="false" option="false" variable="false" description="Relevant text code (decimal number)" />
+            <Argument name="strChar" type="String" in="false" out="false" option="false" variable="false" description="Relevant text string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="isLower" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="To examine if a input text or a text string is Alphabet in lower case.">
+        <Syntax text="nexacro.isLower( nChar )&#xA;nexacro.isLower( strChar )">
+          <Return type="Boolean" description="If input letter or text string is lower case alphabet, it shall return true and if not, it shall return false." />
+          <Arguments>
+            <Argument name="nChar" type="Integer" in="false" out="false" option="false" variable="false" description="Relevant text code (decimal number)" />
+            <Argument name="strChar" type="String" in="false" out="false" option="false" variable="false" description="Relevant text string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="isNumeric" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="To examine if a input text or a text string is numeric.">
+        <Syntax text="nexacro.isNumeric( nChar )&#xA;nexacro.isNumeric( strChar )">
+          <Return type="Boolean" description="If input letter or text string is number, it shall return true and if not, it shall return false." />
+          <Arguments>
+            <Argument name="nChar" type="Integer" in="false" out="false" option="false" variable="false" description="Relevant text code (decimal number)" />
+            <Argument name="strChar" type="String" in="false" out="false" option="false" variable="false" description="Relevant text string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="isSpace" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="To examine if a input text or a text string is blank.">
+        <Syntax text="nexacro.isSpace( nChar )&#xA;nexacro.isSpace( strChar )">
+          <Return type="Boolean" description="If input letter or text string is blank, it shall return true and if not, it shall return false." />
+          <Arguments>
+            <Argument name="nChar" type="Integer" in="false" out="false" option="false" variable="false" description="Relevant text code (decimal number)" />
+            <Argument name="strChar" type="String" in="false" out="false" option="false" variable="false" description="Relevant text string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="isUpper" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="To examine if a input text or a text string is Alphabet in upper case.">
+        <Syntax text="nexacro.isUpper( nChar );&#xA;nexacro.isUpper( strChar );">
+          <Return type="Boolean" description="If input letter or text string is upper case alphabet, it shall return true and if not, it shall return false." />
+          <Arguments>
+            <Argument name="nChar" type="Integer" in="false" out="false" option="false" variable="false" description="Relevant text code (decimal number)" />
+            <Argument name="strChar" type="String" in="false" out="false" option="false" variable="false" description="Relevant text string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="open" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
+        <Syntax text="nexacro.open(strName,strFormURL,objParentFrame,{objArgumentList},strOpenStyle,nLeft,nTop[,nWidth,nHeight[,objOpener]])">
+          <Return type="Boolean" description="" />
+          <Arguments>
+            <Argument name="nHeight" type="Integer" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="nLeft" type="Integer" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="nTop" type="Integer" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="nWidth" type="Integer" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="objArgumentList" type="Object" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="objOpener" type="Object" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="objParentFrame" type="Object" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strFormURL" type="String" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strName" type="String" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strOpenStyle" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="parseDate" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Method to analysis a sentence of a text string including date and return time between relevant dates in millisecond from Jan. 1, 1970.">
+        <Syntax text="nexacro.parseDate( strDate )">
+          <Return type="Number" description="Integer value to indicate milliseconds between Jan. 1, 1970 midnight and date given to dateVal." />
+          <Arguments>
+            <Argument name="strDate" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeCookieVariable" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
+        <Syntax text="nexacro.removeCookieVariable( strID )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="strID" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEnvironmentVariable" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
+        <Syntax text="nexacro.removeEnvironmentVariable( strID )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="strID" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="replaceAll" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is a method to convert all the designated character strings into their replacements.">
+        <Syntax text="nexacro.replaceAll( strText, strOrgText, strRepText );">
+          <Return type="String" description="to return new character strings" />
+          <Arguments>
+            <Argument name="strOrgText" type="String" in="false" out="false" option="false" variable="false" description="indicating character strings to convert" />
+            <Argument name="strRepText" type="String" in="false" out="false" option="false" variable="false" description="indicating substitute character strings" />
+            <Argument name="strText" type="String" in="false" out="false" option="false" variable="false" description="indicating original character strings" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="round" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is a static method to return the closest integer or a fixed point real number by rounding off a given formula.">
+        <Syntax text="nexacro.round( nVal [,nFractionDigit] );">
+          <Return type="Number" description="It returns an integer to be rounded off." />
+          <Arguments>
+            <Argument name="nFractionDigit" type="Number" in="false" out="false" option="false" variable="false" description="A place of a fixed-point number or an integer to be rounded off.&#xD;&#xA;Default : 0" />
+            <Argument name="nVal" type="Number" in="false" out="false" option="false" variable="false" description="It is a numeric value." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setCookieVariable" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
+        <Syntax text="nexacro.getCookieVariable( strID, varVal )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="strID" type="String" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="varVal" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setEnvironmentVariable" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
+        <Syntax text="nexacro.setEnvironmentVariable( strID, varVal )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="strID" type="String" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="varVal" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setPrivateProfile" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
+        <Syntax text="nexacro.setPrivateProfile( strKey, varVal )">
+          <Return type="Boolean" description="" />
+          <Arguments>
+            <Argument name="strKey" type="String" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="varVal" type="Variant" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="stripQuote" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="Remove the single or double quotation marks at both ends of the input string.">
+        <Syntax text="nexacro.stripQuote( strText )">
+          <Return type="String" description="String quote has been removed." />
+          <Arguments>
+            <Argument name="strText" type="Object" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="toNumber" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="To return input values in the form of number.">
+        <Syntax text="nexacro.toNumber( varValue [, varNanVal [, varPinfVal [, varNinfVal]]] )">
+          <Return type="Number" description="It is transformed number or Decimal value." />
+          <Arguments>
+            <Argument name="varNanVal" type="Number" in="false" out="false" option="false" variable="false" description="A value to use when value is transferred to number and the number is NaN. &#xD;&#xA; (default : NaN)" />
+            <Argument name="varNinfVal" type="Number" in="false" out="false" option="false" variable="false" description="A value to use when value is transferred into number and the number is NEGATIVE_INFINITY.&#xD;&#xA;(default : NEGATIVE_INFINITY)" />
+            <Argument name="varPinfVal" type="Number" in="false" out="false" option="false" variable="false" description="A value to use when value is transferred into number and the number is POSITIVE_INFINITY. &#xD;&#xA;(default : POSITIVE_INFINITY)" />
+            <Argument name="varValue" type="String" in="false" out="false" option="false" variable="false" description="A value to transfer" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="trim" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
+        <Syntax text="nexacro.trim( strText [,strChar] )">
+          <Return type="String" description="" />
+          <Arguments>
+            <Argument name="strChar" type="String" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strText" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="trimLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
+        <Syntax text="nexacro.trimLeft( strText [,strChar] )">
+          <Return type="String" description="" />
+          <Arguments>
+            <Argument name="strChar" type="String" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strText" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="trimRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
+        <Syntax text="nexacro.trimRight( strText [,strChar] )">
+          <Return type="String" description="" />
+          <Arguments>
+            <Argument name="strTarget" type="String" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strText" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="wrapQuote" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="Returned with the double quotes on both sides of the input string.">
+        <Syntax text="nexacro.wrapQuote( strText )">
+          <Return type="String" description="Double quotes string attached" />
+          <Arguments>
+            <Argument name="strText" type="String" in="false" out="false" option="false" variable="false" description="Relevant text string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+    </MethodInfo>
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

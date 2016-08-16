@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.ScrollBarControl">
+    <ObjectInfo inheritance="" classname="nexacro.ScrollBarControl" shorttypename="" csstypename="" csscontrolname="HScrollBarControl[direction=horizontal],VScrollBarControl[direction=vertical]" group="Component" subgroup="Control" csspseudo="true" container="false" composite="false" tabstop="false" cssstyle="true" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="deny" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="スクロールが可能な時に表示されるScrollBarコンポーネントです。" />
+    <PropertyInfo>
+      <Property name="background" group="Style" subgroup="background" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="ScrollBarControlの背景領域を設定するプロパティです。" csspropertyname="background" csselementname="" normalpropertyname="background" />
+      <Property name="barminsize" group="Appearance" subgroup="" edittype="Number" defaultvalue="1" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクロールバーに含まれたトラックバー(trackbar)の最小サイズを指定するプロパティです。&#xD;&#xA;　" csspropertyname="" csselementname="" normalpropertyname="barminsize" />
+      <Property name="baroutsize" group="Appearance" subgroup="" edittype="Number" defaultvalue="1" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクロールバーのtrackbar out limitプロパティです。" csspropertyname="" csselementname="" normalpropertyname="baroutsize" />
+      <Property name="border" group="Style" subgroup="border" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="border" csselementname="" normalpropertyname="border" />
+      <Property name="borderRadius" group="Style" subgroup="border-radius" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="border-radius" csselementname="" normalpropertyname="borderRadius" />
+      <Property name="boxShadow" group="Style" subgroup="box-shadow" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="box-shadow" csselementname="" normalpropertyname="boxShadow" />
+      <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="ScrollBarControlに表示されるテキストの色を設定するプロパティです。" csspropertyname="color" csselementname="" normalpropertyname="color" />
+      <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
+      <Property name="decbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクロールバーの値を減少させるボタンを表示するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="decbutton" />
+      <Property name="decbuttonsize" group="Action" subgroup="" edittype="Number" defaultvalue="-1" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Size" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクロールバーのdecbuttonのサイズを指定するプロパティです。&#xA;　" csspropertyname="" csselementname="" normalpropertyname="decbuttonsize" />
+      <Property name="direction" group="Appearance" subgroup="" edittype="Enum" defaultvalue="vert" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクロールバーの方向を指定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="direction" />
+      <Property name="enable" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="ScrollBarControlを使用するか否かを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="enable" />
+      <Property name="enableevent" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="ScrollBarControlでイベントを発生させるか否かを決定するプロパティです。 &#xA;　&#xA;　" csspropertyname="" csselementname="" normalpropertyname="enableevent" />
+      <Property name="font" group="Style" subgroup="font" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="FontSize_Point" delimiter="" requirement="" description="" csspropertyname="font" csselementname="" normalpropertyname="font" />
+      <Property name="id" group="Information" subgroup="" edittype="ID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="id" />
+      <Property name="imgoutsize" group="Action" subgroup="" edittype="Number" defaultvalue="1" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクロールバーのimage out limitプロパティです。" csspropertyname="" csselementname="" normalpropertyname="imgoutsize" />
+      <Property name="incbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクロールバーの値を増加させるボタンを表示するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="incbutton" />
+      <Property name="incbuttonsize" group="Action" subgroup="" edittype="Number" defaultvalue="-1" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Size" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクロールバーのincbuttonのサイズを指定するプロパティです。&#xD;&#xA;　" csspropertyname="" csselementname="" normalpropertyname="incbuttonsize" />
+      <Property name="letterSpacing" group="Style" subgroup="letter-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
+      <Property name="line" group="Action" subgroup="" edittype="Number" defaultvalue="1" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクロールバーのlinedown/up時に使用される増加/減少値を指定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="line" />
+      <Property name="lineHeight" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
+      <Property name="max" group="Action" subgroup="" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクロールバーの最大値を指定するプロパティです。&#xD;&#xA;　" csspropertyname="" csselementname="" normalpropertyname="max" />
+      <Property name="min" group="Action" subgroup="" edittype="Number" defaultvalue="0" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクロールバーの最小値を指定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="min" />
+      <Property name="name" group="Information" subgroup="" edittype="String" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="ScrollBarControlの名前を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="name" />
+      <Property name="edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
+      <Property name="padding" group="Style" subgroup="padding" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
+      <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
+      <Property name="page" group="Action" subgroup="" edittype="Number" defaultvalue="3" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクロールバーのpagedown/up時に使用される増加/減少値を指定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="page" />
+      <Property name="scrollbarsize" group="Appearance" subgroup="" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクロールバーの幅を指定するプロパティです。&#xD;&#xA;　&#xD;&#xA;　" csspropertyname="" csselementname="" normalpropertyname="scrollbarsize" />
+      <Property name="tooltiptext" group="Action" subgroup="" edittype="MultilineString" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="マウスポインタがScrollBarControlに移動したときに表示されるバルーンヘルプを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="tooltiptext" />
+      <Property name="trackbar" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクロールバーのトラックバーボタンを表示するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="trackbar" />
+      <Property name="trackbarsize" group="Appearance" subgroup="" edittype="Number" defaultvalue="-1" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクロールバーのトラックバーのサイズを指定するプロパティです。&#xA;　" csspropertyname="" csselementname="" normalpropertyname="trackbarsize" />
+      <Property name="visible" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="ScrollBarControlが画面に表示されるか否かを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="visible" />
+      <Property name="wordSpacing" group="Style" subgroup="word-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo>
+        <Property name="background" group="Style" subgroup="background" edittype="" defaultvalue="transparent" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="ScrollBarControlの背景領域を設定するプロパティです。" csspropertyname="background" csselementname="" normalpropertyname="background" />
+        <Property name="border" group="Style" subgroup="border" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="border" csselementname="" normalpropertyname="border" />
+        <Property name="border-radius" group="Style" subgroup="border-radius" edittype="String" defaultvalue="0px" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="border-radius" csselementname="" normalpropertyname="borderRadius" />
+        <Property name="box-shadow" group="Style" subgroup="box-shadow" edittype="" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="box-shadow" csselementname="" normalpropertyname="boxShadow" />
+        <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="ScrollBarControlに表示されるテキストの色を設定するプロパティです。" csspropertyname="color" csselementname="" normalpropertyname="color" />
+        <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" defaultvalue="auto" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
+        <Property name="font" group="Style" subgroup="font" edittype="" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="FontSize_Point" delimiter="" requirement="" description="" csspropertyname="font" csselementname="" normalpropertyname="font" />
+        <Property name="letter-spacing" group="Style" subgroup="letter-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
+        <Property name="line-height" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
+        <Property name="-nexa-edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
+        <Property name="-nexa-padding" group="Style" subgroup="padding" edittype="String" defaultvalue="0px 0px 0px 0px" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
+        <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
+        <Property name="word-spacing" group="Style" subgroup="word-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
+      </PropertyInfo>
+      <StatusInfo>
+        <Status name="disabled" control="true" default="false" deprecated="false" unused="false" group="status" />
+        <Status name="mouseover" control="true" default="false" deprecated="false" unused="false" group="status" />
+        <Status name="enabled" control="true" default="true" deprecated="false" unused="false" group="status" />
+      </StatusInfo>
+    </StyleInfo>
+    <ControlInfo>
+      <Control name="incbutton" classname="nexacro.Button" deprecated="false" unused="false" group="" subgroup="" />
+      <Control name="trackbar" classname="nexacro.Button" deprecated="false" unused="false" group="" subgroup="" />
+      <Control name="decbutton" classname="nexacro.Button" deprecated="false" unused="false" group="" subgroup="" />
+    </ControlInfo>
+    <MethodInfo>
+      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="ScrollBarControlの特定イベントにハンドラ関数を追加するメソッドです。">
+        <Syntax text="ScrollBarControl.addEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="イベントに追加されたハンドラ関数のインデックスを返します。&#xA;同じハンドラ関数がすでにある場合は、該当ハンドラ関数のインデックスを返します。&#xA;正常に追加されない場合には、「-1」を返します。" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="イベントが発生したときに実行されるハンドラ関数を設定します。" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="ハンドラ関数が定義された領域を設定します。" />
+            <Argument name="strEventID" type="String" in="true" out="true" option="true" variable="true" description="ハンドラ関数が追加されるイベントのIDを設定します。" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="関数を検索してScrollBarControlの特定のイベントにハンドラ関数として追加するメソッドです。">
+        <Syntax text="ScrollBarControl.addEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="イベントに追加されたハンドラ関数のインデックスを返します。&#xA;同じハンドラ関数がすでにある場合は、該当ハンドラ関数のインデックスを返します。&#xA;正常に追加されない場合には、「-1」を返します。" />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="ハンドラ関数を検索する領域を設定します。&#xA;該当領域に関数が定義されない場合は、上位の領域に検索します。" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="ハンドラ関数が追加されるイベントのIDを設定します。" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="イベントが発生したときに実行されるハンドラ関数の名前を文字列に設定します。" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="bringToFront" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="">
+        <Syntax text="bringToFornt()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="bringToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="">
+        <Syntax text="bringToPrev()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="特定のイベントに登録されたハンドラ関数をすべて削除するメソッドです。">
+        <Syntax text="ScrollBarControl.clearEventHandler( strEventID )">
+          <Return type="Integer" description="特定のイベントで削除されたハンドラ関数の数を返します。" />
+          <Arguments>
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="すべてのハンドラ関数を削除するイベントのIDを設定します。" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="destroy" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクリプトで動的に生成したScrollBarControlを削除するメソッドです。">
+        <Syntax text="ScrollBarControl.destroy()">
+          <Return type="Boolean" description="ScrollBarControlが正常に削除されると、「true」を返します。&#xA;ScrollBarControlが正常に削除されないと、「false」を返します。" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="ScrollBarControlの特定イベントからハンドラ関数を検索してインデックスを返すメソッドです。">
+        <Syntax text="ScrollBarControl.findEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="イベントで検索しようとするハンドラ関数のインデックスを返します。&#xA;検索しようとするハンドラ関数が存在しない場合、「-1」を返します。" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="検索しようとするハンドラ関数を設定します。" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="検索しようとするハンドラ関数が定義された領域を設定します。" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="ハンドラ関数を検索するイベントのIDを設定します。" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="ScrollBarControlの特定のイベントで指定されたインデックスに該当するハンドラ関数を返すメソッドです。">
+        <Syntax text="ScrollBarControl.getEventHandler( strEventID, nIdx )">
+          <Return type="Object" description="コンポーネントの削除に成功すると、削除されたコンポーネントのオブジェクトを返します。&#xA;コンポーネントの削除に失敗すると、「null」を返します。" />
+          <Arguments>
+            <Argument name="nIdx" type="Integer" in="false" out="false" option="false" variable="false" description="取得しようとするハンドラ関数のインデックスを設定します。&#xA;インデックスは、「0」から開始します。" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="ハンドラ関数を取得するイベントのIDを設定します。" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="init" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクリプトでScrollBarControlを動的に生成した後に初期化するメソッドです。">
+        <Syntax text="ScrollBarControl.init( strName, strPosition, nLeft, nTop , nWidth, nHeight [, nRight, nBottom] )">
+          <Return type="" description="　" />
+          <Arguments>
+            <Argument name="nBottom" type="Integer" in="false" out="false" option="false" variable="false" description="親コンポーネントの右下を基準にScrollBarControlのbottomプロパティ値を設定します。&#xA;Pixel単位または割合（「%」）に設定することができます。&#xA;nTop, nHeight値をすべて設定した場合、nBottom値は無視されます。" />
+            <Argument name="nHeight" type="Integer" in="false" out="false" option="false" variable="false" description="ScrollBarControlのheightプロパティ値を設定します。&#xA;Pixel単位または割合（「%」）に設定することができます。" />
+            <Argument name="nLeft" type="Integer" in="false" out="false" option="false" variable="false" description="親コンポーネントの左上を基準にScrollBarControlのleftプロパティ値を設定します。&#xA;Pixel単位または割合（「%」）に設定することができます。" />
+            <Argument name="nRight" type="Integer" in="false" out="false" option="false" variable="false" description="親コンポーネントの右下を基準にScrollBarControlのrightプロパティ値を設定します。&#xA;Pixel単位または割合（「%」）に設定することができます。&#xA;nLeft、nWidth値をすべて設定した場合、nRight値は無視されます。" />
+            <Argument name="nTop" type="Integer" in="false" out="false" option="false" variable="false" description="親コンポーネントの左上を基準にScrollBarControlのtopプロパティ値を設定します。&#xA;Pixel単位または割合（「%」）に設定することができます。" />
+            <Argument name="nWidth" type="Integer" in="false" out="false" option="false" variable="false" description="ScrollBarControlのwidthプロパティ値を設定します。&#xA;Pixel単位または割合（「%」）に設定することができます。" />
+            <Argument name="strName" type="String" in="false" out="false" option="false" variable="false" description="ScrollBarControlのIDを文字列に設定します。" />
+            <Argument name="strPosition" type="String" in="false" out="false" option="false" variable="false" description="ScrollBarControlが画面に表示される座標の基準を設定します。&#xA;「absolute」または「fixed」を設定することができます。&#xA;nexacroブラウザ環境で、「fixed」はサポートしません。" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="move" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="ScrollBarControlの位置とサイズを変更するメソッドです。">
+        <Syntax text="ScrollBarControl.move( nLeft, nTop [, nWidth, nHeight [, nRight, nBottom]] )">
+          <Return type="" description="　" />
+          <Arguments>
+            <Argument name="nBottom" type="Integer" in="false" out="false" option="false" variable="false" description="親コンポーネントの右下端を基準にScrollBarControlのbottomプロパティ値を設定します。&#xA;Pixel単位または割合（「％」）に設定することができます。&#xA;nLeft、nWidth値をすべて設定した場合、nBottom値は無視されます。" />
+            <Argument name="nHeight" type="Integer" in="false" out="false" option="false" variable="false" description="ScrollBarControlのheightプロパティ値を設定します。&#xA;Pixel単位または割合（「％」）に設定することができます。" />
+            <Argument name="nLeft" type="Integer" in="false" out="false" option="false" variable="false" description="親コンポーネントの左上を基準に、ScrollBarControlのleftプロパティ値を設定します。&#xA;Pixel単位または割合（「％」）に設定することができます。" />
+            <Argument name="nRight" type="Integer" in="false" out="false" option="false" variable="false" description="親コンポーネントの右下端を基準にScrollBarControlのrightプロパティ値を設定します。&#xA;Pixel単位または割合（「％」）に設定することができます。&#xA;nLeft、nWidth値をすべて設定した場合、nRight値は無視されます。" />
+            <Argument name="nTop" type="Integer" in="false" out="false" option="false" variable="false" description="親コンポーネントの左上を基準に、ScrollBarControlのleftプロパティ値を設定します。&#xA;Pixel単位または割合（「％」）に設定することができます。" />
+            <Argument name="nWidth" type="Integer" in="false" out="false" option="false" variable="false" description="ScrollBarControlのwidthプロパティ値を設定します。&#xA;Pixel単位または割合（「％」）に設定することができます。" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="moveToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="">
+        <Syntax text="moveToNext(objTarget)&#xA;moveToNext(strTargetid)">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="moveToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="">
+        <Syntax text="moveToPrev(objTarget)&#xA;moveToPrev(strTargetid)">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="ScrollBarControlの特定イベントからハンドラ関数を削除するメソッドです。">
+        <Syntax text="ScrollBarControl.removeEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="ハンドラ関数の削除に成功すると、「1」を返します。&#xA;ハンドラ関数の削除に失敗すると、「0」を返します。" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="削除するハンドラ関数を設定します。" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="削除するハンドラ関数が定義された領域を設定します。" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="ハンドラ関数を削除するイベントのIDを設定します。" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="ScrollBarControlの特定のイベントから検索された関数と同じハンドラ関数を削除するメソッドです。">
+        <Syntax text="ScrollBarControl.removeEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="ハンドラ関数の削除に成功すると、「1」を返します。&#xA;ハンドラ関数の削除に失敗すると、「0」を返します。" />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="削除するハンドラ関数が定義された領域を設定します。&#xA;該当領域に関数が定義されていない場合は、上位の領域に上がりながら検索します。" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="ハンドラ関数を削除するイベントIDを設定します。" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="削除するハンドラ関数名を文字列に設定します。" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="resize" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="ScrollBarControlのサイズを変更するメソッドです。">
+        <Syntax text="ScrollBarControl.resize( nWidth, nHeight )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="nHeight" type="Integer" in="false" out="false" option="false" variable="false" description="ScrollBarControlのheightプロパティ値を設定します。&#xA;Pixel単位または割合(「％」)に設定することができます。&#xA;負数を設定することはできません。" />
+            <Argument name="nWidth" type="Integer" in="false" out="false" option="false" variable="false" description="ScrollBarControlのwidthプロパティ値を設定します。&#xA;Pixel単位または割合(「％」)に設定することができます。&#xA;負数を設定することはできません。" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="sendToBack" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="">
+        <Syntax text="sendToBack()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="sendToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="">
+        <Syntax text="sendToNext()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="ScrollBarControlの特定のイベントの最初のハンドラ関数を変更するメソッドです。">
+        <Syntax text="ScrollBarControl.setEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="最初のハンドラ関数の変更に成功すると、「0」を返します。&#xA;最初のハンドラ関数の変更に失敗すると、「-1」を返します。" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="既存のハンドラ関数を置換する関数を設定します。" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="置き換えるハンドラ関数が定義された領域を設定します。" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="ハンドラ関数を変更するイベントのIDを設定します。" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="ScrollBarControlの特定のイベントの最初のハンドラ関数を、検索された関数に変更するメソッドです。">
+        <Syntax text="ScrollBarControl.setEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="最初のハンドラ関数の変更に成功すると、「0」を返します。&#xA;最初のハンドラ関数の変更に失敗すると、「-1」を返します。" />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="置き換えるハンドラ関数を検索する領域を設定します。&#xA;該当領域に関数が定義されていない場合は、上位領域に上がりながら検索します。" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="ハンドラ関数を変更するイベントのIDを設定します。" />
+            <Argument name="strFunc" type="Object" in="false" out="false" option="false" variable="false" description="既存のハンドラ関数を置換する関数名を文字列に設定します。" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="show" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクリプトで動的に生成したScrollBarControlを画面に表示するメソッドです。">
+        <Syntax text="ScrollBarControl.show()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+    </MethodInfo>
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

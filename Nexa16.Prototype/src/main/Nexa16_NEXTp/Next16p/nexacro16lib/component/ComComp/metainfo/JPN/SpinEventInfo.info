@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.SpinEventInfo">
+    <ObjectInfo inheritance="" classname="nexacro.SpinEventInfo" shorttypename="" csstypename="" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="deny" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Spinコンポーネントのイベントが発生した際の情報が含まれたEventInfoオブジェクトです。" />
+    <PropertyInfo>
+      <Property name="eventid" group="Eventinfo" subgroup="" edittype="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="イベント発生時に発生したイベントのIDを持つプロパティです。" csspropertyname="" csselementname="" normalpropertyname="eventid" />
+      <Property name="posttext" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="イベントが発生した後、Textプロパティ値を表示するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="posttext" />
+      <Property name="postvalue" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="イベントが発生した後、Valueプロパティ値を表示するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="postvalue" />
+      <Property name="pretext" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="イベントが発生する前のTextプロパティ値を表示するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="pretext" />
+      <Property name="prevalue" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="イベントが発生する前のvalueプロパティ値を表示するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="prevalue" />
+      <Property name="up" group="Misc." subgroup="" edittype="Number" defaultvalue="0" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="どのボタンによってイベントが発生したかを表示するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="up" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo />
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

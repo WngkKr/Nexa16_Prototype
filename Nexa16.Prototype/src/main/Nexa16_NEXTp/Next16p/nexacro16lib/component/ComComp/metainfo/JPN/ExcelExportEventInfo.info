@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.ExcelExportEventInfo">
+    <ObjectInfo inheritance="" classname="nexacro.ExcelExportEventInfo" shorttypename="" csstypename="" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="deny" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Exportオブジェクトでデータをエクスポートして発生するEventInfoオブジェクトです。　" />
+    <PropertyInfo>
+      <Property name="eventid" group="Eventinfo" subgroup="" edittype="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="イベント発生時に発生したイベントのIDを持つプロパティです。" csspropertyname="" csselementname="" normalpropertyname="eventid" />
+      <Property name="fromobject" group="Eventinfo" subgroup="" edittype="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="イベントが発生した原因となるコンポーネントを持つプロパティです。&#xA;　" csspropertyname="" csselementname="" normalpropertyname="fromobject" />
+      <Property name="fromreferenceobject" group="Eventinfo" subgroup="" edittype="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="イベント発生の原因となるコンポーネントまたはサブコントロールを持つプロパティです。" csspropertyname="" csselementname="" normalpropertyname="fromreferenceobject" />
+      <Property name="url" group="Information" subgroup="" edittype="String" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="ファイルをエクスポートするときに生成されたURL値を取得するプロパティです。　" csspropertyname="" csselementname="" normalpropertyname="url" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo />
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

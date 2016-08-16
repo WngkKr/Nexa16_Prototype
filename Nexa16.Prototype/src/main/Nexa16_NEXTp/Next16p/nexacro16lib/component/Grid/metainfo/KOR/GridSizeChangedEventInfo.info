@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.GridSizeChangedEventInfo">
+    <ObjectInfo inheritance="" classname="nexacro.GridSizeChangedEventInfo" shorttypename="" csstypename="" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="deny" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Grid에서 Size 관련 Event가 발생했을때 Event 정보를 저장하는 Object 입니다." />
+    <PropertyInfo>
+      <Property name="eventid" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="GridSizeChangedEventInfo의 Event ID를 반환하는 Property 입니다." csspropertyname="" csselementname="" normalpropertyname="eventid" />
+      <Property name="formatindex" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="Grid에서 Size가 변경될때 변경된 row나 col의 format에서의 index 값을 가지는 Property 입니다." csspropertyname="" csselementname="" normalpropertyname="formatindex" />
+      <Property name="index" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="Grid에서 Size가 변경될때 변경된 row 값이나 pivot 값을 가지는 Property 입니다." csspropertyname="" csselementname="" normalpropertyname="index" />
+      <Property name="newvalue" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="Grid에서 Size가 변경될때 변경된 후의 값을 가지는 Property 입니다." csspropertyname="" csselementname="" normalpropertyname="newvalue" />
+      <Property name="oldvalue" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="Grid에서 Size가 변경될때 변경되기 전의 값을 가지는 Property 입니다." csspropertyname="" csselementname="" normalpropertyname="oldvalue" />
+      <Property name="reason" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="Grid의 Size가 변경될때, 변경대상을 구별하는 값을 가지는 Property 입니다." csspropertyname="" csselementname="" normalpropertyname="reason" />
+      <Property name="subindex" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="Grid에서 Size가 변경될때 변경된 index중 subrow 값이나 col 값을 가지는 Property 입니다." csspropertyname="" csselementname="" normalpropertyname="subindex" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo />
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

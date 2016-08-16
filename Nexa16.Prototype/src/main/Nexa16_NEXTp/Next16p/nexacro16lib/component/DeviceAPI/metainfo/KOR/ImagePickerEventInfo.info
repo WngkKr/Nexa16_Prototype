@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.ImagePickerEventInfo">
+    <ObjectInfo inheritance="" classname="nexacro.ImagePickerEventInfo" shorttypename="" csstypename="" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="deny" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="사진앨범으로부터 선택한 이미지 가져오기를 성공했을 때 발생하는 EventInfo 오브젝트입니다." />
+    <PropertyInfo>
+      <Property name="eventid" group="Misc." subgroup="" edittype="ID" defaultvalue="0" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="이벤트 속성명을 반환하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="eventid" />
+      <Property name="imagedata" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="선택한 이미지의 비트맵 데이터를 반환하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="imagedata" />
+      <Property name="imageurl" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="선택한 이미지가 저장된 로컬 경로의 문자열을 반환하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="imageurl" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo />
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

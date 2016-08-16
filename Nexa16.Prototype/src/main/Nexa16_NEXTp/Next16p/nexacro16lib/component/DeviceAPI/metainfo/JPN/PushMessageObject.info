@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.PushMessageObject">
+    <ObjectInfo inheritance="" classname="nexacro.PushMessageObject" shorttypename="" csstypename="" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="" defaultheight="" registration="deny" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" />
+    <PropertyInfo>
+      <Property name="messageid" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="XPushサーバーから受信したメッセージのTopic id属性です。" csspropertyname="" csselementname="" normalpropertyname="messageid" />
+      <Property name="messagekey" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="XPushサーバーから受信したメッセージを区別することができる唯一の​​キー値です。" csspropertyname="" csselementname="" normalpropertyname="messagekey" />
+      <Property name="messagetype" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="XPushサーバーから受信したメッセージのTopic Typeのプロパティです。メッセージのレイアウトに定義されたメッセージのタイプです。" csspropertyname="" csselementname="" normalpropertyname="messagetype" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo />
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

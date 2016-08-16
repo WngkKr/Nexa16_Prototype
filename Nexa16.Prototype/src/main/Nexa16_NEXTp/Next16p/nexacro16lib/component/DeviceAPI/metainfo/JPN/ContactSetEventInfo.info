@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.ContactSetEventInfo">
+    <ObjectInfo inheritance="" classname="nexacro.ContactSetEventInfo" shorttypename="" csstypename="" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="deny" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="連絡先情報の検索時に発生するEventInfoオブジェクトです。" />
+    <PropertyInfo>
+      <Property name="contacts" group="Misc." subgroup="" edittype="Object" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="モバイル機器の連絡先データの中で検索されたContactオブジェクト配列を表示するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="contacts" />
+      <Property name="eventid" group="Misc." subgroup="" edittype="ID" defaultvalue="0" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="イベントハンドラ名を表示するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="eventid" />
+      <Property name="reason" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="イベントの発生原因を表示するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="reason" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo />
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

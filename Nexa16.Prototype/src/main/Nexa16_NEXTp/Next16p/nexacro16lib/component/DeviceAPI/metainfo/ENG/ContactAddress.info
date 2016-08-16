@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.ContactAddress">
+    <ObjectInfo inheritance="" classname="nexacro.ContactAddress" shorttypename="" csstypename="ContactAddress" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="" defaultheight="" registration="allow" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Object address field that is used in the contact." />
+    <PropertyInfo>
+      <Property name="city" group="" subgroup="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Province / city (type: string)." csspropertyname="" csselementname="" normalpropertyname="city" />
+      <Property name="country" group="" subgroup="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Nation (type: string)." csspropertyname="" csselementname="" normalpropertyname="country" />
+      <Property name="label" group="" subgroup="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Filed name (type: string)." csspropertyname="" csselementname="" normalpropertyname="label" />
+      <Property name="postcode" group="" subgroup="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Postal code (type: string)." csspropertyname="" csselementname="" normalpropertyname="postcode" />
+      <Property name="region" group="" subgroup="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="District / Province / City (type: string)." csspropertyname="" csselementname="" normalpropertyname="region" />
+      <Property name="street" group="" subgroup="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is a property to set detailed addresses in the contacts information in mobile devices." csspropertyname="" csselementname="" normalpropertyname="street" />
+      <Property name="type" group="" subgroup="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Kinds of Address." csspropertyname="" csselementname="" normalpropertyname="type" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo />
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

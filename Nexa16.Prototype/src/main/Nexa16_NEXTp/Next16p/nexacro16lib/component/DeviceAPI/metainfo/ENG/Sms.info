@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.Sms">
+    <ObjectInfo inheritance="" classname="nexacro.Sms" shorttypename="" csstypename="Sms" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="allow" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Object which provides short message service(SMS) and treats sending and receiving messages." />
+    <PropertyInfo>
+      <Property name="message" group="Appearance" subgroup="" edittype="String" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The message to send as SMS by mobile facility." csspropertyname="" csselementname="" normalpropertyname="message" />
+      <Property name="phonenumber" group="Appearance" subgroup="" edittype="String" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The phone number property to send SMS to by mobile facility." csspropertyname="" csselementname="" normalpropertyname="phonenumber" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo>
+      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It adds an event handler function.">
+        <Syntax text="Sms.addEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns the changed index, otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="true" out="true" option="true" variable="true" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It adds an event handler as a result searched with a designated event ID.">
+        <Syntax text="Sms.addEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns an added index value. Otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It clears all set event handler functions.">
+        <Syntax text="Sms.clearEventHandler( strEventID )">
+          <Return type="Integer" description="It returns the number of deleted event handler functions." />
+          <Arguments>
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="deleteMessage" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="Mobile Hybrid (Android)" description="It deletes a designated message from SMS on a mobile device.">
+        <Syntax text="Sms.deleteMessage(nSmsid)">
+          <Return type="Boolean" description="If an unusable number or letter for nSmsid is input, it shall return false. Otherwise, it shall return true." />
+          <Arguments>
+            <Argument name="nSmsid" type="Number" in="false" out="false" option="false" variable="false" description="Index number of message to be deleted,&#xD;&#xA;It should be a number which is more than 1, which is in the message list of a device. &#xD;&#xA;In case it calls readMessageList and read MessageList on Android,&#xD;&#xA;An id value of each message in the relevant list." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It finds a designated event handler function and returns the index.">
+        <Syntax text="Sms.findEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="Index of a designated function" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function object to find" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It is a method to return the specified event handler function.">
+        <Syntax text="Sms.getEventHandler( strEventID, nIdx )">
+          <Return type="Object" description="It returns the object of the event handler function. If the specified index location is not valid, it returns &quot;null.&quot;" />
+          <Arguments>
+            <Argument name="nIdx" type="Integer" in="false" out="false" option="false" variable="false" description="Index of the event handler function (Zero-based index)" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="readMessageList" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="Mobile Hybrid (Android)" description="To refer to message lists in SMS of mobile device.">
+        <Syntax text="Sms.readMessageList()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="recvStart" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="Mobile Hybrid (Android)" description="To begin monitoring reception of messages in SMS of mobile device.">
+        <Syntax text="Sms.recvStart()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="recvStop" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="Mobile Hybrid (Android)" description="To terminate monitoring reception of messages in SMS of mobile device.">
+        <Syntax text="Sms.recvStop()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It removes a designated index or an event handler function.">
+        <Syntax text="Sms.removeEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="It returns the number of removed event handler functions(if successful, 1. if fails, 0)" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="event handler function item to remove" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It removes an event handler lookup with a designated event ID.">
+        <Syntax text="Sms.removeEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="It returns the number of deleted event handler functions. (if is successful, 1. if it fails, 0)" />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="sendMessage" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="To bring SMS message to transmission screen by mobile facility.">
+        <Syntax text="Sms.sendMessage([strNumber [,strMessage]])">
+          <Return type="Boolean" description="If parameter is normal, true shall be returned.&#xD;&#xA;If parameter error occurs, false shall be returned." />
+          <Arguments>
+            <Argument name="strMessage" type="String" in="false" out="false" option="false" variable="false" description="It is a message to send and if omitted, it shall be substituted by message attribution value." />
+            <Argument name="strNumber" type="String" in="false" out="false" option="false" variable="false" description="It is telephone number for message and if it is omitted, it shall be substituted by phonenumber attribution value." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It changes an event handler function.">
+        <Syntax text="Sms.setEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="If it is success, it returns the changed index. Otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It sets an event handler lookup with a designated event ID.">
+        <Syntax text="Sms.setEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns the changed index, otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+          </Arguments>
+        </Syntax>
+      </Method>
+    </MethodInfo>
+    <EventHandlerInfo>
+      <EventHandler name="cansendmessage" group="Event" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when a message in SMS is sent by mobile facility.">
+        <Syntax text="Sms.cansendmessage(obj:nexacro.Sms,e:nexacro.SmsEventInfo);">
+          <Return type="Boolean" description="In case of false value, message is not sent.&#xA;Default : true" />
+          <Arguments>
+            <Argument name="e" type="SmsEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ondeletemessage" group="Event" deprecated="false" unused="false" requirement="Mobile Hybrid (Android)" description="It is Event to occur when a message in SMS of mobile device is deleted.">
+        <Syntax text="Sms.ondeletemessage(obj:nexacro.Sms,e:nexacro.SmsEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="SmsEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onerror" group="Event" deprecated="false" unused="false" requirement="Mobile Hybrid (Android)" description="It is Event to occur when treatment related to SMS of mobile device is failed.">
+        <Syntax text="Sms.onerror(obj:nexacro.Sms,e:nexacro.SmsErrorEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="SmsErrorEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onreadmessagelist" group="Event" deprecated="false" unused="false" requirement="Mobile Hybrid (Android)" description="It Event to occur when referring to SMS lists of mobile device.">
+        <Syntax text="Sms.onreadmessagelist(obj:nexacro.Sms,e:nexacro.SmsMessagListEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="SmsMessagListEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onrecvmessage" group="Event" deprecated="false" unused="false" requirement="Mobile Hybrid (Android)" description="It is Event to occur when a message in SMS is received by mobile facility.">
+        <Syntax text="Sms.onrecvmessage(obj:nexacro.Sms,e:nexacro.SmsEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="SmsEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onsendmessage" group="Event" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when a message in SMS is sent by mobile facility.">
+        <Syntax text="Sms.onsendmessage(obj:nexacro.Sms,e:nexacro.SmsEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="SmsEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+    </EventHandlerInfo>
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

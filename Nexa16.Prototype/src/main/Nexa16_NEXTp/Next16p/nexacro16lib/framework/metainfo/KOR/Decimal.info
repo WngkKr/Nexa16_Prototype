@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.Decimal">
+    <ObjectInfo inheritance="" classname="nexacro.Decimal" shorttypename="" csstypename="" csscontrolname="" group="Object_old" subgroup="" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="deny" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" />
+    <PropertyInfo />
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo>
+      <Method name="abs" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Decimal 자신의 값을 abs() 처리">
+        <Syntax text="Decimal.abs() // Decimal 자신의 값을 abs() 처리">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="addDecimal" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Decimal 오브젝트의 값에 지정한 BigDecimal 값을 합산하는 메소드입니다.">
+        <Syntax text="Decimal.addDecimal( value ) // decimal += decimal object">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="addDouble" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Decimal 오브젝트의 값에 지정한 Double 값을 합산하는 메소드입니다.">
+        <Syntax text="Decimal.addDouble( value ) // decimal += double value">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="ceil" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Decimal 자신의 값을 ceil() 처리">
+        <Syntax text="Decimal.ceil() // Decimal 자신의 값을 ceil() 처리">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="divDecimal" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Decimal 오브젝트의 값에 지정한 BigDecimal 값을 나눈 값을 반환하는 메소드입니다.">
+        <Syntax text="Decimal.divDecimal( value ) // decimal /= decimal object">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="divDouble" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Decimal 오브젝트의 값에 지정한 Double 값을 나눈 값을 반환하는 메소드입니다.">
+        <Syntax text="Decimal.divDouble( value ) // decimal /= double value">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="floor" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Decimal 자신의 값을 floor() 처리">
+        <Syntax text="Decimal.floor() // Decimal 자신의 값을 floor() 처리">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="isEqual" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Decimal 오브젝트의 값이 1인지 여부를 반환하는 메소드입니다.">
+        <Syntax text="Decimal.isEqual() // if( decimal == 1 )">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="isInfinity" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Decimal 오브젝트의 값의 Infinity 여부를 반환하는 메소드입니다.">
+        <Syntax text="Decimal.isInfinity() // isFinite( decimal )">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="isNaN" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Decimal 오브젝트의 값의 NaN 여부를 반환하는 메소드입니다.">
+        <Syntax text="Decimal.isNaN() // isNaN( decimal )">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="isNaNOrInf" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Decimal 오브젝트의 값의 Infinity 또는 NaN 여부를 반환하는 메소드입니다.">
+        <Syntax text="Decimal.isNaNOrInf() // isFinite( decimal ) || isNaN( decimal )">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="isNegative" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Decimal 오브젝트의 값이 음수인지 여부를 반환하는 메소드입니다.">
+        <Syntax text="Decimal.isNegative() // if( decimal &lt; 0 )">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="isZero" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Decimal 오브젝트의 값의 Zero 여부를 반환하는 메소드입니다.">
+        <Syntax text="Decimal.isZero() // if( decimal == 0 )">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="modDecimal" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Decimal 오브젝트의 값에 지정한 BigDecimal 값을 나눈 나머지값을 반환하는 메소드입니다.">
+        <Syntax text="Decimal.modDecimal( value ) // decimal %= decimal object">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="modDouble" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Decimal 오브젝트의 값에 지정한 Double 값을 나눈 나머지값을 반환하는 메소드입니다.">
+        <Syntax text="Decimal.modDouble( value ) // decimal %= double value">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="mulDecimal" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Decimal 오브젝트의 값에 지정한 BigDecimal 값을 곱한 값을 반환하는 메소드입니다.">
+        <Syntax text="Decimal.mulDecimal( value ) // decimal *= decimal object">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="mulDouble" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Decimal 오브젝트의 값에 지정한 Double 값을 곱한 값을 반환하는 메소드입니다.">
+        <Syntax text="Decimal.mulDouble( value ) // decimal *= double value">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="round" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Decimal 자신의 값을 round() 처리">
+        <Syntax text="Decimal.round() // Decimal 자신의 값을 round() 처리">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="setDecimal" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="BigDecimal 값을 지정하는 메소드입니다.">
+        <Syntax text="Decimal.setDecimal( value ) // decimal = decimal object">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="setDouble" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Double 값을 지정하는 메소드입니다.">
+        <Syntax text="Decimal.setDouble( value ) // decimal = double value">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="setString" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="BigDecimal 값을 지정하는 메소드입니다.">
+        <Syntax text="Decimal.setString( value )  // decimal = “value”">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="subDecimal" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Decimal 오브젝트의 값에서 지정한 BigDecimal 값을 뺀 값을 반환하는 메소드입니다.">
+        <Syntax text="Decimal.subDecimal( value ) // decimal -= decimal object">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="subDouble" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Decimal 오브젝트의 값에서 지정한 Double 값을 뺀 값을 반환하는 메소드입니다.">
+        <Syntax text="Decimal.subDouble( value ) // decimal -= double value">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="toString" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Decimal String 변환출력">
+        <Syntax text="Decimal.toString() // Decimal String 변환출력">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="trunc" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="Decimal 자신의 값을 trunc() 처리">
+        <Syntax text="Decimal.trunc() // Decimal 자신의 값을 trunc() 처리">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+    </MethodInfo>
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

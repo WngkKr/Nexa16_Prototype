@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.ExternalAPI">
+    <ObjectInfo inheritance="" classname="nexacro.ExternalAPI" shorttypename="" csstypename="ExternalAPI" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="allow" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It enables connection with an external device (or an external module or app) and execution of the device" />
+    <PropertyInfo />
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo>
+      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It adds an event handler function.">
+        <Syntax text="ExternalAPI.addEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns the changed index, otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="true" out="true" option="true" variable="true" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It adds an event handler as a result searched with a designated event ID.">
+        <Syntax text="ExternalAPI.addEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns an added index value. Otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It clears all set event handler functions.">
+        <Syntax text="ExternalAPI.clearEventHandler( strEventID )">
+          <Return type="Integer" description="It returns the number of deleted event handler functions." />
+          <Arguments>
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="execExtAPI" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is a method to run external module API of selected ID on a mobile device.">
+        <Syntax text="ExternalAPI.execExtAPI(strRecvID, strApplicationID, strAPI[, strParams])">
+          <Return type="Boolean" description="It returns false when strApplicationID or strAPI value is discarded or invalid text is used. Otherwise, it returns true for normal cases." />
+          <Arguments>
+            <Argument name="strAPI" type="String" in="false" out="false" option="false" variable="false" description="Name of API to call" />
+            <Argument name="strApplicationID" type="String" in="false" out="false" option="false" variable="false" description="ID of application to call" />
+            <Argument name="strParams" type="String" in="false" out="false" option="false" variable="false" description="Assign factor of API to call. Each factor is distinguished by a blank.&#xD;&#xA;If a blank is included in the value of factor, use (single quotation marks) to show a block." />
+            <Argument name="strRecvID" type="String" in="false" out="false" option="false" variable="false" description="Target ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It finds a designated event handler function and returns the index.">
+        <Syntax text="ExternalAPI.findEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="Index of a designated function" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function object to find" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It is a method to return the specified event handler function.">
+        <Syntax text="ExternalAPI.getEventHandler( strEventID, nIdx )">
+          <Return type="Object" description="It returns the object of the event handler function. If the specified index location is not valid, it returns &quot;null.&quot;" />
+          <Arguments>
+            <Argument name="nIdx" type="Integer" in="false" out="false" option="false" variable="false" description="Index of the event handler function (Zero-based index)" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="isAccessible" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is a method to check whether it is approachable with a selected application ID information on a mobile device.">
+        <Syntax text="ExternalAPI.isAccessible (strApplicationID)">
+          <Return type="Boolean" description="It returns false when strApplicationID is discarded or invalid text is used for ID. Otherwise, it returns true for normal cases." />
+          <Arguments>
+            <Argument name="strApplicationID" type="String" in="false" out="false" option="false" variable="false" description="ID of application to check the approach&#xD;&#xA;Android : use the domain format - e.g.) &quot;com.tobesoft.nexacroplatform.testmodule&quot;&#xD;&#xA;iOS : use the URL Scheme format - e.g.) &quot;TobesoftTestApp://&quot;" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It removes a designated index or an event handler function.">
+        <Syntax text="ExternalAPI.removeEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="It returns the number of removed event handler functions(if successful, 1. if fails, 0)" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="event handler function item to remove" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It removes an event handler lookup with a designated event ID.">
+        <Syntax text="ExternalAPI.removeEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="It returns the number of deleted event handler functions. (if is successful, 1. if it fails, 0)" />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It changes an event handler function.">
+        <Syntax text="ExternalAPI.setEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="If it is success, it returns the changed index. Otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It sets an event handler lookup with a designated event ID.">
+        <Syntax text="ExternalAPI.setEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns the changed index, otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+          </Arguments>
+        </Syntax>
+      </Method>
+    </MethodInfo>
+    <EventHandlerInfo>
+      <EventHandler name="onerror" group="Event" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is an event that occurs when accessing the selected external module fails by using isAccessible on a mobile device.">
+        <Syntax text="ExternalAPI.onerror(obj:nexacro.ExternalAPI,e:nexacro.ExternalAPIErrorEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="ExternalAPIErrorEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onrecvdata" group="Event" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is an event that occurs when accessing the selected external module fails by using isAccessible on a mobile device.">
+        <Syntax text="ExternalAPI.onrecvdata(obj:nexacro.ExternalAPI,e:nexacro.ExternalAPIEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="ExternalAPIEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onsuccess" group="Event" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is an event that occurs when selected external module is approachable upon called with isAccessible.">
+        <Syntax text="ExternalAPI.onsuccess(obj:nexacro.ExternalAPI,e:nexacro.ExternalAPIEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="ExternalAPIEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+    </EventHandlerInfo>
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

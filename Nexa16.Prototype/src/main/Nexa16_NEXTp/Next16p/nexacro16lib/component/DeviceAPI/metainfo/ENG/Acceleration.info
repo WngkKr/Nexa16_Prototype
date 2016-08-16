@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.Acceleration">
+    <ObjectInfo inheritance="" classname="nexacro.Acceleration" shorttypename="" csstypename="Acceleration" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="" defaultheight="" registration="allow" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It will provide acceleration information of a mobile device." />
+    <PropertyInfo>
+      <Property name="accuracy" group="" subgroup="" edittype="" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The accuracy property indicates the accuracy level of acceleration information received from a  mobile device." csspropertyname="" csselementname="" normalpropertyname="accuracy" />
+      <Property name="timestamp" group="" subgroup="" edittype="" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The timestamp property shows time information to obtain acceleration information received from a mobile device." csspropertyname="" csselementname="" normalpropertyname="timestamp" />
+      <Property name="xpos" group="" subgroup="" edittype="" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The xpos property shows the x coordinate values of a mobile device." csspropertyname="" csselementname="" normalpropertyname="xpos" />
+      <Property name="ypos" group="" subgroup="" edittype="" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The ypos method shows the y coordinate values of a mobile device." csspropertyname="" csselementname="" normalpropertyname="ypos" />
+      <Property name="zpos" group="" subgroup="" edittype="" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The zpos property shows the z coordinate values of a mobile device." csspropertyname="" csselementname="" normalpropertyname="zpos" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo>
+      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It adds an event handler function.">
+        <Syntax text="Acceleration.addEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns the changed index, otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="true" out="true" option="true" variable="true" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It adds an event handler as a result searched with a designated event ID.">
+        <Syntax text="Acceleration.addEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns an added index value. Otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It clears all set event handler functions.">
+        <Syntax text="Acceleration.clearEventHandler( strEventID )">
+          <Return type="Integer" description="It returns the number of deleted event handler functions." />
+          <Arguments>
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It finds a designated event handler function and returns the index.">
+        <Syntax text="Acceleration.findEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="Index of a designated function" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function object to find" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getCurrentAcceleration" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The getCurrentAcceleration method requests current acceleration information of mobile devices.">
+        <Syntax text="Acceleration.getCurrentAcceleration( [nAccuracy] )">
+          <Return type="Boolean" description="If nAccuracy is omitted or a number or letter which is oever the range of 0~3 is input, it shall return false. If not, it shall return true." />
+          <Arguments>
+            <Argument name="nAccuracy" type="Integer" in="false" out="false" option="false" variable="false" description="It designates accuracy of location information to request.(0~3 - default : 0 )" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It is a method to return the specified event handler function.">
+        <Syntax text="Acceleration.getEventHandler( strEventID, nIdx )">
+          <Return type="Object" description="It returns the object of the event handler function. If the specified index location is not valid, it returns &quot;null.&quot;" />
+          <Arguments>
+            <Argument name="nIdx" type="Integer" in="false" out="false" option="false" variable="false" description="Index of the event handler function (Zero-based index)" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It removes a designated index or an event handler function.">
+        <Syntax text="Acceleration.removeEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="It returns the number of removed event handler functions(if successful, 1. if fails, 0)" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="event handler function item to remove" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It removes an event handler lookup with a designated event ID.">
+        <Syntax text="Acceleration.removeEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="It returns the number of deleted event handler functions. (if is successful, 1. if it fails, 0)" />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It changes an event handler function.">
+        <Syntax text="Acceleration.setEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="If it is success, it returns the changed index. Otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It sets an event handler lookup with a designated event ID.">
+        <Syntax text="Acceleration.setEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns the changed index, otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="watchStart" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The watchStart method begins monitoring of acceleration information received from a mobile device.">
+        <Syntax text="Acceleration.watchStart( nAccuracy, nIntervalTime )">
+          <Return type="Boolean" description="If nAccuracy or nIntervalTime is omitted or an unusable number or letter which is input, it shall return false and if not, it shall return true." />
+          <Arguments>
+            <Argument name="nAccuracy" type="Integer" in="false" out="false" option="false" variable="false" description="It designates accuracy of location information to be requested. (0~3 - default : 0 )" />
+            <Argument name="nIntervalTime" type="Integer" in="false" out="false" option="false" variable="false" description="Interval of events which shall occur. (ms : 200ms ~ 86400000ms)&#xA;If &quot;0&quot; is set, an event shall occur just after change." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="watchStop" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The watchStop method terminates monitoring of acceleration information received from a mobile device.">
+        <Syntax text="Acceleration.watchStop()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+    </MethodInfo>
+    <EventHandlerInfo>
+      <EventHandler name="onrecverror" group="" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The onrecverror event occurs when acceleration information is not received on mobile devices.">
+        <Syntax text="Acceleration.onrecverror(obj:nexacro.Acceleration,e:nexacro.AccelerationErrorEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="AccelerationErrorEventInfo" in="false" out="false" option="false" variable="false" description="Event Object." />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onrecvsuccess" group="" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="The onrecvsuccess event occurs when acceleration information is successfully received on mobile devices.">
+        <Syntax text="Acceleration.onrecvsuccess(obj:nexacro.Acceleration,e:nexacro.AccelerationEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="AccelerationEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+    </EventHandlerInfo>
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

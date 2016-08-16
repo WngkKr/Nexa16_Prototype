@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.Calendar">
+    <ObjectInfo inheritance="nexacro.Component" classname="nexacro.Calendar" shorttypename="" csstypename="Calendar[type=normal],Calendar[type=spin],Calendar[type=monthonly]" csscontrolname="CalendarControl[type=normal],CalendarControl[type=spin],CalendarControl[type=monthonly]" group="Component" subgroup="Component ( default )" csspseudo="true" container="false" composite="false" tabstop="true" cssstyle="true" contents="false" formats="false" contentseditor="auto" defaultwidth="150" defaultheight="20" registration="allow" edittype="" generatetype="" useinitvalue="true" popup="false" edittypecomponent="" dblclickevent="onchanged" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="Calendar is a Component to input data and time.  &#xD;&#xA; &#xD;&#xA;There are more functions related to input of data and time than output. &#xD;&#xA;A user may select one of the two methods to input. One is to input in monthly calendar and the other is to firsthand input on edit area.&#xD;&#xA;There is function to check if the input date is correct. &#xD;&#xA;It can be immediately input and output by interlocking one value of Dataset. &#xD;&#xA;&#xD;&#xA;[ key action ]&#xD;&#xA;Opening DatePicker&#x9;    Alt + Down&#xD;&#xA;Spin up/down,  Up &amp; down direction keys, and yy/mm/dd can be changed at current position and there is no change to upper level by one pivot.  &#xD;&#xA;Direction keys to change date       Month change by railingday&#xD;&#xA;Button click to change month     Ctrl + left &amp; right direction key&#xD;&#xA;Button click to change year     Ctrl + up &amp; down direction key" />
+    <PropertyInfo>
+      <Property name="autoselect" group="Action" subgroup="" edittype="Boolean" defaultvalue="false" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It designates whether to select whole date data of a MaskEdit area when focus goes into a Calendar." csspropertyname="" csselementname="" normalpropertyname="autoselect" />
+      <Property name="autoskip" group="Action" subgroup="" edittype="Boolean" defaultvalue="false" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is attribution to designate whether to move Focus to the next component when inputting date data in MaskEdit area of Calendar component is finished." csspropertyname="" csselementname="" normalpropertyname="autoskip" />
+      <Property name="background" group="Style" subgroup="background" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set a background of a component." csspropertyname="background" csselementname="" normalpropertyname="background" />
+      <Property name="backgroundcolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to return or set ID of Column to set background color for a specific date of MonthCalendar out of Columns of innerdataset which is connected to Calendar." csspropertyname="" csselementname="" normalpropertyname="backgroundcolumn" />
+      <Property name="border" group="Style" subgroup="border" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="border" csselementname="" normalpropertyname="border" />
+      <Property name="bordercolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It returns or sets an ID of a column to set borders for a specific date of a MonthCalendar out of columns of an innerdataset which is connected to the calendar." csspropertyname="" csselementname="" normalpropertyname="bordercolumn" />
+      <Property name="borderRadius" group="Style" subgroup="border-radius" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="border-radius" csselementname="" normalpropertyname="borderRadius" />
+      <Property name="bottom" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="Position2Type" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is a property to set the coordinate of the bottomof a newly created Calendar." csspropertyname="" csselementname="" normalpropertyname="bottom" />
+      <Property name="bottombase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="bottombase" />
+      <Property name="boxShadow" group="Style" subgroup="box-shadow" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="box-shadow" csselementname="" normalpropertyname="boxShadow" />
+      <Property name="buttonsize" group="Appearance" subgroup="" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Size" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It sets the horizontal size of a drop down button or spin button." csspropertyname="" csselementname="" normalpropertyname="buttonsize" />
+      <Property name="calendaredit" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It refers to the calendaredit object which is one of sub controls." csspropertyname="" csselementname="" normalpropertyname="calendaredit" />
+      <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="" csspropertyname="color" csselementname="" normalpropertyname="color" />
+      <Property name="cssclass" group="Information" subgroup="" edittype="CssClass" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate a style of Calendar with class of CSS." csspropertyname="" csselementname="" normalpropertyname="cssclass" />
+      <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
+      <Property name="datecolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is property to return or set ID of Column to set a specific date of MonthCalendar out of Columns of innerdataset which is connected to Calendar." csspropertyname="" csselementname="" normalpropertyname="datecolumn" />
+      <Property name="dateformat" group="Misc." subgroup="" edittype="String" defaultvalue="yyyy-MM-dd ddd" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This property is used to set or return a view format of date to be displayed in the editor window of a calendar." csspropertyname="" csselementname="" normalpropertyname="dateformat" />
+      <Property name="datepicker" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It refers to the popupcalendar object, one of sub controls." csspropertyname="" csselementname="" normalpropertyname="datepicker" />
+      <Property name="daysize" group="Appearance" subgroup="" edittype="Number2" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Size" delimiter=" " requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate size of date to indicate in DatePicker of Calendar." csspropertyname="" csselementname="" normalpropertyname="daysize" />
+      <Property name="displaynulltext" group="Appearance" subgroup="" edittype="String" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is a property to set the contents indicated in a component when the value of the Calendar is null." csspropertyname="" csselementname="" normalpropertyname="displaynulltext" />
+      <Property name="dropbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It refers to the dropbutton object, one of sub controls." csspropertyname="" csselementname="" normalpropertyname="dropbutton" />
+      <Property name="editformat" group="Misc." subgroup="" edittype="String" defaultvalue="yyyy-MM-dd" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It designates a format of dates to be displayed in the Editor window." csspropertyname="" csselementname="" normalpropertyname="editformat" />
+      <Property name="enable" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This property is used to determine whether to enable an Calendar." csspropertyname="" csselementname="" normalpropertyname="enable" />
+      <Property name="enableevent" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to determine whether to generate Event of Calendar." csspropertyname="" csselementname="" normalpropertyname="enableevent" />
+      <Property name="expr" group="Appearance" subgroup="" edittype="String" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is property to designate text of Calendar as a numeric formula." csspropertyname="" csselementname="" normalpropertyname="expr" />
+      <Property name="font" group="Style" subgroup="font" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="FontSize_Point" delimiter="" requirement="" description="" csspropertyname="font" csselementname="" normalpropertyname="font" />
+      <Property name="headformat" group="Appearance" subgroup="" edittype="String" defaultvalue="yyyy.MM" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="headformat" />
+      <Property name="headheight" group="Appearance" subgroup="" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="headheight" />
+      <Property name="height" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Calendar height of the newly created." csspropertyname="" csselementname="" normalpropertyname="height" />
+      <Property name="heightbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="heightbase" />
+      <Property name="hotkey" group="Action" subgroup="" edittype="HotKey" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HotKeyModifier" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is a property to set hot keys for default actions of Calendars." csspropertyname="" csselementname="" normalpropertyname="hotkey" />
+      <Property name="id" group="Information" subgroup="" edittype="ID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="id" />
+      <Property name="initvalueid" group="Information" subgroup="" edittype="InitvalueID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the ID of an InitValue to be applied to an Calendar." csspropertyname="" csselementname="" normalpropertyname="initvalueid" />
+      <Property name="innerdataset" group="Binding" subgroup="bind(innerdataset)" edittype="InnerDatasetID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This property used to designate a dataset component to mark a specific date on a monthly ccalendar." csspropertyname="" csselementname="" normalpropertyname="innerdataset" />
+      <Property name="left" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Calendar left coordinate of the newly created." csspropertyname="" csselementname="" normalpropertyname="left" />
+      <Property name="leftbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="leftbase" />
+      <Property name="letterSpacing" group="Style" subgroup="letter-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
+      <Property name="lineHeight" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
+      <Property name="locale" group="Misc." subgroup="" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="LocaleCode" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It sets locales." csspropertyname="" csselementname="" normalpropertyname="locale" />
+      <Property name="name" group="Information" subgroup="" edittype="String" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It designates names of components." csspropertyname="" csselementname="" normalpropertyname="name" />
+      <Property name="edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
+      <Property name="padding" group="Style" subgroup="padding" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
+      <Property name="textAlign" group="Style" subgroup="-nexa-text-align" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
+      <Property name="textDecoration" group="Style" subgroup="text-decoration" edittype="MultiEnum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="TextDecorationLine" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-decoration" csselementname="" normalpropertyname="textDecoration" />
+      <Property name="verticalAlign" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
+      <Property name="wordWrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
+      <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the opacity of an Calendar." csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
+      <Property name="parent" group="Hidden" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It indicates the parent object of a component." csspropertyname="" csselementname="" normalpropertyname="parent" />
+      <Property name="popupsize" group="Appearance" subgroup="" edittype="Number2" defaultvalue="200 220" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Size" delimiter=" " requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It designates the size of a DatePicker." csspropertyname="" csselementname="" normalpropertyname="popupsize" />
+      <Property name="popuptype" group="Appearance" subgroup="" edittype="Enum" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="PopupType" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to set a position for Popup to be shown." csspropertyname="" csselementname="" normalpropertyname="popuptype" />
+      <Property name="position" group="Position" subgroup="refresh(position)" edittype="Enum" defaultvalue="absolute" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="PositionType" unitinfo="PositionStep" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Mobile Hybrid (IOS)" description="It sets coordinate reference values of Calendars." csspropertyname="" csselementname="" normalpropertyname="position" />
+      <Property name="positionstep" group="Position" subgroup="refresh(position)" edittype="Number" defaultvalue="0" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="PositionStep" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate which Step belonging Form, Div, Tabpage, or PopupDiv belong to when they use Step function." csspropertyname="" csselementname="" normalpropertyname="positionstep" />
+      <Property name="readonly" group="Misc." subgroup="" edittype="Boolean" defaultvalue="false" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate if Editable Component is editable." csspropertyname="" csselementname="" normalpropertyname="readonly" />
+      <Property name="right" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Calendar right coordinate of the newly created." csspropertyname="" csselementname="" normalpropertyname="right" />
+      <Property name="rightbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="rightbase" />
+      <Property name="showmonthspin" group="Appearance" subgroup="" edittype="Boolean" defaultvalue="false" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to set whether to support preview of month spin in DatePicker of Calendar." csspropertyname="" csselementname="" normalpropertyname="showmonthspin" />
+      <Property name="showyearspin" group="Appearance" subgroup="" edittype="Boolean" defaultvalue="false" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to set whether to support preview of year spin in DatePicker of Calendar." csspropertyname="" csselementname="" normalpropertyname="showyearspin" />
+      <Property name="spindownbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It refers to the spindownbutton object which is one of sub controls." csspropertyname="" csselementname="" normalpropertyname="spindownbutton" />
+      <Property name="spinupbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It refers to the spinupbutton object, one of sub controls." csspropertyname="" csselementname="" normalpropertyname="spinupbutton" />
+      <Property name="taborder" group="Action" subgroup="" edittype="Number" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate movement order of focus by Tab key which Component has in Form." csspropertyname="" csselementname="" normalpropertyname="taborder" />
+      <Property name="tabstop" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate whether to receive focus by Tab key." csspropertyname="" csselementname="" normalpropertyname="tabstop" />
+      <Property name="text" group="Appearance" subgroup="" edittype="String" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is property to transform dates of Calendar into dateformat and return." csspropertyname="" csselementname="" normalpropertyname="text" />
+      <Property name="textcolorcolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is property to return or set ID of Column to set text color for a specific date of MonthCalendar out of Columns of innerdataset which is connected to Calendar." csspropertyname="" csselementname="" normalpropertyname="textcolorcolumn" />
+      <Property name="tooltiptext" group="Action" subgroup="" edittype="MultilineString" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate Tool Tip to show when a mouse pointer is on Component." csspropertyname="" csselementname="" normalpropertyname="tooltiptext" />
+      <Property name="tooltiptype" group="Action" subgroup="" edittype="Enum" defaultvalue="default" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="TooltipType" unitinfo="" delimiter="" requirement="nexacro browser (Windows),Mobile Hybrid (Android)" description="It is Property to designate a method to output Tool tip." csspropertyname="" csselementname="" normalpropertyname="tooltiptype" />
+      <Property name="top" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Calendar top coordinate of the newly created." csspropertyname="" csselementname="" normalpropertyname="top" />
+      <Property name="topbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="topbase" />
+      <Property name="type" group="Appearance" subgroup="" edittype="Enum" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CalendarType" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate indication format of Calendar." csspropertyname="" csselementname="" normalpropertyname="type" />
+      <Property name="usecontextmenu" group="Misc." subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It sets whether to use a basic context popup menu in the Editor area of Calendar." csspropertyname="" csselementname="" normalpropertyname="usecontextmenu" />
+      <Property name="usetrailingday" group="Appearance" subgroup="" edittype="Boolean" defaultvalue="false" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to indicate whether to deliver margins of start and end of Day area and whether to indicate dates of the next month in PopupCalendar." csspropertyname="" csselementname="" normalpropertyname="usetrailingday" />
+      <Property name="value" group="Appearance" subgroup="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is property to have selected values in Calendar." csspropertyname="" csselementname="" normalpropertyname="value" />
+      <Property name="value" group="Appearance" subgroup="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="It is property to have selected values in Calendar." csspropertyname="" csselementname="" normalpropertyname="value" />
+      <Property name="visible" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate whether to show Calendar in screen." csspropertyname="" csselementname="" normalpropertyname="visible" />
+      <Property name="weekformat" group="Appearance" subgroup="" edittype="String" defaultvalue="S M T W T F S " readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="weekformat" />
+      <Property name="width" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Calendar width of the newly created." csspropertyname="" csselementname="" normalpropertyname="width" />
+      <Property name="widthbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="widthbase" />
+      <Property name="wordSpacing" group="Style" subgroup="word-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo>
+        <Property name="background" group="Style" subgroup="background" edittype="" defaultvalue="transparent" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set a background of a component." csspropertyname="background" csselementname="" normalpropertyname="background" />
+        <Property name="border" group="Style" subgroup="border" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="border" csselementname="" normalpropertyname="border" />
+        <Property name="border-radius" group="Style" subgroup="border-radius" edittype="String" defaultvalue="0px" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="border-radius" csselementname="" normalpropertyname="borderRadius" />
+        <Property name="box-shadow" group="Style" subgroup="box-shadow" edittype="" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="box-shadow" csselementname="" normalpropertyname="boxShadow" />
+        <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="" csspropertyname="color" csselementname="" normalpropertyname="color" />
+        <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" defaultvalue="auto" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
+        <Property name="font" group="Style" subgroup="font" edittype="" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="FontSize_Point" delimiter="" requirement="" description="" csspropertyname="font" csselementname="" normalpropertyname="font" />
+        <Property name="letter-spacing" group="Style" subgroup="letter-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
+        <Property name="line-height" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
+        <Property name="-nexa-edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
+        <Property name="-nexa-padding" group="Style" subgroup="padding" edittype="String" defaultvalue="0px 0px 0px 0px" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
+        <Property name="-nexa-text-align" group="Style" subgroup="-nexa-text-align" edittype="Enum" defaultvalue="left" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
+        <Property name="-nexa-text-decoration" group="Style" subgroup="text-decoration" edittype="MultiEnum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="TextDecorationLine" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-decoration" csselementname="" normalpropertyname="textDecoration" />
+        <Property name="-nexa-vertical-align" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" defaultvalue="middle" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
+        <Property name="-nexa-word-wrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
+        <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the opacity of an Calendar." csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
+        <Property name="word-spacing" group="Style" subgroup="word-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
+      </PropertyInfo>
+      <StatusInfo>
+        <Status name="disabled" control="true" default="false" deprecated="false" unused="false" group="status" />
+        <Status name="mouseover" control="true" default="false" deprecated="false" unused="false" group="status" />
+        <Status name="focused" control="true" default="false" deprecated="false" unused="false" group="status" />
+        <Status name="readonly" control="true" default="false" deprecated="false" unused="false" group="status" />
+        <Status name="enabled" control="true" default="true" deprecated="false" unused="false" group="status" />
+      </StatusInfo>
+    </StyleInfo>
+    <ControlInfo>
+      <Control name="dropbutton" classname="nexacro.Button" deprecated="false" unused="false" group="" subgroup="" />
+      <Control name="spinupbutton" classname="nexacro.Button" deprecated="false" unused="false" group="" subgroup="" />
+      <Control name="spindownbutton" classname="nexacro.Button" deprecated="false" unused="false" group="" subgroup="" />
+      <Control name="datepicker" classname="nexacro.DatePickerControl" deprecated="false" unused="false" group="Control" subgroup="popup" />
+      <Control name="calendaredit" classname="nexacro.MaskEdit" deprecated="false" unused="false" group="" subgroup="" />
+    </ControlInfo>
+    <MethodInfo>
+      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It adds an event handler function.">
+        <Syntax text="Calendar.addEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns the changed index, otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="true" out="true" option="true" variable="true" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It adds an event handler as a result searched with a designated event ID.">
+        <Syntax text="Calendar.addEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns an added index value. Otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="bringToFront" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is method to change the order to draw Component to the first position of same level Components.">
+        <Syntax text="Calendar.bringToFront()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="bringToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is method to change the order to draw Component to the next front position of same level Components.">
+        <Syntax text="Calendar.bringToPrev()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It clears all set event handler functions.">
+        <Syntax text="Calendar.clearEventHandler( strEventID )">
+          <Return type="Integer" description="It returns the number of deleted event handler functions." />
+          <Arguments>
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="destroy" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This method is used to delete a component that is dynamically created through a script.">
+        <Syntax text="Calendar.destroy()">
+          <Return type="Boolean" description="It returns whether deletion was successful or not." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="dropdown" group="Normal" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It displays a PopupCalendar on the screen in a calendar whose type property is &quot;normal&quot;.">
+        <Syntax text="Calendar.dropdown()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="dropdown" group="Normal" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="It displays a PopupCalendar on the screen in a calendar whose type property is &quot;normal&quot;.">
+        <Syntax text="Calendar.dropdown()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It finds a designated event handler function and returns the index.">
+        <Syntax text="Calendar.findEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="Index of a designated function" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function object to find" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getCaretPos" group="Normal" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Method to calculate index of a letter in which Caret is laid in  normal or spin Type Calendar.">
+        <Syntax text="Calendar.getCaretPos()">
+          <Return type="Integer" description="Index of letters in which Caret is." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getCaretPos" group="Normal" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="It is Method to calculate index of a letter in which Caret is laid in  normal or spin Type Calendar.">
+        <Syntax text="Calendar.getCaretPos()">
+          <Return type="Integer" description="Index of letters in which Caret is." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getDay" group="Normal" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets the day value out of year, month, and day values of a calander.">
+        <Syntax text="Calendar.getDay()">
+          <Return type="Integer" description="In returns integers correspondent to each day&#xD;&#xA;In case of 1st, 1 shall be returned and in case of 31st, 31 shall be returned.&#xD;&#xA;When the value property is null, it returns 1." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getDayOfWeek" group="Normal" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It returns which day of the week where the current value property value of Calendar belongs.">
+        <Syntax text="Calendar.getDayOfWeek()">
+          <Return type="Integer" description="It returns an integer correspondent to each day.&#xD;&#xA;Sunday is 0 and Satyrday is 6.&#xD;&#xA;It returns 4 when the value property is null." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getDisplayText" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
+        <Syntax text="XComponenet.getDisplayText()">
+          <Return type="String" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is a method to return the specified event handler function.">
+        <Syntax text="Calendar.getEventHandler( strEventID, nIdx )">
+          <Return type="Object" description="It returns the object of the event handler function. If the specified index location is not valid, it returns &quot;null.&quot;" />
+          <Arguments>
+            <Argument name="nIdx" type="Integer" in="false" out="false" option="false" variable="false" description="Index of the event handler function (Zero-based index)" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It returns a component which has focus.">
+        <Syntax text="Calendar.getFocus()">
+          <Return type="Object" description="It returns a component if the component which has focus exists in a designated form.&#xD;&#xA;If not, it returns 'null'." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getInnerDataset" group="Normal" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It returns the InnerDataset object.">
+        <Syntax text="Calendar.getInnerDataset()">
+          <Return type="Object" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getMonth" group="Normal" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It returns the month value out of year, month, and day values of a calendar.">
+        <Syntax text="Calendar.getMonth()">
+          <Return type="Integer" description="In returns integers correspondent to each month.&#xD;&#xA;January returns 1, and December returns 12.&#xD;&#xA;When the value property is null, it returns 1." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets pixel values of the bottom property among Calendar location information.">
+        <Syntax text="Calendar.getOffsetBottom();">
+          <Return type="Number" description="It returns the value in pixels." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets pixel values of the height property among Calendar location information.">
+        <Syntax text="Calendar.getOffsetHeight();">
+          <Return type="Number" description="It returns the value in pixels" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets pixel values of the left property among Calendar location information.">
+        <Syntax text="Calendar.getOffsetLeft();">
+          <Return type="Number" description="It returns the value in pixels." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets pixel values of the right property among Calendar location information.">
+        <Syntax text="Calendar.getOffsetRight();">
+          <Return type="Number" description="It returns the value in pixels." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets pixel values of the top property among Calendar location information.">
+        <Syntax text="Calendar.getOffsetTop();">
+          <Return type="Number" description="It returns the value in pixels." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets pixel values of the width property among Calendar location information.">
+        <Syntax text="Calendar.getOffsetWidth();">
+          <Return type="Number" description="It returns the value in pixels." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getPixelBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="IIt gets pixel values of the bottom property among Calendar location information.">
+        <Syntax text="Calendar.getPixelBottom();">
+          <Return type="Number" description="It returns the value in pixels." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getPixelHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets pixel values of the height property among Calendar location information.">
+        <Syntax text="Calendar.getPixelHeight();">
+          <Return type="Number" description="It returns the value in pixels." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getPixelLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets pixel values of the left property among Calendar location information.">
+        <Syntax text="Calendar.getPixelLeft();">
+          <Return type="Number" description="It returns the value in pixels." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getPixelRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets pixel values of the right property among Calendar location information.">
+        <Syntax text="Calendar.getPixelRight();">
+          <Return type="Number" description="It returns the value in pixels." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getPixelTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets pixel values of the top property among Calendar location information.">
+        <Syntax text="Calendar.getPixelTop();">
+          <Return type="Number" description="It returns the value in pixels." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getPixelWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets pixel values of the width property among Calendar location information.">
+        <Syntax text="Calendar.getPixelWidth();">
+          <Return type="Number" description="It returns the value in pixels." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getSelect" group="Normal" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets the selection area in the edit area of a calendar whose type property is set as &quot;normal&quot; or &quot;spin&quot;.">
+        <Syntax text="Calendar.getSelect()">
+          <Return type="Array" description="It returns indexes of start and end positions in array type." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getSelectedText" group="Normal" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Method to read and bring a relevant text string to selected area of normal or spin Type Calendar.">
+        <Syntax text="Calendar.getSelectedText()">
+          <Return type="String" description="Text string which falls under designated area." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getYear" group="Normal" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It returns the year value out of year, month, and day values of a calendar.">
+        <Syntax text="Calendar.getYear()">
+          <Return type="Integer" description="In returns integers correspondent to the year.&#xD;&#xA;A.D is used." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="init" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This is a method to initialize an Calendar after creating it in a script dynamically.">
+        <Syntax text="Calendar.init( strName, strPosition, nLeft, nTop , nWidth, nHeight [, nRight, nBottom] )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="nBottom" type="Integer" in="false" out="false" option="false" variable="false" description="Bottom coordinate of a position to create an Calendar.    &#xA;It is applied to the bottom coordinate of the position." />
+            <Argument name="nHeight" type="Integer" in="false" out="false" option="false" variable="false" description="Height of an Calendar" />
+            <Argument name="nLeft" type="Integer" in="false" out="false" option="false" variable="false" description="Left coordinate of a location of an Calendar.&#xA;It is applied to the left coordinate of the position." />
+            <Argument name="nRight" type="Integer" in="false" out="false" option="false" variable="false" description="Right coordinate of a position to create an Calendar.&#xA;It is applied to the right coordinate of the position." />
+            <Argument name="nTop" type="Integer" in="false" out="false" option="false" variable="false" description="Top coordinate  of a location of an Calendar.&#xA;It is applied to the top coordinate of the position." />
+            <Argument name="nWidth" type="Integer" in="false" out="false" option="false" variable="false" description="Width of an Calendar" />
+            <Argument name="strName" type="String" in="false" out="false" option="false" variable="false" description="Calendar ID" />
+            <Argument name="strPosition" type="String" in="false" out="false" option="false" variable="false" description="Coornidate type of Calendar" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="isDropdown" group="Normal" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It si method to know Popup status of Sub-control which is Dropdowned.">
+        <Syntax text="Calendar.isDropdown()">
+          <Return type="Boolean" description="true : It is open status by dropdown.&#xA;false : dropdown is closed." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="move" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It moves a component into a specific location in specific size.">
+        <Syntax text="Calendar.move( nLeft, nTop [, nWidth, nHeight [, nRight, nBottom]] )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="nBottom" type="Integer" in="false" out="false" option="false" variable="false" description="bottom coordinate to locate a component." />
+            <Argument name="nHeight" type="Integer" in="false" out="false" option="false" variable="false" description="height of a component" />
+            <Argument name="nLeft" type="Integer" in="false" out="false" option="false" variable="false" description="left coordinate to locate a component." />
+            <Argument name="nRight" type="Integer" in="false" out="false" option="false" variable="false" description="right coordinate to locate a component." />
+            <Argument name="nTop" type="Integer" in="false" out="false" option="false" variable="false" description="top coordinate to locate a component." />
+            <Argument name="nWidth" type="Integer" in="false" out="false" option="false" variable="false" description="width of a component" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="moveToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It changes the order to draw a component to the next back position based on a component given as an argument.">
+        <Syntax text="Calendar.moveToNext( objComp )&#xA;Calendar.moveToNext( strComp )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="objComp" type="Object" in="false" out="false" option="false" variable="false" description="It is a target component object." />
+            <Argument name="strComp" type="String" in="false" out="false" option="false" variable="false" description="It is a character string value of the target component ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="moveToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It changes the order to draw a component to the prior front position based on a component given as an argument.">
+        <Syntax text="Calendar.moveToPrev( objComp )&#xA;Calendar.moveToPrev( strComp )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="objComp" type="Object" in="false" out="false" option="false" variable="false" description="It is a target component object." />
+            <Argument name="strComp" type="String" in="false" out="false" option="false" variable="false" description="It is a character string value of the target component ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It removes a designated index or an event handler function.">
+        <Syntax text="Calendar.removeEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="It returns the number of removed event handler functions(if successful, 1. if fails, 0)" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="event handler function item to remove" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It removes an event handler lookup with a designated event ID.">
+        <Syntax text="Calendar.removeEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="It returns the number of deleted event handler functions. (if is successful, 1. if it fails, 0)" />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="resize" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Method to change size of Calendar.">
+        <Syntax text="Calendar.resize( nWidth, nHeight )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="nHeight" type="Integer" in="false" out="false" option="false" variable="false" description="It is length to change." />
+            <Argument name="nWidth" type="Integer" in="false" out="false" option="false" variable="false" description="It is length to change." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="sendToBack" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is method to change the order to draw Component to the last position of same level Components.">
+        <Syntax text="Calendar.sendToBack()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="sendToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is method to change the order to draw Component to the next back position of same level Components.">
+        <Syntax text="Calendar.sendToNext()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="setCaretPos" group="Normal" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It designates a position of an input Caret.">
+        <Syntax text="Calendar.setCaretPos( [nIndex] )">
+          <Return type="Boolean" description="" />
+          <Arguments>
+            <Argument name="nIndex" type="Integer" in="false" out="false" option="false" variable="false" description="It can set from 0 to the length of a character string.&#xA;(It has an integer over -1. if it is set as -1, the caret shall be set in the last position)&#xA;Default : 0" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It changes an event handler function.">
+        <Syntax text="Calendar.setEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="If it is success, it returns the changed index. Otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It sets an event handler lookup with a designated event ID.">
+        <Syntax text="Calendar.setEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns the changed index, otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gives a focus to an Calendar.">
+        <Syntax text="Calendar.setFocus( [bMoveScroll] )">
+          <Return type="Object" description="It returns a component which has prior focus.&#xD;&#xA;If there is no component which has prior focus, or if the method fails, it returns 'null'." />
+          <Arguments>
+            <Argument name="bMoveScroll" type="Boolean" in="false" out="false" option="false" variable="false" description="Whether to set scroll again based on a relevant component after SetFocus&#xA;[Default : true]" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setInnerDataset" group="Normal" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It sets the InnerDataset object.">
+        <Syntax text="setInnerDataset( objDataset )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="objDataset" type="Object" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Set the value of the bottom relative to the left, top value of the Calendar parent object.">
+        <Syntax text="Calendar.setOffsetBottom( nBottom );">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="nBottom" type="Number" in="false" out="false" option="false" variable="false" description="numeric value" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Set the value of the height relative to the left, top value of the Calendar parent object.">
+        <Syntax text="Calendar.setOffsetHeight( nHeight );">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="nHeight" type="Number" in="false" out="false" option="false" variable="false" description="numeric value" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Set the value of the left relative to the left, top value of the Calendar parent object.">
+        <Syntax text="Calendar.setOffsetLeft( nLeft );">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="nLeft" type="Number" in="false" out="false" option="false" variable="false" description="numeric value" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Set the value of the right relative to the left, top value of the Calendar parent object.">
+        <Syntax text="Calendar.setOffsetRight( nRight );">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="nRight" type="Number" in="false" out="false" option="false" variable="false" description="numeric value" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Set the value of the top relative to the left, top value of the Calendar parent object.">
+        <Syntax text="Calendar.setOffsetTop( nTop );">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="nTop" type="Number" in="false" out="false" option="false" variable="false" description="numeric value" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Set the value of the width relative to the left, top value of the Calendar parent object.">
+        <Syntax text="Calendar.setOffsetWidth( nWidth );">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="nWidth" type="Object" in="false" out="false" option="false" variable="false" description="The numeric values​​." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setSelect" group="Normal" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Method to set Text selection area in 'normal' or 'spin' Type Calendar.">
+        <Syntax text="Calendar.setSelect( [nBegin [,nEnd]] )">
+          <Return type="Boolean" description="" />
+          <Arguments>
+            <Argument name="nBegin" type="Integer" in="false" out="false" option="false" variable="false" description="It is an start position of selection area.&#xA;It designates from 0 to Base index of text string.&#xA;(It has a fixed number value over -1)&#xA;Default : 0" />
+            <Argument name="nEnd" type="Integer" in="false" out="false" option="false" variable="false" description="It is an end position of selection area.&#xA;It designates from 0 to Base index of text string.&#xA;(It has a fixed number value over -1)&#xA;Default : -1" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="show" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Method to actually show Calendar which is dynamically generated in Script.">
+        <Syntax text="Calendar.show()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="updateToDataset" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Method to immediately apply the value to Dataset when the value of Calendar is bound to Dataset.">
+        <Syntax text="Calendar.updateToDataset()">
+          <Return type="Boolean" description="It shall return whether updateToDataset() is successful." />
+          <Arguments />
+        </Syntax>
+      </Method>
+    </MethodInfo>
+    <EventHandlerInfo>
+      <EventHandler name="canchange" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to confirm whether to change Data before they are changed.">
+        <Syntax text="Calendar.canchange(obj:nexacro.Calendar,e:nexacro.ChangeEventInfo);">
+          <Return type="Boolean" description="Whether to reflect. If false, it shall not reflect and if true or there is not return, ir shall reflect.&#xA;Default : true" />
+          <Arguments>
+            <Argument name="e" type="ChangeEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="canchange" group="Event" deprecated="false" unused="false" requirement="" description="It is Event to confirm whether to change Data before they are changed.">
+        <Syntax text="Calendar.canchange(obj:nexacro.Calendar,e:nexacro.ChangeEventInfo);">
+          <Return type="Boolean" description="Whether to reflect. If false, it shall not reflect and if true or there is not return, ir shall reflect.&#xA;Default : true" />
+          <Arguments>
+            <Argument name="e" type="ChangeEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onchanged" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs when there is a change by inputing or selecting date.">
+        <Syntax text="Calendar.onchanged(obj:nexacro.Calendar,e:nexacro.ChangeEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="ChangeEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onchanged" group="Event" deprecated="false" unused="false" requirement="" description="It occurs when there is a change by inputing or selecting date.">
+        <Syntax text="Calendar.onchanged(obj:nexacro.Calendar,e:nexacro.ChangeEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="ChangeEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onclick" group="Event" deprecated="false" unused="true" requirement="" description="">
+        <Syntax text="Calendar.onclick(obj:nexacro.Calendar,e:nexacro.ClickEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="ClickEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="oncloseup" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs when a MonthCalendar is closed.">
+        <Syntax text="Calendar.oncloseup(obj:nexacro.Calendar,e:nexacro.CalendarCloseUpEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="CalendarCloseUpEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="oncloseup" group="Event" deprecated="false" unused="false" requirement="" description="It occurs when a MonthCalendar is closed.">
+        <Syntax text="Calendar.oncloseup(obj:nexacro.Calendar,e:nexacro.CalendarCloseUpEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="CalendarCloseUpEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="oncontextmenu" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs when the contextmenu is shown.">
+        <Syntax text="Calendar.oncontextmenu(obj:nexacro.Calendar,e:nexacro.ContextMenuEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="ContextMenuEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="oncontextmenu" group="Event" deprecated="false" unused="false" requirement="" description="It occurs when the contextmenu is shown.">
+        <Syntax text="Calendar.oncontextmenu(obj:nexacro.Calendar,e:nexacro.ContextMenuEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="ContextMenuEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ondayclick" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs after clicking a date of a MonthCalendar.">
+        <Syntax text="Calendar.ondayclick(obj:nexacro.Calendar,e:nexacro.CalendarDayClickEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="CalendarDayClickEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ondayclick" group="Event" deprecated="false" unused="false" requirement="" description="It occurs after clicking a date of a MonthCalendar.">
+        <Syntax text="Calendar.ondayclick(obj:nexacro.Calendar,e:nexacro.CalendarDayClickEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="CalendarDayClickEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ondblclick" group="Event" deprecated="false" unused="true" requirement="" description="">
+        <Syntax text="Calendar.ondblclick(obj:nexacro.Calendar,e:nexacro.MouseEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="MouseEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ondrag" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when drag situation occurs by a mouse in Component area.">
+        <Syntax text="Calendar.ondrag(obj:nexacro.Calendar,e:nexacro.DragEventInfo);">
+          <Return type="Boolean" description="In case of false, drag function shall not be operational. &#xA;If true is returned, Event shall not occur in upper Component.&#xA;Default : false" />
+          <Arguments>
+            <Argument name="e" type="DragEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ondragenter" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when dragged Component enters into Component area.">
+        <Syntax text="Calendar.ondragenter(obj:nexacro.Calendar,e:nexacro.DragEventInfo);">
+          <Return type="Boolean" description="Whether to treat Event. If true is returned, Event shall not occur in upper Component.&#xA;Default : false" />
+          <Arguments>
+            <Argument name="e" type="DragEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ondragleave" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when dragged Component goes out of Component area.">
+        <Syntax text="Calendar.ondragleave(obj:nexacro.Calendar,e:nexacro.DragEventInfo);">
+          <Return type="Boolean" description="Whether to treat Event. If true is returned, Event shall not occur in upper Component.&#xA;default : false" />
+          <Arguments>
+            <Argument name="e" type="DragEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ondragmove" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when a dragged mouse moves in Component area.">
+        <Syntax text="Calendar.ondragmove(obj:nexacro.Calendar,e:nexacro.DragEventInfo);">
+          <Return type="Boolean" description="Whether to treat Event. If true is returned, Event shall not occur in upper Component.&#xD;&#xA;default: false" />
+          <Arguments>
+            <Argument name="e" type="DragEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ondrop" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs when you drop down a dragged component into the component area.">
+        <Syntax text="Calendar.ondrop(obj:nexacro.Calendar,e:nexacro.DragEventInfo);">
+          <Return type="Boolean" description="Whether to apply the event. If true is returned, the event shall not occur in the upper level component.&#xD;&#xA;default : false" />
+          <Arguments>
+            <Argument name="e" type="DragEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ondropdown" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when DropDown MonthCalendar of Calendar is seen.">
+        <Syntax text="Calendar.ondropdown(obj:nexacro.Calendar,e:nexacro.EventInfo);">
+          <Return type="Boolean" description="" />
+          <Arguments>
+            <Argument name="e" type="EventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ondropdown" group="Event" deprecated="false" unused="false" requirement="" description="It is Event to occur when DropDown MonthCalendar of Calendar is seen.">
+        <Syntax text="Calendar.ondropdown(obj:nexacro.Calendar,e:nexacro.EventInfo);">
+          <Return type="Boolean" description="" />
+          <Arguments>
+            <Argument name="e" type="EventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="oneditclick" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="">
+        <Syntax text="Calendar.oneditclick(obj:nexacro.Calendar,e:nexacro.EditClickEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="EditClickEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="oninput" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This is an event that occurs when you attempt to input a value to an Calendar.">
+        <Syntax text="Calendar.oninput(obj:nexacro.Calendar,e:nexacro.InputEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="InputEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onkeydown" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when a Key of a keyboard is pressed while Focus is in Calendar.">
+        <Syntax text="Calendar.onkeydown(obj:nexacro.Calendar,e:nexacro.KeyEventInfo);">
+          <Return type="Boolean" description="Whether to treat Event. If true is returned, onkeydown Event shall not occur in upper Component.&#xA;default : false" />
+          <Arguments>
+            <Argument name="e" type="KeyEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onkeyup" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs when a keyboard key is pressed and released while an Calendar has focus.">
+        <Syntax text="Calendar.onkeyup(obj:nexacro.Calendar,e:nexacro.KeyEventInfo);">
+          <Return type="Boolean" description="Whether to process the event. If true is returned, the onkeyup event shall not occur in an upper level component.&#xD;&#xA;default : false" />
+          <Arguments>
+            <Argument name="e" type="KeyEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onkillfocus" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when Calendar in which Focus is located loses Focus.">
+        <Syntax text="Calendar.onkillfocus(obj:nexacro.Calendar,e:nexacro.KillFocusEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="KillFocusEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onlbuttondown" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when Mouse Left Button Down occurs in Calendar.">
+        <Syntax text="Calendar.onlbuttondown(obj:nexacro.Calendar,e:nexacro.MouseEventInfo);">
+          <Return type="Boolean" description="Whether to treat Event. If true is returned, onlbuttondown Event shall not occur in upper Component.&#xD;&#xA;Default: false" />
+          <Arguments>
+            <Argument name="e" type="MouseEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onlbuttonup" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when Mouse Left Button Up occurs in Calendar.">
+        <Syntax text="Calendar.onlbuttonup(obj:nexacro.Calendar,e:nexacro.MouseEventInfo);">
+          <Return type="Boolean" description="Whether to treat Event. If true is returned, onlbuttonup Event shall not occur in upper Component.&#xD;&#xA;default: false" />
+          <Arguments>
+            <Argument name="e" type="MouseEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onmousedown" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when the other Buttons are pressed except for Left Button/Right Button of a mouse.">
+        <Syntax text="Calendar.onmousedown(obj:nexacro.Calendar,e:nexacro.MouseEventInfo);">
+          <Return type="Boolean" description="Whether to treat Event. If true is returned, onmousedown Event shall not occur in upper Component.&#xD;&#xA;default: false" />
+          <Arguments>
+            <Argument name="e" type="MouseEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onmouseenter" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when a cursor of a mouse enters into Calendar area.">
+        <Syntax text="Calendar.onmouseenter(obj:nexacro.Calendar,e:nexacro.MouseEventInfo);">
+          <Return type="Boolean" description="Whether to treat Event. If true is returned, onmouseenter Event shall not occur in upper Component.&#xD;&#xA;default: false" />
+          <Arguments>
+            <Argument name="e" type="MouseEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onmouseleave" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when a cursor of a mouse goes out of Calendar area.">
+        <Syntax text="Calendar.onmouseleave(obj:nexacro.Calendar,e:nexacro.MouseEventInfo);">
+          <Return type="Boolean" description="Whether to treat Event. If true is returned, onmousleave Event shall not occur in upper Component.&#xD;&#xA;default: false" />
+          <Arguments>
+            <Argument name="e" type="MouseEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onmousemove" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when a cursor of a mouse moves in Calendar area.">
+        <Syntax text="Calendar.onmousemove(obj:nexacro.Calendar,e:nexacro.MouseEventInfo);">
+          <Return type="Boolean" description="Whether to treat Event. If true is returned, onmousemove Event shall not occur in upper Component.&#xD;&#xA;default: false" />
+          <Arguments>
+            <Argument name="e" type="MouseEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onmouseup" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when the other Buttons are pressed and released except for Left Button/Right Button of a mouse.">
+        <Syntax text="Calendar.onmouseup(obj:nexacro.Calendar,e:nexacro.MouseEventInfo);">
+          <Return type="Boolean" description="Whether to treat Event. If true is returned, onmouseup Event shall not occur in upper Component.&#xD;&#xA;default: false" />
+          <Arguments>
+            <Argument name="e" type="MouseEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onmousewheel" group="Event" deprecated="false" unused="true" requirement="" description="It occurs when you scroll your mouse wheel.">
+        <Syntax text="Calendar.onmousewheel(obj:nexacro.Calendar,e:nexacro.MouseWheelEventInfo);">
+          <Return type="Boolean" description="If true is returned, mouse scroll wheel and  bubbling stop. &#xD;&#xA;If false is returned, the onmousewheel event occurs in the generated component and is bubbled. If the generated component doesn't need the onmousewheel event, the event will be taken by an upper level component." />
+          <Arguments>
+            <Argument name="e" type="MouseWheelEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onmove" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when Calendar moves.">
+        <Syntax text="Calendar.onmove(obj:nexacro.Calendar,e:nexacro.MoveEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="MoveEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onrbuttondown" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when Mouse Right Button Down occurs in Calendar.">
+        <Syntax text="Calendar.onrbuttondown(obj:nexacro.Calendar,e:nexacro.MouseEventInfo);">
+          <Return type="Boolean" description="Whether to treat Event. If true is returned, onrbuttondown Event shall not occur in upper Component.&#xD;&#xA;default: false" />
+          <Arguments>
+            <Argument name="e" type="MouseEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onrbuttonup" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when Mouse Right Button Up occurs in Calendar.">
+        <Syntax text="Calendar.onrbuttonup(obj:nexacro.Calendar,e:nexacro.MouseEventInfo);">
+          <Return type="Boolean" description="Whether to treat Event. If true is returned, onrbuttonup Event shall not occur in upper Component.&#xD;&#xA;default: false" />
+          <Arguments>
+            <Argument name="e" type="MouseEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onsetfocus" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when Focus is set to Calendar.">
+        <Syntax text="Calendar.onsetfocus(obj:nexacro.Calendar,e:nexacro.SetFocusEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="SetFocusEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onsize" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when Calendar size is changed.">
+        <Syntax text="Calendar.onsize(obj:nexacro.Calendar,e:nexacro.SizeEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="SizeEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onspin" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs when a spin button is clicked on a spin mode calendar.">
+        <Syntax text="Calendar.onspin(obj:nexacro.Calendar,e:nexacro.CalendarSpinEventInfo);">
+          <Return type="Boolean" description="If true is returned or if there is no return value, a change will be reflected. If false is returned, the change shall not be reflected." />
+          <Arguments>
+            <Argument name="e" type="CalendarSpinEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ontouchend" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs at the time of touch end(up).">
+        <Syntax text="Calendar.ontouchend(obj:nexacro.Calendar,e:nexacro.TouchEventInfo);">
+          <Return type="Boolean" description="Whether to process the event or not. &#xD;&#xA;If true is returned, the event doesn't occur in an upper-level component. &#xD;&#xA;default : false" />
+          <Arguments>
+            <Argument name="e" type="TouchEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ontouchmove" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs during touches(move).">
+        <Syntax text="Calendar.ontouchmove(obj:nexacro.Calendar,e:nexacro.TouchEventInfo);">
+          <Return type="Boolean" description="Whether to process the event or not. &#xD;&#xA;If true is returned, the event doesn't occur in an upper-level component. &#xD;&#xA;default : false" />
+          <Arguments>
+            <Argument name="e" type="TouchEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ontouchstart" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs at the time of touch start(down)">
+        <Syntax text="Calendar.ontouchstart(obj:nexacro.Calendar,e:nexacro.TouchEventInfo);">
+          <Return type="Boolean" description="Whether to process the event or not. &#xD;&#xA;If true is returned, the event doesn't occur in an upper-level component. &#xD;&#xA;default : false" />
+          <Arguments>
+            <Argument name="e" type="TouchEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+    </EventHandlerInfo>
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

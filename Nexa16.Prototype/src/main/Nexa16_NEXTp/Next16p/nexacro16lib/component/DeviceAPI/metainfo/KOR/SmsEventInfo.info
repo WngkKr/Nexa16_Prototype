@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.SmsEventInfo">
+    <ObjectInfo inheritance="" classname="nexacro.SmsEventInfo" shorttypename="" csstypename="" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="deny" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="단문 메시지 서비스를 처리하면서 발생하는 EventInfo 오브젝트입니다." />
+    <PropertyInfo>
+      <Property name="eventid" group="Misc." subgroup="" edittype="ID" defaultvalue="0" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="이벤트 속성명을 반환하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="eventid" />
+      <Property name="message" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="송수신된 단문 메시지 텍스트를 나타내는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="message" />
+      <Property name="phonenumber" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="송수신된 모바일 기기 전화번호를 나타내는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="phonenumber" />
+      <Property name="smsid" group="Misc." subgroup="" edittype="Number" defaultvalue="-1" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="단문 메시지의 id를 나타내는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="smsid" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo />
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

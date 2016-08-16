@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.Phone">
+    <ObjectInfo inheritance="" classname="nexacro.ExternalAPI" shorttypename="" csstypename="ExternalAPI" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="allow" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is a collection of utility functions such as dial as an object to provide specific features smartphone." />
+    <PropertyInfo />
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo>
+      <Method name="makeCall" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Method to call by smart phone.">
+        <Syntax text="Phone.makeCall( strPhoneNumber [, bAutoDialing] )">
+          <Return type="Boolean" description="" />
+          <Arguments>
+            <Argument name="bAutoDialing" type="Boolean" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strPhoneNumber" type="String" in="false" out="false" option="false" variable="false" description="Telephone number to call" />
+          </Arguments>
+        </Syntax>
+      </Method>
+    </MethodInfo>
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

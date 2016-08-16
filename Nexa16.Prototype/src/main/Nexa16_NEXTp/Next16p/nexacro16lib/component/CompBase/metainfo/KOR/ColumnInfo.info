@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.ColumnInfo">
+    <ObjectInfo inheritance="" classname="nexacro.ColumnInfo" shorttypename="" csstypename="DSColumnInfo" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="deny" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Dataset의 Column 정보를 포함하고 있는 오브젝트입니다.&#xD;&#xA;Dataset의 addColumnInfo(), getColumnInfo() 메소드와 함께 사용합니다." />
+    <PropertyInfo>
+      <Property name="name" group="Misc." subgroup="" edittype="String" defaultvalue="1" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="열의 이름(column name)을 갖는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="name" />
+      <Property name="prop" group="Misc." subgroup="" edittype="Enum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="데이터셋  합계 처리 유형을 정의하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="prop" />
+      <Property name="size" group="Misc." subgroup="" edittype="Number" defaultvalue="1" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="열(column)의 크기를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="size" />
+      <Property name="sumtext" group="Misc." subgroup="" edittype="String" defaultvalue="1" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="prop 속성값이 &quot;TEXT&quot;일 때 summary에 표시할 문자열을 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="sumtext" />
+      <Property name="type" group="Misc." subgroup="" edittype="Enum" defaultvalue="1" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="데이터셋에서 열(column)의 타입을 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="type" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo />
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

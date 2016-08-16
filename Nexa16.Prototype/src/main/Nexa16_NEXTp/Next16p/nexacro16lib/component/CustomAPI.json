@@ -1,0 +1,20 @@
+﻿{
+	"name": "CustomAPI",
+	"version": "16,0,0,1",
+	"description": "CustomAPI for nexacro16 platform",
+	"license": "",
+	"scripts": [
+		"Custom/rMateChartH5.js",
+		"Custom/Nexa16Common.js",
+		"Custom/Nexa16Comp.js",
+		"Custom/Nexa16Dataset.js",
+		"Custom/Nexa16Date.js",
+		"Custom/Nexa16Form.js",
+		"Custom/Nexa16Format.js",
+		"Custom/Nexa16Grid.js",
+		"Custom/Nexa16Print.js",
+		"Custom/Nexa16Transaction.js",
+		"Custom/Nexa16Util.js"
+	]
+}
+//@ sourceURL=CustomAPI.json

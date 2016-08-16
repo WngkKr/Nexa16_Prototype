@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.ExcelImportObject">
+    <ObjectInfo inheritance="" classname="nexacro.ExcelImportObject" shorttypename="" csstypename="" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="allow" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Web browser (Android)" description="" />
+    <PropertyInfo>
+      <Property name="importfilemode" group="Hidden" subgroup="" edittype="Enum" defaultvalue="local" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="ImportFileMode" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Web browser (Android)" description="This property is used to define the mode of a source file to import." csspropertyname="" csselementname="" normalpropertyname="importfilemode" />
+      <Property name="importtype" group="Misc." subgroup="" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Web browser (Android)" description="This property is used to specify an object to be imported by ExcelImportObject." csspropertyname="" csselementname="" normalpropertyname="importtype" />
+      <Property name="importurl" group="Misc." subgroup="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Web browser (Android)" description="It defines a server URL for the ExcelImportObject to import." csspropertyname="" csselementname="" normalpropertyname="importurl" />
+      <Property name="name" group="Information" subgroup="" edittype="String" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Web browser (Android)" description="It designates names of components." csspropertyname="" csselementname="" normalpropertyname="name" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo>
+      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Web browser (Android)" description="It adds an event handler function.">
+        <Syntax text="ExcelImportObject.addEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns the changed index, otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="true" out="true" option="true" variable="true" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Web browser (Android)" description="It adds an event handler as a result searched with a designated event ID.">
+        <Syntax text="ExcelImportObject.addEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns an added index value. Otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Web browser (Android)" description="It clears all set event handler functions.">
+        <Syntax text="ExcelImportObject.clearEventHandler( strEventID )">
+          <Return type="Integer" description="It returns the number of deleted event handler functions." />
+          <Arguments>
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="destroy" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Web browser (Android)" description="This method is used to delete a component that is dynamically created through a script.">
+        <Syntax text="ExcelImportObject.destroy()">
+          <Return type="Boolean" description="It returns whether deletion was successful or not." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Web browser (Android)" description="It finds a designated event handler function and returns the index.">
+        <Syntax text="ExcelImportObject.findEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="Index of a designated function" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function object to find" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Web browser (Android)" description="It is a method to return the specified event handler function.">
+        <Syntax text="ExcelImportObject.getEventHandler( strEventID, nIdx )">
+          <Return type="Object" description="It returns the object of the event handler function. If the specified index location is not valid, it returns &quot;null.&quot;" />
+          <Arguments>
+            <Argument name="nIdx" type="Integer" in="false" out="false" option="false" variable="false" description="Index of the event handler function (Zero-based index)" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="importData" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Web browser (Android)" description="It is a method to import data.">
+        <Syntax text="ExcelImportObject.importData( strSource,strRange,strOutDatasets [,strArgument] )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="strArgument" type="String" in="false" out="false" option="false" variable="false" description="An argument for import transaction Make an input in the form of &quot;a=b,&quot; and a delimiter is a blank. If an Excel file has a password, &quot;filepassword=Excel file password&quot; must be included as an fourth argument." />
+            <Argument name="strOutDatasets" type="String" in="false" out="false" option="false" variable="false" description="They are Dataset IDs to receive import transaction results.&#xD;&#xA;They can get more than one Dataset.&#xD;&#xA;Each ID is distinguished by a space. Match a real name with an ID in the form of a=b." />
+            <Argument name="strRange" type="String" in="false" out="false" option="false" variable="false" description="It sets the import Range&#xA;In case of Excel, it is designated to a correspondent &quot;Sheet!Cell:Cell&quot;.&#xA;&#xA;When performing multiple imports,&#xA;[Command=&quot;strCommand&quot;; Output=dsName; Head=Sheet!Cell:Cell; Body=Sheet!Cell:Cell]&#xA;....&#xA;....&#xA;[Command=&quot;strCommand&quot;; Output=dsName; Head=Sheet!Cell:Cell; Body=Sheet!Cell:Cell]&#xA;&#xA;&lt;default&gt;&#xA;Command : getsheetlist= to retrieve a sheet list, getsheetdata= to retrieve sheet data, getsheetdata will be applied if Command is skipped.&#xA;Output : It specifies names of resulting datasets.  Dataset names will be automatically generated, beginning with output1, output2, and on and on, if skipped.&#xA;Head : It specifies a head column area. Column names will be automatically generated, beginning with Column0, Column1, and on and on, if skipped.&#xA;Body : It specifies a body column area. All records will be returned, if skipped." />
+            <Argument name="strSource" type="String" in="false" out="false" option="false" variable="false" description="It designates the import Source. &#xD;&#xA;In case of Excel, it designates a server location for the relevant ExcelFile. When it is set as importfilemode=&quot;local&quot;, the importSource will be ignored, and a FileDialog where to choose the relevant file will be displayed. Select it. The FileDialog will be displayed when entering &quot;&quot;value as well. Select it." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Web browser (Android)" description="It removes a designated index or an event handler function.">
+        <Syntax text="ExcelImportObject.removeEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="It returns the number of removed event handler functions(if successful, 1. if fails, 0)" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="event handler function item to remove" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Web browser (Android)" description="It removes an event handler lookup with a designated event ID.">
+        <Syntax text="ExcelImportObject.removeEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="It returns the number of deleted event handler functions. (if is successful, 1. if it fails, 0)" />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Web browser (Android)" description="It changes an event handler function.">
+        <Syntax text="ExcelImportObject.setEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="If it is success, it returns the changed index. Otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Web browser (Android)" description="It sets an event handler lookup with a designated event ID.">
+        <Syntax text="ExcelImportObject.setEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns the changed index, otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+          </Arguments>
+        </Syntax>
+      </Method>
+    </MethodInfo>
+    <EventHandlerInfo>
+      <EventHandler name="onerror" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Web browser (Android)" description="This event occurs when there is an error during import process.">
+        <Syntax text="ExcelImportObject.onerror(obj:nexacro.ExcelImportObject,e:nexacro.ExcelImportErrorEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="ExcelImportErrorEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onsuccess" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Web browser (Android)" description="This event occurs when import process is completed.">
+        <Syntax text="ExcelImportObject.onsuccess(obj:nexacro.ExcelImportObject,e:nexacro.ExcelImportEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="ExcelImportEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+    </EventHandlerInfo>
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

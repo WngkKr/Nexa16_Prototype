@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.ContactSet">
+    <ObjectInfo inheritance="" classname="nexacro.ContactSet" shorttypename="" csstypename="ContactSet" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="" defaultheight="" registration="allow" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It handles contact data of a mobile device." />
+    <PropertyInfo />
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo>
+      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It adds an event handler function.">
+        <Syntax text="ContactSet.addEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns the changed index, otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="true" out="true" option="true" variable="true" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It adds an event handler as a result searched with a designated event ID.">
+        <Syntax text="ContactSet.addEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns an added index value. Otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="append" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="To add contact point data of mobile device.">
+        <Syntax text="ContactSet.append(objContact)">
+          <Return type="Boolean" description="If objContact is omitted or it is not Contact Object, it shall return false and if not, it shall return true." />
+          <Arguments>
+            <Argument name="objContact" type="Object" in="false" out="false" option="false" variable="false" description="Contact information to add (object Contact)" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It clears all set event handler functions.">
+        <Syntax text="ContactSet.clearEventHandler( strEventID )">
+          <Return type="Integer" description="It returns the number of deleted event handler functions." />
+          <Arguments>
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It finds a designated event handler function and returns the index.">
+        <Syntax text="ContactSet.findEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="Index of a designated function" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function object to find" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It is a method to return the specified event handler function.">
+        <Syntax text="ContactSet.getEventHandler( strEventID, nIdx )">
+          <Return type="Object" description="It returns the object of the event handler function. If the specified index location is not valid, it returns &quot;null.&quot;" />
+          <Arguments>
+            <Argument name="nIdx" type="Integer" in="false" out="false" option="false" variable="false" description="Index of the event handler function (Zero-based index)" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="query" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is a method to search matching data from contacts information in mobile devices.">
+        <Syntax text="ContactSet.query( strQueryInfo [, nResultCnt] )">
+          <Return type="Boolean" description="If strQueryInfo is omitted or unusable letters are input or if unusable numbers or letters for nResultCnt are input, it shall return false. Otherwise, it shall return true." />
+          <Arguments>
+            <Argument name="nResultCnt" type="Integer" in="false" out="false" option="false" variable="false" description="Number of contacts to return during searching  &#xA;In case of -1, there is no limit." />
+            <Argument name="strQueryInfo" type="String" in="false" out="false" option="false" variable="false" description="It supports reference conditional sentences and wild card characters. (‘?’, ‘*’ )" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="remove" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="To delete contact point data of mobile device.">
+        <Syntax text="ContactSet.remove(strUniqueID)">
+          <Return type="Boolean" description="If objContact is omitted or it is not Contact Object, it shall return false and if not, it shall return true." />
+          <Arguments>
+            <Argument name="strUniqueID" type="String" in="false" out="false" option="false" variable="false" description="Contact information to delete. uniqueid value of Contract Object." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It removes a designated index or an event handler function.">
+        <Syntax text="ContactSet.removeEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="It returns the number of removed event handler functions(if successful, 1. if fails, 0)" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="event handler function item to remove" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It removes an event handler lookup with a designated event ID.">
+        <Syntax text="ContactSet.removeEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="It returns the number of deleted event handler functions. (if is successful, 1. if it fails, 0)" />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It changes an event handler function.">
+        <Syntax text="ContactSet.setEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="If it is success, it returns the changed index. Otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It sets an event handler lookup with a designated event ID.">
+        <Syntax text="ContactSet.setEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns the changed index, otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="update" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="To update contact point data of mobile device.">
+        <Syntax text="ContactSet.update(objContact)">
+          <Return type="Boolean" description="If objContact is omitted or it is not a Contact object, it shall return false. Otherwise, it shall return true." />
+          <Arguments>
+            <Argument name="objContact" type="Object" in="false" out="false" option="false" variable="false" description="Contact information to update (Contact object)" />
+          </Arguments>
+        </Syntax>
+      </Method>
+    </MethodInfo>
+    <EventHandlerInfo>
+      <EventHandler name="onerror" group="" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when treatment of contact points data is failed in mobile device.">
+        <Syntax text="ContactSet.onerror(obj:nexacro.ContactSet,e:nexacro.ContactSetErrorEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="ContactSetErrorEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onsuccess" group="" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when treatment of contact points data is successful in mobile device.">
+        <Syntax text="ContactSet.onsuccess(obj:nexacro.ContactSet,e:nexacro.ContactSetEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="ContactSetEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+    </EventHandlerInfo>
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

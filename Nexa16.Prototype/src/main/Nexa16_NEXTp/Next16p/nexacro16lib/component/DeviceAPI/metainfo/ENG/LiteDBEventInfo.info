@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.LiteDBEventInfo">
+    <ObjectInfo inheritance="" classname="nexacro.LiteDBEventInfo" shorttypename="" csstypename="" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="deny" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This is an event info object that contains information about the use of a local database." />
+    <PropertyInfo>
+      <Property name="eventid" group="Misc." subgroup="" edittype="ID" defaultvalue="0" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is a property to return event property name." csspropertyname="" csselementname="" normalpropertyname="eventid" />
+      <Property name="reason" group="Misc." subgroup="" edittype="Number" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is a property to return local DB process status." csspropertyname="" csselementname="" normalpropertyname="reason" />
+      <Property name="returnvalue" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is a property to return local DB process result." csspropertyname="" csselementname="" normalpropertyname="returnvalue" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo />
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

@@ -5,6 +5,7 @@
     <Module url="ComComp.json"/>
     <Module url="Grid.json"/>
     <Module url="DeviceAPI.json"/>
+    <Module url="CustomAPI.json"/>
   </Modules>
   <Components>
     <Component type="JavaScript" id="Button" classname="nexacro.Button"/>

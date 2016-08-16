@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.0">
-  <Form id="TEST00" left="0" top="0" width="1024" height="768" titletext="New Form">
+  <Form id="TEST00" left="0" top="0" width="1024" height="768" titletext="New Form" border="1 solid  , 1 solid  , 1 solid  , 1 solid">
     <Layouts>
       <Layout height="768" width="1024">
-        <Button id="Button00" taborder="0" text="TEST" left="20" top="23" width="462" height="169" right="" bottom=""/>
+        <Button id="Button00" taborder="0" text="TEST" left="20" top="23" width="356" height="121" right="" bottom="" rightbase="Button01.left" leftbase="" topbase="" bottombase="" widthbase="" heightbase=""/>
+        <Button id="Button01" taborder="0" text="TEST" left="54.79%" top="24" width="" height="" right="108" bottom="623" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
       </Layout>
     </Layouts>
   </Form>

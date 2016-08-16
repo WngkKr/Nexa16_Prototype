@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.BindItem">
+    <ObjectInfo inheritance="" classname="nexacro.BindItem" shorttypename="" csstypename="" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="system" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="コンポーネントの特定のプロパティとデータセットのデータをバインドするために使用するオブジェクトです。" />
+    <PropertyInfo>
+      <Property name="columnid" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="バインドするDatasetのカラムIDを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="columnid" />
+      <Property name="compid" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="バインドするためのコンポーネントIDを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="compid" />
+      <Property name="datasetid" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="バインドするためのDatasetのIDを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="datasetid" />
+      <Property name="name" group="Information" subgroup="" edittype="String" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="BindItemの名前を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="name" />
+      <Property name="parent" group="Hidden" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="BindItemの親オブジェクトを持つプロパティです。" csspropertyname="" csselementname="" normalpropertyname="parent" />
+      <Property name="propid" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="バインドするコンポーネントのプロパティを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="propid" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo>
+      <Method name="bind" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="動的に追加したBindItemを実行するメソッドです。">
+        <Syntax text="BindItem.bind()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="destroy" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクリプトで動的に生成したBindItemを削除するメソッドです。">
+        <Syntax text="BindItem.destroy()">
+          <Return type="Boolean" description="BindItemが正常に削除されると、「true」を返します。&#xA;BindItemが正常に削除されないと、「false」を返します。" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="init" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクリプトで動的に生成されたBindItemを初期化するメソッドです。">
+        <Syntax text="BindItem.init(strName[,strCompID,strPropertyID,strDatasetID,strColumnID])">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="strColumnID" type="String" in="false" out="false" option="false" variable="false" description="バインドするDatasetカラムID" />
+            <Argument name="strCompID" type="String" in="false" out="false" option="false" variable="false" description="バインドするコンポーネントのID" />
+            <Argument name="strDatasetID" type="String" in="false" out="false" option="false" variable="false" description="バインドするDataset ID" />
+            <Argument name="strName" type="String" in="false" out="false" option="false" variable="false" description="BindItemのName" />
+            <Argument name="strPropertyID" type="String" in="false" out="false" option="false" variable="false" description="バインドするコンポーネントのプロパティID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+    </MethodInfo>
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

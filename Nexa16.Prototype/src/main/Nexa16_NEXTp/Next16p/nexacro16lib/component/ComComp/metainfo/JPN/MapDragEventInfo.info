@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.MapDragEventInfo">
+    <ObjectInfo inheritance="" classname="nexacro.MapDragEventInfo" shorttypename="" csstypename="" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="deny" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" />
+    <PropertyInfo>
+      <Property name="eventid" group="Eventinfo" subgroup="" edittype="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="イベント発生時に発生したイベントのIDを持つプロパティです。" csspropertyname="" csselementname="" normalpropertyname="eventid" />
+      <Property name="fromobject" group="Eventinfo" subgroup="" edittype="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="イベントが発生した原因となるコンポーネントを持つプロパティです。&#xA;　" csspropertyname="" csselementname="" normalpropertyname="fromobject" />
+      <Property name="fromreferenceobject" group="Eventinfo" subgroup="" edittype="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="イベント発生の原因となるコンポーネントまたはサブコントロールを持つプロパティです。" csspropertyname="" csselementname="" normalpropertyname="fromreferenceobject" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo>
+      <Method name="preventDefault" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="定義されたDefault Actionをキャンセルするメソッドです。　">
+        <Syntax text="preventDefault()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="stopPropagation" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="上位バブルイベントの発生を停止させるメソッドです。">
+        <Syntax text="MapDragEventInfo.stopPropagation()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+    </MethodInfo>
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

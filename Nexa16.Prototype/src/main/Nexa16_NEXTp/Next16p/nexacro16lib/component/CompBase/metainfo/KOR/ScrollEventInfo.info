@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.ScrollEventInfo">
+    <ObjectInfo inheritance="" classname="nexacro.ScrollEventInfo" shorttypename="" csstypename="" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="deny" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="스크롤 이벤트가 발생할 때 관련 정보가 담긴 EventInfo 오브젝트입니다." />
+    <PropertyInfo>
+      <Property name="eventid" group="Eventinfo" subgroup="" edittype="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="이벤트의 ID를 갖는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="eventid" />
+      <Property name="fromobject" group="Eventinfo" subgroup="" edittype="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="이벤트 발생의 원인이 되는 컴포넌트를 갖는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="fromobject" />
+      <Property name="fromreferenceobject" group="Eventinfo" subgroup="" edittype="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="이벤트 발생의 원인이 되는 컴포넌트 또는 서브컨트롤을 갖는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="fromreferenceobject" />
+      <Property name="pos" group="Misc." subgroup="" edittype="Number" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="이벤트 발생 후 변경된 Scroll Position 값을 나타내는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="pos" />
+      <Property name="type" group="Misc." subgroup="" edittype="String" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="발생한 이벤트의 타입을 반환하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="type" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo />
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

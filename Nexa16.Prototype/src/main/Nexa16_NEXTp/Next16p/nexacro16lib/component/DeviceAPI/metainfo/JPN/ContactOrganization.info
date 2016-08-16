@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.ContactOrganization">
+    <ObjectInfo inheritance="" classname="nexacro.ContactOrganization" shorttypename="" csstypename="ContactOrganization" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="" defaultheight="" registration="allow" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="連絡先で使用されるOrganizationフィールドオブジェクトです。" />
+    <PropertyInfo>
+      <Property name="company" group="" subgroup="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="モバイル機器で連絡先の情報の組織名を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="company" />
+      <Property name="department" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="モバイル機器で連絡先情報の部署名を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="department" />
+      <Property name="label" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="モバイル機器の連絡先情報のフィールド名称を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="label" />
+      <Property name="title" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="モバイル機器の連絡先情報の職級を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="title" />
+      <Property name="type" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="モバイル機器の連絡先情報の組織種類を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="type" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo />
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.LiteDBConnection">
+    <ObjectInfo inheritance="" classname="nexacro.LiteDBConnection" shorttypename="" csstypename="" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="" defaultheight="" registration="allow" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It shows the connection information of DB supported on mobile devices." />
+    <PropertyInfo>
+      <Property name="async" group="" subgroup="" edittype="Boolean" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows),desktop Hybrid (macOS)" description="It sets sync/async action mode." csspropertyname="" csselementname="" normalpropertyname="async" />
+      <Property name="busytimeout" group="" subgroup="" edittype="Number" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (IOS)" description="It is a property to set waiting time to retrieve signal if the table in the Database is locked when connecting to AsyncLiteDBConnection" csspropertyname="" csselementname="" normalpropertyname="busytimeout" />
+      <Property name="datasource" group="" subgroup="" edittype="String" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It sets a database route character string connected to LiteDBConnection." csspropertyname="" csselementname="" normalpropertyname="datasource" />
+      <Property name="errorcode" group="" subgroup="" edittype="" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It shows LiteDB error code information triggered while running LiteDBCConnection." csspropertyname="" csselementname="" normalpropertyname="errorcode" />
+      <Property name="errormsg" group="" subgroup="" edittype="" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It shows LiteDB error message information which occurs while running LiteDBConnection." csspropertyname="" csselementname="" normalpropertyname="errormsg" />
+      <Property name="openflag" group="" subgroup="" edittype="" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is a property to set flags when opening the database." csspropertyname="" csselementname="" normalpropertyname="openflag" />
+      <Property name="preconnect" group="" subgroup="" edittype="Boolean" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It defines whether to open a database in advance when creating LiteDBConnection" csspropertyname="" csselementname="" normalpropertyname="preconnect" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo>
+      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It adds an event handler function.">
+        <Syntax text="LiteDBConnection.addEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns the changed index, otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="true" out="true" option="true" variable="true" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It adds an event handler as a result searched with a designated event ID.">
+        <Syntax text="LiteDBConnection.addEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns an added index value. Otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="begin" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It sets transaction and a database connected to LiteDBConnection">
+        <Syntax text="LiteDBConnection.begin()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It clears all set event handler functions.">
+        <Syntax text="LiteDBConnection.clearEventHandler( strEventID )">
+          <Return type="Integer" description="It returns the number of deleted event handler functions." />
+          <Arguments>
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="close" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It closes a database connected to LiteDBConnection">
+        <Syntax text="LiteDBConnection.close()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="commit" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It performs commit on a database connected to LiteDBConnection">
+        <Syntax text="LiteDBConnection.commit()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It finds a designated event handler function and returns the index.">
+        <Syntax text="LiteDBConnection.findEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="Index of a designated function" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function object to find" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It is a method to return the specified event handler function.">
+        <Syntax text="LiteDBConnection.getEventHandler( strEventID, nIdx )">
+          <Return type="Object" description="It returns the object of the event handler function. If the specified index location is not valid, it returns &quot;null.&quot;" />
+          <Arguments>
+            <Argument name="nIdx" type="Integer" in="false" out="false" option="false" variable="false" description="Index of the event handler function (Zero-based index)" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="isConnected" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It checks whether LiteDBConnection is connected to a database.">
+        <Syntax text="LiteDBConnection.isConnected()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="open" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This property is used to connect LiteDBConnection to a database on a mobile device.">
+        <Syntax text="LiteDBConnection.open( [strDataSource [,constOpenFlag]] )">
+          <Return type="Boolean" description="It returns false when an invalid value is used in constOpenFlag. Otherwise, it returns true." />
+          <Arguments>
+            <Argument name="constOpenFlag" type="Constant" in="false" out="false" option="false" variable="false" description="Connection option (same as LiteDBConnection.openflag)" />
+            <Argument name="strDataSource" type="String" in="false" out="false" option="false" variable="false" description="Path name of a database to be connected" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It removes a designated index or an event handler function.">
+        <Syntax text="LiteDBConnection.removeEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="It returns the number of removed event handler functions(if successful, 1. if fails, 0)" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="event handler function item to remove" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It removes an event handler lookup with a designated event ID.">
+        <Syntax text="LiteDBConnection.removeEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="It returns the number of deleted event handler functions. (if is successful, 1. if it fails, 0)" />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="rollback" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It carries out Rollback on a database connected to LiteDBConnection.">
+        <Syntax text="LiteDBConnection.rollback()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It changes an event handler function.">
+        <Syntax text="LiteDBConnection.setEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="If it is success, it returns the changed index. Otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It sets an event handler lookup with a designated event ID.">
+        <Syntax text="LiteDBConnection.setEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns the changed index, otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+          </Arguments>
+        </Syntax>
+      </Method>
+    </MethodInfo>
+    <EventHandlerInfo>
+      <EventHandler name="onerror" group="" deprecated="false" unused="false" requirement="nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs when a task requested to LiteDBConnection fails.">
+        <Syntax text="LiteDBConnection.onerror(obj:nexacro.LiteDBConnection,e:nexacro.LiteDBErrorEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="LiteDBErrorEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onsuccess" group="" deprecated="false" unused="false" requirement="nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs when a task requested to LiteDBConnection is successful.">
+        <Syntax text="LiteDBConnection.onsuccess(obj:nexacro.LiteDBConnection,e:nexacro.LiteDBEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="LiteDBEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+    </EventHandlerInfo>
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

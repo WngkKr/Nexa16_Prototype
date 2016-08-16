@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.Menu">
+    <ObjectInfo inheritance="nexacro.Component" classname="nexacro.Menu" shorttypename="" csstypename="Menu" csscontrolname="MenuControl" group="Component" subgroup="Component ( default )" csspseudo="true" container="false" composite="false" tabstop="true" cssstyle="true" contents="false" formats="false" contentseditor="auto" defaultwidth="685" defaultheight="25" registration="allow" edittype="menu" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="onmenuclick" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="MenuBar is a component which enables a user to make a menu bar or pop-up menu. A menu bar can form layered menus while a popup menu can be created as a sub-menu of a menu bar or executed on a right-click.&#xA; &#xA;Each item of a menu can designate Enable/Disable and indicate check status. Each item can be deleted or added in real time." />
+    <PropertyInfo>
+      <Property name="autohotkey" group="Appearance" subgroup="" edittype="Boolean" defaultvalue="false" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="autohotkey" />
+      <Property name="background" group="Style" subgroup="background" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set a background of a component." csspropertyname="background" csselementname="" normalpropertyname="background" />
+      <Property name="border" group="Style" subgroup="border" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="border" csselementname="" normalpropertyname="border" />
+      <Property name="borderRadius" group="Style" subgroup="border-radius" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="border-radius" csselementname="" normalpropertyname="borderRadius" />
+      <Property name="bottom" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="Position2Type" unitinfo="Position2Type" delimiter="" requirement="" description="It is a property to set the coordinate of the bottomof a newly created Menu." csspropertyname="" csselementname="" normalpropertyname="bottom" />
+      <Property name="bottombase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="bottombase" />
+      <Property name="boxShadow" group="Style" subgroup="box-shadow" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="box-shadow" csselementname="" normalpropertyname="boxShadow" />
+      <Property name="captioncolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This property is used to designate a dataset column  to use its values as the text written on menu items. The dataset here is the one bound through the innerdataset property." csspropertyname="" csselementname="" normalpropertyname="captioncolumn" />
+      <Property name="checkboxcolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate Column which shall be used for CheckBox of Menu when MenuDataset is bound." csspropertyname="" csselementname="" normalpropertyname="checkboxcolumn" />
+      <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="" csspropertyname="color" csselementname="" normalpropertyname="color" />
+      <Property name="cssclass" group="Information" subgroup="" edittype="CssClass" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate a style of Menu with class of CSS." csspropertyname="" csselementname="" normalpropertyname="cssclass" />
+      <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
+      <Property name="enable" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This property is used to determine whether to enable an Menu." csspropertyname="" csselementname="" normalpropertyname="enable" />
+      <Property name="enablecolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate Column which shall be used for Enable status of Menu item when MenuDataset is bound." csspropertyname="" csselementname="" normalpropertyname="enablecolumn" />
+      <Property name="enableevent" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to determine whether to generate Event of Menu." csspropertyname="" csselementname="" normalpropertyname="enableevent" />
+      <Property name="expr" group="Appearance" subgroup="" edittype="String" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="expr" />
+      <Property name="font" group="Style" subgroup="font" edittype="Font" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="FontSize_Point" delimiter="" requirement="" description="" csspropertyname="font" csselementname="" normalpropertyname="font" />
+      <Property name="height" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="Menu height of the newly created." csspropertyname="" csselementname="" normalpropertyname="height" />
+      <Property name="heightbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="heightbase" />
+      <Property name="hotkey" group="Action" subgroup="" edittype="HotKey" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HotKeyModifier" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is a property to set hot keys for default actions of Menus." csspropertyname="" csselementname="" normalpropertyname="hotkey" />
+      <Property name="hotkeycolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate Column which shall be used for Hot Key String of Menu when MenuDataset is bound." csspropertyname="" csselementname="" normalpropertyname="hotkeycolumn" />
+      <Property name="iconcolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="It is Property to designate Column which shall be used for Icon ID of Menu of Menu when MenuDataset is bound." csspropertyname="" csselementname="" normalpropertyname="iconcolumn" />
+      <Property name="id" group="Information" subgroup="" edittype="ID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="id" />
+      <Property name="idcolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate Column which shall be used for ID String of Menu when MenuDataset is bound." csspropertyname="" csselementname="" normalpropertyname="idcolumn" />
+      <Property name="initvalueid" group="Information" subgroup="" edittype="InitvalueID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the ID of an InitValue to be applied to an Menu." csspropertyname="" csselementname="" normalpropertyname="initvalueid" />
+      <Property name="innerdataset" group="Binding" subgroup="bind(innerdataset)" edittype="InnerDatasetID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This property is used to set a dataset." csspropertyname="" csselementname="" normalpropertyname="innerdataset" />
+      <Property name="left" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="Menu left coordinate of the newly created." csspropertyname="" csselementname="" normalpropertyname="left" />
+      <Property name="leftbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="leftbase" />
+      <Property name="letterSpacing" group="Style" subgroup="letter-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
+      <Property name="levelcolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate Column which shall be used for Level value of Menu when MenuDataset is bound." csspropertyname="" csselementname="" normalpropertyname="levelcolumn" />
+      <Property name="lineHeight" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
+      <Property name="name" group="Information" subgroup="" edittype="String" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It designates names of components." csspropertyname="" csselementname="" normalpropertyname="name" />
+      <Property name="edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
+      <Property name="padding" group="Style" subgroup="padding" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
+      <Property name="textAlign" group="Style" subgroup="-nexa-text-align" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
+      <Property name="textDecoration" group="Style" subgroup="text-decoration" edittype="MultiEnum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="TextDecorationLine" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-decoration" csselementname="" normalpropertyname="textDecoration" />
+      <Property name="verticalAlign" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
+      <Property name="wordWrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
+      <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the opacity of an Menu." csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
+      <Property name="parent" group="Hidden" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It indicates the parent object of a component." csspropertyname="" csselementname="" normalpropertyname="parent" />
+      <Property name="popupitemheight" group="Appearance" subgroup="" edittype="Number" defaultvalue="20" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Point" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate Height of Item which constitutes Popup Menu." csspropertyname="" csselementname="" normalpropertyname="popupitemheight" />
+      <Property name="popuptype" group="Appearance" subgroup="" edittype="Enum" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="PopupType" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It sets the position for the sub menu to be displayed." csspropertyname="" csselementname="" normalpropertyname="popuptype" />
+      <Property name="position" group="Position" subgroup="refresh(position)" edittype="Enum" defaultvalue="absolute" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="PositionType" unitinfo="PositionStep" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Mobile Hybrid (IOS)" description="It sets coordinate reference values of Menus." csspropertyname="" csselementname="" normalpropertyname="position" />
+      <Property name="positionstep" group="Position" subgroup="refresh(position)" edittype="Number" defaultvalue="0" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="PositionStep" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate which Step belonging Form, Div, Tabpage, or PopupDiv belong to when they use Step function." csspropertyname="" csselementname="" normalpropertyname="positionstep" />
+      <Property name="right" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="Menu right coordinate of the newly created." csspropertyname="" csselementname="" normalpropertyname="right" />
+      <Property name="rightbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="rightbase" />
+      <Property name="taborder" group="Action" subgroup="" edittype="Number" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate movement order of focus by Tab key which Component has in Form." csspropertyname="" csselementname="" normalpropertyname="taborder" />
+      <Property name="tabstop" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate whether to receive focus by Tab key." csspropertyname="" csselementname="" normalpropertyname="tabstop" />
+      <Property name="text" group="Appearance" subgroup="" edittype="String" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="text" />
+      <Property name="tooltiptext" group="Action" subgroup="" edittype="MultilineString" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate Tool Tip to show when a mouse pointer is on Component." csspropertyname="" csselementname="" normalpropertyname="tooltiptext" />
+      <Property name="tooltiptype" group="Action" subgroup="" edittype="Enum" defaultvalue="default" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="TooltipType" unitinfo="" delimiter="" requirement="nexacro browser (Windows),Mobile Hybrid (Android)" description="It is Property to designate a method to output Tool tip." csspropertyname="" csselementname="" normalpropertyname="tooltiptype" />
+      <Property name="top" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="Menu top coordinate of the newly created." csspropertyname="" csselementname="" normalpropertyname="top" />
+      <Property name="topbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="topbase" />
+      <Property name="userdatacolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate Column which shall be used for UserData of Menu when MenuDataset is bound." csspropertyname="" csselementname="" normalpropertyname="userdatacolumn" />
+      <Property name="visible" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate whether to show Menu in screen." csspropertyname="" csselementname="" normalpropertyname="visible" />
+      <Property name="width" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="Menu width of the newly created." csspropertyname="" csselementname="" normalpropertyname="width" />
+      <Property name="widthbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="widthbase" />
+      <Property name="wordSpacing" group="Style" subgroup="word-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo>
+        <Property name="background" group="Style" subgroup="background" edittype="" defaultvalue="transparent" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set a background of a component." csspropertyname="background" csselementname="" normalpropertyname="background" />
+        <Property name="border" group="Style" subgroup="border" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="border" csselementname="" normalpropertyname="border" />
+        <Property name="border-radius" group="Style" subgroup="border-radius" edittype="String" defaultvalue="0px" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="border-radius" csselementname="" normalpropertyname="borderRadius" />
+        <Property name="box-shadow" group="Style" subgroup="box-shadow" edittype="" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="box-shadow" csselementname="" normalpropertyname="boxShadow" />
+        <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="" csspropertyname="color" csselementname="" normalpropertyname="color" />
+        <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" defaultvalue="auto" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
+        <Property name="font" group="Style" subgroup="font" edittype="Font" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="FontSize_Point" delimiter="" requirement="" description="" csspropertyname="font" csselementname="" normalpropertyname="font" />
+        <Property name="letter-spacing" group="Style" subgroup="letter-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
+        <Property name="line-height" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
+        <Property name="-nexa-edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
+        <Property name="-nexa-padding" group="Style" subgroup="padding" edittype="String" defaultvalue="0px 0px 0px 0px" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
+        <Property name="-nexa-text-align" group="Style" subgroup="-nexa-text-align" edittype="Enum" defaultvalue="left" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
+        <Property name="-nexa-text-decoration" group="Style" subgroup="text-decoration" edittype="MultiEnum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="TextDecorationLine" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-decoration" csselementname="" normalpropertyname="textDecoration" />
+        <Property name="-nexa-vertical-align" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" defaultvalue="middle" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
+        <Property name="-nexa-word-wrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
+        <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the opacity of an Menu." csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
+        <Property name="word-spacing" group="Style" subgroup="word-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
+      </PropertyInfo>
+      <StatusInfo>
+        <Status name="disabled" control="true" default="false" deprecated="false" unused="false" group="status" />
+        <Status name="mouseover" control="true" default="false" deprecated="false" unused="false" group="status" />
+        <Status name="focused" control="true" default="false" deprecated="false" unused="false" group="status" />
+        <Status name="enabled" control="true" default="true" deprecated="false" unused="false" group="status" />
+      </StatusInfo>
+    </StyleInfo>
+    <ControlInfo>
+      <Control name="popupmenu" classname="nexacro.PopupMenu" deprecated="false" unused="false" group="Control" subgroup="popup" />
+      <Control name="menuitem" classname="nexacro._MenuItemControl" deprecated="false" unused="false" group="" subgroup="" />
+    </ControlInfo>
+    <MethodInfo>
+      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It adds an event handler function.">
+        <Syntax text="Menu.addEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns the changed index, otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="true" out="true" option="true" variable="true" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It adds an event handler as a result searched with a designated event ID.">
+        <Syntax text="Menu.addEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns an added index value. Otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="bringToFront" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is method to change the order to draw Component to the first position of same level Components.">
+        <Syntax text="Menu.bringToFront()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="bringToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is method to change the order to draw Component to the next front position of same level Components.">
+        <Syntax text="Menu.bringToPrev()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="cancelPopup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Method to close current open Sub Menu.">
+        <Syntax text="Menu.cancelPopup()">
+          <Return type="Boolean" description="If successful, it shall return true and if failed, it shall return false." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It clears all set event handler functions.">
+        <Syntax text="Menu.clearEventHandler( strEventID )">
+          <Return type="Integer" description="It returns the number of deleted event handler functions." />
+          <Arguments>
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="destroy" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This method is used to delete a component that is dynamically created through a script.">
+        <Syntax text="Menu.destroy()">
+          <Return type="Boolean" description="It returns whether deletion was successful or not." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It finds a designated event handler function and returns the index.">
+        <Syntax text="Menu.findEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="Index of a designated function" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function object to find" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getDisplayText" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="">
+        <Syntax text="XComponenet.getDisplayText()">
+          <Return type="String" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="It is a method to return the specified event handler function.">
+        <Syntax text="Menu.getEventHandler( strEventID, nIdx )">
+          <Return type="Object" description="It returns the object of the event handler function. If the specified index location is not valid, it returns &quot;null.&quot;" />
+          <Arguments>
+            <Argument name="nIdx" type="Integer" in="false" out="false" option="false" variable="false" description="Index of the event handler function (Zero-based index)" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It returns a component which has focus.">
+        <Syntax text="Menu.getFocus()">
+          <Return type="Object" description="It returns a component if the component which has focus exists in a designated form.&#xD;&#xA;If not, it returns 'null'." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getInnerDataset" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It returns an InnerDataset object.">
+        <Syntax text="Menu.getInnerDataset()">
+          <Return type="Object" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets pixel values of the bottom property among Menu location information.">
+        <Syntax text="Menu.getOffsetBottom();">
+          <Return type="Number" description="It returns the value in pixels." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets pixel values of the height property among Menu location information.">
+        <Syntax text="Menu.getOffsetHeight();">
+          <Return type="Number" description="It returns the value in pixels" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets pixel values of the left property among Menu location information.">
+        <Syntax text="Menu.getOffsetLeft();">
+          <Return type="Number" description="It returns the value in pixels." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets pixel values of the right property among Menu location information.">
+        <Syntax text="Menu.getOffsetRight();">
+          <Return type="Number" description="It returns the value in pixels." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets pixel values of the top property among Menu location information.">
+        <Syntax text="Menu.getOffsetTop();">
+          <Return type="Number" description="It returns the value in pixels." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets pixel values of the width property among Menu location information.">
+        <Syntax text="Menu.getOffsetWidth();">
+          <Return type="Number" description="It returns the value in pixels." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getPixelBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="IIt gets pixel values of the bottom property among Menu location information.">
+        <Syntax text="Menu.getPixelBottom();">
+          <Return type="Number" description="It returns the value in pixels." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getPixelHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets pixel values of the height property among Menu location information.">
+        <Syntax text="Menu.getPixelHeight();">
+          <Return type="Number" description="It returns the value in pixels." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getPixelLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets pixel values of the left property among Menu location information.">
+        <Syntax text="Menu.getPixelLeft();">
+          <Return type="Number" description="It returns the value in pixels." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getPixelRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets pixel values of the right property among Menu location information.">
+        <Syntax text="Menu.getPixelRight();">
+          <Return type="Number" description="It returns the value in pixels." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getPixelTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets pixel values of the top property among Menu location information.">
+        <Syntax text="Menu.getPixelTop();">
+          <Return type="Number" description="It returns the value in pixels." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="getPixelWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gets pixel values of the width property among Menu location information.">
+        <Syntax text="Menu.getPixelWidth();">
+          <Return type="Number" description="It returns the value in pixels." />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="init" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This is a method to initialize an Menu after creating it in a script dynamically.">
+        <Syntax text="Menu.init( strName, strPosition, nLeft, nTop , nWidth, nHeight [, nRight, nBottom] )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="nBottom" type="Integer" in="false" out="false" option="false" variable="false" description="Bottom coordinate of a position to create an Menu.    &#xA;It is applied to the bottom coordinate of the position." />
+            <Argument name="nHeight" type="Integer" in="false" out="false" option="false" variable="false" description="Height of an Menu" />
+            <Argument name="nLeft" type="Integer" in="false" out="false" option="false" variable="false" description="Left coordinate of a location of an Menu.&#xA;It is applied to the left coordinate of the position." />
+            <Argument name="nRight" type="Integer" in="false" out="false" option="false" variable="false" description="Right coordinate of a position to create an Menu.&#xA;It is applied to the right coordinate of the position." />
+            <Argument name="nTop" type="Integer" in="false" out="false" option="false" variable="false" description="Top coordinate  of a location of an Menu.&#xA;It is applied to the top coordinate of the position." />
+            <Argument name="nWidth" type="Integer" in="false" out="false" option="false" variable="false" description="Width of an Menu" />
+            <Argument name="strName" type="String" in="false" out="false" option="false" variable="false" description="Menu ID" />
+            <Argument name="strPosition" type="String" in="false" out="false" option="false" variable="false" description="Coornidate type of Menu" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="isPopup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Method to confirm whether or not current Sub Menu is open.">
+        <Syntax text="Menu.isPopup()">
+          <Return type="Boolean" description="Whether Sub Menu is open.&#xA;(true/false)" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="move" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It moves a component into a specific location in specific size.">
+        <Syntax text="Menu.move( nLeft, nTop [, nWidth, nHeight [, nRight, nBottom]] )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="nBottom" type="Integer" in="false" out="false" option="false" variable="false" description="bottom coordinate to locate a component." />
+            <Argument name="nHeight" type="Integer" in="false" out="false" option="false" variable="false" description="height of a component" />
+            <Argument name="nLeft" type="Integer" in="false" out="false" option="false" variable="false" description="left coordinate to locate a component." />
+            <Argument name="nRight" type="Integer" in="false" out="false" option="false" variable="false" description="right coordinate to locate a component." />
+            <Argument name="nTop" type="Integer" in="false" out="false" option="false" variable="false" description="top coordinate to locate a component." />
+            <Argument name="nWidth" type="Integer" in="false" out="false" option="false" variable="false" description="width of a component" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="moveToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It changes the order to draw a component to the next back position based on a component given as an argument.">
+        <Syntax text="Menu.moveToNext( objComp )&#xA;Menu.moveToNext( strComp )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="objComp" type="Object" in="false" out="false" option="false" variable="false" description="It is a target component object." />
+            <Argument name="strComp" type="String" in="false" out="false" option="false" variable="false" description="It is a character string value of the target component ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="moveToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It changes the order to draw a component to the prior front position based on a component given as an argument.">
+        <Syntax text="Menu.moveToPrev( objComp )&#xA;Menu.moveToPrev( strComp )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="objComp" type="Object" in="false" out="false" option="false" variable="false" description="It is a target component object." />
+            <Argument name="strComp" type="String" in="false" out="false" option="false" variable="false" description="It is a character string value of the target component ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It removes a designated index or an event handler function.">
+        <Syntax text="Menu.removeEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="It returns the number of removed event handler functions(if successful, 1. if fails, 0)" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="event handler function item to remove" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It removes an event handler lookup with a designated event ID.">
+        <Syntax text="Menu.removeEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="It returns the number of deleted event handler functions. (if is successful, 1. if it fails, 0)" />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="Target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="resize" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Method to change size of Menu.">
+        <Syntax text="Menu.resize( nWidth, nHeight )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="nHeight" type="Integer" in="false" out="false" option="false" variable="false" description="It is length to change." />
+            <Argument name="nWidth" type="Integer" in="false" out="false" option="false" variable="false" description="It is length to change." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="sendToBack" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is method to change the order to draw Component to the last position of same level Components.">
+        <Syntax text="Menu.sendToBack()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="sendToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is method to change the order to draw Component to the next back position of same level Components.">
+        <Syntax text="Menu.sendToNext()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It changes an event handler function.">
+        <Syntax text="Menu.setEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="If it is success, it returns the changed index. Otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It sets an event handler lookup with a designated event ID.">
+        <Syntax text="Menu.setEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="If successful, it returns the changed index, otherwise, it returns -1." />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="target scope" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="Event ID" />
+            <Argument name="strFunc" type="Object" in="false" out="false" option="false" variable="false" description="Event handler function" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It gives a focus to an Menu.">
+        <Syntax text="Menu.setFocus( [bMoveScroll] )">
+          <Return type="Object" description="It returns a component which has prior focus.&#xD;&#xA;If there is no component which has prior focus, or if the method fails, it returns 'null'." />
+          <Arguments>
+            <Argument name="bMoveScroll" type="Boolean" in="false" out="false" option="false" variable="false" description="Whether to set scroll again based on a relevant component after SetFocus&#xA;[Default : true]" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setInnerDataset" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It sets an InnerDataset object.">
+        <Syntax text="Menu.setInnerDataset( objDataset )">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="objDataset" type="Object" in="false" out="false" option="false" variable="false" description="A dataset object you want to designate" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Set the value of the bottom relative to the left, top value of the Menu parent object.">
+        <Syntax text="Menu.setOffsetBottom( nBottom );">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="nBottom" type="Number" in="false" out="false" option="false" variable="false" description="numeric value" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Set the value of the height relative to the left, top value of the Menu parent object.">
+        <Syntax text="Menu.setOffsetHeight( nHeight );">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="nHeight" type="Number" in="false" out="false" option="false" variable="false" description="numeric value" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Set the value of the left relative to the left, top value of the Menu parent object.">
+        <Syntax text="Menu.setOffsetLeft( nLeft );">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="nLeft" type="Number" in="false" out="false" option="false" variable="false" description="numeric value" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Set the value of the right relative to the left, top value of the Menu parent object.">
+        <Syntax text="Menu.setOffsetRight( nRight );">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="nRight" type="Number" in="false" out="false" option="false" variable="false" description="numeric value" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Set the value of the top relative to the left, top value of the Menu parent object.">
+        <Syntax text="Menu.setOffsetTop( nTop );">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="nTop" type="Number" in="false" out="false" option="false" variable="false" description="numeric value" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Set the value of the width relative to the left, top value of the Menu parent object.">
+        <Syntax text="Menu.setOffsetWidth( nWidth );">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="nWidth" type="Object" in="false" out="false" option="false" variable="false" description="The numeric values​​." />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="show" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Method to actually show Menu which is dynamically generated in Script.">
+        <Syntax text="Menu.show()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="trackPopup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Method to pop up sub menus of a given menu index in a relevant position.">
+        <Syntax text="Menu.trackPopup( nIndex, nXpos, nYpos )">
+          <Return type="Boolean" description="If Popup of lower menu is successful, it shall return true and if not, it shall return false." />
+          <Arguments>
+            <Argument name="nIndex" type="Integer" in="false" out="false" option="false" variable="false" description="It is Index of menu to pop up." />
+            <Argument name="nXpos" type="Integer" in="false" out="false" option="false" variable="false" description="X coordinate to pop up" />
+            <Argument name="nYpos" type="Integer" in="false" out="false" option="false" variable="false" description="Y coordinate to pop up" />
+          </Arguments>
+        </Syntax>
+      </Method>
+    </MethodInfo>
+    <EventHandlerInfo>
+      <EventHandler name="onclick" group="Event" deprecated="false" unused="true" requirement="" description="">
+        <Syntax text="Menu.onclick(obj:nexacro.Menu,e:nexacro.);">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ondblclick" group="Event" deprecated="false" unused="true" requirement="" description="">
+        <Syntax text="Menu.ondblclick(obj:nexacro.Menu,e:nexacro.MouseEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="MouseEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ondrag" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when drag situation occurs by a mouse in Component area.">
+        <Syntax text="Menu.ondrag(obj:nexacro.Menu,e:nexacro.DragEventInfo);">
+          <Return type="Boolean" description="In case of false, drag function shall not be operational. &#xA;If true is returned, Event shall not occur in upper Component.&#xA;Default : false" />
+          <Arguments>
+            <Argument name="e" type="DragEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ondragenter" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when dragged Component enters into Component area.">
+        <Syntax text="Menu.ondragenter(obj:nexacro.Menu,e:nexacro.DragEventInfo);">
+          <Return type="Boolean" description="Whether to treat Event. If true is returned, Event shall not occur in upper Component.&#xA;Default : false" />
+          <Arguments>
+            <Argument name="e" type="DragEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ondragleave" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when dragged Component goes out of Component area.">
+        <Syntax text="Menu.ondragleave(obj:nexacro.Menu,e:nexacro.DragEventInfo);">
+          <Return type="Boolean" description="Whether to treat Event. If true is returned, Event shall not occur in upper Component.&#xA;default : false" />
+          <Arguments>
+            <Argument name="e" type="DragEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ondragmove" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when a dragged mouse moves in Component area.">
+        <Syntax text="Menu.ondragmove(obj:nexacro.Menu,e:nexacro.DragEventInfo);">
+          <Return type="Boolean" description="Whether to treat Event. If true is returned, Event shall not occur in upper Component.&#xD;&#xA;default: false" />
+          <Arguments>
+            <Argument name="e" type="DragEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ondrop" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs when you drop down a dragged component into the component area.">
+        <Syntax text="Menu.ondrop(obj:nexacro.Menu,e:nexacro.DragEventInfo);">
+          <Return type="Boolean" description="Whether to apply the event. If true is returned, the event shall not occur in the upper level component.&#xD;&#xA;default : false" />
+          <Arguments>
+            <Argument name="e" type="DragEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="oninput" group="Event" deprecated="false" unused="true" requirement="" description="">
+        <Syntax text="Menu.oninput(obj:nexacro.Menu,e:nexacro.InputEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="InputEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onkeydown" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when a Key of a keyboard is pressed while Focus is in Menu.">
+        <Syntax text="Menu.onkeydown(obj:nexacro.Menu,e:nexacro.KeyEventInfo);">
+          <Return type="Boolean" description="Whether to treat Event. If true is returned, onkeydown Event shall not occur in upper Component.&#xA;default : false" />
+          <Arguments>
+            <Argument name="e" type="KeyEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onkeyup" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs when a keyboard key is pressed and released while an Menu has focus.">
+        <Syntax text="Menu.onkeyup(obj:nexacro.Menu,e:nexacro.KeyEventInfo);">
+          <Return type="Boolean" description="Whether to process the event. If true is returned, the onkeyup event shall not occur in an upper level component.&#xD;&#xA;default : false" />
+          <Arguments>
+            <Argument name="e" type="KeyEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onkillfocus" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when Menu in which Focus is located loses Focus.">
+        <Syntax text="Menu.onkillfocus(obj:nexacro.Menu,e:nexacro.KillFocusEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="KillFocusEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onlbuttondown" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs when the left button of your mouse is pressed.">
+        <Syntax text="Menu.onlbuttondown(obj:nexacro.Menu,e:nexacro.MenuMouseEventInfo);">
+          <Return type="Boolean" description="" />
+          <Arguments>
+            <Argument name="e" type="MenuMouseEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onlbuttonup" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs when the left button of your mouse is pressed and released.">
+        <Syntax text="Menu.onlbuttonup(obj:nexacro.Menu,e:nexacro.MenuMouseEventInfo);">
+          <Return type="Boolean" description="" />
+          <Arguments>
+            <Argument name="e" type="MenuMouseEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onmenuclick" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs when the menu item is clicked.">
+        <Syntax text="Menu.onmenuclick(obj:nexacro.Menu,e:nexacro.MenuClickEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="MenuClickEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onmousedown" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when the other Buttons are pressed except for Left Button/Right Button of a mouse.">
+        <Syntax text="Menu.onmousedown(obj:nexacro.Menu,e:nexacro.MenuMouseEventInfo);">
+          <Return type="Boolean" description="Default : false &#xD;&#xA;Whether to treat Event. If true is returned, onmousedown Event shall not occur in upper Component." />
+          <Arguments>
+            <Argument name="e" type="MenuMouseEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onmouseenter" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when a cursor of a mouse enters into Menu area.">
+        <Syntax text="Menu.onmouseenter(obj:nexacro.Menu,e:nexacro.MenuMouseEventInfo);">
+          <Return type="Boolean" description="If there is not return or return value is false, Event of upper Component shall occur.&#xD;&#xA;If it has true value, Event of upper Component shall not occur." />
+          <Arguments>
+            <Argument name="e" type="MenuMouseEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onmouseleave" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs when your mouse cursor goes out of the menu area.">
+        <Syntax text="Menu.onmouseleave(obj:nexacro.Menu,e:nexacro.MenuMouseEventInfo);">
+          <Return type="Boolean" description="If the return value is set as false, the event occurs in an upper component.&#xD;&#xA;If the return value is set as true, the event shall not occur in the upper component." />
+          <Arguments>
+            <Argument name="e" type="MenuMouseEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onmousemove" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs when your mouse cursor moves in the menu area.">
+        <Syntax text="Menu.onmousemove(obj:nexacro.Menu,e:nexacro.MenuMouseEventInfo);">
+          <Return type="Boolean" description="If the return value is set as false, the event shall occur in an upper component.&#xD;&#xA;If the return value is set as true, the event shall not occur in the upper component.&#xD;&#xA;Default : false" />
+          <Arguments>
+            <Argument name="e" type="MenuMouseEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onmouseup" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs when the other buttons except the left and right buttons of your mouse are pressed and released.">
+        <Syntax text="Menu.onmouseup(obj:nexacro.Menu,e:nexacro.MenuMouseEventInfo);">
+          <Return type="Boolean" description="Default : false&#xD;&#xA;If the return value is set as true, the event shall be executed and doesn't occur in an upper component." />
+          <Arguments>
+            <Argument name="e" type="MenuMouseEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onmousewheel" group="Event" deprecated="false" unused="true" requirement="" description="It occurs when you scroll your mouse wheel.">
+        <Syntax text="Menu.onmousewheel(obj:nexacro.Menu,e:nexacro.MouseWheelEventInfo);">
+          <Return type="Boolean" description="If true is returned, mouse scroll wheel and  bubbling stop. &#xD;&#xA;If false is returned, the onmousewheel event occurs in the generated component and is bubbled. If the generated component doesn't need the onmousewheel event, the event will be taken by an upper level component." />
+          <Arguments>
+            <Argument name="e" type="MouseWheelEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onmove" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when Menu moves.">
+        <Syntax text="Menu.onmove(obj:nexacro.Menu,e:nexacro.MoveEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="MoveEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onrbuttondown" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs when the right button of your mouse is pressed.">
+        <Syntax text="Menu.onrbuttondown(obj:nexacro.Menu,e:nexacro.MenuMouseEventInfo);">
+          <Return type="Boolean" description="Default: false&#xD;&#xA;If the return value is set as true, the event shall be executed and doesn't occur in an upper component.&#xD;&#xA;(It is not supported in HTML5 version)." />
+          <Arguments>
+            <Argument name="e" type="MenuMouseEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onrbuttonup" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This is an event when you release the right button of a mouse.">
+        <Syntax text="Menu.onrbuttonup(obj:nexacro.Menu,e:nexacro.MenuMouseEventInfo);">
+          <Return type="Boolean" description="Default: false&#xD;&#xA;If the return value is set as true, the event shall be executed and doesn't occur in an upper component.&#xD;&#xA;(It is not supported in HTML5 version)" />
+          <Arguments>
+            <Argument name="e" type="MenuMouseEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onsetfocus" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when Focus is set to Menu.">
+        <Syntax text="Menu.onsetfocus(obj:nexacro.Menu,e:nexacro.SetFocusEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="SetFocusEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onsize" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when Menu size is changed.">
+        <Syntax text="Menu.onsize(obj:nexacro.Menu,e:nexacro.SizeEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="SizeEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ontouchend" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs at the time of touch end(up).">
+        <Syntax text="Menu.ontouchend(obj:nexacro.Menu,e:nexacro.TouchEventInfo);">
+          <Return type="Boolean" description="Whether to process the event or not. &#xD;&#xA;If true is returned, the event doesn't occur in an upper-level component. &#xD;&#xA;default : false" />
+          <Arguments>
+            <Argument name="e" type="TouchEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ontouchmove" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs during touches(move).">
+        <Syntax text="Menu.ontouchmove(obj:nexacro.Menu,e:nexacro.TouchEventInfo);">
+          <Return type="Boolean" description="Whether to process the event or not. &#xD;&#xA;If true is returned, the event doesn't occur in an upper-level component. &#xD;&#xA;default : false" />
+          <Arguments>
+            <Argument name="e" type="TouchEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="ontouchstart" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It occurs at the time of touch start(down)">
+        <Syntax text="Menu.ontouchstart(obj:nexacro.Menu,e:nexacro.TouchEventInfo);">
+          <Return type="Boolean" description="Whether to process the event or not. &#xD;&#xA;If true is returned, the event doesn't occur in an upper-level component. &#xD;&#xA;default : false" />
+          <Arguments>
+            <Argument name="e" type="TouchEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+    </EventHandlerInfo>
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

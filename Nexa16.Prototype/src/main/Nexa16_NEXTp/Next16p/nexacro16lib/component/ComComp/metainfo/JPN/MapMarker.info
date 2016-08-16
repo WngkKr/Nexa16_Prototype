@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.MapMarker">
+    <ObjectInfo inheritance="" classname="nexacro.MapMarker" shorttypename="" csstypename="MapMarker" csscontrolname="" group="Object" subgroup="Object" csspseudo="true" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="system" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,Chrome,Safari,Firefox,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" />
+    <PropertyInfo>
+      <Property name="location" group="Appearance" subgroup="" edittype="Object" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="マーカーを表示する地図上の位置です。" csspropertyname="" csselementname="" normalpropertyname="location" />
+      <Property name="style" group="Misc." subgroup="" edittype="Object" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="マーカーのスタイル情報です。" csspropertyname="" csselementname="" normalpropertyname="style" />
+      <Property name="text" group="Appearance" subgroup="" edittype="MultilineString" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="アイテムに表示されるロールオーバーテキスト" csspropertyname="" csselementname="" normalpropertyname="text" />
+      <Property name="visible" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="アイテムに表示されるかどうかを指定します。" csspropertyname="" csselementname="" normalpropertyname="visible" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo />
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

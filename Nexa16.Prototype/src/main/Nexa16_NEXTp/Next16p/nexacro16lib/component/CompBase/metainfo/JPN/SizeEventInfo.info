@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.SizeEventInfo">
+    <ObjectInfo inheritance="" classname="nexacro.SizeEventInfo" shorttypename="" csstypename="" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="deny" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="コンポーネントのサイズが変更されているイベントが発生したときに関連する情報が含まれたEventInfoオブジェクトです。" />
+    <PropertyInfo>
+      <Property name="cx" group="Misc." subgroup="" edittype="Number" defaultvalue="0" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="変更されたサイズの横の幅の値を持つプロパティです。" csspropertyname="" csselementname="" normalpropertyname="cx" />
+      <Property name="cy" group="Misc." subgroup="" edittype="Number" defaultvalue="0" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="変更されたサイズの縦の幅の値を持つプロパティです。" csspropertyname="" csselementname="" normalpropertyname="cy" />
+      <Property name="eventid" group="Eventinfo" subgroup="" edittype="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="イベント発生時に発生したイベントのIDを持つプロパティです。" csspropertyname="" csselementname="" normalpropertyname="eventid" />
+      <Property name="fromobject" group="Misc." subgroup="" edittype="Object" defaultvalue="0" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="fromobject" />
+      <Property name="fromreferenceobject" group="Eventinfo" subgroup="" edittype="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="イベント発生の原因となるコンポーネントまたはサブコントロールを持つプロパティです。" csspropertyname="" csselementname="" normalpropertyname="fromreferenceobject" />
+      <Property name="orientation" group="Misc." subgroup="" edittype="String" defaultvalue="resize" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="モバイルデバイスで方向センサの値を表示するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="orientation" />
+      <Property name="reverse" group="" subgroup="" edittype="" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スマートフォンで、orientationの状態によって付加的に指定されるプロパティです。&#xD;&#xA;&quot;true&quot;の場合、portrait基準top/ rightがportrait/ landscapeでbottomに配置するときに指定されます。&#xD;&#xA;（右に90度回転された場合）&#xD;&#xA;&quot;false&quot;の場合、portrait基準top/ rightがportrait/ landscapeでtopに配置するときに指定されます。&#xD;&#xA;（左に90度回転された場合）" csspropertyname="" csselementname="" normalpropertyname="reverse" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo />
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

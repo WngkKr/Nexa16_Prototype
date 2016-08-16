@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.Network">
+    <ObjectInfo inheritance="" classname="nexacro.Network" shorttypename="" csstypename="" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="" defaultheight="" registration="allow" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="モバイル機器のネットワーク接続情報を提供します。" />
+    <PropertyInfo>
+      <Property name="availabletype" group="" subgroup="" edittype="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="モバイル機器で使用可能なネットワークタイプに関する情報を持っているプロパティです。" csspropertyname="" csselementname="" normalpropertyname="availabletype" />
+      <Property name="timestamp" group="" subgroup="" edittype="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="モバイル機器で、使用可能なネットワークタイプを確認した時刻情報を持っているプロパティです。" csspropertyname="" csselementname="" normalpropertyname="timestamp" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo>
+      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="Networkの特定イベントにハンドラ関数を追加するメソッドです。">
+        <Syntax text="Network.addEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="イベントに追加されたハンドラ関数のインデックスを返します。&#xA;同じハンドラ関数がすでにある場合は、該当ハンドラ関数のインデックスを返します。&#xA;正常に追加されない場合には、「-1」を返します。" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="イベントが発生したときに実行されるハンドラ関数を設定します。" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="ハンドラ関数が定義された領域を設定します。" />
+            <Argument name="strEventID" type="String" in="true" out="true" option="true" variable="true" description="ハンドラ関数が追加されるイベントのIDを設定します。" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="関数を検索してNetworkの特定のイベントにハンドラ関数として追加するメソッドです。">
+        <Syntax text="Network.addEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="イベントに追加されたハンドラ関数のインデックスを返します。&#xA;同じハンドラ関数がすでにある場合は、該当ハンドラ関数のインデックスを返します。&#xA;正常に追加されない場合には、「-1」を返します。" />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="ハンドラ関数を検索する領域を設定します。&#xA;該当領域に関数が定義されない場合は、上位の領域に検索します。" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="ハンドラ関数が追加されるイベントのIDを設定します。" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="イベントが発生したときに実行されるハンドラ関数の名前を文字列に設定します。" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="特定のイベントに登録されたハンドラ関数をすべて削除するメソッドです。">
+        <Syntax text="Network.clearEventHandler( strEventID )">
+          <Return type="Integer" description="特定のイベントで削除されたハンドラ関数の数を返します。" />
+          <Arguments>
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="すべてのハンドラ関数を削除するイベントのIDを設定します。" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="Networkの特定イベントからハンドラ関数を検索してインデックスを返すメソッドです。">
+        <Syntax text="Network.findEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="イベントで検索しようとするハンドラ関数のインデックスを返します。&#xA;検索しようとするハンドラ関数が存在しない場合、「-1」を返します。" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="検索しようとするハンドラ関数を設定します。" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="検索しようとするハンドラ関数が定義された領域を設定します。" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="ハンドラ関数を検索するイベントのIDを設定します。" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="getEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="Networkの特定のイベントで指定されたインデックスに該当するハンドラ関数を返すメソッドです。">
+        <Syntax text="Network.getEventHandler( strEventID, nIdx )">
+          <Return type="Object" description="コンポーネントの削除に成功すると、削除されたコンポーネントのオブジェクトを返します。&#xA;コンポーネントの削除に失敗すると、「null」を返します。" />
+          <Arguments>
+            <Argument name="nIdx" type="Integer" in="false" out="false" option="false" variable="false" description="取得しようとするハンドラ関数のインデックスを設定します。&#xA;インデックスは、「0」から開始します。" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="ハンドラ関数を取得するイベントのIDを設定します。" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="isReachable" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="モバイル機器で、指定されたURLに接続が可能かどうかを確認を要請します。&#xD;&#xA;　">
+        <Syntax text="Network.isReachable(strURL)">
+          <Return type="Boolean" description="strUrlが省略されたり、パス名に使用できない文字が入力された場合はfalse、ない場合はtrueを返します。　" />
+          <Arguments>
+            <Argument name="strURL" type="String" in="false" out="false" option="false" variable="false" description="strURL : 接続を確認するURL&#xD;&#xA;例) “http://www.tobesoft.com”　" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="Networkの特定イベントからハンドラ関数を削除するメソッドです。">
+        <Syntax text="Network.removeEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="ハンドラ関数の削除に成功すると、「1」を返します。&#xA;ハンドラ関数の削除に失敗すると、「0」を返します。" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="削除するハンドラ関数を設定します。" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="削除するハンドラ関数が定義された領域を設定します。" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="ハンドラ関数を削除するイベントのIDを設定します。" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="Networkの特定のイベントから検索された関数と同じハンドラ関数を削除するメソッドです。">
+        <Syntax text="Network.removeEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="ハンドラ関数の削除に成功すると、「1」を返します。&#xA;ハンドラ関数の削除に失敗すると、「0」を返します。" />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="削除するハンドラ関数が定義された領域を設定します。&#xA;該当領域に関数が定義されていない場合は、上位の領域に上がりながら検索します。" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="ハンドラ関数を削除するイベントIDを設定します。" />
+            <Argument name="strFunc" type="String" in="false" out="false" option="false" variable="false" description="削除するハンドラ関数名を文字列に設定します。" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="Networkの特定のイベントの最初のハンドラ関数を変更するメソッドです。">
+        <Syntax text="Network.setEventHandler( strEventID, objFunc, objTarget )">
+          <Return type="Integer" description="最初のハンドラ関数の変更に成功すると、「0」を返します。&#xA;最初のハンドラ関数の変更に失敗すると、「-1」を返します。" />
+          <Arguments>
+            <Argument name="objFunc" type="Object" in="false" out="false" option="false" variable="false" description="既存のハンドラ関数を置換する関数を設定します。" />
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="置き換えるハンドラ関数が定義された領域を設定します。" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="ハンドラ関数を変更するイベントのIDを設定します。" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="Networkの特定のイベントの最初のハンドラ関数を、検索された関数に変更するメソッドです。">
+        <Syntax text="Network.setEventHandlerLookup( strEventID, strFunc, objTarget )">
+          <Return type="Integer" description="最初のハンドラ関数の変更に成功すると、「0」を返します。&#xA;最初のハンドラ関数の変更に失敗すると、「-1」を返します。" />
+          <Arguments>
+            <Argument name="objTarget" type="Object" in="false" out="false" option="false" variable="false" description="置き換えるハンドラ関数を検索する領域を設定します。&#xA;該当領域に関数が定義されていない場合は、上位領域に上がりながら検索します。" />
+            <Argument name="strEventID" type="String" in="false" out="false" option="false" variable="false" description="ハンドラ関数を変更するイベントのIDを設定します。" />
+            <Argument name="strFunc" type="Object" in="false" out="false" option="false" variable="false" description="既存のハンドラ関数を置換する関数名を文字列に設定します。" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="watchStart" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="モバイル機器でネットワーク状態の監視を開始するメソッドです。">
+        <Syntax text="Network.watchStart(nIntervalTime)">
+          <Return type="Boolean" description="nIntervalTimeが省略されたり、無効な数字や文字が入力されている場合にはfalse、ない場合はtrueを返します。" />
+          <Arguments>
+            <Argument name="nIntervalTime" type="Integer" in="false" out="false" option="false" variable="false" description="ネットワークステータスの確認間隔(ms : 200ms ~ 86400000ms)" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="watchStop" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="モバイル機器のネットワーク状態についた監視を終了するメソッドです。&#xD;&#xA;　">
+        <Syntax text="Network.watchStop()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+    </MethodInfo>
+    <EventHandlerInfo>
+      <EventHandler name="onrecverror" group="" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="モバイル機器のネットワークステータス確認に失敗したときに発生するイベントです。">
+        <Syntax text="Network.onrecverror(obj:nexacro.Network,e:nexacro.NetworkErrorEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="NetworkErrorEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="onrecvsuccess" group="" deprecated="false" unused="false" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="モバイル機器のネットワークステータス確認に成功したときに発生するイベントです。">
+        <Syntax text="Network.onrecvsuccess(obj:nexacro.Network,e:nexacro.NetworkEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="e" type="NetworkEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+    </EventHandlerInfo>
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

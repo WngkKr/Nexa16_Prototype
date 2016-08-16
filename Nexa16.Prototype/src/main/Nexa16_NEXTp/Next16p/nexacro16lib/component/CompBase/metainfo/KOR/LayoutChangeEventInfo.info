@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.LayoutChangeEventInfo">
+    <ObjectInfo inheritance="" classname="nexacro.LayoutChangeEventInfo" shorttypename="" csstypename="" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="" defaultheight="" registration="deny" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="멀티레이아웃이 적용된 경우 레이아웃이 변경될 때 관련 정보가 담긴 EventInfo 오브젝트입니다." />
+    <PropertyInfo>
+      <Property name="eventid" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="eventid" />
+      <Property name="fromobject" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="fromobject" />
+      <Property name="fromreferenceobject" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="fromreferenceobject" />
+      <Property name="newlayout" group="" subgroup="" edittype="" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="변경된 레이아웃의 이름을 나타내는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="newlayout" />
+      <Property name="newlayoutheight" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="변경된 레이아웃의 높이를 나타내는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="newlayoutheight" />
+      <Property name="newlayoutwidth" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="변경된 레이아웃의 너비를 나타내는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="newlayoutwidth" />
+      <Property name="oldlayout" group="" subgroup="" edittype="" defaultvalue="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="이벤트가 발생하기 전 레이아웃의 이름을 나타내는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="oldlayout" />
+      <Property name="oldlayoutheight" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="변경전 레이아웃의 높이를 나타내는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="oldlayoutheight" />
+      <Property name="oldlayoutwidth" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="변경전 레이아웃의 너비를 나타내는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="oldlayoutwidth" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo>
+      <Method name="stopPropagation" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="nexacro browser (Windows)" description="상위 버블 이벤트 발생을 중지시키는 메소드입니다.">
+        <Syntax text="LayoutChangeEventInfo.stopPropagation()">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+    </MethodInfo>
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

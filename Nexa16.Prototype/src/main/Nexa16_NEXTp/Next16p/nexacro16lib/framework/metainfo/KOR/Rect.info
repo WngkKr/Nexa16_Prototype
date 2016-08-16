@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.Rect">
+    <ObjectInfo inheritance="" classname="nexacro.Rect" shorttypename="" csstypename="Rect" csscontrolname="" group="" subgroup="" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="deny" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="영역 좌표 값을 지정하는 개체입니다. 스크립트로 생성하여 사용할 수있습니다." />
+    <PropertyInfo>
+      <Property name="bottom" group="Position" subgroup="" edittype="" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Rect Object 의 bottom 좌표를 설정하는 Property 입니다." csspropertyname="" csselementname="" normalpropertyname="bottom" />
+      <Property name="height" group="" subgroup="" edittype="" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Rect Object 의 height 설정하는 Property 입니다." csspropertyname="" csselementname="" normalpropertyname="height" />
+      <Property name="left" group="" subgroup="" edittype="" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Rect Object 의 left 좌표를 설정하는 Property 입니다." csspropertyname="" csselementname="" normalpropertyname="left" />
+      <Property name="right" group="" subgroup="" edittype="" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Rect Object 의 right 좌표를 설정하는 Property 입니다." csspropertyname="" csselementname="" normalpropertyname="right" />
+      <Property name="top" group="" subgroup="" edittype="" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Rect Object 의 top 좌표를 설정하는 Property 입니다." csspropertyname="" csselementname="" normalpropertyname="top" />
+      <Property name="width" group="" subgroup="" edittype="" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Rect Object 의 width 설정하는 Property 입니다." csspropertyname="" csselementname="" normalpropertyname="width" />
+    </PropertyInfo>
+    <StyleInfo>
+      <PropertyInfo />
+      <StatusInfo />
+    </StyleInfo>
+    <ControlInfo />
+    <MethodInfo>
+      <Method name="clear" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
+        <Syntax text="">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="clone" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
+        <Syntax text="">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="copy" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
+        <Syntax text="">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="isSame" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
+        <Syntax text="">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="isSameSize" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
+        <Syntax text="">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+      <Method name="set" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
+        <Syntax text="">
+          <Return type="" description="" />
+          <Arguments />
+        </Syntax>
+      </Method>
+    </MethodInfo>
+    <EventHandlerInfo />
+    <ContentsInfo />
+  </Object>
+</MetaInfo>
