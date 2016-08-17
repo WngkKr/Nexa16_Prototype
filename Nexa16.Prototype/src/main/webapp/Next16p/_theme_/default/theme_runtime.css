@@ -12,7 +12,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .Button .nexacontentsbox
@@ -20,6 +19,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .Button[status=mouseover]
 {
@@ -72,7 +72,7 @@
 	color		:		#000000;
 	border-radius		:		0px;
 	box-shadow		:		none;
-	cursor		:		auto;
+	cursor		:		text;
 	letter-spacing		:		normal;
 	word-spacing		:		normal;
 }
@@ -100,7 +100,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .Calendar .dropbutton .nexacontentsbox
@@ -108,6 +107,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .Calendar .dropbutton[status=mouseover]
 {
@@ -129,7 +129,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .Calendar .spindownbutton .nexacontentsbox
@@ -137,6 +136,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .Calendar .spindownbutton[status=mouseover]
 {
@@ -158,7 +158,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .Calendar .spinupbutton .nexacontentsbox
@@ -166,6 +165,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .Calendar .spinupbutton[status=mouseover]
 {
@@ -203,7 +203,7 @@
 	color		:		#000000;
 	border-radius		:		0px;
 	box-shadow		:		none;
-	cursor		:		auto;
+	cursor		:		text;
 	letter-spacing		:		normal;
 	word-spacing		:		normal;
 }
@@ -231,7 +231,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .CalendarControl .dropbutton .nexacontentsbox
@@ -239,6 +238,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .CalendarControl .dropbutton[status=mouseover]
 {
@@ -260,7 +260,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .CalendarControl .spindownbutton .nexacontentsbox
@@ -268,6 +267,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .CalendarControl .spindownbutton[status=mouseover]
 {
@@ -289,7 +289,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .CalendarControl .spinupbutton .nexacontentsbox
@@ -297,6 +296,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .CalendarControl .spinupbutton[status=mouseover]
 {
@@ -370,7 +370,7 @@
 	color		:		#000000;
 	border-radius		:		0px;
 	box-shadow		:		none;
-	cursor		:		auto;
+	cursor		:		text;
 	letter-spacing		:		normal;
 	word-spacing		:		normal;
 }
@@ -431,7 +431,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .Combo .dropbutton .nexacontentsbox
@@ -439,6 +438,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .Combo .dropbutton[status=mouseover]
 {
@@ -470,7 +470,7 @@
 	color		:		#000000;
 	border-radius		:		0px;
 	box-shadow		:		none;
-	cursor		:		auto;
+	cursor		:		text;
 	letter-spacing		:		normal;
 	word-spacing		:		normal;
 }
@@ -531,7 +531,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .ComboControl .dropbutton .nexacontentsbox
@@ -539,6 +538,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .ComboControl .dropbutton[status=mouseover]
 {
@@ -615,7 +615,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .DatePickerControl .body .weekband .nexacontentsbox
@@ -623,6 +622,7 @@
 	text-align		:		left;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .DatePickerControl .body .weekitem
 {
@@ -684,7 +684,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .DatePickerControl .head .monthspin .spindownbutton .nexacontentsbox
@@ -692,6 +691,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .DatePickerControl .head .monthspin .spindownbutton[status=mouseover]
 {
@@ -710,7 +710,7 @@
 	color		:		#333333;
 	border-radius		:		0px;
 	box-shadow		:		none;
-	cursor		:		auto;
+	cursor		:		text;
 	letter-spacing		:		normal;
 	word-spacing		:		normal;
 }
@@ -738,7 +738,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .DatePickerControl .head .monthspin .spinupbutton .nexacontentsbox
@@ -746,6 +745,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .DatePickerControl .head .monthspin .spinupbutton[status=mouseover]
 {
@@ -766,7 +766,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .DatePickerControl .head .monthstatic .nexacontentsbox
@@ -774,6 +773,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .DatePickerControl .head .nextbutton
 {
@@ -783,7 +783,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .DatePickerControl .head .nextbutton .nexacontentsbox
@@ -791,6 +790,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .DatePickerControl .head .nextbutton[status=mouseover]
 {
@@ -810,7 +810,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .DatePickerControl .head .prevbutton .nexacontentsbox
@@ -818,6 +817,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .DatePickerControl .head .prevbutton[status=mouseover]
 {
@@ -853,7 +853,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .DatePickerControl .head .yearspin .spindownbutton .nexacontentsbox
@@ -861,6 +860,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .DatePickerControl .head .yearspin .spindownbutton[status=mouseover]
 {
@@ -879,7 +879,7 @@
 	color		:		#333333;
 	border-radius		:		0px;
 	box-shadow		:		none;
-	cursor		:		auto;
+	cursor		:		text;
 	letter-spacing		:		normal;
 	word-spacing		:		normal;
 }
@@ -907,7 +907,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .DatePickerControl .head .yearspin .spinupbutton .nexacontentsbox
@@ -915,6 +914,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .DatePickerControl .head .yearspin .spinupbutton[status=mouseover]
 {
@@ -935,7 +935,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .DatePickerControl .head .yearstatic .nexacontentsbox
@@ -943,6 +942,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .Div
 {
@@ -979,7 +979,7 @@
 	background		:		transparent;
 	border-radius		:		0px;
 	box-shadow		:		none;
-	cursor		:		auto;
+	cursor		:		text;
 	letter-spacing		:		normal;
 	word-spacing		:		normal;
 }
@@ -1026,7 +1026,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .FileDownload .nexacontentsbox
@@ -1034,6 +1033,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .FileDownload[status=mouseover]
 {
@@ -1078,7 +1078,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .FileUpload .fileuploaditem .fileuploaditembutton .nexacontentsbox
@@ -1086,6 +1085,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .FileUpload .fileuploaditem .fileuploaditembutton[status=mouseover]
 {
@@ -1107,7 +1107,7 @@
 	color		:		#666666;
 	border-radius		:		0px;
 	box-shadow		:		none;
-	cursor		:		auto;
+	cursor		:		text;
 	letter-spacing		:		normal;
 	word-spacing		:		normal;
 }
@@ -1210,13 +1210,13 @@
 	color		:		#000000;
 	border-radius		:		0px;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .Grid .body .row .cell .nexacontentsbox
 {
 	text-align		:		center;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .Grid .body .row .cell.oddcell
 {
@@ -1236,7 +1236,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .Grid .body .row .cell .cellbutton .nexacontentsbox
@@ -1244,6 +1243,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .Grid .body .row .cell .cellbutton[status=mouseover]
 {
@@ -1310,7 +1310,7 @@
 	background		:		transparent;
 	border-radius		:		0px;
 	box-shadow		:		none;
-	cursor		:		auto;
+	cursor		:		text;
 	letter-spacing		:		normal;
 	word-spacing		:		normal;
 }
@@ -1361,7 +1361,7 @@
 	background		:		transparent;
 	border-radius		:		0px;
 	box-shadow		:		none;
-	cursor		:		auto;
+	cursor		:		text;
 	letter-spacing		:		normal;
 	word-spacing		:		normal;
 }
@@ -1458,7 +1458,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .Grid .body .row .cell .nexatreeline .nexacontentsbox
@@ -1466,6 +1465,7 @@
 	text-align		:		left;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .Grid .head
 {
@@ -1484,13 +1484,13 @@
 	color		:		#000000;
 	border-radius		:		0px;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .Grid .head .row .cell .nexacontentsbox
 {
 	text-align		:		center;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .Grid .summary
 {
@@ -1509,13 +1509,13 @@
 	color		:		#000000;
 	border-radius		:		0px;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .Grid .summary .row .cell .nexacontentsbox
 {
 	text-align		:		center;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .GroupBox .groupboxcontents
 {
@@ -1525,7 +1525,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .GroupBox .groupboxcontents .nexacontentsbox
@@ -1533,6 +1532,7 @@
 	text-align		:		left;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .GroupBox .groupboxcontents[status=disabled]
 {
@@ -1548,7 +1548,6 @@
 	border-radius		:		0px;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .GroupBox .groupboxtitle .nexacontentsbox
@@ -1556,6 +1555,7 @@
 	text-align		:		left;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .GroupBox .groupboxtitle[status=disabled]
 {
@@ -1585,7 +1585,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .HScrollBarControl .decbutton .nexacontentsbox
@@ -1593,6 +1592,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .HScrollBarControl .decbutton[status=mouseover]
 {
@@ -1613,7 +1613,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .HScrollBarControl .incbutton .nexacontentsbox
@@ -1621,6 +1620,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .HScrollBarControl .incbutton[status=mouseover]
 {
@@ -1641,7 +1641,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .HScrollBarControl .trackbar .nexacontentsbox
@@ -1649,6 +1648,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .HScrollBarControl .trackbar[status=mouseover]
 {
@@ -1666,7 +1666,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .HScrollIndicatorControl .nexacontentsbox
@@ -1674,6 +1673,7 @@
 	text-align		:		left;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .HScrollIndicatorControl .trackbar
 {
@@ -1683,7 +1683,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .HScrollIndicatorControl .trackbar .nexacontentsbox
@@ -1691,6 +1690,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .HScrollIndicatorControl .trackbar[status=mouseover]
 {
@@ -1730,7 +1730,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .ImageViewer .imagetext .nexacontentsbox
@@ -1738,6 +1737,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .ImageViewer .imagetext[status=disabled]
 {
@@ -1873,7 +1873,7 @@
 	background		:		transparent;
 	border-radius		:		0px;
 	box-shadow		:		none;
-	cursor		:		auto;
+	cursor		:		text;
 	letter-spacing		:		normal;
 	word-spacing		:		normal;
 }
@@ -2061,8 +2061,8 @@
 }
 .PopupMenu .popupmenuitem .popupmenuitemexpandimage
 {
-	border		:		0px none;
 	background		:		transparent;
+	border		:		0px none;
 	border-radius		:		0px;
 	cursor		:		default;
 }
@@ -2081,7 +2081,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .PopupMenu .popupmenuitem .popupmenuitemhotkeytext .nexacontentsbox
@@ -2089,6 +2088,7 @@
 	text-align		:		right;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .PopupMenu .popupmenuitem .popupmenuitemicon
 {
@@ -2112,7 +2112,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .PopupMenu .popupmenuitem .popupmenuitemtext .nexacontentsbox
@@ -2120,6 +2119,7 @@
 	text-align		:		left;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .PopupMenuControl
 {
@@ -2172,8 +2172,8 @@
 }
 .PopupMenuControl .popupmenuitem .popupmenuitemexpandimage
 {
-	border		:		0px none;
 	background		:		transparent;
+	border		:		0px none;
 	border-radius		:		0px;
 	cursor		:		default;
 }
@@ -2192,7 +2192,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .PopupMenuControl .popupmenuitem .popupmenuitemhotkeytext .nexacontentsbox
@@ -2200,6 +2199,7 @@
 	text-align		:		right;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .PopupMenuControl .popupmenuitem .popupmenuitemicon
 {
@@ -2223,7 +2223,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .PopupMenuControl .popupmenuitem .popupmenuitemtext .nexacontentsbox
@@ -2231,6 +2230,7 @@
 	text-align		:		left;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .ProgressBar
 {
@@ -2276,7 +2276,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .ProgressBar .progressbartext .nexacontentsbox
@@ -2284,6 +2283,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .ProgressBarControl
 {
@@ -2329,7 +2329,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .ProgressBarControl .progressbartext .nexacontentsbox
@@ -2337,6 +2336,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .Radio
 {
@@ -2450,7 +2450,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .Spin .spindownbutton .nexacontentsbox
@@ -2458,6 +2457,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .Spin .spindownbutton[status=mouseover]
 {
@@ -2479,7 +2479,7 @@
 	color		:		#000000;
 	border-radius		:		0px;
 	box-shadow		:		none;
-	cursor		:		auto;
+	cursor		:		text;
 	letter-spacing		:		normal;
 	word-spacing		:		normal;
 }
@@ -2508,7 +2508,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .Spin .spinupbutton .nexacontentsbox
@@ -2516,6 +2515,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .Spin .spinupbutton[status=mouseover]
 {
@@ -2539,7 +2539,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .Static .nexacontentsbox
@@ -2547,6 +2546,7 @@
 	text-align		:		left;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .Static[status=disabled]
 {
@@ -2562,7 +2562,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .StaticControl .nexacontentsbox
@@ -2570,6 +2569,7 @@
 	text-align		:		left;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .StaticControl[status=disabled]
 {
@@ -2636,7 +2636,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .StatusBarControl .statustext .nexacontentsbox
@@ -2644,6 +2643,7 @@
 	text-align		:		left;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .StepControl
 {
@@ -2660,7 +2660,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .StepControl .stepitem .nexacontentsbox
@@ -2668,6 +2667,7 @@
 	text-align		:		left;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .StepControl .stepitem[userstatus=selected]
 {
@@ -2690,7 +2690,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .Tab .spindownbuttonTab .nexacontentsbox
@@ -2698,6 +2697,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .Tab .spindownbuttonTab[status=focused]
 {
@@ -2736,7 +2736,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .Tab .spinupbuttonTab .nexacontentsbox
@@ -2744,6 +2743,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .Tab .spinupbuttonTab[status=focused]
 {
@@ -2822,7 +2822,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .Tab .tabbuttonitemTab .extrabutton .nexacontentsbox
@@ -2830,6 +2829,7 @@
 	text-align		:		left;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .Tab .tabbuttonitemTab .extrabutton[status=mouseover]
 {
@@ -2854,9 +2854,8 @@
 	background		:		transparent;
 	border-radius		:		0px;
 	box-shadow		:		none;
-	cursor		:		auto;
+	cursor		:		text;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .TextArea .nexatextarea
@@ -2870,6 +2869,7 @@
 	padding		:		10px 10px 10px 10px;
 	text-align		:		left;
 	text-decoration		:		none;
+	-nexa-word-wrap		:		none;
 }
 .TextArea[status=focused]
 {
@@ -2900,9 +2900,8 @@
 	background		:		transparent;
 	border-radius		:		0px;
 	box-shadow		:		none;
-	cursor		:		auto;
+	cursor		:		text;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .TextAreaControl .nexatextarea
@@ -2916,6 +2915,7 @@
 	padding		:		10px 10px 10px 10px;
 	text-align		:		left;
 	text-decoration		:		none;
+	-nexa-word-wrap		:		none;
 }
 .TextAreaControl[status=focused]
 {
@@ -2964,7 +2964,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .TitleBarControl .closebutton .nexacontentsbox
@@ -2972,6 +2971,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .TitleBarControl .closebutton[status=mouseover]
 {
@@ -2995,7 +2995,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .TitleBarControl .maxbutton .nexacontentsbox
@@ -3003,6 +3002,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .TitleBarControl .maxbutton[status=mouseover]
 {
@@ -3026,7 +3026,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .TitleBarControl .minbutton .nexacontentsbox
@@ -3034,6 +3033,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .TitleBarControl .minbutton[status=mouseover]
 {
@@ -3057,7 +3057,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .TitleBarControl .normalbutton .nexacontentsbox
@@ -3065,6 +3064,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .TitleBarControl .normalbutton[status=mouseover]
 {
@@ -3089,7 +3089,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .TitleBarControl .titleicon .nexacontentsbox
@@ -3097,6 +3096,7 @@
 	text-align		:		left;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .TitleBarControl .titleicon[status=deactivate]
 {
@@ -3126,7 +3126,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .VScrollBarControl .decbutton .nexacontentsbox
@@ -3134,6 +3133,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .VScrollBarControl .decbutton[status=mouseover]
 {
@@ -3154,7 +3154,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .VScrollBarControl .incbutton .nexacontentsbox
@@ -3162,6 +3161,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .VScrollBarControl .incbutton[status=mouseover]
 {
@@ -3182,7 +3182,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .VScrollBarControl .trackbar .nexacontentsbox
@@ -3190,6 +3189,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .VScrollBarControl .trackbar[status=mouseover]
 {
@@ -3207,7 +3207,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .VScrollIndicatorControl .nexacontentsbox
@@ -3215,6 +3214,7 @@
 	text-align		:		left;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .VScrollIndicatorControl .trackbar
 {
@@ -3224,7 +3224,6 @@
 	box-shadow		:		none;
 	cursor		:		default;
 	letter-spacing		:		normal;
-	-nexa-word-wrap		:		none;
 	word-spacing		:		normal;
 }
 .VScrollIndicatorControl .trackbar .nexacontentsbox
@@ -3232,6 +3231,7 @@
 	text-align		:		center;
 	text-decoration		:		none;
 	vertical-align		:		middle;
+	-nexa-word-wrap		:		none;
 }
 .VScrollIndicatorControl .trackbar[status=mouseover]
 {
