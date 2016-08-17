@@ -151,7 +151,7 @@
             </Tabpage>
           </Tabpages>
         </Tab>
-        <Div id="Div01" taborder="4" text="Div01" left="450" top="1" width="" height="" right="5" bottom="9" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+        <Div id="Div01" taborder="4" text="Div01" left="454" top="1" width="" height="" right="1" bottom="9" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
           <Layouts>
             <Layout>
               <Static id="Static00" taborder="0" text="계약구분" left="1" top="5" width="120" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>

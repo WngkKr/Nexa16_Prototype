@@ -9,10 +9,13 @@
         
         this.on_create = function()
         {
+            this._setPropInitFunc(function (obj)
+            {
+                obj.set_name("BMSalesProgramPresales");
+                obj.set_titletext("New Form");
+            });
             if (Form == this.constructor)
             {
-                this.set_name("BMSalesProgramPresales");
-                this.set_titletext("New Form");
                 this._setFormPosition(0,0,900,648);
             }
             
@@ -232,7 +235,7 @@
             });
             this.Tab00.Tabpage2.addChild(obj.name, obj);
 
-            obj = new Div("Div01","absolute","450","1",null,null,"5","9",this);
+            obj = new Div("Div01","absolute","454","1",null,null,"1","9",this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("4");

@@ -7,13 +7,13 @@
         <Button id="Button01" taborder="0" text="저장" left="" top="5" width="50" height="30" right="60" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
         <Button id="Button02" taborder="0" text="삭제" left="" top="5" width="50" height="30" right="115" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
         <Button id="Button03" taborder="0" text="추가" left="" top="5" width="50" height="30" right="170" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Grid id="Grid00" taborder="1" left="5" top="40" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+        <Grid id="Grid00" taborder="1" left="5" top="40" width="" height="" right="5" bottom="320" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
           <Formats>
             <Format id="default">
               <Columns>
                 <Column size="48"/>
-                <Column size="280"/>
-                <Column size="280"/>
+                <Column size="480"/>
+                <Column size="480"/>
               </Columns>
               <Rows>
                 <Row size="24" band="head"/>
@@ -38,6 +38,31 @@
             </Format>
           </Formats>
         </Grid>
+        <Tab id="Tab00" taborder="2" tabindex="0" left="5" top="454" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Tabpages>
+            <Tabpage id="Tabpage1" text="요청사항">
+              <Layouts>
+                <Layout>
+                  <TextArea id="TextArea00" taborder="0" left="5" top="5" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="Tabpage2" text="발생원인">
+              <Layouts>
+                <Layout>
+                  <TextArea id="TextArea00" taborder="0" left="5" top="5" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="Tabpage3" text="처리내역">
+              <Layouts>
+                <Layout>
+                  <TextArea id="TextArea00" taborder="0" left="5" top="5" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+          </Tabpages>
+        </Tab>
       </Layout>
     </Layouts>
   </Form>
