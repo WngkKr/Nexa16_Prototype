@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BMSalesImportantBusiness" left="0" top="0" width="800" height="600" titletext="New Form">
+    <Layouts>
+      <Layout height="600" width="800"/>
+    </Layouts>
+  </Form>
+</FDL>

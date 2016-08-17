@@ -3184,7 +3184,7 @@ if (!nexacro.Component)
         if (scrolltype == "horizontal")
             vscroll_limit = 0;
 
-        var current_hpos = this._hscroll_pos
+        var current_hpos = this._hscroll_pos;
         var current_vpos = this._vscroll_pos;
         var bchange_hscroll_pos = false;
         var bchange_vscroll_pos = false;
@@ -3306,11 +3306,15 @@ if (!nexacro.Component)
 
     _pComponent._getScrollEventType = function (oldpos, newpos, min, max, dir)
     {
-        var type = "";
+        var type;
+
+        if (min == max)
+            return type;
+
         if (oldpos > newpos && newpos > min)
         {
             if (dir == "h")
-                type = "left"
+                type = "left";
             else
                 type = "up";
         }
@@ -3573,7 +3577,7 @@ if (!nexacro.Component)
         var statusmap = this._userstatusmap;
 
         if (this._use_pushed_status && statusmap.pushed)
-            applystatus = "pushed";  
+            applystatus = "pushed";
         else if (this._use_selected_status && statusmap.selected)
             applystatus = "selected";
         
@@ -4675,8 +4679,6 @@ if (!nexacro.Component)
 
         if (this._use_selected_status)
             this._userstatusmap.selected = false;
-
-       
     };
 
     _pComponent._initCSSSelector = function ()
@@ -4890,7 +4892,7 @@ if (!nexacro.Component)
     	if (this._hittest_type != hittesttype)
     	{
     		this._hittest_type = hittesttype;
-    		this.on_apply_hittesttype(hittesttype)
+    		this.on_apply_hittesttype(hittesttype);
     	}
     };
 
@@ -6436,7 +6438,7 @@ if (!nexacro.Component)
     	if (nexacro._cur_track_info || nexacro._cur_extra_track_info)
     		return;
 
-    	var cursorobj = this._cursor
+    	var cursorobj = this._cursor;
     	if (cursor)
     		cursorobj = nexacro.CursorObject(cursor);
     	
@@ -7783,7 +7785,7 @@ if (!nexacro.Component)
                 this._control_element.setElementLetterSpacing(parent_comp._getCurrentStyleInheritValue("letterSpacing"));
             }
         }
-    }
+    };
 
 
 

@@ -3,92 +3,92 @@
   <Object id="nexacro.VFrameSet">
     <ObjectInfo inheritance="nexacro.Component" classname="nexacro.VFrameSet" shorttypename="" csstypename="VFrameSet" csscontrolname="" group="Frame" subgroup="" csspseudo="true" container="false" composite="false" tabstop="false" cssstyle="true" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="system" edittype="" generatetype="" useinitvalue="true" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is a frame which comes under a main frame, and it is used as a basic unit screen for application screen arrangement.&#xD;&#xA;Therefore,it can repeatedly have FrameSet, HFrameSet, VFrameSet, TileFrameSet, ChildFrame as subordinates. &#xD;&#xA;It also can automatically arrange subordinate frames in vertical direction." />
     <PropertyInfo>
-      <Property name="all" group="Collection" subgroup="" edittype="" readonly="true" initonly="false" hidden="true" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="all" />
+      <Property name="all" group="Collection" subgroup="" edittype="" readonly="true" initonly="false" hidden="true" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="all" />
       <Property name="background" group="Style" subgroup="background" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set a background of a component." csspropertyname="background" csselementname="" normalpropertyname="background" />
-      <Property name="border" group="Style" subgroup="border" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="border" csselementname="" normalpropertyname="border" />
-      <Property name="borderRadius" group="Style" subgroup="border-radius" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="border-radius" csselementname="" normalpropertyname="borderRadius" />
-      <Property name="bottom" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="Position2Type" unitinfo="Position2Type" delimiter="" requirement="" description="It is a property to set the coordinate of the bottomof a newly created VFrameSet." csspropertyname="" csselementname="" normalpropertyname="bottom" />
+      <Property name="border" group="Style" subgroup="border" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the border of an VFrameSet." csspropertyname="border" csselementname="" normalpropertyname="border" />
+      <Property name="borderRadius" group="Style" subgroup="border-radius" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="This property is used to set the shape of the corners of an VFrameSet." csspropertyname="border-radius" csselementname="" normalpropertyname="borderRadius" />
+      <Property name="bottom" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="Position2Type" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is a property to set the coordinate of the bottomof a newly created VFrameSet." csspropertyname="" csselementname="" normalpropertyname="bottom" />
       <Property name="bottombase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="bottombase" />
-      <Property name="boxShadow" group="Style" subgroup="box-shadow" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="box-shadow" csselementname="" normalpropertyname="boxShadow" />
-      <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="" csspropertyname="color" csselementname="" normalpropertyname="color" />
-      <Property name="cssclass" group="Appearance" subgroup="" edittype="CssClass" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="cssclass" />
-      <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
-      <Property name="enable" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This property is used to determine whether to enable an VFrameSet." csspropertyname="" csselementname="" normalpropertyname="enable" />
-      <Property name="enableevent" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to determine whether to generate Event of VFrameSet." csspropertyname="" csselementname="" normalpropertyname="enableevent" />
-      <Property name="expr" group="Appearance" subgroup="" edittype="String" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="expr" />
+      <Property name="boxShadow" group="Style" subgroup="box-shadow" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the shadow effect of an VFrameSet." csspropertyname="box-shadow" csselementname="" normalpropertyname="boxShadow" />
+      <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="This property is used to set the color of the text displayed in an VFrameSet." csspropertyname="color" csselementname="" normalpropertyname="color" />
+      <Property name="cssclass" group="Appearance" subgroup="" edittype="CssClass" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="cssclass" />
+      <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="This property is used to set the type of a mouse pointer that appears when the mouse cursor is located in an VFrameSet." csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
+      <Property name="enable" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to determine whether to enable an VFrameSet." csspropertyname="" csselementname="" normalpropertyname="enable" />
+      <Property name="enableevent" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="It is Property to determine whether to generate Event of VFrameSet." csspropertyname="" csselementname="" normalpropertyname="enableevent" />
+      <Property name="expr" group="Appearance" subgroup="" edittype="String" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="expr" />
       <Property name="font" group="Style" subgroup="font" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="FontSize_Point" delimiter="" requirement="" description="" csspropertyname="font" csselementname="" normalpropertyname="font" />
-      <Property name="frames" group="" subgroup="" edittype="" readonly="true" initonly="false" hidden="true" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="frames" />
+      <Property name="frames" group="" subgroup="" edittype="" readonly="true" initonly="false" hidden="true" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="frames" />
       <Property name="height" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="VFrameSet height of the newly created." csspropertyname="" csselementname="" normalpropertyname="height" />
       <Property name="heightbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="heightbase" />
-      <Property name="hotkey" group="Action" subgroup="" edittype="HotKey" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HotKeyModifier" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is a property to set hot keys for default actions of VFrameSets." csspropertyname="" csselementname="" normalpropertyname="hotkey" />
-      <Property name="id" group="Information" subgroup="" edittype="ID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="id" />
+      <Property name="hotkey" group="Action" subgroup="" edittype="HotKey" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HotKeyModifier" unitinfo="" delimiter="" requirement="" description="It is a property to set hot keys for default actions of VFrameSets." csspropertyname="" csselementname="" normalpropertyname="hotkey" />
+      <Property name="id" group="Information" subgroup="" edittype="ID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="id" />
       <Property name="initvalueid" group="Information" subgroup="" edittype="InitvalueID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the ID of an InitValue to be applied to an VFrameSet." csspropertyname="" csselementname="" normalpropertyname="initvalueid" />
-      <Property name="left" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="VFrameSet left coordinate of the newly created." csspropertyname="" csselementname="" normalpropertyname="left" />
+      <Property name="left" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="VFrameSet left coordinate of the newly created." csspropertyname="" csselementname="" normalpropertyname="left" />
       <Property name="leftbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="leftbase" />
-      <Property name="letterSpacing" group="Style" subgroup="letter-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
+      <Property name="letterSpacing" group="Style" subgroup="letter-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="This property is used to set the spacing between characters (kerning) displayed in an VFrameSet." csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
       <Property name="lineHeight" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
-      <Property name="name" group="Information" subgroup="" edittype="String" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It designates names of components." csspropertyname="" csselementname="" normalpropertyname="name" />
+      <Property name="name" group="Information" subgroup="" edittype="String" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="It designates names of components." csspropertyname="" csselementname="" normalpropertyname="name" />
       <Property name="edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
-      <Property name="padding" group="Style" subgroup="padding" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
-      <Property name="textAlign" group="Style" subgroup="-nexa-text-align" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
-      <Property name="textDecoration" group="Style" subgroup="text-decoration" edittype="MultiEnum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TextDecorationLine" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-decoration" csselementname="" normalpropertyname="textDecoration" />
-      <Property name="verticalAlign" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
-      <Property name="wordWrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
+      <Property name="padding" group="Style" subgroup="padding" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the padding, an inner margin, of an VFrameSet." csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
+      <Property name="textAlign" group="Style" subgroup="-nexa-text-align" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
+      <Property name="textDecoration" group="Style" subgroup="text-decoration" edittype="MultiEnum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TextDecorationLine" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-text-decoration" csselementname="" normalpropertyname="textDecoration" />
+      <Property name="verticalAlign" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
+      <Property name="wordWrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
       <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the opacity of an VFrameSet." csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
-      <Property name="parent" group="Hidden" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="It indicates the parent object of a component." csspropertyname="" csselementname="" normalpropertyname="parent" />
-      <Property name="position" group="Position" subgroup="refresh(position)" edittype="Enum" defaultvalue="absolute" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="PositionType" unitinfo="PositionStep" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Mobile Hybrid (IOS)" description="It sets coordinate reference values of VFrameSets." csspropertyname="" csselementname="" normalpropertyname="position" />
-      <Property name="positionstep" group="Position" subgroup="refresh(position)" edittype="Number" defaultvalue="0" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="PositionStep" delimiter="" requirement="" description="It is Property to designate which Step belonging Form, Div, Tabpage, or PopupDiv belong to when they use Step function." csspropertyname="" csselementname="" normalpropertyname="positionstep" />
+      <Property name="parent" group="Hidden" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It indicates the parent object of a component." csspropertyname="" csselementname="" normalpropertyname="parent" />
+      <Property name="position" group="Position" subgroup="refresh(position)" edittype="Enum" defaultvalue="absolute" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="PositionType" unitinfo="PositionStep" delimiter="" requirement="" description="It sets coordinate reference values of VFrameSets." csspropertyname="" csselementname="" normalpropertyname="position" />
+      <Property name="positionstep" group="Position" subgroup="refresh(position)" edittype="Number" defaultvalue="0" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="PositionStep" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Property to designate which Step belonging Form, Div, Tabpage, or PopupDiv belong to when they use Step function." csspropertyname="" csselementname="" normalpropertyname="positionstep" />
       <Property name="progressbardirection" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the direction of filling the progress bar displayed on the status bar of an VFrameSet." csspropertyname="" csselementname="" normalpropertyname="progressbardirection" />
-      <Property name="progressbargap" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="progressbargap" />
-      <Property name="progressbarsize" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="progressbarsize" />
-      <Property name="progressbarsmooth" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="progressbarsmooth" />
-      <Property name="right" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="VFrameSet right coordinate of the newly created." csspropertyname="" csselementname="" normalpropertyname="right" />
+      <Property name="progressbargap" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the spacing of the right-hand side of a progress bar displayed in the status bar of an VFrameSet." csspropertyname="" csselementname="" normalpropertyname="progressbargap" />
+      <Property name="progressbarsize" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the width of a progress bar displayed in the status bar of an VFrameSet." csspropertyname="" csselementname="" normalpropertyname="progressbarsize" />
+      <Property name="progressbarsmooth" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to determine whether to use a &quot;continuous&quot; style progress bar for the one displayed in the status bar of a MainFrame." csspropertyname="" csselementname="" normalpropertyname="progressbarsmooth" />
+      <Property name="right" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="VFrameSet right coordinate of the newly created." csspropertyname="" csselementname="" normalpropertyname="right" />
       <Property name="rightbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="rightbase" />
-      <Property name="separatesize" group="Misc." subgroup="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to set object sizes of internal Frames of VFrameSet." csspropertyname="" csselementname="" normalpropertyname="separatesize" />
-      <Property name="showcascadestatustext" group="Appearance" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="showcascadestatustext" />
-      <Property name="showcascadetitletext" group="Appearance" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property whether to include lower activated Frame and titletext of Form into text which shall indicate in Title Bar." csspropertyname="" csselementname="" normalpropertyname="showcascadetitletext" />
-      <Property name="showstatusbar" group="Misc." subgroup="" edittype="Boolean" defaultvalue="false" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to set whether to show statusbar to VFrameSet." csspropertyname="" csselementname="" normalpropertyname="showstatusbar" />
-      <Property name="showtitlebar" group="Misc." subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to set whether to show title bar to VFrameSet." csspropertyname="" csselementname="" normalpropertyname="showtitlebar" />
-      <Property name="showtitleicon" group="Misc." subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This property is used to determine whether to display a titlebar icon." csspropertyname="" csselementname="" normalpropertyname="showtitleicon" />
-      <Property name="statusbar" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to obtain statusbar Object of  VFrameSet." csspropertyname="" csselementname="" normalpropertyname="statusbar" />
-      <Property name="statusbarheight" group="Appearance" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This property is used to set the height of the status bar of an VFrameSet." csspropertyname="" csselementname="" normalpropertyname="statusbarheight" />
-      <Property name="statustext" group="Appearance" subgroup="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This property is used to specify the text displayed on the status bar of an VFrameSet." csspropertyname="" csselementname="" normalpropertyname="statustext" />
-      <Property name="taborder" group="Action" subgroup="" edittype="Number" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="taborder" />
-      <Property name="tabstop" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="It is Property to designate whether to receive focus by Tab key." csspropertyname="" csselementname="" normalpropertyname="tabstop" />
+      <Property name="separatesize" group="Misc." subgroup="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Property to set object sizes of internal Frames of VFrameSet." csspropertyname="" csselementname="" normalpropertyname="separatesize" />
+      <Property name="showcascadestatustext" group="Appearance" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="showcascadestatustext" />
+      <Property name="showcascadetitletext" group="Appearance" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="It is Property whether to include lower activated Frame and titletext of Form into text which shall indicate in Title Bar." csspropertyname="" csselementname="" normalpropertyname="showcascadetitletext" />
+      <Property name="showstatusbar" group="Misc." subgroup="" edittype="Boolean" defaultvalue="false" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="It is Property to set whether to show statusbar to VFrameSet." csspropertyname="" csselementname="" normalpropertyname="showstatusbar" />
+      <Property name="showtitlebar" group="Misc." subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="It is Property to set whether to show title bar to VFrameSet." csspropertyname="" csselementname="" normalpropertyname="showtitlebar" />
+      <Property name="showtitleicon" group="Misc." subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to determine whether to display a titlebar icon." csspropertyname="" csselementname="" normalpropertyname="showtitleicon" />
+      <Property name="statusbar" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="It is Property to obtain statusbar Object of  VFrameSet." csspropertyname="" csselementname="" normalpropertyname="statusbar" />
+      <Property name="statusbarheight" group="Appearance" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the height of the status bar of an VFrameSet." csspropertyname="" csselementname="" normalpropertyname="statusbarheight" />
+      <Property name="statustext" group="Appearance" subgroup="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to specify the text displayed on the status bar of an VFrameSet." csspropertyname="" csselementname="" normalpropertyname="statustext" />
+      <Property name="taborder" group="Action" subgroup="" edittype="Number" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="taborder" />
+      <Property name="tabstop" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Property to designate whether to receive focus by Tab key." csspropertyname="" csselementname="" normalpropertyname="tabstop" />
       <Property name="text" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="text" />
-      <Property name="titlebar" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to obtain titlebar Object of  VFrameSet." csspropertyname="" csselementname="" normalpropertyname="titlebar" />
-      <Property name="titlebarbuttongap" group="Appearance" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This property is used to set the gaps between the system buttons displayed on the title bar of an VFrameSet." csspropertyname="" csselementname="" normalpropertyname="titlebarbuttongap" />
-      <Property name="titlebarbuttonsize" group="Appearance" subgroup="" edittype="Number2" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Size" delimiter=" " requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This property is used to set the size of the system buttons displayed on the title bar of an VFrameSet." csspropertyname="" csselementname="" normalpropertyname="titlebarbuttonsize" />
-      <Property name="titlebarheight" group="Appearance" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This property is used to set the height of the title bar of an VFrameSet." csspropertyname="" csselementname="" normalpropertyname="titlebarheight" />
-      <Property name="titletext" group="Appearance" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This property is used to specify the text to be displayed on the title bar of an VFrameSet." csspropertyname="" csselementname="" normalpropertyname="titletext" />
-      <Property name="tooltiptext" group="Action" subgroup="" edittype="MultilineString" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="tooltiptext" />
-      <Property name="tooltiptype" group="Action" subgroup="" edittype="Enum" defaultvalue="default" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TooltipType" unitinfo="" delimiter="" requirement="" description="It is Property to designate a method to output Tool tip." csspropertyname="" csselementname="" normalpropertyname="tooltiptype" />
-      <Property name="top" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="VFrameSet top coordinate of the newly created." csspropertyname="" csselementname="" normalpropertyname="top" />
+      <Property name="titlebar" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="It is Property to obtain titlebar Object of  VFrameSet." csspropertyname="" csselementname="" normalpropertyname="titlebar" />
+      <Property name="titlebarbuttongap" group="Appearance" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the gaps between the system buttons displayed on the title bar of an VFrameSet." csspropertyname="" csselementname="" normalpropertyname="titlebarbuttongap" />
+      <Property name="titlebarbuttonsize" group="Appearance" subgroup="" edittype="Number2" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Size" delimiter=" " requirement="" description="This property is used to set the size of the system buttons displayed on the title bar of an VFrameSet." csspropertyname="" csselementname="" normalpropertyname="titlebarbuttonsize" />
+      <Property name="titlebarheight" group="Appearance" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the height of the title bar of an VFrameSet." csspropertyname="" csselementname="" normalpropertyname="titlebarheight" />
+      <Property name="titletext" group="Appearance" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to specify the text to be displayed on the title bar of an VFrameSet." csspropertyname="" csselementname="" normalpropertyname="titletext" />
+      <Property name="tooltiptext" group="Action" subgroup="" edittype="MultilineString" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="tooltiptext" />
+      <Property name="tooltiptype" group="Action" subgroup="" edittype="Enum" defaultvalue="default" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TooltipType" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Property to designate a method to output Tool tip." csspropertyname="" csselementname="" normalpropertyname="tooltiptype" />
+      <Property name="top" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="VFrameSet top coordinate of the newly created." csspropertyname="" csselementname="" normalpropertyname="top" />
       <Property name="topbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="topbase" />
-      <Property name="visible" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate whether to show VFrameSet in screen." csspropertyname="" csselementname="" normalpropertyname="visible" />
+      <Property name="visible" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="It is Property to designate whether to show VFrameSet in screen." csspropertyname="" csselementname="" normalpropertyname="visible" />
       <Property name="width" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="VFrameSet width of the newly created." csspropertyname="" csselementname="" normalpropertyname="width" />
       <Property name="widthbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="widthbase" />
-      <Property name="wordSpacing" group="Style" subgroup="word-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
+      <Property name="wordSpacing" group="Style" subgroup="word-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="This property is used to set the spacing between words displayed in an VFrameSet." csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
     </PropertyInfo>
     <StyleInfo>
       <PropertyInfo>
         <Property name="background" group="Style" subgroup="background" edittype="" defaultvalue="transparent" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set a background of a component." csspropertyname="background" csselementname="" normalpropertyname="background" />
-        <Property name="border" group="Style" subgroup="border" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="border" csselementname="" normalpropertyname="border" />
-        <Property name="border-radius" group="Style" subgroup="border-radius" edittype="String" defaultvalue="0px" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="border-radius" csselementname="" normalpropertyname="borderRadius" />
-        <Property name="box-shadow" group="Style" subgroup="box-shadow" edittype="" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="box-shadow" csselementname="" normalpropertyname="boxShadow" />
-        <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="" csspropertyname="color" csselementname="" normalpropertyname="color" />
-        <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" defaultvalue="auto" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
+        <Property name="border" group="Style" subgroup="border" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the border of an VFrameSet." csspropertyname="border" csselementname="" normalpropertyname="border" />
+        <Property name="border-radius" group="Style" subgroup="border-radius" edittype="String" defaultvalue="0px" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="This property is used to set the shape of the corners of an VFrameSet." csspropertyname="border-radius" csselementname="" normalpropertyname="borderRadius" />
+        <Property name="box-shadow" group="Style" subgroup="box-shadow" edittype="" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the shadow effect of an VFrameSet." csspropertyname="box-shadow" csselementname="" normalpropertyname="boxShadow" />
+        <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="This property is used to set the color of the text displayed in an VFrameSet." csspropertyname="color" csselementname="" normalpropertyname="color" />
+        <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" defaultvalue="auto" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="This property is used to set the type of a mouse pointer that appears when the mouse cursor is located in an VFrameSet." csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
         <Property name="font" group="Style" subgroup="font" edittype="" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="FontSize_Point" delimiter="" requirement="" description="" csspropertyname="font" csselementname="" normalpropertyname="font" />
-        <Property name="letter-spacing" group="Style" subgroup="letter-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
+        <Property name="letter-spacing" group="Style" subgroup="letter-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="This property is used to set the spacing between characters (kerning) displayed in an VFrameSet." csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
         <Property name="line-height" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
         <Property name="-nexa-edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
-        <Property name="-nexa-padding" group="Style" subgroup="padding" edittype="String" defaultvalue="0px 0px 0px 0px" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
-        <Property name="-nexa-text-align" group="Style" subgroup="-nexa-text-align" edittype="Enum" defaultvalue="left" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
-        <Property name="-nexa-text-decoration" group="Style" subgroup="text-decoration" edittype="MultiEnum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TextDecorationLine" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-decoration" csselementname="" normalpropertyname="textDecoration" />
-        <Property name="-nexa-vertical-align" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" defaultvalue="middle" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
-        <Property name="-nexa-word-wrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
+        <Property name="-nexa-padding" group="Style" subgroup="padding" edittype="String" defaultvalue="0px 0px 0px 0px" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the padding, an inner margin, of an VFrameSet." csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
+        <Property name="-nexa-text-align" group="Style" subgroup="-nexa-text-align" edittype="Enum" defaultvalue="left" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
+        <Property name="-nexa-text-decoration" group="Style" subgroup="text-decoration" edittype="MultiEnum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TextDecorationLine" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-text-decoration" csselementname="" normalpropertyname="textDecoration" />
+        <Property name="-nexa-vertical-align" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" defaultvalue="middle" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
+        <Property name="-nexa-word-wrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
         <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the opacity of an VFrameSet." csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
-        <Property name="word-spacing" group="Style" subgroup="word-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
+        <Property name="word-spacing" group="Style" subgroup="word-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="This property is used to set the spacing between words displayed in an VFrameSet." csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
       </PropertyInfo>
       <StatusInfo>
         <Status name="disabled" control="true" default="false" deprecated="false" unused="false" group="status" />
@@ -101,7 +101,7 @@
       <Control name="statusbar" classname="nexacro.StatusBarControl" deprecated="false" unused="false" group="" subgroup="" />
     </ControlInfo>
     <MethodInfo>
-      <Method name="addChild" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="">
+      <Method name="addChild" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
         <Syntax text="VFrameSet.addChild( strChildID, objFrame )">
           <Return type="Integer" description="" />
           <Arguments>
@@ -110,7 +110,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It adds an event handler function.">
+      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="It adds an event handler function.">
         <Syntax text="VFrameSet.addEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="If successful, it returns the changed index, otherwise, it returns -1." />
           <Arguments>
@@ -120,7 +120,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It adds an event handler as a result searched with a designated event ID.">
+      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="It adds an event handler as a result searched with a designated event ID.">
         <Syntax text="VFrameSet.addEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="If successful, it returns an added index value. Otherwise, it returns -1." />
           <Arguments>
@@ -130,7 +130,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="alert" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This method is used to display a alert box of an VFrameSet.">
+      <Method name="alert" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="This method is used to display a alert box of an VFrameSet.">
         <Syntax text="VFrameSet.alert( strText )">
           <Return type="" description="" />
           <Arguments>
@@ -138,19 +138,19 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="bringToFront" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="">
+      <Method name="bringToFront" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="bringToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="">
+      <Method name="bringToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It clears all set event handler functions.">
+      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="It clears all set event handler functions.">
         <Syntax text="VFrameSet.clearEventHandler( strEventID )">
           <Return type="Integer" description="It returns the number of deleted event handler functions." />
           <Arguments>
@@ -158,7 +158,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="confirm" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This method is used to display a confirm dialog box of an VFrameSet.">
+      <Method name="confirm" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="This method is used to display a confirm dialog box of an VFrameSet.">
         <Syntax text="VFrameSet.confirm( strText [,strCaption [,strType]] )">
           <Return type="Boolean" description="If you select the affirmative from the confirm dialog box, &quot;true&quot; will be returned.&#xA;If you select the negative from the confirm dialog box, &quot;false&quot; will be returned." />
           <Arguments>
@@ -168,13 +168,13 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="destroy" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This method is used to delete a component that is dynamically created through a script.">
+      <Method name="destroy" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="This method is used to delete a component that is dynamically created through a script.">
         <Syntax text="VFrameSet.destroy()">
           <Return type="Boolean" description="It returns whether deletion was successful or not." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It finds a designated event handler function and returns the index.">
+      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="It finds a designated event handler function and returns the index.">
         <Syntax text="VFrameSet.findEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="Index of a designated function" />
           <Arguments>
@@ -184,7 +184,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="getActiveFrame" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="">
+      <Method name="getActiveFrame" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
         <Syntax text="VFrameSet.getActiveFrame() ;">
           <Return type="Object" description="" />
           <Arguments />
@@ -205,91 +205,91 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="getFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It returns a component which has focus.">
+      <Method name="getFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It returns a component which has focus.">
         <Syntax text="VFrameSet.getFocus()">
           <Return type="Object" description="It returns a component if the component which has focus exists in a designated form.&#xD;&#xA;If not, it returns 'null'." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It gets pixel values of the bottom property among VFrameSet location information.">
+      <Method name="getOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It gets pixel values of the bottom property among VFrameSet location information.">
         <Syntax text="VFrameSet.getOffsetBottom();">
           <Return type="Number" description="It returns the value in pixels." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It gets pixel values of the height property among VFrameSet location information.">
+      <Method name="getOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It gets pixel values of the height property among VFrameSet location information.">
         <Syntax text="VFrameSet.getOffsetHeight();">
           <Return type="Number" description="It returns the value in pixels" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It gets pixel values of the left property among VFrameSet location information.">
+      <Method name="getOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It gets pixel values of the left property among VFrameSet location information.">
         <Syntax text="VFrameSet.getOffsetLeft();">
           <Return type="Number" description="It returns the value in pixels." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It gets pixel values of the right property among VFrameSet location information.">
+      <Method name="getOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It gets pixel values of the right property among VFrameSet location information.">
         <Syntax text="VFrameSet.getOffsetRight();">
           <Return type="Number" description="It returns the value in pixels." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It gets pixel values of the top property among VFrameSet location information.">
+      <Method name="getOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It gets pixel values of the top property among VFrameSet location information.">
         <Syntax text="VFrameSet.getOffsetTop();">
           <Return type="Number" description="It returns the value in pixels." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It gets pixel values of the width property among VFrameSet location information.">
+      <Method name="getOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It gets pixel values of the width property among VFrameSet location information.">
         <Syntax text="VFrameSet.getOffsetWidth();">
           <Return type="Number" description="It returns the value in pixels." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOwnerFrame" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="">
+      <Method name="getOwnerFrame" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
         <Syntax text="VFrameSet.getOwnerFrame()">
           <Return type="Object" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="IIt gets pixel values of the bottom property among VFrameSet location information.">
+      <Method name="getPixelBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="IIt gets pixel values of the bottom property among VFrameSet location information.">
         <Syntax text="VFrameSet.getPixelBottom();">
           <Return type="Number" description="It returns the value in pixels." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It gets pixel values of the height property among VFrameSet location information.">
+      <Method name="getPixelHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It gets pixel values of the height property among VFrameSet location information.">
         <Syntax text="VFrameSet.getPixelHeight();">
           <Return type="Number" description="It returns the value in pixels." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It gets pixel values of the left property among VFrameSet location information.">
+      <Method name="getPixelLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It gets pixel values of the left property among VFrameSet location information.">
         <Syntax text="VFrameSet.getPixelLeft();">
           <Return type="Number" description="It returns the value in pixels." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It gets pixel values of the right property among VFrameSet location information.">
+      <Method name="getPixelRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It gets pixel values of the right property among VFrameSet location information.">
         <Syntax text="VFrameSet.getPixelRight();">
           <Return type="Number" description="It returns the value in pixels." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It gets pixel values of the top property among VFrameSet location information.">
+      <Method name="getPixelTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It gets pixel values of the top property among VFrameSet location information.">
         <Syntax text="VFrameSet.getPixelTop();">
           <Return type="Number" description="It returns the value in pixels." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It gets pixel values of the width property among VFrameSet location information.">
+      <Method name="getPixelWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It gets pixel values of the width property among VFrameSet location information.">
         <Syntax text="VFrameSet.getPixelWidth();">
           <Return type="Number" description="It returns the value in pixels." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="init" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="">
+      <Method name="init" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
         <Syntax text="VFrameSet.init( strName, strPosition, nLeft, nTop, nWidth, nHeight [, nRight, nBottom] )">
           <Return type="" description="" />
           <Arguments>
@@ -304,7 +304,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="insertChild" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="">
+      <Method name="insertChild" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
         <Syntax text="VFrameSet.insertChild( nIdx, strChildID, objComp )">
           <Return type="Integer" description="" />
           <Arguments>
@@ -314,7 +314,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="move" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This method is used to change the position and size of an VFrameSet.">
+      <Method name="move" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="This method is used to change the position and size of an VFrameSet.">
         <Syntax text="VFrameSet.move( nLeft, nTop [, nWidth, nHeight [, nRight, nBottom]] )">
           <Return type="" description="" />
           <Arguments>
@@ -327,27 +327,27 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="moveToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="">
+      <Method name="moveToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="moveToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="">
+      <Method name="moveToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="removeChild" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This method is used to remove a frame that has been dynamically added to an VFrameSet.">
+      <Method name="removeChild" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="This method is used to remove a frame that has been dynamically added to an VFrameSet.">
         <Syntax text="VFrameSet.removeChild( strChildID )">
-          <Return type="Object" description="Frame 제거에 성공하면 제거된 Frame 의 오브젝트를 반환합니다.&#xA;If a frame is successfully removed, the&#xA;Frame 제거에 실패하면 &quot;null&quot;을 반환합니다." />
+          <Return type="Object" description="If a frame is successfully removed, this method will return the removed frame.&#xA;If failed, it will return &quot;null.&quot;" />
           <Arguments>
-            <Argument name="strChildID" type="String" in="false" out="false" option="false" variable="false" description="" />
+            <Argument name="strChildID" type="String" in="false" out="false" option="false" variable="false" description="A string that represents the ID of a frame to remove" />
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It removes a designated index or an event handler function.">
+      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="It removes a designated index or an event handler function.">
         <Syntax text="VFrameSet.removeEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="It returns the number of removed event handler functions(if successful, 1. if fails, 0)" />
           <Arguments>
@@ -357,7 +357,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It removes an event handler lookup with a designated event ID.">
+      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="It removes an event handler lookup with a designated event ID.">
         <Syntax text="VFrameSet.removeEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="It returns the number of deleted event handler functions. (if is successful, 1. if it fails, 0)" />
           <Arguments>
@@ -367,7 +367,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="resize" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It is Method to change size of VFrameSet.">
+      <Method name="resize" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Method to change size of VFrameSet.">
         <Syntax text="VFrameSet.resize( nWidth, nHeight )">
           <Return type="" description="" />
           <Arguments>
@@ -376,19 +376,19 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="sendToBack" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="">
+      <Method name="sendToBack" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="sendToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="">
+      <Method name="sendToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It changes an event handler function.">
+      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="It changes an event handler function.">
         <Syntax text="VFrameSet.setEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="If it is success, it returns the changed index. Otherwise, it returns -1." />
           <Arguments>
@@ -398,7 +398,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It sets an event handler lookup with a designated event ID.">
+      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="It sets an event handler lookup with a designated event ID.">
         <Syntax text="VFrameSet.setEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="If successful, it returns the changed index, otherwise, it returns -1." />
           <Arguments>
@@ -408,13 +408,13 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="">
+      <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
         <Syntax text="VFrameSet.setFocus()">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="setOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="Set the value of the bottom relative to the left, top value of the VFrameSet parent object.">
+      <Method name="setOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="Set the value of the bottom relative to the left, top value of the VFrameSet parent object.">
         <Syntax text="VFrameSet.setOffsetBottom( nBottom );">
           <Return type="" description="" />
           <Arguments>
@@ -422,7 +422,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="Set the value of the height relative to the left, top value of the VFrameSet parent object.">
+      <Method name="setOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="Set the value of the height relative to the left, top value of the VFrameSet parent object.">
         <Syntax text="VFrameSet.setOffsetHeight( nHeight );">
           <Return type="" description="" />
           <Arguments>
@@ -430,7 +430,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="Set the value of the left relative to the left, top value of the VFrameSet parent object.">
+      <Method name="setOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="Set the value of the left relative to the left, top value of the VFrameSet parent object.">
         <Syntax text="VFrameSet.setOffsetLeft( nLeft );">
           <Return type="" description="" />
           <Arguments>
@@ -438,7 +438,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="Set the value of the right relative to the left, top value of the VFrameSet parent object.">
+      <Method name="setOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="Set the value of the right relative to the left, top value of the VFrameSet parent object.">
         <Syntax text="VFrameSet.setOffsetRight( nRight );">
           <Return type="" description="" />
           <Arguments>
@@ -446,7 +446,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="Set the value of the top relative to the left, top value of the VFrameSet parent object.">
+      <Method name="setOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="Set the value of the top relative to the left, top value of the VFrameSet parent object.">
         <Syntax text="VFrameSet.setOffsetTop( nTop );">
           <Return type="" description="" />
           <Arguments>
@@ -454,7 +454,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="Set the value of the width relative to the left, top value of the VFrameSet parent object.">
+      <Method name="setOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="Set the value of the width relative to the left, top value of the VFrameSet parent object.">
         <Syntax text="VFrameSet.setOffsetWidth( nWidth );">
           <Return type="" description="" />
           <Arguments>
@@ -462,7 +462,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="show" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="">
+      <Method name="show" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
         <Syntax text="VFrameSet.show()">
           <Return type="" description="" />
           <Arguments />
@@ -470,7 +470,7 @@
       </Method>
     </MethodInfo>
     <EventHandlerInfo>
-      <EventHandler name="onactivate" group="" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This is an event that occurs when an VFrameSet becomes activated.">
+      <EventHandler name="onactivate" group="" deprecated="false" unused="false" requirement="" description="This is an event that occurs when an VFrameSet becomes activated.">
         <Syntax text="VFrameSet.onactivate(obj:nexacro.VFrameSet,e:nexacro.ActivateEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -478,7 +478,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onbeforeclose" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
+      <EventHandler name="onbeforeclose" group="Event" deprecated="false" unused="false" requirement="" description="">
         <Syntax text="VFrameSet.onbeforeclose(obj:nexacro.VFrameSet,e:nexacro.CloseEventInfo);">
           <Return type="String" description="" />
           <Arguments>
@@ -486,7 +486,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onclick" group="Event" deprecated="false" unused="true" requirement="" description="">
+      <EventHandler name="onclick" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="VFrameSet.onclick(obj:nexacro.VFrameSet,e:nexacro.ClickEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -494,7 +494,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onclose" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when VFrameSet is finished and a screen is changed.">
+      <EventHandler name="onclose" group="Event" deprecated="false" unused="false" requirement="" description="It is Event to occur when VFrameSet is finished and a screen is changed.">
         <Syntax text="VFrameSet.onclose(obj:nexacro.VFrameSet,e:nexacro.CloseEventInfo);">
           <Return type="" description="It determines whether to terminate or change a screen." />
           <Arguments>
@@ -502,7 +502,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondblclick" group="Event" deprecated="false" unused="true" requirement="" description="">
+      <EventHandler name="ondblclick" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="VFrameSet.ondblclick(obj:nexacro.VFrameSet,e:nexacro.MouseEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -510,7 +510,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondeactivate" group="" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="This is an event that occurs when an VFrameSet becomes deactivated.">
+      <EventHandler name="ondeactivate" group="" deprecated="false" unused="false" requirement="" description="This is an event that occurs when an VFrameSet becomes deactivated.">
         <Syntax text="VFrameSet.ondeactivate(obj:nexacro.VFrameSet,e:nexacro.ActivateEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -518,7 +518,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondrag" group="Event" deprecated="false" unused="true" requirement="" description="It is Event to occur when drag situation occurs by a mouse in Component area.">
+      <EventHandler name="ondrag" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Event to occur when drag situation occurs by a mouse in Component area.">
         <Syntax text="VFrameSet.ondrag(obj:nexacro.VFrameSet,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="In case of false, drag function shall not be operational. &#xA;If true is returned, Event shall not occur in upper Component.&#xA;Default : false" />
           <Arguments>
@@ -526,7 +526,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondragenter" group="Event" deprecated="false" unused="true" requirement="" description="It is Event to occur when dragged Component enters into Component area.">
+      <EventHandler name="ondragenter" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Event to occur when dragged Component enters into Component area.">
         <Syntax text="VFrameSet.ondragenter(obj:nexacro.VFrameSet,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="Whether to treat Event. If true is returned, Event shall not occur in upper Component.&#xA;Default : false" />
           <Arguments>
@@ -534,7 +534,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondragleave" group="Event" deprecated="false" unused="true" requirement="" description="It is Event to occur when dragged Component goes out of Component area.">
+      <EventHandler name="ondragleave" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Event to occur when dragged Component goes out of Component area.">
         <Syntax text="VFrameSet.ondragleave(obj:nexacro.VFrameSet,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="Whether to treat Event. If true is returned, Event shall not occur in upper Component.&#xA;default : false" />
           <Arguments>
@@ -542,7 +542,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondragmove" group="Event" deprecated="false" unused="true" requirement="" description="It is Event to occur when a dragged mouse moves in Component area.">
+      <EventHandler name="ondragmove" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Event to occur when a dragged mouse moves in Component area.">
         <Syntax text="VFrameSet.ondragmove(obj:nexacro.VFrameSet,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="Whether to treat Event. If true is returned, Event shall not occur in upper Component.&#xD;&#xA;default: false" />
           <Arguments>
@@ -550,7 +550,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondrop" group="Event" deprecated="false" unused="true" requirement="" description="It occurs when you drop down a dragged component into the component area.">
+      <EventHandler name="ondrop" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It occurs when you drop down a dragged component into the component area.">
         <Syntax text="VFrameSet.ondrop(obj:nexacro.VFrameSet,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="Whether to apply the event. If true is returned, the event shall not occur in the upper level component.&#xD;&#xA;default : false" />
           <Arguments>
@@ -558,7 +558,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="oninput" group="Event" deprecated="false" unused="true" requirement="" description="">
+      <EventHandler name="oninput" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="VFrameSet.oninput(obj:nexacro.VFrameSet,e:nexacro.InputEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -566,7 +566,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onkeydown" group="Event" deprecated="false" unused="true" requirement="" description="It is Event to occur when a Key of a keyboard is pressed while Focus is in VFrameSet.">
+      <EventHandler name="onkeydown" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Event to occur when a Key of a keyboard is pressed while Focus is in VFrameSet.">
         <Syntax text="VFrameSet.onkeydown(obj:nexacro.VFrameSet,e:nexacro.KeyEventInfo);">
           <Return type="Boolean" description="Whether to treat Event. If true is returned, onkeydown Event shall not occur in upper Component.&#xA;default : false" />
           <Arguments>
@@ -574,7 +574,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onkeyup" group="Event" deprecated="false" unused="true" requirement="" description="It occurs when a keyboard key is pressed and released while an VFrameSet has focus.">
+      <EventHandler name="onkeyup" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It occurs when a keyboard key is pressed and released while an VFrameSet has focus.">
         <Syntax text="VFrameSet.onkeyup(obj:nexacro.VFrameSet,e:nexacro.KeyEventInfo);">
           <Return type="Boolean" description="Whether to process the event. If true is returned, the onkeyup event shall not occur in an upper level component.&#xD;&#xA;default : false" />
           <Arguments>
@@ -582,7 +582,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onkillfocus" group="Event" deprecated="false" unused="true" requirement="" description="It is Event to occur when VFrameSet in which Focus is located loses Focus.">
+      <EventHandler name="onkillfocus" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Event to occur when VFrameSet in which Focus is located loses Focus.">
         <Syntax text="VFrameSet.onkillfocus(obj:nexacro.VFrameSet,e:nexacro.KillFocusEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -590,7 +590,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onlbuttondown" group="Event" deprecated="false" unused="true" requirement="" description="It is Event to occur when Mouse Left Button Down occurs in VFrameSet.">
+      <EventHandler name="onlbuttondown" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Event to occur when Mouse Left Button Down occurs in VFrameSet.">
         <Syntax text="VFrameSet.onlbuttondown(obj:nexacro.VFrameSet,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="Whether to treat Event. If true is returned, onlbuttondown Event shall not occur in upper Component.&#xD;&#xA;Default: false" />
           <Arguments>
@@ -598,7 +598,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onlbuttonup" group="Event" deprecated="false" unused="true" requirement="" description="It is Event to occur when Mouse Left Button Up occurs in VFrameSet.">
+      <EventHandler name="onlbuttonup" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Event to occur when Mouse Left Button Up occurs in VFrameSet.">
         <Syntax text="VFrameSet.onlbuttonup(obj:nexacro.VFrameSet,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="Whether to treat Event. If true is returned, onlbuttonup Event shall not occur in upper Component.&#xD;&#xA;default: false" />
           <Arguments>
@@ -606,7 +606,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmousedown" group="Event" deprecated="false" unused="true" requirement="" description="It is Event to occur when the other Buttons are pressed except for Left Button/Right Button of a mouse.">
+      <EventHandler name="onmousedown" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Event to occur when the other Buttons are pressed except for Left Button/Right Button of a mouse.">
         <Syntax text="VFrameSet.onmousedown(obj:nexacro.VFrameSet,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="Whether to treat Event. If true is returned, onmousedown Event shall not occur in upper Component.&#xD;&#xA;default: false" />
           <Arguments>
@@ -614,7 +614,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmouseenter" group="Event" deprecated="false" unused="true" requirement="" description="It is Event to occur when a cursor of a mouse enters into VFrameSet area.">
+      <EventHandler name="onmouseenter" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Event to occur when a cursor of a mouse enters into VFrameSet area.">
         <Syntax text="VFrameSet.onmouseenter(obj:nexacro.VFrameSet,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="Whether to treat Event. If true is returned, onmouseenter Event shall not occur in upper Component.&#xD;&#xA;default: false" />
           <Arguments>
@@ -622,7 +622,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmouseleave" group="Event" deprecated="false" unused="true" requirement="" description="It is Event to occur when a cursor of a mouse goes out of VFrameSet area.">
+      <EventHandler name="onmouseleave" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Event to occur when a cursor of a mouse goes out of VFrameSet area.">
         <Syntax text="VFrameSet.onmouseleave(obj:nexacro.VFrameSet,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="Whether to treat Event. If true is returned, onmousleave Event shall not occur in upper Component.&#xD;&#xA;default: false" />
           <Arguments>
@@ -630,7 +630,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmousemove" group="Event" deprecated="false" unused="true" requirement="" description="It is Event to occur when a cursor of a mouse moves in VFrameSet area.">
+      <EventHandler name="onmousemove" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Event to occur when a cursor of a mouse moves in VFrameSet area.">
         <Syntax text="VFrameSet.onmousemove(obj:nexacro.VFrameSet,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="Whether to treat Event. If true is returned, onmousemove Event shall not occur in upper Component.&#xD;&#xA;default: false" />
           <Arguments>
@@ -638,7 +638,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmouseup" group="Event" deprecated="false" unused="true" requirement="" description="It is Event to occur when the other Buttons are pressed and released except for Left Button/Right Button of a mouse.">
+      <EventHandler name="onmouseup" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Event to occur when the other Buttons are pressed and released except for Left Button/Right Button of a mouse.">
         <Syntax text="VFrameSet.onmouseup(obj:nexacro.VFrameSet,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="Whether to treat Event. If true is returned, onmouseup Event shall not occur in upper Component.&#xD;&#xA;default: false" />
           <Arguments>
@@ -646,7 +646,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmousewheel" group="Event" deprecated="false" unused="true" requirement="" description="It occurs when you scroll your mouse wheel.">
+      <EventHandler name="onmousewheel" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It occurs when you scroll your mouse wheel.">
         <Syntax text="VFrameSet.onmousewheel(obj:nexacro.VFrameSet,e:nexacro.MouseWheelEventInfo);">
           <Return type="Boolean" description="If true is returned, mouse scroll wheel and  bubbling stop. &#xD;&#xA;If false is returned, the onmousewheel event occurs in the generated component and is bubbled. If the generated component doesn't need the onmousewheel event, the event will be taken by an upper level component." />
           <Arguments>
@@ -654,7 +654,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmove" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when VFrameSet moves.">
+      <EventHandler name="onmove" group="Event" deprecated="false" unused="false" requirement="" description="It is Event to occur when VFrameSet moves.">
         <Syntax text="VFrameSet.onmove(obj:nexacro.VFrameSet,e:nexacro.MoveEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -662,7 +662,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onrbuttondown" group="Event" deprecated="false" unused="true" requirement="" description="It is Event to occur when Mouse Right Button Down occurs in VFrameSet.">
+      <EventHandler name="onrbuttondown" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Event to occur when Mouse Right Button Down occurs in VFrameSet.">
         <Syntax text="VFrameSet.onrbuttondown(obj:nexacro.VFrameSet,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="Whether to treat Event. If true is returned, onrbuttondown Event shall not occur in upper Component.&#xD;&#xA;default: false" />
           <Arguments>
@@ -670,7 +670,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onrbuttonup" group="Event" deprecated="false" unused="true" requirement="" description="It is Event to occur when Mouse Right Button Up occurs in VFrameSet.">
+      <EventHandler name="onrbuttonup" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Event to occur when Mouse Right Button Up occurs in VFrameSet.">
         <Syntax text="VFrameSet.onrbuttonup(obj:nexacro.VFrameSet,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="Whether to treat Event. If true is returned, onrbuttonup Event shall not occur in upper Component.&#xD;&#xA;default: false" />
           <Arguments>
@@ -678,7 +678,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onsetfocus" group="Event" deprecated="false" unused="true" requirement="" description="It is Event to occur when Focus is set to VFrameSet.">
+      <EventHandler name="onsetfocus" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Event to occur when Focus is set to VFrameSet.">
         <Syntax text="VFrameSet.onsetfocus(obj:nexacro.VFrameSet,e:nexacro.SetFocusEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -686,7 +686,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onsize" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when VFrameSet size is changed.">
+      <EventHandler name="onsize" group="Event" deprecated="false" unused="false" requirement="" description="It is Event to occur when VFrameSet size is changed.">
         <Syntax text="VFrameSet.onsize(obj:nexacro.VFrameSet,e:nexacro.SizeEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -694,7 +694,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onsyscommand" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Event to occur when a System Command message enters into VFrameSet.">
+      <EventHandler name="onsyscommand" group="Event" deprecated="false" unused="false" requirement="" description="It is Event to occur when a System Command message enters into VFrameSet.">
         <Syntax text="VFrameSet.onsyscommand(obj:nexacro.VFrameSet,e:nexacro.SysCommandEventInfo);">
           <Return type="Boolean" description="If a value is return or there is not returned value, relevant message shall be conducted. &#xA;In case of false, relevant message shall be disregarded." />
           <Arguments>
@@ -702,7 +702,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ontouchend" group="Event" deprecated="false" unused="true" requirement="" description="It occurs at the time of touch end(up).">
+      <EventHandler name="ontouchend" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It occurs at the time of touch end(up).">
         <Syntax text="VFrameSet.ontouchend(obj:nexacro.VFrameSet,e:nexacro.TouchEventInfo);">
           <Return type="Boolean" description="Whether to process the event or not. &#xD;&#xA;If true is returned, the event doesn't occur in an upper-level component. &#xD;&#xA;default : false" />
           <Arguments>
@@ -710,7 +710,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ontouchmove" group="Event" deprecated="false" unused="true" requirement="" description="It occurs during touches(move).">
+      <EventHandler name="ontouchmove" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It occurs during touches(move).">
         <Syntax text="VFrameSet.ontouchmove(obj:nexacro.VFrameSet,e:nexacro.TouchEventInfo);">
           <Return type="Boolean" description="Whether to process the event or not. &#xD;&#xA;If true is returned, the event doesn't occur in an upper-level component. &#xD;&#xA;default : false" />
           <Arguments>
@@ -718,7 +718,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ontouchstart" group="Event" deprecated="false" unused="true" requirement="" description="It occurs at the time of touch start(down)">
+      <EventHandler name="ontouchstart" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It occurs at the time of touch start(down)">
         <Syntax text="VFrameSet.ontouchstart(obj:nexacro.VFrameSet,e:nexacro.TouchEventInfo);">
           <Return type="Boolean" description="Whether to process the event or not. &#xD;&#xA;If true is returned, the event doesn't occur in an upper-level component. &#xD;&#xA;default : false" />
           <Arguments>

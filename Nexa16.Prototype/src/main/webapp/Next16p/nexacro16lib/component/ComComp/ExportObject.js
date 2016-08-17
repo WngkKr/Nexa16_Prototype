@@ -160,6 +160,7 @@ if (!nexacro.ExcelExportObject)
     _pExcelExport._argsParam = null;
     _pExcelExport._argsDsParam = null;
     _pExcelExport._is_orgval = false; // get grid data type flag (value or text)
+    _pExcelExport._file_password = null; // set filepassword (excel)
 
     _pExcelExport._exportBar;
     _pExcelExport._tempSaveMethod = null;
@@ -171,11 +172,13 @@ if (!nexacro.ExcelExportObject)
         EXCEL2007: 0x0120,
         HANCELL2010: 0x0400,
         HANCELL2014: 0x0410,
+        CSV: 0x0500,
         256: 0x0100,
         272: 0x0110,
         288: 0x0120,
         1024: 0x0400,
-        1040: 0x0410
+        1040: 0x0410,
+        1280: 0x0500
     };
 
     _pExcelExport._event_list =
@@ -599,6 +602,24 @@ if (!nexacro.ExcelExportObject)
         this._argsParam = argsParam;
         this._argsDsParam = argsDsParam;
         this._is_orgval = bOrgValue ? true : false; // default false
+
+        if (argsParam)
+        {
+            this._file_password = null;
+            var userDatas = argsParam.split(",");
+            for (var i = 0, u_len = userDatas.length; i < u_len; i++)
+            {
+                var dataArr = userDatas[i].split("=");
+                if (dataArr[0] == "filepassword")
+                {
+                    this._file_password = dataArr[1];
+                    userDatas.splice(i, 1);
+                    argsParam = userDatas.join(",");
+                    break;
+                }
+            }
+            this._argsParam = argsParam;
+        }
 
         var ret = -1;
         if (!this.exporturl)
@@ -2378,6 +2399,7 @@ if (!nexacro.ExcelExportObject)
 
         ds_command.setColumn(0, "exportfilename", exportObj.exportfilename);
         ds_command.setColumn(0, "format", "");
+        ds_command.setColumn(0, "password", exportObj._file_password);
 
         var ds_style = this._ds_style;
 
@@ -3188,7 +3210,7 @@ if (!nexacro.ExcelExportObject)
             end_col = col_len * fake_mergecell.end_subrow + fake_mergecell.end_column;
 
             left_col = ((temp - 1) % row_len * col_len + fake_mergecell.start_column) << 0;
-            center_col = ((temp - 1) % row_len * col_len + (fake_mergecell.start_column + fake_mergecell.end_column) / 2) << 0
+            center_col = ((temp - 1) % row_len * col_len + (fake_mergecell.start_column + fake_mergecell.end_column) / 2) << 0;
             right_col = ((temp - 1) % row_len * col_len + fake_mergecell.end_column) << 0;
 
             if (fake_mergecell.start_row < 0)
@@ -3285,6 +3307,7 @@ if (!nexacro.ExcelExportObject)
         ds_command.addColumn("exportimage", "String", 32);
         ds_command.addColumn("exportfilename", "String", 32);
         ds_command.addColumn("format", "String", 1024 * 1024); // 1MB??? BLOB don't support
+        ds_command.addColumn("password", "String", 256);
 
         ds_command.addRow();
 
@@ -3326,6 +3349,7 @@ if (!nexacro.ExcelExportObject)
 
         var madeformat = nexacro._replaceAll(this._makeFormat(grid), "&#13;", "");
         ds_command.setColumn(0, "format", madeformat);
+        ds_command.setColumn(0, "password", exportObj._file_password);
 
         var ds = new Dataset("CELL");
         this._ds_cell = ds;

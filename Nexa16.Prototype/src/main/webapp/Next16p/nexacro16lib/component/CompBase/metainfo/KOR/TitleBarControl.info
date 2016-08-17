@@ -6,39 +6,38 @@
       <Property name="background" group="Style" subgroup="background" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControl 의 배경 영역을 설정하는 속성입니다." csspropertyname="background" csselementname="" normalpropertyname="background" />
       <Property name="border" group="Style" subgroup="border" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControl 의 테두리를 설정하는 속성입니다." csspropertyname="border" csselementname="" normalpropertyname="border" />
       <Property name="borderRadius" group="Style" subgroup="border-radius" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="TitleBarControl 의 모서리 모양을 설정하는 속성입니다." csspropertyname="border-radius" csselementname="" normalpropertyname="borderRadius" />
-      <Property name="bottom" group="Position" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="bottom" />
+      <Property name="bottom" group="Position" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="bottom" />
       <Property name="boxShadow" group="Style" subgroup="box-shadow" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControl 에 그림자 효과를 설정하는 속성입니다." csspropertyname="box-shadow" csselementname="" normalpropertyname="boxShadow" />
-      <Property name="buttongap" group="Appearance" subgroup="" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Size" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="버튼과 버튼 사이의 빈 공간 크기를 지정하는 Property 입니다." csspropertyname="" csselementname="" normalpropertyname="buttongap" />
-      <Property name="buttonsize" group="Appearance" subgroup="" edittype="Number" defaultvalue="-1" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Size" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="buttonsize" />
-      <Property name="closebutton" group="Control" subgroup="" edittype="" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="" csspropertyname="" csselementname="" normalpropertyname="closebutton" />
+      <Property name="buttongap" group="Appearance" subgroup="" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Size" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="버튼과 버튼 사이의 빈 공간 크기를 지정하는 Property 입니다." csspropertyname="" csselementname="" normalpropertyname="buttongap" />
+      <Property name="closebutton" group="Control" subgroup="" edittype="" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="closebutton" />
       <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="TitleBarControl 에 표시되는 텍스트의 색상을 설정하는 속성입니다." csspropertyname="color" csselementname="" normalpropertyname="color" />
-      <Property name="cssclass" group="Information" subgroup="" edittype="CssClass" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl 의 Style을 XCSS 파일에 정의된 class로 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="cssclass" />
+      <Property name="cssclass" group="Information" subgroup="" edittype="CssClass" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControl 의 Style을 XCSS 파일에 정의된 class로 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="cssclass" />
       <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="TitleBarControl 영역내에서 표시될 마우스 포인터의 종류를 설정하는 속성입니다." csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
       <Property name="enableevent" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControl 에서 이벤트를 발생시킬지 여부를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="enableevent" />
       <Property name="font" group="Style" subgroup="font" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="FontSize_Point" delimiter="" requirement="" description="TitleBarControl에서 사용하는 폰트를 설정하는 속성입니다." csspropertyname="font" csselementname="" normalpropertyname="font" />
-      <Property name="height" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl 을(를) 표시하기 위한 높이를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="height" />
-      <Property name="hotkey" group="Action" subgroup="" edittype="HotKey" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HotKeyModifier" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl 의 기본 액션을 수행하기 위한 단축키를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="hotkey" />
-      <Property name="id" group="Information" subgroup="" edittype="ID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl의 고유 식별자를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="id" />
-      <Property name="left" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl 을(를) 표시하기 위한 좌측 좌표를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="left" />
-      <Property name="letterSpacing" group="Style" subgroup="letter-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="TitleBarControl 에 표시되는 문자의 간격을 설정하는 속성입니다." csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
+      <Property name="height" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TitleBarControl 을(를) 표시하기 위한 높이를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="height" />
+      <Property name="hotkey" group="Action" subgroup="" edittype="HotKey" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HotKeyModifier" unitinfo="" delimiter="" requirement="" description="TitleBarControl 의 기본 액션을 수행하기 위한 단축키를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="hotkey" />
+      <Property name="id" group="Information" subgroup="" edittype="ID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControl의 고유 식별자를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="id" />
+      <Property name="left" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TitleBarControl 을(를) 표시하기 위한 좌측 좌표를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="left" />
+      <Property name="letterSpacing" group="Style" subgroup="letter-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="TitleBarControl 에 표시되는 문자의 간격(자간)을 설정하는 속성입니다." csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
       <Property name="lineHeight" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="TitleBarControl 에 여러줄로 텍스트가 표시되는 경우 줄 사이의 간격을 설정하는 속성입니다." csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
-      <Property name="maxbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="" csspropertyname="" csselementname="" normalpropertyname="maxbutton" />
-      <Property name="minbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="" csspropertyname="" csselementname="" normalpropertyname="minbutton" />
+      <Property name="maxbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="maxbutton" />
+      <Property name="minbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="minbutton" />
       <Property name="name" group="Information" subgroup="" edittype="String" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControl 의 이름을 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="name" />
       <Property name="edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControl의 테두리 안쪽에 edge 이미지를 설정하는 속성입니다." csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
       <Property name="padding" group="Style" subgroup="padding" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControl 영역의 안쪽 여백을 설정하는 속성입니다." csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
-      <Property name="normalbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="" csspropertyname="" csselementname="" normalpropertyname="normalbutton" />
+      <Property name="normalbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="normalbutton" />
       <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControl 영역의 투명도를 설정하는 속성입니다." csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
-      <Property name="parent" group="Hidden" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl 의 부모 오브젝트를 갖는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="parent" />
+      <Property name="parent" group="Hidden" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControl 의 부모 오브젝트를 갖는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="parent" />
       <Property name="position" group="Position" subgroup="refresh(position)" edittype="Enum" defaultvalue="absolute" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="PositionType" unitinfo="PositionStep" delimiter="" requirement="" description="TitleBarControl 이(가) 표시되는 위치의 기준을 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="position" />
-      <Property name="right" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl 를 표시하기 위한 우측 좌표를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="right" />
+      <Property name="right" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TitleBarControl 를 표시하기 위한 우측 좌표를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="right" />
       <Property name="text" group="Appearance" subgroup="" edittype="String" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControl 에 표시될 텍스트를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="text" />
-      <Property name="tooltiptext" group="Action" subgroup="" edittype="MultilineString" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl 에 마우스 포인터를 올려 놓았을 때 표시되는 풍선도움말을 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="tooltiptext" />
-      <Property name="tooltiptype" group="Action" subgroup="" edittype="Enum" defaultvalue="default" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TooltipType" unitinfo="" delimiter="" requirement="nexacro browser (Windows),Mobile Hybrid (Android)" description="TitleBarControl 에서 풍선도움말이 표시될 위치를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="tooltiptype" />
-      <Property name="top" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl 을(를) 표시하기 위한 상단 좌표를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="top" />
+      <Property name="tooltiptext" group="Action" subgroup="" edittype="MultilineString" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControl 에 마우스 포인터를 올려 놓았을 때 표시되는 풍선도움말을 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="tooltiptext" />
+      <Property name="tooltiptype" group="Action" subgroup="" edittype="Enum" defaultvalue="default" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TooltipType" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TitleBarControl 에서 풍선도움말이 표시될 위치를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="tooltiptype" />
+      <Property name="top" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TitleBarControl 을(를) 표시하기 위한 상단 좌표를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="top" />
       <Property name="visible" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControl 이(가) 화면에 표시될지 여부를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="visible" />
-      <Property name="width" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl 을(를) 표시하기 위한 너비를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="width" />
-      <Property name="wordSpacing" group="Style" subgroup="word-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="TitleBarControl 에 표시되는 텍스트의 자간을 설정하는 속성입니다." csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
+      <Property name="width" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TitleBarControl 을(를) 표시하기 위한 너비를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="width" />
+      <Property name="wordSpacing" group="Style" subgroup="word-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="TitleBarControl 에 표시되는 텍스트의 단어 사이 간격을 설정하는 속성입니다." csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
     </PropertyInfo>
     <StyleInfo>
       <PropertyInfo>
@@ -49,12 +48,12 @@
         <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="TitleBarControl 에 표시되는 텍스트의 색상을 설정하는 속성입니다." csspropertyname="color" csselementname="" normalpropertyname="color" />
         <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" defaultvalue="auto" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="TitleBarControl 영역내에서 표시될 마우스 포인터의 종류를 설정하는 속성입니다." csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
         <Property name="font" group="Style" subgroup="font" edittype="" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="FontSize_Point" delimiter="" requirement="" description="TitleBarControl에서 사용하는 폰트를 설정하는 속성입니다." csspropertyname="font" csselementname="" normalpropertyname="font" />
-        <Property name="letter-spacing" group="Style" subgroup="letter-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="TitleBarControl 에 표시되는 문자의 간격을 설정하는 속성입니다." csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
+        <Property name="letter-spacing" group="Style" subgroup="letter-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="TitleBarControl 에 표시되는 문자의 간격(자간)을 설정하는 속성입니다." csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
         <Property name="line-height" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="TitleBarControl 에 여러줄로 텍스트가 표시되는 경우 줄 사이의 간격을 설정하는 속성입니다." csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
         <Property name="-nexa-edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControl의 테두리 안쪽에 edge 이미지를 설정하는 속성입니다." csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
         <Property name="-nexa-padding" group="Style" subgroup="padding" edittype="String" defaultvalue="0px 0px 0px 0px" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControl 영역의 안쪽 여백을 설정하는 속성입니다." csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
         <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControl 영역의 투명도를 설정하는 속성입니다." csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
-        <Property name="word-spacing" group="Style" subgroup="word-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="TitleBarControl 에 표시되는 텍스트의 자간을 설정하는 속성입니다." csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
+        <Property name="word-spacing" group="Style" subgroup="word-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="TitleBarControl 에 표시되는 텍스트의 단어 사이 간격을 설정하는 속성입니다." csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
       </PropertyInfo>
       <StatusInfo>
         <Status name="disabled" control="true" default="false" deprecated="false" unused="false" group="status" />
@@ -70,7 +69,7 @@
       <Control name="closebutton" classname="nexacro._TitleBarButtonControl" deprecated="false" unused="false" group="" subgroup="" />
     </ControlInfo>
     <MethodInfo>
-      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl 의 특정 이벤트에 핸들러 함수를 추가하는 메소드입니다.">
+      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControl 의 특정 이벤트에 핸들러 함수를 추가하는 메소드입니다.">
         <Syntax text="TitleBarControl.addEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="이벤트에 추가된 핸들러 함수의 인덱스를 반환합니다.&#xA;동일한 핸들러 함수가 이미 있다면 해당 핸들러 함수의 인덱스를 반환합니다.&#xA;정상적으로 추가되지 않은 경우에는 &quot;-1&quot;을 반환합니다." />
           <Arguments>
@@ -80,7 +79,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="함수를 검색하여 TitleBarControl 의 특정 이벤트에 핸들러 함수로 추가하는 메소드입니다.">
+      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="함수를 검색하여 TitleBarControl 의 특정 이벤트에 핸들러 함수로 추가하는 메소드입니다.">
         <Syntax text="TitleBarControl.addEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="이벤트에 추가된 핸들러 함수의 인덱스를 반환합니다.&#xA;동일한 핸들러 함수가 이미 있다면 해당 핸들러 함수의 인덱스를 반환합니다.&#xA;정상적으로 추가되지 않은 경우에는 &quot;-1&quot;을 반환합니다." />
           <Arguments>
@@ -90,7 +89,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="특정 이벤트에 등록된 핸들러 함수를 모두 제거하는 메소드입니다.">
+      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="특정 이벤트에 등록된 핸들러 함수를 모두 제거하는 메소드입니다.">
         <Syntax text="TitleBarControl.clearEventHandler( strEventID )">
           <Return type="Integer" description="특정 이벤트에서 제거된 핸들러 함수의 갯수를 반환합니다." />
           <Arguments>
@@ -98,13 +97,13 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="destroy" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="스크립트에서 동적으로 생성한 TitleBarControl 을(를) 삭제하는 메소드입니다.">
+      <Method name="destroy" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="스크립트에서 동적으로 생성한 TitleBarControl 을(를) 삭제하는 메소드입니다.">
         <Syntax text="TitleBarControl.destroy()">
           <Return type="Boolean" description="TitleBarControl 이(가) 정상적으로 삭제되면 &quot;true&quot;를 반환합니다.&#xA;TitleBarControl 이(가) 정상적으로 삭제되지 않으면 &quot;false&quot;를 반환합니다." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl 의 특정 이벤트에서 핸들러 함수를 찾아 인덱스를 반환하는 메소드입니다.">
+      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControl 의 특정 이벤트에서 핸들러 함수를 찾아 인덱스를 반환하는 메소드입니다.">
         <Syntax text="TitleBarControl.findEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="이벤트에서 찾으려고 하는 핸들러 함수의 인덱스를 반환합니다.&#xA;찾으려고 하는 핸들러 함수가 존재하지 않는다면 &quot;-1&quot;을 반환합니다." />
           <Arguments>
@@ -123,79 +122,79 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="getOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="부모 컴포넌트의 top을 기준으로 TitleBarControl 의 bottom 값을 픽셀단위로 반환하는 메소드입니다.">
+      <Method name="getOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="부모 컴포넌트의 top을 기준으로 TitleBarControl 의 bottom 값을 픽셀단위로 반환하는 메소드입니다.">
         <Syntax text="TitleBarControl.getOffsetBottom();">
           <Return type="Number" description="TitleBarControl 의 bottom 좌표값을 픽셀단위로 반환합니다." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TitleBarControl 의 height 속성값을 픽셀단위로 반환하는 메소드입니다.">
+      <Method name="getOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControl 의 height 속성값을 픽셀단위로 반환하는 메소드입니다.">
         <Syntax text="TitleBarControl.getOffsetHeight();">
           <Return type="Number" description="TitleBarControl 의 높이를 픽셀단위로 반환합니다." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="부모 컴포넌트의 left를 기준으로 TitleBarControl 의 left 값을 픽셀단위로 반환하는 메소드입니다.">
+      <Method name="getOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="부모 컴포넌트의 left를 기준으로 TitleBarControl 의 left 값을 픽셀단위로 반환하는 메소드입니다.">
         <Syntax text="TitleBarControl.getOffsetLeft();">
           <Return type="Number" description="TitleBarControl 의 left 좌표값을 픽셀단위로 반환합니다." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="부모 컴포넌트의 left를 기준으로 TitleBarControl 의 right 값을 픽셀단위로 반환하는 메소드입니다.">
+      <Method name="getOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="부모 컴포넌트의 left를 기준으로 TitleBarControl 의 right 값을 픽셀단위로 반환하는 메소드입니다.">
         <Syntax text="TitleBarControl.getOffsetRight();">
           <Return type="Number" description="TitleBarControl 의 right 좌표값을 픽셀단위로 반환합니다." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="부모 컴포넌트의 top을 기준으로 TitleBarControl 의 top 값을 픽셀단위로 반환하는 메소드입니다.">
+      <Method name="getOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="부모 컴포넌트의 top을 기준으로 TitleBarControl 의 top 값을 픽셀단위로 반환하는 메소드입니다.">
         <Syntax text="TitleBarControl.getOffsetTop();">
           <Return type="Number" description="TitleBarControl 의 top 좌표값을 픽셀단위로 반환합니다." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TitleBarControl 의 width 속성값을 픽셀단위로 반환하는 메소드입니다.">
+      <Method name="getOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControl 의 width 속성값을 픽셀단위로 반환하는 메소드입니다.">
         <Syntax text="TitleBarControl.getOffsetWidth();">
           <Return type="Number" description="TitleBarControl 의 너비를 픽셀단위로 반환합니다." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TitleBarControl 의 bottom 속성값을 픽셀단위로 반환하는 메소드입니다.">
+      <Method name="getPixelBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControl 의 bottom 속성값을 픽셀단위로 반환하는 메소드입니다.">
         <Syntax text="TitleBarControl.getPixelBottom();">
           <Return type="Number" description="TitleBarControl 의 bottom 속성값을 픽셀단위로 반환합니다.&#xA;bottom 속성값을 설정하지 않았을 경우 &quot;null&quot;을 반환합니다." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TitleBarControl 의 height 속성값을 픽셀단위로 반환하는 메소드입니다.">
+      <Method name="getPixelHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControl 의 height 속성값을 픽셀단위로 반환하는 메소드입니다.">
         <Syntax text="TitleBarControl.getPixelHeight();">
           <Return type="Number" description="TitleBarControl 의 height 속성값을 픽셀단위로 반환합니다.&#xA;height 속성값을 설정하지 않았을 경우 &quot;null&quot;을 반환합니다." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TitleBarControl 의 left 속성값을 픽셀단위로 반환하는 메소드입니다.">
+      <Method name="getPixelLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControl 의 left 속성값을 픽셀단위로 반환하는 메소드입니다.">
         <Syntax text="TitleBarControl.getPixelLeft();">
           <Return type="Number" description="TitleBarControl 의 left 속성값을 픽셀단위로 반환합니다.&#xA;left 속성값을 설정하지 않았을 경우 &quot;null&quot;을 반환합니다." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TitleBarControl 의 right 속성값을 픽셀단위로 반환하는 메소드입니다.">
+      <Method name="getPixelRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControl 의 right 속성값을 픽셀단위로 반환하는 메소드입니다.">
         <Syntax text="TitleBarControl.getPixelRight();">
           <Return type="Number" description="TitleBarControl 의 right 속성값을 픽셀단위로 반환합니다.&#xA;right 속성값을 설정하지 않았을 경우 &quot;null&quot;을 반환합니다." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TitleBarControl 의 top 속성값을 픽셀단위로 반환하는 메소드입니다.">
+      <Method name="getPixelTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControl 의 top 속성값을 픽셀단위로 반환하는 메소드입니다.">
         <Syntax text="TitleBarControl.getPixelTop();">
           <Return type="Number" description="TitleBarControl 의 top 속성값을 픽셀단위로 반환합니다.&#xA;top 속성값을 설정하지 않았을 경우 &quot;null&quot;을 반환합니다." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TitleBarControl 의 width 속성값을 픽셀단위로 반환하는 메소드입니다.">
+      <Method name="getPixelWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControl 의 width 속성값을 픽셀단위로 반환하는 메소드입니다.">
         <Syntax text="TitleBarControl.getPixelWidth();">
           <Return type="Number" description="TitleBarControl 의 width 속성값을 픽셀단위로 반환합니다.&#xA;width 속성값을 설정하지 않았을 경우 &quot;null&quot;을 반환합니다." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="init" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="스크립트로 TitleBarControl 을(를) 동적 생성한 후에 초기화하는 메소드입니다.">
+      <Method name="init" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="스크립트로 TitleBarControl 을(를) 동적 생성한 후에 초기화하는 메소드입니다.">
         <Syntax text="TitleBarControl.init( strName, strPosition, nLeft, nTop , nWidth, nHeight [, nRight, nBottom] )">
           <Return type="" description="" />
           <Arguments>
@@ -210,7 +209,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="move" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TitleBarControl 의 위치와 크기를 변경하는 메소드입니다.">
+      <Method name="move" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControl 의 위치와 크기를 변경하는 메소드입니다.">
         <Syntax text="TitleBarControl.move( nLeft, nTop [, nWidth, nHeight [, nRight, nBottom]] )">
           <Return type="" description="" />
           <Arguments>
@@ -223,7 +222,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl 의 특정 이벤트에서 핸들러 함수를 제거하는 메소드입니다.">
+      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControl 의 특정 이벤트에서 핸들러 함수를 제거하는 메소드입니다.">
         <Syntax text="TitleBarControl.removeEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="핸들러 함수 제거에 성공하면 &quot;1&quot;을 반환합니다.&#xA;핸들러 함수 제거에 실패하면 &quot;0&quot;을 반환합니다." />
           <Arguments>
@@ -233,7 +232,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl 의 특정 이벤트에서 검색된 함수와 동일한 핸들러 함수를 제거하는 메소드입니다.">
+      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControl 의 특정 이벤트에서 검색된 함수와 동일한 핸들러 함수를 제거하는 메소드입니다.">
         <Syntax text="TitleBarControl.removeEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="핸들러 함수 제거에 성공하면 &quot;1&quot;을 반환합니다.&#xA;핸들러 함수 제거에 실패하면 &quot;0&quot;을 반환합니다." />
           <Arguments>
@@ -243,7 +242,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="resize" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl 의 크기를 변경하는 메소드입니다.">
+      <Method name="resize" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControl 의 크기를 변경하는 메소드입니다.">
         <Syntax text="TitleBarControl.resize( nWidth, nHeight )">
           <Return type="" description="" />
           <Arguments>
@@ -252,7 +251,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl 의 특정 이벤트에서 첫번째 핸들러 함수를 변경하는 메소드입니다.">
+      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControl 의 특정 이벤트에서 첫번째 핸들러 함수를 변경하는 메소드입니다.">
         <Syntax text="TitleBarControl.setEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="첫번째 핸들러 함수 변경에 성공하면 &quot;0&quot;을 반환합니다.&#xA;첫번째 핸들러 함수 변경에 실패하면 &quot;-1&quot;을 반환합니다." />
           <Arguments>
@@ -262,7 +261,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl 의 특정 이벤트에서 첫번째 핸들러 함수를 검색된 함수로 변경하는 메소드입니다.">
+      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControl 의 특정 이벤트에서 첫번째 핸들러 함수를 검색된 함수로 변경하는 메소드입니다.">
         <Syntax text="TitleBarControl.setEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="첫번째 핸들러 함수 변경에 성공하면 &quot;0&quot;을 반환합니다.&#xA;첫번째 핸들러 함수 변경에 실패하면 &quot;-1&quot;을 반환합니다." />
           <Arguments>
@@ -272,13 +271,13 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="">
+      <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="setOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="부모 컴포넌트의 top을 기준으로 TitleBarControl 의 bottom 값을 픽셀단위로 설정하는 메소드입니다.">
+      <Method name="setOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="부모 컴포넌트의 top을 기준으로 TitleBarControl 의 bottom 값을 픽셀단위로 설정하는 메소드입니다.">
         <Syntax text="TitleBarControl.setOffsetBottom( nBottom );">
           <Return type="" description="" />
           <Arguments>
@@ -286,7 +285,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl 의 height 속성값을 픽셀단위로 설정하는 메소드입니다.">
+      <Method name="setOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControl 의 height 속성값을 픽셀단위로 설정하는 메소드입니다.">
         <Syntax text="TitleBarControl.setOffsetHeight( nHeight );">
           <Return type="" description="" />
           <Arguments>
@@ -294,7 +293,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="부모 컴포넌트의 left 를 기준으로 TitleBarControl 의 left 값을 픽셀단위로 설정하는 메소드입니다.">
+      <Method name="setOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="부모 컴포넌트의 left 를 기준으로 TitleBarControl 의 left 값을 픽셀단위로 설정하는 메소드입니다.">
         <Syntax text="TitleBarControl.setOffsetLeft( nLeft );">
           <Return type="" description="" />
           <Arguments>
@@ -302,7 +301,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="부모 컴포넌트의 left 를 기준으로 TitleBarControl 의 right 값을 픽셀단위로 설정하는 메소드입니다.">
+      <Method name="setOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="부모 컴포넌트의 left 를 기준으로 TitleBarControl 의 right 값을 픽셀단위로 설정하는 메소드입니다.">
         <Syntax text="TitleBarControl.setOffsetRight( nRight );">
           <Return type="" description="" />
           <Arguments>
@@ -310,7 +309,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="부모 컴포넌트의 top을 기준으로 TitleBarControl 의 top 값을 픽셀단위로 설정하는 메소드입니다.">
+      <Method name="setOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="부모 컴포넌트의 top을 기준으로 TitleBarControl 의 top 값을 픽셀단위로 설정하는 메소드입니다.">
         <Syntax text="TitleBarControl.setOffsetTop( nTop );">
           <Return type="" description="" />
           <Arguments>
@@ -318,7 +317,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl 의 width 속성값을 픽셀단위로 설정하는 메소드입니다.">
+      <Method name="setOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControl 의 width 속성값을 픽셀단위로 설정하는 메소드입니다.">
         <Syntax text="TitleBarControl.setOffsetWidth( nWidth );">
           <Return type="" description="" />
           <Arguments>
@@ -326,7 +325,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="show" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="스크립트로 동적 생성한 TitleBarControl 을(를) 화면에 표시하는 메소드입니다.">
+      <Method name="show" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="스크립트로 동적 생성한 TitleBarControl 을(를) 화면에 표시하는 메소드입니다.">
         <Syntax text="TitleBarControl.show()">
           <Return type="" description="" />
           <Arguments />

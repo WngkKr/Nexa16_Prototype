@@ -6,49 +6,49 @@
       <Property name="background" group="Style" subgroup="background" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabButtonItemControlの背景領域を設定するプロパティです。" csspropertyname="background" csselementname="" normalpropertyname="background" />
       <Property name="border" group="Style" subgroup="border" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="border" csselementname="" normalpropertyname="border" />
       <Property name="borderRadius" group="Style" subgroup="border-radius" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="border-radius" csselementname="" normalpropertyname="borderRadius" />
-      <Property name="bottom" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="Position2Type" unitinfo="Position2Type" delimiter="" requirement="" description="TabButtonItemControl生成位置のbottom座標" csspropertyname="" csselementname="" normalpropertyname="bottom" />
+      <Property name="bottom" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="Position2Type" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControl生成位置のbottom座標" csspropertyname="" csselementname="" normalpropertyname="bottom" />
       <Property name="bottombase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="bottombase" />
       <Property name="boxShadow" group="Style" subgroup="box-shadow" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="box-shadow" csselementname="" normalpropertyname="boxShadow" />
       <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="TabButtonItemControlに表示されるテキストの色を設定するプロパティです。" csspropertyname="color" csselementname="" normalpropertyname="color" />
-      <Property name="cssclass" group="Appearance" subgroup="" edittype="CssClass" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="cssclass" />
+      <Property name="cssclass" group="Appearance" subgroup="" edittype="CssClass" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="cssclass" />
       <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
-      <Property name="enable" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabButtonItemControlの使用可能状態を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="enable" />
-      <Property name="enableevent" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabButtonItemControlのイベントが発生するかどうかを決定するプロパティです。 &#xA;　&#xA;　" csspropertyname="" csselementname="" normalpropertyname="enableevent" />
-      <Property name="expr" group="Appearance" subgroup="" edittype="String" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="expr" />
+      <Property name="enable" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlの使用可能状態を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="enable" />
+      <Property name="enableevent" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlのイベントが発生するかどうかを決定するプロパティです。 &#xA;　&#xA;　" csspropertyname="" csselementname="" normalpropertyname="enableevent" />
+      <Property name="expr" group="Appearance" subgroup="" edittype="String" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="expr" />
       <Property name="font" group="Style" subgroup="font" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="FontSize_Point" delimiter="" requirement="" description="" csspropertyname="font" csselementname="" normalpropertyname="font" />
       <Property name="height" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TabButtonItemControl生成高さ" csspropertyname="" csselementname="" normalpropertyname="height" />
       <Property name="heightbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="heightbase" />
-      <Property name="hotkey" group="Action" subgroup="" edittype="HotKey" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="HotKeyModifier" unitinfo="" delimiter="" requirement="" description="TabButtonItemControlのデフォルトアクションを実行するためのホットキーを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="hotkey" />
-      <Property name="id" group="Information" subgroup="" edittype="ID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="id" />
+      <Property name="hotkey" group="Action" subgroup="" edittype="HotKey" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="HotKeyModifier" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlのデフォルトアクションを実行するためのホットキーを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="hotkey" />
+      <Property name="id" group="Information" subgroup="" edittype="ID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="id" />
       <Property name="initvalueid" group="Information" subgroup="" edittype="InitvalueID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="initvalueid" />
-      <Property name="left" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TabButtonItemControl生成位置のleft座標　" csspropertyname="" csselementname="" normalpropertyname="left" />
+      <Property name="left" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControl生成位置のleft座標　" csspropertyname="" csselementname="" normalpropertyname="left" />
       <Property name="leftbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="leftbase" />
       <Property name="letterSpacing" group="Style" subgroup="letter-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
       <Property name="lineHeight" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
-      <Property name="name" group="Information" subgroup="" edittype="String" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="コンポーネント名を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="name" />
+      <Property name="name" group="Information" subgroup="" edittype="String" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネント名を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="name" />
       <Property name="edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
-      <Property name="icon" group="Style" subgroup="-nexa-icon" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-icon" csselementname="" normalpropertyname="icon" />
-      <Property name="iconPosition" group="Style" subgroup="-nexa-icon-position" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-icon-position" csselementname="" normalpropertyname="iconPosition" />
+      <Property name="icon" group="Style" subgroup="-nexa-icon" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-icon" csselementname="" normalpropertyname="icon" />
+      <Property name="iconPosition" group="Style" subgroup="-nexa-icon-position" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-icon-position" csselementname="" normalpropertyname="iconPosition" />
       <Property name="padding" group="Style" subgroup="padding" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
       <Property name="textAlign" group="Style" subgroup="-nexa-text-align" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
       <Property name="textDecoration" group="Style" subgroup="text-decoration" edittype="MultiEnum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="TextDecorationLine" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-decoration" csselementname="" normalpropertyname="textDecoration" />
-      <Property name="textPadding" group="Style" subgroup="-nexa-text-padding" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-padding" csselementname="" normalpropertyname="textPadding" />
+      <Property name="textPadding" group="Style" subgroup="-nexa-text-padding" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-text-padding" csselementname="" normalpropertyname="textPadding" />
       <Property name="verticalAlign" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
       <Property name="wordWrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
       <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
-      <Property name="parent" group="Hidden" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="コンポーネントの親オブジェクトを表示するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="parent" />
-      <Property name="position" group="Position" subgroup="refresh(position)" edittype="Enum" defaultvalue="absolute" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="PositionType" unitinfo="PositionStep" delimiter="" requirement="" description="TabButtonItemControlの座標基準値を設定するプロパティです。　" csspropertyname="" csselementname="" normalpropertyname="position" />
-      <Property name="positionstep" group="Position" subgroup="refresh(position)" edittype="Number" defaultvalue="0" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="PositionStep" delimiter="" requirement="" description="所属しているフォームまたはDiv、Tabpage、PopupDivがStep機能を使用する時、どのStepに属するかを指定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="positionstep" />
-      <Property name="right" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TabButtonItemControl生成位置のright座標" csspropertyname="" csselementname="" normalpropertyname="right" />
+      <Property name="parent" group="Hidden" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネントの親オブジェクトを表示するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="parent" />
+      <Property name="position" group="Position" subgroup="refresh(position)" edittype="Enum" defaultvalue="absolute" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="PositionType" unitinfo="PositionStep" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlの座標基準値を設定するプロパティです。　" csspropertyname="" csselementname="" normalpropertyname="position" />
+      <Property name="positionstep" group="Position" subgroup="refresh(position)" edittype="Number" defaultvalue="0" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="PositionStep" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="所属しているフォームまたはDiv、Tabpage、PopupDivがStep機能を使用する時、どのStepに属するかを指定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="positionstep" />
+      <Property name="right" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControl生成位置のright座標" csspropertyname="" csselementname="" normalpropertyname="right" />
       <Property name="rightbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="rightbase" />
-      <Property name="taborder" group="Action" subgroup="" edittype="Number" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="taborder" />
-      <Property name="tabstop" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="Tabキーでフォーカスを得るかどうかを指定するプロパティです。&#xA;　&#xA;　" csspropertyname="" csselementname="" normalpropertyname="tabstop" />
-      <Property name="text" group="Appearance" subgroup="" edittype="String" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="text" />
-      <Property name="tooltiptext" group="Action" subgroup="" edittype="MultilineString" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="tooltiptext" />
-      <Property name="tooltiptype" group="Action" subgroup="" edittype="Enum" defaultvalue="default" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TooltipType" unitinfo="" delimiter="" requirement="" description="ツールチップを表示する方式を指定するプロパティです。　" csspropertyname="" csselementname="" normalpropertyname="tooltiptype" />
-      <Property name="top" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TabButtonItemControl生成位置のtop座標　" csspropertyname="" csselementname="" normalpropertyname="top" />
+      <Property name="taborder" group="Action" subgroup="" edittype="Number" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="taborder" />
+      <Property name="tabstop" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="Tabキーでフォーカスを得るかどうかを指定するプロパティです。&#xA;　&#xA;　" csspropertyname="" csselementname="" normalpropertyname="tabstop" />
+      <Property name="text" group="Appearance" subgroup="" edittype="String" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="text" />
+      <Property name="tooltiptext" group="Action" subgroup="" edittype="MultilineString" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="tooltiptext" />
+      <Property name="tooltiptype" group="Action" subgroup="" edittype="Enum" defaultvalue="default" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TooltipType" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="ツールチップを表示する方式を指定するプロパティです。　" csspropertyname="" csselementname="" normalpropertyname="tooltiptype" />
+      <Property name="top" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControl生成位置のtop座標　" csspropertyname="" csselementname="" normalpropertyname="top" />
       <Property name="topbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="topbase" />
-      <Property name="visible" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabButtonItemControlが画面に表示されるかどうかを設定するプロパティです。&#xA;　&#xA;　" csspropertyname="" csselementname="" normalpropertyname="visible" />
+      <Property name="visible" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlが画面に表示されるかどうかを設定するプロパティです。&#xA;　&#xA;　" csspropertyname="" csselementname="" normalpropertyname="visible" />
       <Property name="width" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TabButtonItemControl生成広さ" csspropertyname="" csselementname="" normalpropertyname="width" />
       <Property name="widthbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="widthbase" />
       <Property name="wordSpacing" group="Style" subgroup="word-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
@@ -65,12 +65,12 @@
         <Property name="letter-spacing" group="Style" subgroup="letter-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
         <Property name="line-height" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
         <Property name="-nexa-edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
-        <Property name="-nexa-icon" group="Style" subgroup="-nexa-icon" edittype="" readonly="false" initonly="false" hidden="false" control="false" style="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-icon" csselementname="" normalpropertyname="icon" />
-        <Property name="-nexa-icon-position" group="Style" subgroup="-nexa-icon-position" edittype="" defaultvalue="left" readonly="false" initonly="false" hidden="false" control="false" style="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-icon-position" csselementname="" normalpropertyname="iconPosition" />
+        <Property name="-nexa-icon" group="Style" subgroup="-nexa-icon" edittype="" readonly="false" initonly="false" hidden="false" control="false" style="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-icon" csselementname="" normalpropertyname="icon" />
+        <Property name="-nexa-icon-position" group="Style" subgroup="-nexa-icon-position" edittype="" defaultvalue="left" readonly="false" initonly="false" hidden="false" control="false" style="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-icon-position" csselementname="" normalpropertyname="iconPosition" />
         <Property name="-nexa-padding" group="Style" subgroup="padding" edittype="String" defaultvalue="0px 0px 0px 0px" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
         <Property name="-nexa-text-align" group="Style" subgroup="-nexa-text-align" edittype="Enum" defaultvalue="left" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
         <Property name="-nexa-text-decoration" group="Style" subgroup="text-decoration" edittype="MultiEnum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="TextDecorationLine" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-decoration" csselementname="" normalpropertyname="textDecoration" />
-        <Property name="-nexa-text-padding" group="Style" subgroup="-nexa-text-padding" edittype="" defaultvalue="0px 0px 0px 0px" readonly="false" initonly="false" hidden="false" control="false" style="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-padding" csselementname="" normalpropertyname="textPadding" />
+        <Property name="-nexa-text-padding" group="Style" subgroup="-nexa-text-padding" edittype="" defaultvalue="0px 0px 0px 0px" readonly="false" initonly="false" hidden="false" control="false" style="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-text-padding" csselementname="" normalpropertyname="textPadding" />
         <Property name="-nexa-vertical-align" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" defaultvalue="middle" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
         <Property name="-nexa-word-wrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
         <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
@@ -88,7 +88,7 @@
       <Control name="extrabutton" classname="nexacro.Button" deprecated="false" unused="false" group="" subgroup="" />
     </ControlInfo>
     <MethodInfo>
-      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="イベントハンドラ関数を追加するメソッドです。">
+      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="イベントハンドラ関数を追加するメソッドです。">
         <Syntax text="TabButtonItemControl.addEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="成功すると追加されたインデックス値を返し、失敗すると-1を返します。" />
           <Arguments>
@@ -98,7 +98,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="指定したイベントIDで検索された結果イベントハンドラを追加するメソッドです。">
+      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="指定したイベントIDで検索された結果イベントハンドラを追加するメソッドです。">
         <Syntax text="addEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="成功すると追加されたインデックスの値を返し、失敗すると-1を返します。" />
           <Arguments>
@@ -108,19 +108,19 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="bringToFront" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="コンポーネントが描画される順序を同一レベルのコンポーネントの一番前に送るメソッドです。">
+      <Method name="bringToFront" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネントが描画される順序を同一レベルのコンポーネントの一番前に送るメソッドです。">
         <Syntax text="TabButtonItemControl.bringToFront()">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="bringToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="コンポーネントが描画される順序を同一レベルのコンポーネントの中で一段階前に持ってくるメソッドです。">
+      <Method name="bringToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネントが描画される順序を同一レベルのコンポーネントの中で一段階前に持ってくるメソッドです。">
         <Syntax text="TabButtonItemControl.bringToPrev()">
           <Return type="" description="　" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="設定されたイベントハンドラ関数を全て削除するメソッドです。 　">
+      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="設定されたイベントハンドラ関数を全て削除するメソッドです。 　">
         <Syntax text="clearEventHandler( strEventID )">
           <Return type="Integer" description="削除されたイベントハンドラ関数の数を返します。　" />
           <Arguments>
@@ -128,13 +128,13 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="destroy" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="スクリプトで動的に生成したTabButtonItemControlを削除するメソッドです。">
+      <Method name="destroy" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="スクリプトで動的に生成したTabButtonItemControlを削除するメソッドです。">
         <Syntax text="TabButtonItemControl.destroy()">
           <Return type="Boolean" description="成功した場合はtrue、失敗した場合はfalseを返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="指定したイベントハンドラ関数を検索してインデックスを返すメソッドです。">
+      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="指定したイベントハンドラ関数を検索してインデックスを返すメソッドです。">
         <Syntax text="findEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="指定した関数のインデックス" />
           <Arguments>
@@ -150,7 +150,7 @@
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="指定したイベントハンドラ関数を返すメソッドです。">
+      <Method name="getEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="指定したイベントハンドラ関数を返すメソッドです。">
         <Syntax text="getEventHandler( strEventID, nIdx )">
           <Return type="Object" description="イベントハンドラ関数オブジェクトを返して指定されたインデックスの位置が有効でないとnullを返します。" />
           <Arguments>
@@ -159,85 +159,85 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="getFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="アクセシビリティインターフェイスが実行されるときに、キー入力が処理される前に先に発生されるイベントです。">
+      <Method name="getFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="アクセシビリティインターフェイスが実行されるときに、キー入力が処理される前に先に発生されるイベントです。">
         <Syntax text="TabButtonItemControl.getFocus()">
           <Return type="Object" description="true를 리턴하면, 해당 key에 대한 onkeydown(onkeyup?)、onchar event가 발생되지 않습니다. &#xD;&#xA;&#xD;&#xA;c" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TabButtonItemControlの位置情報のbottomプロパティのピクセル値を取得するメソッドです。">
+      <Method name="getOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlの位置情報のbottomプロパティのピクセル値を取得するメソッドです。">
         <Syntax text="TabButtonItemControl.getOffsetBottom();">
           <Return type="Number" description="ピクセル(pixel)単位の値を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TabButtonItemControlのheight位置情報のピクセル値を取得するメソッドです。">
+      <Method name="getOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlのheight位置情報のピクセル値を取得するメソッドです。">
         <Syntax text="TabButtonItemControl.getOffsetHeight();">
           <Return type="Number" description="ピクセル(pixel)単位値を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TabButtonItemControlのleft位置情報のピクセル値を取得するメソッドです。">
+      <Method name="getOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlのleft位置情報のピクセル値を取得するメソッドです。">
         <Syntax text="TabButtonItemControl.getOffsetLeft();">
           <Return type="Number" description="ピクセル(pixel)単位値を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TabButtonItemControlのright位置情報のピクセル値を取得するメソッドです。">
+      <Method name="getOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlのright位置情報のピクセル値を取得するメソッドです。">
         <Syntax text="TabButtonItemControl.getOffsetRight();">
           <Return type="Number" description="ピクセル(pixel)単位値を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TabButtonItemControlのtop位置情報のピクセル値を取得するメソッドです。">
+      <Method name="getOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlのtop位置情報のピクセル値を取得するメソッドです。">
         <Syntax text="TabButtonItemControl.getOffsetTop();">
           <Return type="Number" description="ピクセル(pixel)単位値を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TabButtonItemControlのwidth位置情報のピクセル値を取得するメソッドです。">
+      <Method name="getOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlのwidth位置情報のピクセル値を取得するメソッドです。">
         <Syntax text="TabButtonItemControl.getOffsetWidth();">
           <Return type="Number" description="ピクセル(pixel)単位値を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TabButtonItemControlのbottom位置情報のピクセル値を取得するメソッドです。&#xA;　">
+      <Method name="getPixelBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlのbottom位置情報のピクセル値を取得するメソッドです。&#xA;　">
         <Syntax text="TabButtonItemControl.getPixelBottom();">
           <Return type="Number" description="ピクセル(pixel)単位値を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TabButtonItemControlのheight位置情報のピクセル値を取得するメソッドです。">
+      <Method name="getPixelHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlのheight位置情報のピクセル値を取得するメソッドです。">
         <Syntax text="TabButtonItemControl.getPixelHeight();">
           <Return type="Number" description="ピクセル(pixel)単位値を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TabButtonItemControlのleft位置情報のピクセル値を取得するメソッドです。">
+      <Method name="getPixelLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlのleft位置情報のピクセル値を取得するメソッドです。">
         <Syntax text="TabButtonItemControl.getPixelLeft();">
           <Return type="Number" description="ピクセル(pixel)単位値を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TabButtonItemControlのright位置情報のピクセル値を取得するメソッドです。">
+      <Method name="getPixelRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlのright位置情報のピクセル値を取得するメソッドです。">
         <Syntax text="TabButtonItemControl.getPixelRight();">
           <Return type="Number" description="ピクセル(pixel)単位値を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TabButtonItemControlのtop位置情報のピクセル値を取得するメソッドです。">
+      <Method name="getPixelTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlのtop位置情報のピクセル値を取得するメソッドです。">
         <Syntax text="TabButtonItemControl.getPixelTop();">
           <Return type="Number" description="ピクセル(pixel)単位値を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TabButtonItemControlのwidth情報のピクセル値を取得するメソッドです。">
+      <Method name="getPixelWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlのwidth情報のピクセル値を取得するメソッドです。">
         <Syntax text="TabButtonItemControl.getPixelWidth();">
           <Return type="Number" description="ピクセル(pixel)単位値を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="init" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="スクリプトで動的にTabButtonItemControlを生成した後に初期化するメソッドです。">
+      <Method name="init" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="スクリプトで動的にTabButtonItemControlを生成した後に初期化するメソッドです。">
         <Syntax text="TabButtonItemControl.init( strName, strPosition, nLeft, nTop , nWidth, nHeight [, nRight, nBottom] )">
           <Return type="" description="　" />
           <Arguments>
@@ -252,7 +252,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="move" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="コンポーネントをフォーム内の特定の位置とサイズに移動するメソッドです。">
+      <Method name="move" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネントをフォーム内の特定の位置とサイズに移動するメソッドです。">
         <Syntax text="TabButtonItemControl.move( nLeft, nTop [, nWidth, nHeight [, nRight, nBottom]] )">
           <Return type="" description="　" />
           <Arguments>
@@ -265,7 +265,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="moveToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="コンポーネントが描画される順序を引数値として与えられたコンポーネントを基準に一段階後の方に移動させるメソッドです。">
+      <Method name="moveToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネントが描画される順序を引数値として与えられたコンポーネントを基準に一段階後の方に移動させるメソッドです。">
         <Syntax text="TabButtonItemControl.moveToNext( objComp )&#xA;TabButtonItemControl.moveToNext( strComp )">
           <Return type="" description="" />
           <Arguments>
@@ -274,7 +274,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="moveToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="コンポーネントが描画される順序を引数値として与えられたコンポーネントを基準に一段階前方に移動させるメソッドです。">
+      <Method name="moveToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネントが描画される順序を引数値として与えられたコンポーネントを基準に一段階前方に移動させるメソッドです。">
         <Syntax text="TabButtonItemControl.moveToPrev( objComp )&#xA;TabButtonItemControl.moveToPrev( strComp )">
           <Return type="" description="" />
           <Arguments>
@@ -283,7 +283,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="指定したインデックスまたはイベントハンドラ関数を削除するメソッドです。">
+      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="指定したインデックスまたはイベントハンドラ関数を削除するメソッドです。">
         <Syntax text="TabButtonItemControl.removeEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="削除されたイベントハンドラ関数の数を返します。(成功：1、失敗：0)" />
           <Arguments>
@@ -293,7 +293,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="指定したイベントIDで検索された結果イベントハンドラを削除するメソッドです。">
+      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="指定したイベントIDで検索された結果イベントハンドラを削除するメソッドです。">
         <Syntax text="removeEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="削除されたイベントハンドラ関数の数を返します。(成功：1、失敗：0)" />
           <Arguments>
@@ -303,7 +303,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="resize" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TabButtonItemControlのサイズを変更するメソッドです。">
+      <Method name="resize" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlのサイズを変更するメソッドです。">
         <Syntax text="TabButtonItemControl.resize( nWidth, nHeight )">
           <Return type="" description="" />
           <Arguments>
@@ -312,19 +312,19 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="sendToBack" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="コンポーネントが描画される順序を同一レベルのコンポーネントのいちばん後ろに送るメソッドです。">
+      <Method name="sendToBack" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネントが描画される順序を同一レベルのコンポーネントのいちばん後ろに送るメソッドです。">
         <Syntax text="TabButtonItemControl.sendToBack()">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="sendToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="コンポーネントが描画される順序を同一レベルのコンポーネントの一段階後に送るメソッドです。">
+      <Method name="sendToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネントが描画される順序を同一レベルのコンポーネントの一段階後に送るメソッドです。">
         <Syntax text="TabButtonItemControl.sendToNext()">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="イベントハンドラ関数を変更するメソッドです。">
+      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="イベントハンドラ関数を変更するメソッドです。">
         <Syntax text="setEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="成功した場合は変更されたインデックスを返し、失敗した場合は-1を返します。" />
           <Arguments>
@@ -334,7 +334,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="指定したイベントIDで検索された結果イベントハンドラを指定するメソッドです。">
+      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="指定したイベントIDで検索された結果イベントハンドラを指定するメソッドです。">
         <Syntax text="setEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="成功した場合は変更されたインデックスを返し、失敗した場合は-1を返します。" />
           <Arguments>
@@ -344,7 +344,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TabButtonItemControlにフォーカスを与えるメソッドです。">
+      <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlにフォーカスを与えるメソッドです。">
         <Syntax text="TabButtonItemControl.setFocus( [bMoveScroll] )">
           <Return type="Object" description="直前のフォーカスを持っていたコンポーネントが返されます。&#xD;&#xA;以前のフォーカスがなかったりメソッド実行に失敗した場合、nullが返されます。" />
           <Arguments>
@@ -352,7 +352,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TabButtonItemControlのparent left、topを基準にしてbottom値を設定します。">
+      <Method name="setOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlのparent left、topを基準にしてbottom値を設定します。">
         <Syntax text="TabButtonItemControl.setOffsetBottom( nBottom );">
           <Return type="" description="" />
           <Arguments>
@@ -360,7 +360,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TabButtonItemControlのparent left、topを基準にしてheight値を設定します。　">
+      <Method name="setOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlのparent left、topを基準にしてheight値を設定します。　">
         <Syntax text="TabButtonItemControl.setOffsetHeight( nHeight );">
           <Return type="" description="" />
           <Arguments>
@@ -368,7 +368,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TabButtonItemControlのparent left、topを基準にしてleftの値を設定します。">
+      <Method name="setOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlのparent left、topを基準にしてleftの値を設定します。">
         <Syntax text="TabButtonItemControl.setOffsetLeft( nLeft );">
           <Return type="" description="" />
           <Arguments>
@@ -376,7 +376,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TabButtonItemControlのparent left、topを基準にしてrightの値を設定します。">
+      <Method name="setOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlのparent left、topを基準にしてrightの値を設定します。">
         <Syntax text="TabButtonItemControl.setOffsetRight( nRight );">
           <Return type="" description="" />
           <Arguments>
@@ -384,7 +384,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TabButtonItemControlの親コンポーネントleft、topの位置を基準にしてtopの値を設定するメソッドでス。">
+      <Method name="setOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlの親コンポーネントleft、topの位置を基準にしてtopの値を設定するメソッドでス。">
         <Syntax text="TabButtonItemControl.setOffsetTop( nTop );">
           <Return type="" description="" />
           <Arguments>
@@ -392,7 +392,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TabButtonItemControlの親コンポーネントleft、topに位置を基準にしてwidth値を設定するメソッドです。">
+      <Method name="setOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlの親コンポーネントleft、topに位置を基準にしてwidth値を設定するメソッドです。">
         <Syntax text="TabButtonItemControl.setOffsetWidth( nWidth );">
           <Return type="" description="" />
           <Arguments>
@@ -400,7 +400,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="show" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="スクリプトで動的に生成したTabButtonItemControlを実際に表示するメソッドです。">
+      <Method name="show" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="スクリプトで動的に生成したTabButtonItemControlを実際に表示するメソッドです。">
         <Syntax text="TabButtonItemControl.show()">
           <Return type="" description="" />
           <Arguments />
@@ -408,7 +408,7 @@
       </Method>
     </MethodInfo>
     <EventHandlerInfo>
-      <EventHandler name="onclick" group="Event" deprecated="false" unused="true" requirement="" description="">
+      <EventHandler name="onclick" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="TabButtonItemControl.onclick(obj:nexacro._TabButtonItemControl,e:nexacro.ClickEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -416,7 +416,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondblclick" group="Event" deprecated="false" unused="true" requirement="" description="">
+      <EventHandler name="ondblclick" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="TabButtonItemControl.ondblclick(obj:nexacro._TabButtonItemControl,e:nexacro.MouseEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -424,7 +424,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondrag" group="Event" deprecated="false" unused="true" requirement="" description="コンポーネント領域でマウスによってドラッグが起こったときに発生するイベントです。&#xA;　">
+      <EventHandler name="ondrag" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネント領域でマウスによってドラッグが起こったときに発生するイベントです。&#xA;　">
         <Syntax text="TabButtonItemControl.ondrag(obj:nexacro._TabButtonItemControl,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="falseを返すと、ドラッグ機能が動作しません。&#xA;trueを返すと、上位コンポーネントでイベントが発生しません。&#xA;&#xA;デフォルト値 : false" />
           <Arguments>
@@ -432,7 +432,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondragenter" group="Event" deprecated="false" unused="true" requirement="" description="コンポーネント領域にドラッグされたコンポーネントが入ったときに発生するイベントです。">
+      <EventHandler name="ondragenter" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネント領域にドラッグされたコンポーネントが入ったときに発生するイベントです。">
         <Syntax text="TabButtonItemControl.ondragenter(obj:nexacro._TabButtonItemControl,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="イベントを処理するかどうかの結果。trueを返すと上位コンポーネントでイベントが発生しません。&#xA;デフォルト値 : false" />
           <Arguments>
@@ -440,7 +440,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondragleave" group="Event" deprecated="false" unused="true" requirement="" description="コンポーネント領域にドラッグされたコンポーネントが解除されるときに発生するイベントです。　">
+      <EventHandler name="ondragleave" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネント領域にドラッグされたコンポーネントが解除されるときに発生するイベントです。　">
         <Syntax text="TabButtonItemControl.ondragleave(obj:nexacro._TabButtonItemControl,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="イベントを処理するかどうかを指定、trueを返すと上位コンポーネントでイベントが発生しません。&#xA;デフォルト値 : false" />
           <Arguments>
@@ -448,7 +448,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondragmove" group="Event" deprecated="false" unused="true" requirement="" description="コンポーネント領域にドラッグ中のマウスが移動するときに発生するイベントです。">
+      <EventHandler name="ondragmove" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネント領域にドラッグ中のマウスが移動するときに発生するイベントです。">
         <Syntax text="TabButtonItemControl.ondragmove(obj:nexacro._TabButtonItemControl,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="イベントを処理するかどうかを指定。trueを返すと上位コンポーネントでイベントが発生しません。&#xA;デフォルト値 : false　" />
           <Arguments>
@@ -456,7 +456,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondrop" group="Event" deprecated="false" unused="true" requirement="" description="コンポーネント領域にドラッグされたコンポーネントをドロップされるときに発生するイベントです。&#xA;　">
+      <EventHandler name="ondrop" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネント領域にドラッグされたコンポーネントをドロップされるときに発生するイベントです。&#xA;　">
         <Syntax text="TabButtonItemControl.ondrop(obj:nexacro._TabButtonItemControl,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="イベントを処理するかどうかを指定。trueを返すと上位コンポーネントでイベントが発生しません。&#xA;デフォルト値 : false　" />
           <Arguments>
@@ -464,7 +464,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="oninput" group="Event" deprecated="false" unused="true" requirement="" description="">
+      <EventHandler name="oninput" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="TabButtonItemControl.oninput(obj:nexacro._TabButtonItemControl,e:nexacro.InputEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -472,7 +472,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onkeydown" group="Event" deprecated="false" unused="true" requirement="" description="TabButtonItemControlにフォーカスがある状態でキーボードのキーが押されたときに発生するイベントです。&#xA;　">
+      <EventHandler name="onkeydown" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlにフォーカスがある状態でキーボードのキーが押されたときに発生するイベントです。&#xA;　">
         <Syntax text="TabButtonItemControl.onkeydown(obj:nexacro._TabButtonItemControl,e:nexacro.KeyEventInfo);">
           <Return type="Boolean" description="イベント処理するかどうか。trueを返すと、上位コンポーネントからonkeydownイベントが発生しません。&#xD;&#xA;デフォルト値 : false　" />
           <Arguments>
@@ -480,7 +480,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onkeyup" group="Event" deprecated="false" unused="true" requirement="" description="TabButtonItemControlにフォーカスがある状態でKey Upが発生したときに発生するイベントです。">
+      <EventHandler name="onkeyup" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlにフォーカスがある状態でKey Upが発生したときに発生するイベントです。">
         <Syntax text="TabButtonItemControl.onkeyup(obj:nexacro._TabButtonItemControl,e:nexacro.KeyEventInfo);">
           <Return type="Boolean" description="イベント処理を実行するかどうかを指定。&#xA;trueを返すと、上位コンポーネントでonkeyupイベントが発生しません。&#xA;デフォルト値 : false" />
           <Arguments>
@@ -488,7 +488,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onkillfocus" group="Event" deprecated="false" unused="true" requirement="" description="フォーカスが位置しているTabButtonItemControlがフォーカスを失ったときに発生するイベントです。&#xD;&#xA;　">
+      <EventHandler name="onkillfocus" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="フォーカスが位置しているTabButtonItemControlがフォーカスを失ったときに発生するイベントです。&#xD;&#xA;　">
         <Syntax text="TabButtonItemControl.onkillfocus(obj:nexacro._TabButtonItemControl,e:nexacro.KillFocusEventInfo);">
           <Return type="" description="　" />
           <Arguments>
@@ -496,7 +496,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onlbuttondown" group="Event" deprecated="false" unused="true" requirement="" description="TabButtonItemControlでMouse Left Button Downが発生したときに発生するイベントです。　">
+      <EventHandler name="onlbuttondown" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlでMouse Left Button Downが発生したときに発生するイベントです。　">
         <Syntax text="TabButtonItemControl.onlbuttondown(obj:nexacro._TabButtonItemControl,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベント処理の指定、trueを返すと上位コンポーネントでonmouseupイベントが発生しません。&#xD;&#xA;デフォルト値 : false" />
           <Arguments>
@@ -504,7 +504,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onlbuttonup" group="Event" deprecated="false" unused="true" requirement="" description="TabButtonItemControlでMouse Left Button Upが発生したときに発生するイベントです。">
+      <EventHandler name="onlbuttonup" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlでMouse Left Button Upが発生したときに発生するイベントです。">
         <Syntax text="TabButtonItemControl.onlbuttonup(obj:nexacro._TabButtonItemControl,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベント処理の結果、trueを返すと上位コンポーネントでonrbuttonupイベントが発生しません。&#xA;デフォルト値 : false" />
           <Arguments>
@@ -512,7 +512,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmousedown" group="Event" deprecated="false" unused="true" requirement="" description="マウスの左ボタン/右ボタンを除いた他のボタンが押されたときに発生するイベントです。">
+      <EventHandler name="onmousedown" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="マウスの左ボタン/右ボタンを除いた他のボタンが押されたときに発生するイベントです。">
         <Syntax text="TabButtonItemControl.onmousedown(obj:nexacro._TabButtonItemControl,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベント処理の指定、trueを返すと上位コンポーネントでイベントが発生しません。　&#xA;デフォルト値：false" />
           <Arguments>
@@ -520,7 +520,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmouseenter" group="Event" deprecated="false" unused="true" requirement="" description="TabButtonItemControl領域の中にマウスのカーソルが入ってきたときに発生するイベントです。　">
+      <EventHandler name="onmouseenter" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControl領域の中にマウスのカーソルが入ってきたときに発生するイベントです。　">
         <Syntax text="TabButtonItemControl.onmouseenter(obj:nexacro._TabButtonItemControl,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベントを処理するかどうかを指定。True値を返す場合、上位コンポーネントのonmouseenterイベントが発生しません。&#xD;&#xA;デフォルト値：false" />
           <Arguments>
@@ -528,7 +528,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmouseleave" group="Event" deprecated="false" unused="true" requirement="" description="TabButtonItemControl領域の外にマウスのカーソルが移動したときに発生するイベントです。">
+      <EventHandler name="onmouseleave" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControl領域の外にマウスのカーソルが移動したときに発生するイベントです。">
         <Syntax text="TabButtonItemControl.onmouseleave(obj:nexacro._TabButtonItemControl,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベントを処理するかどうかを指定。trueを返すと、コンポーネントの onmousleaveイベントが発生しません。&#xD;&#xA;デフォルト値：false　" />
           <Arguments>
@@ -536,7 +536,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmousemove" group="Event" deprecated="false" unused="true" requirement="" description="TabButtonItemControl領域内からマウスのカーソルが移動したときに発生するイベントです。">
+      <EventHandler name="onmousemove" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControl領域内からマウスのカーソルが移動したときに発生するイベントです。">
         <Syntax text="TabButtonItemControl.onmousemove(obj:nexacro._TabButtonItemControl,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベント処理の指定、trueを返すと上位コンポーネントでonmouseup イベントが発生しません。&#xD;&#xA;デフォルト値 : false" />
           <Arguments>
@@ -544,7 +544,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmouseup" group="Event" deprecated="false" unused="true" requirement="" description="マウスのLeft Button/Right Buttonを除いた他のボタンが押されて放されたときに発生するイベントです。　">
+      <EventHandler name="onmouseup" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="マウスのLeft Button/Right Buttonを除いた他のボタンが押されて放されたときに発生するイベントです。　">
         <Syntax text="TabButtonItemControl.onmouseup(obj:nexacro._TabButtonItemControl,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベント処理の指定、trueを返すと上位コンポーネントでonmouseupイベントが発生しません。&#xD;&#xA;デフォルト値 : false" />
           <Arguments>
@@ -552,7 +552,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmousewheel" group="Event" deprecated="false" unused="true" requirement="" description="マウスホイールがスクロールされてときに発生するイベントです。">
+      <EventHandler name="onmousewheel" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="マウスホイールがスクロールされてときに発生するイベントです。">
         <Syntax text="TabButtonItemControl.onmousewheel(obj:nexacro._TabButtonItemControl,e:nexacro.MouseWheelEventInfo);">
           <Return type="Boolean" description="返り値がtrueの場合には、マウスホイールの処理が中断され、バブリングも中断されます。 &#xA;返り値がfalseの場合には、発生コンポーネントからマウスホイールの処理後、バブル処理します。&#xA;発生コンポーネントでスクロール処理が必要ない場合は、上位コンポーネントでマウスホイールを処理します。 &#xA;デフォルト値：false" />
           <Arguments>
@@ -560,7 +560,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmove" group="Event" deprecated="false" unused="true" requirement="" description="TabButtonItemControlが移動した場合に発生するイベントです。">
+      <EventHandler name="onmove" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlが移動した場合に発生するイベントです。">
         <Syntax text="TabButtonItemControl.onmove(obj:nexacro._TabButtonItemControl,e:nexacro.MoveEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -568,7 +568,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onrbuttondown" group="Event" deprecated="false" unused="true" requirement="" description="TabButtonItemControlでマウス右ボタンが押されたときに発生するイベントです。　&#xA;　　">
+      <EventHandler name="onrbuttondown" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlでマウス右ボタンが押されたときに発生するイベントです。　&#xA;　　">
         <Syntax text="TabButtonItemControl.onrbuttondown(obj:nexacro._TabButtonItemControl,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベント処理の指定、trueを返すと上位コンポーネントでonrbuttondownイベントが発生しません。&#xD;&#xA;デフォルト値 : false　" />
           <Arguments>
@@ -576,7 +576,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onrbuttonup" group="Event" deprecated="false" unused="true" requirement="" description="TabButtonItemControlでMouse Right Button Upが発生したときに発生するイベントです。&#xA;&#xA;　">
+      <EventHandler name="onrbuttonup" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlでMouse Right Button Upが発生したときに発生するイベントです。&#xA;&#xA;　">
         <Syntax text="TabButtonItemControl.onrbuttonup(obj:nexacro._TabButtonItemControl,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベント処理の指定。Trueを返すと、上位コンポーネントでonrbuttonup イベントが発生しません。&#xD;&#xA;デフォルト : false&#xD;&#xA;　" />
           <Arguments>
@@ -584,7 +584,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onsetfocus" group="Event" deprecated="false" unused="true" requirement="" description="TabButtonItemControlにフォーカスが設定されたときに発生するイベントです。&#xD;&#xA;　">
+      <EventHandler name="onsetfocus" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlにフォーカスが設定されたときに発生するイベントです。&#xD;&#xA;　">
         <Syntax text="TabButtonItemControl.onsetfocus(obj:nexacro._TabButtonItemControl,e:nexacro.SetFocusEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -592,7 +592,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onsize" group="Event" deprecated="false" unused="true" requirement="" description="TabButtonItemControlのサイズが変更されるときに発生するイベントです。">
+      <EventHandler name="onsize" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabButtonItemControlのサイズが変更されるときに発生するイベントです。">
         <Syntax text="TabButtonItemControl.onsize(obj:nexacro._TabButtonItemControl,e:nexacro.SizeEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -600,7 +600,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ontouchend" group="Event" deprecated="false" unused="true" requirement="" description="タッチ終了(アップ)時に発生するイベントです。">
+      <EventHandler name="ontouchend" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="タッチ終了(アップ)時に発生するイベントです。">
         <Syntax text="TabButtonItemControl.ontouchend(obj:nexacro._TabButtonItemControl,e:nexacro.TouchEventInfo);">
           <Return type="Boolean" description="イベント処理可否、trueを返すと上位コンポーネントでイベントが発生しません。&#xD;&#xA;デフォルト : false" />
           <Arguments>
@@ -608,7 +608,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ontouchmove" group="Event" deprecated="false" unused="true" requirement="" description="タッチ中(ムーブ)に発生するイベントです。">
+      <EventHandler name="ontouchmove" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="タッチ中(ムーブ)に発生するイベントです。">
         <Syntax text="TabButtonItemControl.ontouchmove(obj:nexacro._TabButtonItemControl,e:nexacro.TouchEventInfo);">
           <Return type="Boolean" description="イベント処理可否、trueを返すと上位コンポーネントでイベントが発生しません。&#xD;&#xA;デフォルト : false" />
           <Arguments>
@@ -616,7 +616,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ontouchstart" group="Event" deprecated="false" unused="true" requirement="" description="タッチ開始(ダウン)時に発生するイベントです。">
+      <EventHandler name="ontouchstart" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="タッチ開始(ダウン)時に発生するイベントです。">
         <Syntax text="TabButtonItemControl.ontouchstart(obj:nexacro._TabButtonItemControl,e:nexacro.TouchEventInfo);">
           <Return type="Boolean" description="イベント処理可否、trueを返すと上位コンポーネントでイベントが発生しません。&#xA;デフォルト : false" />
           <Arguments>

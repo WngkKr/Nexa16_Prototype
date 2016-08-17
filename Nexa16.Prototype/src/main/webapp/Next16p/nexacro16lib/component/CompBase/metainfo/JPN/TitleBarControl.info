@@ -6,38 +6,37 @@
       <Property name="background" group="Style" subgroup="background" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControlの背景領域を設定するプロパティです。" csspropertyname="background" csselementname="" normalpropertyname="background" />
       <Property name="border" group="Style" subgroup="border" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="border" csselementname="" normalpropertyname="border" />
       <Property name="borderRadius" group="Style" subgroup="border-radius" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="border-radius" csselementname="" normalpropertyname="borderRadius" />
-      <Property name="bottom" group="Position" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="bottom" />
+      <Property name="bottom" group="Position" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="bottom" />
       <Property name="boxShadow" group="Style" subgroup="box-shadow" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="box-shadow" csselementname="" normalpropertyname="boxShadow" />
-      <Property name="buttongap" group="Appearance" subgroup="" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Size" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="buttongap" />
-      <Property name="buttonsize" group="Appearance" subgroup="" edittype="Number" defaultvalue="-1" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Size" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="buttonsize" />
-      <Property name="closebutton" group="Control" subgroup="" edittype="" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="" csspropertyname="" csselementname="" normalpropertyname="closebutton" />
+      <Property name="buttongap" group="Appearance" subgroup="" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Size" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="buttongap" />
+      <Property name="closebutton" group="Control" subgroup="" edittype="" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="closebutton" />
       <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="TitleBarControlに表示されるテキストの色を設定するプロパティです。" csspropertyname="color" csselementname="" normalpropertyname="color" />
-      <Property name="cssclass" group="Information" subgroup="" edittype="CssClass" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControlのStyleをXCSSファイルに定義されたクラスに設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="cssclass" />
+      <Property name="cssclass" group="Information" subgroup="" edittype="CssClass" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControlのStyleをXCSSファイルに定義されたクラスに設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="cssclass" />
       <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
       <Property name="enableevent" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControlでイベントを発生させるか否かを決定するプロパティです。 &#xA;　&#xA;　" csspropertyname="" csselementname="" normalpropertyname="enableevent" />
       <Property name="font" group="Style" subgroup="font" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="FontSize_Point" delimiter="" requirement="" description="" csspropertyname="font" csselementname="" normalpropertyname="font" />
-      <Property name="height" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControlを表示するための高さを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="height" />
-      <Property name="hotkey" group="Action" subgroup="" edittype="HotKey" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HotKeyModifier" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControlのデフォルトアクションを実行するためのホットキーを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="hotkey" />
-      <Property name="id" group="Information" subgroup="" edittype="ID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="id" />
-      <Property name="left" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControlを表示するための左側座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="left" />
+      <Property name="height" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TitleBarControlを表示するための高さを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="height" />
+      <Property name="hotkey" group="Action" subgroup="" edittype="HotKey" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HotKeyModifier" unitinfo="" delimiter="" requirement="" description="TitleBarControlのデフォルトアクションを実行するためのホットキーを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="hotkey" />
+      <Property name="id" group="Information" subgroup="" edittype="ID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="id" />
+      <Property name="left" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TitleBarControlを表示するための左側座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="left" />
       <Property name="letterSpacing" group="Style" subgroup="letter-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
       <Property name="lineHeight" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
-      <Property name="maxbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="" csspropertyname="" csselementname="" normalpropertyname="maxbutton" />
-      <Property name="minbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="" csspropertyname="" csselementname="" normalpropertyname="minbutton" />
+      <Property name="maxbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="maxbutton" />
+      <Property name="minbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="minbutton" />
       <Property name="name" group="Information" subgroup="" edittype="String" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControlの名前を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="name" />
       <Property name="edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
       <Property name="padding" group="Style" subgroup="padding" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
-      <Property name="normalbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="" csspropertyname="" csselementname="" normalpropertyname="normalbutton" />
+      <Property name="normalbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="normalbutton" />
       <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
-      <Property name="parent" group="Hidden" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControlの親オブジェクトを持つプロパティです。" csspropertyname="" csselementname="" normalpropertyname="parent" />
+      <Property name="parent" group="Hidden" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControlの親オブジェクトを持つプロパティです。" csspropertyname="" csselementname="" normalpropertyname="parent" />
       <Property name="position" group="Position" subgroup="refresh(position)" edittype="Enum" defaultvalue="absolute" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="PositionType" unitinfo="PositionStep" delimiter="" requirement="" description="TitleBarControlが表示される位置の基準を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="position" />
-      <Property name="right" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControlを表示するための右側座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="right" />
+      <Property name="right" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TitleBarControlを表示するための右側座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="right" />
       <Property name="text" group="Appearance" subgroup="" edittype="String" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControlに表示されるテキストを設定するプロパティです。　" csspropertyname="" csselementname="" normalpropertyname="text" />
-      <Property name="tooltiptext" group="Action" subgroup="" edittype="MultilineString" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="マウスポインタがTitleBarControlに移動したときに表示されるバルーンヘルプを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="tooltiptext" />
-      <Property name="tooltiptype" group="Action" subgroup="" edittype="Enum" defaultvalue="default" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TooltipType" unitinfo="" delimiter="" requirement="nexacro browser (Windows),Mobile Hybrid (Android)" description="XCompenetでバルーンヘルプが表示される位置を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="tooltiptype" />
-      <Property name="top" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControlを表示するための上段座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="top" />
+      <Property name="tooltiptext" group="Action" subgroup="" edittype="MultilineString" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="マウスポインタがTitleBarControlに移動したときに表示されるバルーンヘルプを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="tooltiptext" />
+      <Property name="tooltiptype" group="Action" subgroup="" edittype="Enum" defaultvalue="default" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TooltipType" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="XCompenetでバルーンヘルプが表示される位置を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="tooltiptype" />
+      <Property name="top" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TitleBarControlを表示するための上段座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="top" />
       <Property name="visible" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TitleBarControlが画面に表示されるか否かを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="visible" />
-      <Property name="width" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControlを表示するための幅を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="width" />
+      <Property name="width" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TitleBarControlを表示するための幅を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="width" />
       <Property name="wordSpacing" group="Style" subgroup="word-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
     </PropertyInfo>
     <StyleInfo>
@@ -70,7 +69,7 @@
       <Control name="closebutton" classname="nexacro._TitleBarButtonControl" deprecated="false" unused="false" group="" subgroup="" />
     </ControlInfo>
     <MethodInfo>
-      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControlの特定イベントにハンドラ関数を追加するメソッドです。">
+      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControlの特定イベントにハンドラ関数を追加するメソッドです。">
         <Syntax text="TitleBarControl.addEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="イベントに追加されたハンドラ関数のインデックスを返します。&#xA;同じハンドラ関数がすでにある場合は、該当ハンドラ関数のインデックスを返します。&#xA;正常に追加されない場合には、「-1」を返します。" />
           <Arguments>
@@ -80,7 +79,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="関数を検索してTitleBarControlの特定のイベントにハンドラ関数として追加するメソッドです。">
+      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="関数を検索してTitleBarControlの特定のイベントにハンドラ関数として追加するメソッドです。">
         <Syntax text="TitleBarControl.addEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="イベントに追加されたハンドラ関数のインデックスを返します。&#xA;同じハンドラ関数がすでにある場合は、該当ハンドラ関数のインデックスを返します。&#xA;正常に追加されない場合には、「-1」を返します。" />
           <Arguments>
@@ -90,7 +89,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="特定のイベントに登録されたハンドラ関数をすべて削除するメソッドです。">
+      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="特定のイベントに登録されたハンドラ関数をすべて削除するメソッドです。">
         <Syntax text="TitleBarControl.clearEventHandler( strEventID )">
           <Return type="Integer" description="特定のイベントで削除されたハンドラ関数の数を返します。" />
           <Arguments>
@@ -98,13 +97,13 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="destroy" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="スクリプトで動的に生成したTitleBarControlを削除するメソッドです。">
+      <Method name="destroy" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="スクリプトで動的に生成したTitleBarControlを削除するメソッドです。">
         <Syntax text="TitleBarControl.destroy()">
           <Return type="Boolean" description="TitleBarControlが正常に削除されると、「true」を返します。&#xA;TitleBarControlが正常に削除されないと、「false」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControlの特定イベントからハンドラ関数を検索してインデックスを返すメソッドです。">
+      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControlの特定イベントからハンドラ関数を検索してインデックスを返すメソッドです。">
         <Syntax text="TitleBarControl.findEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="イベントで検索しようとするハンドラ関数のインデックスを返します。&#xA;検索しようとするハンドラ関数が存在しない場合、「-1」を返します。" />
           <Arguments>
@@ -123,79 +122,79 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="getOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="親コンポーネントのtopを基準にTitleBarControlのbottom値をピクセル単位で返すメソッドです。">
+      <Method name="getOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="親コンポーネントのtopを基準にTitleBarControlのbottom値をピクセル単位で返すメソッドです。">
         <Syntax text="TitleBarControl.getOffsetBottom();">
           <Return type="Number" description="TitleBarControlのbottom座標値をピクセル(pixel)単位で返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TitleBarControlのheightプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControlのheightプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="TitleBarControl.getOffsetHeight();">
           <Return type="Number" description="TitleBarControlの高さをピクセル単位で返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="親コンポーネントのleftを基準にTitleBarControlのleft値をピクセル単位で返すメソッドです。">
+      <Method name="getOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="親コンポーネントのleftを基準にTitleBarControlのleft値をピクセル単位で返すメソッドです。">
         <Syntax text="TitleBarControl.getOffsetLeft();">
           <Return type="Number" description="TitleBarControlのleft座標値をピクセル(pixel)単位で返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="親コンポーネントのleftを基準にTitleBarControlのright値をピクセル単位で返すメソッドです。">
+      <Method name="getOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="親コンポーネントのleftを基準にTitleBarControlのright値をピクセル単位で返すメソッドです。">
         <Syntax text="TitleBarControl.getOffsetRight();">
           <Return type="Number" description="TitleBarControlのright座標値をピクセル(pixel)単位で返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="親コンポーネントのtopを基準にTitleBarControlのtop値をピクセル単位で返すメソッドです。">
+      <Method name="getOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="親コンポーネントのtopを基準にTitleBarControlのtop値をピクセル単位で返すメソッドです。">
         <Syntax text="TitleBarControl.getOffsetTop();">
           <Return type="Number" description="TitleBarControlのtop座標値をピクセル(pixel)単位で返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TitleBarControlのwidthプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControlのwidthプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="TitleBarControl.getOffsetWidth();">
           <Return type="Number" description="TitleBarControlの幅をピクセル単位で返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TitleBarControlのbottomプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getPixelBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControlのbottomプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="TitleBarControl.getPixelBottom();">
           <Return type="Number" description="TitleBarControlのbottomプロパティ値をピクセル単位で返します。&#xA;bottomプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TitleBarControlのheightプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getPixelHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControlのheightプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="TitleBarControl.getPixelHeight();">
           <Return type="Number" description="TitleBarControlのheightプロパティ値をピクセル単位で返します。&#xA;heightプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TitleBarControlのleftプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getPixelLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControlのleftプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="TitleBarControl.getPixelLeft();">
           <Return type="Number" description="TitleBarControlのwidthプロパティ値をピクセル単位で返します。&#xA;leftプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TitleBarControlのrightプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getPixelRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControlのrightプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="TitleBarControl.getPixelRight();">
           <Return type="Number" description="TitleBarControlのrightプロパティ値をピクセル単位で返します。&#xA;rightプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TitleBarControlのtopプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getPixelTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControlのtopプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="TitleBarControl.getPixelTop();">
           <Return type="Number" description="TitleBarControlのtopプロパティ値をピクセル単位で返します。&#xA;topプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TitleBarControlのwidthプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getPixelWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControlのwidthプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="TitleBarControl.getPixelWidth();">
           <Return type="Number" description="TitleBarControlのwidthプロパティ値をピクセル単位で返します。&#xA;widthプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="init" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="スクリプトでTitleBarControlを動的に生成した後に初期化するメソッドです。">
+      <Method name="init" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="スクリプトでTitleBarControlを動的に生成した後に初期化するメソッドです。">
         <Syntax text="TitleBarControl.init( strName, strPosition, nLeft, nTop , nWidth, nHeight [, nRight, nBottom] )">
           <Return type="" description="　" />
           <Arguments>
@@ -210,7 +209,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="move" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TitleBarControlの位置とサイズを変更するメソッドです。">
+      <Method name="move" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControlの位置とサイズを変更するメソッドです。">
         <Syntax text="TitleBarControl.move( nLeft, nTop [, nWidth, nHeight [, nRight, nBottom]] )">
           <Return type="" description="　" />
           <Arguments>
@@ -223,7 +222,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControlの特定イベントからハンドラ関数を削除するメソッドです。">
+      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControlの特定イベントからハンドラ関数を削除するメソッドです。">
         <Syntax text="TitleBarControl.removeEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="ハンドラ関数の削除に成功すると、「1」を返します。&#xA;ハンドラ関数の削除に失敗すると、「0」を返します。" />
           <Arguments>
@@ -233,7 +232,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControlの特定のイベントから検索された関数と同じハンドラ関数を削除するメソッドです。">
+      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControlの特定のイベントから検索された関数と同じハンドラ関数を削除するメソッドです。">
         <Syntax text="TitleBarControl.removeEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="ハンドラ関数の削除に成功すると、「1」を返します。&#xA;ハンドラ関数の削除に失敗すると、「0」を返します。" />
           <Arguments>
@@ -243,7 +242,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="resize" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControlのサイズを変更するメソッドです。">
+      <Method name="resize" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControlのサイズを変更するメソッドです。">
         <Syntax text="TitleBarControl.resize( nWidth, nHeight )">
           <Return type="" description="" />
           <Arguments>
@@ -252,7 +251,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControlの特定のイベントの最初のハンドラ関数を変更するメソッドです。">
+      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControlの特定のイベントの最初のハンドラ関数を変更するメソッドです。">
         <Syntax text="TitleBarControl.setEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="最初のハンドラ関数の変更に成功すると、「0」を返します。&#xA;最初のハンドラ関数の変更に失敗すると、「-1」を返します。" />
           <Arguments>
@@ -262,7 +261,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControlの特定のイベントの最初のハンドラ関数を、検索された関数に変更するメソッドです。">
+      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControlの特定のイベントの最初のハンドラ関数を、検索された関数に変更するメソッドです。">
         <Syntax text="TitleBarControl.setEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="最初のハンドラ関数の変更に成功すると、「0」を返します。&#xA;最初のハンドラ関数の変更に失敗すると、「-1」を返します。" />
           <Arguments>
@@ -272,13 +271,13 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="">
+      <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="setOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親コンポーネントのtopを基準にTitleBarControlのbottom値をピクセル単位で設定するメソッドです。">
+      <Method name="setOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="親コンポーネントのtopを基準にTitleBarControlのbottom値をピクセル単位で設定するメソッドです。">
         <Syntax text="TitleBarControl.setOffsetBottom( nBottom );">
           <Return type="" description="" />
           <Arguments>
@@ -286,7 +285,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControlのheightプロパティ値をピクセル単位で設定するメソッドです。">
+      <Method name="setOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControlのheightプロパティ値をピクセル単位で設定するメソッドです。">
         <Syntax text="TitleBarControl.setOffsetHeight( nHeight );">
           <Return type="" description="" />
           <Arguments>
@@ -294,7 +293,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親コンポーネントleftを基準にTitleBarControlのleft値をピクセル単位で設定するメソッドです。">
+      <Method name="setOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="親コンポーネントleftを基準にTitleBarControlのleft値をピクセル単位で設定するメソッドです。">
         <Syntax text="TitleBarControl.setOffsetLeft( nLeft );">
           <Return type="" description="" />
           <Arguments>
@@ -302,7 +301,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親コンポーネントleftを基準にTitleBarControlのright値をピクセル単位で設定するメソッドです。">
+      <Method name="setOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="親コンポーネントleftを基準にTitleBarControlのright値をピクセル単位で設定するメソッドです。">
         <Syntax text="TitleBarControl.setOffsetRight( nRight );">
           <Return type="" description="" />
           <Arguments>
@@ -310,7 +309,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親コンポーネントのtopを基準にTitleBarControlのtop値をピクセル単位で設定するメソッドです。">
+      <Method name="setOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="親コンポーネントのtopを基準にTitleBarControlのtop値をピクセル単位で設定するメソッドです。">
         <Syntax text="TitleBarControl.setOffsetTop( nTop );">
           <Return type="" description="" />
           <Arguments>
@@ -318,7 +317,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControlのwidthプロパティ値をピクセル単位で設定するメソッドです。">
+      <Method name="setOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="TitleBarControlのwidthプロパティ値をピクセル単位で設定するメソッドです。">
         <Syntax text="TitleBarControl.setOffsetWidth( nWidth );">
           <Return type="" description="" />
           <Arguments>
@@ -326,7 +325,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="show" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクリプトで動的に生成したTitleBarControlを画面に表示するメソッドです。">
+      <Method name="show" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="スクリプトで動的に生成したTitleBarControlを画面に表示するメソッドです。">
         <Syntax text="TitleBarControl.show()">
           <Return type="" description="" />
           <Arguments />

@@ -3137,7 +3137,7 @@ if (!nexacro.Form)
         }
     };
 
-    _pForm.set_stepitemsize = function(v)
+    _pForm.set_stepitemsize = function (v)
     {
         v = parseInt(v) | 0;
         if (this.stepitemsize != v)
@@ -3149,7 +3149,7 @@ if (!nexacro.Form)
                 step_ctrl.set_stepitemsize(v);
             }
         }
-    }
+    };
 
     _pForm.set_stepshowtype = function (stepshowtype)
     {
@@ -4869,12 +4869,12 @@ if (!nexacro.Form)
             ownerframe._on_titlebar_endtrack(x, y, dragdata);
     };
 
-    _pForm._on_movetrack = function (x, y, dragdata)
+    _pForm._on_movetrack = function (x, y, dragdata, windowX, windowY)
     {
         if (!this._is_alive) return;
         var ownerframe = this.getOwnerFrame();
         if (ownerframe)
-            ownerframe._on_titlebar_movetrack(x, y, dragdata);
+            ownerframe._on_titlebar_movetrack(x, y, dragdata, windowX, windowY);
     };
 
     _pForm._setSize = function (width, height)
@@ -5026,7 +5026,7 @@ if (!nexacro.Form)
             var container_height = control_elem.getContainerElement(control_elem._step_index).height;;
 
             var container_maxwidth = control_elem.container_maxwidth;
-            var container_maxheight = control_elem.container_maxheight
+            var container_maxheight = control_elem.container_maxheight;
             var zoom_factor = this._getZoom() / 100;
 
             container_width = container_width / zoom_factor;

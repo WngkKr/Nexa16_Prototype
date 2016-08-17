@@ -175,11 +175,17 @@ if (nexacro._OS == "iOS" && (window.location.protocol == "file:" && (window.loca
     //Event onactivate call for iOS 
     nexacro._on_activate = function()
     {
-        var application = nexacro.getApplication();
-        if(application)
+        var mainframe = nexacro.getApplication().mainframe;
+        var _win = mainframe._window;
+
+        var focuslist = _win.getCurrentFocusPaths();
+        var len = focuslist.length;
+        if (len > 0)
         {
-            application.getActiveFrame()._activate = true;
-            application.getActiveForm()._on_activate();
+            var last_focused_comp = focuslist[len -1];
+            var form = last_focused_comp._findForm(last_focused_comp);
+       
+            form._on_activate(); 
         }
     };
 

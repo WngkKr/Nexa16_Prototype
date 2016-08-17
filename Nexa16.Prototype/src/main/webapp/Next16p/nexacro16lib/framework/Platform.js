@@ -413,9 +413,9 @@ if (!nexacro._bInitPlatform)
     nexacro.System.notificationtoken = null;
     nexacro.System._accessibilitytype = null;
 
-    nexacro.System.print = function (comp, defaultprint, valign, halign)
+    nexacro.System.print = function (comp, defaultprint, valign, halign, fitonepage)
     {
-        nexacro._print(comp, comp._refform, defaultprint, valign, halign);
+        nexacro._beforePrintCheckPlugin(comp, comp._refform, defaultprint, valign, halign, fitonepage);
     };
 
     nexacro.System._setNotificationToken = function (notificationtoken)
@@ -4167,7 +4167,7 @@ if (!nexacro._bInitPlatform)
             trackInfo.distY = windowY - trackInfo.startY;
         	}
 
-            trackInfo.target._on_movetrack(trackInfo.distX, trackInfo.distY, trackInfo.data);
+        	trackInfo.target._on_movetrack(trackInfo.distX, trackInfo.distY, trackInfo.data, windowX, windowY);
         }
 
         if (extratrackInfo)
@@ -5958,31 +5958,31 @@ if (!nexacro._bInitPlatform)
 
         _pApplication.load = function (key, url, curscreen, project_path, archive_path)
         {
-        	//추후 삭제 
-        	if (curscreen && typeof curscreen == "string")
-        	{
-        		archive_path = project_path;
-        		project_path = curscreen;
-        		curscreen = null;
-        	}
+            //추후 삭제 
+            if (curscreen && typeof curscreen == "string")
+            {
+                archive_path = project_path;
+                project_path = curscreen;
+                curscreen = null;
+            }
 
-        	if (project_path)
-        	{
-        		// set server path if archive 
-        		this._project_url = project_path;
-        		nexacro._setProjectURL(project_path);
-        		var base_url = nexacro._getProjectBaseURL(url);
+            if (project_path)
+            {
+                // set server path if archive 
+                this._project_url = project_path;
+                nexacro._setProjectURL(project_path);
+                var base_url = nexacro._getProjectBaseURL(url);
 
-        		if (this._project_url != base_url)
-        		{
-        			nexacro._localcache_path = base_url;
-        		}
-        	}
+                if (this._project_url != base_url)
+                {
+                    nexacro._localcache_path = base_url;
+                }
+            }
 
-        	nexacro._setCurrentScreen(curscreen);
-        	nexacro._applySelectedScreen(curscreen);
+            nexacro._setCurrentScreen(curscreen);
+            nexacro._applySelectedScreen(curscreen);
 
-        }
+        };
 
         _pApplication.loadADL = function (url, key)
         {
@@ -11116,7 +11116,7 @@ if (!nexacro._bInitPlatform)
     _pEnvironment.loglevel = "debug";
     _pEnvironment.mousewheeltype = 0;
     _pEnvironment.networksecurelevel = 1;      //  0:all, 1:private (default)
-    _pEnvironment.popuptype = "" // 미구현
+    _pEnvironment.popuptype = ""; // 미구현
     _pEnvironment.proxyretry = 3;
     _pEnvironment.proxytimeout = 30;
     _pEnvironment.services = new nexacro.Collection();
@@ -11632,7 +11632,7 @@ if (!nexacro._bInitPlatform)
     		if (project_path)
     		{
    			
-    			var base_url = nexacro._getBaseUrl(xadl)
+    		    var base_url = nexacro._getBaseUrl(xadl);
     			nexacro._setProjectURL(project_path);
     			//nexacro._project_url = project_path;
 
@@ -11745,8 +11745,8 @@ if (!nexacro._bInitPlatform)
 
 	nexacro._hasEnvironmentVariable = function (name)
 	{
-		return nexacro._hasLocalStorage(name, 3);
-	}
+	    return nexacro._hasLocalStorage(name, 3);
+	};
 
     nexacro.getEnvironmentVariable = function (name)
     {
@@ -12071,6 +12071,26 @@ if (!nexacro._bInitPlatform)
     __pServiceItem.set_version = function (v)
     {
     	this.version = v;
+    };
+
+    __pServiceItem.set_url = function (v)
+    {
+    	this.url = v;
+    };
+
+    __pServiceItem.set_codepage = function (v)
+    {
+    	this.codepage = v;
+    };
+
+    __pServiceItem.set_language = function (v)
+    {
+    	this.language = v;
+    };
+
+    __pServiceItem.set_communicationversion = function (v)
+    {
+    	this.communicationversion = v;
     };
 
     nexacro._addRegisterClass = function (registername, classname)

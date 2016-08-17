@@ -242,7 +242,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Button("btnImpSale","absolute","106","18","100","18",null,null,this);
+            obj = new Button("btnImpSale","absolute","-39","18","100","18",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");

@@ -68,7 +68,7 @@ if ((!nexacro.Device || nexacro._OS == "Android") && !nexacro.Event.XPushEventIn
     {
         this.eventid = eventid;												// 이벤트ID
         this.reason = reason;
-        this.action = action
+        this.action = action;
         this.serverip = serverip;
         this.serverport = serverport;
         this.command = command;
@@ -671,7 +671,7 @@ if ((!nexacro.Device || nexacro._OS == "Android") && !nexacro.XPush)
 
     _pXPush.registerTopic = function (strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack)
     {
-        strCommand = "ADUI"
+        strCommand = "ADUI";
         this.command(strCommand, strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack);
     };
 
@@ -683,7 +683,7 @@ if ((!nexacro.Device || nexacro._OS == "Android") && !nexacro.XPush)
 
     _pXPush.requestMessageCount = function (strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack)
     {
-        strCommand = "MSGC"
+        strCommand = "MSGC";
         this.command(strCommand, strMessageType, strMessageKey, objForm, objDataset, strType, strCallBack, nRow, strCheck, bUseActiveFormCallBack);
     };
 
@@ -926,7 +926,7 @@ if ((!nexacro.Device || nexacro._OS == "Android") && !nexacro.XPush)
     {
         if (this.handle)
         {
-            nexacro._suspendXPushHandle(this.handle)
+            nexacro._suspendXPushHandle(this.handle);
         }
     };
 

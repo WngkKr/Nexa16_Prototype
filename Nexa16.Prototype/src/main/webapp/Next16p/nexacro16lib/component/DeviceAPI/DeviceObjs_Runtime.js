@@ -93,6 +93,14 @@ if (nexacro._Browser == "Runtime")
         {
         	return nexacro.__isExistVirtualFileHandle(target.handle, isExistPath);
         };
+        nexacro._copyVirtualFileHandle = function (target, path, destpath)
+        {
+            return nexacro.__copyVirtualFileHandle(target.handle, path, destpath);
+        };
+        nexacro._renameVirtualFileHandle = function (target, path, destpath)
+        {
+            return nexacro.__renameVirtualFileHandle(target.handle, path, destpath);
+        };
         nexacro._createDirectoryVirtualFileHandle = function (target, strPath, bAllCreate)
         {
         	return nexacro.__createDirectoryVirtualFileHandle(target.handle, strPath, bAllCreate);

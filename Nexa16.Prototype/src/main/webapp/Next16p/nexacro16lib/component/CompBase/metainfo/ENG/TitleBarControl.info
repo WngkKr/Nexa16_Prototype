@@ -4,57 +4,56 @@
     <ObjectInfo inheritance="" classname="nexacro.TitleBarControl" shorttypename="" csstypename="" csscontrolname="TitleBarControl" group="Component" subgroup="Control" csspseudo="true" container="false" composite="false" tabstop="false" cssstyle="true" contents="false" formats="false" contentseditor="" defaultwidth="" defaultheight="" registration="deny" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Component which consists of StatusBar of Frame." />
     <PropertyInfo>
       <Property name="background" group="Style" subgroup="background" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set a background of a component." csspropertyname="background" csselementname="" normalpropertyname="background" />
-      <Property name="border" group="Style" subgroup="border" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="border" csselementname="" normalpropertyname="border" />
-      <Property name="borderRadius" group="Style" subgroup="border-radius" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="border-radius" csselementname="" normalpropertyname="borderRadius" />
-      <Property name="bottom" group="Position" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="bottom" />
-      <Property name="boxShadow" group="Style" subgroup="box-shadow" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="box-shadow" csselementname="" normalpropertyname="boxShadow" />
-      <Property name="buttongap" group="Appearance" subgroup="" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Size" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="buttongap" />
-      <Property name="buttonsize" group="Appearance" subgroup="" edittype="Number" defaultvalue="-1" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Size" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="buttonsize" />
-      <Property name="closebutton" group="Control" subgroup="" edittype="" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="" csspropertyname="" csselementname="" normalpropertyname="closebutton" />
-      <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="" csspropertyname="color" csselementname="" normalpropertyname="color" />
-      <Property name="cssclass" group="Information" subgroup="" edittype="CssClass" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate a style of TitleBarControl with class of CSS." csspropertyname="" csselementname="" normalpropertyname="cssclass" />
-      <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
+      <Property name="border" group="Style" subgroup="border" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the border of an TitleBarControl." csspropertyname="border" csselementname="" normalpropertyname="border" />
+      <Property name="borderRadius" group="Style" subgroup="border-radius" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="This property is used to set the shape of the corners of an TitleBarControl." csspropertyname="border-radius" csselementname="" normalpropertyname="borderRadius" />
+      <Property name="bottom" group="Position" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="bottom" />
+      <Property name="boxShadow" group="Style" subgroup="box-shadow" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the shadow effect of an TitleBarControl." csspropertyname="box-shadow" csselementname="" normalpropertyname="boxShadow" />
+      <Property name="buttongap" group="Appearance" subgroup="" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Size" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="buttongap" />
+      <Property name="closebutton" group="Control" subgroup="" edittype="" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="closebutton" />
+      <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="This property is used to set the color of the text displayed in an TitleBarControl." csspropertyname="color" csselementname="" normalpropertyname="color" />
+      <Property name="cssclass" group="Information" subgroup="" edittype="CssClass" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="It is Property to designate a style of TitleBarControl with class of CSS." csspropertyname="" csselementname="" normalpropertyname="cssclass" />
+      <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="This property is used to set the type of a mouse pointer that appears when the mouse cursor is located in an TitleBarControl." csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
       <Property name="enableevent" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="It is Property to determine whether to generate Event of TitleBarControl." csspropertyname="" csselementname="" normalpropertyname="enableevent" />
       <Property name="font" group="Style" subgroup="font" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="FontSize_Point" delimiter="" requirement="" description="" csspropertyname="font" csselementname="" normalpropertyname="font" />
-      <Property name="height" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl height of the newly created." csspropertyname="" csselementname="" normalpropertyname="height" />
-      <Property name="hotkey" group="Action" subgroup="" edittype="HotKey" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HotKeyModifier" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is a property to set hot keys for default actions of TitleBarControls." csspropertyname="" csselementname="" normalpropertyname="hotkey" />
-      <Property name="id" group="Information" subgroup="" edittype="ID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="id" />
-      <Property name="left" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl left coordinate of the newly created." csspropertyname="" csselementname="" normalpropertyname="left" />
-      <Property name="letterSpacing" group="Style" subgroup="letter-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
+      <Property name="height" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TitleBarControl height of the newly created." csspropertyname="" csselementname="" normalpropertyname="height" />
+      <Property name="hotkey" group="Action" subgroup="" edittype="HotKey" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HotKeyModifier" unitinfo="" delimiter="" requirement="" description="It is a property to set hot keys for default actions of TitleBarControls." csspropertyname="" csselementname="" normalpropertyname="hotkey" />
+      <Property name="id" group="Information" subgroup="" edittype="ID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="id" />
+      <Property name="left" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TitleBarControl left coordinate of the newly created." csspropertyname="" csselementname="" normalpropertyname="left" />
+      <Property name="letterSpacing" group="Style" subgroup="letter-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="This property is used to set the spacing between characters (kerning) displayed in an TitleBarControl." csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
       <Property name="lineHeight" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
-      <Property name="maxbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="" csspropertyname="" csselementname="" normalpropertyname="maxbutton" />
-      <Property name="minbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="" csspropertyname="" csselementname="" normalpropertyname="minbutton" />
+      <Property name="maxbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="maxbutton" />
+      <Property name="minbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="minbutton" />
       <Property name="name" group="Information" subgroup="" edittype="String" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="It designates names of components." csspropertyname="" csselementname="" normalpropertyname="name" />
       <Property name="edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
-      <Property name="padding" group="Style" subgroup="padding" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
-      <Property name="normalbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="" csspropertyname="" csselementname="" normalpropertyname="normalbutton" />
+      <Property name="padding" group="Style" subgroup="padding" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the padding, an inner margin, of an TitleBarControl." csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
+      <Property name="normalbutton" group="Control" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="false" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="normalbutton" />
       <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the opacity of an TitleBarControl." csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
-      <Property name="parent" group="Hidden" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It indicates the parent object of a component." csspropertyname="" csselementname="" normalpropertyname="parent" />
+      <Property name="parent" group="Hidden" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="It indicates the parent object of a component." csspropertyname="" csselementname="" normalpropertyname="parent" />
       <Property name="position" group="Position" subgroup="refresh(position)" edittype="Enum" defaultvalue="absolute" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="PositionType" unitinfo="PositionStep" delimiter="" requirement="" description="It sets coordinate reference values of TitleBarControls." csspropertyname="" csselementname="" normalpropertyname="position" />
-      <Property name="right" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl right coordinate of the newly created." csspropertyname="" csselementname="" normalpropertyname="right" />
+      <Property name="right" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TitleBarControl right coordinate of the newly created." csspropertyname="" csselementname="" normalpropertyname="right" />
       <Property name="text" group="Appearance" subgroup="" edittype="String" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="It is Property to designate a value to show in Component." csspropertyname="" csselementname="" normalpropertyname="text" />
-      <Property name="tooltiptext" group="Action" subgroup="" edittype="MultilineString" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Property to designate Tool Tip to show when a mouse pointer is on Component." csspropertyname="" csselementname="" normalpropertyname="tooltiptext" />
-      <Property name="tooltiptype" group="Action" subgroup="" edittype="Enum" defaultvalue="default" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TooltipType" unitinfo="" delimiter="" requirement="nexacro browser (Windows),Mobile Hybrid (Android)" description="It is Property to designate a method to output Tool tip." csspropertyname="" csselementname="" normalpropertyname="tooltiptype" />
-      <Property name="top" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl top coordinate of the newly created." csspropertyname="" csselementname="" normalpropertyname="top" />
+      <Property name="tooltiptext" group="Action" subgroup="" edittype="MultilineString" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="It is Property to designate Tool Tip to show when a mouse pointer is on Component." csspropertyname="" csselementname="" normalpropertyname="tooltiptext" />
+      <Property name="tooltiptype" group="Action" subgroup="" edittype="Enum" defaultvalue="default" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TooltipType" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="It is Property to designate a method to output Tool tip." csspropertyname="" csselementname="" normalpropertyname="tooltiptype" />
+      <Property name="top" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TitleBarControl top coordinate of the newly created." csspropertyname="" csselementname="" normalpropertyname="top" />
       <Property name="visible" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="It is Property to designate whether to show TitleBarControl in screen." csspropertyname="" csselementname="" normalpropertyname="visible" />
-      <Property name="width" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TitleBarControl width of the newly created." csspropertyname="" csselementname="" normalpropertyname="width" />
-      <Property name="wordSpacing" group="Style" subgroup="word-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
+      <Property name="width" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TitleBarControl width of the newly created." csspropertyname="" csselementname="" normalpropertyname="width" />
+      <Property name="wordSpacing" group="Style" subgroup="word-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="This property is used to set the spacing between words displayed in an TitleBarControl." csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
     </PropertyInfo>
     <StyleInfo>
       <PropertyInfo>
         <Property name="background" group="Style" subgroup="background" edittype="" defaultvalue="transparent" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set a background of a component." csspropertyname="background" csselementname="" normalpropertyname="background" />
-        <Property name="border" group="Style" subgroup="border" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="border" csselementname="" normalpropertyname="border" />
-        <Property name="border-radius" group="Style" subgroup="border-radius" edittype="String" defaultvalue="0px" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="border-radius" csselementname="" normalpropertyname="borderRadius" />
-        <Property name="box-shadow" group="Style" subgroup="box-shadow" edittype="" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="box-shadow" csselementname="" normalpropertyname="boxShadow" />
-        <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="" csspropertyname="color" csselementname="" normalpropertyname="color" />
-        <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" defaultvalue="auto" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
+        <Property name="border" group="Style" subgroup="border" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the border of an TitleBarControl." csspropertyname="border" csselementname="" normalpropertyname="border" />
+        <Property name="border-radius" group="Style" subgroup="border-radius" edittype="String" defaultvalue="0px" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="This property is used to set the shape of the corners of an TitleBarControl." csspropertyname="border-radius" csselementname="" normalpropertyname="borderRadius" />
+        <Property name="box-shadow" group="Style" subgroup="box-shadow" edittype="" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the shadow effect of an TitleBarControl." csspropertyname="box-shadow" csselementname="" normalpropertyname="boxShadow" />
+        <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="This property is used to set the color of the text displayed in an TitleBarControl." csspropertyname="color" csselementname="" normalpropertyname="color" />
+        <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" defaultvalue="auto" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="This property is used to set the type of a mouse pointer that appears when the mouse cursor is located in an TitleBarControl." csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
         <Property name="font" group="Style" subgroup="font" edittype="" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="FontSize_Point" delimiter="" requirement="" description="" csspropertyname="font" csselementname="" normalpropertyname="font" />
-        <Property name="letter-spacing" group="Style" subgroup="letter-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
+        <Property name="letter-spacing" group="Style" subgroup="letter-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="This property is used to set the spacing between characters (kerning) displayed in an TitleBarControl." csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
         <Property name="line-height" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
         <Property name="-nexa-edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
-        <Property name="-nexa-padding" group="Style" subgroup="padding" edittype="String" defaultvalue="0px 0px 0px 0px" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
+        <Property name="-nexa-padding" group="Style" subgroup="padding" edittype="String" defaultvalue="0px 0px 0px 0px" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the padding, an inner margin, of an TitleBarControl." csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
         <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="This property is used to set the opacity of an TitleBarControl." csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
-        <Property name="word-spacing" group="Style" subgroup="word-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
+        <Property name="word-spacing" group="Style" subgroup="word-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="This property is used to set the spacing between words displayed in an TitleBarControl." csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
       </PropertyInfo>
       <StatusInfo>
         <Status name="disabled" control="true" default="false" deprecated="false" unused="false" group="status" />
@@ -70,7 +69,7 @@
       <Control name="closebutton" classname="nexacro._TitleBarButtonControl" deprecated="false" unused="false" group="" subgroup="" />
     </ControlInfo>
     <MethodInfo>
-      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It adds an event handler function.">
+      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It adds an event handler function.">
         <Syntax text="TitleBarControl.addEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="If successful, it returns the changed index, otherwise, it returns -1." />
           <Arguments>
@@ -80,7 +79,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It adds an event handler as a result searched with a designated event ID.">
+      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It adds an event handler as a result searched with a designated event ID.">
         <Syntax text="TitleBarControl.addEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="If successful, it returns an added index value. Otherwise, it returns -1." />
           <Arguments>
@@ -90,7 +89,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It clears all set event handler functions.">
+      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It clears all set event handler functions.">
         <Syntax text="TitleBarControl.clearEventHandler( strEventID )">
           <Return type="Integer" description="It returns the number of deleted event handler functions." />
           <Arguments>
@@ -98,13 +97,13 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="destroy" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="This method is used to delete a component that is dynamically created through a script.">
+      <Method name="destroy" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="This method is used to delete a component that is dynamically created through a script.">
         <Syntax text="TitleBarControl.destroy()">
           <Return type="Boolean" description="It returns whether deletion was successful or not." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It finds a designated event handler function and returns the index.">
+      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It finds a designated event handler function and returns the index.">
         <Syntax text="TitleBarControl.findEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="Index of a designated function" />
           <Arguments>
@@ -123,79 +122,79 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="getOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="It gets pixel values of the bottom property among TitleBarControl location information.">
+      <Method name="getOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It gets pixel values of the bottom property among TitleBarControl location information.">
         <Syntax text="TitleBarControl.getOffsetBottom();">
           <Return type="Number" description="It returns the value in pixels." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="It gets pixel values of the height property among TitleBarControl location information.">
+      <Method name="getOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It gets pixel values of the height property among TitleBarControl location information.">
         <Syntax text="TitleBarControl.getOffsetHeight();">
           <Return type="Number" description="It returns the value in pixels" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="It gets pixel values of the left property among TitleBarControl location information.">
+      <Method name="getOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It gets pixel values of the left property among TitleBarControl location information.">
         <Syntax text="TitleBarControl.getOffsetLeft();">
           <Return type="Number" description="It returns the value in pixels." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="It gets pixel values of the right property among TitleBarControl location information.">
+      <Method name="getOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It gets pixel values of the right property among TitleBarControl location information.">
         <Syntax text="TitleBarControl.getOffsetRight();">
           <Return type="Number" description="It returns the value in pixels." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="It gets pixel values of the top property among TitleBarControl location information.">
+      <Method name="getOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It gets pixel values of the top property among TitleBarControl location information.">
         <Syntax text="TitleBarControl.getOffsetTop();">
           <Return type="Number" description="It returns the value in pixels." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="It gets pixel values of the width property among TitleBarControl location information.">
+      <Method name="getOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It gets pixel values of the width property among TitleBarControl location information.">
         <Syntax text="TitleBarControl.getOffsetWidth();">
           <Return type="Number" description="It returns the value in pixels." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="IIt gets pixel values of the bottom property among TitleBarControl location information.">
+      <Method name="getPixelBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="IIt gets pixel values of the bottom property among TitleBarControl location information.">
         <Syntax text="TitleBarControl.getPixelBottom();">
           <Return type="Number" description="It returns the value in pixels." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="It gets pixel values of the height property among TitleBarControl location information.">
+      <Method name="getPixelHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It gets pixel values of the height property among TitleBarControl location information.">
         <Syntax text="TitleBarControl.getPixelHeight();">
           <Return type="Number" description="It returns the value in pixels." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="It gets pixel values of the left property among TitleBarControl location information.">
+      <Method name="getPixelLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It gets pixel values of the left property among TitleBarControl location information.">
         <Syntax text="TitleBarControl.getPixelLeft();">
           <Return type="Number" description="It returns the value in pixels." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="It gets pixel values of the right property among TitleBarControl location information.">
+      <Method name="getPixelRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It gets pixel values of the right property among TitleBarControl location information.">
         <Syntax text="TitleBarControl.getPixelRight();">
           <Return type="Number" description="It returns the value in pixels." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="It gets pixel values of the top property among TitleBarControl location information.">
+      <Method name="getPixelTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It gets pixel values of the top property among TitleBarControl location information.">
         <Syntax text="TitleBarControl.getPixelTop();">
           <Return type="Number" description="It returns the value in pixels." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="It gets pixel values of the width property among TitleBarControl location information.">
+      <Method name="getPixelWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It gets pixel values of the width property among TitleBarControl location information.">
         <Syntax text="TitleBarControl.getPixelWidth();">
           <Return type="Number" description="It returns the value in pixels." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="init" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="This is a method to initialize an TitleBarControl after creating it in a script dynamically.">
+      <Method name="init" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="This is a method to initialize an TitleBarControl after creating it in a script dynamically.">
         <Syntax text="TitleBarControl.init( strName, strPosition, nLeft, nTop , nWidth, nHeight [, nRight, nBottom] )">
           <Return type="" description="" />
           <Arguments>
@@ -210,7 +209,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="move" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="It moves a component into a specific location in specific size.">
+      <Method name="move" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It moves a component into a specific location in specific size.">
         <Syntax text="TitleBarControl.move( nLeft, nTop [, nWidth, nHeight [, nRight, nBottom]] )">
           <Return type="" description="" />
           <Arguments>
@@ -223,7 +222,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It removes a designated index or an event handler function.">
+      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It removes a designated index or an event handler function.">
         <Syntax text="TitleBarControl.removeEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="It returns the number of removed event handler functions(if successful, 1. if fails, 0)" />
           <Arguments>
@@ -233,7 +232,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It removes an event handler lookup with a designated event ID.">
+      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It removes an event handler lookup with a designated event ID.">
         <Syntax text="TitleBarControl.removeEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="It returns the number of deleted event handler functions. (if is successful, 1. if it fails, 0)" />
           <Arguments>
@@ -243,7 +242,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="resize" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Method to change size of TitleBarControl.">
+      <Method name="resize" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It is Method to change size of TitleBarControl.">
         <Syntax text="TitleBarControl.resize( nWidth, nHeight )">
           <Return type="" description="" />
           <Arguments>
@@ -252,7 +251,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It changes an event handler function.">
+      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It changes an event handler function.">
         <Syntax text="TitleBarControl.setEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="If it is success, it returns the changed index. Otherwise, it returns -1." />
           <Arguments>
@@ -262,7 +261,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It sets an event handler lookup with a designated event ID.">
+      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It sets an event handler lookup with a designated event ID.">
         <Syntax text="TitleBarControl.setEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="If successful, it returns the changed index, otherwise, it returns -1." />
           <Arguments>
@@ -272,13 +271,13 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="">
+      <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="setOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Set the value of the bottom relative to the left, top value of the TitleBarControl parent object.">
+      <Method name="setOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="Set the value of the bottom relative to the left, top value of the TitleBarControl parent object.">
         <Syntax text="TitleBarControl.setOffsetBottom( nBottom );">
           <Return type="" description="" />
           <Arguments>
@@ -286,7 +285,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Set the value of the height relative to the left, top value of the TitleBarControl parent object.">
+      <Method name="setOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="Set the value of the height relative to the left, top value of the TitleBarControl parent object.">
         <Syntax text="TitleBarControl.setOffsetHeight( nHeight );">
           <Return type="" description="" />
           <Arguments>
@@ -294,7 +293,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Set the value of the left relative to the left, top value of the TitleBarControl parent object.">
+      <Method name="setOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="Set the value of the left relative to the left, top value of the TitleBarControl parent object.">
         <Syntax text="TitleBarControl.setOffsetLeft( nLeft );">
           <Return type="" description="" />
           <Arguments>
@@ -302,7 +301,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Set the value of the right relative to the left, top value of the TitleBarControl parent object.">
+      <Method name="setOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="Set the value of the right relative to the left, top value of the TitleBarControl parent object.">
         <Syntax text="TitleBarControl.setOffsetRight( nRight );">
           <Return type="" description="" />
           <Arguments>
@@ -310,7 +309,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Set the value of the top relative to the left, top value of the TitleBarControl parent object.">
+      <Method name="setOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="Set the value of the top relative to the left, top value of the TitleBarControl parent object.">
         <Syntax text="TitleBarControl.setOffsetTop( nTop );">
           <Return type="" description="" />
           <Arguments>
@@ -318,7 +317,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Set the value of the width relative to the left, top value of the TitleBarControl parent object.">
+      <Method name="setOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="Set the value of the width relative to the left, top value of the TitleBarControl parent object.">
         <Syntax text="TitleBarControl.setOffsetWidth( nWidth );">
           <Return type="" description="" />
           <Arguments>
@@ -326,7 +325,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="show" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="It is Method to actually show TitleBarControl which is dynamically generated in Script.">
+      <Method name="show" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="It is Method to actually show TitleBarControl which is dynamically generated in Script.">
         <Syntax text="TitleBarControl.show()">
           <Return type="" description="" />
           <Arguments />

@@ -300,15 +300,24 @@ if (nexacro._Browser == "Runtime")
             return text;
         };
     
-        nexacro._print = function(pThis, refform, defaultprint, valign, halign) 
+
+        nexacro._print = function (pThis, refform, defaultprint, valign, halign, fitonepage)
         {
             var elem = pThis.getElement();
-            if (elem && elem.handle)
+            if (elem && elem._handle)
             {
                 var form_elem = refform.getElement();
-                nexacro.__print(elem.handle, form_elem.handle, defaultprint, valign, halign);
+                if (pThis._is_scrollable && elem._client_element && elem._client_element._handle)
+                {
+                    nexacro.__print(elem._client_element._handle, form_elem._handle, defaultprint, valign, halign, fitonepage);
+                }
+                else
+                {
+                    nexacro.__print(elem._handle, form_elem._handle, defaultprint, valign, halign, fitonepage);
+                }
             }
         };
+
         nexacro._printInnerContents = function (comp)
         {
             var doc = comp.getProperty("document");
@@ -318,6 +327,8 @@ if (nexacro._Browser == "Runtime")
                 return true;
             }
         };
+
+        nexacro._beforePrintCheckPlugin = nexacro._print;
 
         //==============================================================================
         nexacro._prepareManagerFrame = nexacro._emptyFn; 

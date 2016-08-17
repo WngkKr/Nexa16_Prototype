@@ -67,7 +67,6 @@ if (!nexacro.Combo)
     _pCombo.autoselect = false;
     _pCombo.autoskip = false;
     _pCombo.displaynulltext = "";
-    _pCombo.displaynulltextcolor = "";
     _pCombo.imemode = "none";
     _pCombo.readonly = false;
     _pCombo.usecontextmenu = true;
@@ -82,7 +81,6 @@ if (!nexacro.Combo)
     _pCombo._isSelect = false;
     _pCombo._isFiredOnInput = false;
     _pCombo._innerdataset = "";
-    _pCombo._displaynulltextcolor = null;
     _pCombo._buttonsize = -1;
     _pCombo._default_value = undefined;
     _pCombo._default_text = "";
@@ -462,7 +460,7 @@ if (!nexacro.Combo)
 
     _pCombo.set_value = function (v)
     {
-        if (this.value != v)
+        if (this.value !== v)
         {
             if (this.applyto_bindSource("value", v))
             {
@@ -495,7 +493,7 @@ if (!nexacro.Combo)
     {
         if (this.index != v)
         {
-            this.index = parseInt(v, 10) | 0;;
+            this.index = parseInt(v, 10) | 0;
             this.on_apply_index();
             this.redraw();
         }
@@ -555,38 +553,6 @@ if (!nexacro.Combo)
         if (comboedit)
         {
             comboedit.set_displaynulltext(this.displaynulltext);
-        }
-    };
-
-    _pCombo.set_displaynulltextcolor = function (v)
-    {
-        this.displaynulltextcolor = v;
-
-        if (v)
-        {
-            if (this._displaynulltextcolor == null || this._displaynulltextcolor.value != v)
-            {
-                var color = nexacro.ColorObject(v);
-                this._displaynulltextcolor = color;
-                this.on_apply_displaynulltextcolor();
-            }
-        }
-        else
-        {
-            if (this._displaynulltextcolor)
-            {
-                this._displaynulltextcolor = null;
-                this.on_apply_displaynulltextcolor();
-            }
-        }
-    };
-
-    _pCombo.on_apply_displaynulltextcolor = function ()
-    {
-        var comboedit = this.comboedit;
-        if (comboedit)
-        {
-            comboedit.set_displaynulltextcolor(this.displaynulltextcolor);
         }
     };
 
@@ -1666,8 +1632,9 @@ if (!nexacro.Combo)
         if (this._isPopupVisible())
         {
             this._closePopup();
-            this._setEditValue(this._getItemText(this.index));
         }
+
+        this.redraw();
     };
 
     _pCombo.on_fire_sys_onmousewheel = function (wheelDeltaX, wheelDeltaY, button, alt_key, ctrl_key, shift_key, screenX, screenY, canvasX, canvasY, clientX, clientY, comp, refer_comp)
@@ -2446,7 +2413,7 @@ if (!nexacro.Combo)
         var comboedit = this.comboedit;
         if (comboedit)
         {
-            comboedit.set_value(v);
+            comboedit._setValue(v);
         }
     };
 
@@ -2530,7 +2497,7 @@ if (!nexacro.Combo)
         var edit = this.comboedit;
         if (edit)
         {
-            if (this.type = "dropdown")
+            if (this.type == "dropdown")
             {
                 edit.setCaretPos(0);
             }

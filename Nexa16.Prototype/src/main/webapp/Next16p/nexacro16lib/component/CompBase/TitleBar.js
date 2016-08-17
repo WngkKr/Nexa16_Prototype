@@ -369,12 +369,12 @@ if (!nexacro.TitleBarControl)
             ownerframe._on_titlebar_endtrack(x, y, dragdata);
     };
 
-    _pTitleBarControl._on_movetrack = function (x, y, dragdata)
+    _pTitleBarControl._on_movetrack = function (x, y, dragdata, windowX, windowY)
     {
-        if(!this._is_alive) return;
+        if (!this._is_alive) return;
         var ownerframe = this.getOwnerFrame();
         if (ownerframe)
-            ownerframe._on_titlebar_movetrack(x, y, dragdata);
+            ownerframe._on_titlebar_movetrack(x, y, dragdata, windowX, windowY);
     };
 
     //===============================================================

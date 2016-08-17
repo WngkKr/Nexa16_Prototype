@@ -35,7 +35,6 @@ if (!nexacro.MaskEdit)
     /* default properties */
     _pMaskEdit.value = undefined;
     _pMaskEdit.displaynulltext = "";
-    _pMaskEdit.displaynulltextcolor = "";
     _pMaskEdit.readonly = false;
     _pMaskEdit.autoselect = false;
     _pMaskEdit.autoskip = false;
@@ -57,7 +56,6 @@ if (!nexacro.MaskEdit)
 
     _pMaskEdit._default_value = undefined;
     _pMaskEdit._default_text = "";
-    _pMaskEdit._displaynulltextcolor = null;
     _pMaskEdit._locale = "";
 
     _pMaskEdit._processing_updateToDataset = false;
@@ -65,12 +63,13 @@ if (!nexacro.MaskEdit)
     _pMaskEdit._processed_keypress = false;
     _pMaskEdit._bFirstFocus = true;
 
+    _pMaskEdit._onlydisplay = false;
     _pMaskEdit._apply_client_padding = false;
 
     /* status */
     _pMaskEdit._is_simple_control = true;
-    _pMaskEdit._use_readonly_status = true;
     _pMaskEdit._is_locale_control = true;
+    _pMaskEdit._use_readonly_status = true;
 
     _pMaskEdit._event_list = {
         "oneditclick": 1,
@@ -99,13 +98,21 @@ if (!nexacro.MaskEdit)
             if (!this._onlydisplay)
             {
                 input_elem = this._input_element = new nexacro.InputElement(control, "input");
+                input_elem.setElementAutoSkip(this.autoskip);
+                input_elem.setElementAutoSelect(this.autoselect);
+                input_elem.setElementUseIme("none");
+                input_elem.setElementImeMode("disabled");
+                input_elem.setElementReadonly(this.readonly);
+                input_elem.setElementDisplayNullText(this.displaynulltext);
             }
             else
             {
                 input_elem = this._input_element = new nexacro.TextBoxElement(control, "input");
             }
+
             input_elem.setElementPosition(this._getClientLeft(), this._getClientTop());
             input_elem.setElementSize(this._getClientWidth(), this._getClientHeight());
+            input_elem.setElementTextDecoration(this._textdecoration);
 
             this._undostack = new nexacro._EditUndoStack(this);
         }
@@ -116,8 +123,6 @@ if (!nexacro.MaskEdit)
         var input_elem = this._input_element;
         if (input_elem)
         {
-            this._init_element_property();
-
             this.on_apply_type();
             this.on_apply_limitbymask();
             this.on_apply_clipmode();
@@ -125,8 +130,13 @@ if (!nexacro.MaskEdit)
             this.on_apply_mask();
             this.on_apply_locale(this._getLocale());
             this.on_apply_value();
-            
+
             input_elem.create(win);
+            
+            if (nexacro._isNull(this.value))
+            {
+                this._changeUserStatus("nulltext", true);
+            }
         }
     };
 
@@ -135,15 +145,13 @@ if (!nexacro.MaskEdit)
         var input_elem = this._input_element;
         if (input_elem)
         {
-            this._init_element_property();
-
             this.on_apply_type();
             this.on_apply_limitbymask();
             this.on_apply_clipmode();
             this.on_apply_maskchar();
             this.on_apply_mask();
             this.on_apply_locale(this._getLocale());
-            this.on_apply_value();            
+            this.on_apply_value();
 
             return input_elem.createCommand();
         }
@@ -157,6 +165,11 @@ if (!nexacro.MaskEdit)
         if (input_elem)
         {
             input_elem.attachHandle(win);
+
+            if (nexacro._isNull(this.value))
+            {
+                this._changeUserStatus("nulltext", true);
+            }
         }
     };
 
@@ -180,12 +193,6 @@ if (!nexacro.MaskEdit)
         if (masktypeobj)
         {
             this._masktypeobj = null;
-        }
-
-        var displaynulltextcolor = this._displaynulltextcolor;
-        if (displaynulltextcolor)
-        {
-            this._displaynulltextcolor = null;
         }
     };
 
@@ -258,6 +265,18 @@ if (!nexacro.MaskEdit)
         }
     };
 
+    _pMaskEdit.on_changeUserStatus = function (changestatus, value, applyuserstatus, currentstatus, currentuserstatus)
+    {
+        if (value)
+        {
+            return changestatus;
+        }
+        else
+        {
+            return applyuserstatus;
+        }
+    };
+
     _pMaskEdit._getDlgCode = function (keycode, altKey, ctrlKey, shiftKey)
     {
         return { want_tab: false, want_return: false, want_escape: false, want_chars: false, want_arrows: false };
@@ -321,8 +340,17 @@ if (!nexacro.MaskEdit)
         var input_elem = this._input_element;
         if (input_elem)
         {
-            var value = this.value;
             var text = this.text;
+            var value = this.value;
+
+            if (this._is_created && nexacro._isNull(value))
+            {
+                this._changeUserStatus("nulltext", true);
+            }
+            else
+            {
+                this._changeUserStatus("nulltext", false);
+            }
 
             var maskobj = this._masktypeobj;
             if (maskobj)
@@ -352,15 +380,7 @@ if (!nexacro.MaskEdit)
             }
             else
             {
-                if (!value && value !== "")
-                {
-//                  input_elem.setElementDefaultValue(text);    ??
-                    input_elem.setElementText(text);
-                }
-                else
-                {
-                    input_elem.setElementText(text);
-                }
+                input_elem.setElementText(text);
             }
 
             if (this.text != text)
@@ -400,39 +420,6 @@ if (!nexacro.MaskEdit)
         {
             if (!this._onlydisplay)
                 input_elem.setElementDisplayNullText(this.displaynulltext);
-        }
-    };
-
-    _pMaskEdit.set_displaynulltextcolor = function (v)
-    {
-        this.displaynulltextcolor = v;
-
-        if (v)
-        {
-            if (this._displaynulltextcolor == null || this._displaynulltextcolor.value != v)
-            {
-                var color = nexacro.ColorObject(v);
-                this._displaynulltextcolor = color;
-                this.on_apply_displaynulltextcolor();
-            }
-        }
-        else
-        {
-            if (this._displaynulltextcolor)
-            {
-                this._displaynulltextcolor = null;
-                this.on_apply_displaynulltextcolor();
-            }
-        }
-    };
-
-    _pMaskEdit.on_apply_displaynulltextcolor = function ()
-    {
-        var input_elem = this._input_element;
-        if (input_elem)
-        {
-            if (!this._onlydisplay)
-                input_elem.setElementDisplayNullTextColor(this._displaynulltextcolor);
         }
     };
 
@@ -673,15 +660,6 @@ if (!nexacro.MaskEdit)
         }
     };
 
-    _pMaskEdit.on_apply_textAlign = function (halign)
-    {
-        var input_elem = this._input_element;
-        if (input_elem)
-        {
-            input_elem.setElementTextAlign(halign);
-        }
-    };
-
     _pMaskEdit.set_cursor = function (val)
     {
         this.cursor = val;
@@ -705,6 +683,15 @@ if (!nexacro.MaskEdit)
                 this._cursor = null;
                 this.on_apply_cursor(null);
             }
+        }
+    };
+
+    _pMaskEdit.on_apply_textAlign = function (halign)
+    {
+        var input_elem = this._input_element;
+        if (input_elem)
+        {
+            input_elem.setElementTextAlign(halign);
         }
     };
 
@@ -759,28 +746,30 @@ if (!nexacro.MaskEdit)
         var input_elem = this._input_element;
         if (input_elem)
         {
-            if (arguments.length == 0)
+            if (!this._onlydisplay)
             {
-                v = 0;
-            }
-            else
-            {
-                v = nexacro._toInt(v);
-                if (v == -1)
+                if (arguments.length == 0)
                 {
-                    if (v)
+                    v = 0;
+                }
+                else
+                {
+                    v = nexacro._toInt(v);
+                    if (v == -1)
                     {
-                        v = this.text.length;
-                    }
-                    else
-                    {
-                        v = 0;
+                        if (v)
+                        {
+                            v = this.text.length;
+                        }
+                        else
+                        {
+                            v = 0;
+                        }
                     }
                 }
-            }
 
-            if (!this._onlydisplay)
                 input_elem.setElementSetSelect(v, v);
+            }
 
             return true;
         }
@@ -804,45 +793,47 @@ if (!nexacro.MaskEdit)
         var input_elem = this._input_element;
         if (input_elem)
         {
-            var txt = this.text ? this.text : "";
-            var txt_len = txt.length;
-
-            if (nexacro._isNull(start) || start === "")
-            {
-                start = 0;
-            }
-            if (nexacro._isNull(end) || end === "")
-            {
-                end = -1;
-            }
-
-            if (!nexacro._isNumber(start))
-            {
-                start = nexacro._toInt(start);
-            }
-            if (!nexacro._isNumber(end))
-            {
-                end = nexacro._toInt(end);
-            }
-
-            if (start == -1)
-            {
-                start = txt_len;
-            }
-            if (end == -1)
-            {
-                end = txt_len;
-            }
-
-            if (start > end)
-            {
-                var tmp = start;
-                start = end;
-                end = tmp;
-            }
-
             if (!this._onlydisplay)
+            {
+                var txt = this.text ? this.text : "";
+                var txt_len = txt.length;
+
+                if (nexacro._isNull(start) || start === "")
+                {
+                    start = 0;
+                }
+                if (nexacro._isNull(end) || end === "")
+                {
+                    end = -1;
+                }
+
+                if (!nexacro._isNumber(start))
+                {
+                    start = nexacro._toInt(start);
+                }
+                if (!nexacro._isNumber(end))
+                {
+                    end = nexacro._toInt(end);
+                }
+
+                if (start == -1)
+                {
+                    start = txt_len;
+                }
+                if (end == -1)
+                {
+                    end = txt_len;
+                }
+
+                if (start > end)
+                {
+                    var tmp = start;
+                    start = end;
+                    end = tmp;
+                }
+
                 input_elem.setElementSetSelect(start, end);
+            }
 
             return true;
         }
@@ -916,7 +907,6 @@ if (!nexacro.MaskEdit)
         {
             return;
         }
-
 
         var input_elem = this._input_element;
         if (input_elem)
@@ -1224,18 +1214,18 @@ if (!nexacro.MaskEdit)
             var text = this.text;
             var emptytext = "";
 
-            this._default_value = value;
-            this._default_text = text;
-
             var maskobj = this._getMaskObj();
             if (maskobj)
             {
                 maskobj.setEditStatus(true);
 
-                var emptytext = this._getEmptyText();
+                emptytext = this._getEmptyText();
                 text = maskobj.applyMask(value);
 
+                this._default_value = value;
                 this._default_text = text;
+
+                this._changeUserStatus("nulltext", false);
 
                 if (!this._onlydisplay)
                 {
@@ -1258,7 +1248,6 @@ if (!nexacro.MaskEdit)
                 {
                     if (!value && value !== "")
                     {
-//                      input_elem.setElementDefaultValue(emptytext); ??
                         input_elem.setElementText(emptytext);
                     }
                     else
@@ -1268,15 +1257,15 @@ if (!nexacro.MaskEdit)
                 }
             }
 
-            if (this._onlydisplay)
-                return;
-
-            input_elem.setElementFocus(evt_name);
-            
-            text = input_elem.getElementText();
-            if (text != this.text)
+            if (!this._onlydisplay)
             {
-                this._default_text = this.text = text;
+                input_elem.setElementFocus();
+
+                text = input_elem.getElementText();
+                if (text != this.text)
+                {
+                    this._default_text = this.text = text;
+                }
             }
         }
     };
@@ -1337,6 +1326,11 @@ if (!nexacro.MaskEdit)
                 }
             }
 
+            if (nexacro._isNull(this.value))
+            {
+                this._changeUserStatus("nulltext", true);
+            }
+
             if (!this._onlydisplay)
                 input_elem.setElementBlur();
         }
@@ -1347,10 +1341,8 @@ if (!nexacro.MaskEdit)
         var input_elem = this._input_element;
         if (input_elem)
         {
-            if (this._onlydisplay)
-                return;
-
-            input_elem.setElementFocus(button);
+            if (!this._onlydisplay)
+                input_elem.setElementFocus(button);
         }
     };
 
@@ -1524,30 +1516,6 @@ if (!nexacro.MaskEdit)
         }
 
         return "";
-    };
-
-    _pMaskEdit._init_element_property = function ()
-    {
-        var input_elem = this._input_element;
-        if (input_elem)
-        {
-            var textdecoration = this._textdecoration;
-            if (textdecoration)
-            {
-                input_elem.setElementTextDecoration(textdecoration);
-            }
-
-            if (!this._onlydisplay)
-            {
-                input_elem.setElementAutoSkip(this.autoskip);
-                input_elem.setElementAutoSelect(this.autoselect);
-                input_elem.setElementUseIme("none");
-                input_elem.setElementImeMode("disabled");
-                input_elem.setElementReadonly(this.readonly);
-                input_elem.setElementDisplayNullTextColor(this._displaynulltextcolor);
-                input_elem.setElementDisplayNullText(this.displaynulltext);
-            }
-        }
     };
 
     _pMaskEdit = null;

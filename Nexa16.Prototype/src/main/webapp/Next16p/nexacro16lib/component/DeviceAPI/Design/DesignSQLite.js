@@ -21,8 +21,8 @@ if (nexacro.LiteDBConnection)
         };
 
         this.onsuccess = null;
-        this.onerror = null;     
-    }
+        this.onerror = null;
+    };
 };
 
 if (nexacro.LiteDBStatement)
@@ -35,17 +35,17 @@ if (nexacro.LiteDBStatement)
             this.parent = parent;
         }
 
-        this.query = "";														
-        this.ldbconnection = "";												
+        this.query = "";
+        this.ldbconnection = "";
         this.parameters = {};
         this.applyrowpos = -1;
-        this.async = "true"; 
+        this.async = "true";
 
         this._event_list = {
             "onsuccess": 1, "onerror": 1
         };
 
         this.onsuccess = null;
-        this.onerror = null;      
-    }
+        this.onerror = null;
+    };
 };

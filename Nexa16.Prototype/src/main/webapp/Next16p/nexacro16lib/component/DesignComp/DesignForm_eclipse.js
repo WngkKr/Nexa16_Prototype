@@ -64,7 +64,7 @@ if (nexacro.DesignForm)
 
     // design mode
     nexacro._design_mode_select = "Select";
-    nexacro._design_mode_form_move = "Form Move"
+    nexacro._design_mode_form_move = "Form Move";
     nexacro._design_mode = nexacro._design_mode_select;
 
     nexacro.setDesignMode = function (v)
@@ -146,7 +146,7 @@ if (nexacro.DesignForm)
             return 0;
 
         return this._move_x - this._start_x;
-    }
+    };
 
     _pMoveInfo.distance_y = function ()
     {
@@ -154,7 +154,7 @@ if (nexacro.DesignForm)
             return 0;
 
         return this._move_y - this._start_y;
-    }
+    };
 
     _pMoveInfo.normalize = function ()
     {
@@ -179,19 +179,19 @@ if (nexacro.DesignForm)
             this.y1 = this._move_y;
             this.y2 = this._start_y;
         }
-    }
+    };
 
     _pMoveInfo.get_width = function ()
     {
         var w = this.distance_x();
         return Math.abs(w);
-    }
+    };
 
     _pMoveInfo.get_height = function ()
     {
         var h = this.distance_y();
         return Math.abs(h);
-    }
+    };
 
     delete _pMoveInfo;
 
@@ -367,9 +367,9 @@ if (nexacro.DesignForm)
     {
         this._arr_x.sort(this._sort);
         this._arr_y.sort(this._sort);
-    }
+    };
 
-    _pSnapManager._sort = function(a, b)
+    _pSnapManager._sort = function (a, b)
     {
         if (a.pos < b.pos)
             return -1;
@@ -378,7 +378,7 @@ if (nexacro.DesignForm)
             return 0;
 
         return 1;
-    }
+    };
 
     _pSnapManager.add_info = function(info_type, info)
     {    
@@ -579,7 +579,7 @@ if (nexacro.DesignForm)
                                 "rc": rc,
                                 "target": "left",
                                 "side": "right",
-                                "resize": ruler_layer.find_guideline(hori, rc.right),
+                                "resize": ruler_layer.find_guideline(hori, rc.right)
                             };                            
                         }
                         else if (pos == rc.right)
@@ -589,7 +589,7 @@ if (nexacro.DesignForm)
                                 "rc": rc,
                                 "target": "right",
                                 "side": "left",
-                                "resize": ruler_layer.find_guideline(hori, rc.left),
+                                "resize": ruler_layer.find_guideline(hori, rc.left)
                             };
                         }
                         else
@@ -616,7 +616,7 @@ if (nexacro.DesignForm)
                                             "rc": rc,
                                             "target": "left",
                                             "side": "right",
-                                            "resize": ruler_layer.find_guideline(hori, rc.right),
+                                            "resize": ruler_layer.find_guideline(hori, rc.right)
                                         };
                                     }
                                     else if (pos == r)
@@ -626,7 +626,7 @@ if (nexacro.DesignForm)
                                             "rc": rc,
                                             "target": "right",
                                             "side": "left",
-                                            "resize": ruler_layer.find_guideline(hori, rc.left),
+                                            "resize": ruler_layer.find_guideline(hori, rc.left)
                                         };
                                     }
                                     else
@@ -650,7 +650,7 @@ if (nexacro.DesignForm)
                                 "rc": rc,
                                 "target": "top",
                                 "side": "bottom",
-                                "resize": ruler_layer.find_guideline(hori, rc.bottom),
+                                "resize": ruler_layer.find_guideline(hori, rc.bottom)
                             };
                         }
                         else if (pos == rc.bottom)
@@ -660,7 +660,7 @@ if (nexacro.DesignForm)
                                 "rc": rc,
                                 "target": "bottom",
                                 "side": "top",
-                                "resize": ruler_layer.find_guideline(hori, rc.top),
+                                "resize": ruler_layer.find_guideline(hori, rc.top)
                             };
                         }
                     }
@@ -961,8 +961,8 @@ if (nexacro.DesignForm)
 //             nOffset = pInfo->nSelectedStepIndex * rcBase.Width();
 //         }
 
-        var MIN = function(a, b) {return (a < b) ? a : b};
-        var MAX = function(a, b) {return (a > b) ? a : b};
+        var MIN = function (a, b) { return (a < b) ? a : b;};
+        var MAX = function (a, b) { return (a > b) ? a : b;};
 
         var x1;
         var y1;
@@ -1104,7 +1104,7 @@ if (nexacro.DesignForm)
     _pDesignLayer._is_button_down = function ()
     {
         return (this.target._move_info._layer == this._layer_index);
-    }
+    };
     
 
     delete _pDesignLayer;
@@ -1430,7 +1430,7 @@ if (nexacro.DesignForm)
                     move_comps[i] = rect.join(',');
                 }
 
-                count = fixed_comps.length
+                count = fixed_comps.length;
                 for (var i = 0 ; i < count ; i++)
                 {
                     var rect = fixed_comps[i].split(',');
@@ -1549,7 +1549,7 @@ if (nexacro.DesignForm)
                     resize_comps[i] = rect.join(',');
                 }
 
-                count = fixed_comps.length
+                count = fixed_comps.length;
                 for (var i = 0 ; i < count ; i++)
                 {
                     var rect = fixed_comps[i].split(',');
@@ -1987,7 +1987,7 @@ if (nexacro.DesignForm)
     _pTrackerLayer.execLButtonUp = function (x, y)
     {
         if (!this._is_button_down())
-            return false
+            return false;
 
         var designform = this.target;
         var rootobj = designform.get_root_obj();
@@ -2440,7 +2440,7 @@ if (nexacro.DesignForm)
         if (this._is_dragging())
         {
             var designform = this.target;
-            var cursor_type = designform.get_cursor_type()
+            var cursor_type = designform.get_cursor_type();
             switch (cursor_type)
             {
                 case nexacro._mouse_cursor_form_move:
@@ -2789,7 +2789,7 @@ if (nexacro.DesignForm)
         }
 
         return -1;
-    }
+    };
 
     _pRulerLayer._get_guideline = function (pos, hori)
     {
@@ -2799,7 +2799,7 @@ if (nexacro.DesignForm)
         var index = this._exsit_guideline(pos, hori);
         if (index < 0)
             return false;
-        
+
         var guidelines = (hori ? this._guideline_h : this._guideline_v);
 
         this._drag_guideline_pos = guidelines[index];
@@ -2808,7 +2808,7 @@ if (nexacro.DesignForm)
         guidelines.splice(index, 1);
 
         return true;
-    }
+    };
     
     _pRulerLayer.check_cursor = function (x, y)
     {
@@ -2899,7 +2899,7 @@ if (nexacro.DesignForm)
     _pRulerLayer.execLButtonUp = function (x, y)
     {
         if (!this._is_button_down())
-            return false
+            return false;
 
         if (this._drag_guideline_pos != null)
         {
@@ -3220,27 +3220,27 @@ if (nexacro.DesignForm)
 
     };
 
-    _pDesignForm.onKeyDown = function (char)
+    _pDesignForm.onKeyDown = function (key)
     {
         for (var i = this._layer_count - 1 ; i >= 0 ; i--)
         {
             var layer = this._layer_list[i];
             if (layer && layer.execKeyDown)
             {
-                if (layer.execKeyDown(char))
+                if (layer.execKeyDown(key))
                     break;
             }
         }
     };
 
-    _pDesignForm.onChar = function (char)
+    _pDesignForm.onChar = function (key)
     {
         for (var i = this._layer_count - 1 ; i >= 0 ; i--)
         {
             var layer = this._layer_list[i];
             if (layer && layer.execChar)
             {
-                if (layer.execChar(char))
+                if (layer.execChar(key))
                     break;
             }
         }
@@ -3534,8 +3534,8 @@ if (nexacro.DesignForm)
         {
             // contents editor open
             // create default script function
-        }            
-    }
+        }
+    };
 
     _pDesignForm.startSubLayoutEdit = function (comp)
     {
@@ -3617,11 +3617,11 @@ if (nexacro.DesignForm)
     {
         var snap_manager = this._snap_manager;
         var dist = snap_manager.snap_guideline(pos, hori);
-        
+
         snap_manager.move_guideline(pos + dist);
 
         return dist;
-    }
+    };
 
     _pDesignForm.get_snap_point = function()
     {
@@ -3840,7 +3840,7 @@ if (nexacro.DesignForm)
         if (rootobj)
         {
             var stepcount = 0;
-            var stepwidt = 0
+            var stepwidt = 0;
             // fixed component를 위한 layout 정보 추출
             var mlm = nexacro._getLayoutManager();
             var layout = mlm.getCurrentLayout(rootobj);

@@ -161,10 +161,10 @@
         </Syntax>
       </EventHandler>
       <EventHandler name="onreadmessagelist" group="Event" deprecated="false" unused="false" requirement="Mobile Hybrid (Android)" description="モバイル機器のSMSリストの照会時に発生するイベントです。">
-        <Syntax text="Sms.onreadmessagelist(obj:nexacro.Sms,e:nexacro.SmsMessagListEventInfo);">
+        <Syntax text="Sms.onreadmessagelist(obj:nexacro.Sms,e:nexacro.SmsMessageListEventInfo);">
           <Return type="" description="" />
           <Arguments>
-            <Argument name="e" type="SmsMessagListEventInfo" in="false" out="false" option="false" variable="false" description="Eventオブジェクト。" />
+            <Argument name="e" type="SmsMessageListEventInfo" in="false" out="false" option="false" variable="false" description="Eventオブジェクト。" />
           </Arguments>
         </Syntax>
       </EventHandler>

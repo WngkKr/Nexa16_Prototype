@@ -291,6 +291,7 @@ if (!nexacro.Menu)
 
         this._items = [];
         this._hot_key_list = [];
+        this._items_width = []; //spin
     };
         
     var _pMenu = nexacro._createPrototype(nexacro.Component, nexacro.Menu);
@@ -315,6 +316,8 @@ if (!nexacro.Menu)
     //_pMenu.expandimage = null;
     _pMenu.popuptype = "normal";
     _pMenu.popupitemheight = "";
+    _pMenu.buttonsize = undefined;
+    _pMenu.buttonalign = "auto";
 
         // ------------------- internal variable -------------------- // 
     _pMenu._is_menu_click = false;
@@ -352,6 +355,13 @@ if (!nexacro.Menu)
     _pMenu._clickitemindex = 0;
     _pMenu._hotkeytextgap = 20; // use popupmenu
     _pMenu._icontextpadding = 5; // use popupmenu
+
+    //menu spin
+    _pMenu._items_total_width = 0;
+    _pMenu._start_spin_index = 0;
+    _pMenu._end_spin_index = 0;
+    _pMenu._is_spin_visible = false;
+
 
     _pMenu._last_mouseleave_iteminfo = { bindindex: -1, index: -1, level: -1 };
 
@@ -478,6 +488,19 @@ if (!nexacro.Menu)
         }
     };
  
+
+    _pMenu.set_buttonsize = function (v)
+    {
+        var val = v == undefined ? v : parseInt(v) | 0;
+        this.buttonsize = val;
+        this.on_apply_buttonsize(val);
+    };
+
+    _pMenu.on_apply_buttonsize = function (val)
+    {
+        this.on_change_containerRect();
+    };
+
     _pMenu.on_apply_itemaccessibility = function (itemaccessibility)
     {
         var items = this._items;
@@ -579,6 +602,15 @@ if (!nexacro.Menu)
                     this._registerItemHotkey(hotkey_list[i].key);
                 }                
             }
+            if (this._isSpinVisible())
+            {
+                this._showSpinButton(true);
+                this._rearrangeMenuItems();
+            }
+            else
+            {
+                this._showSpinButton(false);
+            }
         }
     };
 
@@ -625,6 +657,15 @@ if (!nexacro.Menu)
                 this._registerItemHotkey(hotkey_list[i].key);
             }
         }
+        if (this._isSpinVisible())
+        {
+            this._showSpinButton(true);
+            this._rearrangeMenuItems();
+        }
+        else
+        {
+            this._showSpinButton(false);
+        }
     };
 
     _pMenu.on_destroy_contents = function ()
@@ -657,6 +698,12 @@ if (!nexacro.Menu)
                 item = null;
             }
         }
+        var items_width = this._items_width;
+        if (items_width)
+        {
+            items_width.length = 0;
+        }
+        items_width = null;
         hotkey_list = null;
         items = null;
     };
@@ -671,11 +718,32 @@ if (!nexacro.Menu)
         {
             height = height - padding.top - padding.bottom;
         }
-
-        for (var i = 0; i < len; i++)
+        var spin_visible = this._isSpinVisible()
+        if (spin_visible)
         {
-            var item = items[i];
-            item.resize(item._adjust_width, height);
+            this._showSpinButton(true);
+            this._rearrangeMenuItems();
+        }
+        else
+        {
+            var move_flag = this._end_spin_index | 0;
+            this._end_spin_index = 0;
+            this._showSpinButton(false);
+            var items_width = this._items_width;
+            var left = 0;
+            for (var i = 0; i < len; i++)
+            {
+                var item = items[i];
+                var item_width = items_width[i];
+                if (move_flag)
+                {
+                    item.move(left, 0, item_width, height);
+                    left += item_width;
+                }
+                else
+                    item.resize(item_width, height);
+
+            }
         }
     };
 
@@ -1969,16 +2037,12 @@ if (!nexacro.Menu)
        this._previtemindex = this._menuitemindex = nextitemindex;
         if (popupvisible)   
         {
-            if (next_item)
-            {
-                this._showPopup(next_item);
-                next_item._on_focus(false);
-                var popupmenu = this._popupmenu;
-                popupmenu._select_menuitem(0);
-            }
+            this._showPopup(next_item);
+            next_item._on_focus(false);
+            var popupmenu = this._popupmenu;
+            popupmenu._select_menuitem(0);
         }
-        if (next_item)
-            next_item.on_apply_selected(true);
+        next_item.on_apply_selected(true);
     };
 
     _pMenu.on_notify_menuitem_onmouseenter = function (obj, e)
@@ -2142,6 +2206,8 @@ if (!nexacro.Menu)
                 var item;
                 //var checkboximage = this.checkboximage;
                 var itempadding = null;
+                var items_width = this._items_width;
+                var items_total_width = this._items_total_width;
                 for (var i = 0; i < len; i++)
                 {
                     hotkey = ds.getColumn(i, this.hotkeycolumn);
@@ -2216,14 +2282,18 @@ if (!nexacro.Menu)
                         height = this._adjust_height - (border ? border.top._width + border.bottom._width : 0);
 
                         item.move(left,0,width,height);
-
+                        items_width.push(width);
+                        items_total_width += width;
                         this._items.push(item);
                         item = null;
                         left += width;
                     }
                 }
+                if (items_total_width)
+                    this._items_total_width = items_total_width;
             }
         }
+       
     };
 
     _pMenu._deleteMenu = function ()
@@ -2238,6 +2308,8 @@ if (!nexacro.Menu)
         }
 
         this._hot_key_list = [];
+        this._items_width = [];
+        this._items_total_width = 0;
 
         var items = this._items;
         if (items)
@@ -2390,7 +2462,230 @@ if (!nexacro.Menu)
         }
     };
 
-  
+    _pMenu._isSpinVisible = function ()
+    {
+        if (this._items_total_width > this._adjust_width)
+            return true;
+        return false;
+    };
+
+    _pMenu._showSpinButton = function (spin_visible)
+    {
+        this._is_spin_visible = spin_visible;
+        if (spin_visible)
+        {
+            if (!this.spinupbutton || !this.spindownbutton)
+            {
+                this._createSpinButton();
+            }
+            var spinupbutton = this.spinupbutton;
+            var spindownbutton = this.spindownbutton;
+            var buttonsize = this.buttonsize;
+            var spindownbutton_width = 0;
+            var spinupbutton_width = 0;
+
+            if (!buttonsize)
+            {
+                var spinbutton_width = this._getSpinbuttonWidth(spindownbutton, spinupbutton);
+                spindownbutton_width = spinbutton_width[0];
+                spinupbutton_width = spinbutton_width[1];
+            }
+            else
+            {
+                spindownbutton_width = buttonsize;
+                spinupbutton_width = buttonsize;
+            }
+            var client_width = this._getClientWidth();
+            var client_height = this._getClientHeight();
+            spindownbutton.set_visible(true);
+            spindownbutton.move(0, 0, spindownbutton_width, client_height);
+            spinupbutton.set_visible(true);
+            spinupbutton.move(client_width - spinupbutton_width, 0, spinupbutton_width, client_height);
+        }
+        else
+        {
+            var spinupbutton = this.spinupbutton;
+            if (spinupbutton)
+            {
+                spinupbutton.set_visible(false);
+                spinupbutton.move(0, 0, 0, 0);
+            }
+
+            var spindownbutton = this.spindownbutton;
+            if (spindownbutton)
+            {
+                spindownbutton.set_visible(false);
+                spindownbutton.move(0, 0, 0, 0);
+            }
+        }
+    };
+
+    _pMenu._getSpinbuttonWidth = function (spindownbutton, spinupbutton)
+    {
+        var up_width = 0;
+        var down_width = 0;
+
+        var spindownicon = spindownbutton._getCSSStyleValue("icon", "enabled");
+        if (spindownicon)
+        {
+            var img_size = nexacro._getImageSize(spindownicon.url, null, this);
+            if (img_size)
+            {
+                down_width = img_size.width;
+                var padding = spindownbutton._getCSSStyleValue("padding", this._status);
+                var border = spindownbutton._getCSSStyleValue("border", this._status);
+                if (padding)
+                    down_width += padding.left + padding.right;
+                if (border)
+                {
+                    if (border._single)
+                    {
+                        down_width += border.top._width + border.top._width;
+                    }
+                    else
+                    {
+                        down_width = border.left._width + border.right._width;
+                    }
+                }
+
+                this._spindown_width = down_width;
+            }
+        }
+        var spinupicon = spinupbutton._getCSSStyleValue("icon", "enabled");
+        if (spinupicon)
+        {
+            var img_size = nexacro._getImageSize(spinupicon.url, null, this);
+            if (img_size)
+            {
+                up_width = img_size.width;
+                var padding = spinupbutton._getCSSStyleValue("padding", this._status);
+                var border = spinupbutton._getCSSStyleValue("border", this._status);
+                if (padding)
+                    up_width += padding.left + padding.right;
+                if (border)
+                {
+                    if (border._single)
+                    {
+                        up_width += border.top._width + border.top._width;
+                    }
+                    else
+                    {
+                        up_width = border.top._width + border.bottom._width;
+                    }
+                }
+                this._spinup_width = up_width;
+            }
+        }
+        return [down_width, up_width];
+    };
+
+    _pMenu._spinup = function ()
+    {
+        var threshold = this._items.length;
+        if (this._end_spin_index < threshold)
+        {
+            if (this._start_spin_index == 0)
+               this.spindownbutton._changeStatus("disabled", false);
+            this._start_spin_index++;
+        }
+        this._rearrangeMenuItems();
+        if (this._end_spin_index == threshold)
+        {
+             this.spinupbutton._changeStatus("disabled", true);
+        }
+    };
+
+    _pMenu._spindown = function ()
+    {
+        var start_index = this._start_spin_index;
+        if (start_index > 0)
+        {
+            if (this._items.length  == this._end_spin_index)
+                this.spinupbutton._changeStatus("disabled", false);
+            start_index--;
+            if (start_index == 0)
+            {
+                this.spindownbutton._changeStatus("disabled", true);
+            }
+        }
+        this._start_spin_index = start_index;
+        this._rearrangeMenuItems();
+       
+    };
+
+    _pMenu._createSpinButton = function ()
+    {
+        var spindownbutton = new nexacro.Button("spindownbutton", "absolute", 0, 0, 0, 0, null, null, this);
+        spindownbutton._setControl("ButtonControl");
+        spindownbutton.createComponent();
+        spindownbutton.set_visible(true);
+        spindownbutton._setEventHandler("onclick", this.on_notify_spindown_onclick, this);
+        spindownbutton.on_created();
+        spindownbutton._changeStatus("disabled", true);
+        this.spindownbutton = spindownbutton;
+
+        var spinupbutton = new nexacro.Button("spinupbutton", "absolute", 0, 0, 0, 0, null, null, this);
+        spinupbutton._setControl("ButtonControl");
+        spinupbutton.createComponent();
+        spinupbutton.set_visible(true);
+        spinupbutton._setEventHandler("onclick", this.on_notify_spinup_onclick, this);
+        spinupbutton.on_created();
+        this.spinupbutton = spinupbutton;
+    };
+
+    _pMenu.on_notify_spinup_onclick = function ()
+    {
+        this._closePopup();
+        this._spinup();
+    };
+
+    _pMenu.on_notify_spindown_onclick = function ()
+    {
+        this._closePopup();
+        this._spindown();
+    };
+
+    _pMenu._rearrangeMenuItems = function ()
+    {
+        var start_spin_index = this._start_spin_index;
+        var items_width = this._items_width;
+        var items_total_width = this._items_total_width;
+        var client_width = this._getClientWidth();
+        var items = this._items;        
+        var left = this.buttonsize || this._spindown_width;
+        var spinup_width = this.buttonsize || this._spinup_width;
+        var sum_itemwidth = left + spinup_width;
+        var height = parseInt(this.height);
+        var len = items_width.length;
+        var end_spin_index = this._end_spin_index;
+        for (var i = 0, end = start_spin_index; i < end; i++)
+        {
+            items[i].move(0, 0, 0, 0);
+        }
+        for (var i = start_spin_index; i < len; i++)
+        {
+            var item = items[i];
+            var item_width = items_width[i];
+            sum_itemwidth += item_width;
+            if (i == start_spin_index || sum_itemwidth < client_width)
+                item.move(left, 0, item_width, height);
+            else
+            {                
+                break;
+            }
+            end_spin_index = i +1;
+            left += item_width;
+        }
+        if (end_spin_index > 0 && end_spin_index < len)
+        {
+            for (var i = end_spin_index; i < len; i++)
+            {
+                items[i].move(0, 0, 0, 0);
+            }
+        }
+        this._end_spin_index = end_spin_index;
+    };
+
     _pMenu._getPopupControl = function ()
     {
         var rootcomp = this._getRootComponent(this);

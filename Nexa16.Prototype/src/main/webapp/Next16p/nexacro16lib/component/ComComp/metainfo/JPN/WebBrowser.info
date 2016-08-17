@@ -6,49 +6,49 @@
       <Property name="background" group="Style" subgroup="background" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="WebBrowserの背景領域を設定するプロパティです。" csspropertyname="background" csselementname="" normalpropertyname="background" />
       <Property name="border" group="Style" subgroup="border" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="border" csselementname="" normalpropertyname="border" />
       <Property name="borderRadius" group="Style" subgroup="border-radius" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="border-radius" csselementname="" normalpropertyname="borderRadius" />
-      <Property name="bottom" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="Position2Type" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserを表示するための下部座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="bottom" />
+      <Property name="bottom" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="Position2Type" unitinfo="Position2Type" delimiter="" requirement="" description="WebBrowserを表示するための下部座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="bottom" />
       <Property name="bottombase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="bottombase" />
       <Property name="boxShadow" group="Style" subgroup="box-shadow" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="box-shadow" csselementname="" normalpropertyname="boxShadow" />
       <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="WebBrowserに表示されるテキストの色を設定するプロパティです。" csspropertyname="color" csselementname="" normalpropertyname="color" />
-      <Property name="cssclass" group="Information" subgroup="" edittype="CssClass" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserのStyleをXCSSファイルに定義されたクラスに設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="cssclass" />
+      <Property name="cssclass" group="Information" subgroup="" edittype="CssClass" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="WebBrowserのStyleをXCSSファイルに定義されたクラスに設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="cssclass" />
       <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
-      <Property name="enable" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserを使用するか否かを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="enable" />
-      <Property name="enableevent" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserでイベントを発生させるか否かを決定するプロパティです。 &#xA;　&#xA;　" csspropertyname="" csselementname="" normalpropertyname="enableevent" />
-      <Property name="expr" group="Appearance" subgroup="" edittype="String" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="expr" />
+      <Property name="enable" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="WebBrowserを使用するか否かを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="enable" />
+      <Property name="enableevent" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="WebBrowserでイベントを発生させるか否かを決定するプロパティです。 &#xA;　&#xA;　" csspropertyname="" csselementname="" normalpropertyname="enableevent" />
+      <Property name="expr" group="Appearance" subgroup="" edittype="String" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="expr" />
       <Property name="font" group="Style" subgroup="font" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="FontSize_Point" delimiter="" requirement="" description="" csspropertyname="font" csselementname="" normalpropertyname="font" />
-      <Property name="height" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserを表示するための高さを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="height" />
-      <Property name="heightbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="heightbase" />
-      <Property name="hotkey" group="Action" subgroup="" edittype="HotKey" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="HotKeyModifier" unitinfo="" delimiter="" requirement="" description="WebBrowserのデフォルトアクションを実行するためのホットキーを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="hotkey" />
-      <Property name="id" group="Information" subgroup="" edittype="ID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="id" />
+      <Property name="height" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="WebBrowserを表示するための高さを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="height" />
+      <Property name="heightbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="heightbase" />
+      <Property name="hotkey" group="Action" subgroup="" edittype="HotKey" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="HotKeyModifier" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="WebBrowserのデフォルトアクションを実行するためのホットキーを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="hotkey" />
+      <Property name="id" group="Information" subgroup="" edittype="ID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="id" />
       <Property name="initvalueid" group="Information" subgroup="" edittype="InitvalueID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="initvalueid" />
-      <Property name="left" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserを表示するための左側座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="left" />
-      <Property name="leftbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="leftbase" />
+      <Property name="left" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="WebBrowserを表示するための左側座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="left" />
+      <Property name="leftbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="leftbase" />
       <Property name="letterSpacing" group="Style" subgroup="letter-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
       <Property name="lineHeight" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
-      <Property name="name" group="Information" subgroup="" edittype="String" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="コンポーネント名を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="name" />
+      <Property name="name" group="Information" subgroup="" edittype="String" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネント名を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="name" />
       <Property name="edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
       <Property name="padding" group="Style" subgroup="padding" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
-      <Property name="textAlign" group="Style" subgroup="-nexa-text-align" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
-      <Property name="textDecoration" group="Style" subgroup="text-decoration" edittype="MultiEnum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TextDecorationLine" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-decoration" csselementname="" normalpropertyname="textDecoration" />
-      <Property name="verticalAlign" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
-      <Property name="wordWrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
+      <Property name="textAlign" group="Style" subgroup="-nexa-text-align" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
+      <Property name="textDecoration" group="Style" subgroup="text-decoration" edittype="MultiEnum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TextDecorationLine" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-text-decoration" csselementname="" normalpropertyname="textDecoration" />
+      <Property name="verticalAlign" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
+      <Property name="wordWrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
       <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
-      <Property name="parent" group="Hidden" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="コンポーネントの親オブジェクトを表示するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="parent" />
-      <Property name="position" group="Position" subgroup="refresh(position)" edittype="Enum" defaultvalue="absolute" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="PositionType" unitinfo="PositionStep" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Mobile Hybrid (IOS)" description="WebBrowserが表示される位置の基準を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="position" />
-      <Property name="positionstep" group="Position" subgroup="refresh(position)" edittype="Number" defaultvalue="0" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="PositionStep" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親オブジェクトがステップ機能を使用するとき、WebBrowserが表示されるステップを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="positionstep" />
-      <Property name="right" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserを表示するための右側座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="right" />
-      <Property name="rightbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="rightbase" />
-      <Property name="taborder" group="Action" subgroup="" edittype="Number" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="タブキー入力でコンポーネント間にフォーカスを移動するときにWebBrowserの順序を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="taborder" />
-      <Property name="tabstop" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="タブキー入力でコンポーネント間フォーカスを移動するとき、WebBrowserがフォーカスを受け取るか否かを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="tabstop" />
-      <Property name="text" group="Appearance" subgroup="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="text" />
-      <Property name="tooltiptext" group="Action" subgroup="" edittype="MultilineString" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="tooltiptext" />
-      <Property name="tooltiptype" group="Action" subgroup="" edittype="Enum" defaultvalue="default" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TooltipType" unitinfo="" delimiter="" requirement="" description="ツールチップを表示する方式を指定するプロパティです。　" csspropertyname="" csselementname="" normalpropertyname="tooltiptype" />
-      <Property name="top" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserを表示するための上段座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="top" />
-      <Property name="topbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="topbase" />
-      <Property name="url" group="Misc." subgroup="" edittype="String" defaultvalue="http://" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserに表示されるWebページのURLを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="url" />
-      <Property name="visible" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserが画面に表示されるか否かを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="visible" />
-      <Property name="width" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserを表示するための幅を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="width" />
-      <Property name="widthbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="widthbase" />
+      <Property name="parent" group="Hidden" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネントの親オブジェクトを表示するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="parent" />
+      <Property name="position" group="Position" subgroup="refresh(position)" edittype="Enum" defaultvalue="absolute" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="PositionType" unitinfo="PositionStep" delimiter="" requirement="" description="WebBrowserが表示される位置の基準を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="position" />
+      <Property name="positionstep" group="Position" subgroup="refresh(position)" edittype="Number" defaultvalue="0" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="PositionStep" delimiter="" requirement="" description="親オブジェクトがステップ機能を使用するとき、WebBrowserが表示されるステップを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="positionstep" />
+      <Property name="right" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="WebBrowserを表示するための右側座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="right" />
+      <Property name="rightbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="rightbase" />
+      <Property name="taborder" group="Action" subgroup="" edittype="Number" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="タブキー入力でコンポーネント間にフォーカスを移動するときにWebBrowserの順序を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="taborder" />
+      <Property name="tabstop" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="タブキー入力でコンポーネント間フォーカスを移動するとき、WebBrowserがフォーカスを受け取るか否かを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="tabstop" />
+      <Property name="text" group="Appearance" subgroup="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="text" />
+      <Property name="tooltiptext" group="Action" subgroup="" edittype="MultilineString" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="tooltiptext" />
+      <Property name="tooltiptype" group="Action" subgroup="" edittype="Enum" defaultvalue="default" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TooltipType" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="ツールチップを表示する方式を指定するプロパティです。　" csspropertyname="" csselementname="" normalpropertyname="tooltiptype" />
+      <Property name="top" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="WebBrowserを表示するための上段座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="top" />
+      <Property name="topbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="topbase" />
+      <Property name="url" group="Misc." subgroup="" edittype="String" defaultvalue="http://" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="WebBrowserに表示されるWebページのURLを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="url" />
+      <Property name="visible" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="WebBrowserが画面に表示されるか否かを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="visible" />
+      <Property name="width" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="WebBrowserを表示するための幅を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="width" />
+      <Property name="widthbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="widthbase" />
       <Property name="wordSpacing" group="Style" subgroup="word-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
     </PropertyInfo>
     <StyleInfo>
@@ -64,10 +64,10 @@
         <Property name="line-height" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
         <Property name="-nexa-edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
         <Property name="-nexa-padding" group="Style" subgroup="padding" edittype="String" defaultvalue="0px 0px 0px 0px" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
-        <Property name="-nexa-text-align" group="Style" subgroup="-nexa-text-align" edittype="Enum" defaultvalue="left" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
-        <Property name="-nexa-text-decoration" group="Style" subgroup="text-decoration" edittype="MultiEnum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TextDecorationLine" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-decoration" csselementname="" normalpropertyname="textDecoration" />
-        <Property name="-nexa-vertical-align" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" defaultvalue="middle" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
-        <Property name="-nexa-word-wrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
+        <Property name="-nexa-text-align" group="Style" subgroup="-nexa-text-align" edittype="Enum" defaultvalue="left" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
+        <Property name="-nexa-text-decoration" group="Style" subgroup="text-decoration" edittype="MultiEnum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TextDecorationLine" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-text-decoration" csselementname="" normalpropertyname="textDecoration" />
+        <Property name="-nexa-vertical-align" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" defaultvalue="middle" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
+        <Property name="-nexa-word-wrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
         <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
         <Property name="word-spacing" group="Style" subgroup="word-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
       </PropertyInfo>
@@ -80,7 +80,7 @@
     </StyleInfo>
     <ControlInfo />
     <MethodInfo>
-      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserの特定イベントにハンドラ関数を追加するメソッドです。">
+      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="WebBrowserの特定イベントにハンドラ関数を追加するメソッドです。">
         <Syntax text="WebBrowser.addEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="イベントに追加されたハンドラ関数のインデックスを返します。&#xA;同じハンドラ関数がすでにある場合は、該当ハンドラ関数のインデックスを返します。&#xA;正常に追加されない場合には、「-1」を返します。" />
           <Arguments>
@@ -90,7 +90,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="関数を検索してWebBrowserの特定のイベントにハンドラ関数として追加するメソッドです。">
+      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="関数を検索してWebBrowserの特定のイベントにハンドラ関数として追加するメソッドです。">
         <Syntax text="WebBrowser.addEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="イベントに追加されたハンドラ関数のインデックスを返します。&#xA;同じハンドラ関数がすでにある場合は、該当ハンドラ関数のインデックスを返します。&#xA;正常に追加されない場合には、「-1」を返します。" />
           <Arguments>
@@ -100,13 +100,13 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="bringToFront" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親が同じコンポーネントのうち、WebBrowserが画面の最前面に表示されるようにします。">
+      <Method name="bringToFront" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親が同じコンポーネントのうち、WebBrowserが画面の最前面に表示されるようにします。">
         <Syntax text="WebBrowser.bringToFront()">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="bringToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親が同じコンポーネントのうち、WebBrowserが画面の一段階前に表示されるようにします。">
+      <Method name="bringToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親が同じコンポーネントのうち、WebBrowserが画面の一段階前に表示されるようにします。">
         <Syntax text="WebBrowser.bringToPrev()">
           <Return type="" description="　" />
           <Arguments />
@@ -122,7 +122,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="特定のイベントに登録されたハンドラ関数をすべて削除するメソッドです。">
+      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="特定のイベントに登録されたハンドラ関数をすべて削除するメソッドです。">
         <Syntax text="WebBrowser.clearEventHandler( strEventID )">
           <Return type="Integer" description="特定のイベントで削除されたハンドラ関数の数を返します。" />
           <Arguments>
@@ -130,13 +130,13 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="destroy" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクリプトで動的に生成したWebBrowserを削除するメソッドです。">
+      <Method name="destroy" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="スクリプトで動的に生成したWebBrowserを削除するメソッドです。">
         <Syntax text="WebBrowser.destroy()">
           <Return type="Boolean" description="WebBrowserが正常に削除されると、「true」を返します。&#xA;WebBrowserが正常に削除されないと、「false」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserの特定イベントからハンドラ関数を検索してインデックスを返すメソッドです。">
+      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="WebBrowserの特定イベントからハンドラ関数を検索してインデックスを返すメソッドです。">
         <Syntax text="WebBrowser.findEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="イベントで検索しようとするハンドラ関数のインデックスを返します。&#xA;検索しようとするハンドラ関数が存在しない場合、「-1」を返します。" />
           <Arguments>
@@ -161,79 +161,79 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="getFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="アクセシビリティインターフェイスが実行されるときに、キー入力が処理される前に先に発生されるイベントです。">
+      <Method name="getFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="アクセシビリティインターフェイスが実行されるときに、キー入力が処理される前に先に発生されるイベントです。">
         <Syntax text="WebBrowser.getFocus()">
           <Return type="Object" description="true를 리턴하면, 해당 key에 대한 onkeydown(onkeyup?)、onchar event가 발생되지 않습니다. &#xD;&#xA;&#xD;&#xA;c" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親コンポーネントのtopを基準にWebBrowserのbottom値をピクセル単位で返すメソッドです。">
+      <Method name="getOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親コンポーネントのtopを基準にWebBrowserのbottom値をピクセル単位で返すメソッドです。">
         <Syntax text="WebBrowser.getOffsetBottom();">
           <Return type="Number" description="WebBrowserのbottom座標値をピクセル(pixel)単位で返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserのheightプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="WebBrowserのheightプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="WebBrowser.getOffsetHeight();">
           <Return type="Number" description="WebBrowserの高さをピクセル単位で返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親コンポーネントのleftを基準にWebBrowserのleft値をピクセル単位で返すメソッドです。">
+      <Method name="getOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親コンポーネントのleftを基準にWebBrowserのleft値をピクセル単位で返すメソッドです。">
         <Syntax text="WebBrowser.getOffsetLeft();">
           <Return type="Number" description="WebBrowserのleft座標値をピクセル(pixel)単位で返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親コンポーネントのleftを基準にWebBrowserのright値をピクセル単位で返すメソッドです。">
+      <Method name="getOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親コンポーネントのleftを基準にWebBrowserのright値をピクセル単位で返すメソッドです。">
         <Syntax text="WebBrowser.getOffsetRight();">
           <Return type="Number" description="WebBrowserのright座標値をピクセル(pixel)単位で返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親コンポーネントのtopを基準にWebBrowserのtop値をピクセル単位で返すメソッドです。">
+      <Method name="getOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親コンポーネントのtopを基準にWebBrowserのtop値をピクセル単位で返すメソッドです。">
         <Syntax text="WebBrowser.getOffsetTop();">
           <Return type="Number" description="WebBrowserのtop座標値をピクセル(pixel)単位で返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserのwidthプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="WebBrowserのwidthプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="WebBrowser.getOffsetWidth();">
           <Return type="Number" description="WebBrowserの幅をピクセル単位で返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserのbottomプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getPixelBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="WebBrowserのbottomプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="WebBrowser.getPixelBottom();">
           <Return type="Number" description="WebBrowserのbottomプロパティ値をピクセル単位で返します。&#xA;bottomプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserのheightプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getPixelHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="WebBrowserのheightプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="WebBrowser.getPixelHeight();">
           <Return type="Number" description="WebBrowserのheightプロパティ値をピクセル単位で返します。&#xA;heightプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserのleftプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getPixelLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="WebBrowserのleftプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="WebBrowser.getPixelLeft();">
           <Return type="Number" description="WebBrowserのwidthプロパティ値をピクセル単位で返します。&#xA;leftプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserのrightプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getPixelRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="WebBrowserのrightプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="WebBrowser.getPixelRight();">
           <Return type="Number" description="WebBrowserのrightプロパティ値をピクセル単位で返します。&#xA;rightプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserのtopプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getPixelTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="WebBrowserのtopプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="WebBrowser.getPixelTop();">
           <Return type="Number" description="WebBrowserのtopプロパティ値をピクセル単位で返します。&#xA;topプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserのwidthプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getPixelWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="WebBrowserのwidthプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="WebBrowser.getPixelWidth();">
           <Return type="Number" description="WebBrowserのwidthプロパティ値をピクセル単位で返します。&#xA;widthプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
@@ -247,7 +247,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="init" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクリプトでWebBrowserを動的に生成した後に初期化するメソッドです。">
+      <Method name="init" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="スクリプトでWebBrowserを動的に生成した後に初期化するメソッドです。">
         <Syntax text="WebBrowser.init( strName, strPosition, nLeft, nTop , nWidth, nHeight [, nRight, nBottom] )">
           <Return type="" description="　" />
           <Arguments>
@@ -262,7 +262,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="move" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserの位置とサイズを変更するメソッドです。">
+      <Method name="move" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="WebBrowserの位置とサイズを変更するメソッドです。">
         <Syntax text="WebBrowser.move( nLeft, nTop [, nWidth, nHeight [, nRight, nBottom]] )">
           <Return type="" description="　" />
           <Arguments>
@@ -275,7 +275,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="moveToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親が同じコンポーネントのうち、引数として渡されたWebBrowserが画面に一段階後ろに表示されるようにします。">
+      <Method name="moveToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親が同じコンポーネントのうち、引数として渡されたWebBrowserが画面に一段階後ろに表示されるようにします。">
         <Syntax text="WebBrowser.moveToNext( objComp )&#xA;WebBrowser.moveToNext( strComp )">
           <Return type="" description="" />
           <Arguments>
@@ -284,7 +284,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="moveToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親が同じコンポーネントのうち、引数として渡されたコンポーネントより、WebBrowserが画面の一段階前に表示されるようにします。">
+      <Method name="moveToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親が同じコンポーネントのうち、引数として渡されたコンポーネントより、WebBrowserが画面の一段階前に表示されるようにします。">
         <Syntax text="WebBrowser.moveToPrev( objComp )&#xA;WebBrowser.moveToPrev( strComp )">
           <Return type="" description="" />
           <Arguments>
@@ -293,13 +293,13 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="reload" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserに表示されているWebページをリロードするメソッドです。">
+      <Method name="reload" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="WebBrowserに表示されているWebページをリロードするメソッドです。">
         <Syntax text="WebBrowser.reload()">
           <Return type="" description="　" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserの特定イベントからハンドラ関数を削除するメソッドです。">
+      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="WebBrowserの特定イベントからハンドラ関数を削除するメソッドです。">
         <Syntax text="WebBrowser.removeEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="ハンドラ関数の削除に成功すると、「1」を返します。&#xA;ハンドラ関数の削除に失敗すると、「0」を返します。" />
           <Arguments>
@@ -309,7 +309,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserの特定のイベントから検索された関数と同じハンドラ関数を削除するメソッドです。">
+      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="WebBrowserの特定のイベントから検索された関数と同じハンドラ関数を削除するメソッドです。">
         <Syntax text="WebBrowser.removeEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="ハンドラ関数の削除に成功すると、「1」を返します。&#xA;ハンドラ関数の削除に失敗すると、「0」を返します。" />
           <Arguments>
@@ -319,7 +319,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="resize" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserのサイズを変更するメソッドです。">
+      <Method name="resize" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="WebBrowserのサイズを変更するメソッドです。">
         <Syntax text="WebBrowser.resize( nWidth, nHeight )">
           <Return type="" description="" />
           <Arguments>
@@ -328,19 +328,19 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="sendToBack" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親が同じコンポーネントのうち、WebBrowserが画面の最背面に表示されるようにします。">
+      <Method name="sendToBack" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親が同じコンポーネントのうち、WebBrowserが画面の最背面に表示されるようにします。">
         <Syntax text="WebBrowser.sendToBack()">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="sendToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親が同じコンポーネントのうち、WebBrowserが画面に一段階後ろに表示されるようにします。">
+      <Method name="sendToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親が同じコンポーネントのうち、WebBrowserが画面に一段階後ろに表示されるようにします。">
         <Syntax text="WebBrowser.sendToNext()">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserの特定のイベントの最初のハンドラ関数を変更するメソッドです。">
+      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="WebBrowserの特定のイベントの最初のハンドラ関数を変更するメソッドです。">
         <Syntax text="WebBrowser.setEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="最初のハンドラ関数の変更に成功すると、「0」を返します。&#xA;最初のハンドラ関数の変更に失敗すると、「-1」を返します。" />
           <Arguments>
@@ -350,7 +350,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserの特定のイベントの最初のハンドラ関数を、検索された関数に変更するメソッドです。">
+      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="WebBrowserの特定のイベントの最初のハンドラ関数を、検索された関数に変更するメソッドです。">
         <Syntax text="WebBrowser.setEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="最初のハンドラ関数の変更に成功すると、「0」を返します。&#xA;最初のハンドラ関数の変更に失敗すると、「-1」を返します。" />
           <Arguments>
@@ -360,7 +360,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="WebBrowserにフォーカスを与えるメソッドです。">
+      <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="WebBrowserにフォーカスを与えるメソッドです。">
         <Syntax text="WebBrowser.setFocus( [bMoveScroll] )">
           <Return type="Object" description="直前のフォーカスを持っていたコンポーネントが返されます。&#xD;&#xA;以前のフォーカスがなかったりメソッド実行に失敗した場合、nullが返されます。" />
           <Arguments>
@@ -368,7 +368,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親コンポーネントのtopを基準にWebBrowserのbottom値をピクセル単位で設定するメソッドです。">
+      <Method name="setOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親コンポーネントのtopを基準にWebBrowserのbottom値をピクセル単位で設定するメソッドです。">
         <Syntax text="WebBrowser.setOffsetBottom( nBottom );">
           <Return type="" description="" />
           <Arguments>
@@ -376,7 +376,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserのheightプロパティ値をピクセル単位で設定するメソッドです。">
+      <Method name="setOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="WebBrowserのheightプロパティ値をピクセル単位で設定するメソッドです。">
         <Syntax text="WebBrowser.setOffsetHeight( nHeight );">
           <Return type="" description="" />
           <Arguments>
@@ -384,7 +384,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親コンポーネントleftを基準にWebBrowserのleft値をピクセル単位で設定するメソッドです。">
+      <Method name="setOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親コンポーネントleftを基準にWebBrowserのleft値をピクセル単位で設定するメソッドです。">
         <Syntax text="WebBrowser.setOffsetLeft( nLeft );">
           <Return type="" description="" />
           <Arguments>
@@ -392,7 +392,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親コンポーネントleftを基準にWebBrowserのright値をピクセル単位で設定するメソッドです。">
+      <Method name="setOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親コンポーネントleftを基準にWebBrowserのright値をピクセル単位で設定するメソッドです。">
         <Syntax text="WebBrowser.setOffsetRight( nRight );">
           <Return type="" description="" />
           <Arguments>
@@ -400,7 +400,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親コンポーネントのtopを基準にWebBrowserのtop値をピクセル単位で設定するメソッドです。">
+      <Method name="setOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親コンポーネントのtopを基準にWebBrowserのtop値をピクセル単位で設定するメソッドです。">
         <Syntax text="WebBrowser.setOffsetTop( nTop );">
           <Return type="" description="" />
           <Arguments>
@@ -408,7 +408,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserのwidthプロパティ値をピクセル単位で設定するメソッドです。">
+      <Method name="setOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="WebBrowserのwidthプロパティ値をピクセル単位で設定するメソッドです。">
         <Syntax text="WebBrowser.setOffsetWidth( nWidth );">
           <Return type="" description="" />
           <Arguments>
@@ -425,7 +425,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="show" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクリプトで動的に生成したWebBrowserを画面に表示するメソッドです。">
+      <Method name="show" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="スクリプトで動的に生成したWebBrowserを画面に表示するメソッドです。">
         <Syntax text="WebBrowser.show()">
           <Return type="" description="" />
           <Arguments />
@@ -433,7 +433,7 @@
       </Method>
     </MethodInfo>
     <EventHandlerInfo>
-      <EventHandler name="onclick" group="Event" deprecated="false" unused="true" requirement="" description="">
+      <EventHandler name="onclick" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="WebBrowser.onclick(obj:nexacro.WebBrowser,e:nexacro.ClickEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -441,7 +441,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondblclick" group="Event" deprecated="false" unused="true" requirement="" description="">
+      <EventHandler name="ondblclick" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="WebBrowser.ondblclick(obj:nexacro.WebBrowser,e:nexacro.MouseEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -449,7 +449,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondrag" group="Event" deprecated="false" unused="true" requirement="" description="コンポーネント領域でマウスによってドラッグが起こったときに発生するイベントです。&#xA;　">
+      <EventHandler name="ondrag" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネント領域でマウスによってドラッグが起こったときに発生するイベントです。&#xA;　">
         <Syntax text="WebBrowser.ondrag(obj:nexacro.WebBrowser,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="falseを返すと、ドラッグ機能が動作しません。&#xA;trueを返すと、上位コンポーネントでイベントが発生しません。&#xA;&#xA;デフォルト値 : false" />
           <Arguments>
@@ -457,7 +457,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondragenter" group="Event" deprecated="false" unused="true" requirement="" description="コンポーネント領域にドラッグされたコンポーネントが入ったときに発生するイベントです。">
+      <EventHandler name="ondragenter" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネント領域にドラッグされたコンポーネントが入ったときに発生するイベントです。">
         <Syntax text="WebBrowser.ondragenter(obj:nexacro.WebBrowser,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="イベントを処理するかどうかの結果。trueを返すと上位コンポーネントでイベントが発生しません。&#xA;デフォルト値 : false" />
           <Arguments>
@@ -465,7 +465,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondragleave" group="Event" deprecated="false" unused="true" requirement="" description="コンポーネント領域にドラッグされたコンポーネントが解除されるときに発生するイベントです。　">
+      <EventHandler name="ondragleave" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネント領域にドラッグされたコンポーネントが解除されるときに発生するイベントです。　">
         <Syntax text="WebBrowser.ondragleave(obj:nexacro.WebBrowser,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="イベントを処理するかどうかを指定、trueを返すと上位コンポーネントでイベントが発生しません。&#xA;デフォルト値 : false" />
           <Arguments>
@@ -473,7 +473,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondragmove" group="Event" deprecated="false" unused="true" requirement="" description="コンポーネント領域にドラッグ中のマウスが移動するときに発生するイベントです。">
+      <EventHandler name="ondragmove" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネント領域にドラッグ中のマウスが移動するときに発生するイベントです。">
         <Syntax text="WebBrowser.ondragmove(obj:nexacro.WebBrowser,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="イベントを処理するかどうかを指定。trueを返すと上位コンポーネントでイベントが発生しません。&#xA;デフォルト値 : false　" />
           <Arguments>
@@ -481,7 +481,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondrop" group="Event" deprecated="false" unused="true" requirement="" description="コンポーネント領域にドラッグされたコンポーネントをドロップされるときに発生するイベントです。&#xA;　">
+      <EventHandler name="ondrop" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネント領域にドラッグされたコンポーネントをドロップされるときに発生するイベントです。&#xA;　">
         <Syntax text="WebBrowser.ondrop(obj:nexacro.WebBrowser,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="イベントを処理するかどうかを指定。trueを返すと上位コンポーネントでイベントが発生しません。&#xA;デフォルト値 : false　" />
           <Arguments>
@@ -489,7 +489,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="oninput" group="Event" deprecated="false" unused="true" requirement="" description="">
+      <EventHandler name="oninput" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="WebBrowser.oninput(obj:nexacro.WebBrowser,e:nexacro.InputEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -497,7 +497,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onkeydown" group="Event" deprecated="false" unused="true" requirement="" description="WebBrowserにフォーカスがある状態でキーボードのキーが押されたときに発生するイベントです。&#xA;　">
+      <EventHandler name="onkeydown" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="WebBrowserにフォーカスがある状態でキーボードのキーが押されたときに発生するイベントです。&#xA;　">
         <Syntax text="WebBrowser.onkeydown(obj:nexacro.WebBrowser,e:nexacro.KeyEventInfo);">
           <Return type="Boolean" description="イベント処理するかどうか。trueを返すと、上位コンポーネントからonkeydownイベントが発生しません。&#xD;&#xA;デフォルト値 : false　" />
           <Arguments>
@@ -505,7 +505,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onkeyup" group="Event" deprecated="false" unused="true" requirement="" description="WebBrowserにフォーカスがある状態でKey Upが発生したときに発生するイベントです。">
+      <EventHandler name="onkeyup" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="WebBrowserにフォーカスがある状態でKey Upが発生したときに発生するイベントです。">
         <Syntax text="WebBrowser.onkeyup(obj:nexacro.WebBrowser,e:nexacro.KeyEventInfo);">
           <Return type="Boolean" description="イベント処理を実行するかどうかを指定。&#xA;trueを返すと、上位コンポーネントでonkeyupイベントが発生しません。&#xA;デフォルト値 : false" />
           <Arguments>
@@ -513,13 +513,13 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onkillfocus" group="Event" deprecated="false" unused="true" requirement="" description="">
+      <EventHandler name="onkillfocus" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="WebBrowser.onkillfocus(obj:nexacro.WebBrowser,e:nexacro.);">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </EventHandler>
-      <EventHandler name="onlbuttondown" group="Event" deprecated="false" unused="true" requirement="" description="WebBrowserでMouse Left Button Downが発生したときに発生するイベントです。　">
+      <EventHandler name="onlbuttondown" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="WebBrowserでMouse Left Button Downが発生したときに発生するイベントです。　">
         <Syntax text="WebBrowser.onlbuttondown(obj:nexacro.WebBrowser,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベント処理の指定、trueを返すと上位コンポーネントでonmouseupイベントが発生しません。&#xD;&#xA;デフォルト値 : false" />
           <Arguments>
@@ -527,7 +527,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onlbuttonup" group="Event" deprecated="false" unused="true" requirement="" description="WebBrowserでMouse Left Button Upが発生したときに発生するイベントです。">
+      <EventHandler name="onlbuttonup" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="WebBrowserでMouse Left Button Upが発生したときに発生するイベントです。">
         <Syntax text="WebBrowser.onlbuttonup(obj:nexacro.WebBrowser,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベント処理の結果、trueを返すと上位コンポーネントでonrbuttonupイベントが発生しません。&#xA;デフォルト値 : false" />
           <Arguments>
@@ -535,7 +535,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onloadcompleted" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserに、Webページがロードされたときに発生するイベントです。">
+      <EventHandler name="onloadcompleted" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="WebBrowserに、Webページがロードされたときに発生するイベントです。">
         <Syntax text="WebBrowser.onloadcompleted(obj:nexacro.WebBrowser,e:nexacro.WebLoadCompEventInfo);">
           <Return type="" description="　" />
           <Arguments>
@@ -543,7 +543,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmousedown" group="Event" deprecated="false" unused="true" requirement="" description="マウスの左ボタン/右ボタンを除いた他のボタンが押されたときに発生するイベントです。">
+      <EventHandler name="onmousedown" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="マウスの左ボタン/右ボタンを除いた他のボタンが押されたときに発生するイベントです。">
         <Syntax text="WebBrowser.onmousedown(obj:nexacro.WebBrowser,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベント処理の指定、trueを返すと上位コンポーネントでイベントが発生しません。　&#xA;デフォルト値：false" />
           <Arguments>
@@ -551,7 +551,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmouseenter" group="Event" deprecated="false" unused="false" requirement="" description="WebBrowser領域の中にマウスのカーソルが入ってきたときに発生するイベントです。　">
+      <EventHandler name="onmouseenter" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="WebBrowser領域の中にマウスのカーソルが入ってきたときに発生するイベントです。　">
         <Syntax text="WebBrowser.onmouseenter(obj:nexacro.WebBrowser,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベントを処理するかどうかを指定。True値を返す場合、上位コンポーネントのonmouseenterイベントが発生しません。&#xD;&#xA;デフォルト値：false" />
           <Arguments>
@@ -559,7 +559,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmouseleave" group="Event" deprecated="false" unused="false" requirement="" description="WebBrowser領域の外にマウスのカーソルが移動したときに発生するイベントです。">
+      <EventHandler name="onmouseleave" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="WebBrowser領域の外にマウスのカーソルが移動したときに発生するイベントです。">
         <Syntax text="WebBrowser.onmouseleave(obj:nexacro.WebBrowser,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベントを処理するかどうかを指定。trueを返すと、コンポーネントの onmousleaveイベントが発生しません。&#xD;&#xA;デフォルト値：false　" />
           <Arguments>
@@ -567,7 +567,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmousemove" group="Event" deprecated="false" unused="false" requirement="" description="WebBrowser領域内からマウスのカーソルが移動したときに発生するイベントです。">
+      <EventHandler name="onmousemove" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="WebBrowser領域内からマウスのカーソルが移動したときに発生するイベントです。">
         <Syntax text="WebBrowser.onmousemove(obj:nexacro.WebBrowser,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベント処理の指定、trueを返すと上位コンポーネントでonmouseup イベントが発生しません。&#xD;&#xA;デフォルト値 : false" />
           <Arguments>
@@ -575,7 +575,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmouseup" group="Event" deprecated="false" unused="true" requirement="" description="マウスのLeft Button/Right Buttonを除いた他のボタンが押されて放されたときに発生するイベントです。　">
+      <EventHandler name="onmouseup" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="マウスのLeft Button/Right Buttonを除いた他のボタンが押されて放されたときに発生するイベントです。　">
         <Syntax text="WebBrowser.onmouseup(obj:nexacro.WebBrowser,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベント処理の指定、trueを返すと上位コンポーネントでonmouseupイベントが発生しません。&#xD;&#xA;デフォルト値 : false" />
           <Arguments>
@@ -583,7 +583,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmousewheel" group="Event" deprecated="false" unused="true" requirement="" description="マウスホイールがスクロールされてときに発生するイベントです。">
+      <EventHandler name="onmousewheel" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="マウスホイールがスクロールされてときに発生するイベントです。">
         <Syntax text="WebBrowser.onmousewheel(obj:nexacro.WebBrowser,e:nexacro.MouseWheelEventInfo);">
           <Return type="Boolean" description="返り値がtrueの場合には、マウスホイールの処理が中断され、バブリングも中断されます。 &#xA;返り値がfalseの場合には、発生コンポーネントからマウスホイールの処理後、バブル処理します。&#xA;発生コンポーネントでスクロール処理が必要ない場合は、上位コンポーネントでマウスホイールを処理します。 &#xA;デフォルト値：false" />
           <Arguments>
@@ -591,7 +591,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmove" group="Event" deprecated="false" unused="true" requirement="" description="WebBrowserが移動した場合に発生するイベントです。">
+      <EventHandler name="onmove" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="WebBrowserが移動した場合に発生するイベントです。">
         <Syntax text="WebBrowser.onmove(obj:nexacro.WebBrowser,e:nexacro.MoveEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -599,7 +599,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onrbuttondown" group="Event" deprecated="false" unused="true" requirement="" description="WebBrowserでマウス右ボタンが押されたときに発生するイベントです。　&#xA;　　">
+      <EventHandler name="onrbuttondown" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="WebBrowserでマウス右ボタンが押されたときに発生するイベントです。　&#xA;　　">
         <Syntax text="WebBrowser.onrbuttondown(obj:nexacro.WebBrowser,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベント処理の指定、trueを返すと上位コンポーネントでonrbuttondownイベントが発生しません。&#xD;&#xA;デフォルト値 : false　" />
           <Arguments>
@@ -607,7 +607,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onrbuttonup" group="Event" deprecated="false" unused="true" requirement="" description="WebBrowserでMouse Right Button Upが発生したときに発生するイベントです。&#xA;&#xA;　">
+      <EventHandler name="onrbuttonup" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="WebBrowserでMouse Right Button Upが発生したときに発生するイベントです。&#xA;&#xA;　">
         <Syntax text="WebBrowser.onrbuttonup(obj:nexacro.WebBrowser,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベント処理の指定。Trueを返すと、上位コンポーネントでonrbuttonup イベントが発生しません。&#xD;&#xA;デフォルト : false&#xD;&#xA;　" />
           <Arguments>
@@ -615,19 +615,21 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onsetfocus" group="Event" deprecated="false" unused="true" requirement="" description="">
+      <EventHandler name="onsetfocus" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="WebBrowser.onsetfocus(obj:nexacro.WebBrowser,e:nexacro.);">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </EventHandler>
-      <EventHandler name="onsize" group="Event" deprecated="false" unused="true" requirement="" description="">
-        <Syntax text="WebBrowser.onsize(obj:nexacro.WebBrowser,e:nexacro.);">
+      <EventHandler name="onsize" group="Event" deprecated="false" unused="true" requirement="" description="WebBrowserのサイズが変更されたときに発生するイベントです。">
+        <Syntax text="WebBrowser.onsize(obj:nexacro.WebBrowser,e:nexacro.SizeEventInfo);">
           <Return type="" description="" />
-          <Arguments />
+          <Arguments>
+            <Argument name="e" type="SizeEventInfo" in="false" out="false" option="false" variable="false" description="" />
+          </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ontouchend" group="Event" deprecated="false" unused="false" requirement="" description="タッチ終了(アップ)時に発生するイベントです。">
+      <EventHandler name="ontouchend" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="タッチ終了(アップ)時に発生するイベントです。">
         <Syntax text="WebBrowser.ontouchend(obj:nexacro.WebBrowser,e:nexacro.TouchEventInfo);">
           <Return type="Boolean" description="イベント処理可否、trueを返すと上位コンポーネントでイベントが発生しません。&#xD;&#xA;デフォルト : false" />
           <Arguments>
@@ -635,7 +637,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ontouchmove" group="Event" deprecated="false" unused="false" requirement="" description="タッチ中(ムーブ)に発生するイベントです。">
+      <EventHandler name="ontouchmove" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="タッチ中(ムーブ)に発生するイベントです。">
         <Syntax text="WebBrowser.ontouchmove(obj:nexacro.WebBrowser,e:nexacro.TouchEventInfo);">
           <Return type="Boolean" description="イベント処理可否、trueを返すと上位コンポーネントでイベントが発生しません。&#xD;&#xA;デフォルト : false" />
           <Arguments>
@@ -643,7 +645,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ontouchstart" group="Event" deprecated="false" unused="false" requirement="" description="タッチ開始(ダウン)時に発生するイベントです。">
+      <EventHandler name="ontouchstart" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="タッチ開始(ダウン)時に発生するイベントです。">
         <Syntax text="WebBrowser.ontouchstart(obj:nexacro.WebBrowser,e:nexacro.TouchEventInfo);">
           <Return type="Boolean" description="イベント処理可否、trueを返すと上位コンポーネントでイベントが発生しません。&#xA;デフォルト : false" />
           <Arguments>
@@ -651,7 +653,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onusernotify" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="WebBrowserにロードされたWebページからnexacroに向かって情報を渡すときに発生するイベントです。">
+      <EventHandler name="onusernotify" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="WebBrowserにロードされたWebページからnexacroに向かって情報を渡すときに発生するイベントです。">
         <Syntax text="WebBrowser.onusernotify(obj:nexacro.WebBrowser,e:nexacro.WebUserNotifyEventInfo);">
           <Return type="" description="" />
           <Arguments>

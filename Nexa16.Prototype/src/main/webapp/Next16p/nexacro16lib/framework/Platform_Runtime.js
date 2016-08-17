@@ -21,7 +21,7 @@ if (nexacro._Browser == "Runtime")
         nexacro._init_platform_runtime = true;
         nexacro._isTouchInteraction = (nexacro._getOS() == "Android");
         nexacro._SupportTouch = nexacro.__getSupportTouch();
-        // nexacro._SupportAnimationFrame = true;
+        nexacro._SupportAnimationFrame = true;
         nexacro._resize_popup_inbound = false;
 	
 	    //------------------------------------------------------------------------------
@@ -400,7 +400,7 @@ if (nexacro._Browser == "Runtime")
 	            nexacro._stopSysObserving(win_handle, "close", "onclose", nexacro._syshandler_onclose_forward);
 	            nexacro._stopSysObserving(win_handle, "beforeclose", "onbeforeclose", nexacro._syshandler_onbeforeclose_forward);
 
-                nexacro._observeSysEvent(win_handle, "tray", "ontray", nexacro._syshandler_ontray_forward);
+                nexacro._stopSysObserving(win_handle, "tray", "ontray", nexacro._syshandler_ontray_forward);
 
 	            // runtime simulator
 	            nexacro._stopSysObserving(win_handle, "reload", "onreload", nexacro._syshandler_onreload_forward);
@@ -1335,7 +1335,7 @@ if (nexacro._Browser == "Runtime")
         };
 
         nexacro._createTrayPopupMenuHandle = function (tray_handle)
-        {
+        {            
             var main_handle = nexacro._getMainWindowHandle();
             return nexacro.__createTrayPopupMenuHandle(main_handle, tray_handle);
         };
@@ -1358,7 +1358,7 @@ if (nexacro._Browser == "Runtime")
             return nexacro.__displayTrayPopupMenuHandle(main_handle, tray_handle, menu_handle);
         }; 
 
-   nexacro._syshandler_ontray_forward = function (_window, type, id, button, alt_key, ctrl_key, shift_key, screenX, screenY)
+        nexacro._syshandler_ontray_forward = function (_window, type, id, button, alt_key, ctrl_key, shift_key, screenX, screenY)
         {
             // ondblclick, onlbuttonup, onrbuttonup 
             if (type == "lbuttonup")

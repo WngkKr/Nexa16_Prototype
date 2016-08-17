@@ -635,6 +635,12 @@ if (!nexacro.PopupMenu)
     _pPopupMenu.datarow = 0;
     _pPopupMenu.level = 0;
     _pPopupMenu.beforeindex = -1;
+    _pPopupMenu.buttonsize = undefined;
+    _pPopupMenu._items_total_height = 0;
+    _pPopupMenu._start_spin_index = 0;
+    _pPopupMenu._end_spin_index = 0;
+    _pPopupMenu._is_spin_visible = false;
+    _pPopupMenu._itemheight = 0;
 
     /* accessibility variable */
     _pPopupMenu._accessibility_role = "menu";
@@ -695,28 +701,28 @@ if (!nexacro.PopupMenu)
     _pPopupMenu.on_create_contents = function ()
     {
         return;
-        var control_elem = this.getElement();
+        /*
+        //var control_elem = this.getElement();
         
-        if (!this._is_subcontrol)
+        //if (!this._is_subcontrol)
         {
             //var currentstatus = this._status;
-            /*
+            
             var checkboximage = this.checkboximage;
             if (checkboximage)
             {
                 this._load_image(checkboximage, "chk"); // 0 is check_img flg
             }
-            */
             //else if (this._icon)
             //    this._load_image(this._icon, "icon");
-            /*
+            
             var expandimage = this.expandimage;
             if (expandimage)
             {
                 this._load_image(expandimage, "exp"); // 1 is exp_img flg
             }
-            */
-        }        
+        }            
+        */
     };
 
     _pPopupMenu.on_created_contents = function (win)
@@ -742,7 +748,7 @@ if (!nexacro.PopupMenu)
                 {
                     items[i].on_created();
                 }
-            }
+            }            
 
             if (nexacro._enableaccessibility)
             {
@@ -794,6 +800,20 @@ if (!nexacro.PopupMenu)
                 item = null;
             }
         }
+
+        var spinupbutton = this.spinupbutton;
+        var spindownbutton = this.spindownbutton;
+        if (spinupbutton)
+        {
+            spinupbutton.destroy();
+            spinupbutton = null;
+        }
+        if (spindownbutton)
+        {
+            spindownbutton.destroy();
+            spindownbutton = null;
+        }
+
         hotkey_list = null;
         
     };
@@ -2123,7 +2143,7 @@ if (!nexacro.PopupMenu)
         this.setFocus();
     };
 
-    _pPopupMenu.on_change_containerRect = function (width, heitgh)
+    _pPopupMenu.on_change_containerRect = function (width, height)
     {
         this._reCalcSize();
     };
@@ -2131,6 +2151,262 @@ if (!nexacro.PopupMenu)
     // ===============================================================================
     // nexacro.PopupMenu : Logical Part
     // ===============================================================================
+
+    _pPopupMenu._isSpinVisible = function ()
+    {
+        //if (this._items_total_height > this._adjust_height)
+        //    return true;
+        return this._is_spin_visible;
+    };
+
+    _pPopupMenu._showSpinButton = function (spin_visible)
+    {
+        this._is_spin_visible = spin_visible;
+        if (spin_visible)
+        {
+            if (!this.spinupbutton || !this.spindownbutton)
+            {
+                this._createSpinButton();
+            }
+            var spinupbutton = this.spinupbutton;
+            var spindownbutton = this.spindownbutton;
+            var buttonsize = this.buttonsize;
+            var spindownbutton_height = 0;
+            var spinupbutton_height = 0;
+
+            if (!buttonsize)
+            {
+                var spinbutton_height = this._getSpinbuttonHeight(spindownbutton, spinupbutton);
+                spindownbutton_height = spinbutton_height[0];
+                spinupbutton_height = spinbutton_height[1];
+            }
+            else
+            {
+                spindownbutton_height = buttonsize;
+                spinupbutton_height = buttonsize;
+            }
+            var client_width = this._getClientWidth();
+            var client_height = this._getClientHeight();
+            spinupbutton.set_visible(true);
+            spinupbutton.move(0, 0, client_width, spinupbutton_height);
+            spindownbutton.set_visible(true);
+            spindownbutton.move(0, client_height - spindownbutton_height, client_width, spindownbutton_height);
+        }
+        else
+        {
+            var spinupbutton = this.spinupbutton;
+            if (spinupbutton)
+            {
+                spinupbutton.set_visible(false);
+                spinupbutton.move(0, 0, 0, 0);
+            }
+
+            var spindownbutton = this.spindownbutton;
+            if (spindownbutton)
+            {
+                spindownbutton.set_visible(false);
+                spindownbutton.move(0, 0, 0, 0);
+            }
+        }
+    };
+
+    _pPopupMenu._getSpinbuttonHeight = function (spindownbutton, spinupbutton)
+    {
+        var up_height = 0;
+        var down_height = 0;
+
+        var spindownicon = spindownbutton._getCSSStyleValue("icon", "enabled");
+        if (spindownicon)
+        {
+            var img_size = nexacro._getImageSize(spindownicon.url, null, this);
+            if (img_size)
+            {
+                down_height = img_size.height;
+                var padding = spinupbutton._getCSSStyleValue("padding", this._status);
+                var border = spinupbutton._getCSSStyleValue("border", this._status);
+                if (padding)
+                    down_height += padding.top + padding.bottom;
+                if (border)
+                {
+                    if (border._single)
+                    {
+                        down_height += border.top._width + border.top._width;
+                    }
+                    else
+                    {
+                        down_height = border.top._width + border.bottom._width;
+                    }
+                }
+            }
+        }
+        var spinupicon = spinupbutton._getCSSStyleValue("icon", "enabled");
+        if (spinupicon)
+        {
+            var img_size = nexacro._getImageSize(spinupicon.url, null, this);
+            if (img_size)
+            {
+                up_height = img_size.height;
+                var padding = spinupbutton._getCSSStyleValue("padding", this._status);
+                var border = spinupbutton._getCSSStyleValue("border", this._status);
+                if (padding)
+                    up_height += padding.top + padding.bottom;
+                if (border)
+                {
+                    if (border._single)
+                    {
+                        up_height += border.top._width + border.top._width;
+                    }
+                    else
+                    {
+                        up_height = border.top._width + border.bottom._width;
+                    }
+                }
+            }
+        }
+        return [down_height, up_height];
+    };
+
+    _pPopupMenu._spinup = function ()
+    {
+        var start_index = this._start_spin_index;
+        if (start_index > 0)
+        {
+            if (this._items.length == this._end_spin_index)
+                this.spindownbutton._changeStatus("disabled", false);
+            start_index--;
+            if (start_index == 0)
+                this.spinupbutton._changeStatus("disabled", true);
+        }
+        this._start_spin_index = start_index;
+        this._rearrangePopupMenuItems();
+
+    };
+
+    _pPopupMenu._spindown = function ()
+    {
+        var threshold = this._items.length;
+        if (this._end_spin_index < threshold)
+        {
+            if (this._start_spin_index == 0)
+                this.spinupbutton._changeStatus("disabled", false);
+            this._start_spin_index++;
+        }
+        this._rearrangePopupMenuItems();
+        if (this._end_spin_index == threshold)
+        {
+            this.spindownbutton._changeStatus("disabled", true);
+        }
+    };
+
+    _pPopupMenu._createSpinButton = function ()
+    {
+        var spindownbutton = new nexacro.Button("spindownbutton", "absolute", 0, 0, 0, 0, null, null, this);
+        spindownbutton._setControl("ButtonControl");
+        spindownbutton._is_focus_accept = false;
+        spindownbutton.createComponent();
+        spindownbutton.set_visible(true);
+        spindownbutton._setEventHandler("onclick", this.on_notify_spindown_onclick, this);
+        spindownbutton.on_created();
+        this.spindownbutton = spindownbutton;
+
+        var spinupbutton = new nexacro.Button("spinupbutton", "absolute", 0, 0, 0, 0, null, null, this);
+        spinupbutton._setControl("ButtonControl");
+        spinupbutton._is_focus_accept = false;
+        spinupbutton.createComponent();
+        spinupbutton.set_visible(true);
+        spinupbutton._setEventHandler("onclick", this.on_notify_spinup_onclick, this);
+        spinupbutton.on_created();
+        spinupbutton._changeStatus("disabled", true);
+        this.spinupbutton = spinupbutton;
+
+        var spinupicon = spinupbutton._getCSSStyleValue("icon", "enabled");
+        if (spinupicon)
+        {
+            var img_size = nexacro._getImageSize(spinupicon.url, this._rearrangePopupMenuItems, this);
+            if (img_size)
+            {
+                this._buttonsize = img_size.height;
+                this._rearrangePopupMenuItems();
+            }
+        }
+
+        var spindownicon = spindownbutton._getCSSStyleValue("icon", "enabled");
+        if (spinupicon)
+        {
+            var img_size = nexacro._getImageSize(spinupicon.url, this._rearrangePopupMenuItems, this);
+            if (img_size)
+            {
+                this._buttonsize = img_size.height;
+                this._rearrangePopupMenuItems();
+            }
+        }
+        this.spinupbutton = spinupbutton;
+    };
+
+    _pPopupMenu.on_notify_spinup_onclick = function ()
+    {
+        var popupmenu = this._popupmenu;
+        if (popupmenu)
+            popupmenu._closePopup();
+        this._spinup();
+    };
+
+    _pPopupMenu.on_notify_spindown_onclick = function ()
+    {
+        var popupmenu = this._popupmenu;
+        if (popupmenu)
+            popupmenu._closePopup();
+        this._spindown();
+    };
+
+    _pPopupMenu._rearrangePopupMenuItems = function ()
+    {
+        var start_spin_index = this._start_spin_index;
+        var itemheight = this._itemheight;
+        var items_total_height = this._items_total_height;
+        var client_width = this._getClientWidth();
+        var client_height = this._getClientHeight();
+        var items = this._items;
+        var spinheight = this.buttonsize || this._buttonsize;
+        var top = spinheight;
+        var width = "";
+        var len = items.length;
+        var end_spin_index = this._end_spin_index;
+        var sum_itemheight = top + spinheight;
+
+        //showspinbutton
+        this._showSpinButton(this._isSpinVisible());
+        //rearrange items
+        for (var i = 0, end = start_spin_index; i < end; i++)
+        {
+            items[i].move(0, 0, 0, 0);
+        }
+        for (var i = start_spin_index; i <= len; i++)
+        {
+            var item = items[i];
+            end_spin_index = i;
+            sum_itemheight += itemheight;
+            if (i == start_spin_index || sum_itemheight < client_height)
+            {
+                item.move(0, top, client_width, itemheight);
+            }
+            else
+            {                
+                break;
+            }
+            end_spin_index = i;
+            top += itemheight;
+        }
+        if (end_spin_index > 0 && end_spin_index < len)
+        {
+            for (var i = end_spin_index; i < len; i++)
+            {
+                items[i].move(0, 0, 0, 0);
+            }
+        }
+        this._end_spin_index = end_spin_index;
+    };
+
 
     _pPopupMenu._getDlgCode = function (keycode, altKey, ctrlKey, shiftKey)
     {
@@ -2234,12 +2510,6 @@ if (!nexacro.PopupMenu)
         }
         return text_maxsize;
     };
-
-    _pPopupMenu._getMaxTextSizes = function (column)
-    {
-
-    };
-
 
     _pPopupMenu._createPopupMenu = function ()
     {
@@ -2428,15 +2698,30 @@ if (!nexacro.PopupMenu)
                 lineitems[i].destroyComponent();
                 lineitems[i] = null;
             }
-
             this._lineItems = [];
         }
+
+        if (this.spindownbutton)
+        {
+            this.spindownbutton.destroyComponent();
+            this.spindownbutton = null;
+        }
+        if (this.spinupbutton)
+        {
+            this.spinupbutton.destroyComponent();
+            this.spinupbutton = null;
+        }
+        this._start_spin_index = 0;
+        this._end_spin_index = 0;
+        this._is_spin_visible = false;
 
         if (this._popupmenu && !delete_popupmenu)
         {
             this._popupmenu.destroyComponent();
             this._popupmenu = null;
         }
+        
+       
     };
 
 
@@ -2452,7 +2737,7 @@ if (!nexacro.PopupMenu)
                 popupmenu = this._popupmenu = new nexacro.PopupMenu("popupmenu", "absolute", 0, 0, 0, 0, null, null, this);
                 popupmenu._setControl();
 
-                var color = this.color;
+                var color = this.color;               
                 if (color)
                     popupmenu.set_color(color);
                 var font = this.font;
@@ -2479,7 +2764,7 @@ if (!nexacro.PopupMenu)
                 popupmenu.set_iconcolumn(this.iconcolumn);
                 popupmenu._is_loading = true;
                 popupmenu.set_popuptype(this._getPopupType());
-                popupmenu.createComponent();               
+                popupmenu.createComponent();                
             }
             else
             {
@@ -2755,7 +3040,7 @@ if (!nexacro.PopupMenu)
             p_height = obj._adjust_height;
             _left = 0;
             _top = p_height;
-
+            
             if (!y)
             {
                 // height size adjust
@@ -2768,8 +3053,14 @@ if (!nexacro.PopupMenu)
                     }
                     else
                     {
-                        _top = 10;
+                        //spin visible
+                        _height = bodyHeight - p.y - parent._adjust_height;
+                        this._showSpinButton(true);
                     }
+                }
+                else if(this._is_spin_visible)
+                {
+                    this._showSpinButton(false);
                 }
             }
             else
@@ -2974,7 +3265,7 @@ if (!nexacro.PopupMenu)
         return [max_text_width, max_hotkey_width, text_height, hotkey_height, has_expand, item_border, item_padding, icon_width ? icon_width : max_item_height, max_item_height, expandimg_width];
     };
 
-    _pPopupMenu._reCalcSize = function ()
+    _pPopupMenu._reCalcSize = function (w,h)
     {
         var ds = this._innerdataset;
         if (ds && this.captioncolumn)
@@ -2987,7 +3278,6 @@ if (!nexacro.PopupMenu)
             var caption_size = this._getMaxTextSize(this.captioncolumn);
             var expandtext_width = parseInt(nexacro._getTextSize(">", items[0]._getCurrentStyleInheritValue("font", this._status))[0]);
             var controls_info = this._getControlInfo();
-            //var textwidth = parseInt(caption_size[0]);
             var textcontrol_width = controls_info[0];
             var hotkeycontrol_width = controls_info[1];
             var maxtextheight = controls_info[2];
@@ -2998,72 +3288,8 @@ if (!nexacro.PopupMenu)
             var iconimgwidth = controls_info[7];
             var itemheight = controls_info[8];
             var expimgwidth = controls_info[9];
-            //var textheight = this.text_height = parseInt(caption_size[1]);
             var rootComp = this._getRootComponent(this);
             var expimgheight = 0, chkimgwidth = 0;
-            //var itempadding, textpadding, itemborder;
-
-
-            //var expandimage = this.expandimage;
-            /*
-            if (expandimage)
-            {
-                expimgwidth = rootComp._expImage_width ? rootComp._expImage_width : item_h;
-                expimgheight = rootComp._expImage_height ? rootComp._expImage_height : item_h;
-                // if expimgwidth is undefined not show popupMenu.Associated 1-1 
-                if (expimgwidth == undefined)
-                {
-                    expimgwidth = 0;
-                }
-                if (expimgheight == undefined)
-                {
-                    expimgheight = 0;
-                }
-            }
-            */
-            /*
-            if (this.hotkeycolumn)
-            {
-                size = this._getMaxTextSize(this.hotkeycolumn);
-                hotkeywidth = parseInt(size[0]);
-            }
-         
-            var has_expand = false;
-            for (var i = 0; i < len; i++)
-            {
-                /*
-                if (items[i].value)
-                {
-                    if (checkboximage) // && chkimgwidth == 0)
-                        chkimgwidth = item_h;
-                }
-                */
-            //expand 가능여부에 따라 사이즈 결정 로직을 넣어야되는데 성능저하가 예상되어 추가하지 않았습니다. 
-            //추후에 검토 필요함.
-            /*
-                var item = items[i];
-                if (!has_expand && item._canExpand)
-                    has_expand = true;
-                    */
-            /*
-                            if (item._icon)// && iconimgwidth == 0)
-                            {
-                                iconimgwidth = item_h;
-                            }
-            
-                            if (item._iconcontrol && !iconimgwidth)
-                                iconimgwidth = textheight;
-            
-                            if (!itempadding)
-                                itempadding = item._getCSSStyleValue("padding");
-            
-                            if (!textpadding)
-                                textpadding = item._getCSSStyleValue("textPadding");
-            
-                            if (!itemborder)
-                                itemborder = item._getCSSStyleValue("border");
-                        }
-                        */
             var border = this._getCSSStyleValue("border", currentstatus);
 
             var itempadding_l = 0, itempadding_r = 0, itempadding_t = 0, itempadding_b = 0;
@@ -3112,7 +3338,7 @@ if (!nexacro.PopupMenu)
             if (item_h == undefined)
             {
                 //item_h = maxtextheight //itemborder_t + itemborder_b;// + itempadding_t + itempadding_b;
-                item_h = itemheight + itemborder_t + itemborder_b;
+                item_h = this._itemheight = itemheight + itemborder_t + itemborder_b;
             }
 
             var gap = icontextpadding = this._hotkeytextgap;
@@ -3134,8 +3360,17 @@ if (!nexacro.PopupMenu)
 
             var width = itempadding_l + border_left + border_right + icontextpadding + (chkimgwidth ? chkimgwidth : iconimgwidth) + (textcontrol_width ? textcontrol_width : 0) + (hotkeycontrol_width ? hotkeycontrol_width + gap : 0) + (has_expand ? expimgwidth ? expimgwidth + gap : gap + expandtext_width : 0) + itempadding_r;
             var height = item_h * len;
-            this.resize(width + border_left + border_right, height + border_top + border_bottom);
-            var _item_top = 0;
+            var items_total_height = this._items_total_height = height + border_top + border_bottom;
+            
+            var buttonsize = this.buttonsize | 0;
+            var spin_visible = this._isSpinVisible();
+            if (spin_visible)
+                this._rearrangePopupMenuItems();
+            else
+            {
+                this.resize(width + border_left + border_right, items_total_height);
+            }
+            var _item_top = buttonsize;
 
             //recalc position popupmenu
             var icon_x = itempadding_l;
@@ -3161,7 +3396,8 @@ if (!nexacro.PopupMenu)
                 {
 
                     //item._icontextpadding = this._icontextpadding;
-                    item.move(0, _item_top, width, item_h);
+                    if (spin_visible == false)
+                        item.move(0, _item_top, width, item_h);
                     //item._updateControlPosition(icon_pos, iconimgwidth, textpos_x, textwidth, hotkeypos_x, hotkeywidth, item_h, gap);
 
                     if (nexacro._enableaccessibility)

@@ -400,7 +400,7 @@ if (!nexacro.WebBrowser)
         var ifrm_elem = this._ifrm_elem;
         if (ifrm_elem)
         {
-	        if (this._isCrossDomain(this._current_url, this._getRefFormBaseUrl())) // 2014-06-26 pss [REQ_36583] - for crossdomain check
+	        if (this._isCrossDomain(this._current_url)) // 2014-06-26 pss [REQ_36583] - for crossdomain check
 	        {
 	            var tmp_url = this._url;
 	            ifrm_elem._setUrl("");
@@ -408,8 +408,8 @@ if (!nexacro.WebBrowser)
 	        }
 	        else
 	        {
-            ifrm_elem._setGo();
-        }
+                ifrm_elem._setGo();
+            }
 	    }
 	};
 
@@ -418,10 +418,10 @@ if (!nexacro.WebBrowser)
         var ifrm_elem = this._ifrm_elem;
         if (ifrm_elem)
         {
-	        if (!this._isCrossDomain(this._current_url, this._getRefFormBaseUrl())) // 2014-06-26 pss [REQ_36583] - for crossdomain check
+	        if (!this._isCrossDomain(this._current_url)) // 2014-06-26 pss [REQ_36583] - for crossdomain check
 	        {
-            ifrm_elem._setBack();
-        }
+	            return ifrm_elem._setBack();
+            }
 	    }
 	};
 
@@ -430,10 +430,10 @@ if (!nexacro.WebBrowser)
         var ifrm_elem = this._ifrm_elem;
         if (ifrm_elem)
         {
-	        if (!this._isCrossDomain(this._current_url, this._getRefFormBaseUrl())) // 2014-06-26 pss [REQ_36583] - for crossdomain check
+	        if (!this._isCrossDomain(this._current_url)) // 2014-06-26 pss [REQ_36583] - for crossdomain check
 	        {
-            ifrm_elem._setForward();
-        }
+	            return ifrm_elem._setForward();
+            }
 	    }
 	};
 
@@ -492,28 +492,24 @@ if (!nexacro.WebBrowser)
     {
         nexacro.Component.prototype.removeEventHandler.call(this, evt_id, func, target);
 	};
-
-    _pWebBrowser._isCrossDomain = function (url1, url2) // 2014-06-26 pss [REQ_36583] - for crossdomain check
+      
+    _pWebBrowser._isCrossDomain = function (target) // 2014-06-26 pss [REQ_36583] - for crossdomain check
     {
-        if (url1 == "" || url2 == "")
+        if (target == "")
         {
             return true;
         }
-        if (url1.match(regExp)[4] == url2.match(regExp)[4])
-        {
-            return true;
-        }
-    };
 
-    _pWebBrowser._isCrossDomain = function (url1, url2) // 2014-06-26 pss [REQ_36583] - for crossdomain check
-    {
-        if (url1 == "" || url2 == "")
+        var base = this._getRefFormBaseUrl();
+        if (base.match(/^(file):\/\//))
         {
-            return true;
+            return false;
         }
+
         var regExp = /^(https?):\/\/([^:\/\s]+)(:([^\/]*))?((\/[^\s/\/]+)*)?\/?([^#\s\?]*)(\?([^#\s]*))?(#(\w*))?$/;
-        var u1 = url1.match(regExp);
-        var u2 = url2.match(regExp);
+        var u1 = target.match(regExp);
+        var u2 = base.match(regExp);
+
         if (!u1 || !u2)
         {
             return true;

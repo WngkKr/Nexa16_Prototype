@@ -1,6 +1,6 @@
 ﻿{
 	"name": "DeviceAPI",
-	"version": "16,0,0,1",
+	"version": "16.0.0.1",
 	"description": "nexacro platform 16 Unified Framework Library",
 	"license": "",
     "scripts": [

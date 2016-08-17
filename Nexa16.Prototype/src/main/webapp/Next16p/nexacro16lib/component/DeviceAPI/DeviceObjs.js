@@ -39,6 +39,8 @@ if (!nexacro.Device || nexacro._OS == "iOS")
         nexacro._getFileListVirtualFileHandle = nexacro._emptyFn;
         nexacro._getFileSizeVirtualFileHandle = nexacro._emptyFn;
         nexacro._isExistVirtualFileHandle = nexacro._emptyFn;
+        nexacro._copyVirtualFileHandle = nexacro._emptyFn;
+        nexacro._renameVirtualFileHandle = nexacro._emptyFn;
         nexacro._createDirectoryVirtualFileHandle = nexacro._emptyFn;
         nexacro._deleteDirectoryVirtualFileHandle = nexacro._emptyFn;
         nexacro._renameDirectoryVirtualFileHandle = nexacro._emptyFn;
@@ -995,6 +997,94 @@ if (!nexacro.Device || nexacro._OS == "Android" || nexacro._OS == "iOS")
             return true;
         };
         
+        _pVirtualFile.copy = function (path, destpath)
+        {
+            if (!this.pramck_IsExist(path))
+            {
+                return false;
+            }
+
+            if (!this.pramck_IsExist(destpath))
+            {
+                return false;
+            }
+
+            if (this.handle)
+            {
+                nexacro._copyVirtualFileHandle(this, path, destpath);
+            }
+
+            if (nexacro.OS == "iOS")
+            {
+                var userapppath = path.substring(0, 9);
+                if (userapppath.toLowerCase() == "%userapp%")
+                {
+                    path = "_userapp_" + path.substring(9, path.length);
+                }
+                else
+                {
+                    return false;
+                }
+
+                userapppath = destpath.substring(0, 9);
+                if (userapppath.toLowerCase() == "%userapp%")
+                {
+                    destpath = "_userapp_" + destpath.substring(9, destpath.length);
+                }
+
+                var params = '{  "path":"' + path + '","destpath":"' + destpath + '"}';
+                var jsonstr = '{"id":' + this._id + ', "div":"VirtualFile", "method":"copy", "params":' + params + '}';
+                nexacro.Device.exec(jsonstr);
+            }
+            return true;
+        };
+
+        _pVirtualFile.rename = function (path, destpath)
+        {
+            if (!this.pramck_IsExist(path))
+            {
+                return false;
+            }
+
+            if (!this.pramck_IsExist(destpath))
+            {
+                return false;
+            }
+
+            if (this.handle)
+            {
+                nexacro._renameVirtualFileHandle(this, path, destpath);
+            }
+
+            if (nexacro.OS == "iOS")
+            {
+                var userapppath = path.substring(0, 9);
+                if (userapppath.toLowerCase() == "%userapp%")
+                {
+                    path = "_userapp_" + path.substring(9, path.length);
+                }
+                else
+                {
+                    return false;
+                }
+
+                userapppath = destpath.substring(0, 9);
+                if (userapppath.toLowerCase() == "%userapp%")
+                {
+                    destpath = "_userapp_" + destpath.substring(9, destpath.length);
+                }
+                else
+                {
+                    return false;
+                }
+
+                var params = '{  "path":"' + path + '","destpath":"' + destpath + '"}';
+                var jsonstr = '{"id":' + this._id + ', "div":"VirtualFile", "method":"rename", "params":' + params + '}';
+                nexacro.Device.exec(jsonstr);
+            }
+            return true;
+        };
+
         _pVirtualFile.createDirectory = function (strPath, bAllCreate)
         {
             if (!this.pramck_IsExist(strPath))
@@ -1261,7 +1351,7 @@ if (!nexacro.Device || nexacro._OS == "Android" || nexacro._OS == "iOS")
                 return false;
             }
 
-            if (strName.match(/[\"/:*?<>|]/))
+            if (strName.match(/[\"\/:*?<>|]/))
             {
                 return false;
             }

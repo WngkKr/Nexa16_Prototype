@@ -325,13 +325,13 @@ if (!nexacro.Frame)
 
 	_pFrame._isShowTitleBar = function ()
 	{
-		return this.showtitlebar;
-	}
+	    return this.showtitlebar;
+	};
 
 	_pFrame._isShowStatusBar = function ()
 	{
-		return this.showstatusbar;
-	}
+	    return this.showstatusbar;
+	};
 
 	_pFrame.on_create_contents = function ()
 	{		
@@ -1337,11 +1337,30 @@ if (!nexacro.Frame)
 		delete this._starttrack_position;
 	};
 
-	_pFrame._on_titlebar_movetrack = function (x, y, dragdata)
+	_pFrame._on_titlebar_movetrack = function (x, y, dragdata, windowX, windowY)
 	{
 		var _pos = this._starttrack_position;
 		if (_pos == null)
 			return;
+
+		if (windowX != undefined && windowY != undefined)
+		{
+		    var application = nexacro.getApplication();
+		    var mainframe_left = nexacro._toInt(application.mainframe.left);
+		    var mainframe_top = nexacro._toInt(application.mainframe.left);
+		    var mainframe_width = nexacro._toInt(application.mainframe._adjust_width);
+		    var mainframe_height = nexacro._toInt(application.mainframe._adjust_height);
+
+		    var winX = (windowX ? windowX : 0) + mainframe_left;
+		    var winY = (windowY ? windowY : 0) + mainframe_top;
+		    var r = mainframe_left + mainframe_width;
+		    var b = mainframe_top + mainframe_height;
+
+		    if (!(mainframe_left <= winX && r >= winX && mainframe_top <= winY && b >= winY))
+		    {
+		        return;
+		    }
+		}
 
 		// x,y -> 누적값(최초drag 위치로부터의 offset)
 		if (!this._is_window)
@@ -2416,13 +2435,13 @@ if (!nexacro.Frame)
 	//===============================================================
 	_pMainFrame._isShowTitleBar = function ()
 	{
-		return nexacro._isShowTitleBar(this, this.showtitlebar);
-	}
+	    return nexacro._isShowTitleBar(this, this.showtitlebar);
+	};
 
 	_pMainFrame._isShowStatusBar = function ()
 	{
-		return nexacro._isShowStatusBar(this, this.showstatusbar);		
-	}
+	    return nexacro._isShowStatusBar(this, this.showstatusbar);
+	};
 
 	_pMainFrame._waitCursor = function (wait_flag, context)
 	{
@@ -2553,7 +2572,7 @@ if (!nexacro.Frame)
 
         // for runtime
 		var control_element = this._control_element;
-        var window = this._window
+		var window = this._window;
 		if (control_element && window)
 		{
             nexacro._refreshWindowRegion(window.handle, control_element.handle);
@@ -3031,13 +3050,13 @@ if (!nexacro.Frame)
 
 	_pChildFrame._isShowTitleBar = function ()
 	{
-		return nexacro._isShowTitleBar(this, this.showtitlebar);
-	}
+	    return nexacro._isShowTitleBar(this, this.showtitlebar);
+	};
 
 	_pChildFrame._isShowStatusBar = function ()
 	{
-		return nexacro._isShowStatusBar(this, this.showstatusbar);
-	}
+	    return nexacro._isShowStatusBar(this, this.showstatusbar);
+	};
 
 	//===============================================================
 	// nexacro.ChildFrame : Override
@@ -5298,7 +5317,7 @@ if (!nexacro.Frame)
 	_pFrameSet.on_apply_minimizewidth = function ()
 	{
 		if (this._is_created)
-			this.on_change_containerRect();
+			this.on_change_containerRect(this._getClientWidth(), this._getClientHeight());
 	};
 
 	_pFrameSet.set_minimizeheight = function (minimizeheight)
@@ -5311,7 +5330,7 @@ if (!nexacro.Frame)
 	_pFrameSet.on_apply_minimizeheight = function ()
 	{
 		if (this._is_created)
-			this.on_change_containerRect();
+			this.on_change_containerRect(this._getClientWidth(), this._getClientHeight());
 	};
 
 	//===============================================================
@@ -6190,7 +6209,7 @@ if (!nexacro.Frame)
 	_pTileFrameSet.on_apply_minimizewidth = function ()
 	{
 		if (this._is_created)
-			this.on_change_containerRect();
+			this.on_change_containerRect(this._getClientWidth(), this._getClientHeight());
 	};
 
 	_pTileFrameSet.set_minimizeheight = function (minimizeheight)
@@ -6202,9 +6221,9 @@ if (!nexacro.Frame)
 
 	_pTileFrameSet.on_apply_minimizeheight = function ()
 	{
-		if (this._is_created)
-			this.on_change_containerRect();
-	}
+	    if (this._is_created)
+	    	this.on_change_containerRect(this._getClientWidth(), this._getClientHeight());
+	};
 	//===============================================================
 	// nexacro.TileFrameSet : Methods
 	//===============================================================

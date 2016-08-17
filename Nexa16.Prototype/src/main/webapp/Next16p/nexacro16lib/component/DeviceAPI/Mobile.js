@@ -4195,7 +4195,7 @@ if (nexacro._OS == "iOS" && !nexacro.VirtualFile)
 	        return false;
 	    }
 
-	    if (strName.match(/[\"/:*?<>|]/))
+	    if (strName.match(/[\"\/:*?<>|]/))
 	    {
 	        return false;
 	    }

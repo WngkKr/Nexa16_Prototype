@@ -1257,7 +1257,7 @@ if (nexacro._Browser == "Runtime")
         var obj = this._getObject("mainframe." + id);
         if (obj)
         {
-            var objForm = obj.getForm()
+            var objForm = obj.getForm();
             if (objForm)
             {
                 this._reloadForm(objForm);
@@ -1286,7 +1286,7 @@ if (nexacro._Browser == "Runtime")
                 this.resizePopupWindow(id, x, y, width, height);
             }
 
-            var objForm = obj.getForm()
+            var objForm = obj.getForm();
             trace(">>> EmbedRuntimeAPI > changePopupWindowURL layout_count : " + objForm._layout_list.length);
         }
         else
@@ -1302,7 +1302,7 @@ if (nexacro._Browser == "Runtime")
         var obj = this._getObject("mainframe." + id);
         if (obj)
         {
-            var objForm = obj.getForm()
+            var objForm = obj.getForm();
             if (objForm)
             {
                 var _items = new Array();
@@ -1337,7 +1337,7 @@ if (nexacro._Browser == "Runtime")
         var obj = this._getObject("mainframe." + id);
         if (obj)
         {
-            var objForm = obj.getForm()
+            var objForm = obj.getForm();
             if (objForm)
             {
                 trace(">>> EmbedRuntimeAPI > changePopupWindowURL layoutID : " + layoutID);
@@ -1422,7 +1422,7 @@ if (nexacro._Browser == "Runtime")
                 }
                 nChildFrameWidth = nChildFrameWidth - 4;
 
-                var objForm = childFrame.getForm()
+                var objForm = childFrame.getForm();
                 if (objForm)
                 {
                     if (nFormWidth == 0)
@@ -1482,12 +1482,12 @@ if (nexacro._Browser == "Runtime")
         {
             var nCount = objMainFrame.all.length;
             for (var i = 0; i < nCount; i++)
-        {
+            {
                 var childFrame = objMainFrame.all.get_item(i);
 
-                var objForm = childFrame.getForm()
-            if (objForm)
-            {
+                var objForm = childFrame.getForm();
+                if (objForm)
+                {
                     var nChildFrameWidth = childFrame.width;
                     var nChildFrameHeight = childFrame.height;
                     var nFormWidth = objForm.width;

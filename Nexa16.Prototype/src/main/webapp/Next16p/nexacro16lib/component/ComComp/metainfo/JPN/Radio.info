@@ -6,57 +6,57 @@
       <Property name="background" group="Style" subgroup="background" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="Radioの背景領域を設定するプロパティです。" csspropertyname="background" csselementname="" normalpropertyname="background" />
       <Property name="border" group="Style" subgroup="border" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="border" csselementname="" normalpropertyname="border" />
       <Property name="borderRadius" group="Style" subgroup="border-radius" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="border-radius" csselementname="" normalpropertyname="borderRadius" />
-      <Property name="bottom" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="Position2Type" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioを表示するための下部座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="bottom" />
-      <Property name="bottombase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="bottombase" />
+      <Property name="bottom" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="Position2Type" unitinfo="Position2Type" delimiter="" requirement="" description="Radioを表示するための下部座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="bottom" />
+      <Property name="bottombase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="bottombase" />
       <Property name="boxShadow" group="Style" subgroup="box-shadow" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="box-shadow" csselementname="" normalpropertyname="boxShadow" />
-      <Property name="codecolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="InnerDataSetカラムのなかで値を表示するカラムIDを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="codecolumn" />
+      <Property name="codecolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="InnerDataSetカラムのなかで値を表示するカラムIDを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="codecolumn" />
       <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="Radioに表示されるテキストの色を設定するプロパティです。" csspropertyname="color" csselementname="" normalpropertyname="color" />
-      <Property name="columncount" group="Appearance" subgroup="" edittype="Number" defaultvalue="0" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="ラジオボタンを横に揃える個数を設定するプロパティです。 &#xA;　" csspropertyname="" csselementname="" normalpropertyname="columncount" />
-      <Property name="cssclass" group="Information" subgroup="" edittype="CssClass" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="RadioのStyleをXCSSファイルに定義されたクラスに設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="cssclass" />
+      <Property name="columncount" group="Appearance" subgroup="" edittype="Number" defaultvalue="0" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="ラジオボタンを横に揃える個数を設定するプロパティです。 &#xA;　" csspropertyname="" csselementname="" normalpropertyname="columncount" />
+      <Property name="cssclass" group="Information" subgroup="" edittype="CssClass" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="RadioのStyleをXCSSファイルに定義されたクラスに設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="cssclass" />
       <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
-      <Property name="datacolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioのリストを構成する際に使用されているInnerDataSetのColumn IDが設定されているプロパティです。" csspropertyname="" csselementname="" normalpropertyname="datacolumn" />
-      <Property name="direction" group="Appearance" subgroup="" edittype="Enum" defaultvalue="horizontal" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="Direction" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="アイテムを表示する方向を指定するプロパティです。&#xA;　" csspropertyname="" csselementname="" normalpropertyname="direction" />
-      <Property name="enable" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioを使用するか否かを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="enable" />
-      <Property name="enableevent" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioでイベントを発生させるか否かを決定するプロパティです。 &#xA;　&#xA;　" csspropertyname="" csselementname="" normalpropertyname="enableevent" />
-      <Property name="expr" group="Appearance" subgroup="" edittype="String" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="expr" />
+      <Property name="datacolumn" group="Binding" subgroup="bind(innerdataset)" edittype="InnerColumnID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="Radioのリストを構成する際に使用されているInnerDataSetのColumn IDが設定されているプロパティです。" csspropertyname="" csselementname="" normalpropertyname="datacolumn" />
+      <Property name="direction" group="Appearance" subgroup="" edittype="Enum" defaultvalue="horizontal" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="Direction" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="アイテムを表示する方向を指定するプロパティです。&#xA;　" csspropertyname="" csselementname="" normalpropertyname="direction" />
+      <Property name="enable" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="Radioを使用するか否かを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="enable" />
+      <Property name="enableevent" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="Radioでイベントを発生させるか否かを決定するプロパティです。 &#xA;　&#xA;　" csspropertyname="" csselementname="" normalpropertyname="enableevent" />
+      <Property name="expr" group="Appearance" subgroup="" edittype="String" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="expr" />
       <Property name="font" group="Style" subgroup="font" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="FontSize_Point" delimiter="" requirement="" description="" csspropertyname="font" csselementname="" normalpropertyname="font" />
-      <Property name="height" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioを表示するための高さを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="height" />
-      <Property name="heightbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="heightbase" />
-      <Property name="hotkey" group="Action" subgroup="" edittype="HotKey" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HotKeyModifier" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioのデフォルトアクションを実行するためのホットキーを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="hotkey" />
-      <Property name="id" group="Information" subgroup="" edittype="ID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="id" />
-      <Property name="index" group="Appearance" subgroup="" edittype="Number" defaultvalue="-1" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="選択されてアイテムのインデックス値を表示するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="index" />
+      <Property name="height" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="Radioを表示するための高さを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="height" />
+      <Property name="heightbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="heightbase" />
+      <Property name="hotkey" group="Action" subgroup="" edittype="HotKey" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HotKeyModifier" unitinfo="" delimiter="" requirement="" description="Radioのデフォルトアクションを実行するためのホットキーを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="hotkey" />
+      <Property name="id" group="Information" subgroup="" edittype="ID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="id" />
+      <Property name="index" group="Appearance" subgroup="" edittype="Number" defaultvalue="-1" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="選択されてアイテムのインデックス値を表示するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="index" />
       <Property name="initvalueid" group="Information" subgroup="" edittype="InitvalueID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="initvalueid" />
-      <Property name="innerdataset" group="Binding" subgroup="bind(innerdataset)" edittype="InnerDatasetID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="データセットを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="innerdataset" />
-      <Property name="left" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioを表示するための左側座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="left" />
-      <Property name="leftbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="leftbase" />
+      <Property name="innerdataset" group="Binding" subgroup="bind(innerdataset)" edittype="InnerDatasetID" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="データセットを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="innerdataset" />
+      <Property name="left" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="Radioを表示するための左側座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="left" />
+      <Property name="leftbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="leftbase" />
       <Property name="letterSpacing" group="Style" subgroup="letter-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
       <Property name="lineHeight" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
-      <Property name="name" group="Information" subgroup="" edittype="String" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioの名前を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="name" />
+      <Property name="name" group="Information" subgroup="" edittype="String" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="Radioの名前を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="name" />
       <Property name="edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
       <Property name="padding" group="Style" subgroup="padding" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
-      <Property name="textAlign" group="Style" subgroup="-nexa-text-align" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
+      <Property name="textAlign" group="Style" subgroup="-nexa-text-align" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
       <Property name="textDecoration" group="Style" subgroup="text-decoration" edittype="MultiEnum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TextDecorationLine" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-decoration" csselementname="" normalpropertyname="textDecoration" />
-      <Property name="verticalAlign" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
-      <Property name="wordWrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
+      <Property name="verticalAlign" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
+      <Property name="wordWrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
       <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
-      <Property name="parent" group="Hidden" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioの親オブジェクトを持つプロパティです。" csspropertyname="" csselementname="" normalpropertyname="parent" />
-      <Property name="position" group="Position" subgroup="refresh(position)" edittype="Enum" defaultvalue="absolute" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="PositionType" unitinfo="PositionStep" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Mobile Hybrid (IOS)" description="Radioが表示される位置の基準を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="position" />
-      <Property name="positionstep" group="Position" subgroup="refresh(position)" edittype="Number" defaultvalue="0" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="PositionStep" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親オブジェクトがステップ機能を使用するとき、Radioが表示されるステップを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="positionstep" />
-      <Property name="readonly" group="Misc." subgroup="" edittype="Boolean" defaultvalue="false" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioの編集可能か否かを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="readonly" />
-      <Property name="right" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioを表示するための右側座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="right" />
-      <Property name="rightbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="rightbase" />
-      <Property name="rowcount" group="Appearance" subgroup="" edittype="Number" defaultvalue="0" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="ラジオボタンを縦に並べる個数を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="rowcount" />
-      <Property name="taborder" group="Action" subgroup="" edittype="Number" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="タブキー入力でコンポーネント間にフォーカスを移動するときにRadioの順序を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="taborder" />
-      <Property name="tabstop" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="タブキー入力でコンポーネント間フォーカスを移動するとき、Radioがフォーカスを受け取るか否かを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="tabstop" />
-      <Property name="text" group="Appearance" subgroup="" edittype="String" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="ラジオで選択されたアイテムのデータ値を持つ読み取り専用プロパティです。" csspropertyname="" csselementname="" normalpropertyname="text" />
-      <Property name="tooltiptext" group="Action" subgroup="" edittype="MultilineString" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="マウスポインタがRadioに移動したときに表示されるバルーンヘルプを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="tooltiptext" />
-      <Property name="tooltiptype" group="Action" subgroup="" edittype="Enum" defaultvalue="default" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="TooltipType" unitinfo="" delimiter="" requirement="nexacro browser (Windows),Mobile Hybrid (Android)" description="XCompenetでバルーンヘルプが表示される位置を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="tooltiptype" />
-      <Property name="top" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioを表示するための上段座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="top" />
-      <Property name="topbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="topbase" />
-      <Property name="value" group="Appearance" subgroup="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="ラジオの基本値を指定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="value" />
-      <Property name="visible" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioが画面に表示されるか否かを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="visible" />
-      <Property name="width" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioを表示するための幅を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="width" />
-      <Property name="widthbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="widthbase" />
+      <Property name="parent" group="Hidden" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="Radioの親オブジェクトを持つプロパティです。" csspropertyname="" csselementname="" normalpropertyname="parent" />
+      <Property name="position" group="Position" subgroup="refresh(position)" edittype="Enum" defaultvalue="absolute" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="PositionType" unitinfo="PositionStep" delimiter="" requirement="" description="Radioが表示される位置の基準を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="position" />
+      <Property name="positionstep" group="Position" subgroup="refresh(position)" edittype="Number" defaultvalue="0" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="PositionStep" delimiter="" requirement="" description="親オブジェクトがステップ機能を使用するとき、Radioが表示されるステップを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="positionstep" />
+      <Property name="readonly" group="Misc." subgroup="" edittype="Boolean" defaultvalue="false" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="Radioの編集可能か否かを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="readonly" />
+      <Property name="right" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="Radioを表示するための右側座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="right" />
+      <Property name="rightbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="rightbase" />
+      <Property name="rowcount" group="Appearance" subgroup="" edittype="Number" defaultvalue="0" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="ラジオボタンを縦に並べる個数を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="rowcount" />
+      <Property name="taborder" group="Action" subgroup="" edittype="Number" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="タブキー入力でコンポーネント間にフォーカスを移動するときにRadioの順序を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="taborder" />
+      <Property name="tabstop" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="タブキー入力でコンポーネント間フォーカスを移動するとき、Radioがフォーカスを受け取るか否かを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="tabstop" />
+      <Property name="text" group="Appearance" subgroup="" edittype="String" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="ラジオで選択されたアイテムのデータ値を持つ読み取り専用プロパティです。" csspropertyname="" csselementname="" normalpropertyname="text" />
+      <Property name="tooltiptext" group="Action" subgroup="" edittype="MultilineString" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="マウスポインタがRadioに移動したときに表示されるバルーンヘルプを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="tooltiptext" />
+      <Property name="tooltiptype" group="Action" subgroup="" edittype="Enum" defaultvalue="default" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="TooltipType" unitinfo="" delimiter="" requirement="" description="XCompenetでバルーンヘルプが表示される位置を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="tooltiptype" />
+      <Property name="top" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="Radioを表示するための上段座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="top" />
+      <Property name="topbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="topbase" />
+      <Property name="value" group="Appearance" subgroup="" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="ラジオの基本値を指定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="value" />
+      <Property name="visible" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="Radioが画面に表示されるか否かを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="visible" />
+      <Property name="width" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="Radioを表示するための幅を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="width" />
+      <Property name="widthbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="widthbase" />
       <Property name="wordSpacing" group="Style" subgroup="word-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
     </PropertyInfo>
     <StyleInfo>
@@ -72,10 +72,10 @@
         <Property name="line-height" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
         <Property name="-nexa-edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
         <Property name="-nexa-padding" group="Style" subgroup="padding" edittype="String" defaultvalue="0px 0px 0px 0px" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
-        <Property name="-nexa-text-align" group="Style" subgroup="-nexa-text-align" edittype="Enum" defaultvalue="left" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
+        <Property name="-nexa-text-align" group="Style" subgroup="-nexa-text-align" edittype="Enum" defaultvalue="left" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
         <Property name="-nexa-text-decoration" group="Style" subgroup="text-decoration" edittype="MultiEnum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TextDecorationLine" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-text-decoration" csselementname="" normalpropertyname="textDecoration" />
-        <Property name="-nexa-vertical-align" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" defaultvalue="middle" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
-        <Property name="-nexa-word-wrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="" description="" csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
+        <Property name="-nexa-vertical-align" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" defaultvalue="middle" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
+        <Property name="-nexa-word-wrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
         <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
         <Property name="word-spacing" group="Style" subgroup="word-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="" csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
       </PropertyInfo>
@@ -91,7 +91,7 @@
       <Control name="radioitem" classname="nexacro._RadioItemControl" deprecated="false" unused="false" group="" subgroup="" />
     </ControlInfo>
     <MethodInfo>
-      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioの特定イベントにハンドラ関数を追加するメソッドです。">
+      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="Radioの特定イベントにハンドラ関数を追加するメソッドです。">
         <Syntax text="Radio.addEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="イベントに追加されたハンドラ関数のインデックスを返します。&#xA;同じハンドラ関数がすでにある場合は、該当ハンドラ関数のインデックスを返します。&#xA;正常に追加されない場合には、「-1」を返します。" />
           <Arguments>
@@ -101,7 +101,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="関数を検索してRadioの特定のイベントにハンドラ関数として追加するメソッドです。">
+      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="関数を検索してRadioの特定のイベントにハンドラ関数として追加するメソッドです。">
         <Syntax text="Radio.addEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="イベントに追加されたハンドラ関数のインデックスを返します。&#xA;同じハンドラ関数がすでにある場合は、該当ハンドラ関数のインデックスを返します。&#xA;正常に追加されない場合には、「-1」を返します。" />
           <Arguments>
@@ -111,19 +111,19 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="bringToFront" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親が同じコンポーネントのうち、Radioが画面の最前面に表示されるようにします。">
+      <Method name="bringToFront" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親が同じコンポーネントのうち、Radioが画面の最前面に表示されるようにします。">
         <Syntax text="Radio.bringToFront()">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="bringToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親が同じコンポーネントのうち、Radioが画面の一段階前に表示されるようにします。">
+      <Method name="bringToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親が同じコンポーネントのうち、Radioが画面の一段階前に表示されるようにします。">
         <Syntax text="Radio.bringToPrev()">
           <Return type="" description="　" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="特定のイベントに登録されたハンドラ関数をすべて削除するメソッドです。">
+      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="特定のイベントに登録されたハンドラ関数をすべて削除するメソッドです。">
         <Syntax text="Radio.clearEventHandler( strEventID )">
           <Return type="Integer" description="特定のイベントで削除されたハンドラ関数の数を返します。" />
           <Arguments>
@@ -131,13 +131,13 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="destroy" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクリプトで動的に生成したRadioを削除するメソッドです。">
+      <Method name="destroy" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="スクリプトで動的に生成したRadioを削除するメソッドです。">
         <Syntax text="Radio.destroy()">
           <Return type="Boolean" description="Radioが正常に削除されると、「true」を返します。&#xA;Radioが正常に削除されないと、「false」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioの特定イベントからハンドラ関数を検索してインデックスを返すメソッドです。">
+      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="Radioの特定イベントからハンドラ関数を検索してインデックスを返すメソッドです。">
         <Syntax text="Radio.findEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="イベントで検索しようとするハンドラ関数のインデックスを返します。&#xA;検索しようとするハンドラ関数が存在しない場合、「-1」を返します。" />
           <Arguments>
@@ -147,7 +147,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="getCount" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioを構成するアイテムの個数を求めるメソッドです。">
+      <Method name="getCount" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="Radioを構成するアイテムの個数を求めるメソッドです。">
         <Syntax text="Radio.getCount()">
           <Return type="Integer" description="Radioを構成するアイテムの個数です。" />
           <Arguments />
@@ -168,91 +168,91 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="getFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="アクセシビリティインターフェイスが実行されるときに、キー入力が処理される前に先に発生されるイベントです。">
+      <Method name="getFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="アクセシビリティインターフェイスが実行されるときに、キー入力が処理される前に先に発生されるイベントです。">
         <Syntax text="Radio.getFocus()">
           <Return type="Object" description="true를 리턴하면, 해당 key에 대한 onkeydown(onkeyup?)、onchar event가 발생되지 않습니다. &#xD;&#xA;&#xD;&#xA;c" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getInnerDataset" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="InnerDatasetオブジェクトを返すメソッドです。">
+      <Method name="getInnerDataset" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="InnerDatasetオブジェクトを返すメソッドです。">
         <Syntax text="Radio.getInnerDataset()">
           <Return type="Object" description="設定に成功すると「true」を返し、失敗すると「false」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親コンポーネントのtopを基準にRadioのbottom値をピクセル単位で返すメソッドです。">
+      <Method name="getOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親コンポーネントのtopを基準にRadioのbottom値をピクセル単位で返すメソッドです。">
         <Syntax text="Radio.getOffsetBottom();">
           <Return type="Number" description="Radioのbottom座標値をピクセル(pixel)単位で返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioのheightプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="Radioのheightプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="Radio.getOffsetHeight();">
           <Return type="Number" description="Radioの高さをピクセル単位で返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親コンポーネントのleftを基準にRadioのleft値をピクセル単位で返すメソッドです。">
+      <Method name="getOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親コンポーネントのleftを基準にRadioのleft値をピクセル単位で返すメソッドです。">
         <Syntax text="Radio.getOffsetLeft();">
           <Return type="Number" description="Radioのleft座標値をピクセル(pixel)単位で返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親コンポーネントのleftを基準にRadioのright値をピクセル単位で返すメソッドです。">
+      <Method name="getOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親コンポーネントのleftを基準にRadioのright値をピクセル単位で返すメソッドです。">
         <Syntax text="Radio.getOffsetRight();">
           <Return type="Number" description="Radioのright座標値をピクセル(pixel)単位で返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親コンポーネントのtopを基準にRadioのtop値をピクセル単位で返すメソッドです。">
+      <Method name="getOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親コンポーネントのtopを基準にRadioのtop値をピクセル単位で返すメソッドです。">
         <Syntax text="Radio.getOffsetTop();">
           <Return type="Number" description="Radioのtop座標値をピクセル(pixel)単位で返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioのwidthプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="Radioのwidthプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="Radio.getOffsetWidth();">
           <Return type="Number" description="Radioの幅をピクセル単位で返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioのbottomプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getPixelBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="Radioのbottomプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="Radio.getPixelBottom();">
           <Return type="Number" description="Radioのbottomプロパティ値をピクセル単位で返します。&#xA;bottomプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioのheightプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getPixelHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="Radioのheightプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="Radio.getPixelHeight();">
           <Return type="Number" description="Radioのheightプロパティ値をピクセル単位で返します。&#xA;heightプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioのleftプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getPixelLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="Radioのleftプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="Radio.getPixelLeft();">
           <Return type="Number" description="Radioのwidthプロパティ値をピクセル単位で返します。&#xA;leftプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioのrightプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getPixelRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="Radioのrightプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="Radio.getPixelRight();">
           <Return type="Number" description="Radioのrightプロパティ値をピクセル単位で返します。&#xA;rightプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioのtopプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getPixelTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="Radioのtopプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="Radio.getPixelTop();">
           <Return type="Number" description="Radioのtopプロパティ値をピクセル単位で返します。&#xA;topプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="getPixelWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioのwidthプロパティ値をピクセル単位で返すメソッドです。">
+      <Method name="getPixelWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="Radioのwidthプロパティ値をピクセル単位で返すメソッドです。">
         <Syntax text="Radio.getPixelWidth();">
           <Return type="Number" description="Radioのwidthプロパティ値をピクセル単位で返します。&#xA;widthプロパティ値を設定しない場合は、「null」を返します。" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="init" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクリプトでRadioを動的に生成した後に初期化するメソッドです。">
+      <Method name="init" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="スクリプトでRadioを動的に生成した後に初期化するメソッドです。">
         <Syntax text="Radio.init( strName, strPosition, nLeft, nTop , nWidth, nHeight [, nRight, nBottom] )">
           <Return type="" description="　" />
           <Arguments>
@@ -267,7 +267,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="move" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioの位置とサイズを変更するメソッドです。">
+      <Method name="move" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="Radioの位置とサイズを変更するメソッドです。">
         <Syntax text="Radio.move( nLeft, nTop [, nWidth, nHeight [, nRight, nBottom]] )">
           <Return type="" description="　" />
           <Arguments>
@@ -280,7 +280,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="moveToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親が同じコンポーネントのうち、引数として渡されたRadioが画面に一段階後ろに表示されるようにします。">
+      <Method name="moveToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親が同じコンポーネントのうち、引数として渡されたRadioが画面に一段階後ろに表示されるようにします。">
         <Syntax text="Radio.moveToNext( objComp )&#xA;Radio.moveToNext( strComp )">
           <Return type="" description="" />
           <Arguments>
@@ -289,7 +289,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="moveToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親が同じコンポーネントのうち、引数として渡されたコンポーネントより、Radioが画面の一段階前に表示されるようにします。">
+      <Method name="moveToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親が同じコンポーネントのうち、引数として渡されたコンポーネントより、Radioが画面の一段階前に表示されるようにします。">
         <Syntax text="Radio.moveToPrev( objComp )&#xA;Radio.moveToPrev( strComp )">
           <Return type="" description="" />
           <Arguments>
@@ -298,7 +298,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioの特定イベントからハンドラ関数を削除するメソッドです。">
+      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="Radioの特定イベントからハンドラ関数を削除するメソッドです。">
         <Syntax text="Radio.removeEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="ハンドラ関数の削除に成功すると、「1」を返します。&#xA;ハンドラ関数の削除に失敗すると、「0」を返します。" />
           <Arguments>
@@ -308,7 +308,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioの特定のイベントから検索された関数と同じハンドラ関数を削除するメソッドです。">
+      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="Radioの特定のイベントから検索された関数と同じハンドラ関数を削除するメソッドです。">
         <Syntax text="Radio.removeEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="ハンドラ関数の削除に成功すると、「1」を返します。&#xA;ハンドラ関数の削除に失敗すると、「0」を返します。" />
           <Arguments>
@@ -318,7 +318,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="resize" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioのサイズを変更するメソッドです。">
+      <Method name="resize" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="Radioのサイズを変更するメソッドです。">
         <Syntax text="Radio.resize( nWidth, nHeight )">
           <Return type="" description="" />
           <Arguments>
@@ -327,19 +327,19 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="sendToBack" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親が同じコンポーネントのうち、Radioが画面の最背面に表示されるようにします。">
+      <Method name="sendToBack" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親が同じコンポーネントのうち、Radioが画面の最背面に表示されるようにします。">
         <Syntax text="Radio.sendToBack()">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="sendToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親が同じコンポーネントのうち、Radioが画面に一段階後ろに表示されるようにします。">
+      <Method name="sendToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親が同じコンポーネントのうち、Radioが画面に一段階後ろに表示されるようにします。">
         <Syntax text="Radio.sendToNext()">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioの特定のイベントの最初のハンドラ関数を変更するメソッドです。">
+      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="Radioの特定のイベントの最初のハンドラ関数を変更するメソッドです。">
         <Syntax text="Radio.setEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="最初のハンドラ関数の変更に成功すると、「0」を返します。&#xA;最初のハンドラ関数の変更に失敗すると、「-1」を返します。" />
           <Arguments>
@@ -349,7 +349,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioの特定のイベントの最初のハンドラ関数を、検索された関数に変更するメソッドです。">
+      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="Radioの特定のイベントの最初のハンドラ関数を、検索された関数に変更するメソッドです。">
         <Syntax text="Radio.setEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="最初のハンドラ関数の変更に成功すると、「0」を返します。&#xA;最初のハンドラ関数の変更に失敗すると、「-1」を返します。" />
           <Arguments>
@@ -359,7 +359,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioにフォーカスを与えるメソッドです。">
+      <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="Radioにフォーカスを与えるメソッドです。">
         <Syntax text="Radio.setFocus( [bMoveScroll] )">
           <Return type="Object" description="Radioがフォーカスされる前にフォーカスを持っていたコンポーネントを返します。&#xA;フォーカスを持つコンポーネントがなかったか、メソッド実行に失敗した場合には、「null」を返します。" />
           <Arguments>
@@ -367,7 +367,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setInnerDataset" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="InnerDatasetオブジェクトを設定するメソッドです。">
+      <Method name="setInnerDataset" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="InnerDatasetオブジェクトを設定するメソッドです。">
         <Syntax text="Radio.setInnerDataset( objDataset )">
           <Return type="" description="" />
           <Arguments>
@@ -375,7 +375,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親コンポーネントのtopを基準にRadioのbottom値をピクセル単位で設定するメソッドです。">
+      <Method name="setOffsetBottom" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親コンポーネントのtopを基準にRadioのbottom値をピクセル単位で設定するメソッドです。">
         <Syntax text="Radio.setOffsetBottom( nBottom );">
           <Return type="" description="" />
           <Arguments>
@@ -383,7 +383,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioのheightプロパティ値をピクセル単位で設定するメソッドです。">
+      <Method name="setOffsetHeight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="Radioのheightプロパティ値をピクセル単位で設定するメソッドです。">
         <Syntax text="Radio.setOffsetHeight( nHeight );">
           <Return type="" description="" />
           <Arguments>
@@ -391,7 +391,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親コンポーネントleftを基準にRadioのleft値をピクセル単位で設定するメソッドです。">
+      <Method name="setOffsetLeft" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親コンポーネントleftを基準にRadioのleft値をピクセル単位で設定するメソッドです。">
         <Syntax text="Radio.setOffsetLeft( nLeft );">
           <Return type="" description="" />
           <Arguments>
@@ -399,7 +399,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親コンポーネントleftを基準にRadioのright値をピクセル単位で設定するメソッドです。">
+      <Method name="setOffsetRight" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親コンポーネントleftを基準にRadioのright値をピクセル単位で設定するメソッドです。">
         <Syntax text="Radio.setOffsetRight( nRight );">
           <Return type="" description="" />
           <Arguments>
@@ -407,7 +407,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="親コンポーネントのtopを基準にRadioのtop値をピクセル単位で設定するメソッドです。">
+      <Method name="setOffsetTop" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="親コンポーネントのtopを基準にRadioのtop値をピクセル単位で設定するメソッドです。">
         <Syntax text="Radio.setOffsetTop( nTop );">
           <Return type="" description="" />
           <Arguments>
@@ -415,7 +415,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioのwidthプロパティ値をピクセル単位で設定するメソッドです。">
+      <Method name="setOffsetWidth" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="Radioのwidthプロパティ値をピクセル単位で設定するメソッドです。">
         <Syntax text="Radio.setOffsetWidth( nWidth );">
           <Return type="" description="" />
           <Arguments>
@@ -423,13 +423,13 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="show" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="スクリプトで動的に生成したRadioを画面に表示するメソッドです。">
+      <Method name="show" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="スクリプトで動的に生成したRadioを画面に表示するメソッドです。">
         <Syntax text="Radio.show()">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="updateToDataset" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="">
+      <Method name="updateToDataset" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="updateToDataset()">
           <Return type="" description="" />
           <Arguments />
@@ -437,7 +437,7 @@
       </Method>
     </MethodInfo>
     <EventHandlerInfo>
-      <EventHandler name="canitemchange" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioのアイテムを変更するときに発生するイベントです。">
+      <EventHandler name="canitemchange" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="Radioのアイテムを変更するときに発生するイベントです。">
         <Syntax text="Radio.canitemchange(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo);">
           <Return type="Boolean" description="イベントの返り値として「true」を返すと、アイテム選択が変更されます。&#xA;イベントの返り値として「false」を返すと、アイテム選択が変更されません。&#xA;&#xA;イベントの返り値を省略すると、「true」に適用されます。" />
           <Arguments>
@@ -445,7 +445,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onclick" group="Event" deprecated="false" unused="true" requirement="" description="">
+      <EventHandler name="onclick" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="Radio.onclick(obj:nexacro.Radio,e:nexacro.ClickEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -453,7 +453,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondblclick" group="Event" deprecated="false" unused="true" requirement="" description="">
+      <EventHandler name="ondblclick" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="Radio.ondblclick(obj:nexacro.Radio,e:nexacro.MouseEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -461,7 +461,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondrag" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radio領域内でマウス左ボタンでドラッグしたときに発生するイベントです。&#xA;　">
+      <EventHandler name="ondrag" group="Event" deprecated="false" unused="false" requirement="" description="Radio領域内でマウス左ボタンでドラッグしたときに発生するイベントです。&#xA;　">
         <Syntax text="Radio.ondrag(obj:nexacro.Radio,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="イベントの返り値として「true」を返すと、ドラッグ状態になり、上位コンポーネントにイベントが伝播されません。&#xA;イベントの返り値として「false」を返すと、ドラッグ状態が解除され、上位コンポーネントにイベントが伝播されます。&#xA;&#xA;イベントの返り値を省略すると、「false」に適用されます。" />
           <Arguments>
@@ -469,7 +469,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondragenter" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="ドラッグ状態のマウスポインタがRadio領域内に移動したときに発生するイベントです。">
+      <EventHandler name="ondragenter" group="Event" deprecated="false" unused="false" requirement="" description="ドラッグ状態のマウスポインタがRadio領域内に移動したときに発生するイベントです。">
         <Syntax text="Radio.ondragenter(obj:nexacro.Radio,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="イベントの返り値として「true」を返すと、上位コンポーネントにイベントが伝播されません。&#xA;イベントの返り値として「false」を返すと、上位コンポーネントにイベントが伝播されます。&#xA;&#xA;イベントの返り値を省略すると、「false」に適用されます。" />
           <Arguments>
@@ -477,7 +477,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondragleave" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="ドラッグ状態のマウスポインタがRadio領域外に移動したときに発生するイベントです。">
+      <EventHandler name="ondragleave" group="Event" deprecated="false" unused="false" requirement="" description="ドラッグ状態のマウスポインタがRadio領域外に移動したときに発生するイベントです。">
         <Syntax text="Radio.ondragleave(obj:nexacro.Radio,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="イベントの返り値として「true」を返すと、上位コンポーネントにイベントが伝播されません。&#xA;イベントの返り値として「false」を返すと、上位コンポーネントにイベントが伝播されます。&#xA;&#xA;イベントの返り値を省略すると、「false」に適用されます。" />
           <Arguments>
@@ -485,7 +485,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondragmove" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radio領域内でドラッグ状態のマウスポインタが移動したときに発生するイベントです。">
+      <EventHandler name="ondragmove" group="Event" deprecated="false" unused="false" requirement="" description="Radio領域内でドラッグ状態のマウスポインタが移動したときに発生するイベントです。">
         <Syntax text="Radio.ondragmove(obj:nexacro.Radio,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="イベントの返り値として「true」を返すと、上位コンポーネントにイベントが伝播されません。&#xA;イベントの返り値として「false」を返すと、上位コンポーネントにイベントが伝播されます。&#xA;&#xA;イベントの返り値を省略すると、「false」に適用されます。" />
           <Arguments>
@@ -493,7 +493,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondrop" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radio領域内でドラッグ状態のマウスボタンを離したときに発生するイベントです。">
+      <EventHandler name="ondrop" group="Event" deprecated="false" unused="false" requirement="" description="Radio領域内でドラッグ状態のマウスボタンを離したときに発生するイベントです。">
         <Syntax text="Radio.ondrop(obj:nexacro.Radio,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="イベントの返り値として「true」を返すと、ドラッグ状態になり、上位コンポーネントにイベントが伝播されません。&#xA;イベントの返り値として「false」を返すと、ドラッグ状態が解除され、上位コンポーネントにイベントが伝播されます。&#xA;&#xA;イベントの返り値を省略すると、「false」に適用されます。" />
           <Arguments>
@@ -501,7 +501,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="oninput" group="Event" deprecated="false" unused="true" requirement="" description="">
+      <EventHandler name="oninput" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="Radio.oninput(obj:nexacro.Radio,e:nexacro.InputEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -509,7 +509,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onitemchanged" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="ListBoxのアイテム選択が変更された後に発生するイベントです。">
+      <EventHandler name="onitemchanged" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="ListBoxのアイテム選択が変更された後に発生するイベントです。">
         <Syntax text="Radio.onitemchanged(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -517,7 +517,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onitemclick" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="アイテムリストからアイテムをクリックしたときに発生するイベントです。">
+      <EventHandler name="onitemclick" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="アイテムリストからアイテムをクリックしたときに発生するイベントです。">
         <Syntax text="Radio.onitemclick(obj:nexacro.Radio,e:nexacro.ItemClickEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -525,7 +525,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onkeydown" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioにフォーカスがある状態でキーボードのキーが押されたときに発生するイベントです。&#xA;　">
+      <EventHandler name="onkeydown" group="Event" deprecated="false" unused="false" requirement="" description="Radioにフォーカスがある状態でキーボードのキーが押されたときに発生するイベントです。&#xA;　">
         <Syntax text="Radio.onkeydown(obj:nexacro.Radio,e:nexacro.KeyEventInfo);">
           <Return type="Boolean" description="イベントの返り値として「true」を返すと、イベントが上位のコンポーネントへ伝播されません。&#xA;イベントの返り値として&quot;false&quot;を返す場合、イベントが上位のコンポーネントへ伝播されます。&#xA;&#xA;イベントの返り値を省略すると、「false」に適用されます。" />
           <Arguments>
@@ -533,7 +533,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onkeyup" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioにフォーカスがある状態で、押下されたキーボードが離したときに発生するイベントです。">
+      <EventHandler name="onkeyup" group="Event" deprecated="false" unused="false" requirement="" description="Radioにフォーカスがある状態で、押下されたキーボードが離したときに発生するイベントです。">
         <Syntax text="Radio.onkeyup(obj:nexacro.Radio,e:nexacro.KeyEventInfo);">
           <Return type="Boolean" description="イベントの返り値として「true」を返すと、上位コンポーネントにイベントが伝播されません。&#xA;イベントの返り値として「false」を返すと、上位コンポーネントにイベントが伝播されます。&#xA;&#xA;イベントの返り値を省略すると、「false」に適用されます。" />
           <Arguments>
@@ -541,7 +541,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onkillfocus" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioからフォーカスが出るときに発生するイベントです。">
+      <EventHandler name="onkillfocus" group="Event" deprecated="false" unused="false" requirement="" description="Radioからフォーカスが出るときに発生するイベントです。">
         <Syntax text="Radio.onkillfocus(obj:nexacro.Radio,e:nexacro.KillFocusEventInfo);">
           <Return type="" description="　" />
           <Arguments>
@@ -549,7 +549,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onlbuttondown" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radio領域内でマウス左ボタンを押下したときに発生するイベントです。">
+      <EventHandler name="onlbuttondown" group="Event" deprecated="false" unused="false" requirement="" description="Radio領域内でマウス左ボタンを押下したときに発生するイベントです。">
         <Syntax text="Radio.onlbuttondown(obj:nexacro.Radio,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベントの返り値として「true」を返すと、上位コンポーネントにイベントが伝播されません。&#xA;イベントの返り値として「false」を返すと、上位コンポーネントにイベントが伝播されます。&#xA;&#xA;イベントの返り値を省略すると、「false」に適用されます。" />
           <Arguments>
@@ -557,7 +557,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onlbuttonup" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radio領域内で押下されたマウス左ボタンを離したときに発生するイベントです。">
+      <EventHandler name="onlbuttonup" group="Event" deprecated="false" unused="false" requirement="" description="Radio領域内で押下されたマウス左ボタンを離したときに発生するイベントです。">
         <Syntax text="Radio.onlbuttonup(obj:nexacro.Radio,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベントの返り値として「true」を返すと、上位コンポーネントにイベントが伝播されません。&#xA;イベントの返り値として「false」を返すと、上位コンポーネントにイベントが伝播されます。&#xA;&#xA;イベントの返り値を省略すると、「false」に適用されます。" />
           <Arguments>
@@ -565,7 +565,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmousedown" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radio領域内でマウスボタン（左/右ボタンを除く）が押下されたときに発生するイベントです。">
+      <EventHandler name="onmousedown" group="Event" deprecated="false" unused="true" requirement="" description="Radio領域内でマウスボタン（左/右ボタンを除く）が押下されたときに発生するイベントです。">
         <Syntax text="Radio.onmousedown(obj:nexacro.Radio,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベントの返り値として「true」を返すと、上位コンポーネントにイベントが伝播されません。&#xA;イベントの返り値として「false」を返すと、上位コンポーネントにイベントが伝播されます。&#xA;&#xA;イベントの返り値を省略すると、「false」に適用されます。" />
           <Arguments>
@@ -573,7 +573,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmouseenter" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radio領域内にマウスポインターが入ってきたときに発生するイベントです。　">
+      <EventHandler name="onmouseenter" group="Event" deprecated="false" unused="false" requirement="" description="Radio領域内にマウスポインターが入ってきたときに発生するイベントです。　">
         <Syntax text="Radio.onmouseenter(obj:nexacro.Radio,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベントの返り値として「true」を返すと、上位コンポーネントにイベントが伝播されません。&#xA;イベントの返り値として「false」を返すと、上位コンポーネントにイベントが伝播されます。&#xA;&#xA;イベントの返り値を省略すると、「false」に適用されます。" />
           <Arguments>
@@ -581,7 +581,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmouseleave" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radio領域外にマウスポインターが移動したときに発生するイベントです。">
+      <EventHandler name="onmouseleave" group="Event" deprecated="false" unused="false" requirement="" description="Radio領域外にマウスポインターが移動したときに発生するイベントです。">
         <Syntax text="Radio.onmouseleave(obj:nexacro.Radio,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベントの返り値として「true」を返すと、上位コンポーネントにイベントが伝播されません。&#xA;イベントの返り値として「false」を返すと、上位コンポーネントにイベントが伝播されます。&#xA;&#xA;イベントの返り値を省略すると、「false」に適用されます。" />
           <Arguments>
@@ -589,7 +589,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmousemove" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radio領域内で、マウスポインターが移動するときに発生するイベントです。">
+      <EventHandler name="onmousemove" group="Event" deprecated="false" unused="false" requirement="" description="Radio領域内で、マウスポインターが移動するときに発生するイベントです。">
         <Syntax text="Radio.onmousemove(obj:nexacro.Radio,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベントの返り値として「true」を返すと、イベントが上位コンポーネントへ伝播されません。&#xA;イベントの返り値として「false」を返すと、イベントが上位コンポーネントへ伝播されます。&#xA;&#xA;イベントの返り値を省略すると、「false」に適用されます。" />
           <Arguments>
@@ -597,7 +597,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmouseup" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radio領域内で押下されたマウスボタン（左/右ボタンを除く）を離したときに発生するイベントです。">
+      <EventHandler name="onmouseup" group="Event" deprecated="false" unused="true" requirement="" description="Radio領域内で押下されたマウスボタン（左/右ボタンを除く）を離したときに発生するイベントです。">
         <Syntax text="Radio.onmouseup(obj:nexacro.Radio,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベントの返り値として「true」を返すと、上位コンポーネントにイベントが伝播されません。&#xA;イベントの返り値として「false」を返すと、上位コンポーネントにイベントが伝播されます。&#xA;&#xA;イベントの返り値を省略すると、「false」に適用されます。" />
           <Arguments>
@@ -605,7 +605,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmousewheel" group="Event" deprecated="false" unused="true" requirement="" description="マウスホイールがスクロールされてときに発生するイベントです。">
+      <EventHandler name="onmousewheel" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="マウスホイールがスクロールされてときに発生するイベントです。">
         <Syntax text="Radio.onmousewheel(obj:nexacro.Radio,e:nexacro.MouseWheelEventInfo);">
           <Return type="Boolean" description="返り値がtrueの場合には、マウスホイールの処理が中断され、バブリングも中断されます。 &#xA;返り値がfalseの場合には、発生コンポーネントからマウスホイールの処理後、バブル処理します。&#xA;発生コンポーネントでスクロール処理が必要ない場合は、上位コンポーネントでマウスホイールを処理します。 &#xA;デフォルト値：false" />
           <Arguments>
@@ -613,7 +613,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmove" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioの位置を移動したときに発生するイベントです。">
+      <EventHandler name="onmove" group="Event" deprecated="false" unused="false" requirement="" description="Radioの位置を移動したときに発生するイベントです。">
         <Syntax text="Radio.onmove(obj:nexacro.Radio,e:nexacro.MoveEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -621,7 +621,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onrbuttondown" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioでマウス右ボタンを押下したときに発生するイベントです。">
+      <EventHandler name="onrbuttondown" group="Event" deprecated="false" unused="false" requirement="" description="Radioでマウス右ボタンを押下したときに発生するイベントです。">
         <Syntax text="Radio.onrbuttondown(obj:nexacro.Radio,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベントの返り値として「true」を返すと、上位コンポーネントにイベントが伝播されません。&#xA;イベントの返り値として「false」を返すと、上位コンポーネントにイベントが伝播されます。&#xA;&#xA;イベントの返り値を省略すると、「false」に適用されます。" />
           <Arguments>
@@ -629,7 +629,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onrbuttonup" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radio領域内でマウス右ボタンを離したときに発生するイベントです。">
+      <EventHandler name="onrbuttonup" group="Event" deprecated="false" unused="false" requirement="" description="Radio領域内でマウス右ボタンを離したときに発生するイベントです。">
         <Syntax text="Radio.onrbuttonup(obj:nexacro.Radio,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="イベントの返り値として「true」を返すと、上位コンポーネントにイベントが伝播されません。&#xA;イベントの返り値として「false」を返すと、上位コンポーネントにイベントが伝播されます。&#xA;&#xA;イベントの返り値を省略すると、「false」に適用されます。" />
           <Arguments>
@@ -637,7 +637,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onsetfocus" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="X Componentにフォーカスが入ったときに発生するイベントです。">
+      <EventHandler name="onsetfocus" group="Event" deprecated="false" unused="false" requirement="" description="X Componentにフォーカスが入ったときに発生するイベントです。">
         <Syntax text="Radio.onsetfocus(obj:nexacro.Radio,e:nexacro.SetFocusEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -645,7 +645,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onsize" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radioのサイズが変更されたときに発生するイベントです。">
+      <EventHandler name="onsize" group="Event" deprecated="false" unused="false" requirement="" description="Radioのサイズが変更されたときに発生するイベントです。">
         <Syntax text="Radio.onsize(obj:nexacro.Radio,e:nexacro.SizeEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -653,7 +653,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ontouchend" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radio領域内でタッチを離したときに発生するイベントです。">
+      <EventHandler name="ontouchend" group="Event" deprecated="false" unused="false" requirement="" description="Radio領域内でタッチを離したときに発生するイベントです。">
         <Syntax text="Radio.ontouchend(obj:nexacro.Radio,e:nexacro.TouchEventInfo);">
           <Return type="Boolean" description="イベントの返り値として「true」を返すと、上位コンポーネントにイベントが伝播されません。&#xA;イベントの返り値として「false」を返すと、上位コンポーネントにイベントが伝播されます。&#xA;&#xA;イベントの返り値を省略すると、「false」に適用されます。" />
           <Arguments>
@@ -661,7 +661,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ontouchmove" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radio領域内でタッチ状態を維持しながら移動するときに発生するイベントです。">
+      <EventHandler name="ontouchmove" group="Event" deprecated="false" unused="false" requirement="" description="Radio領域内でタッチ状態を維持しながら移動するときに発生するイベントです。">
         <Syntax text="Radio.ontouchmove(obj:nexacro.Radio,e:nexacro.TouchEventInfo);">
           <Return type="Boolean" description="イベントの返り値として「true」を返すと、上位コンポーネントにイベントが伝播されません。&#xA;イベントの返り値として「false」を返すと、上位コンポーネントにイベントが伝播されます。&#xA;&#xA;イベントの返り値を省略すると、「false」に適用されます。" />
           <Arguments>
@@ -669,7 +669,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ontouchstart" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="Radio領域内でタッチが始まるときに発生するイベントです。">
+      <EventHandler name="ontouchstart" group="Event" deprecated="false" unused="false" requirement="" description="Radio領域内でタッチが始まるときに発生するイベントです。">
         <Syntax text="Radio.ontouchstart(obj:nexacro.Radio,e:nexacro.TouchEventInfo);">
           <Return type="Boolean" description="イベントの返り値として「true」を返すと、上位コンポーネントにイベントが伝播されません。&#xA;イベントの返り値として「false」を返すと、上位コンポーネントにイベントが伝播されます。&#xA;&#xA;イベントの返り値を省略すると、「false」に適用されます。" />
           <Arguments>

@@ -100,7 +100,6 @@ if (!nexacro.Calendar)
     /* default properties */
     _pCalendar.value = undefined;
     _pCalendar.displaynulltext = "";
-    _pCalendar.displaynulltextcolor = null;
     _pCalendar.readonly = false;
     _pCalendar.autoselect = false;
     _pCalendar.autoskip = false;
@@ -133,7 +132,6 @@ if (!nexacro.Calendar)
     /* internal variable */
     _pCalendar._masktypeobj = null;
     _pCalendar._innerdataset = null;
-    _pCalendar._displaynulltextcolor = null;
 
     _pCalendar._locale = "";
     _pCalendar._type = "normal";
@@ -144,10 +142,12 @@ if (!nexacro.Calendar)
     _pCalendar._default_text = "";
     _pCalendar._default_type = "";
 
-    /* status */
-    _pCalendar._use_readonly_status = true;
-    _pCalendar._is_locale_control = true;
+    _pCalendar._onlydisplay = false;
 
+    /* status */
+    _pCalendar._is_locale_control = true;
+    _pCalendar._use_readonly_status = true;
+    
     /* event list */
     _pCalendar._event_list = {
         "oneditclick": 1, "ondayclick": 1,
@@ -561,6 +561,7 @@ if (!nexacro.Calendar)
     _pCalendar.on_apply_value = function ()
     {
         var value = this.value;
+        value = nexacro._isNull(value) ? value : value.trim();
         var text = this.text;
 
         var maskobj = this._masktypeobj;
@@ -591,8 +592,7 @@ if (!nexacro.Calendar)
         }
         else
         {
-            v = nexacro._toString(v);
-            v = v.replace(/&quot;/g, "\"");
+            v = nexacro._toString(v).replace(/&quot;/g, "\"");
         }
 
         if (v != this.displaynulltext)
@@ -608,36 +608,6 @@ if (!nexacro.Calendar)
         if (calendaredit)
         {
             calendaredit.set_displaynulltext(this.displaynulltext);
-        }
-    };
-
-    _pCalendar.set_displaynulltextcolor = function (v)
-    {
-        if (v)
-        {
-            if (this.displaynulltextcolor == null || this.displaynulltextcolor.value != v)
-            {
-                var color = nexacro.ColorObject(v);
-                this.displaynulltextcolor = color;
-                this.on_apply_displaynulltextcolor();
-            }
-        }
-        else
-        {
-            if (this.displaynulltextcolor)
-            {
-                this.displaynulltextcolor = null;
-                this.on_apply_displaynulltextcolor();
-            }
-        }
-    };
-
-    _pCalendar.on_apply_displaynulltextcolor = function ()
-    {
-        var calendaredit = this.calendaredit;
-        if (calendaredit)
-        {
-            calendaredit.set_displaynulltextcolor(this.displaynulltextcolor);
         }
     };
 
@@ -1368,27 +1338,40 @@ if (!nexacro.Calendar)
     //===============================================================
     // nexacro.Calendar : Events
     //===============================================================
-    _pCalendar._on_value_change = function (prevalue, postvalue, bClose)
+    _pCalendar._on_value_change = function (prevalue, postvalue)
     {
+        var ret = true;
         var pretext = this._getEventInfoText(prevalue);
         var posttext = this._getEventInfoText(postvalue);
 
-        if (!this.on_fire_canchange(this, pretext, prevalue, posttext, postvalue))
+        if (!this.on_fire_canchange(this, pretext, prevalue, posttext, postvalue) ||
+            !this.applyto_bindSource("value", postvalue))
         {
-            return false;
+            ret = false;
         }
 
-        if (bClose && this._isPopupVisible())
+        if (!ret)
+        {
+            this._setValue(prevalue);
+
+            if (this.autoskip && this._isPopupVisible())
+            {
+                this._closePopup();
+            }
+            return false;
+        }
+        
+        this._setValue(postvalue);
+
+        this.on_fire_onchanged(this, pretext, prevalue, posttext, postvalue);
+
+        if (this._isPopupVisible())
         {
             this._closePopup();
         }
 
-        if (!this.applyto_bindSource("value", postvalue))
-        {
-            return false;
-        }
-
-        this.on_fire_onchanged(this, pretext, prevalue, posttext, postvalue);
+        this._default_value = postvalue;
+        this._default_text = posttext;
 
         return true;
     };
@@ -1403,17 +1386,8 @@ if (!nexacro.Calendar)
 
             if (pre_value != cur_value)
             {
-                if (!this._on_value_change(pre_value, cur_value, false))
-                {
-                    cur_value = pre_value;
-                }
+                this._on_value_change(pre_value, cur_value);
             }
-
-            this._setValue(cur_value);
-            calendaredit._setValue(cur_value);
-
-            this._default_value = this.value;
-            this._default_text = this.text;
         }
     };
 
@@ -1488,9 +1462,6 @@ if (!nexacro.Calendar)
                     if (this._isPopupVisible())
                     {
                         datepicker.on_fire_ondayclick(datepicker._value);
-
-                        this._default_value = this.value;
-                        this._default_text = this.text;
                     }
                     else
                     {
@@ -1760,14 +1731,10 @@ if (!nexacro.Calendar)
 
     _pCalendar.on_notify_datepicker_ondayclick = function (obj, e)
     {
-        var ret;
         var maskobj = this._masktypeobj;
-        var calendaredit = this.calendaredit;
 
         var from_comp = e.fromobject;
-
-        var predate = maskobj.getDatePickerValue();
-        var postdate = from_comp._year + from_comp._month + from_comp.text.padLeft(2, "0");
+        var cur_date = from_comp._year + from_comp._month + from_comp.text.padLeft(2, "0");
 
         var h = maskobj._date[3] ? maskobj._date[3] : "";
         var m = maskobj._date[4] ? maskobj._date[4] : "";
@@ -1775,36 +1742,23 @@ if (!nexacro.Calendar)
         var ss = maskobj._date[6] ? maskobj._date[6] : "";
 
         var pre_value = this.value;
-        var cur_value = maskobj.changeNormalizeValue(postdate + h + m + s + ss);
+        var cur_value = maskobj.changeNormalizeValue(cur_date + h + m + s + ss);
 
-        this.on_fire_ondayclick(postdate);
+        this.on_fire_ondayclick(cur_date);
 
-        if (predate != postdate)
+        if (pre_value != cur_value)
         {
-            if (!(ret = this._on_value_change(pre_value, cur_value, true)))
-            {
-                cur_value = pre_value;
-            }
+            this._on_value_change(pre_value, cur_value);
         }
 
-        this._setValue(cur_value);
-
-        if (ret && this._isPopupVisible())
+        if (this.autoskip)
         {
-            this._closePopup();
-
-            if (this.autoskip)
-            {
-                this._setFocusToNextComponent();
-            }
-            else
-            {
-                this._setDefaultCaret();
-            }
+            this._setFocusToNextComponent();
         }
-
-        this._default_value = this.value;
-        this._default_text = this.text;
+        else
+        {
+            this._setDefaultCaret();
+        }
     };
 
     _pCalendar.on_notify_datepicker_oncloseup = function (obj, e)
@@ -1853,17 +1807,8 @@ if (!nexacro.Calendar)
 
             if (pre_value != cur_value)
             {
-                if (!this._on_value_change(pre_value, cur_value, true))
-                {
-                    cur_value = pre_value;
-                }
+                this._on_value_change(pre_value, cur_value);
             }
-
-            this._setValue(cur_value);
-            calendaredit._setValue(cur_value);
-
-            this._default_value = this.value;
-            this._default_text = this.text;
         }
         else
         {
@@ -2001,7 +1946,6 @@ if (!nexacro.Calendar)
         {
             calendaredit = this.calendaredit = new nexacro._CalendarEditControl("calendaredit", "absolute", 0, 0, 0, 0, null, null, this, this._onlydisplay);
             calendaredit.set_displaynulltext(this.displaynulltext);
-            calendaredit.set_displaynulltextcolor(this.displaynulltextcolor);
             calendaredit.set_readonly(this.readonly);
             calendaredit.set_autoselect(this.autoselect);
             calendaredit.set_autoskip(this.autoskip);
@@ -2800,11 +2744,18 @@ if (!nexacro.Calendar)
         var input_elem = this._input_element;
         if (input_elem)
         {
-            this._init_element_property();
-
             this.on_apply_value();
 
             input_elem.create(win);
+
+            if (nexacro._isNull(this.value))
+            {
+                this._changeUserStatus("nulltext", true);
+            }
+            else
+            {
+                this._changeUserStatus("nulltext", false);
+            }
         }
     };
 
@@ -2813,8 +2764,6 @@ if (!nexacro.Calendar)
         var input_elem = this._input_element;
         if (input_elem)
         {
-            this._init_element_property();
-
             this.on_apply_value();
 
             return input_elem.createCommand();
@@ -3045,7 +2994,6 @@ if (!nexacro.Calendar)
             {
                 if (!value && value !== "")
                 {
-                    //                  input_elem.setElementDefaultValue(text);    ??
                     input_elem.setElementText(text);
                 }
                 else

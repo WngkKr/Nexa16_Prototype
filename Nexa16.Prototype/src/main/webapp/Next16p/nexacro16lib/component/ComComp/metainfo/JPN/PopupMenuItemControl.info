@@ -42,7 +42,7 @@
       <Property name="tabstop" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="tabstop" />
       <Property name="text" group="Appearance" subgroup="" edittype="MultilineString" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="PopupMenuItemControlに表示されるテキストを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="text" />
       <Property name="tooltiptext" group="Action" subgroup="" edittype="MultilineString" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="マウスポインタがPopupMenuItemControlに移動したときに表示されるバルーンヘルプを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="tooltiptext" />
-      <Property name="tooltiptype" group="Action" subgroup="" edittype="Enum" defaultvalue="default" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TooltipType" unitinfo="" delimiter="" requirement="" description="XCompenetでバルーンヘルプが表示される位置を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="tooltiptype" />
+      <Property name="tooltiptype" group="Action" subgroup="" edittype="Enum" defaultvalue="default" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TooltipType" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="XCompenetでバルーンヘルプが表示される位置を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="tooltiptype" />
       <Property name="top" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="PopupMenuItemControlを表示するための上段座標を設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="top" />
       <Property name="topbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="topbase" />
       <Property name="usedecorate" group="Misc." subgroup="" edittype="Boolean" defaultvalue="false" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="Staticに表示されるテキストにDecorate効果を適用するかどうかを設定するプロパティです。" csspropertyname="" csselementname="" normalpropertyname="usedecorate" />
@@ -157,7 +157,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="getFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="アクセシビリティインターフェイスが実行されるときに、キー入力が処理される前に先に発生されるイベントです。">
+      <Method name="getFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="アクセシビリティインターフェイスが実行されるときに、キー入力が処理される前に先に発生されるイベントです。">
         <Syntax text="PopupMenuItemControl.getFocus()">
           <Return type="Object" description="true를 리턴하면, 해당 key에 대한 onkeydown(onkeyup?)、onchar event가 발생되지 않습니다. &#xD;&#xA;&#xD;&#xA;c" />
           <Arguments />
@@ -342,7 +342,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="PopupMenuItemControlにフォーカスを与えるメソッドです。">
+      <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="PopupMenuItemControlにフォーカスを与えるメソッドです。">
         <Syntax text="PopupMenuItemControl.setFocus( [bMoveScroll] )">
           <Return type="Object" description="直前のフォーカスを持っていたコンポーネントが返されます。&#xD;&#xA;以前のフォーカスがなかったりメソッド実行に失敗した場合、nullが返されます。" />
           <Arguments>
@@ -414,7 +414,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondblclick" group="Event" deprecated="false" unused="true" requirement="" description="">
+      <EventHandler name="ondblclick" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="PopupMenuItemControl.ondblclick(obj:nexacro._PopupMenuItemControl,e:nexacro.MouseEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -422,7 +422,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondrag" group="Event" deprecated="false" unused="true" requirement="" description="コンポーネント領域でマウスによってドラッグが起こったときに発生するイベントです。&#xA;　">
+      <EventHandler name="ondrag" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネント領域でマウスによってドラッグが起こったときに発生するイベントです。&#xA;　">
         <Syntax text="PopupMenuItemControl.ondrag(obj:nexacro._PopupMenuItemControl,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="falseを返すと、ドラッグ機能が動作しません。&#xA;trueを返すと、上位コンポーネントでイベントが発生しません。&#xA;&#xA;デフォルト値 : false" />
           <Arguments>
@@ -430,7 +430,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondragenter" group="Event" deprecated="false" unused="true" requirement="" description="コンポーネント領域にドラッグされたコンポーネントが入ったときに発生するイベントです。">
+      <EventHandler name="ondragenter" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネント領域にドラッグされたコンポーネントが入ったときに発生するイベントです。">
         <Syntax text="PopupMenuItemControl.ondragenter(obj:nexacro._PopupMenuItemControl,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="イベントを処理するかどうかの結果。trueを返すと上位コンポーネントでイベントが発生しません。&#xA;デフォルト値 : false" />
           <Arguments>
@@ -438,7 +438,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondragleave" group="Event" deprecated="false" unused="true" requirement="" description="コンポーネント領域にドラッグされたコンポーネントが解除されるときに発生するイベントです。　">
+      <EventHandler name="ondragleave" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネント領域にドラッグされたコンポーネントが解除されるときに発生するイベントです。　">
         <Syntax text="PopupMenuItemControl.ondragleave(obj:nexacro._PopupMenuItemControl,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="イベントを処理するかどうかを指定、trueを返すと上位コンポーネントでイベントが発生しません。&#xA;デフォルト値 : false" />
           <Arguments>
@@ -446,7 +446,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondragmove" group="Event" deprecated="false" unused="true" requirement="" description="コンポーネント領域にドラッグ中のマウスが移動するときに発生するイベントです。">
+      <EventHandler name="ondragmove" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネント領域にドラッグ中のマウスが移動するときに発生するイベントです。">
         <Syntax text="PopupMenuItemControl.ondragmove(obj:nexacro._PopupMenuItemControl,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="イベントを処理するかどうかを指定。trueを返すと上位コンポーネントでイベントが発生しません。&#xA;デフォルト値 : false　" />
           <Arguments>
@@ -454,7 +454,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondrop" group="Event" deprecated="false" unused="true" requirement="" description="コンポーネント領域にドラッグされたコンポーネントをドロップされるときに発生するイベントです。&#xA;　">
+      <EventHandler name="ondrop" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="コンポーネント領域にドラッグされたコンポーネントをドロップされるときに発生するイベントです。&#xA;　">
         <Syntax text="PopupMenuItemControl.ondrop(obj:nexacro._PopupMenuItemControl,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="イベントを処理するかどうかを指定。trueを返すと上位コンポーネントでイベントが発生しません。&#xA;デフォルト値 : false　" />
           <Arguments>
@@ -462,7 +462,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="oninput" group="Event" deprecated="false" unused="true" requirement="" description="">
+      <EventHandler name="oninput" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="PopupMenuItemControl.oninput(obj:nexacro._PopupMenuItemControl,e:nexacro.InputEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -470,7 +470,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onkeydown" group="Event" deprecated="false" unused="true" requirement="" description="PopupMenuItemControlにフォーカスがある状態でキーボードのキーが押されたときに発生するイベントです。&#xA;　">
+      <EventHandler name="onkeydown" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="PopupMenuItemControlにフォーカスがある状態でキーボードのキーが押されたときに発生するイベントです。&#xA;　">
         <Syntax text="PopupMenuItemControl.onkeydown(obj:nexacro._PopupMenuItemControl,e:nexacro.KeyEventInfo);">
           <Return type="Boolean" description="イベント処理するかどうか。trueを返すと、上位コンポーネントからonkeydownイベントが発生しません。&#xD;&#xA;デフォルト値 : false　" />
           <Arguments>
@@ -478,7 +478,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onkeyup" group="Event" deprecated="false" unused="true" requirement="" description="PopupMenuItemControlにフォーカスがある状態でKey Upが発生したときに発生するイベントです。">
+      <EventHandler name="onkeyup" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="PopupMenuItemControlにフォーカスがある状態でKey Upが発生したときに発生するイベントです。">
         <Syntax text="PopupMenuItemControl.onkeyup(obj:nexacro._PopupMenuItemControl,e:nexacro.KeyEventInfo);">
           <Return type="Boolean" description="イベント処理を実行するかどうかを指定。&#xA;trueを返すと、上位コンポーネントでonkeyupイベントが発生しません。&#xA;デフォルト値 : false" />
           <Arguments>
@@ -486,7 +486,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onkillfocus" group="Event" deprecated="false" unused="true" requirement="" description="フォーカスが位置しているPopupMenuItemControlがフォーカスを失ったときに発生するイベントです。&#xD;&#xA;　">
+      <EventHandler name="onkillfocus" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="フォーカスが位置しているPopupMenuItemControlがフォーカスを失ったときに発生するイベントです。&#xD;&#xA;　">
         <Syntax text="PopupMenuItemControl.onkillfocus(obj:nexacro._PopupMenuItemControl,e:nexacro.KillFocusEventInfo);">
           <Return type="" description="　" />
           <Arguments>
@@ -542,7 +542,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmousewheel" group="Event" deprecated="false" unused="true" requirement="" description="マウスホイールがスクロールされてときに発生するイベントです。">
+      <EventHandler name="onmousewheel" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="マウスホイールがスクロールされてときに発生するイベントです。">
         <Syntax text="PopupMenuItemControl.onmousewheel(obj:nexacro._PopupMenuItemControl,e:nexacro.MouseWheelEventInfo);">
           <Return type="Boolean" description="返り値がtrueの場合には、マウスホイールの処理が中断され、バブリングも中断されます。 &#xA;返り値がfalseの場合には、発生コンポーネントからマウスホイールの処理後、バブル処理します。&#xA;発生コンポーネントでスクロール処理が必要ない場合は、上位コンポーネントでマウスホイールを処理します。 &#xA;デフォルト値：false" />
           <Arguments>
@@ -574,7 +574,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onsetfocus" group="Event" deprecated="false" unused="true" requirement="" description="PopupMenuItemControlにフォーカスが設定されたときに発生するイベントです。&#xD;&#xA;　">
+      <EventHandler name="onsetfocus" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="PopupMenuItemControlにフォーカスが設定されたときに発生するイベントです。&#xD;&#xA;　">
         <Syntax text="PopupMenuItemControl.onsetfocus(obj:nexacro._PopupMenuItemControl,e:nexacro.SetFocusEventInfo);">
           <Return type="" description="" />
           <Arguments>

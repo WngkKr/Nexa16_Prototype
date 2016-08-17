@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MetaInfo version="2.0">
   <Object id="nexacro.TabpageControl">
-    <ObjectInfo inheritance="nexacro.Div" classname="nexacro.Tabpage" shorttypename="Tabpage" csstypename="Tabpage" csscontrolname="TabpageControl" group="Component" subgroup="ContainerComponent" csspseudo="true" container="true" composite="false" tabstop="true" cssstyle="true" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="system" edittype="container" generatetype="" useinitvalue="true" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="Tab 컴포넌트를 구성하는 TabpageControl 오브젝트입니다." />
+    <ObjectInfo inheritance="nexacro.Div" classname="nexacro.Tabpage" shorttypename="Tabpage" csstypename="" csscontrolname="TabpageControl" group="Component" subgroup="ContainerComponent" csspseudo="true" container="true" composite="false" tabstop="true" cssstyle="true" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="system" edittype="container" generatetype="" useinitvalue="true" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="Tab 컴포넌트를 구성하는 TabpageControl 오브젝트입니다." />
     <PropertyInfo>
-      <Property name="async" group="Appearance" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TabPage 에 url 속성으로 연결된 Form이 로딩되는 방식을 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="async" />
+      <Property name="async" group="Appearance" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabPage 에 url 속성으로 연결된 Form이 로딩되는 방식을 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="async" />
       <Property name="background" group="Style" subgroup="background" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl 의 배경 영역을 설정하는 속성입니다." csspropertyname="background" csselementname="" normalpropertyname="background" />
       <Property name="border" group="Style" subgroup="border" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl 의 테두리를 설정하는 속성입니다." csspropertyname="border" csselementname="" normalpropertyname="border" />
       <Property name="borderRadius" group="Style" subgroup="border-radius" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="TabpageControl 의 모서리 모양을 설정하는 속성입니다." csspropertyname="border-radius" csselementname="" normalpropertyname="borderRadius" />
@@ -11,47 +11,47 @@
       <Property name="bottombase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl 의 bottom 위치를 결정하기 위한 기준 컴포넌트를 설정합니다." csspropertyname="" csselementname="" normalpropertyname="bottombase" />
       <Property name="boxShadow" group="Style" subgroup="box-shadow" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl 에 그림자 효과를 설정하는 속성입니다." csspropertyname="box-shadow" csselementname="" normalpropertyname="boxShadow" />
       <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="TabpageControl 에 표시되는 텍스트의 색상을 설정하는 속성입니다." csspropertyname="color" csselementname="" normalpropertyname="color" />
-      <Property name="cssclass" group="Information" subgroup="" edittype="CssClass" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TabpageControl 의 Style을 XCSS 파일에 정의된 class로 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="cssclass" />
+      <Property name="cssclass" group="Information" subgroup="" edittype="CssClass" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl 의 Style을 XCSS 파일에 정의된 class로 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="cssclass" />
       <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="TabpageControl 영역내에서 표시될 마우스 포인터의 종류를 설정하는 속성입니다." csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
-      <Property name="enable" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TabpageControl 의 사용가능 여부를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="enable" />
-      <Property name="enableevent" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TabpageControl 에서 이벤트를 발생시킬지 여부를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="enableevent" />
-      <Property name="expr" group="Appearance" subgroup="" edittype="String" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="expr" />
+      <Property name="enable" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl 의 사용가능 여부를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="enable" />
+      <Property name="enableevent" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl 에서 이벤트를 발생시킬지 여부를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="enableevent" />
+      <Property name="expr" group="Appearance" subgroup="" edittype="String" defaultvalue="&quot;&quot;" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="" csspropertyname="" csselementname="" normalpropertyname="expr" />
       <Property name="font" group="Style" subgroup="font" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="FontSize_Point" delimiter="" requirement="" description="TabpageControl에서 사용하는 폰트를 설정하는 속성입니다." csspropertyname="font" csselementname="" normalpropertyname="font" />
-      <Property name="form" group="Control" subgroup="" edittype="" readonly="true" initonly="false" hidden="true" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabPage 에서 모든 오브젝트가 등록된 Form을 갖는 읽기전용 속성입니다." csspropertyname="" csselementname="" normalpropertyname="form" />
+      <Property name="form" group="Control" subgroup="" edittype="" readonly="true" initonly="false" hidden="true" control="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabPage 에서 모든 오브젝트가 등록된 Form을 갖는 읽기전용 속성입니다." csspropertyname="" csselementname="" normalpropertyname="form" />
       <Property name="height" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TabpageControl 을(를) 표시하기 위한 높이를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="height" />
       <Property name="heightbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl 의 높이를 결정하기 위한 기준 컴포넌트를 설정합니다." csspropertyname="" csselementname="" normalpropertyname="heightbase" />
-      <Property name="hotkey" group="Action" subgroup="" edittype="HotKey" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HotKeyModifier" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TabpageControl 의 기본 액션을 수행하기 위한 단축키를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="hotkey" />
-      <Property name="id" group="Information" subgroup="" edittype="ID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl의 고유 식별자를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="id" />
+      <Property name="hotkey" group="Action" subgroup="" edittype="HotKey" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="HotKeyModifier" unitinfo="" delimiter="" requirement="" description="TabpageControl 의 기본 액션을 수행하기 위한 단축키를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="hotkey" />
+      <Property name="id" group="Information" subgroup="" edittype="ID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl의 고유 식별자를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="id" />
       <Property name="initvalueid" group="Information" subgroup="" edittype="InitvalueID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl 에 적용될 InitValue 의 ID 를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="initvalueid" />
       <Property name="left" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TabpageControl 을(를) 표시하기 위한 좌측 좌표를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="left" />
       <Property name="leftbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl 의 left 위치를 결정하기위한 기준이 되는 컴포넌트를 설정합니다." csspropertyname="" csselementname="" normalpropertyname="leftbase" />
-      <Property name="letterSpacing" group="Style" subgroup="letter-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="TabpageControl 에 표시되는 문자의 간격을 설정하는 속성입니다." csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
+      <Property name="letterSpacing" group="Style" subgroup="letter-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="TabpageControl 에 표시되는 문자의 간격(자간)을 설정하는 속성입니다." csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
       <Property name="lineHeight" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="TabpageControl 에 여러줄로 텍스트가 표시되는 경우 줄 사이의 간격을 설정하는 속성입니다." csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
-      <Property name="name" group="Information" subgroup="" edittype="String" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 의 이름을 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="name" />
+      <Property name="name" group="Information" subgroup="" edittype="String" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl 의 이름을 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="name" />
       <Property name="edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl의 테두리 안쪽에 edge 이미지를 설정하는 속성입니다." csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
       <Property name="padding" group="Style" subgroup="padding" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl 영역의 안쪽 여백을 설정하는 속성입니다." csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
-      <Property name="textAlign" group="Style" subgroup="-nexa-text-align" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="" description="TabpageControl 에 표시되는 텍스트 또는 컨텐츠의 가로 정렬 방식을 설정하는 속성입니다." csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
-      <Property name="textDecoration" group="Style" subgroup="text-decoration" edittype="MultiEnum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TextDecorationLine" unitinfo="" delimiter="" requirement="" description="TabpageControl 에 표시되는 텍스트에 적용할 효과를 설정하는 속성입니다." csspropertyname="-nexa-text-decoration" csselementname="" normalpropertyname="textDecoration" />
-      <Property name="verticalAlign" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="" description="TabpageControl에 표시되는 텍스트 또는 컨텐츠의 세로 정렬 방식을 설정하는 속성입니다." csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
-      <Property name="wordWrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="" description="TabpageControl 에 표시되는 텍스트가 출력영역보다 길 경우 자동으로 줄바꿈 되도록 설정하는 속성입니다." csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
+      <Property name="textAlign" group="Style" subgroup="-nexa-text-align" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabpageControl 에 표시되는 텍스트 또는 컨텐츠의 가로 정렬 방식을 설정하는 속성입니다." csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
+      <Property name="textDecoration" group="Style" subgroup="text-decoration" edittype="MultiEnum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TextDecorationLine" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabpageControl 에 표시되는 텍스트에 적용할 효과를 설정하는 속성입니다." csspropertyname="-nexa-text-decoration" csselementname="" normalpropertyname="textDecoration" />
+      <Property name="verticalAlign" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabpageControl에 표시되는 텍스트 또는 컨텐츠의 세로 정렬 방식을 설정하는 속성입니다." csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
+      <Property name="wordWrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabpageControl 에 표시되는 텍스트가 출력영역보다 길 경우 자동으로 줄바꿈 되도록 설정하는 속성입니다." csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
       <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl 영역의 투명도를 설정하는 속성입니다." csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
-      <Property name="parent" group="Hidden" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TabpageControl 의 부모 오브젝트를 갖는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="parent" />
+      <Property name="parent" group="Hidden" subgroup="" edittype="Object" readonly="true" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl 의 부모 오브젝트를 갖는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="parent" />
       <Property name="position" group="Position" subgroup="refresh(position)" edittype="Enum" defaultvalue="absolute" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="PositionType" unitinfo="PositionStep" delimiter="" requirement="" description="TabpageControl 이(가) 표시되는 위치의 기준을 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="position" />
       <Property name="positionstep" group="Position" subgroup="refresh(position)" edittype="Number" defaultvalue="0" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="PositionStep" delimiter="" requirement="" description="부모 오브젝트가 스텝기능을 사용할 때 TabpageControl 이(가) 표시될 스텝을 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="positionstep" />
       <Property name="right" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TabpageControl 를 표시하기 위한 우측 좌표를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="right" />
       <Property name="rightbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl 의 right 위치를 결정하기 위한 기준 컴포넌트를 설정합니다." csspropertyname="" csselementname="" normalpropertyname="rightbase" />
       <Property name="taborder" group="Action" subgroup="" edittype="Number" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="탭키 입력으로 컴포넌트간 포커스를 이동할 때 TabpageControl 의 순서를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="taborder" />
       <Property name="tabstop" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="탭키 입력으로 컴포넌트간 포커스를 이동할 때 TabpageControl 이(가) 포커스를 받을 지 여부를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="tabstop" />
-      <Property name="text" group="Appearance" subgroup="" edittype="MultilineString" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="탭버튼에 표시되는 텍스트를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="text" />
-      <Property name="tooltiptext" group="Action" subgroup="" edittype="MultilineString" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TabpageControl 에 마우스 포인터를 올려 놓았을 때 표시되는 풍선도움말을 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="tooltiptext" />
-      <Property name="tooltiptype" group="Action" subgroup="" edittype="Enum" defaultvalue="default" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="TooltipType" unitinfo="" delimiter="" requirement="nexacro browser (Windows)" description="TabpageControl 에서 풍선도움말이 표시될 위치를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="tooltiptype" />
+      <Property name="text" group="Appearance" subgroup="" edittype="MultilineString" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="탭버튼에 표시되는 텍스트를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="text" />
+      <Property name="tooltiptext" group="Action" subgroup="" edittype="MultilineString" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl 에 마우스 포인터를 올려 놓았을 때 표시되는 풍선도움말을 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="tooltiptext" />
+      <Property name="tooltiptype" group="Action" subgroup="" edittype="Enum" defaultvalue="default" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="TooltipType" unitinfo="" delimiter="" requirement="" description="TabpageControl 에서 풍선도움말이 표시될 위치를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="tooltiptype" />
       <Property name="top" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TabpageControl 을(를) 표시하기 위한 상단 좌표를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="top" />
       <Property name="topbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl 의 top 위치를 결정하기 위한 기준 컴포넌트를 설정합니다." csspropertyname="" csselementname="" normalpropertyname="topbase" />
-      <Property name="url" group="Appearance" subgroup="" edittype="URL" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TabPage 에 Form을 연결하여 표시할 때 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="url" />
+      <Property name="url" group="Appearance" subgroup="" edittype="URL" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabPage 에 Form을 연결하여 표시할 때 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="url" />
       <Property name="visible" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl 이(가) 화면에 표시될지 여부를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="visible" />
       <Property name="width" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="TabpageControl 을(를) 표시하기 위한 너비를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="width" />
       <Property name="widthbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl 의 너비를 결정하기 위한 기준 컴포넌트를 설정합니다." csspropertyname="" csselementname="" normalpropertyname="widthbase" />
-      <Property name="wordSpacing" group="Style" subgroup="word-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="TabpageControl 에 표시되는 텍스트의 자간을 설정하는 속성입니다." csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
+      <Property name="wordSpacing" group="Style" subgroup="word-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="TabpageControl 에 표시되는 텍스트의 단어 사이 간격을 설정하는 속성입니다." csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
     </PropertyInfo>
     <StyleInfo>
       <PropertyInfo>
@@ -62,16 +62,16 @@
         <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="TabpageControl 에 표시되는 텍스트의 색상을 설정하는 속성입니다." csspropertyname="color" csselementname="" normalpropertyname="color" />
         <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" defaultvalue="auto" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="TabpageControl 영역내에서 표시될 마우스 포인터의 종류를 설정하는 속성입니다." csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
         <Property name="font" group="Style" subgroup="font" edittype="" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="FontSize_Point" delimiter="" requirement="" description="TabpageControl에서 사용하는 폰트를 설정하는 속성입니다." csspropertyname="font" csselementname="" normalpropertyname="font" />
-        <Property name="letter-spacing" group="Style" subgroup="letter-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="TabpageControl 에 표시되는 문자의 간격을 설정하는 속성입니다." csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
+        <Property name="letter-spacing" group="Style" subgroup="letter-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="TabpageControl 에 표시되는 문자의 간격(자간)을 설정하는 속성입니다." csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
         <Property name="line-height" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="TabpageControl 에 여러줄로 텍스트가 표시되는 경우 줄 사이의 간격을 설정하는 속성입니다." csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
         <Property name="-nexa-edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl의 테두리 안쪽에 edge 이미지를 설정하는 속성입니다." csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
         <Property name="-nexa-padding" group="Style" subgroup="padding" edittype="String" defaultvalue="0px 0px 0px 0px" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl 영역의 안쪽 여백을 설정하는 속성입니다." csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
-        <Property name="-nexa-text-align" group="Style" subgroup="-nexa-text-align" edittype="Enum" defaultvalue="left" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="" description="TabpageControl 에 표시되는 텍스트 또는 컨텐츠의 가로 정렬 방식을 설정하는 속성입니다." csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
-        <Property name="-nexa-text-decoration" group="Style" subgroup="text-decoration" edittype="MultiEnum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TextDecorationLine" unitinfo="" delimiter="" requirement="" description="TabpageControl 에 표시되는 텍스트에 적용할 효과를 설정하는 속성입니다." csspropertyname="-nexa-text-decoration" csselementname="" normalpropertyname="textDecoration" />
-        <Property name="-nexa-vertical-align" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" defaultvalue="middle" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="" description="TabpageControl에 표시되는 텍스트 또는 컨텐츠의 세로 정렬 방식을 설정하는 속성입니다." csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
-        <Property name="-nexa-word-wrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="" description="TabpageControl 에 표시되는 텍스트가 출력영역보다 길 경우 자동으로 줄바꿈 되도록 설정하는 속성입니다." csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
+        <Property name="-nexa-text-align" group="Style" subgroup="-nexa-text-align" edittype="Enum" defaultvalue="left" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabpageControl 에 표시되는 텍스트 또는 컨텐츠의 가로 정렬 방식을 설정하는 속성입니다." csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
+        <Property name="-nexa-text-decoration" group="Style" subgroup="text-decoration" edittype="MultiEnum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TextDecorationLine" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabpageControl 에 표시되는 텍스트에 적용할 효과를 설정하는 속성입니다." csspropertyname="-nexa-text-decoration" csselementname="" normalpropertyname="textDecoration" />
+        <Property name="-nexa-vertical-align" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" defaultvalue="middle" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabpageControl에 표시되는 텍스트 또는 컨텐츠의 세로 정렬 방식을 설정하는 속성입니다." csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
+        <Property name="-nexa-word-wrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabpageControl 에 표시되는 텍스트가 출력영역보다 길 경우 자동으로 줄바꿈 되도록 설정하는 속성입니다." csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
         <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="TabpageControl 영역의 투명도를 설정하는 속성입니다." csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
-        <Property name="word-spacing" group="Style" subgroup="word-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="TabpageControl 에 표시되는 텍스트의 자간을 설정하는 속성입니다." csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
+        <Property name="word-spacing" group="Style" subgroup="word-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="TabpageControl 에 표시되는 텍스트의 단어 사이 간격을 설정하는 속성입니다." csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
       </PropertyInfo>
       <StatusInfo>
         <Status name="disabled" control="true" default="false" deprecated="false" unused="false" group="status" />
@@ -82,7 +82,7 @@
     </StyleInfo>
     <ControlInfo />
     <MethodInfo>
-      <Method name="addChild" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="스크립트에서 동적으로 생성한 컴포넌트를 TabpageControl 의 자식 컴포넌트로 추가하는 메소드입니다.">
+      <Method name="addChild" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="스크립트에서 동적으로 생성한 컴포넌트를 TabpageControl 의 자식 컴포넌트로 추가하는 메소드입니다.">
         <Syntax text="TabpageControl.addChild( strChildID, objComp )">
           <Return type="Integer" description="추가된 자식 컴포넌트의 인덱스를 반환합니다.&#xA;정상적으로 추가되지 않은 경우에는 &quot;-1&quot;을 반환합니다." />
           <Arguments>
@@ -91,7 +91,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="TabpageControl 의 특정 이벤트에 핸들러 함수를 추가하는 메소드입니다.">
+      <Method name="addEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="TabpageControl 의 특정 이벤트에 핸들러 함수를 추가하는 메소드입니다.">
         <Syntax text="TabpageControl.addEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="이벤트에 추가된 핸들러 함수의 인덱스를 반환합니다.&#xA;동일한 핸들러 함수가 이미 있다면 해당 핸들러 함수의 인덱스를 반환합니다.&#xA;정상적으로 추가되지 않은 경우에는 &quot;-1&quot;을 반환합니다." />
           <Arguments>
@@ -101,7 +101,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="함수를 검색하여 TabpageControl 의 특정 이벤트에 핸들러 함수로 추가하는 메소드입니다.">
+      <Method name="addEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="함수를 검색하여 TabpageControl 의 특정 이벤트에 핸들러 함수로 추가하는 메소드입니다.">
         <Syntax text="TabpageControl.addEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="이벤트에 추가된 핸들러 함수의 인덱스를 반환합니다.&#xA;동일한 핸들러 함수가 이미 있다면 해당 핸들러 함수의 인덱스를 반환합니다.&#xA;정상적으로 추가되지 않은 경우에는 &quot;-1&quot;을 반환합니다." />
           <Arguments>
@@ -111,19 +111,19 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="bringToFront" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows)" description="부모가 동일한 컴포넌트 중 TabpageControl 이(가) 화면의 제일 앞에 표시되게 합니다.">
+      <Method name="bringToFront" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="부모가 동일한 컴포넌트 중 TabpageControl 이(가) 화면의 제일 앞에 표시되게 합니다.">
         <Syntax text="TabpageControl.bringToFront()">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="bringToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="부모가 동일한 컴포넌트 중 TabpageControl 이(가) 화면에 한단계 앞에 표시되게 합니다.">
+      <Method name="bringToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="부모가 동일한 컴포넌트 중 TabpageControl 이(가) 화면에 한단계 앞에 표시되게 합니다.">
         <Syntax text="TabpageControl.bringToPrev()">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="특정 이벤트에 등록된 핸들러 함수를 모두 제거하는 메소드입니다.">
+      <Method name="clearEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="특정 이벤트에 등록된 핸들러 함수를 모두 제거하는 메소드입니다.">
         <Syntax text="TabpageControl.clearEventHandler( strEventID )">
           <Return type="Integer" description="특정 이벤트에서 제거된 핸들러 함수의 갯수를 반환합니다." />
           <Arguments>
@@ -131,13 +131,13 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="destroy" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="스크립트에서 동적으로 생성한 TabpageControl 을(를) 삭제하는 메소드입니다.">
+      <Method name="destroy" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="스크립트에서 동적으로 생성한 TabpageControl 을(를) 삭제하는 메소드입니다.">
         <Syntax text="TabpageControl.destroy()">
           <Return type="Boolean" description="TabpageControl 이(가) 정상적으로 삭제되면 &quot;true&quot;를 반환합니다.&#xA;TabpageControl 이(가) 정상적으로 삭제되지 않으면 &quot;false&quot;를 반환합니다." />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 의 특정 이벤트에서 핸들러 함수를 찾아 인덱스를 반환하는 메소드입니다.">
+      <Method name="findEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="TabpageControl 의 특정 이벤트에서 핸들러 함수를 찾아 인덱스를 반환하는 메소드입니다.">
         <Syntax text="TabpageControl.findEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="이벤트에서 찾으려고 하는 핸들러 함수의 인덱스를 반환합니다.&#xA;찾으려고 하는 핸들러 함수가 존재하지 않는다면 &quot;-1&quot;을 반환합니다." />
           <Arguments>
@@ -240,13 +240,13 @@
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="init" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
+      <Method name="init" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="insertChild" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="스크립트로 동적 생성한 컴포넌트를 TabpageControl 의 자식 컴포넌트로 특정 순서에 추가하는 메소드입니다.">
+      <Method name="insertChild" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="스크립트로 동적 생성한 컴포넌트를 TabpageControl 의 자식 컴포넌트로 특정 순서에 추가하는 메소드입니다.">
         <Syntax text="TabpageControl.insertChild( nIdx, strChildID, objComp )">
           <Return type="Integer" description="추가된 자식 컴포넌트의 인덱스를 반환합니다.&#xA;정상적으로 추가되지 않은 경우에는 &quot;-1&quot;을 반환합니다." />
           <Arguments>
@@ -256,7 +256,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="isValidObject" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="">
+      <Method name="isValidObject" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="">
           <Return type="" description="" />
           <Arguments />
@@ -275,7 +275,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="moveToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="부모가 동일한 컴포넌트 중 인수로 전달된 컴포넌트보다 TabpageControl 이(가) 화면에 한단계 뒤에 표시되게 합니다.">
+      <Method name="moveToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="부모가 동일한 컴포넌트 중 인수로 전달된 컴포넌트보다 TabpageControl 이(가) 화면에 한단계 뒤에 표시되게 합니다.">
         <Syntax text="TabpageControl.moveToNext( objComp )&#xA;TabpageControl.moveToNext( strComp )">
           <Return type="" description="" />
           <Arguments>
@@ -284,7 +284,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="moveToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="부모가 동일한 컴포넌트 중 인수로 전달된 컴포넌트보다 TabpageControl 이(가) 화면에 한단계 앞에 표시되게 합니다.">
+      <Method name="moveToPrev" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="부모가 동일한 컴포넌트 중 인수로 전달된 컴포넌트보다 TabpageControl 이(가) 화면에 한단계 앞에 표시되게 합니다.">
         <Syntax text="TabpageControl.moveToPrev( objComp )&#xA;TabpageControl.moveToPrev( strComp )">
           <Return type="" description="" />
           <Arguments>
@@ -293,7 +293,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="removeChild" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 에 동적으로 추가된 컴포넌트를 제거하는 메소드입니다.">
+      <Method name="removeChild" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="TabpageControl 에 동적으로 추가된 컴포넌트를 제거하는 메소드입니다.">
         <Syntax text="TabpageControl.removeChild( strChildID )">
           <Return type="Object" description="컴포넌트 제거에 성공하면 제거된 컴포넌트의 오브젝트를 반환합니다.&#xA;컴포넌트 제거에 실패하면 &quot;null&quot;을 반환합니다." />
           <Arguments>
@@ -301,7 +301,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 의 특정 이벤트에서 핸들러 함수를 제거하는 메소드입니다.">
+      <Method name="removeEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="TabpageControl 의 특정 이벤트에서 핸들러 함수를 제거하는 메소드입니다.">
         <Syntax text="TabpageControl.removeEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="핸들러 함수 제거에 성공하면 &quot;1&quot;을 반환합니다.&#xA;핸들러 함수 제거에 실패하면 &quot;0&quot;을 반환합니다." />
           <Arguments>
@@ -311,7 +311,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 의 특정 이벤트에서 검색된 함수와 동일한 핸들러 함수를 제거하는 메소드입니다.">
+      <Method name="removeEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="TabpageControl 의 특정 이벤트에서 검색된 함수와 동일한 핸들러 함수를 제거하는 메소드입니다.">
         <Syntax text="TabpageControl.removeEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="핸들러 함수 제거에 성공하면 &quot;1&quot;을 반환합니다.&#xA;핸들러 함수 제거에 실패하면 &quot;0&quot;을 반환합니다." />
           <Arguments>
@@ -330,19 +330,19 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="sendToBack" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="부모가 동일한 컴포넌트 중 TabpageControl 이(가) 화면의 제일 뒤에 표시되게 합니다.">
+      <Method name="sendToBack" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="부모가 동일한 컴포넌트 중 TabpageControl 이(가) 화면의 제일 뒤에 표시되게 합니다.">
         <Syntax text="TabpageControl.sendToBack()">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="sendToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="부모가 동일한 컴포넌트 중 TabpageControl 이(가) 화면에 한단계 뒤에 표시되게 합니다.">
+      <Method name="sendToNext" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="부모가 동일한 컴포넌트 중 TabpageControl 이(가) 화면에 한단계 뒤에 표시되게 합니다.">
         <Syntax text="TabpageControl.sendToNext()">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </Method>
-      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 의 특정 이벤트에서 첫번째 핸들러 함수를 변경하는 메소드입니다.">
+      <Method name="setEventHandler" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="TabpageControl 의 특정 이벤트에서 첫번째 핸들러 함수를 변경하는 메소드입니다.">
         <Syntax text="TabpageControl.setEventHandler( strEventID, objFunc, objTarget )">
           <Return type="Integer" description="첫번째 핸들러 함수 변경에 성공하면 &quot;0&quot;을 반환합니다.&#xA;첫번째 핸들러 함수 변경에 실패하면 &quot;-1&quot;을 반환합니다." />
           <Arguments>
@@ -352,7 +352,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 의 특정 이벤트에서 첫번째 핸들러 함수를 검색된 함수로 변경하는 메소드입니다.">
+      <Method name="setEventHandlerLookup" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="TabpageControl 의 특정 이벤트에서 첫번째 핸들러 함수를 검색된 함수로 변경하는 메소드입니다.">
         <Syntax text="TabpageControl.setEventHandlerLookup( strEventID, strFunc, objTarget )">
           <Return type="Integer" description="첫번째 핸들러 함수 변경에 성공하면 &quot;0&quot;을 반환합니다.&#xA;첫번째 핸들러 함수 변경에 실패하면 &quot;-1&quot;을 반환합니다." />
           <Arguments>
@@ -362,7 +362,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 에 포커스를 주는 메소드입니다.">
+      <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="false" requirement="" description="TabpageControl 에 포커스를 주는 메소드입니다.">
         <Syntax text="TabpageControl.setFocus( [bMoveScroll] )">
           <Return type="Object" description="TabpageControl 이(가) 포커스되기 전에 포커스를 가졌던 컴포넌트를 반환합니다.&#xA;포커스를 가진 컴포넌트가 없었거나 메소드 수행이 실패하는 경우에는 &quot;null&quot;을 반환합니다." />
           <Arguments>
@@ -418,7 +418,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="show" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="스크립트로 동적 생성한 TabpageControl 을(를) 화면에 표시하는 메소드입니다.">
+      <Method name="show" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="스크립트로 동적 생성한 TabpageControl 을(를) 화면에 표시하는 메소드입니다.">
         <Syntax text="TabpageControl.show()">
           <Return type="" description="" />
           <Arguments />
@@ -426,7 +426,7 @@
       </Method>
     </MethodInfo>
     <EventHandlerInfo>
-      <EventHandler name="onclick" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 영역 내에서 마우스 왼쪽버튼을 클릭했을 때 발생하는 이벤트입니다.">
+      <EventHandler name="onclick" group="Event" deprecated="false" unused="true" requirement="" description="TabpageControl 영역 내에서 마우스 왼쪽버튼을 클릭했을 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.onclick(obj:nexacro.Tabpage,e:nexacro.ClickEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -434,13 +434,13 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondblclick" group="Event" deprecated="false" unused="true" requirement="" description="">
+      <EventHandler name="ondblclick" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="">
         <Syntax text="TabpageControl.ondblclick(obj:nexacro.Tabpage,e:nexacro.);">
           <Return type="" description="" />
           <Arguments />
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondrag" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 영역 내에서 마우스 왼쪽버튼으로 드래그를 수행했을 때 발생하는 이벤트입니다.">
+      <EventHandler name="ondrag" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl 영역 내에서 마우스 왼쪽버튼으로 드래그를 수행했을 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.ondrag(obj:nexacro.Tabpage,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 드래그 상태가 되고 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 드래그 상태가 취소되고 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -448,7 +448,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondragenter" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 영역 내로 드래그 상태의 마우스 포인터가 들어왔을 때 발생하는 이벤트입니다.">
+      <EventHandler name="ondragenter" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl 영역 내로 드래그 상태의 마우스 포인터가 들어왔을 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.ondragenter(obj:nexacro.Tabpage,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -456,7 +456,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondragleave" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 영역 밖으로 드래그 상태의 마우스 포인터가 나갈 때 발생하는 이벤트입니다.">
+      <EventHandler name="ondragleave" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl 영역 밖으로 드래그 상태의 마우스 포인터가 나갈 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.ondragleave(obj:nexacro.Tabpage,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -464,7 +464,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondragmove" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 영역 내에서 드래그 상태의 마우스 포인터가 움직일 때 발생하는 이벤트입니다.">
+      <EventHandler name="ondragmove" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl 영역 내에서 드래그 상태의 마우스 포인터가 움직일 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.ondragmove(obj:nexacro.Tabpage,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -472,7 +472,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondrop" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 영역 내에서 드래그 상태의 마우스 버튼을 떼었을 때 발생하는 이벤트입니다.">
+      <EventHandler name="ondrop" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl 영역 내에서 드래그 상태의 마우스 버튼을 떼었을 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.ondrop(obj:nexacro.Tabpage,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -480,7 +480,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onhscroll" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 의 수평 스크롤바를 스크롤 했을 때 발생하는 이벤트입니다.">
+      <EventHandler name="onhscroll" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl 의 수평 스크롤바를 스크롤 했을 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.onhscroll(obj:nexacro.Tabpage,e:nexacro.ScrollEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -488,7 +488,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="oninput" group="Event" deprecated="false" unused="true" requirement="" description="TabpageControl 에 키보드로 값이 입력될 때 발생하는 이벤트 입니다.">
+      <EventHandler name="oninput" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="TabpageControl 에 키보드로 값이 입력될 때 발생하는 이벤트 입니다.">
         <Syntax text="TabpageControl.oninput(obj:nexacro.Tabpage,e:nexacro.InputEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -496,7 +496,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onkeydown" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 에 포커스가 있는 상태에서 키보드의 키가 눌렸을 때 발생하는 이벤트입니다.">
+      <EventHandler name="onkeydown" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl 에 포커스가 있는 상태에서 키보드의 키가 눌렸을 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.onkeydown(obj:nexacro.Tabpage,e:nexacro.KeyEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -504,7 +504,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onkeyup" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 에 포커스가 있는 상태에서 눌렸던 키보드가 떼어질 때 발생하는 이벤트입니다.">
+      <EventHandler name="onkeyup" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl 에 포커스가 있는 상태에서 눌렸던 키보드가 떼어질 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.onkeyup(obj:nexacro.Tabpage,e:nexacro.KeyEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -512,7 +512,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onkillfocus" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 에서 포커스가 나갈  때 발생하는 이벤트입니다.">
+      <EventHandler name="onkillfocus" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl 에서 포커스가 나갈  때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.onkillfocus(obj:nexacro.Tabpage,e:nexacro.KillFocusEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -520,7 +520,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onlbuttondown" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 영역 내에서 마우스 왼쪽버튼을 눌렀을 때 발생하는 이벤트입니다.">
+      <EventHandler name="onlbuttondown" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl 영역 내에서 마우스 왼쪽버튼을 눌렀을 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.onlbuttondown(obj:nexacro.Tabpage,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -528,7 +528,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onlbuttonup" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 영역 내에서 눌렸던 마우스 왼쪽버튼을 떼었을 때 발생하는 이벤트입니다.">
+      <EventHandler name="onlbuttonup" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl 영역 내에서 눌렸던 마우스 왼쪽버튼을 떼었을 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.onlbuttonup(obj:nexacro.Tabpage,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -536,7 +536,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmousedown" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 영역 내에서 마우스의 왼쪽/오른쪽 버튼을 제외한 나머지 버튼이 눌렸을 때 발생하는 이벤트입니다.">
+      <EventHandler name="onmousedown" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl 영역 내에서 마우스의 왼쪽/오른쪽 버튼을 제외한 나머지 버튼이 눌렸을 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.onmousedown(obj:nexacro.Tabpage,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -544,7 +544,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmouseenter" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 영역 내로 마우스 포인터가 들어왔을 때 발생하는 이벤트입니다.">
+      <EventHandler name="onmouseenter" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl 영역 내로 마우스 포인터가 들어왔을 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.onmouseenter(obj:nexacro.Tabpage,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -552,7 +552,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmouseleave" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 영역 밖으로 마우스 포인터가 나갈 때 발생하는 이벤트입니다.">
+      <EventHandler name="onmouseleave" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl 영역 밖으로 마우스 포인터가 나갈 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.onmouseleave(obj:nexacro.Tabpage,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -560,7 +560,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmousemove" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 영역 내에서 마우스 포인터가 움직일 때 발생하는 이벤트입니다.">
+      <EventHandler name="onmousemove" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl 영역 내에서 마우스 포인터가 움직일 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.onmousemove(obj:nexacro.Tabpage,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -568,7 +568,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmouseup" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 영역 내에서 눌렸던 마우스의 버튼(왼쪽/오른쪽 버튼 제외)을 떼었을 때 발생하는 이벤트입니다.">
+      <EventHandler name="onmouseup" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl 영역 내에서 눌렸던 마우스의 버튼(왼쪽/오른쪽 버튼 제외)을 떼었을 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.onmouseup(obj:nexacro.Tabpage,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다" />
           <Arguments>
@@ -584,7 +584,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmove" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl의 위치가 이동했을 때 발생하는 이벤트입니다.">
+      <EventHandler name="onmove" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl의 위치가 이동했을 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.onmove(obj:nexacro.Tabpage,e:nexacro.MoveEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -592,7 +592,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onrbuttondown" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 영역 내에서 마우스 오른쪽버튼을 눌렀을 때 발생하는 이벤트입니다.">
+      <EventHandler name="onrbuttondown" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl 영역 내에서 마우스 오른쪽버튼을 눌렀을 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.onrbuttondown(obj:nexacro.Tabpage,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -600,7 +600,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onrbuttonup" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 영역 내에서 마우스 오른쪽버튼을 떼었을 때 발생하는 이벤트입니다.">
+      <EventHandler name="onrbuttonup" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl 영역 내에서 마우스 오른쪽버튼을 떼었을 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.onrbuttonup(obj:nexacro.Tabpage,e:nexacro.MouseEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -608,7 +608,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onsetfocus" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 에 포커스가 들어올 때 발생하는 이벤트입니다.">
+      <EventHandler name="onsetfocus" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl 에 포커스가 들어올 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.onsetfocus(obj:nexacro.Tabpage,e:nexacro.SetFocusEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -616,7 +616,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onsize" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl의 크기가 변경됐을 때 발생하는 이벤트입니다.">
+      <EventHandler name="onsize" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl의 크기가 변경됐을 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.onsize(obj:nexacro.Tabpage,e:nexacro.SizeEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -624,7 +624,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ontouchend" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 영역 내에서 터치를 떼었을 때 발생하는 이벤트입니다.">
+      <EventHandler name="ontouchend" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl 영역 내에서 터치를 떼었을 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.ontouchend(obj:nexacro.Tabpage,e:nexacro.TouchEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -632,7 +632,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ontouchmove" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 영역 내에서 터치 상태를 유지하며 움직일 때 발생하는 이벤트입니다.">
+      <EventHandler name="ontouchmove" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl 영역 내에서 터치 상태를 유지하며 움직일 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.ontouchmove(obj:nexacro.Tabpage,e:nexacro.TouchEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -640,7 +640,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ontouchstart" group="Event" deprecated="false" unused="false" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="TabpageControl 영역 내에서 터치가 시작될 때 발생하는 이벤트입니다.">
+      <EventHandler name="ontouchstart" group="Event" deprecated="false" unused="false" requirement="" description="TabpageControl 영역 내에서 터치가 시작될 때 발생하는 이벤트입니다.">
         <Syntax text="TabpageControl.ontouchstart(obj:nexacro.Tabpage,e:nexacro.TouchEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>

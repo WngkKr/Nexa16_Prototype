@@ -7777,9 +7777,13 @@ if (!nexacro.Dataset)
 		                    {
 		                        if ((value2 instanceof nexacro.Decimal) == false)
 		                        {
-		                            if (pThis.colinfos[key.colidx].type == "STRING")
+		                            var _type = pThis.colinfos[key.colidx].type.toLowerCase();
+		                            if (_type == "string")
 		                            {
-		                                cmp = value1.localeCompare(value2, _locale);
+		                                if (nexacro.BrowserLang.indexOf(_locale) >= 0)
+		                                    cmp = value1.localeCompare(value2);
+		                                else
+		                                    cmp = value1.localeCompare(value2, _locale);
 		                            }
 		                            else
 		                            {
@@ -11207,7 +11211,7 @@ _pDataset._loadRecordFromDOM = function (dsDOM, curIdx, loadCnt)
 			    if (rowData._orgcolstrings && !!bUseOrgColStrings)
 			    {
 			        //value = rowData._orgcolstrings[i];
-			        value = rowData._orgcolstrings[idx]
+			        value = rowData._orgcolstrings[idx];
 			    }
 			    else
 			    {

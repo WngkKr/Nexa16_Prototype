@@ -78,12 +78,12 @@ if (nexacro.Tab)
     {
         var post_idx = parseInt(v) | 0;
         this._design_tabindex = post_idx;
-    }
+    };
 
     _pTab.design_get_tabindex = function ()
     {
         return this._design_tabindex;
-    }
+    };
 
     //==============================================================================
     // nexacro.Tab : Design Method

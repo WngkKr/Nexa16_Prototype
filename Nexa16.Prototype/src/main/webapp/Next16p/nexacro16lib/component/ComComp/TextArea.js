@@ -37,7 +37,6 @@ if (!nexacro.TextArea)
     _pTextArea.autoselect = false;
     _pTextArea.autoskip = false;
     _pTextArea.displaynulltext = "";
-    _pTextArea.displaynulltextcolor = "";
     _pTextArea.dragscrolltype = "both";
     _pTextArea.imemode = "none";
     _pTextArea.inputfilter = "none";
@@ -59,23 +58,16 @@ if (!nexacro.TextArea)
 
     _pTextArea._default_value = undefined;
     _pTextArea._default_text = "";
-    _pTextArea._displaynulltextcolor = null;
     _pTextArea._keypad_type = "text";
     _pTextArea._imedisable = false;
     _pTextArea._want_tab = true;
-
-    _pTextArea._init_max_scroll_width = 0;
-    _pTextArea._init_max_scroll_height = 0;
-    _pTextArea._max_scroll_width = 0;
-    _pTextArea._max_scroll_height = 0;
-    _pTextArea._update_scroll_lock = false;
-    _pTextArea._max_line = null;
 
     _pTextArea._processing_updateScroll = false;
     _pTextArea._processing_updateToDataset = false;
     _pTextArea._result_updateToDataset = true;
     _pTextArea._apply_filter = true;
 
+    _pTextArea._onlydisplay = false;
     _pTextArea._apply_client_padding = false;
 
     /* status */
@@ -114,13 +106,26 @@ if (!nexacro.TextArea)
             if (!this._onlydisplay)
             {
                 input_elem = this._input_element = new nexacro.TextAreaElement(control, "textarea");
+                input_elem.setElementAutoSkip(this.autoskip);
+                input_elem.setElementAutoSelect(this.autoselect);
+                input_elem.setElementUseIme(this.useime);
+                input_elem.setElementImeMode(this.imemode);
+                input_elem.setElementReadonly(this.readonly);
+                input_elem.setElementDisplayNullText(this.displaynulltext);
+                input_elem.setElementMaxLength(this.maxlength);
+                input_elem.setElementInputType(this._keypad_type);
             }
             else
             {
                 input_elem = this._input_element = new nexacro.TextBoxElement(control, "textarea");
             }
+
             input_elem.setElementPosition(this._getClientLeft(), this._getClientTop());
             input_elem.setElementSize(this._getClientWidth(), this._getClientHeight());
+            input_elem.setElementTextDecoration(this._textdecoration);
+
+            var wordwrap_info = this._getCSSStyleValue("wordWrap");
+            input_elem.setElementWordWrap(wordwrap_info || this.wordWrap || "none");
 
             this._undostack = new nexacro._EditUndoStack(this);
         }
@@ -136,12 +141,15 @@ if (!nexacro.TextArea)
                 this._hscrollbartype = "none";
             }
 
-            this._init_element_property();
-
             this.on_apply_padding(this._padding);
             this.on_apply_value();
 
             input_elem.create(win);
+
+            if (nexacro._isNull(this.value))
+            {
+                this._changeUserStatus("nulltext", true);
+            }
 
             this._onResetScrollBar();
             this._onRecalcScrollSize();
@@ -158,8 +166,7 @@ if (!nexacro.TextArea)
                 this._hscrollbartype = "none";
             }
 
-            this._init_element_property();
-
+            this.on_apply_padding(this._padding);
             this.on_apply_value();
 
             return input_elem.createCommand();
@@ -174,6 +181,11 @@ if (!nexacro.TextArea)
         if (input_elem)
         {
             input_elem.attachHandle(win);
+
+            if (nexacro._isNull(this.value))
+            {
+                this._changeUserStatus("nulltext", true);
+            }
         }
 
         this._onRecalcScrollSize();
@@ -194,6 +206,18 @@ if (!nexacro.TextArea)
         {
             undostack.destroy();
             this._undostack = null;
+        }
+
+        var inputfilterobj = this._inputfilter_obj;
+        if (inputfilterobj)
+        {
+            this._inputfilter_obj = null;
+        }
+
+        var inputtypeobj = this._inputtype_obj;
+        if (inputtypeobj)
+        {
+            this._inputtype_obj = null;
         }
     };
 
@@ -273,6 +297,18 @@ if (!nexacro.TextArea)
             }
 
             this._setValue(v);
+        }
+    };
+
+    _pTextArea.on_changeUserStatus = function (changestatus, value, applyuserstatus, currentstatus, currentuserstatus)
+    {
+        if (value)
+        {
+            return changestatus;
+        }
+        else
+        {
+            return applyuserstatus;
         }
     };
 
@@ -374,8 +410,17 @@ if (!nexacro.TextArea)
         var input_elem = this._input_element;
         if (input_elem)
         {
+            var text = this.text;
             var value = (this.value ? this.text : this.value);
-            var text;
+            
+            if (this._is_created && nexacro._isNull(this.value))
+            {
+                this._changeUserStatus("nulltext", true);
+            }
+            else
+            {
+                this._changeUserStatus("nulltext", false);
+            }
 
             if (!this._onlydisplay)
             {
@@ -386,13 +431,11 @@ if (!nexacro.TextArea)
                 }
 
                 input_elem.setElementValue(value);
-
                 text = input_elem.getElementText();
             }
             else
             {
                 input_elem.setElementText(value);
-                text = value;
             }
 
             if (this.text != text)
@@ -441,39 +484,6 @@ if (!nexacro.TextArea)
         }
     };
 
-    _pTextArea.set_displaynulltextcolor = function (v)
-    {
-        this.displaynulltextcolor = v;
-
-        if (v)
-        {
-            if (this._displaynulltextcolor == null || this._displaynulltextcolor.value != v)
-            {
-                var color = nexacro.ColorObject(v);
-                this._displaynulltextcolor = color;
-                this.on_apply_displaynulltextcolor();
-            }
-        }
-        else
-        {
-            if (this._displaynulltextcolor)
-            {
-                this._displaynulltextcolor = null;
-                this.on_apply_displaynulltextcolor();
-            }
-        }
-    };
-
-    _pTextArea.on_apply_displaynulltextcolor = function ()
-    {
-        var input_elem = this._input_element;
-        if (input_elem)
-        {
-            if (!this._onlydisplay)
-                input_elem.setElementDisplayNullTextColor(this._displaynulltextcolor);
-        }
-    };
-
     _pTextArea.set_readonly = function (v)
     {
         v = nexacro._toBoolean(v);
@@ -487,6 +497,7 @@ if (!nexacro.TextArea)
     _pTextArea.on_apply_readonly = function (val)
     {
         var v = this.readonly;
+
         this._changeStatus("readonly", v);
 
         var input_elem = this._input_element;
@@ -749,15 +760,6 @@ if (!nexacro.TextArea)
         }
     };
 
-    _pTextArea.on_apply_textAlign = function (halign)
-    {
-        var input_elem = this._input_element;
-        if (input_elem)
-        {
-            input_elem.setElementTextAlign(halign);
-        }
-    };
-
     _pTextArea.set_cursor = function (val)
     {
         this.cursor = val;
@@ -784,6 +786,15 @@ if (!nexacro.TextArea)
         }
     };
 
+    _pTextArea.on_apply_textAlign = function (halign)
+    {
+        var input_elem = this._input_element;
+        if (input_elem)
+        {
+            input_elem.setElementTextAlign(halign);
+        }
+    };
+
     _pTextArea.on_apply_padding = function (padding)
     {
         var input_elem = this._input_element;
@@ -803,9 +814,10 @@ if (!nexacro.TextArea)
             control_elem.setElementLineHeight(lineHeight);
 
             var input_elem = this._input_element;
-            if (input_elem && !this._onlydisplay)
+            if (input_elem)
             {
-                input_elem.updateElementText(this.value);
+                if (!this._onlydisplay)
+                    input_elem.updateElementText(this.value);
             }
 
             this._onRecalcScrollSize();
@@ -854,28 +866,30 @@ if (!nexacro.TextArea)
         var input_elem = this._input_element;
         if (input_elem)
         {
-            if (arguments.length == 0)
+            if (!this._onlydisplay)
             {
-                v = 0;
-            }
-            else
-            {
-                v = nexacro._toInt(v);
-                if (v == -1)
+                if (arguments.length == 0)
                 {
-                    if (v)
+                    v = 0;
+                }
+                else
+                {
+                    v = nexacro._toInt(v);
+                    if (v == -1)
                     {
-                        v = this.text.length;
-                    }
-                    else
-                    {
-                        v = 0;
+                        if (v)
+                        {
+                            v = this.text.length;
+                        }
+                        else
+                        {
+                            v = 0;
+                        }
                     }
                 }
-            }
 
-            if (!this._onlydisplay)
                 input_elem.setElementSetSelect(v, v);
+            }
 
             return true;
         }
@@ -898,45 +912,47 @@ if (!nexacro.TextArea)
         var input_elem = this._input_element;
         if (input_elem)
         {
-            var txt = this.text ? this.text : "";
-            var txt_len = txt.length;
-
-            if (nexacro._isNull(start) || start === "")
-            {
-                start = 0;
-            }
-            if (nexacro._isNull(end) || end === "")
-            {
-                end = -1;
-            }
-
-            if (!nexacro._isNumber(start))
-            {
-                start = nexacro._toInt(start);
-            }
-            if (!nexacro._isNumber(end))
-            {
-                end = nexacro._toInt(end);
-            }
-
-            if (start == -1)
-            {
-                start = txt_len;
-            }
-            if (end == -1)
-            {
-                end = txt_len;
-            }
-
-            if (start > end)
-            {
-                var tmp = start;
-                start = end;
-                end = tmp;
-            }
-
             if (!this._onlydisplay)
+            {
+                var txt = this.text ? this.text : "";
+                var txt_len = txt.length;
+
+                if (nexacro._isNull(start) || start === "")
+                {
+                    start = 0;
+                }
+                if (nexacro._isNull(end) || end === "")
+                {
+                    end = -1;
+                }
+
+                if (!nexacro._isNumber(start))
+                {
+                    start = nexacro._toInt(start);
+                }
+                if (!nexacro._isNumber(end))
+                {
+                    end = nexacro._toInt(end);
+                }
+
+                if (start == -1)
+                {
+                    start = txt_len;
+                }
+                if (end == -1)
+                {
+                    end = txt_len;
+                }
+
+                if (start > end)
+                {
+                    var tmp = start;
+                    start = end;
+                    end = tmp;
+                }
+
                 input_elem.setElementSetSelect(start, end);
+            }
 
             return true;
         }
@@ -1142,12 +1158,10 @@ if (!nexacro.TextArea)
 
     _pTextArea.updateToDataset = function ()
     {
-        var ret = this.applyto_bindSource("value", this.value);
-
-        this._result_updateToDataset = ret;
+        this._result_updateToDataset = this.applyto_bindSource("value", this.value);
         this._processing_updateToDataset = true;
 
-        return ret;
+        return this._result_updateToDataset;
     };
 
     //===============================================================
@@ -1157,17 +1171,11 @@ if (!nexacro.TextArea)
     {
         if (!this._is_alive) return;
 
-        // status change
         if (!this._isSelected())
         {
             this._changeStatus("focused", false);
         }
 
-        //nexacro.Component.prototype._on_deactivate.call(this);
-        // Compbase에서 this._on_killfocus(null, null) 를 호출하고 있는데
-        // deactivate되었다고 해서 killfocus는 아니기 때문에 개념이 맞지 않는다.
-        // deactivate 에서 killfocus 발생시켜 처리하는 기능을 이 함수에서 처리하는 것으로 변경하고
-        // _pComponent._on_deactivate 함수에서 '_on_killfocus 호출 제거할 것
         var input_elem = this._input_element;
         if (input_elem)
         {
@@ -1415,6 +1423,8 @@ if (!nexacro.TextArea)
             this._default_value = this.value;
             this._default_text = this.text;
 
+            this._changeUserStatus("nulltext", false);
+
             var win = this._getWindow();
             if (win)
             {
@@ -1493,6 +1503,11 @@ if (!nexacro.TextArea)
                 }
             }
 
+            if (nexacro._isNull(this.value))
+            {
+                this._changeUserStatus("nulltext", true);
+            }
+
             if (!this._onlydisplay)
                 input_elem.setElementBlur();
         }
@@ -1503,10 +1518,8 @@ if (!nexacro.TextArea)
         var input_elem = this._input_element;
         if (input_elem)
         {
-            if (this._onlydisplay)
-                return;
-
-            input_elem.setElementFocus(button);
+            if (!this._onlydisplay)
+                input_elem.setElementFocus(button);
         }
     };
 
@@ -1631,35 +1644,6 @@ if (!nexacro.TextArea)
         }
 
         return false;
-    };
-
-    _pTextArea._init_element_property = function ()
-    {
-        var input_elem = this._input_element;
-        if (input_elem)
-        {
-            var textdecoration = this._textdecoration;
-            if (textdecoration)
-            {
-                input_elem.setElementTextDecoration(textdecoration);
-            }
-
-            if (!this._onlydisplay)
-            {
-                input_elem.setElementReadonly(this.readonly);
-                input_elem.setElementMaxLength(this.maxlength);
-                input_elem.setElementAutoSkip(this.autoskip);
-                input_elem.setElementAutoSelect(this.autoselect);
-                input_elem.setElementUseIme(this.useime);
-                input_elem.setElementImeMode(this.imemode);
-                input_elem.setElementInputType(this._keypad_type);
-                input_elem.setElementDisplayNullTextColor(this._displaynulltextcolor);
-                input_elem.setElementDisplayNullText(this.displaynulltext);
-            }
-
-            var wordwrap_info = this._getCSSStyleValue("wordWrap");
-            input_elem.setElementWordWrap(wordwrap_info || this.wordWrap || "none");
-        }
     };
 
     _pTextArea._getLineCount = function ()

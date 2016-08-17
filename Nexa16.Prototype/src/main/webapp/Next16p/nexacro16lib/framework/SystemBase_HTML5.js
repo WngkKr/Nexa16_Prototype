@@ -129,26 +129,37 @@ if (nexacro._Browser != "Runtime")
 
         nexacro._nexacroconsole = function (str, w, h)
         {
-            var target = document.getElementById("mainframe_childframe");
+
+           
+            var target = document.getElementById("mainframe");
             var console = document.getElementById("nexacroconsole");
+            
             if (!console)
             {
                 console = document.createElement("div");
                 console.id = "nexacroconsole";
-                console.className = "nexacroconsole";
+                //console.className = "nexacroconsole";
+                console.style.backgroundColor = "black";
+                console.style.color = "white";
+                console.style.fontSize = "34";
+                console.style.position = "absolute";
+                console.style.left = 400;
+                console.style.width = 600;
+                console.style.height = 1000;
 
                 if (w)
                 {
-                    console.style.width = (parseInt(w) | 0) + "%";
+                    console.style.width = (parseInt(w) | 0) + "px";
                 }
                 if (h)
                 {
-                    console.style.height = (parseInt(h) | 0) + "%";
+                    console.style.height = (parseInt(h) | 0) + "px";
                 }
 
                 target && target.appendChild(console);
             }
-            console.innerHTML += str + "<br>";
+            
+            console.innerHTML = str + "<br>" + console.innerHTML;
         };
 
         //==============================================================================
@@ -6509,32 +6520,201 @@ if (nexacro._Browser != "Runtime")
             return txt;
         };
 
+
+        if (nexacro._Browser == "IE" && nexacro._BrowserVersion < 9)
+        {
+            nexacro._getCloneNode = function (node)
+            {
+                var clone = document.createElement("div");  // cloneNode_function destroy vml_code
+                clone.innerHTML = node.innerHTML;
+                return clone;
+            };
+
+            nexacro._makeFakePrintNode = function (comps)
+            {
+                var remove_targets = [];
+
+                for (var i = 0, len = comps.length; i < len; i++)
+                {
+                    if (comps[i]._type_name == "WebBrowser")
+                    {
+                        var doc = comps[i].document;
+                        if (doc)
+                        {
+                            // 위치 조정, 크기 조정
+                            var fake_chart_node = document.createElement("div");
+                            fake_chart_node.innerHTML = doc.body.innerHTML;
+
+                            var style = comps[i]._control_element._client_element._handle.style;
+                            fake_chart_node.style.position = "absolute";
+                            fake_chart_node.style.left = style.left;
+                            fake_chart_node.style.top = style.top;
+                            fake_chart_node.style.width = style.width;
+                            fake_chart_node.style.height = style.height;
+                            comps[i]._control_element._handle.appendChild(fake_chart_node);
+                            remove_targets.push(fake_chart_node);
+                        }
+                    }
+                }
+
+                return remove_targets;
+            };
+        }
+        else // HTML5 (IE9~ / FF / Chrome)
+        {
+            nexacro._getCloneNode = function (node)
+            {
+                return node.cloneNode(true);
+            };
+
+            nexacro._makeFakePrintNode = function (comps)
+            {
+                var remove_targets = [];
+
+                for (var i = 0, len = comps.length; i < len; i++)
+                {
+                    var doc = comps[i].document;
+                    if (doc)
+                    {
+                        var canvases = doc.getElementsByTagName("canvas");
+                        if (canvases && canvases.length)
+                        {
+                            var cv = doc.createElement("canvas");
+                            var context = cv.getContext("2d");
+
+                            var w, h;
+                            w = h = 0;
+
+                            for (var j = 0, cv_len = canvases.length; j < cv_len ; j++)
+                            {
+                                if (w < canvases[j].clientWidth)
+                                    w = canvases[j].clientWidth;
+
+                                if (h < canvases[j].clientHeight)
+                                    h = canvases[j].clientHeight;
+                            }
+                            cv.width = w;
+                            cv.height = h;
+
+                            for (var j = 0, cv_len = canvases.length; j < cv_len ; j++)
+                            {
+                                context.drawImage(canvases[j], parseInt(canvases[j].style.left), parseInt(canvases[j].style.top), canvases[j].clientWidth, canvases[j].clientHeight);
+                            }
+
+                            var fake_chart_node = document.createElement("img");
+                            fake_chart_node.src = cv.toDataURL("image/png");
+
+                            var style = comps[i]._control_element._client_element._handle.style;
+                            fake_chart_node.style.position = style.position;
+                            fake_chart_node.style.left = style.left;
+                            fake_chart_node.style.top = style.top;
+                            fake_chart_node.style.width = style.width;
+                            fake_chart_node.style.height = style.height;
+                            comps[i]._control_element._handle.appendChild(fake_chart_node);
+                            remove_targets.push(fake_chart_node);
+                        }
+                    }
+                }
+
+                return remove_targets;
+            };
+        }
+
+        nexacro._searchFakePrintNode = function (comp, make_targets)
+        {
+            if (comp._is_form)
+            {
+                var comps = comp.components;
+                for (var i = 0, len = comps.length; i < len; i++)
+                {
+                    if (comps[i]._type_name == "WebBrowser")
+                    {
+                        make_targets.push(comps[i]);
+                    }
+                    else if (comps[i]._is_form) //recursive
+                    {
+                        make_targets = nexacro._searchFakePrintNode(comps[i], make_targets);
+                    }
+                }
+            }
+
+            return make_targets;
+        };
+
+        nexacro._beforePrintCheckPlugin = function (comp, refform, defaultprint, valign, halign, fitonepage)
+        {
+            var make_targets = [];
+            var remove_targets = [];
+
+            if (comp._is_form)
+            {
+                make_targets = nexacro._searchFakePrintNode(comp, make_targets);
+                remove_targets = nexacro._makeFakePrintNode(make_targets);
+            }
+            else if (comp._type_name == "WebBrowser")
+            {
+                if (nexacro._BrowserVersion > 8 && (nexacro._Browser == "Edge" || nexacro._Browser == "IE"))
+                {
+                    make_targets.push(comp);
+                    remove_targets = nexacro._makeFakePrintNode(make_targets);
+                }
+                else
+                {
+                    nexacro._printInnerContents(comp);
+                    return;
+                }
+            }
+
+            nexacro._print(comp, comp._refform, defaultprint, valign, halign);
+
+            for (var i = 0, len = remove_targets.length; i < len; i++)
+            {
+                remove_targets[i].parentNode.removeChild(remove_targets[i]);
+            }
+
+            make_targets = null;
+            remove_targets = null;
+        };
+
         nexacro._print = function (pThis, refform, defaultprint, valign, halign)
         {
-
             var form_elem = refform.getElement();
-            var doc = form_elem._getRootWindowHandle();
+            var doc = form_elem.getRootWindowHandle();
 
-            var clone_handle = pThis._control_element.handle.cloneNode(true);
+            //var clone_handle = pThis._control_element._handle.cloneNode(true);
+            var clone_handle = nexacro._getCloneNode(pThis._control_element._handle);
 
             if (pThis._control_element.container_maxwidth)
             {
-                clone_handle.style.width = pThis._control_element.container_maxwidth;
+                clone_handle.style.width = pThis._control_element.container_maxwidth + "px";
                 if (clone_handle.firstChild)
-                    clone_handle.firstChild.style.width = pThis._control_element.container_maxwidth;
+                    clone_handle.firstChild.style.width = pThis._control_element.container_maxwidth + "px";
             }
             if (pThis._control_element.container_maxheight)
             {
-                clone_handle.style.height = pThis._control_element.container_maxheight;
+                clone_handle.style.height = pThis._control_element.container_maxheight + "px";
                 if (clone_handle.firstChild)
-                    clone_handle.firstChild.style.height = pThis._control_element.container_maxheight;
+                    clone_handle.firstChild.style.height = pThis._control_element.container_maxheight + "px";
             }
+
+            if (clone_handle.lastChild && clone_handle.lastChild.id == clone_handle.id + "_vscrollbar")
+            {
+                clone_handle.removeChild(clone_handle.lastChild);
+            }
+            if (clone_handle.lastChild && clone_handle.lastChild.id == clone_handle.id + "_hscrollbar")
+            {
+                clone_handle.lastChild.style.width = clone_handle.style.width;
+                clone_handle.lastChild.style.top = parseInt(clone_handle.style.height) - parseInt(clone_handle.lastChild.style.height) + "px";
+            }
+
 
             // left top으로 맞춤
             clone_handle.style.left = "0px";
             clone_handle.style.top = "0px";
+            clone_handle.style.overflow = ""; // overflow hidden bug in ie
 
-            var html = '<HTML lang=\"" + nexacro._BrowserLang.substr(0,2) + "\">\n<HEAD>\n';
+
+            var html = '<HTML lang=\"' + nexacro._BrowserLang.substr(0, 2) + '\">\n<HEAD>\n';
 
             if (doc.getElementsByTagName != null)
             {
@@ -6549,7 +6729,7 @@ if (nexacro._Browser != "Runtime")
             if (clone_handle.getElementsByTagName != null)
             {
                 var inputTags = clone_handle.getElementsByTagName("input");
-                var temp = pThis._control_element.handle.getElementsByTagName("input");
+                var temp = pThis._control_element._handle.getElementsByTagName("input");
                 for (var i = 0; i < inputTags.length; i++)
                 {
                     inputTags[i].setAttribute("value", temp[i].value);
@@ -6558,7 +6738,8 @@ if (nexacro._Browser != "Runtime")
 
             html += '\n</HEAD>\n\n';
             html += '<BODY onLoad="self.print(); self.close();">\n';
-            html += nexacro._getHTMLOuter(clone_handle, doc);//form_elem.handle.innerHTML;
+            //html += '<BODY>\n';
+            html += nexacro._getHTMLOuter(clone_handle, doc);//form_elem._handle.innerHTML;
             html += '</BODY>\n\n</HTML>\n\n';
 
             var wnd = window;
@@ -6568,25 +6749,26 @@ if (nexacro._Browser != "Runtime")
             }
 
             var printWin = window.open("", "printSpecial", "top=" + wnd.screenTop + ",left=" + wnd.screenLeft + ", width=auto, height=auto");
+            //var printWin = window.open("", "printSpecial", "top=" + wnd.screenTop + ",left=" + wnd.screenLeft + ", width=800, height=1000, scrollbars=yes, resizable=yes");
             printWin.document.open();
             printWin.document.write(html);
             printWin.document.close();
         };
 
-        if (nexacro._Browser == "IE")
+        if (nexacro._Browser == "Edge" || nexacro._Browser == "IE")
         {
             nexacro._printInnerContents = function (comp)
             {
                 try
                 {
                     var current_focus = document.activeElement;
-                    var win = comp._ifrm_elem.handle.contentWindow;
+                    var win = comp._ifrm_elem._handle.contentWindow;
                     if (!win.onafterprint)
                     {
-                    	win.onafterprint = function ()
-                    	{
-                    		current_focus.focus();
-                    	};
+                        win.onafterprint = function ()
+                        {
+                            current_focus.focus();
+                        }
                     }
                     win.document.body.focus();
                     win.print();
@@ -9028,6 +9210,7 @@ if (nexacro._Browser != "Runtime")
                 bindfn = nexacro.__bindLoadDataHandler(_ajax, loadItem);
                 method = "POST";
                 mime_xml = true;
+                path = encodeURI(path);
             }
             else if (loadItem.type == "text")
             {
@@ -12963,15 +13146,15 @@ if (nexacro._Browser != "Runtime")
 
         nexacro._checkDomain = function (url)
         {
-        	if (url.match("^(https?:\\/\\/)?((([a-z\d](([a-z\d-]*[a-z\d])|([ㄱ-힣]))*)\.)+[a-z]{2,}|((\\d{1,3}\\.){3}\\d{1,3}))(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*(\\?[;&a-z\\d%_.~+=-]*)?(\\#[-a-z\\d_]*)?$"))
+        	// 특정 url이 match에서 정규식 복잡도로 인해 수행 시간 지연되는 현상
+        	//var expr = new RegExp("^(https?:\\/\\/)?((([a-z\d](([a-z\d-]*[a-z\d])|([ㄱ-힣]))*)\.)+[a-z]{2,}|((\\d{1,3}\\.){3}\\d{1,3}))(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*(\\?[;&a-z\\d%_.~+=-]*)?(\\#[-a-z\\d_]*)?$");
+        	var expr = new RegExp("^(https?:\\/\\/)");
+        	if (!expr.test(url))
         	{
-        		if (url.indexOf("http://") != -1 || url.indexOf("https://") != -1)
-        			return url;
-        		else
-        			return "http://" + url;
+        		return "http://" + url;
         	}
         	return url;
-        };
+        }
 
         nexacro._execShell = function ()
         {

@@ -75,7 +75,8 @@ if (!nexacro.Device || nexacro._OS == "Android")
             this.errormsg = strErrorMsg;											// 오류메세지 : string으로 된 errormsg (iOS/Android에서 발생하는 error message를 그대로 사용)
             this.ldberrorcode = strldbErrorCode;									// Database의 오류코드
             this.ldberrormsg = strldbErrorMsg;										// Database의 오류 메시지  
-        }
+        };
+
         var _pLiteDBErrorEventInfo = nexacro.LiteDBErrorEventInfo.prototype = nexacro._createPrototype(nexacro.Event, nexacro.LiteDBErrorEventInfo);        
         _pLiteDBErrorEventInfo._type_name = "LiteDBErrorEventInfo";
 
@@ -112,7 +113,7 @@ if (!nexacro.Device || nexacro._OS == "Android")
             this.onerror = null;
 
             // ----------------- internal variable ------------------ // 
-            this.handle = nexacro._createLiteDBConnectionObject(this);;
+            this.handle = nexacro._createLiteDBConnectionObject(this);
             //this._win_handle = null;        
         };
 
@@ -425,7 +426,8 @@ if (!nexacro.Device || nexacro._OS == "Android")
             this.name = name || "";
             this.type = type || "string";
             this.value = value;
-        }
+        };
+
         var _pLiteDBParameter = nexacro.LiteDBParameter.prototype = nexacro._createPrototype(nexacro._EventSinkObject, nexacro.LiteDBParameter);        
         _pLiteDBParameter._type_name = "LiteDBParameter";
 
@@ -653,7 +655,7 @@ if (!nexacro.Device || nexacro._OS == "Android")
                     var nIdx = nexacro._addParamsLiteDBStatementHandle(this);
                     for (var col = 0; col < colsize; col++)
                     {
-                        var param = new nexacro.LiteDBParameter
+                        var param = new nexacro.LiteDBParameter;
                         var colinfo = dataset.getColumnInfo(col);
                         var value = dataset.getColumn(row, colinfo.name);
 

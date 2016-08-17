@@ -147,8 +147,6 @@ if (!nexacro.GridFormat)
         this._curselfont = undefined;       // query시 설정
         this._curborder = undefined;        // query시 설정
         this._curpadding = undefined;       // query시 설정
-
-        this._tempinnerds = null;
     };
 
     var _pGridCellInfo = nexacro._createPrototype(nexacro.Object, nexacro.GridCellInfo);
@@ -164,7 +162,6 @@ if (!nexacro.GridFormat)
         this._imgHeightTemp = null;
         this._suppress_infos = null;
         this._fakemerge_infos = null;
-        this._tempinnerds = null;
         this._cur1font_size = null;
         this._cur1selectfont_size = null;
         this._curfont = null;
@@ -1450,7 +1447,7 @@ if (!nexacro.GridFormat)
     _pGridCellInfo._getDisplayText_currency = function (rowidx)
     {
         var v = this._getTextValueForDisp(rowidx);
-        var locale = this._getLocale(rowidx)
+        var locale = this._getLocale(rowidx);
 
         if (!isNaN(v))
         {
@@ -1803,25 +1800,19 @@ if (!nexacro.GridFormat)
         var combodatacol = this._getAttrValue(this.combodatacol, rowidx);
         if (combodataset && combodataset.length && combocodecol && combocodecol.length && combodatacol && combodatacol.length)
         {
-            var grid = this._grid;
+            var bandinfo = this.parent;
+            var format = bandinfo.parent;
             var ds;
             var v = this._getTextValueForDisp(rowidx);
             var text;
 
-            if (!this._tempinnerds)
-            {
-                ds = grid._findDataset(combodataset);
-                this._tempinnerds = new nexacro.Dataset();
-                this._tempinnerds.copyData(ds, false);  // user script에서 innerdataset 변경시 영향없도록 처리
-            }
-
-            ds = this._tempinnerds;
-
+            ds = format._findDataset(combodataset);
             text = ds.lookup(combocodecol, v, combodatacol);
 
             if (text)
                 return text.toString();
         }
+
         if (this.combodisplaynulltype._value == "nulltext")
         {
             var v = this._getAttrValue(this.combodisplaynulltext, rowidx);
@@ -2322,12 +2313,34 @@ if (!nexacro.GridFormat)
 
         this._formatElem = null;
         this._formatElemOrg = null;
+        this._innerdatasets = {};
+        this._innerdatasets_name = [];
     };
 
     var _pGridFormat = nexacro._createPrototype(nexacro.Object, nexacro.GridFormat);
     nexacro.GridFormat.prototype = _pGridFormat;
 
     _pGridFormat._type_name = "GridFormat";
+
+    _pGridFormat._findDataset = function (id)
+    {
+        if (this._innerdatasets[id])
+            return this._innerdatasets[id];
+
+        var ds = this._grid._findDataset(id);
+        ds._setEventHandler("onvaluechanged", this._on_updateInnerDs, this);
+        ds._setEventHandler("onrowsetchanged", this._on_updateInnerDs, this);
+        ds._setEventHandler("onrowsetchanged", this._on_updateInnerDs, this);
+        this._innerdatasets[id] = ds;
+        this._innerdatasets_name.push(id);
+        return ds;
+    };
+
+    _pGridFormat._on_updateInnerDs = function (obj, e)
+    {
+        if (this._grid)
+            this._grid._on_useInnerDsCells(obj, e);
+    };
 
     _pGridFormat.destroy = function ()
     {
@@ -2389,6 +2402,20 @@ if (!nexacro.GridFormat)
         this._cols = null;
         this._grid = null;
         this.parent = null;
+
+        for (var i = 0; i < this._innerdatasets_name.length; i++)
+        {
+            var name = this._innerdatasets_name[i];
+            var inds = this._innerdatasets[name];
+
+            inds._removeEventHandler("onvaluechanged", this._on_updateInnerDs, this);
+            inds._removeEventHandler("onrowsetchanged", this._on_updateInnerDs, this);
+            inds._removeEventHandler("onrowsetchanged", this._on_updateInnerDs, this);
+            this._innerdatasets[name] = null;
+        }
+
+        this._innerdatasets_name = null;
+        this._innerdatasets = null;
     };
 
     _pGridFormat._resetOrgColSize = function (is_keep_area, autofitcol_rate)
@@ -2970,7 +2997,7 @@ if (!nexacro.GridFormat)
 
             function _makePropstr(obj)
             {
-                var xmlstr = ""
+                var xmlstr = "";
                 var _property_map = obj._property_map;
                 var prop, bind, deft;
 

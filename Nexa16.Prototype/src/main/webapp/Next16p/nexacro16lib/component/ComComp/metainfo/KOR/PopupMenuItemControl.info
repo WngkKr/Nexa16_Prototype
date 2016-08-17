@@ -23,7 +23,7 @@
       <Property name="initvalueid" group="Information" subgroup="" edittype="InitvalueID" readonly="true" initonly="true" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="PopupMenuItemControl 에 적용될 InitValue 의 ID 를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="initvalueid" />
       <Property name="left" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="PopupMenuItemControl 을(를) 표시하기 위한 좌측 좌표를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="left" />
       <Property name="leftbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="PopupMenuItemControl 의 left 위치를 결정하기위한 기준이 되는 컴포넌트를 설정합니다." csspropertyname="" csselementname="" normalpropertyname="leftbase" />
-      <Property name="letterSpacing" group="Style" subgroup="letter-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="PopupMenuItemControl 에 표시되는 문자의 간격을 설정하는 속성입니다." csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
+      <Property name="letterSpacing" group="Style" subgroup="letter-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="PopupMenuItemControl 에 표시되는 문자의 간격(자간)을 설정하는 속성입니다." csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
       <Property name="lineHeight" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="PopupMenuItemControl 에 여러줄로 텍스트가 표시되는 경우 줄 사이의 간격을 설정하는 속성입니다." csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
       <Property name="name" group="Information" subgroup="" edittype="String" readonly="false" initonly="false" hidden="true" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="PopupMenuItemControl 의 이름을 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="name" />
       <Property name="edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="PopupMenuItemControl의 테두리 안쪽에 edge 이미지를 설정하는 속성입니다." csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
@@ -42,14 +42,14 @@
       <Property name="tabstop" group="" subgroup="" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="" csspropertyname="" csselementname="" normalpropertyname="tabstop" />
       <Property name="text" group="Appearance" subgroup="" edittype="MultilineString" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="true" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="Static 에 표시될 텍스트를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="text" />
       <Property name="tooltiptext" group="Action" subgroup="" edittype="MultilineString" defaultvalue="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="PopupMenuItemControl 에 마우스 포인터를 올려 놓았을 때 표시되는 풍선도움말을 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="tooltiptext" />
-      <Property name="tooltiptype" group="Action" subgroup="" edittype="Enum" defaultvalue="default" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TooltipType" unitinfo="" delimiter="" requirement="" description="PopupMenuItemControl 에서 풍선도움말이 표시될 위치를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="tooltiptype" />
+      <Property name="tooltiptype" group="Action" subgroup="" edittype="Enum" defaultvalue="default" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TooltipType" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="PopupMenuItemControl 에서 풍선도움말이 표시될 위치를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="tooltiptype" />
       <Property name="top" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="PopupMenuItemControl 을(를) 표시하기 위한 상단 좌표를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="top" />
       <Property name="topbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="PopupMenuItemControl 의 top 위치를 결정하기 위한 기준 컴포넌트를 설정합니다." csspropertyname="" csselementname="" normalpropertyname="topbase" />
       <Property name="usedecorate" group="Misc." subgroup="" edittype="Boolean" defaultvalue="false" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="Static에 표시되는 텍스트에 Decorate 효과를 적용할 지 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="usedecorate" />
       <Property name="visible" group="Action" subgroup="" edittype="Boolean" defaultvalue="true" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="PopupMenuItemControl 이(가) 화면에 표시될지 여부를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="visible" />
       <Property name="width" group="Position" subgroup="refresh(position)" edittype="Position" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Position2Type" delimiter="" requirement="" description="PopupMenuItemControl 을(를) 표시하기 위한 너비를 설정하는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="width" />
       <Property name="widthbase" group="Position" subgroup="refresh(position)" edittype="PositionBase" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="PopupMenuItemControl 의 너비를 결정하기 위한 기준 컴포넌트를 설정합니다." csspropertyname="" csselementname="" normalpropertyname="widthbase" />
-      <Property name="wordSpacing" group="Style" subgroup="word-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="PopupMenuItemControl 에 표시되는 텍스트의 자간을 설정하는 속성입니다." csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
+      <Property name="wordSpacing" group="Style" subgroup="word-spacing" edittype="" readonly="false" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="PopupMenuItemControl 에 표시되는 텍스트의 단어 사이 간격을 설정하는 속성입니다." csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
     </PropertyInfo>
     <StyleInfo>
       <PropertyInfo>
@@ -60,7 +60,7 @@
         <Property name="color" group="Style" subgroup="color" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="NamedColor" unitinfo="" delimiter="" requirement="" description="PopupMenuItemControl 에 표시되는 텍스트의 색상을 설정하는 속성입니다." csspropertyname="color" csselementname="" normalpropertyname="color" />
         <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" defaultvalue="auto" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="PopupMenuItemControl 영역내에서 표시될 마우스 포인터의 종류를 설정하는 속성입니다." csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
         <Property name="font" group="Style" subgroup="font" edittype="" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="FontSize_Point" delimiter="" requirement="" description="PopupMenuItemControl에서 사용하는 폰트를 설정하는 속성입니다." csspropertyname="font" csselementname="" normalpropertyname="font" />
-        <Property name="letter-spacing" group="Style" subgroup="letter-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="PopupMenuItemControl 에 표시되는 문자의 간격을 설정하는 속성입니다." csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
+        <Property name="letter-spacing" group="Style" subgroup="letter-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="PopupMenuItemControl 에 표시되는 문자의 간격(자간)을 설정하는 속성입니다." csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
         <Property name="line-height" group="Style" subgroup="line-height" edittype="" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="PopupMenuItemControl 에 여러줄로 텍스트가 표시되는 경우 줄 사이의 간격을 설정하는 속성입니다." csspropertyname="line-height" csselementname="" normalpropertyname="lineHeight" />
         <Property name="-nexa-edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="PopupMenuItemControl의 테두리 안쪽에 edge 이미지를 설정하는 속성입니다." csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
         <Property name="-nexa-padding" group="Style" subgroup="padding" edittype="String" defaultvalue="0px 0px 0px 0px" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="PopupMenuItemControl 영역의 안쪽 여백을 설정하는 속성입니다." csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
@@ -69,7 +69,7 @@
         <Property name="-nexa-vertical-align" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" defaultvalue="middle" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="" description="PopupMenuItemControl에 표시되는 텍스트 또는 컨텐츠의 세로 정렬 방식을 설정하는 속성입니다." csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
         <Property name="-nexa-word-wrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="" description="PopupMenuItemControl 에 표시되는 텍스트가 출력영역보다 길 경우 자동으로 줄바꿈 되도록 설정하는 속성입니다." csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
         <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="PopupMenuItemControl 영역의 투명도를 설정하는 속성입니다." csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
-        <Property name="word-spacing" group="Style" subgroup="word-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="PopupMenuItemControl 에 표시되는 텍스트의 자간을 설정하는 속성입니다." csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
+        <Property name="word-spacing" group="Style" subgroup="word-spacing" edittype="" defaultvalue="normal" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="PopupMenuItemControl 에 표시되는 텍스트의 단어 사이 간격을 설정하는 속성입니다." csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
       </PropertyInfo>
       <StatusInfo>
         <Status name="disabled" control="true" default="false" deprecated="false" unused="false" group="status" />
@@ -157,7 +157,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="getFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="PopupMenuItemControl 의 자식 컴포넌트 중 현재 포커스를 가지고 있는 컴포넌트를 반환하는 메소드입니다.">
+      <Method name="getFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="PopupMenuItemControl 의 자식 컴포넌트 중 현재 포커스를 가지고 있는 컴포넌트를 반환하는 메소드입니다.">
         <Syntax text="PopupMenuItemControl.getFocus()">
           <Return type="Object" description="포커스를 가진 자식 컴포넌트가 있으면 해당 컴포넌트를 반환합니다.&#xA;포커스를 가진 자식 컴포넌트가 없으면 &quot;null&quot;을 반환합니다." />
           <Arguments />
@@ -342,7 +342,7 @@
           </Arguments>
         </Syntax>
       </Method>
-      <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="" description="PopupMenuItemControl 에 포커스를 주는 메소드입니다.">
+      <Method name="setFocus" group="" async="false" usecontextmenu="false" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="PopupMenuItemControl 에 포커스를 주는 메소드입니다.">
         <Syntax text="PopupMenuItemControl.setFocus( [bMoveScroll] )">
           <Return type="Object" description="PopupMenuItemControl 이(가) 포커스되기 전에 포커스를 가졌던 컴포넌트를 반환합니다.&#xA;포커스를 가진 컴포넌트가 없었거나 메소드 수행이 실패하는 경우에는 &quot;null&quot;을 반환합니다." />
           <Arguments>
@@ -414,7 +414,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondblclick" group="Event" deprecated="false" unused="true" requirement="" description="PopupMenuItemControl 영역 내에서 마우스 왼쪽버튼을 더블클릭 했을 때 발생하는 이벤트입니다.">
+      <EventHandler name="ondblclick" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="PopupMenuItemControl 영역 내에서 마우스 왼쪽버튼을 더블클릭 했을 때 발생하는 이벤트입니다.">
         <Syntax text="PopupMenuItemControl.ondblclick(obj:nexacro._PopupMenuItemControl,e:nexacro.MouseEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -422,7 +422,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondrag" group="Event" deprecated="false" unused="true" requirement="" description="PopupMenuItemControl 영역 내에서 마우스 왼쪽버튼으로 드래그를 수행했을 때 발생하는 이벤트입니다.">
+      <EventHandler name="ondrag" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="PopupMenuItemControl 영역 내에서 마우스 왼쪽버튼으로 드래그를 수행했을 때 발생하는 이벤트입니다.">
         <Syntax text="PopupMenuItemControl.ondrag(obj:nexacro._PopupMenuItemControl,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 드래그 상태가 되고 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 드래그 상태가 취소되고 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -430,7 +430,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondragenter" group="Event" deprecated="false" unused="true" requirement="" description="PopupMenuItemControl 영역 내로 드래그 상태의 마우스 포인터가 들어왔을 때 발생하는 이벤트입니다.">
+      <EventHandler name="ondragenter" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="PopupMenuItemControl 영역 내로 드래그 상태의 마우스 포인터가 들어왔을 때 발생하는 이벤트입니다.">
         <Syntax text="PopupMenuItemControl.ondragenter(obj:nexacro._PopupMenuItemControl,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -438,7 +438,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondragleave" group="Event" deprecated="false" unused="true" requirement="" description="PopupMenuItemControl 영역 밖으로 드래그 상태의 마우스 포인터가 나갈 때 발생하는 이벤트입니다.">
+      <EventHandler name="ondragleave" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="PopupMenuItemControl 영역 밖으로 드래그 상태의 마우스 포인터가 나갈 때 발생하는 이벤트입니다.">
         <Syntax text="PopupMenuItemControl.ondragleave(obj:nexacro._PopupMenuItemControl,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -446,7 +446,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondragmove" group="Event" deprecated="false" unused="true" requirement="" description="PopupMenuItemControl 영역 내에서 드래그 상태의 마우스 포인터가 움직일 때 발생하는 이벤트입니다.">
+      <EventHandler name="ondragmove" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="PopupMenuItemControl 영역 내에서 드래그 상태의 마우스 포인터가 움직일 때 발생하는 이벤트입니다.">
         <Syntax text="PopupMenuItemControl.ondragmove(obj:nexacro._PopupMenuItemControl,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -454,7 +454,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="ondrop" group="Event" deprecated="false" unused="true" requirement="" description="PopupMenuItemControl 영역 내에서 드래그 상태의 마우스 버튼을 떼었을 때 발생하는 이벤트입니다.">
+      <EventHandler name="ondrop" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="PopupMenuItemControl 영역 내에서 드래그 상태의 마우스 버튼을 떼었을 때 발생하는 이벤트입니다.">
         <Syntax text="PopupMenuItemControl.ondrop(obj:nexacro._PopupMenuItemControl,e:nexacro.DragEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -462,7 +462,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="oninput" group="Event" deprecated="false" unused="true" requirement="" description="PopupMenuItemControl 에 키보드로 값이 입력될 때 발생하는 이벤트 입니다.">
+      <EventHandler name="oninput" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="PopupMenuItemControl 에 키보드로 값이 입력될 때 발생하는 이벤트 입니다.">
         <Syntax text="PopupMenuItemControl.oninput(obj:nexacro._PopupMenuItemControl,e:nexacro.InputEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -470,7 +470,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onkeydown" group="Event" deprecated="false" unused="true" requirement="" description="PopupMenuItemControl 에 포커스가 있는 상태에서 키보드의 키가 눌렸을 때 발생하는 이벤트입니다.">
+      <EventHandler name="onkeydown" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="PopupMenuItemControl 에 포커스가 있는 상태에서 키보드의 키가 눌렸을 때 발생하는 이벤트입니다.">
         <Syntax text="PopupMenuItemControl.onkeydown(obj:nexacro._PopupMenuItemControl,e:nexacro.KeyEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -478,7 +478,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onkeyup" group="Event" deprecated="false" unused="true" requirement="" description="PopupMenuItemControl 에 포커스가 있는 상태에서 눌렸던 키보드가 떼어질 때 발생하는 이벤트입니다.">
+      <EventHandler name="onkeyup" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="PopupMenuItemControl 에 포커스가 있는 상태에서 눌렸던 키보드가 떼어질 때 발생하는 이벤트입니다.">
         <Syntax text="PopupMenuItemControl.onkeyup(obj:nexacro._PopupMenuItemControl,e:nexacro.KeyEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -486,7 +486,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onkillfocus" group="Event" deprecated="false" unused="true" requirement="" description="PopupMenuItemControl 에서 포커스가 나갈  때 발생하는 이벤트입니다.">
+      <EventHandler name="onkillfocus" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="PopupMenuItemControl 에서 포커스가 나갈  때 발생하는 이벤트입니다.">
         <Syntax text="PopupMenuItemControl.onkillfocus(obj:nexacro._PopupMenuItemControl,e:nexacro.KillFocusEventInfo);">
           <Return type="" description="" />
           <Arguments>
@@ -542,7 +542,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onmousewheel" group="Event" deprecated="false" unused="true" requirement="" description="PopupMenuItemControl 영역 내에서 마우스의 휠버튼을 회전했을 때 발생하는 이벤트입니다.">
+      <EventHandler name="onmousewheel" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="PopupMenuItemControl 영역 내에서 마우스의 휠버튼을 회전했을 때 발생하는 이벤트입니다.">
         <Syntax text="PopupMenuItemControl.onmousewheel(obj:nexacro._PopupMenuItemControl,e:nexacro.MouseWheelEventInfo);">
           <Return type="Boolean" description="이벤트의 리턴값으로 &quot;true&quot;를 반환하면 휠버튼 회전값이 무시되고, 상위 컴포넌트로 이벤트가 전파되지 않습니다.&#xA;이벤트의 리턴값으로 &quot;false&quot;를 반환하면 휠버튼 회전값이 처리되고, 상위 컴포넌트로 이벤트가 전파됩니다.&#xA;&#xA;이벤트의 리턴값을 생략하면 &quot;false&quot;로 적용됩니다." />
           <Arguments>
@@ -574,7 +574,7 @@
           </Arguments>
         </Syntax>
       </EventHandler>
-      <EventHandler name="onsetfocus" group="Event" deprecated="false" unused="true" requirement="" description="PopupMenuItemControl 에 포커스가 들어올 때 발생하는 이벤트입니다.">
+      <EventHandler name="onsetfocus" group="Event" deprecated="false" unused="true" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),desktop Hybrid (macOS),Mobile Hybrid (Android),Mobile Hybrid (IOS),Mobile Web browser (Android),Mobile Web browser (IOS)" description="PopupMenuItemControl 에 포커스가 들어올 때 발생하는 이벤트입니다.">
         <Syntax text="PopupMenuItemControl.onsetfocus(obj:nexacro._PopupMenuItemControl,e:nexacro.SetFocusEventInfo);">
           <Return type="" description="" />
           <Arguments>

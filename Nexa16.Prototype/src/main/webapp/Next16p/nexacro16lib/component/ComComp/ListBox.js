@@ -2008,7 +2008,7 @@ if (!nexacro.ListBox)
             var value = old_value + itemheight;
             if (wheelDeltaY > 0)
             {
-                value = old_value - itemheight
+                value = old_value - itemheight;
             }
 
             if (value > control_elem.vscroll_limit)

@@ -112,7 +112,8 @@ if (this.nexacro)
             "object_push_fail_unui": ["X-PUSH 서버로 유저 topic 정보 등록해제(unregisterUser)요청이 실패했습니다."],
             "object_push_fail_msgc": ["미수신 메시지 정보요청을 실패했습니다."],
 
-            "msg_accessibility_emptyline": ["빈줄"]
+			"msg_accessibility_emptyline": ["빈줄"],
+			"msg_accessibility_emptyframe": ["빈 프레임"]
         },
         "en":
         {
@@ -208,13 +209,14 @@ if (this.nexacro)
             "object_push_fail_rect": ["The response to the reliable message has failed to be transmitted."],
             "object_push_fail_reqd": ["Request for undelivered messages has failed."],
 
-            "msg_accessibility_emptyline": ["empty line"]
+            "msg_accessibility_emptyline": ["empty line"],
+            "msg_accessibility_emptyframe": ["empty frame"]
         },
         "ja":
         {
             "reference_not_define": ["%0", "が定義されていません。"],
-            "reference_fail_findcolumn": ["Datasetで指定したColumn[", "%0", "]が見つかりません。"],
-            "syntax_fail_parse_xml": ["パーシング中にエラーが発生しました。[", "%0", "]"],
+            "reference_fail_findcolumn": ["Datasetで指定したColumn[", "%0", "]が見つかりません。"],            
+            "syntax_fail_parse_xml": ["構文解析(Parsing)中にエラーが発生しました。[", "%0", "]"],
             "syntax_not_set_samepath": ["formと同じパスでは設定できません。[", "%0", "]"],
             "type_invalid": ["追加できないタイプです。[", "%0", "]"],
             "type_mismatch": ["入力パラメータのデータタイプが一致しません。[", "%0", "]"],
@@ -224,21 +226,21 @@ if (this.nexacro)
             "range_invalide": ["入力パラメータが不正です。 [", "%0", "]"],
 
             "native_notimplemented": ["サポートされていない機能です。[", "%0", "]"],
-            "native_notsupport": ["HTML5でサポートされていないオブジェクトまたは属性です。", "%0", "[", "%1", "]"],
-            "native_deprecate": ["該当の機能はDeprecateされた機能です。[", "%0", "]"],
+            "native_notsupport": ["HTML5でサポートされていないオブジェクトまたはプロパティです。", "%0", "[", "%1", "]"],
+            "native_deprecate": ["該当機能はDeprecateされた機能です。[", "%0", "]"],
 
-            "native_fail_dataset_head": ["データセットのヘッダ情報をローディングに失敗しました。"],
-            "native_fail_dataset_recode": ["データセットのレコード情報をローディングに失敗しました。"],
-            "native_exist_id": ["該当のidを持つオブジェクトが存在します。id = [", "%0", "]"],
-            "native_exist_parent": ["parentがすでに存在します。"],
+            "native_fail_dataset_head": ["データセットのヘッダ情報のローディングに失敗しました。"],
+            "native_fail_dataset_recode": ["データセットのレコード情報のローディングに失敗しました。"],
+            "native_exist_id": ["該当idを持つオブジェクトが存在します。id = [", "%0", "]"],
+            "native_exist_parent": ["parentが既に存在します。"],
             "native_notexist_parent": ["parentが存在しません。"],
             "native_notexist_licensefile": ["ライセンスファイルが存在しません。"],
-            "native_expire_license": ["ライセンスの有効期間が[", "%0", "]で切れました。    "],
+            "native_expire_license": ["ライセンスの有効期間が[", "%0", "]で切れました。"],
             "native_invalid_licensefile": ["ライセンス情報が無効です。ライセンスを確認してください。"],
             "native_license_invaliddomain": ["ライセンスのドメイン情報が無効です。ドメインを確認してください。　[", "%0", "]"],
             "native_license_fail_parse": ["ライセンスのドメイン情報が無効です。ライセンスファイルの分析中にエラーが発生しました。[", "%0", "]"],
-            "native_fail_openfile": ["ファイルオープンに失敗しました。[", "%0", "]"],
-            "native_license_invalidservice": ["該当のサービスをサポートしていないライセンスです。ライセンスを確認してください。"],
+            "native_fail_openfile": ["ファイルが開けません。[", "%0", "]"],
+            "native_license_invalidservice": ["該当サービスをサポートしていないライセンスです。ライセンスを確認してください。"],
             "native_notexist_screenwidth": ["screeninfoのscreenwidthは定義されていません。"],
             "native_notsupport_include": ["Environmentはinclude 構文をサポートしていません。"],
 
@@ -247,7 +249,7 @@ if (this.nexacro)
             "comm_fail_translate_url": ["パスの変更中にエラーが発生しました。[", "%0", "]"],
             "comm_fail_loaddetail": ["ローディング中にエラーが発生しました。パスを確認してください。パス [", "%0", "] HTTP エラーコード [", "%1", "]"],
             "comm_cancel_byuser": ["ユーザーにより通信がキャンセルされました。[", "%0", "]"],
-            "comm_stop_transaction_byesc": ["TransactionがEsc Keyにより中止されます。( 標準はありません )"],
+            "comm_stop_transaction_byesc": ["TransactionがEsc Keyにより中止されます。( 標準ではありません。)"],
             "comm_http_301": ["リクエストされたURIが新しいURIに変更されました。"],
             "comm_http_302": ["リクエストされたURIが一時的に変更されました。"],
             "comm_http_305": ["リクエストされたリソースは、必ずProxy Locationを使用してアクセスする必要があります。"],
@@ -271,11 +273,11 @@ if (this.nexacro)
 
             "script_error": ["スクリプトエラーです。[", "%[0]", "] "],
 
-            "msg_access_invalid_file": ["安全ではないファイルにアクセスします。\n開けますか？\n\n[", "%0", "]"],
-            "msg_access_invalid_domain": ["安全ではないドメインにアクセスします。\n開けますか？\n\n[", "%0", "]"],
-            "msg_permit_folder": ["このフォルダ及び配下のフォルダは常に許容"],
-            "msg_permit_domain": ["このドメインは常に許容"],
-            "msg_update_processing": ["実行中のProcess[", "%0", "]があるため、Updateに失敗しました。実行中のProcessを自動終了する場合はYes(はい)、実行中のProcessを直接終了させてから続ける場合はNo(いいえ), Restart後にUpdateを適用する場合はCancel(取消)を選択します。"],
+            "msg_access_invalid_file": ["信用できないファイルにアクセスします。\n続けますか？\n\n[", "%0", "]"],
+            "msg_access_invalid_domain": ["信用できないドメインにアクセスします。\n続けますか？\n\n[", "%0", "]"],
+            "msg_permit_folder": ["このフォルダ配下のファイルは、常にアクセス許可"],
+            "msg_permit_domain": ["このドメインは常にアクセス許容"],
+            "msg_update_processing": ["実行中のプロセス[", "%0", "]があるため、Updateに失敗しました。実行中のプロセスを自動終了する場合はYes(はい)、実行中のプロセスを直接終了させてから続ける場合はNo(いいえ), 再起動後にアップデートを適用する場合はキャンセルを選択します。"],
             "msg_reset_sandboxdialog": ["プログラム改善によりフォルダやドメインへのアクセス警告ウィンドウで設定したアクセス可否の設定値を再設定する必要があります。\nご了承ください。"],
 
             "msg_start": ["nexacro platformをスタートします。"],
@@ -302,9 +304,10 @@ if (this.nexacro)
             "object_push_invalid_layouturl": ["メッセージレイアウト定義ファイルが有効ではありません。"],
             "object_push_fail_protocol_version": ["メッセージフォーマットのバージョン情報が一致しません。"],
             "object_push_fail_rect": ["信頼性メッセージの受信応答の送信に失敗しました。"],
-            "object_push_fail_reqd": ["未受信メッセージの要求に失敗しました。"],            
+            "object_push_fail_reqd": ["未受信メッセージの要求に失敗しました。"],
 
-            "msg_accessibility_emptyline": ["empty line"]
+            "msg_accessibility_emptyline": ["空行"],
+            "msg_accessibility_emptyframe": ["空のフレーム"]
         }
     };
 }

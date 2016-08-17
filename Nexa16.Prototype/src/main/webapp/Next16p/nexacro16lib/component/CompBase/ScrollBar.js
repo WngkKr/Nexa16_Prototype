@@ -1220,11 +1220,11 @@ if (!nexacro.ScrollBarControl)
 
     _pScrollBar._starttrack = function ()
     {
-        this.on_fire_onscroll(this.pos, "trackstart");
+        this.on_fire_onscroll(this.pos, "trackstart", undefined, undefined, this.direction);
     };
     _pScrollBar._endtrack = function ()
     {
-        this.on_fire_onscroll(this.pos, "trackend");
+        this.on_fire_onscroll(this.pos, "trackend", undefined, undefined, this.direction);
         var rc = this._rectshaft;
         this._resetTrackBar(rc.left, rc.top, rc.right, rc.bottom);
     };
@@ -1322,13 +1322,13 @@ if (!nexacro.ScrollBarControl)
             if (!(this._trackover & nexacro.ScrollBarControl.TRACKFIRSTOVER))
             {
                 // Fire OnScroll - SCROLL_FIRST
-                this.on_fire_onscroll(this.pos, "trackfirst");
+                this.on_fire_onscroll(this.pos, "trackfirst", undefined, undefined, this.direction);
                 this._trackover = nexacro.ScrollBarControl.TRACKFIRSTOVER;
             }
             else
             {
                 // Fire OnScroll - SCROLL_TRACK
-                this.on_fire_onscroll(this.pos, "trackfirstover");
+                this.on_fire_onscroll(this.pos, "trackfirstover", undefined, undefined, this.direction);
             }
         }
         else if (newpos >= max)
@@ -1340,13 +1340,13 @@ if (!nexacro.ScrollBarControl)
             if (!(this._trackover & nexacro.ScrollBarControl.TRACKLASTOVER))
             {
                 // Fire OnScroll - SCROLL_TRACK
-                this.on_fire_onscroll(this.pos, "tracklast");
+                this.on_fire_onscroll(this.pos, "tracklast", undefined, undefined, this.direction);
                 this._trackover = nexacro.ScrollBarControl.TRACKLASTOVER;
             }
             else
             {
                 // Fire OnScroll - SCROLL_LAST
-                this.on_fire_onscroll(this.pos, "tracklastover");
+                this.on_fire_onscroll(this.pos, "tracklastover", undefined, undefined, this.direction);
             }
         }
         else
@@ -1356,7 +1356,7 @@ if (!nexacro.ScrollBarControl)
             this._pos = posarr[1];
 
             // Fire OnScroll - SCROLL_TRACK
-            this.on_fire_onscroll(this.pos, "track");
+            this.on_fire_onscroll(this.pos, "track", undefined, undefined, this.direction);
             this._trackover = 0;
         }
     };

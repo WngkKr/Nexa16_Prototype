@@ -35,7 +35,6 @@ if (!nexacro.Edit)
     /* default properties */
     _pEdit.value = undefined;
     _pEdit.displaynulltext = "";
-    _pEdit.displaynulltextcolor = "";
     _pEdit.readonly = false;
     _pEdit.password = false;
     _pEdit.autoselect = false;
@@ -58,13 +57,13 @@ if (!nexacro.Edit)
 
     _pEdit._default_value = undefined;
     _pEdit._default_text = "";
-    _pEdit._displaynulltextcolor = null;
     _pEdit._keypad_type = "text";
     _pEdit._imedisable = false;
 
     _pEdit._processing_updateToDataset = false;
     _pEdit._result_updateToDataset = true;
 
+    _pEdit._onlydisplay = false;
     _pEdit._apply_client_padding = false;
 
     /* status */
@@ -81,8 +80,8 @@ if (!nexacro.Edit)
         "onmouseenter": 1, "onmouseleave": 1, "onmousemove": 1,
         "onmove": 1, "onsize": 1,
         "canchange": 1, "onchanged": 1, "oninput": 1,
-        "oncontextmenu": 1,      
-         "ontouchstart": 1, "ontouchmove": 1, "ontouchend": 1
+        "oncontextmenu": 1,
+        "ontouchstart": 1, "ontouchmove": 1, "ontouchend": 1
     };
 
     /* accessibility */
@@ -97,10 +96,17 @@ if (!nexacro.Edit)
         if (control)
         {
             var input_elem;
-
             if (!this._onlydisplay)
             {
                 input_elem = this._input_element = new nexacro.InputElement(control, "input");
+                input_elem.setElementAutoSkip(this.autoskip);
+                input_elem.setElementAutoSelect(this.autoselect);
+                input_elem.setElementUseIme(this.useime);
+                input_elem.setElementImeMode(this.imemode);
+                input_elem.setElementReadonly(this.readonly);
+                input_elem.setElementDisplayNullText(this.displaynulltext);
+                input_elem.setElementMaxLength(this.maxlength);
+                input_elem.setElementInputType(this.password ? "password" : this._keypad_type);
             }
             else
             {
@@ -109,6 +115,7 @@ if (!nexacro.Edit)
 
             input_elem.setElementPosition(this._getClientLeft(), this._getClientTop());
             input_elem.setElementSize(this._getClientWidth(), this._getClientHeight());
+            input_elem.setElementTextDecoration(this._textdecoration);
 
             this._undostack = new nexacro._EditUndoStack(this);
         }
@@ -119,11 +126,14 @@ if (!nexacro.Edit)
         var input_elem = this._input_element;
         if (input_elem)
         {
-            this._init_element_property();
-
             this.on_apply_value();
 
             input_elem.create(win);
+
+            if (nexacro._isNull(this.value))
+            {
+                this._changeUserStatus("nulltext", true);
+            }
         }
     };
 
@@ -132,8 +142,6 @@ if (!nexacro.Edit)
         var input_elem = this._input_element;
         if (input_elem)
         {
-            this._init_element_property();
-
             this.on_apply_value();
 
             return input_elem.createCommand();
@@ -148,6 +156,11 @@ if (!nexacro.Edit)
         if (input_elem)
         {
             input_elem.attachHandle(win);
+
+            if (nexacro._isNull(this.value))
+            {
+                this._changeUserStatus("nulltext", true);
+            }
         }
     };
 
@@ -177,12 +190,6 @@ if (!nexacro.Edit)
         if (inputtypeobj)
         {
             this._inputtype_obj = null;
-        }
-
-        var displaynulltextcolor = this._displaynulltextcolor;
-        if (displaynulltextcolor)
-        {
-            this._displaynulltextcolor = null;
         }
     };
 
@@ -262,6 +269,18 @@ if (!nexacro.Edit)
         }
     };
 
+    _pEdit.on_changeUserStatus = function (changestatus, value, applyuserstatus, currentstatus, currentuserstatus)
+    {
+        if (value)
+        {
+            return changestatus;
+        }
+        else
+        {
+            return applyuserstatus;
+        }
+    };
+
     _pEdit._getDlgCode = function (keycode, altKey, ctrlKey, shiftKey)
     {
         return { want_tab: false, want_return: false, want_escape: false, want_chars: false, want_arrows: false };
@@ -325,8 +344,17 @@ if (!nexacro.Edit)
         var input_elem = this._input_element;
         if (input_elem)
         {
+            var text = this.text;
             var value = (this.value ? this.text : this.value);
-            var text;
+
+            if (this._is_created && nexacro._isNull(this.value))
+            {
+                this._changeUserStatus("nulltext", true);
+            }
+            else
+            {
+                this._changeUserStatus("nulltext", false);
+            }
 
             if (!this._onlydisplay)
             {
@@ -342,7 +370,6 @@ if (!nexacro.Edit)
             else
             {
                 input_elem.setElementText(value);
-                text = value;
             }
 
             if (this.text != text)
@@ -382,39 +409,6 @@ if (!nexacro.Edit)
         {
             if (!this._onlydisplay)
                 input_elem.setElementDisplayNullText(this.displaynulltext);
-        }
-    };
-
-    _pEdit.set_displaynulltextcolor = function (v)
-    {
-        this.displaynulltextcolor = v;
-
-        if (v)
-        {
-            if (this._displaynulltextcolor == null || this._displaynulltextcolor.value != v)
-            {
-                var color = nexacro.ColorObject(v);
-                this._displaynulltextcolor = color;
-                this.on_apply_displaynulltextcolor();
-            }
-        }
-        else
-        {
-            if (this._displaynulltextcolor)
-            {
-                this._displaynulltextcolor = null;
-                this.on_apply_displaynulltextcolor();
-            }
-        }
-    };
-
-    _pEdit.on_apply_displaynulltextcolor = function ()
-    {
-        var input_elem = this._input_element;
-        if (input_elem)
-        {
-            if (!this._onlydisplay)
-                input_elem.setElementDisplayNullTextColor(this._displaynulltextcolor);
         }
     };
 
@@ -635,15 +629,6 @@ if (!nexacro.Edit)
         }
     };
 
-    _pEdit.on_apply_textAlign = function (halign)
-    {
-        var input_elem = this._input_element;
-        if (input_elem)
-        {
-            input_elem.setElementTextAlign(halign);
-        }
-    };
-
     _pEdit.set_cursor = function (val)
     {
         this.cursor = val;
@@ -667,6 +652,15 @@ if (!nexacro.Edit)
                 this._cursor = null;
                 this.on_apply_cursor(null);
             }
+        }
+    };
+
+    _pEdit.on_apply_textAlign = function (halign)
+    {
+        var input_elem = this._input_element;
+        if (input_elem)
+        {
+            input_elem.setElementTextAlign(halign);
         }
     };
 
@@ -721,28 +715,30 @@ if (!nexacro.Edit)
         var input_elem = this._input_element;
         if (input_elem)
         {
-            if (arguments.length == 0)
+            if (!this._onlydisplay)
             {
-                v = 0;
-            }
-            else
-            {
-                v = nexacro._toInt(v);
-                if (v == -1)
+                if (arguments.length == 0)
                 {
-                    if (v)
+                    v = 0;
+                }
+                else
+                {
+                    v = nexacro._toInt(v);
+                    if (v == -1)
                     {
-                        v = this.text.length;
-                    }
-                    else
-                    {
-                        v = 0;
+                        if (v)
+                        {
+                            v = this.text.length;
+                        }
+                        else
+                        {
+                            v = 0;
+                        }
                     }
                 }
-            }
 
-            if (!this._onlydisplay)
                 input_elem.setElementSetSelect(v, v);
+            }
 
             return true;
         }
@@ -766,45 +762,47 @@ if (!nexacro.Edit)
         var input_elem = this._input_element;
         if (input_elem)
         {
-            var txt = this.text ? this.text : "";
-            var txt_len = txt.length;
-
-            if (nexacro._isNull(start) || start === "")
-            {
-                start = 0;
-            }
-            if (nexacro._isNull(end) || end === "")
-            {
-                end = -1;
-            }
-
-            if (!nexacro._isNumber(start))
-            {
-                start = nexacro._toInt(start);
-            }
-            if (!nexacro._isNumber(end))
-            {
-                end = nexacro._toInt(end);
-            }
-
-            if (start == -1)
-            {
-                start = txt_len;
-            }
-            if (end == -1)
-            {
-                end = txt_len;
-            }
-
-            if (start > end)
-            {
-                var tmp = start;
-                start = end;
-                end = tmp;
-            }
-
             if (!this._onlydisplay)
+            {
+                var txt = this.text ? this.text : "";
+                var txt_len = txt.length;
+
+                if (nexacro._isNull(start) || start === "")
+                {
+                    start = 0;
+                }
+                if (nexacro._isNull(end) || end === "")
+                {
+                    end = -1;
+                }
+
+                if (!nexacro._isNumber(start))
+                {
+                    start = nexacro._toInt(start);
+                }
+                if (!nexacro._isNumber(end))
+                {
+                    end = nexacro._toInt(end);
+                }
+
+                if (start == -1)
+                {
+                    start = txt_len;
+                }
+                if (end == -1)
+                {
+                    end = txt_len;
+                }
+
+                if (start > end)
+                {
+                    var tmp = start;
+                    start = end;
+                    end = tmp;
+                }
+
                 input_elem.setElementSetSelect(start, end);
+            }
 
             return true;
         }
@@ -871,12 +869,10 @@ if (!nexacro.Edit)
 
     _pEdit.updateToDataset = function ()
     {
-        var ret = this.applyto_bindSource("value", this.value);
-
-        this._result_updateToDataset = ret;
+        this._result_updateToDataset = this.applyto_bindSource("value", this.value);
         this._processing_updateToDataset = true;
-        
-        return ret;
+
+        return this._result_updateToDataset;
     };
 
     //===============================================================
@@ -886,26 +882,18 @@ if (!nexacro.Edit)
     {
         if (!this._is_alive) return;
 
-        // status change
         if (!this._isSelected())
         {
             this._changeStatus("focused", false);
         }
 
-        //nexacro.Component.prototype._on_deactivate.call(this);
-        // Compbase에서 this._on_killfocus(null, null) 를 호출하고 있는데
-        // deactivate되었다고 해서 killfocus는 아니기 때문에 개념이 맞지 않는다.
-        // deactivate 에서 killfocus 발생시켜 처리하는 기능을 이 함수에서 처리하는 것으로 변경하고
-        // _pComponent._on_deactivate 함수에서 '_on_killfocus 호출 제거할 
         var input_elem = this._input_element;
         if (input_elem)
         {
-            if (!this._onlydisplay)
+            if (input_elem.isComposing())
             {
-                if (input_elem.isComposing())
-                {
+                if (!this._onlydisplay)
                     input_elem.setCompositionComplete();
-                }
             }
         }
     };
@@ -1101,7 +1089,7 @@ if (!nexacro.Edit)
                         update_value = update_value.toLowerCase();
                     }
                 }
-                
+
                 if (update_value != input_text)
                 {
                     input_elem.replaceElementText(update_value, begin, end);
@@ -1143,15 +1131,17 @@ if (!nexacro.Edit)
             this._default_value = this.value;
             this._default_text = this.text;
 
-            if (this._onlydisplay)
-                return;
+            this._changeUserStatus("nulltext", false);
 
-            input_elem.setElementFocus();
-
-            var text = input_elem.getElementText();
-            if (text != this.text)
+            if (!this._onlydisplay)
             {
-                this._default_text = this.text = text;
+                input_elem.setElementFocus();
+
+                var text = input_elem.getElementText();
+                if (text != this.text)
+                {
+                    this._default_text = this.text = text;
+                }
             }
         }
     };
@@ -1161,49 +1151,55 @@ if (!nexacro.Edit)
         var input_elem = this._input_element;
         if (input_elem)
         {
-            if (this._onlydisplay)
-                return;
-
-            if (input_elem.isComposing())
+            if (!this._onlydisplay)
             {
-                var cur_text = this.text;
-                var filter_text = "";
-                if (this._inputtype_obj)
+                if (input_elem.isComposing())
                 {
-                    filter_text = this._inputtype_obj.apply(cur_text);
-                }
-                if (this._inputfilter_obj)
-                {
-                    filter_text = this._inputfilter_obj.apply(cur_text);
+                    var cur_text = this.text;
+                    var filter_text = "";
+                    if (this._inputtype_obj)
+                    {
+                        filter_text = this._inputtype_obj.apply(cur_text);
+                    }
+                    if (this._inputfilter_obj)
+                    {
+                        filter_text = this._inputfilter_obj.apply(cur_text);
+                    }
+
+                    if (cur_text != filter_text)
+                    {
+                        input_elem.setCompositionCancel();
+                    }
+                    else
+                    {
+                        input_elem.setCompositionComplete();
+                    }
                 }
 
-                if (cur_text != filter_text)
+                var pre_value = this._default_value;
+                var pre_text = this._default_text;
+
+                var cur_value = input_elem.value;
+                var cur_text = cur_value ? cur_value : "";
+
+                if (pre_value != cur_value)
                 {
-                    input_elem.setCompositionCancel();
+                    if (!this._on_value_change(pre_text, pre_value, cur_text, cur_value))
+                    {
+                        this.value = pre_value;
+                        this.text = pre_text;
+
+                        input_elem.setElementValue(pre_value);
+                    }
                 }
-                else
+
+                if (nexacro._isNull(this.value))
                 {
-                    input_elem.setCompositionComplete();
+                    this._changeUserStatus("nulltext", true);
                 }
+
+                input_elem.setElementBlur();
             }
-
-            var pre_value = this._default_value;
-            var pre_text = this._default_text;
-
-            var cur_value = input_elem.value;
-            var cur_text = cur_value ? cur_value : "";
-
-            if (pre_value != cur_value)
-            {
-                if (!this._on_value_change(pre_text, pre_value, cur_text, cur_value))
-                {
-                    this.value = pre_value;
-                    this.text = pre_text;
-
-                    input_elem.setElementValue(pre_value);
-                }
-            }
-            input_elem.setElementBlur();
         }
     };
 
@@ -1212,10 +1208,8 @@ if (!nexacro.Edit)
         var input_elem = this._input_element;
         if (input_elem)
         {
-            if (this._onlydisplay)
-                return;
-
-            input_elem.setElementFocus(button);
+            if (!this._onlydisplay)
+                input_elem.setElementFocus(button);
         }
     };
 
@@ -1306,7 +1300,7 @@ if (!nexacro.Edit)
         if (this.readonly || !this._isEnable())
         {
             return;
-        }   
+        }
 
         var input_elem = this._input_element;
         if (input_elem)
@@ -1325,7 +1319,7 @@ if (!nexacro.Edit)
         if (this.readonly || !this._isEnable())
         {
             return;
-        }   
+        }
 
         var input_elem = this._input_element;
         if (input_elem)
@@ -1356,32 +1350,6 @@ if (!nexacro.Edit)
         }
 
         return false;
-    };
-
-    _pEdit._init_element_property = function ()
-    {
-        var input_elem = this._input_element;
-        if (input_elem)
-        {
-            var textdecoration = this._textdecoration;
-            if (textdecoration)
-            {
-                input_elem.setElementTextDecoration(textdecoration);
-            }
-
-            if (!this._onlydisplay)
-            {
-                input_elem.setElementReadonly(this.readonly);
-                input_elem.setElementMaxLength(this.maxlength);
-                input_elem.setElementAutoSkip(this.autoskip);
-                input_elem.setElementAutoSelect(this.autoselect);
-                input_elem.setElementUseIme(this.useime);
-                input_elem.setElementImeMode(this.imemode);
-                input_elem.setElementInputType(this.password ? "password" : this._keypad_type);
-                input_elem.setElementDisplayNullTextColor(this._displaynulltextcolor);
-                input_elem.setElementDisplayNullText(this.displaynulltext);
-            }
-        }
     };
 
     _pEdit = null;

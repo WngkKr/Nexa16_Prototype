@@ -271,7 +271,7 @@ if (!nexacro.Div)
         return ret;
     };
 
-    _pDiv.on_apply_text = function ()
+    _pDiv.on_apply_text = function (v)
     {
         var form = this.form;
         if (form && ((form._child_list && form._child_list.length > 0) || this.url))
@@ -279,10 +279,13 @@ if (!nexacro.Div)
             
         var control_elem = this.getElement();
 
+        if (!v)
+            v = this._display_text;
+
         if (control_elem)
         {
             var cell_elem = this._cell_elem;           
-            if (!cell_elem && this.text)
+            if (!cell_elem && v)
             {
                 var win = this._getWindow();
                 cell_elem = this._cell_elem = new nexacro.TextBoxElement(control_elem);
@@ -294,7 +297,7 @@ if (!nexacro.Div)
                 cell_elem.setElementSize(this._getClientWidth(), this._getClientHeight());
                 cell_elem.setElementVerticalAlign(this.verticalAlign);
                 cell_elem.setElementTextAlign(this.textAlign);
-                cell_elem.setElementText(this._displaytext);
+                cell_elem.setElementText(v);
             }
         }
     };

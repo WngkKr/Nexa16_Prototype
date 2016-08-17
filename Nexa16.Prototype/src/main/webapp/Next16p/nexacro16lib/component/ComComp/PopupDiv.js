@@ -210,7 +210,7 @@ if (!nexacro.PopupDiv)
     // ===============================================================================
     // nexacro.PopupDiv : Method
     // ===============================================================================    
-    _pPopupDiv.trackPopup = function (left, top, width, height, callbackfn)
+    _pPopupDiv.trackPopup = function (left, top, width, height, callbackfn, bcapture)
     {        
         this.returnvalue = "";
         if (width == null && height == null) 
@@ -218,6 +218,8 @@ if (!nexacro.PopupDiv)
             width = this._adjust_width;
             height = this._adjust_height;
         }
+
+        this._track_capture = bcapture === false ? false : true;
 
         var _left = +left;
         var _top = +top;
@@ -298,9 +300,10 @@ if (!nexacro.PopupDiv)
 
         return (this.async ? true : this.returnvalue);
     };
-    _pPopupDiv.trackPopupByComponent = function (obj, left, top, width, height, callbackfn)
+    _pPopupDiv.trackPopupByComponent = function (obj, left, top, width, height, callbackfn, bcapture)
     {
         this.returnvalue = "";
+        this._track_capture = bcapture === false ? false : true;
 
         if (width == null && height == null) 
         {

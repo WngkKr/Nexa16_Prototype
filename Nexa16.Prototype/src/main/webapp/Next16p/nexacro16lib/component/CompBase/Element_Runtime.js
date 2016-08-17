@@ -1217,7 +1217,6 @@ if (nexacro._Browser == "Runtime")
         _pInputElement.selectcolor = null;
         _pInputElement.selectbackground = null;
         _pInputElement.compositecolor = null;
-        _pInputElement.displaynulltextcolor = null;
 
         _pInputElement.enable = true;
         _pInputElement.useime = "global";
@@ -1271,18 +1270,6 @@ if (nexacro._Browser == "Runtime")
                 {
                     nexacro.__setElementHandleReadOnly(handle, true);
                 }
-                //if (this.font)
-                //{
-                //    nexacro.__setElementHandleFontObject(handle, this.font);
-                //}
-                //if (this.color)
-                //{
-                //    nexacro.__setElementHandleColorObject(owner_elem.handle, this.color);
-                //}
-                //if (this.cursor)
-                //{
-                //    nexacro.__setElementHandleCursorObject(handle, this.cursor);
-                //}
                 if (this.padding)
                 {
                     nexacro.__setElementHandlePaddingObject(handle, this.padding);
@@ -1332,10 +1319,6 @@ if (nexacro._Browser == "Runtime")
                 }
                 else if (this.displaynulltext)
                 {
-                    if (this.displaynulltextcolor)
-                    {
-                        nexacro.__setElementHandleColorObject(owner_elem.handle, this.displaynulltextcolor);                        
-                    }
                     nexacro.__setElementHandleValue(handle, this.displaynulltext, true);
                 }
                 else if (this.defaultvalue)
@@ -1371,20 +1354,6 @@ if (nexacro._Browser == "Runtime")
             if (handle)
             {
                 nexacro.__setElementHandlePaddingObject(handle, padding);
-            }
-        };
-
-        _pInputElement.setElementDisplayNullTextColor = function (color)
-        {
-            this.displaynulltextcolor = color;
-
-            var owner_elem = this.parent_elem.getContainerElement(this.position_step);
-            if (owner_elem && owner_elem.handle && !this.handle)
-            {
-                if (!this._is_focused && this.value == null && color)
-                {
-                    nexacro.__setElementHandleColorObject(owner_elem.handle, color);
-                }
             }
         };
 
@@ -1439,39 +1408,6 @@ if (nexacro._Browser == "Runtime")
                 nexacro.__setElementHandleTabIndentSize(handle, indent);
             }
         };
-
-        //_pInputElement.setElementFont = function (font)
-        //{
-        //    this.font = font;
-        //    var handle = this.handle;
-        //    if (handle)
-        //    {
-        //        nexacro.__setElementHandleFontObject(handle, font);
-        //    }
-        //};
-
-        //_pInputElement.setElementColor = function (color)
-        //{
-        //    this.color = color;
-        //    var owner_elem = this.parent_elem.getContainerElement(this.position_step);
-        //    if (owner_elem && owner_elem.handle && !this.handle)
-        //    {
-        //        if (this._is_focused || (this.displaynulltext != "" && this.displaynulltextcolor && this.value != null))
-        //            nexacro.__setElementHandleColorObject(owner_elem.handle, color);
-        //    }
-        //};
-
-        //_pInputElement.setElementCursor = function (cursor)
-        //{
-        //    this.cursor = cursor;
-        //    var handle = this.handle;
-        //    var owner_elem = this.parent_elem.getContainerElement(this.position_step);
-        //    if (owner_elem && owner_elem.handle)
-        //    {
-        //        nexacro.__setElementHandleCursorObject(owner_elem.handle, cursor);
-        //        nexacro.__setElementHandleCursorObject(handle, cursor);
-        //    }
-        //};
 
         _pInputElement.setElementEnable = function (enable)
         {
@@ -1576,10 +1512,6 @@ if (nexacro._Browser == "Runtime")
                 {
                     if (this.displaynulltext != "" && nexacro._isNull(this.value) && !this._is_focused)
                     {
-                        if (this.displaynulltextcolor)
-                        {
-                            nexacro.__setElementHandleColorObject(owner_elem.handle, this.displaynulltextcolor);
-                        }
                         nexacro.__setElementHandleValue(handle, this.displaynulltext, true);
                     }
                 }
@@ -1624,23 +1556,10 @@ if (nexacro._Browser == "Runtime")
                 else if (!this._is_focused && this.displaynulltext != "")
                 {
                     nexacro.__setElementHandleValue(handle, this.displaynulltext, true);
-                    if (this.displaynulltextcolor)
-                    {
-                        color = this.displaynulltextcolor;
-                    }
                 }
                 else
                 {
                     this._updateInputValue(text);
-                }
-
-                if (this.displaynulltextcolor)
-                {
-                    var owner_elem = this.parent_elem.getContainerElement(this.position_step);
-                    if (owner_elem && owner_elem.handle)
-                    {
-                        nexacro.__setElementHandleColorObject(owner_elem.handle, color);
-                    }
                 }
             }
         };
@@ -1767,14 +1686,6 @@ if (nexacro._Browser == "Runtime")
                     var value = this._getInputValue();
                     if (value != this.defaultvalue)
                     {
-                        if (this.displaynulltextcolor)
-                        {
-                            var owner_elem = this.parent_elem.getContainerElement(this.position_step);
-                            if (owner_elem && owner_elem.handle)
-                            {
-                                nexacro.__setElementHandleColorObject(owner_elem.handle, this.color);
-                            }
-                        }
                         nexacro.__setElementHandleValue(handle, this.defaultvalue);
                     }
                 }
@@ -1821,14 +1732,6 @@ if (nexacro._Browser == "Runtime")
 
                 if (this.value == null && this.displaynulltext != "")
                 {
-                    if (this.displaynulltextcolor)
-                    {
-                        var owner_elem = this.parent_elem.getContainerElement(this.position_step);
-                        if (owner_elem && owner_elem.handle)
-                        {
-                            nexacro.__setElementHandleColorObject(owner_elem.handle, this.displaynulltextcolor);
-                        }
-                    }
                     nexacro.__setElementHandleValue(handle, this.displaynulltext, true);
                 }
             }
@@ -2737,10 +2640,6 @@ if (nexacro._Browser == "Runtime")
                 }
                 else if (this.displaynulltext)
                 {
-                    if (this.displaynulltextcolor)
-                    {
-                        nexacro.__setElementHandleColorObject(handle, this.displaynulltextcolor);
-                    }
                     nexacro.__setElementHandleValue(handle, this.displaynulltext, true);
                 }
 
@@ -3141,6 +3040,15 @@ if (nexacro._Browser == "Runtime")
 
                     // render
                     this._refreshControl(handle);
+
+                    if (this.linkedcontrol && this.linkedcontrol._real_enable == false)
+                    {
+                        if (!this.status)
+                        {
+                            this.status = "disabled";
+                            nexacro.__setElementHandleStatus(handle, "disabled");
+                        }
+                    }   
 
                     if (this._hittest_type)
                         nexacro.__setElementHittestValue(handle, this._hittest_type);
@@ -7018,39 +6926,7 @@ if (nexacro._Browser == "Runtime")
 
             if (this._plugin_object)
             {
-                var name = arguments[0];
-                switch (arguments.length)
-                {
-                    case 2:
-                        return this._plugin_object.callMethod(name, arguments[1]);
-                        break;
-                    case 3:
-                        return this._plugin_object.callMethod(name, arguments[1], arguments[2]);
-                        break;
-                    case 4:
-                        return this._plugin_object.callMethod(name, arguments[1], arguments[2], arguments[3]);
-                        break;
-                    case 5:
-                        return this._plugin_object.callMethod(name, arguments[1], arguments[2], arguments[3], arguments[4]);
-                        break;
-                    case 6:
-                        return this._plugin_object.callMethod(name, arguments[1], arguments[2], arguments[3], arguments[4], arguments[5]);
-                        break;
-                    case 7:
-                        return this._plugin_object.callMethod(name, arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6]);
-                        break;
-                    case 8:
-                        return this._plugin_object.callMethod(name, arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6], arguments[7]);
-                        break;
-                    case 9:
-                        return this._plugin_object.callMethod(name, arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6], arguments[7], arguments[8]);
-                        break;
-                    case 10:
-                        return this._plugin_object.callMethod(name, arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6], arguments[7], arguments[8], arguments[9]);
-                        break;
-                    default:
-                        return this._plugin_object.callMethod(name);
-                }
+                return this._plugin_object.callMethod.apply(this._plugin_object, arguments);
             }
         };
 
@@ -7321,44 +7197,11 @@ if (nexacro._Browser == "Runtime")
 
             if (this.handle)
             {
-                var name = arguments[0];
-                var value;
-
-                switch (arguments.length)
-                {
-                    case 2:
-                        value = nexacro.__callPluginObjectHandleMethod(this.handle, name, arguments[1]);
-                        break;
-                    case 3:
-                        value = nexacro.__callPluginObjectHandleMethod(this.handle, name, arguments[1], arguments[2]);
-                        break;
-                    case 4:
-                        value = nexacro.__callPluginObjectHandleMethod(this.handle, name, arguments[1], arguments[2], arguments[3]);
-                        break;
-                    case 5:
-                        value = nexacro.__callPluginObjectHandleMethod(this.handle, name, arguments[1], arguments[2], arguments[3], arguments[4]);
-                        break;
-                    case 6:
-                        value = nexacro.__callPluginObjectHandleMethod(this.handle, name, arguments[1], arguments[2], arguments[3], arguments[4], arguments[5]);
-                        break;
-                    case 7:
-                        value = nexacro.__callPluginObjectHandleMethod(this.handle, name, arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6]);
-                        break;
-                    case 8:
-                        value = nexacro.__callPluginObjectHandleMethod(this.handle, name, arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6], arguments[7]);
-                        break;
-                    case 9:
-                        value = nexacro.__callPluginObjectHandleMethod(this.handle, name, arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6], arguments[7], arguments[8]);
-                        break;
-                    case 10:
-                        value = nexacro.__callPluginObjectHandleMethod(this.handle, name, arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6], arguments[7], arguments[8], arguments[9]);
-                        break;
-                    default:
-                        value = nexacro.__callPluginObjectHandleMethod(this.handle, name);
-                }
+                Array.prototype.unshift.call(arguments, this.handle);
+                var value = nexacro.__callPluginObjectHandleMethod.apply(nexacro, arguments);
                 if (value != null && typeof (value) == "object")
                 {
-                    var pobject = new nexacro._PluginObject;
+                    var pobject = new nexacro.PluginObject;
                     pobject.handle = value;
 
                     return pobject;
@@ -7551,16 +7394,19 @@ if (nexacro._Browser == "Runtime")
         {
             if (this._plugin_object)
             {
-                this._plugin_object.callMethod("GoBack");
+                var state = this._plugin_object.callMethod("GoBack");
+                if (state)
+                    return state.toLowerCase() == "true" ? true : false;
             }
         };
-
-
+        
         __pWebBrowserPluginElement._setForward = function ()
         {
             if (this._plugin_object)
             {
-                this._plugin_object.callMethod("GoForward");
+                var state = this._plugin_object.callMethod("GoForward");
+                if (state)
+                    return state.toLowerCase() == "true" ? true : false;
             }
         };
 

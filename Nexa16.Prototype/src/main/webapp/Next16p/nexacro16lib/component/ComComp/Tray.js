@@ -112,7 +112,7 @@ if (!nexacro.Tray)
         //nexacro._setTrayTooltipHandle(this._handle,this.tooltip);
     };
 
-
+     
 
 
 
@@ -423,13 +423,11 @@ if (!nexacro.TrayPopupMenu)
     {
         // Display Menu Handle Call
         if (this._handle)
-        {
+        {            
             nexacro._displayTrayPopupMenuHandle(this.parent._handle, this._handle);
             nexacro._current_tray_popup = this;
         }
     };
-
-
 
     // ===============================================================================
     // nexacro.TrayPopupMenu : Property

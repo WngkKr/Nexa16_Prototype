@@ -148,7 +148,7 @@ if (nexacro.Menu)
         }
         var popupmenu = this._popupmenu;
         var len = popupmenu._items.length;
-        var h = popupmenu.itemheight
+        var h = popupmenu.itemheight;
         var item_h = h ? parseInt(h._value, 10) : 20;
         var popupmenu_h = item_h * len;
 

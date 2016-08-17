@@ -401,6 +401,6 @@
     {
         if (!this._isPreviewMode())
             return this._org_on_created_contents(win);
-    }
+    };
     delete _pGridCellControlCheckbox;
 }

@@ -57,7 +57,6 @@ if (!nexacro.Spin)
     _pSpin.circulation = false;
     _pSpin.displaycomma = false;
     _pSpin.displaynulltext = "";
-    _pSpin.displaynulltextcolor = "";
     _pSpin.increment = 1;
     _pSpin.locale = "";
     _pSpin.max = 10000;
@@ -70,7 +69,6 @@ if (!nexacro.Spin)
 
     /* internal variable */
     _pSpin._buttonsize = -1;
-    _pSpin._displaynulltextcolor = null;
     _pSpin._default_value = undefined;
     _pSpin._default_text = "";
     _pSpin._default_mask = "9.9";
@@ -125,7 +123,6 @@ if (!nexacro.Spin)
         this._setEventHandlerToSpinButtons();
 
         this.on_apply_displaynulltext();
-        this.on_apply_displaynulltextcolor();
         this.on_apply_displaycomma();
         this.on_apply_type();
         this.on_apply_readonly();
@@ -150,7 +147,6 @@ if (!nexacro.Spin)
         this._setEventHandlerToSpinButtons();
 
         this.on_apply_displaynulltext();
-        this.on_apply_displaynulltextcolor();
         this.on_apply_displaycomma();
         this.on_apply_type();
         this.on_apply_readonly();
@@ -428,38 +424,6 @@ if (!nexacro.Spin)
         if (spinedit)
         {
             spinedit.set_displaynulltext(this.displaynulltext);
-        }
-    };
-
-    _pSpin.set_displaynulltextcolor = function (v)
-    {
-        this.displaynulltextcolor = v;
-
-        if (v)
-        {
-            if (this._displaynulltextcolor == null || this._displaynulltextcolor.value != v)
-            {
-                var color = nexacro.ColorObject(v);
-                this._displaynulltextcolor = color;
-                this.on_apply_displaynulltextcolor();
-            }
-        }
-        else
-        {
-            if (this._displaynulltextcolor)
-            {
-                this._displaynulltextcolor = null;
-                this.on_apply_displaynulltextcolor();
-            }
-        }
-    };
-
-    _pSpin.on_apply_displaynulltextcolor = function ()
-    {
-        var spinedit = this.spinedit;
-        if (spinedit)
-        {
-            spinedit.set_displaynulltextcolor(this.displaynulltextcolor);
         }
     };
 

@@ -4269,8 +4269,11 @@ if (nexacro._Browser != "Runtime" && !nexacro._init_platform_HTML5)
 	            // landscape 상태인데, screen w/h 값이 swap되지 않는 장비인 경우
 	            // screen height를 기준으로 viewport를 설정
 	            is_swap_screen = nexacro._searchDeviceExceptionValue("swap_screen");
-	            if (is_swap_screen === false)
+	            var force_swap = nexacro._searchDeviceExceptionValue("force_swap");
+	            if (is_swap_screen == false || force_swap)
+	            {
 	                screen_width = nexacro._getScreenHeight();
+	            }
 	        }
 
 	        // 일부 안드로이드 기기에서 dpi값이 없을 경우 비정상적인 크기로 확대되는 문제가 발견됨
@@ -4484,7 +4487,22 @@ if (nexacro._Browser != "Runtime" && !nexacro._init_platform_HTML5)
                     )
                     : (undefined),
             reset_viewport_delay: 0,
-            use_windowsize_as_bodysize: false
+            use_windowsize_as_bodysize: false,
+            force_swap: false // 강제로 swap하기 위함
+        },
+        {
+             // 갤럭시탭S / 5.0.2
+             model: "SM-T800",
+             browser: "stock",
+             is_portrait_device: true,
+             force_swap: true
+        },
+        {
+                // 갤럭시탭S / 5.0.2
+                model: "SM-T800",
+                browser: "Chrome",
+                is_portrait_device: true,
+                force_swap: true
         },
         {
             // 갤럭시탭 10.1 / 4.0.4
@@ -4540,6 +4558,20 @@ if (nexacro._Browser != "Runtime" && !nexacro._init_platform_HTML5)
             use_windowsize_as_bodysize: true
         },
         {
+            // 갤럭시 노트2
+            model: "SHV-E250K",
+            browser: "stock",
+            os_version: "4.4.2",
+            swap_screen: false
+        },
+        {
+            // 갤럭시 노트2
+            model: "SHV-E250L",
+            browser: "stock",
+            os_version: "4.4.2",
+            swap_screen: false
+        },
+        {
             // 옵티머스 G3
             model: "LG-F400K",
             browser: "Chrome", // 기본 브라우저도 Chrome으로 잡히고 있다.
@@ -4548,6 +4580,18 @@ if (nexacro._Browser != "Runtime" && !nexacro._init_platform_HTML5)
         {
             // 갤럭시 S4 LTE 기본브라우저
             model: "SAMSUNG SHV-E300S", // 기본 브라우저는 앞에 SAMSUNG 이 붙어있음
+            browser: "Chrome", // 기본 브라우저가 Chrome으로 잡힘.
+            reset_viewport_delay: 0 // 기본 브라우저는 delay처리하면 오류 발생
+        },
+        {
+            // 갤럭시 S4 LTE 기본브라우저
+            model: "SAMSUNG SHV-E300K", // 기본 브라우저는 앞에 SAMSUNG 이 붙어있음
+            browser: "Chrome", // 기본 브라우저가 Chrome으로 잡힘.
+            reset_viewport_delay: 0 // 기본 브라우저는 delay처리하면 오류 발생
+        },
+        {
+            // 갤럭시 S4 LTE 기본브라우저
+            model: "SAMSUNG SHV-E300L", // 기본 브라우저는 앞에 SAMSUNG 이 붙어있음
             browser: "Chrome", // 기본 브라우저가 Chrome으로 잡힘.
             reset_viewport_delay: 0 // 기본 브라우저는 delay처리하면 오류 발생
         },

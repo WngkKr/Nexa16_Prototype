@@ -66,7 +66,7 @@ if (nexacro.PopupMenu)
         var offset_left = (form._adjust_width / 4) - (this._adjust_width / 2);
         var offset_top = (form._adjust_height / 2) - (this._adjust_height / 2);
         this.move(offset_left, offset_top);
-    }
+    };
     
     _pPopupMenu.destroyCssDesignContents = function ()
     {
@@ -217,12 +217,12 @@ if (nexacro.PopupMenu)
                     {
                         break;
                     }
-                   
+
                 }
             }
         }
         this._reCalcSize();
-    }
+    };
     
     _pPopupMenu.on_created = function (_window)
     {

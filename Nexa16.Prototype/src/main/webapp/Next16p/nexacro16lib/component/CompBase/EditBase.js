@@ -818,7 +818,7 @@ if (!nexacro.InputEventInfo)
     };
 
     // cache charcode & caret position (for password type & maskchar)
-    _pMaskType.keyPressed = function (_char, pos)
+    _pMaskType.keyPressed = function (ch, pos)
     {
     };
 
@@ -1147,7 +1147,7 @@ if (!nexacro.InputEventInfo)
         // incorrect thousand separator
         for (var i = 0; ; i++)
         {
-            idx = int_part.lastIndexOf(thousands_sep, prev_idx)
+            idx = int_part.lastIndexOf(thousands_sep, prev_idx);
             if (idx < 0) break;
 
             var group = grouping[(i < grouping.length ? i : grouping.length - 1)];
@@ -2000,9 +2000,9 @@ if (!nexacro.InputEventInfo)
         return result_buf.join('');
     };
 
-    _pMaskTypeString.keyPressed = function (char, pos)
+    _pMaskTypeString.keyPressed = function (ch, pos)
     {
-        this._char_buf[pos] = char;
+        this._char_buf[pos] = ch;
     };
 
     _pMaskTypeString.findNearEditablePos = function (pos, direction)
@@ -2142,7 +2142,7 @@ if (!nexacro.InputEventInfo)
         var info = this._date;
 
         var y, M, d;
-        var h, m, s, s
+        var h, m, s, s;
         switch (this.getEditFormatType())
         {
             case 0:
@@ -2859,9 +2859,9 @@ if (!nexacro.InputEventInfo)
         return result_buf.join('');
     };
 
-    _pMaskTypeDate.keyPressed = function (char, pos)
+    _pMaskTypeDate.keyPressed = function (ch, pos)
     {
-        this._edit_char_buf[pos] = char;
+        this._edit_char_buf[pos] = ch;
 
         var value_buf = this._edit_value_buf;
         var value_len = value_buf.length;
@@ -3100,7 +3100,7 @@ if (!nexacro.InputEventInfo)
 
     _pMaskTypeDate.changeNormalizeValue = function (v)
     {
-        if (nexacro._isNull(v) || v === "")
+        if (nexacro._isNull(v) || v === "" || v.trim() === "")
         {
             return v;
         }

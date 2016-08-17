@@ -1369,7 +1369,7 @@ if (!nexacro.DatePickerControl)
             monthWidth = textSize[0];
             var monthHeight = textSize[1];
 
-            var yearspin_t = Math.ceil((clientHeight - yearHeight) / 2);;
+            var yearspin_t = Math.ceil((clientHeight - yearHeight) / 2);
             var yearspin_w = yearWidth + yearHeight;
             var yearspin_h = yearHeight;
             var monthspin_t = Math.ceil((clientHeight - monthHeight) / 2);

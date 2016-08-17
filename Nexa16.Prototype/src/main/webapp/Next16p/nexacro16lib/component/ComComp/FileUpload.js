@@ -328,7 +328,7 @@ if (!nexacro.FileUpload)
         }
 
         this.on_apply_index();
-        this.on_apply_innerdataset();
+        //this.on_apply_innerdataset();
         this.on_apply_filecolumn();
         this.on_apply_prop_enable(this._isEnable());
         if (nexacro._enableaccessibility)
@@ -388,7 +388,7 @@ if (!nexacro.FileUpload)
         }
 
         this.on_apply_index();
-        this.on_apply_innerdataset();
+        //this.on_apply_innerdataset();
         this.on_apply_filecolumn();
         this.on_apply_prop_enable(this._isEnable());
         if (nexacro._enableaccessibility)
@@ -767,7 +767,7 @@ if (!nexacro.FileUpload)
     _pFileUpload.on_apply_value = function (value)
     {
     };
-
+    /*
     _pFileUpload.setInnerDataset = function (obj)
     {
         if (!obj)
@@ -783,7 +783,7 @@ if (!nexacro.FileUpload)
             this.on_apply_innerdataset();
         }
     };
-
+    
     _pFileUpload._setInnerDatasetStr = function (str)
     {
         if (!str)
@@ -798,12 +798,12 @@ if (!nexacro.FileUpload)
             this.innerdataset = str;
         }
     };
-
+    
     _pFileUpload.getInnerDataset = function ()
     {
         return this._innerdataset;
     };
-
+    
     _pFileUpload.set_innerdataset = function (str)
     {
         if (typeof str != "string")
@@ -833,7 +833,7 @@ if (!nexacro.FileUpload)
         }
         return this.innerdataset;
     };
-
+    
     _pFileUpload.on_apply_innerdataset = function ()
     {
         var control_elem = this.getElement();
@@ -842,7 +842,7 @@ if (!nexacro.FileUpload)
             this.on_apply_filecolumn();
         }
     };
-
+    */
     _pFileUpload.set_filecolumn = function (v)
     {
         if (v != this.filecolumn)

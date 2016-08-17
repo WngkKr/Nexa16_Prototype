@@ -66,7 +66,7 @@ if (!nexacro.DesignForm)
             if (this._load_manager)
             {
                 var url = nexacro._getFDLLocation(formurl, baseurl);
-                
+
                 var parent = this.parent;
                 while (parent && !parent._is_frame)
                 {
@@ -82,7 +82,7 @@ if (!nexacro.DesignForm)
                     }
                     parent = parent.parent;
                 }
-                
+
                 this._url = url;
                 this._base_url = nexacro._getBaseUrl(url);
 
@@ -97,13 +97,13 @@ if (!nexacro.DesignForm)
                     // ChildFrame > Form   
                     _application._registerLoadforms(this);
                 }
-            
+
                 var service = nexacro._getServiceObject(formurl);
                 service.cachelevel = "none"; //lym 16.06.15 : designform에선 form을 load할 시 cache를 사용하지 않음
                 async = false; //lym 16.06.15 : designform에선 form을 sync로만 동작
                 var ret = this._load_manager.loadMainModule(url, undefined, async, reload, service);
             }
-        }    
+        };
         _pFormBase.registerScript = nexacro._emptyFn;
         delete _pFormBase;
     };
@@ -163,12 +163,12 @@ if (!nexacro.DesignForm)
                             var frame = obj.getOwnerFrame();
                             if (frame.form instanceof nexacro.DesignForm)
                             {
-                                var designform = frame.form;                            
+                                var designform = frame.form;
                                 var extra_info = designform._getScopeName(obj);
 
                                 nexacro.__notifyToDesignWindow(win.handle, nexacro._design_notify_div_urlload, designform.id, extra_info);
                             }
-                         }
+                        }
                     }
                     else
                     {
@@ -180,11 +180,11 @@ if (!nexacro.DesignForm)
                         }
                         else
                         {
-                    	    if (this.context)
-                    		    this.context._onHttpSystemError(this.context, true, this.context, fireerrorcode, url, returncode, requesturi, locationuri);
+                            if (this.context)
+                                this.context._onHttpSystemError(this.context, true, this.context, fireerrorcode, url, returncode, requesturi, locationuri);
 
-                        	nexacro._onHttpSystemError(this.context, true, this.context, fireerrorcode, url, returncode, requesturi, locationuri);
-    
+                            nexacro._onHttpSystemError(this.context, true, this.context, fireerrorcode, url, returncode, requesturi, locationuri);
+
                             // div url load fail
                             var obj = this.context;
                             if (obj instanceof nexacro._InnerForm)
@@ -194,7 +194,7 @@ if (!nexacro.DesignForm)
                                 if (frame.form instanceof nexacro.DesignForm)
                                 {
                                     var designform = frame.form;
-                                
+
                                     var parent = obj.parent;
                                     var extra_info = designform._getScopeName(parent);
 
@@ -207,7 +207,7 @@ if (!nexacro.DesignForm)
                     this._check_fire_oninit();
                 }
             }
-        }
+        };
         delete __pLoadManager;
     };
     
@@ -267,10 +267,10 @@ if (!nexacro.DesignForm)
 
 	//var mapdata = 'nexacro._setCSSMaps ({MainFrame: {self:{enabled :{border1 : nexacro.BorderObject("3px solid #666666"),color : nexacro.ColorObject("#444444")},deactivate :{border : nexacro.BorderObject("2px solid #235798")}}}})';
     //eval(mapdata);
-    nexacro._CSSMapStringtoJson = function(mapdata)
+    nexacro._CSSMapStringtoJson = function (mapdata)
     {
-    	eval(mapdata);
-    }
+        eval(mapdata);
+    };
 
     //nexacro._updateCSSMapItem("MainFrame1, self1, enable", "border", 'nexacro.BorderObject("4px solid #666666")');
     nexacro._updateCSSMapItem = function (parent, prop, value)
@@ -765,7 +765,7 @@ if (!nexacro.DesignForm)
 
     // Computed Style Test
     
-    nexacro._getStyleProperty = function(obj, propid)
+    nexacro._getStyleProperty = function (obj, propid)
     {
         if (!obj)
             return "";
@@ -780,17 +780,17 @@ if (!nexacro.DesignForm)
         var str;
 
         if (propid == "-nexa-text-align" || propid == "-nexa-vertical-align")
-        {            
+        {
             var control_elem = obj.getElement();
             if (control_elem && control_elem.handle)
             {
                 var child_elem = nexacro.__findElement(control_elem.handle, "nexacontentsbox");
                 if (child_elem)
-                {                    
+                {
                     str = child_elem._getComputedStyleValue(propid);
                     return str;
                 }
-            }            
+            }
         }
 
         var control_elem = obj.getElement();
@@ -798,7 +798,7 @@ if (!nexacro.DesignForm)
             str = control_elem._getComputedStyleValue(propid);
 
         return str;
-    }
+    };
 
     nexacro._getProperty = function (obj, propid, pseudo)
     {
@@ -1390,7 +1390,7 @@ if (!nexacro.DesignForm)
             if (!parent)
                 parent = this._inner_form;
 
-            var compclassname = classname
+            var compclassname = classname;
             if (!classname && controlclassname)
                 compclassname = controlclassname;
 
@@ -1470,17 +1470,12 @@ if (!nexacro.DesignForm)
         {
             if (e.obj)
             {
-            	nexacro._onSystemError(e.obj, e.name, e.message);               
+                nexacro.__onNexacroStudioError(e.message);
             }
-            else 
+            else
             {
                 var msg = nexacro._getExceptionMessage(e);
-               
-                var environment = nexacro.getEnvironment();
-                if (environment)
-                {
-                	nexacro._onSystemError(environment, e.name, msg);
-                }
+                nexacro.__onNexacroStudioError(msg);
             }
         }
     };
@@ -1581,21 +1576,16 @@ if (!nexacro.DesignForm)
             return "";
         }
         catch(e)
-        {
+        {            
             if (e.obj)
             {
-            	nexacro._onSystemError(e.obj, e.name, e.message);
+                nexacro.__onNexacroStudioError(e.message);
             }
             else
             {
             	var msg = nexacro._getExceptionMessage(e);
-
-            	var environment = nexacro.getEnvironment();
-            	if (environment)
-            	{
-            		nexacro._onSystemError(environment, e.name, msg);
-            	}
-            }
+            	nexacro.__onNexacroStudioError(msg);
+            }            
         }
     };
 
@@ -1666,16 +1656,31 @@ if (!nexacro.DesignForm)
 
     _pDesignForm.createInvisibleObject = function (classname, objid)
     {
-        if (!objid || objid.length == 0)
-            objid = this._getNextChildID(this._inner_form, classname);
-
-        var classnameobj = eval(classname);
-        if (classnameobj)
+        try
         {
-            var obj = new classnameobj(objid, this._inner_form);
-            this._inner_form.addChild(objid, obj);
+            if (!objid || objid.length == 0)
+                objid = this._getNextChildID(this._inner_form, classname);
 
-            return obj.name;
+            var classnameobj = eval(classname);
+            if (classnameobj)
+            {
+                var obj = new classnameobj(objid, this._inner_form);
+                this._inner_form.addChild(objid, obj);
+
+                return obj.name;
+            }
+        }        
+        catch(e)
+        {            
+            if (e.obj)
+            {
+                nexacro.__onNexacroStudioError(e.message);
+            }
+            else
+            {
+                var msg = nexacro._getExceptionMessage(e);
+                nexacro.__onNexacroStudioError(msg);
+            }            
         }
     };
 
@@ -2871,7 +2876,7 @@ if (!nexacro.DesignForm)
         cf.move(0, 0, width, height);
         this._recalcDesignLayout();
 
-    }
+    };
 
     _pDesignForm.setFormSize = function (width, height)
     {
@@ -3120,6 +3125,7 @@ if (!nexacro.DesignForm)
 
     _pDesignForm._showSubLayout = function (obj, bShow, positionstep)
     {
+
         if (!(obj instanceof nexacro.Div))
         {
             return false;
@@ -3185,6 +3191,12 @@ if (!nexacro.DesignForm)
             // 현재 해결책이 마땅치 않아 sublayout edit시 복제 node는 그리지 않기로함.
             nexacro.__setElementHandleFixedStepNode(div_elem.handle, false);
 
+            var scrollbarsize;
+            if (obj.form && obj.form.scrollbarsize)
+                scrollbarsize = obj.form.scrollbarsize;
+            else
+                scrollbarsize = obj.form._default_scrollbarsize;
+
             var sublayoutmode_info = {
                 comp: obj,
                 elem: div_elem,
@@ -3193,7 +3205,8 @@ if (!nexacro.DesignForm)
                 overlay_elem: overlay_elem,
                 elem_pos: [div_elem.left, div_elem.top],
                 offset_pos: [pt_offset[0] + this._scroll_left, pt_offset[1] + this._scroll_top], // show하는 순간 designform이 스크롤이 되어있으면 그만큼 offset 되어있음.
-                positionstep: positionstep
+                positionstep: positionstep,
+                scrollbarsize: scrollbarsize
             };
 
             obj._sublayoutmode_info = sublayoutmode_info;
@@ -3284,12 +3297,14 @@ if (!nexacro.DesignForm)
                 if (inner_element)
                 {
                     // Div의 scrollbar가 overflowclip이 풀리면서 나오는 문제가 있으므로 스크롤바를 제거함.          
+                    
+                    obj.form.set_scrollbarsize(0);
                     if (obj.form.vscrollbar)
-                    {
+                    {                        
                         obj.form.vscrollbar.set_visible(false);
                     }
                     if (obj.form.hscrollbar)
-                    {
+                    {                     
                         obj.form.hscrollbar.set_visible(false);
                     }
                     obj.form._onResetScrollBar = nexacro._emptyFn;
@@ -3321,6 +3336,7 @@ if (!nexacro.DesignForm)
                 var div_elem = sublayoutmode_info.elem;
                 var obj = sublayoutmode_info.comp;
                 var next_comp = sublayoutmode_info.next_comp;
+                var scrollbarsize = sublayoutmode_info.scrollbarsize;
                 div_elem._removeFromContainer();
                 if (!next_comp)
                 {
@@ -3377,6 +3393,7 @@ if (!nexacro.DesignForm)
                 // scrollbar      
                 if (obj.form) 
                 {
+                    obj.form.set_scrollbarsize(scrollbarsize);
                     if (obj.form.vscrollbar)
                     {
                         obj.form.vscrollbar.set_visible(true);
@@ -3809,7 +3826,7 @@ if (!nexacro.DesignForm)
         if (obj.innerdataset == "innerdataset")
         {
             var innerdataset = obj._innerdataset;
-            delete innerdataset
+            delete innerdataset;
 
             obj._innerdataset = null;
             obj.innerdataset = "";
@@ -4478,7 +4495,7 @@ if (!nexacro.DesignForm)
         }
 
         return null;
-    }
+    };
 
     _pDesignForm._getObject = function (name)
     {
@@ -4575,22 +4592,19 @@ if (!nexacro.DesignForm)
             return "this";
         }
 
-        var parent = comp.parent;
-        var fullname = [];
-
-        fullname.push(comp.id);
-        while (parent && parent != this && parent != this._inner_form)
+        var fullname = [];        
+        while (comp && comp != this && comp != this._inner_form)
         {
-            if (parent instanceof nexacro._InnerForm)
+            if (comp instanceof nexacro._InnerForm)
             {
                 // innerform은 생략한다.
             }
             else
             {
-                fullname.push(parent.id);
+                fullname.push(comp.id);
             }
             
-            parent = parent.parent;
+            comp = comp.parent;
         }
 
         fullname.reverse();
@@ -5019,7 +5033,7 @@ if (!nexacro.DesignForm)
         }
 
         // 컴포넌트 세팅값도 갱신
-        var comps = obj.components
+        var comps = obj.components;
         var comps_len = comps ? comps.length : 0;
         for (var i = 0; i < comps_len; i++)
         {
@@ -5452,17 +5466,12 @@ if (!nexacro.DesignForm)
         {
         	if (e.obj)
         	{
-        		nexacro._onSystemError(e.obj, e.name, e.message);
+        	    nexacro.__onNexacroStudioError(e.message);
         	}
         	else
         	{
         		var msg = nexacro._getExceptionMessage(e);
-
-        		var environment = nexacro.getEnvironment();
-        		if (environment)
-        		{
-        			nexacro._onSystemError(environment, e.name, msg);
-        		}
+        		nexacro.__onNexacroStudioError(msg);
         	}
         }
     };
@@ -5565,7 +5574,7 @@ if (!nexacro.DesignForm)
                     }
                     if (isNumber(val) || val == null)
                     {
-                        this.bottom = bottom
+                        this.bottom = bottom;
                         this._bottom = val;
                     }
                     break;
@@ -5929,20 +5938,15 @@ if (!nexacro.DesignForm)
         }
         catch (e)
         {
-        	if (e.obj)
-        	{
-        		nexacro._onSystemError(e.obj, e.name, e.message);
-        	}
-        	else
-        	{
-        		var msg = nexacro._getExceptionMessage(e);
-
-        		var environment = nexacro.getEnvironment();
-        		if (environment)
-        		{
-        			nexacro._onSystemError(environment, e.name, msg);
-        		}
-        	}
+            if (e.obj)
+            {
+                nexacro.__onNexacroStudioError(e.message);
+            }
+            else
+            {
+                var msg = nexacro._getExceptionMessage(e);
+                nexacro.__onNexacroStudioError(msg);
+            }
         }
     };
 
@@ -6295,7 +6299,7 @@ if (!nexacro.DesignForm)
         {
             return frame.move(left, top, width, height, right, bottom);
         }
-    }
+    };
 
     _pApplicationAccessPort.createInvisibleObject = function (classname, objid)
     {
@@ -6393,7 +6397,7 @@ if (!nexacro.DesignForm)
     };
     _pApplicationAccessPort.setProperty = function (objid, propid, propval, pseudo)
     {
-        var obj = this._getObject(objid);
+        var obj = this._getObject(objid);        
         if (obj)
         {
             if (propid == "id")
@@ -6436,12 +6440,13 @@ if (!nexacro.DesignForm)
             {
                 return obj[propid];
             }
-            else if (ret === null)
+            else /*if (ret === null)*/
             {
                 return;
             }
         }
     };
+
 
     _pApplicationAccessPort.setInitValueID = function (objid, value)
     {
@@ -6653,7 +6658,7 @@ if (!nexacro.DesignForm)
 
     _pApplicationAccessPort.addService = function (prefixid, type, url, cachelevel, codepage, language, version, communication)
     {
-    	nexacro._addService(prefixid, type, url, cachelevel, codepage, language, version, communication)
+        nexacro._addService(prefixid, type, url, cachelevel, codepage, language, version, communication);
 
     	//var service = new nexacro.ServiceItem(prefixid, type, url, cachelevel, codepage, language, version, communication);
         //_application.services.add(prefixid, service);

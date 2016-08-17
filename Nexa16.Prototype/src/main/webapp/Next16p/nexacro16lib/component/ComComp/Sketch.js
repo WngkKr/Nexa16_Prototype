@@ -1379,7 +1379,7 @@ if (!nexacro.Sketch)
      _pSketch.on_notify_oninput = function ()
      {
          return this.on_fire_oninput();
-     }
+     };
     
     _pSketch.on_fire_onload = function (obj, imageurl)
     {

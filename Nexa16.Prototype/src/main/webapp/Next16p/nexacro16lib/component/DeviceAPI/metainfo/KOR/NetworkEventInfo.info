@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MetaInfo version="2.0">
   <Object id="nexacro.NetworkEventInfo">
-    <ObjectInfo inheritance="" classname="nexacro.NetworkEventInfo" shorttypename="" csstypename="" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="deny" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,nexacro browser (Windows),Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="네트워크 상태 확인에 성공했을 때 관련 정보가 담긴 EventInfo 오브젝트입니다." />
+    <ObjectInfo inheritance="" classname="nexacro.NetworkEventInfo" shorttypename="" csstypename="" csscontrolname="" group="Object" subgroup="Object" csspseudo="" container="false" composite="false" tabstop="false" cssstyle="false" contents="false" formats="false" contentseditor="" defaultwidth="false" defaultheight="false" registration="deny" edittype="" generatetype="" useinitvalue="false" popup="false" edittypecomponent="" dblclickevent="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="모바일 기기에서 네트워크 상태 확인에 성공했을 때 발생하는 이벤트에 전달되는 EventInfo 오브젝트입니다." />
     <PropertyInfo>
-      <Property name="eventid" group="Misc." subgroup="" edittype="ID" defaultvalue="0" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="이벤트 핸들러 이름을 나타내는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="eventid" />
+      <Property name="eventid" group="Eventinfo" subgroup="" edittype="" readonly="true" initonly="false" hidden="false" control="false" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="Mobile Hybrid (Android),Mobile Hybrid (IOS)" description="이벤트의 ID를 갖는 속성입니다." csspropertyname="" csselementname="" normalpropertyname="eventid" />
     </PropertyInfo>
     <StyleInfo>
       <PropertyInfo />
