@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sys_findStaff" left="0" top="0" width="868" height="585" titletext="New Form">
+    <Layouts>
+      <Layout height="585" width="868">
+        <Static id="Static00" taborder="1" text="직원찾기" left="3.86%" top="16" width="7.72%" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <ImageViewer id="ImageViewer00" taborder="0" text="" left="13" top="19" width="11" height="14" right="" bottom=""/>
+        <Combo id="Combo00" taborder="5" text="Combo00" left="11.98%" top="15" width="14.03%" height="21" right="" bottom=""/>
+        <Edit id="Edit00" taborder="2" left="26.5%" top="15" width="20.28%" height="21" right="" bottom=""/>
+        <Button id="Button00" taborder="4" text="Excel" left="58.87%" top="16" width="7.6%" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button01" taborder="4" text="VCard" left="66.82%" top="16" width="7.6%" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button02" taborder="4" text="삭제" left="75%" top="16" width="7.6%" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button03" taborder="4" text="저장" left="82.95%" top="16" width="7.6%" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button04" taborder="4" text="닫기" left="91.13%" top="16" width="7.6%" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Grid id="Grid00" taborder="6" left="1.5%" top="45" width="23.39%" height="525" right="" bottom=""/>
+        <Grid id="Grid01" taborder="6" left="25.46%" top="45" width="37.79%" height="525" right="" bottom="">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="70"/>
+                <Column size="55"/>
+                <Column size="119"/>
+                <Column size="88"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="성명"/>
+                <Cell col="1" text="직급"/>
+                <Cell col="2" text="부서"/>
+                <Cell col="3" text="핸드폰"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Div id="Div00" taborder="7" text="" left="63.71%" top="45" width="34.91%" height="525" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Layouts>
+            <Layout>
+              <Div id="Div00" taborder="0" text="Div00" left="24.25%" top="371" width="50.17%" height="141" right="" bottom="">
+                <Layouts>
+                  <Layout/>
+                </Layouts>
+              </Div>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static01" taborder="5" text="사번" left="64.52%" top="55" width="5.07%" height="21" right="" bottom="" color="" textAlign="left" border="1px none  , 0px none #ffffff , 0px none #ffffff , 0px none #ffffff" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static02" taborder="5" text="성명" left="64.52%" top="81" width="5.07%" height="21" right="" bottom="" color="" textAlign="left" border="1px none  , 0px none #ffffff , 0px none #ffffff , 0px none #ffffff" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static03" taborder="5" text="E-Mail" left="64.52%" top="107" width="5.07%" height="21" right="" bottom="" color="" textAlign="left" border="1px none  , 0px none #ffffff , 0px none #ffffff , 0px none #ffffff" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static04" taborder="5" text="MSN" left="64.52%" top="133" width="5.07%" height="21" right="" bottom="" color="" textAlign="left" border="1px none  , 0px none #ffffff , 0px none #ffffff , 0px none #ffffff" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static05" taborder="5" text="직급" left="64.52%" top="159" width="5.07%" height="21" right="" bottom="" color="" textAlign="left" border="1px none  , 0px none #ffffff , 0px none #ffffff , 0px none #ffffff" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static06" taborder="5" text="부서" left="64.52%" top="185" width="5.07%" height="21" right="" bottom="" color="" textAlign="left" border="1px none  , 0px none #ffffff , 0px none #ffffff , 0px none #ffffff" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static07" taborder="5" text="핸드폰" left="64.52%" top="211" width="5.07%" height="21" right="" bottom="" color="" textAlign="left" border="1px none  , 0px none #ffffff , 0px none #ffffff , 0px none #ffffff" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static08" taborder="5" text="사무실" left="64.52%" top="237" width="5.07%" height="21" right="" bottom="" color="" textAlign="left" border="1px none  , 0px none #ffffff , 0px none #ffffff , 0px none #ffffff" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static09" taborder="5" text="집전화" left="64.52%" top="263" width="5.07%" height="21" right="" bottom="" color="" textAlign="center" border="1px none  , 0px none #ffffff , 0px none #ffffff , 0px none #ffffff" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static10" taborder="5" text="우편번호" left="64.52%" top="289" width="6.91%" height="21" right="" bottom="" color="" textAlign="left" border="1px none  , 0px none #ffffff , 0px none #ffffff , 0px none #ffffff" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static11" taborder="5" text="주소" left="64.52%" top="315" width="5.07%" height="21" right="" bottom="" color="" textAlign="left" border="1px none  , 0px none #ffffff , 0px none #ffffff , 0px none #ffffff" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static12" taborder="5" text="퇴사일자" left="64.52%" top="385" width="5.88%" height="21" right="" bottom="" color="" textAlign="left" border="1px none  , 0px none #ffffff , 0px none #ffffff , 0px none #ffffff" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit01" taborder="2" left="72.12%" top="55" width="9.22%" height="21" right="" bottom=""/>
+        <Button id="Button05" taborder="4" text="PW초기화" left="82.03%" top="55" width="7.6%" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit02" taborder="2" left="72.12%" top="81" width="17.28%" height="21" right="" bottom=""/>
+        <Edit id="Edit03" taborder="2" left="72.12%" top="107" width="25.81%" height="21" right="" bottom=""/>
+        <Edit id="Edit04" taborder="2" left="72.12%" top="133" width="25.81%" height="21" right="" bottom=""/>
+        <Edit id="Edit05" taborder="2" left="72.12%" top="211" width="17.28%" height="21" right="" bottom=""/>
+        <Edit id="Edit06" taborder="2" left="72.12%" top="237" width="17.28%" height="21" right="" bottom=""/>
+        <Edit id="Edit07" taborder="2" left="72.12%" top="263" width="17.28%" height="21" right="" bottom=""/>
+        <Edit id="Edit08" taborder="2" left="72.12%" top="289" width="17.28%" height="21" right="" bottom=""/>
+        <Edit id="Edit09" taborder="2" left="89.86%" top="289" width="8.18%" height="21" right="" bottom=""/>
+        <Combo id="Combo01" taborder="5" text="Combo00" left="72.12%" top="159" width="14.03%" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="Combo02" taborder="5" text="Combo00" left="72.12%" top="185" width="14.03%" height="21" right="" bottom=""/>
+        <Static id="Static13" taborder="1" text="" left="72.12%" top="318" width="25.81%" height="62" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #e5e5e5 , 1px solid #e5e5e5 , 1px solid #e5e5e5 , 1px solid #e5e5e5" textAlign="left" verticalAlign="top"/>
+        <Calendar id="Calendar00" taborder="8" left="72.12%" top="385" width="14.03%" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button06" taborder="4" text="사진올리기" left="88.94%" top="385" width="8.99%" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>
