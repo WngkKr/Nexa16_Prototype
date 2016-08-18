@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_Project_ContractReq_Pop" left="0" top="0" width="992" height="568" titletext="계약요청 현황">
+    <Layouts>
+      <Layout height="568" width="992">
+        <Static id="Static00" taborder="0" text="■ 계약요청 현황" left="10" top="10" width="120" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Grid id="Grid00" taborder="1" left="10" top="37" width="" height="" right="10" bottom="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="120"/>
+                <Column size="212"/>
+                <Column size="60"/>
+                <Column size="104"/>
+                <Column size="91"/>
+                <Column size="270"/>
+                <Column size="30"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="고객사"/>
+                <Cell col="1" text="프로젝트명"/>
+                <Cell col="2" text="담당자"/>
+                <Cell col="3" text="계약금액"/>
+                <Cell col="4" text="납품예정일"/>
+                <Cell col="5" text="비고"/>
+                <Cell col="6" text="si"/>
+                <Cell col="7"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+                <Cell col="6"/>
+                <Cell col="7"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button00" taborder="4" text="닫기" left="942" top="10" width="40" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>
