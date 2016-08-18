@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.0">
-  <Form id="BMProjectTech" left="0" top="0" width="900" height="648" titletext="New Form">
+  <Form id="BM_Project_Tech" left="0" top="0" width="900" height="648" titletext="New Form">
     <Layouts>
       <Layout height="648" width="900">
         <Static id="Static00" taborder="0" text="지원내용" left="5" top="5" width="120" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
