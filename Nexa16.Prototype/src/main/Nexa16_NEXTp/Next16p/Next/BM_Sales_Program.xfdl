@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_Sales_Program" left="0" top="0" width="1078" height="810" titletext="New Form" onload="Form_onload">
+    <Layouts>
+      <Layout height="810" width="1078">
+        <Tab id="tabMain" taborder="0" tabindex="0" left="5" top="48" width="" height="" right="5" bottom="5" leftbase="" topbase="btnClose.bottom" bottombase="" rightbase="" widthbase="" heightbase="" text="Tab00">
+          <Tabpages>
+            <Tabpage id="Tabpage1" text="영업현황" url="Next::BM_Sales_Program_Info.xfdl"/>
+            <Tabpage id="Tabpage2" text="PreSales" url="Next::BM_Sales_Program_Presales.xfdl"/>
+            <Tabpage id="Tabpage3" text="수주" url="Next::BM_Sales_Program_Suju.xfdl"/>
+            <Tabpage id="Tabpage4" text="계약" url="Next::BM_Sales_Program_Contract.xfdl"/>
+            <Tabpage id="Tabpage5" text="기술지원">
+              <Layouts>
+                <Layout>
+                  <Static id="Static00" taborder="0" text="기간" left="5" top="5" width="34" height="30" right="" bottom=""/>
+                  <Calendar id="calRequestSDate" taborder="1" left="35" top="9" width="100" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <Static id="Static01" taborder="0" text="~" left="136" top="4" width="34" height="30" right="" bottom=""/>
+                  <Calendar id="calRequestEDate" taborder="1" left="147" top="9" width="100" height="20" right="" bottom=""/>
+                  <Static id="Static02" taborder="2" text="인력요청내역" left="5" top="42" width="120" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <Grid id="Grid00" taborder="3" left="5" top="5" width="" height="310" right="5" bottom="" topbase="Static02.bottom" leftbase="" bottombase="" rightbase="" widthbase="" heightbase="" binddataset="dsTech1">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                        </Columns>
+                        <Rows>
+                          <Row band="head" size="24"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="구분"/>
+                          <Cell col="1" text="요청일자"/>
+                          <Cell col="2" text="고객사"/>
+                          <Cell col="3" text="프로젝트명"/>
+                          <Cell col="4" text="승인"/>
+                          <Cell col="5" text="요청일"/>
+                          <Cell col="6" text="시작일"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell text="bind:구분"/>
+                          <Cell col="1" text="bind:요청일자"/>
+                          <Cell col="2" text="bind:고객사"/>
+                          <Cell col="3" text="bind:프로젝트명"/>
+                          <Cell col="4" text="bind:승인"/>
+                          <Cell col="5" text="bind:요청일"/>
+                          <Cell col="6" text="bind:시작일"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Static id="Static03" taborder="2" text="인력요청내역" left="5" top="386" width="120" height="30" right="" bottom="" bottombase="Grid01.top" leftbase="" topbase="" rightbase="" widthbase="" heightbase=""/>
+                  <Grid id="grd_proc" taborder="3" left="5" top="349" height="" right="5" topbase="Static02.bottom" width="" bottom="5" leftbase="" bottombase="" rightbase="" widthbase="" heightbase="" binddataset="dsTech2">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                        </Columns>
+                        <Rows>
+                          <Row band="head" size="24"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="고객"/>
+                          <Cell col="1" text="접수일자"/>
+                          <Cell col="2" text="프로젝트"/>
+                          <Cell col="3" text="제목"/>
+                          <Cell col="4" text="상태"/>
+                          <Cell col="5" text="담당자"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell text="bind:고객"/>
+                          <Cell col="1" text="bind:접수일자"/>
+                          <Cell col="2" text="bind:프로젝트"/>
+                          <Cell col="3" text="bind:제목"/>
+                          <Cell col="4" text="bind:상태"/>
+                          <Cell col="5" text="bind:담당자"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="Tabpage6" text="순매출상세">
+              <Layouts>
+                <Layout>
+                  <Calendar id="CalTo" taborder="1" left="131" top="8" width="84" height="22" dateformat="yyyy-MM" editformat="yyyy-MM" right="" bottom=""/>
+                  <Static id="Static01" taborder="0" text="~" left="120" top="4" width="34" height="30" right="" bottom=""/>
+                  <Calendar id="CalFrom" taborder="1" left="35" top="8" width="84" height="22" dateformat="yyyy-MM" editformat="yyyy-MM" right="" bottom=""/>
+                  <Static id="Static00" taborder="0" text="기간" left="5" top="5" width="34" height="30" right="" bottom=""/>
+                  <Grid id="grdProjectList" taborder="2" left="5" top="5" width="" height="" right="5" bottom="5" topbase="CalFrom.bottom" leftbase="" bottombase="" rightbase="" widthbase="" heightbase="" binddataset="dsSaleDtl">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell rowspan="2" text="영업대표"/>
+                          <Cell col="1" rowspan="2" text="년월"/>
+                          <Cell col="2" rowspan="2" text="고객사"/>
+                          <Cell col="3" rowspan="2" text="프로젝트명"/>
+                          <Cell col="4" rowspan="2" text="계약명"/>
+                          <Cell col="5" rowspan="2" text="계약일자"/>
+                          <Cell col="6" rowspan="2" text="계산발행"/>
+                          <Cell col="7" rowspan="2" text="수금일자"/>
+                          <Cell col="8" rowspan="2" text="오픈일자"/>
+                          <Cell col="9" rowspan="2" text="계약금액"/>
+                          <Cell col="10" colspan="6" text="원가"/>
+                          <Cell col="16" rowspan="2" text="순매출"/>
+                          <Cell row="1" col="10" text="판매수수료"/>
+                          <Cell row="1" col="11" text="수수료외비용"/>
+                          <Cell row="1" col="12" text="매입용역"/>
+                          <Cell row="1" col="13" text="투비직원"/>
+                          <Cell row="1" col="14" text="기술지원"/>
+                          <Cell row="1" col="15" text="합계"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell text="bind:영업대표"/>
+                          <Cell col="1" text="bind:년월"/>
+                          <Cell col="2" text="bind:고객사"/>
+                          <Cell col="3" text="bind:프로젝트명"/>
+                          <Cell col="4" text="bind:계약명"/>
+                          <Cell col="5" text="bind:계약일자"/>
+                          <Cell col="6" text="bind:계산발행"/>
+                          <Cell col="7" text="bind:수금일자"/>
+                          <Cell col="8" text="bind:오픈일자"/>
+                          <Cell col="9" text="bind:계약금액"/>
+                          <Cell col="10" text="bind:판매수수료"/>
+                          <Cell col="11" text="bind:수수료외비용"/>
+                          <Cell col="12" text="bind:매입용역"/>
+                          <Cell col="13" text="bind:투비직원"/>
+                          <Cell col="14" text="bind:기술지원"/>
+                          <Cell col="15" text="bind:합계"/>
+                          <Cell col="16" text="bind:순매출"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="Tabpage7" text="프리/컨설팅" url="Next::BM_Project_Tech.xfdl"/>
+          </Tabpages>
+        </Tab>
+        <Button id="btnClose" taborder="1" text="닫기" left="" top="5" width="50" height="30" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnPrint" taborder="1" text="프린트" top="5" width="50" height="30" right="62" left="" bottom="" rightbase="" leftbase="" topbase="" bottombase="" widthbase="" heightbase=""/>
+        <Button id="btnExcel" taborder="1" text="엑셀" top="5" width="50" height="30" right="6" rightbase="btnPrint.left" left="" bottom="" leftbase="" topbase="" bottombase="" widthbase="" heightbase=""/>
+        <Button id="btnSearch" taborder="1" text="조회" top="5" width="50" height="30" right="6" rightbase="btnExcel.left" left="" bottom="" leftbase="" topbase="" bottombase="" widthbase="" heightbase=""/>
+        <Button id="btnImpSale" taborder="2" text="금월중요영업건" left="582" top="52" width="100" height="18" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnSalesPrint" taborder="2" text="주간보고" left="684" top="52" width="80" height="18" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="cmbFilter" taborder="3" text="Combo00" left="773" top="52" width="94" height="20" right="" bottom=""/>
+        <Static id="Static00" taborder="4" text="영업대표" left="868" top="30" width="120" height="60" right="" bottom=""/>
+        <Combo id="cmbBizStaff" taborder="5" text="Combo01" left="923" top="50" width="150" height="20" right="" bottom=""/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[/*************************************************************************
+ * [영업관리]-[영업관리]
+ * OnLoad
+ ************************************************************************/
+this.Form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	//
+};
+]]></Script>
+  </Form>
+</FDL>

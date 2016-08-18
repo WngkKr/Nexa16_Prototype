@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_Support_Register" left="0" top="0" width="800" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="800">
+        <Calendar id="calCopyTargetDate" taborder="1" left="110" top="5" width="100" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnCopySchedule" taborder="0" text="일정복사추가" left="215" top="5" width="100" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnProject" taborder="0" text="프로젝트상세" left="5" top="5" width="100" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnClose" taborder="2" text="닫기" left="" top="5" width="80" height="20" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnSave" taborder="2" text="저장" left="" top="5" width="80" height="20" right="90" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnDelete" taborder="2" text="삭제" left="" top="5" width="80" height="20" right="175" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnAttachFile" taborder="2" text="첨부파일[#]" left="" top="5" width="80" height="20" right="260" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Div id="Div00" taborder="3" text="Div00" left="5" top="30" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Layouts>
+            <Layout>
+              <Div id="Div00" taborder="0" text="고객사" left="5" top="5" width="120" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                <Layouts>
+                  <Layout/>
+                </Layouts>
+              </Div>
+              <Edit id="Edit00" taborder="1" left="126" top="6" width="409" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="Edit01" taborder="1" left="126" top="37" width="409" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="Edit02" taborder="1" left="126" top="68" width="356" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Button id="btnClientSearch" taborder="2" text="선택" left="485" top="69" width="50" height="25" right="" bottom=""/>
+              <Div id="Div01" taborder="0" text="프로젝트" left="5" top="36" width="120" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                <Layouts>
+                  <Layout/>
+                </Layouts>
+              </Div>
+              <Div id="Div02" taborder="0" text="계약명" left="5" top="67" width="120" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                <Layouts>
+                  <Layout/>
+                </Layouts>
+              </Div>
+              <Calendar id="Calendar00" taborder="3" left="126" top="102" width="140" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Div id="Div03" taborder="0" text="처리일시" left="5" top="98" width="120" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                <Layouts>
+                  <Layout/>
+                </Layouts>
+              </Div>
+              <Div id="Div04" taborder="0" text="지원구분" left="5" top="129" width="120" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                <Layouts>
+                  <Layout/>
+                </Layouts>
+              </Div>
+              <Calendar id="Calendar01" taborder="3" left="339" top="103" width="150" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <MaskEdit id="MaskEdit00" taborder="4" left="267" top="102" width="45" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" mask="" maskchar="HH:SS"/>
+              <Static id="Static00" taborder="5" text="~" left="321" top="96" width="22" height="31" right="" bottom=""/>
+              <MaskEdit id="MaskEdit01" taborder="4" left="490" top="103" width="45" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" mask="" maskchar="HH:SS"/>
+              <Div id="Div05" taborder="0" text="지원담당자" left="274" top="129" width="120" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                <Layouts>
+                  <Layout/>
+                </Layouts>
+              </Div>
+              <Combo id="Combo00" taborder="7" text="Combo00" left="395" top="129" width="140" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <CheckBox id="chkUserDept" taborder="8" text="소속부서보기" left="540" top="133" width="150" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Combo id="cboComfirm" taborder="9" text="Combo01" left="126" top="129" width="140" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Combo id="Combo01" taborder="7" text="Combo00" left="395" top="160" width="140" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Div id="Div06" taborder="0" text="승인처리자" left="274" top="160" width="120" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                <Layouts>
+                  <Layout/>
+                </Layouts>
+              </Div>
+              <Combo id="cboComfirm00" taborder="9" text="Combo01" left="126" top="160" width="140" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Div id="Div07" taborder="0" text="승인구분" left="5" top="160" width="120" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                <Layouts>
+                  <Layout/>
+                </Layouts>
+              </Div>
+              <Div id="Div08" taborder="0" text="총작업시간" left="5" top="191" width="120" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                <Layouts>
+                  <Layout/>
+                </Layouts>
+              </Div>
+              <Div id="Div09" taborder="0" text="" left="126" top="191" width="284" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                <Layouts>
+                  <Layout>
+                    <Edit id="Edit00" taborder="0" left="0" top="1" width="69" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                    <Static id="Static00" taborder="4" text="총근무일" left="72" top="0" width="61" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                    <Edit id="Edit01" taborder="0" left="128" top="1" width="30" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                    <Static id="Static01" taborder="4" text="일평균근무시간" left="160" top="0" width="99" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                    <Edit id="Edit02" taborder="0" left="251" top="1" width="30" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Radio id="Radio00" taborder="10" left="415" top="184" width="179" height="84" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn">
+                <Dataset id="innerdataset">
+                  <ColumnInfo>
+                    <Column id="codecolumn" size="256"/>
+                    <Column id="datacolumn" size="256"/>
+                  </ColumnInfo>
+                  <Rows>
+                    <Row>
+                      <Col id="codecolumn">01</Col>
+                      <Col id="datacolumn">총근무일*일평균근무시간</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">02</Col>
+                      <Col id="datacolumn">종료일시-시작일시</Col>
+                    </Row>
+                  </Rows>
+                </Dataset>
+              </Radio>
+              <Button id="btnCalHour" taborder="11" text="시간재계산" left="600" top="191" width="80" height="25" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Div id="Div10" taborder="0" text="실참석인원" left="5" top="222" width="120" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                <Layouts>
+                  <Layout/>
+                </Layouts>
+              </Div>
+              <Edit id="Edit03" taborder="12" left="126" top="223" width="70" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Div id="Div11" taborder="0" text="TITLE" left="5" top="277" width="120" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                <Layouts>
+                  <Layout/>
+                </Layouts>
+              </Div>
+              <Edit id="Edit04" taborder="13" left="126" top="278" width="" height="29" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Button id="btnProjectInfo" taborder="14" text="프로젝트정보" left="" top="250" width="86" height="25" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Div id="Div12" taborder="0" text="요청내용" left="5" top="308" width="385" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                <Layouts>
+                  <Layout/>
+                </Layouts>
+              </Div>
+              <Div id="Div13" taborder="0" text="처리내용" left="" top="308" width="386" height="30" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                <Layouts>
+                  <Layout/>
+                </Layouts>
+              </Div>
+              <TextArea id="TextArea00" taborder="15" left="5" top="339" width="385" height="250" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <TextArea id="TextArea01" taborder="15" left="397" top="339" width="385" height="250" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Button id="btnDetailInsert" taborder="14" text="상세내역등록" left="" top="310" width="86" height="25" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Radio id="Radio01" taborder="16" left="6" top="591" width="391" height="37" right="" bottom="" direction="vertical" codecolumn="codecolumn" datacolumn="datacolumn">
+                <Dataset id="innerdataset">
+                  <ColumnInfo>
+                    <Column id="codecolumn" size="256"/>
+                    <Column id="datacolumn" size="256"/>
+                  </ColumnInfo>
+                  <Rows>
+                    <Row>
+                      <Col id="codecolumn">01</Col>
+                      <Col id="datacolumn">매우만족</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">02</Col>
+                      <Col id="datacolumn">만족</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">03</Col>
+                      <Col id="datacolumn">불만</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">04</Col>
+                      <Col id="datacolumn">매우불만</Col>
+                    </Row>
+                  </Rows>
+                </Dataset>
+              </Radio>
+              <TextArea id="TextArea02" taborder="17" left="5" top="630" width="" height="40" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Div id="Div14" taborder="0" text="주요공유사항" left="5" top="673" width="120" height="" right="" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                <Layouts>
+                  <Layout/>
+                </Layouts>
+              </Div>
+              <TextArea id="TextArea03" taborder="18" left="126" top="673" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Grid id="Grid00" taborder="19" left="" top="6" width="243" height="117" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="240"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="첨부파일(더블클릭하세요)"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

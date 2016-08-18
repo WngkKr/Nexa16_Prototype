@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_Sales_Biz_Memo_Pop" left="0" top="0" width="600" height="400" titletext="New Form">
+    <Layouts>
+      <Layout height="400" width="600">
+        <Div id="Div00" taborder="0" text="Div00" left="5" top="7" width="590" height="43" right="" bottom="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="고객사" left="5" top="5" width="120" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="Edit00" taborder="1" left="49" top="9" width="278" height="22" right="" bottom=""/>
+              <Button id="Button00" taborder="2" text="" left="329" top="9" width="22" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" background="URL(&quot;theme://images\ico_zoom.png&quot;)"/>
+              <Button id="Button01" taborder="3" text="저장" left="471" top="5" width="53" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Button id="Button02" taborder="3" text="닫기" left="" top="5" width="53" height="30" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div01" taborder="1" text="구분" left="5" top="60" width="75" height="40" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+        <Div id="Div02" taborder="1" text="일자" left="5" top="105" width="75" height="40" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+        <Div id="Div03" taborder="1" text="메모" left="5" top="235" width="75" height="" right="" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+        <Combo id="Combo00" taborder="2" text="Combo00" left="85" top="60" width="150" height="40" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Calendar id="Calendar00" taborder="3" left="84" top="107" width="150" height="40" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Div id="Div04" taborder="1" text="고객사" left="240" top="60" width="75" height="40" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+        <Div id="Div05" taborder="1" text="프로젝트명" left="240" top="105" width="75" height="40" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+        <Edit id="Edit00" taborder="4" left="320" top="60" width="275" height="40" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit01" taborder="4" left="320" top="105" width="275" height="40" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Div id="Div06" taborder="1" text="보고" left="5" top="150" width="75" height="80" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+        <CheckBox id="CheckBox00" taborder="5" text="보고" left="84" top="166" width="150" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static00" taborder="6" text="중요도" left="84" top="194" width="120" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="Combo01" taborder="7" text="Combo01" left="128" top="193" width="112" height="20" right="" bottom=""/>
+        <CheckBox id="CheckBox01" taborder="8" text="일정반영" left="323" top="160" width="150" height="20" right="" bottom=""/>
+        <CheckBox id="CheckBox02" taborder="9" text="공개" left="323" top="191" width="150" height="20" right="" bottom=""/>
+        <TextArea id="TextArea00" taborder="10" left="85" top="235" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

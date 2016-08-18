@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_Project_Guarantee" left="0" top="0" width="1050" height="660" titletext="New Form">
+    <Layouts>
+      <Layout height="660" width="1050">
+        <Grid id="Grid00" taborder="0" left="5" top="5" width="353" height="" right="" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="110"/>
+                <Column size="110"/>
+                <Column size="110"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+                <Row size="24" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="계약번호"/>
+                <Cell col="1" text="계약구분"/>
+                <Cell col="2" text="계약금액"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+              </Band>
+              <Band id="summary">
+                <Cell colspan="2" text="총 계약금액"/>
+                <Cell col="2"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Div id="Div01" taborder="1" text="Div00" left="363" top="170" width="" height="155" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="계약이행" left="0" top="0" width="150" height="" right="" bottom="0" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue" textAlign="center"/>
+              <Static id="Static01" taborder="0" text="증권번호" left="152" top="0" width="120" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue" textAlign="center"/>
+              <Static id="Static02" taborder="0" text="사서함번호" left="152" top="32" width="120" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue" textAlign="center"/>
+              <Static id="Static03" taborder="0" text="선급금" left="152" top="64" width="120" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue" textAlign="center"/>
+              <Static id="Static04" taborder="0" text="이행율" left="152" top="96" width="120" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue" textAlign="center"/>
+              <Static id="Static05" taborder="0" text="이행기간" left="152" top="126" width="120" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue" textAlign="center"/>
+              <Calendar id="Calendar00" taborder="2" left="273" top="126" width="110" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="Edit00" taborder="1" left="273" top="96" width="140" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="Edit01" taborder="1" left="273" top="64" width="140" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="Edit02" taborder="1" left="273" top="31" width="140" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="Edit03" taborder="1" left="273" top="0" width="140" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Calendar id="Calendar01" taborder="2" left="400" top="126" width="110" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static06" taborder="0" text="보험료" left="419" top="64" width="120" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue" textAlign="center"/>
+              <Edit id="Edit04" taborder="1" left="540" top="64" width="140" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static07" taborder="3" text="~" left="387" top="127" width="25" height="23" right="" bottom=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div03" taborder="1" text="Div00" left="363" top="499" width="" height="155" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="비고" left="0" top="0" width="150" height="" right="" bottom="0" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue" textAlign="center"/>
+              <TextArea id="TextArea00" taborder="1" left="152" top="0" width="" height="" right="0" bottom="0" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div02" taborder="1" text="Div00" left="363" top="335" width="" height="155" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="하자이행" left="0" top="0" width="150" height="" right="" bottom="0" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue" textAlign="center"/>
+              <Static id="Static01" taborder="0" text="증권번호" left="152" top="0" width="120" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue" textAlign="center"/>
+              <Static id="Static02" taborder="0" text="사서함번호" left="152" top="32" width="120" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue" textAlign="center"/>
+              <Static id="Static03" taborder="0" text="선급금" left="152" top="64" width="120" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue" textAlign="center"/>
+              <Static id="Static04" taborder="0" text="이행율" left="152" top="96" width="120" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue" textAlign="center"/>
+              <Static id="Static05" taborder="0" text="이행기간" left="152" top="126" width="120" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue" textAlign="center"/>
+              <Calendar id="Calendar00" taborder="2" left="273" top="126" width="110" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="Edit00" taborder="1" left="273" top="96" width="140" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="Edit01" taborder="1" left="273" top="64" width="140" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="Edit02" taborder="1" left="273" top="31" width="140" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="Edit03" taborder="1" left="273" top="0" width="140" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Calendar id="Calendar01" taborder="2" left="400" top="126" width="110" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static06" taborder="0" text="보험료" left="419" top="64" width="120" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue" textAlign="center"/>
+              <Edit id="Edit04" taborder="1" left="540" top="64" width="140" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static07" taborder="3" text="~" left="387" top="127" width="25" height="23" right="" bottom=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div00" taborder="1" text="Div00" left="363" top="5" width="" height="155" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="선급금이행" left="0" top="0" width="150" height="" right="" bottom="0" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue" textAlign="center"/>
+              <Static id="Static01" taborder="0" text="증권번호" left="152" top="0" width="120" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue" textAlign="center"/>
+              <Static id="Static02" taborder="0" text="사서함번호" left="152" top="32" width="120" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue" textAlign="center"/>
+              <Static id="Static03" taborder="0" text="선급금" left="152" top="64" width="120" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue" textAlign="center"/>
+              <Static id="Static04" taborder="0" text="이행율" left="152" top="96" width="120" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue" textAlign="center"/>
+              <Static id="Static05" taborder="0" text="이행기간" left="152" top="126" width="120" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue" textAlign="center"/>
+              <Edit id="Edit00" taborder="1" left="273" top="0" width="140" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static06" taborder="0" text="보험료" left="419" top="64" width="120" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue , 1px solid cadetblue" textAlign="center"/>
+              <Edit id="Edit01" taborder="1" left="273" top="31" width="140" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="Edit02" taborder="1" left="273" top="64" width="140" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="Edit03" taborder="1" left="273" top="96" width="140" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="Edit05" taborder="1" left="540" top="64" width="140" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Calendar id="Calendar00" taborder="2" left="273" top="126" width="110" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Calendar id="Calendar01" taborder="2" left="400" top="126" width="110" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static07" taborder="3" text="~" left="387" top="127" width="25" height="23" right="" bottom=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>
