@@ -3,7 +3,7 @@
   <Form id="BMSaleProgramSuju" left="0" top="0" width="900" height="648" titletext="New Form">
     <Layouts>
       <Layout height="648" width="900">
-        <Div id="Div00" taborder="0" text="Div00" left="2" top="5" width="342" height="46" right="" bottom="">
+        <Div id="Div00" taborder="0" text="Div00" left="2" top="5" width="440" height="46" right="" bottom="">
           <Layouts>
             <Layout>
               <Static id="Static00" taborder="0" text="고객사" left="4" top="9" width="96" height="24" right="" bottom=""/>
@@ -15,7 +15,6 @@
             </Layout>
           </Layouts>
         </Div>
-        <CheckBox id="CheckBox00" taborder="1" text="추가용역" left="348" top="16" width="99" height="27" right="" bottom="" wordSpacing="0px"/>
         <Grid id="Grid00" taborder="2" left="2" top="58" width="444" height="328" right="" bottom="" binddataset="dsList" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
           <Formats>
             <Format id="default">

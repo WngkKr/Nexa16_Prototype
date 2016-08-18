@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.0">
-  <Form id="BMSalesProgram" left="0" top="0" width="1078" height="810" titletext="New Form">
+  <Form id="BMSalesProgram" left="0" top="0" width="1078" height="810" titletext="New Form" onload="Form_onload">
     <Layouts>
       <Layout height="810" width="1078">
-        <Tab id="Tab00" taborder="0" tabindex="0" left="5" top="48" width="" height="" right="5" bottom="5" leftbase="" topbase="btnClose.bottom" bottombase="" rightbase="" widthbase="" heightbase="" text="Tab00">
+        <Tab id="tabMain" taborder="0" tabindex="0" left="5" top="48" width="" height="" right="5" bottom="5" leftbase="" topbase="btnClose.bottom" bottombase="" rightbase="" widthbase="" heightbase="" text="Tab00">
           <Tabpages>
             <Tabpage id="Tabpage1" text="영업현황" url="Base::TEST03.xfdl"/>
             <Tabpage id="Tabpage2" text="PreSales" url="Base::BMSalesProgramPresales.xfdl"/>
@@ -13,9 +13,9 @@
               <Layouts>
                 <Layout>
                   <Static id="Static00" taborder="0" text="기간" left="5" top="5" width="34" height="30" right="" bottom=""/>
-                  <Calendar id="Calendar00" taborder="1" left="35" top="9" width="100" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <Calendar id="calRequestSDate" taborder="1" left="35" top="9" width="100" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
                   <Static id="Static01" taborder="0" text="~" left="136" top="4" width="34" height="30" right="" bottom=""/>
-                  <Calendar id="Calendar01" taborder="1" left="147" top="9" width="100" height="20" right="" bottom=""/>
+                  <Calendar id="calRequestEDate" taborder="1" left="147" top="9" width="100" height="20" right="" bottom=""/>
                   <Static id="Static02" taborder="2" text="인력요청내역" left="5" top="42" width="120" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
                   <Grid id="Grid00" taborder="3" left="5" top="5" width="" height="310" right="5" bottom="" topbase="Static02.bottom" leftbase="" bottombase="" rightbase="" widthbase="" heightbase="" binddataset="dsTech1">
                     <Formats>
@@ -55,7 +55,7 @@
                     </Formats>
                   </Grid>
                   <Static id="Static03" taborder="2" text="인력요청내역" left="5" top="386" width="120" height="" right="" bottom="5" bottombase="Grid01.top" leftbase="" topbase="" rightbase="" widthbase="" heightbase=""/>
-                  <Grid id="Grid01" taborder="3" left="5" top="349" height="" right="5" topbase="Static02.bottom" width="" bottom="5" leftbase="" bottombase="" rightbase="" widthbase="" heightbase="" binddataset="dsTech2">
+                  <Grid id="grd_proc" taborder="3" left="5" top="349" height="" right="5" topbase="Static02.bottom" width="" bottom="5" leftbase="" bottombase="" rightbase="" widthbase="" heightbase="" binddataset="dsTech2">
                     <Formats>
                       <Format id="default">
                         <Columns>
@@ -99,7 +99,7 @@
                   <Static id="Static01" taborder="0" text="~" left="120" top="4" width="34" height="30" right="" bottom=""/>
                   <Calendar id="CalFrom" taborder="1" left="35" top="8" width="84" height="22" dateformat="yyyy-MM" editformat="yyyy-MM" right="" bottom=""/>
                   <Static id="Static00" taborder="0" text="기간" left="5" top="5" width="34" height="30" right="" bottom=""/>
-                  <Grid id="Grid00" taborder="2" left="5" top="5" width="" height="" right="5" bottom="5" topbase="CalFrom.bottom" leftbase="" bottombase="" rightbase="" widthbase="" heightbase="" binddataset="dsSaleDtl">
+                  <Grid id="grdProjectList" taborder="2" left="5" top="5" width="" height="" right="5" bottom="5" topbase="CalFrom.bottom" leftbase="" bottombase="" rightbase="" widthbase="" heightbase="" binddataset="dsSaleDtl">
                     <Formats>
                       <Format id="default">
                         <Columns>
@@ -174,16 +174,25 @@
             <Tabpage id="Tabpage7" text="프리/컨설팅" url="Base::BMProjectTech.xfdl"/>
           </Tabpages>
         </Tab>
-        <Button id="btnClose00" taborder="1" text="닫기" left="" top="5" width="50" height="30" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Button id="btnPrint00" taborder="1" text="프린트" top="5" width="50" height="30" right="167" left="" bottom="" rightbase="btnClose.left" leftbase="" topbase="" bottombase="" widthbase="" heightbase=""/>
-        <Button id="btnExcel00" taborder="1" text="엑셀" top="5" width="50" height="30" right="59" rightbase="btnPrint.left" left="" bottom="" leftbase="" topbase="" bottombase="" widthbase="" heightbase=""/>
-        <Button id="btnSearch00" taborder="1" text="조회" top="5" width="50" height="30" right="113" rightbase="btnExcel.left" left="" bottom="" leftbase="" topbase="" bottombase="" widthbase="" heightbase=""/>
-        <Button id="btnImpSale00" taborder="2" text="금월중요영업건" left="582" top="52" width="100" height="18" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Button id="btnImpSale01" taborder="2" text="주간보고" left="684" top="52" width="80" height="18" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Combo id="Combo00" taborder="3" text="Combo00" left="773" top="52" width="94" height="20" right="" bottom=""/>
+        <Button id="btnClose" taborder="1" text="닫기" left="" top="5" width="50" height="30" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnPrint" taborder="1" text="프린트" top="5" width="50" height="30" right="167" left="" bottom="" rightbase="btnClose.left" leftbase="" topbase="" bottombase="" widthbase="" heightbase=""/>
+        <Button id="btnExcel" taborder="1" text="엑셀" top="5" width="50" height="30" right="59" rightbase="btnPrint.left" left="" bottom="" leftbase="" topbase="" bottombase="" widthbase="" heightbase=""/>
+        <Button id="btnSearch" taborder="1" text="조회" top="5" width="50" height="30" right="113" rightbase="btnExcel.left" left="" bottom="" leftbase="" topbase="" bottombase="" widthbase="" heightbase=""/>
+        <Button id="btnImpSale" taborder="2" text="금월중요영업건" left="582" top="52" width="100" height="18" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnSalesPrint" taborder="2" text="주간보고" left="684" top="52" width="80" height="18" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="cmbFilter" taborder="3" text="Combo00" left="773" top="52" width="94" height="20" right="" bottom=""/>
         <Static id="Static00" taborder="4" text="영업대표" left="868" top="30" width="120" height="60" right="" bottom=""/>
-        <Combo id="Combo01" taborder="5" text="Combo01" left="923" top="50" width="150" height="20" right="" bottom=""/>
+        <Combo id="cmbBizStaff" taborder="5" text="Combo01" left="923" top="50" width="150" height="20" right="" bottom=""/>
       </Layout>
     </Layouts>
+    <Script type="xscript5.0"><![CDATA[/*************************************************************************
+ * [영업관리]-[영업관리]
+ * OnLoad
+ ************************************************************************/
+this.Form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	//
+};
+]]></Script>
   </Form>
 </FDL>

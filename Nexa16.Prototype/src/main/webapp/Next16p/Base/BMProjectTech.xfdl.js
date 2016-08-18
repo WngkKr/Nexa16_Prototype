@@ -9,10 +9,13 @@
         
         this.on_create = function()
         {
+            this._setPropInitFunc(function (obj)
+            {
+                obj.set_name("BMProjectTech");
+                obj.set_titletext("New Form");
+            });
             if (Form == this.constructor)
             {
-                this.set_name("BMProjectTech");
-                this.set_titletext("New Form");
                 this._setFormPosition(0,0,900,648);
             }
             
@@ -28,10 +31,13 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Grid("Grid00","absolute","5","40","440","352",null,null,this);
+            obj = new Grid("grdApproval","absolute","5","40",null,"352","370",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
+                obj.set_text("");
+                obj.set_nodatatext("데이터가 없습니다.");
+                obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"30\"/><Column size=\"40\"/><Column size=\"130\"/><Column size=\"80\"/><Column size=\"80\"/><Column size=\"40\"/><Column size=\"80\"/><Column size=\"40\"/></Columns><Rows><Row size=\"36\" band=\"head\"/><Row size=\"24\"/><Row size=\"24\" band=\"summ\"/></Rows><Band id=\"head\"><Cell text=\"NO\" font-size=\"9\" font-weight=\"normal\"/><Cell col=\"1\" text=\"승인&#13;&#10;상태\" font-size=\"9\" font-weight=\"normal\"/><Cell col=\"2\" text=\"매출계약명\" font-size=\"9\" font-weight=\"normal\"/><Cell col=\"3\" text=\"작업&#13;&#10;시작일자\" font-size=\"9\" font-weight=\"normal\"/><Cell col=\"4\" text=\"작업&#13;&#10;완료일자\" font-size=\"9\" font-weight=\"normal\"/><Cell col=\"5\" text=\"총작업&#13;&#10;시간\" font-size=\"9\" font-weight=\"normal\"/><Cell col=\"6\" text=\"기술&#13;&#10;담당자\" font-size=\"9\" font-weight=\"normal\"/><Cell col=\"7\" text=\"원가&#13;&#10;반영\" font-size=\"9\" font-weight=\"normal\"/></Band><Band id=\"body\"><Cell/><Cell col=\"1\"/><Cell col=\"2\"/><Cell col=\"3\"/><Cell col=\"4\"/><Cell col=\"5\"/><Cell col=\"6\"/><Cell col=\"7\"/></Band><Band id=\"summary\"><Cell/><Cell col=\"1\"/><Cell col=\"2\"/><Cell col=\"3\"/><Cell col=\"4\"/><Cell col=\"5\"/><Cell col=\"6\"/><Cell col=\"7\"/></Band></Format></Formats>");
             });
             this.addChild(obj.name, obj);
 
@@ -43,14 +49,16 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Grid("Grid01","absolute","5","432","440",null,null,"5",this);
+            obj = new Grid("grdFile","absolute","5","432",null,null,"370","5",this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
+                obj.set_nodatatext("데이터가 없습니다.");
+                obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"48\"/><Column size=\"450\"/></Columns><Rows><Row size=\"24\" band=\"head\"/><Row size=\"24\"/></Rows><Band id=\"head\"><Cell text=\"NO\"/><Cell col=\"1\" text=\"첨부파일\"/></Band><Band id=\"body\"><Cell/><Cell col=\"1\"/></Band></Format></Formats>");
             });
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button00","absolute","400","5","45","29",null,null,this);
+            obj = new Button("btnSave","absolute","485","5","45","29",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("3");
@@ -58,7 +66,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Static("Static02","absolute","455","5","120","30",null,null,this);
+            obj = new Static("Static02","absolute","540","5","120","30",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("0");
@@ -66,14 +74,14 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new TextArea("TextArea00","absolute","455","40",null,"280","5",null,this);
+            obj = new TextArea("TextArea00","absolute","540","40",null,"280","5",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("4");
             });
             this.addChild(obj.name, obj);
 
-            obj = new Static("Static03","absolute","455","328","120","30",null,null,this);
+            obj = new Static("Static03","absolute","540","328","120","30",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("0");
@@ -81,10 +89,18 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new TextArea("TextArea01","absolute","455","363",null,null,"5","5",this);
+            obj = new TextArea("TextArea01","absolute","540","363",null,null,"5","5",this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("4");
+            });
+            this.addChild(obj.name, obj);
+
+            obj = new CheckBox("wbFileDown","absolute","159","403","150","20",null,null,this);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_taborder("5");
+                obj.set_text("");
             });
             this.addChild(obj.name, obj);
             
@@ -95,30 +111,30 @@
             this.Static00.set_rightbase("");
             this.Static00.set_widthbase("");
             this.Static00.set_heightbase("");
-            this.Grid00.set_leftbase("");
-            this.Grid00.set_topbase("");
-            this.Grid00.set_bottombase("");
-            this.Grid00.set_rightbase("");
-            this.Grid00.set_widthbase("");
-            this.Grid00.set_heightbase("");
+            this.grdApproval.set_leftbase("");
+            this.grdApproval.set_topbase("");
+            this.grdApproval.set_bottombase("");
+            this.grdApproval.set_rightbase("");
+            this.grdApproval.set_widthbase("");
+            this.grdApproval.set_heightbase("");
             this.Static01.set_topbase("");
             this.Static01.set_leftbase("");
             this.Static01.set_bottombase("");
             this.Static01.set_rightbase("");
             this.Static01.set_widthbase("");
             this.Static01.set_heightbase("");
-            this.Grid01.set_topbase("");
-            this.Grid01.set_leftbase("");
-            this.Grid01.set_bottombase("");
-            this.Grid01.set_rightbase("");
-            this.Grid01.set_widthbase("");
-            this.Grid01.set_heightbase("");
-            this.Button00.set_leftbase("");
-            this.Button00.set_topbase("");
-            this.Button00.set_bottombase("");
-            this.Button00.set_rightbase("");
-            this.Button00.set_widthbase("");
-            this.Button00.set_heightbase("");
+            this.grdFile.set_topbase("");
+            this.grdFile.set_leftbase("");
+            this.grdFile.set_bottombase("");
+            this.grdFile.set_rightbase("");
+            this.grdFile.set_widthbase("");
+            this.grdFile.set_heightbase("");
+            this.btnSave.set_leftbase("");
+            this.btnSave.set_topbase("");
+            this.btnSave.set_bottombase("");
+            this.btnSave.set_rightbase("");
+            this.btnSave.set_widthbase("");
+            this.btnSave.set_heightbase("");
             this.Static02.set_leftbase("");
             this.Static02.set_topbase("");
             this.Static02.set_bottombase("");
@@ -131,6 +147,12 @@
             this.TextArea00.set_rightbase("");
             this.TextArea00.set_widthbase("");
             this.TextArea00.set_heightbase("");
+            this.Static03.set_leftbase("");
+            this.Static03.set_topbase("");
+            this.Static03.set_bottombase("");
+            this.Static03.set_rightbase("");
+            this.Static03.set_widthbase("");
+            this.Static03.set_heightbase("");
             this.TextArea01.set_leftbase("");
             this.TextArea01.set_topbase("");
             this.TextArea01.set_bottombase("");

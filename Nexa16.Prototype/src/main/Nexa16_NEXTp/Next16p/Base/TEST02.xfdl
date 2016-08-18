@@ -36,6 +36,44 @@
             </Format>
           </Formats>
         </Grid>
+        <Button id="Button00" taborder="6" text="Button00" left="334" top="407" width="120" height="50" right="" bottom=""/>
+        <Button id="Button02" taborder="6" text="Button00" left="-1" top="0" width="0" height="0" right="" bottom=""/>
+        <Button id="Button04" taborder="6" text="Button00" left="-1" top="0" width="0" height="0" right="" bottom=""/>
+        <Button id="Button01" taborder="6" text="Button00" left="-1" top="0" width="0" height="0" right="" bottom=""/>
+        <Grid id="Grid01" taborder="7" left="566" top="312" width="388" height="175" right="" bottom="" text="Grid01">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="60"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
       </Layout>
     </Layouts>
     <Objects>

@@ -9,10 +9,13 @@
         
         this.on_create = function()
         {
+            this._setPropInitFunc(function (obj)
+            {
+                obj.set_name("BMSaleProgramSuju");
+                obj.set_titletext("New Form");
+            });
             if (Form == this.constructor)
             {
-                this.set_name("BMSaleProgramSuju");
-                this.set_titletext("New Form");
                 this._setFormPosition(0,0,900,648);
             }
             
@@ -20,7 +23,7 @@
 
             
             // UI Components Initialize
-            obj = new Div("Div00","absolute","2","5","342","46",null,null,this);
+            obj = new Div("Div00","absolute","2","5","440","46",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("0");
@@ -74,15 +77,6 @@
                 obj.set_background("URL(\"theme://images\\ico_zoom.png\")");
             });
             this.Div00.addChild(obj.name, obj);
-
-            obj = new CheckBox("CheckBox00","absolute","348","16","99","27",null,null,this);
-            obj._setPropInitFunc(function (obj)
-            {
-                obj.set_taborder("1");
-                obj.set_text("추가용역");
-                obj.set_wordSpacing("0px");
-            });
-            this.addChild(obj.name, obj);
 
             obj = new Grid("Grid00","absolute","2","58","444","328",null,null,this);
             obj._setPropInitFunc(function (obj)
