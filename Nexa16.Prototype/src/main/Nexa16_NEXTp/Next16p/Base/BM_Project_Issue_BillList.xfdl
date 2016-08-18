@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_Project_Issue_BillList" left="0" top="0" width="1024" height="598" titletext="세금계산서 발급대장">
+    <Layouts>
+      <Layout height="598" width="1024">
+        <Button id="Button00" taborder="3" text="엑셀다운로드" left="" top="10" width="100" height="22" right="94" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button01" taborder="4" text="닫기" left="" top="10" width="40" height="22" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button02" taborder="4" text="조회" left="" top="10" width="40" height="22" right="52" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Div id="Div00" taborder="0" text="" left="10" top="42" width="" height="34" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="계산서 발행기간" left="5" top="5" width="100" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Calendar id="Calendar00" taborder="11" left="115" top="5" width="100" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static01" taborder="12" text="~" left="215" top="5" width="22" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" textAlign="center"/>
+              <Calendar id="Calendar01" taborder="11" left="237" top="5" width="100" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static02" taborder="0" text="조회구분" left="357" top="5" width="50" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Combo id="Combo00" taborder="13" text="매출" left="417" top="5" width="60" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" innerdataset="@dsGubun" codecolumn="CODE" datacolumn="DATA" index="0" value="0"/>
+              <Static id="Static03" taborder="0" text="영업대표" left="497" top="5" width="50" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Combo id="Combo01" taborder="13" text="Combo00" left="557" top="5" width="60" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static04" taborder="0" text="구분" left="637" top="5" width="30" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Combo id="Combo02" taborder="13" text="Combo00" left="677" top="5" width="60" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" innerdataset="@dsgbn" codecolumn="CODE" datacolumn="DATA" index="0"/>
+              <Static id="Static05" taborder="0" text="수출" left="757" top="5" width="30" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Combo id="Combo03" taborder="13" text="Combo00" left="797" top="5" width="60" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" innerdataset="@dsExport" codecolumn="CODE" datacolumn="DATA" index="0"/>
+              <Static id="Static06" taborder="0" text="구분" left="877" top="5" width="30" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Combo id="Combo04" taborder="13" text="Combo00" left="917" top="5" width="75" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" innerdataset="@dsCDSalesKind" codecolumn="CODE" datacolumn="DATA" index="0"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Grid id="Grid00" taborder="5" left="10" top="86" width="" height="" right="10" bottom="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="70"/>
+                <Column size="90"/>
+                <Column size="90"/>
+                <Column size="150"/>
+                <Column size="200"/>
+                <Column size="60"/>
+                <Column size="60"/>
+                <Column size="90"/>
+                <Column size="75"/>
+                <Column size="75"/>
+                <Column size="75"/>
+                <Column size="342"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="발행일자"/>
+                <Cell col="1" text="발급업체명"/>
+                <Cell col="2" text="고객사명"/>
+                <Cell col="3" text="프로젝트명"/>
+                <Cell col="4" text="계약명"/>
+                <Cell col="5" text="영업담당"/>
+                <Cell col="6" text="매출구분"/>
+                <Cell col="7" text="계약제품"/>
+                <Cell col="8" text="발행금액"/>
+                <Cell col="9" text="부가세액"/>
+                <Cell col="10" text="합계"/>
+                <Cell col="11" text="비고"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+                <Cell col="6"/>
+                <Cell col="7"/>
+                <Cell col="8"/>
+                <Cell col="9"/>
+                <Cell col="10"/>
+                <Cell col="11"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsGubun">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="DATA" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">0</Col>
+            <Col id="DATA">매출</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">1</Col>
+            <Col id="DATA">매입</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsgbn">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="DATA" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">0</Col>
+            <Col id="DATA">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">1</Col>
+            <Col id="DATA">제품</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">2</Col>
+            <Col id="DATA">용역</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">5</Col>
+            <Col id="DATA">제품+용역</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">3</Col>
+            <Col id="DATA">유지</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">6</Col>
+            <Col id="DATA">상품</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">4</Col>
+            <Col id="DATA">기타</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsCDSalesKind">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="DATA" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">00</Col>
+            <Col id="DATA">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">01</Col>
+            <Col id="DATA">국내영업관리</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">02</Col>
+            <Col id="DATA">신사업관리</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsExport">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="DATA" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">0</Col>
+            <Col id="DATA">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">2</Col>
+            <Col id="DATA">국내</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">1</Col>
+            <Col id="DATA">수출</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>
