@@ -34,7 +34,10 @@
     <Service prefixid="theme" type="resource" url="./_theme_/" version="0" communicationversion="0"/>
     <Service prefixid="initvalue" type="resource" url="./_initvalue_/" version="0" communicationversion="0"/>
     <Service prefixid="Base" type="form" cachelevel="session" url="./Base/" version="0" communicationversion="0"/>
-    <Service prefixid="Frame" type="form" url="./Frame/" cachelevel="session"/>
+    <Service prefixid="Frame" type="form" url="./Frame/" cachelevel="session" version="0" communicationversion="0"/>
+    <Service prefixid="Next" type="form" cachelevel="session" url="./Next/" version="0" communicationversion="0"/>
+    <Service prefixid="System" type="form" cachelevel="session" url="./System/" version="0" communicationversion="0"/>
+    <Service prefixid="test" type="form" cachelevel="session" url="./test/" version="0" communicationversion="0"/>
   </Services>
   <Protocols/>
   <Update/>
