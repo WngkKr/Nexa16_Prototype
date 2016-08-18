@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="HM_Staff_List_SetProject_new" left="0" top="0" width="720" height="425" titletext="New Form">
+    <Layouts>
+      <Layout height="425" width="720">
+        <Static id="Static00" taborder="0" text="" left="0" top="0" width="720" height="44" right="" bottom=""/>
+        <Button id="Button00" taborder="4" text="삭제" left="76.53%" top="15" width="50" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button01" taborder="4" text="저장" left="84.17%" top="15" width="50" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button02" taborder="4" text="닫기" left="91.81%" top="15" width="50" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Div id="Div00" taborder="5" text="Div00" left="1" top="43" width="717" height="379" right="" bottom="">
+          <Layouts>
+            <Layout>
+              <Grid id="Grid00" taborder="0" left="7" top="8" width="341" height="362" right="" bottom="">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="61"/>
+                      <Column size="120"/>
+                      <Column size="76"/>
+                      <Column size="79"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="성명"/>
+                      <Cell col="1" text="프로젝트"/>
+                      <Cell col="2" text="투입일"/>
+                      <Cell col="3" text="종료예정일"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell/>
+                      <Cell col="1"/>
+                      <Cell col="2"/>
+                      <Cell col="3"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static00" taborder="1" text="고 객 사" left="49.09%" top="12" width="82" height="20" right="" bottom="" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static01" taborder="1" text="프로젝트" left="49.09%" top="37" width="82" height="20" right="" bottom="" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static02" taborder="1" text="계 약 명" left="49.09%" top="62" width="82" height="20" right="" bottom="" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static03" taborder="1" text="성   명" left="49.09%" top="87" width="82" height="20" right="" bottom="" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static04" taborder="1" text="투 입 일" left="49.09%" top="112" width="82" height="20" right="" bottom="" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static05" taborder="1" text="등   급" left="49.09%" top="137" width="82" height="20" right="" bottom="" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static06" taborder="1" text="종료예정일" left="49.09%" top="162" width="82" height="20" right="" bottom="" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static07" taborder="1" text="MM" left="49.09%" top="187" width="82" height="20" right="" bottom="" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static08" taborder="1" text="매입계약번호" left="49.09%" top="212" width="82" height="20" right="" bottom="" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static09" taborder="1" text="비   고" left="49.23%" top="237" width="82" height="20" right="" bottom="" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="Edit00" taborder="2" left="431" top="12" width="278" height="20" right="" bottom=""/>
+              <Edit id="Edit01" taborder="2" left="432" top="37" width="252" height="20" right="" bottom=""/>
+              <Edit id="Edit02" taborder="2" left="432" top="62" width="252" height="20" right="" bottom=""/>
+              <Edit id="Edit03" taborder="2" left="432" top="87" width="252" height="20" right="" bottom=""/>
+              <Button id="Button00" taborder="3" text="" left="690" top="37" width="19" height="20" right="" bottom=""/>
+              <Button id="Button01" taborder="3" text="" left="690" top="62" width="19" height="20" right="" bottom=""/>
+              <Button id="Button02" taborder="3" text="" left="690" top="87" width="19" height="20" right="" bottom=""/>
+              <Calendar id="Calendar00" taborder="4" left="432" top="112" width="89" height="20" right="" bottom=""/>
+              <CheckBox id="CheckBox00" taborder="0" text="무상지원" left="528" top="111" width="78" height="22" right="" bottom="" value="true" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <CheckBox id="CheckBox01" taborder="0" text="매입계약제외" left="608" top="111" width="99" height="22" right="" bottom="" value="true" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Calendar id="Calendar01" taborder="4" left="432" top="162" width="89" height="20" right="" bottom=""/>
+              <Combo id="Combo00" taborder="5" text="" left="432" top="137" width="89" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static10" taborder="1" text="역 할" left="74.27%" top="137" width="40" height="20" right="" bottom="" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static11" taborder="1" text="종료일" left="74.27%" top="162" width="40" height="20" right="" bottom="" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Combo id="Combo01" taborder="5" text="" left="584" top="137" width="123" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Calendar id="Calendar02" taborder="4" left="584" top="162" width="89" height="20" right="" bottom=""/>
+              <Edit id="Edit04" taborder="2" left="432" top="187" width="38" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static12" taborder="1" text="담당부서" left="66.29%" top="187" width="82" height="20" right="" bottom="" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="Edit05" taborder="2" left="558" top="187" width="126" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Button id="Button03" taborder="3" text="" left="690" top="187" width="19" height="20" right="" bottom=""/>
+              <Edit id="Edit06" taborder="2" left="432" top="212" width="130" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Button id="Button04" taborder="3" text="" left="569" top="212" width="19" height="20" right="" bottom=""/>
+              <TextArea id="TextArea00" taborder="6" left="432" top="237" width="277" height="136" right="" bottom=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="Button03" taborder="4" text="Clear" left="83.61%" top="255" width="50" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button04" taborder="4" text="Go" left="91.67%" top="255" width="50" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>
