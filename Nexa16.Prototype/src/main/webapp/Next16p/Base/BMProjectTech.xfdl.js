@@ -31,13 +31,13 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Grid("grdApproval","absolute","5","40",null,"352","370",null,this);
+            obj = new Grid("grdApproval","absolute","5","40","525","352",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
                 obj.set_text("");
                 obj.set_nodatatext("데이터가 없습니다.");
-                obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"30\"/><Column size=\"40\"/><Column size=\"130\"/><Column size=\"80\"/><Column size=\"80\"/><Column size=\"40\"/><Column size=\"80\"/><Column size=\"40\"/></Columns><Rows><Row size=\"36\" band=\"head\"/><Row size=\"24\"/><Row size=\"24\" band=\"summ\"/></Rows><Band id=\"head\"><Cell text=\"NO\" font-size=\"9\" font-weight=\"normal\"/><Cell col=\"1\" text=\"승인&#13;&#10;상태\" font-size=\"9\" font-weight=\"normal\"/><Cell col=\"2\" text=\"매출계약명\" font-size=\"9\" font-weight=\"normal\"/><Cell col=\"3\" text=\"작업&#13;&#10;시작일자\" font-size=\"9\" font-weight=\"normal\"/><Cell col=\"4\" text=\"작업&#13;&#10;완료일자\" font-size=\"9\" font-weight=\"normal\"/><Cell col=\"5\" text=\"총작업&#13;&#10;시간\" font-size=\"9\" font-weight=\"normal\"/><Cell col=\"6\" text=\"기술&#13;&#10;담당자\" font-size=\"9\" font-weight=\"normal\"/><Cell col=\"7\" text=\"원가&#13;&#10;반영\" font-size=\"9\" font-weight=\"normal\"/></Band><Band id=\"body\"><Cell/><Cell col=\"1\"/><Cell col=\"2\"/><Cell col=\"3\"/><Cell col=\"4\"/><Cell col=\"5\"/><Cell col=\"6\"/><Cell col=\"7\"/></Band><Band id=\"summary\"><Cell/><Cell col=\"1\"/><Cell col=\"2\"/><Cell col=\"3\"/><Cell col=\"4\"/><Cell col=\"5\"/><Cell col=\"6\"/><Cell col=\"7\"/></Band></Format></Formats>");
+                obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"30\"/><Column size=\"40\"/><Column size=\"130\"/><Column size=\"80\"/><Column size=\"80\"/><Column size=\"45\"/><Column size=\"80\"/><Column size=\"40\"/></Columns><Rows><Row size=\"36\" band=\"head\"/><Row size=\"24\"/><Row size=\"24\" band=\"summ\"/></Rows><Band id=\"head\"><Cell text=\"NO\" font-size=\"9\" font-weight=\"normal\"/><Cell col=\"1\" text=\"승인&#13;&#10;상태\" font-size=\"9\" font-weight=\"normal\"/><Cell col=\"2\" text=\"매출계약명\" font-size=\"9\" font-weight=\"normal\"/><Cell col=\"3\" text=\"작업&#13;&#10;시작일자\" font-size=\"9\" font-weight=\"normal\"/><Cell col=\"4\" text=\"작업&#13;&#10;완료일자\" font-size=\"9\" font-weight=\"normal\"/><Cell col=\"5\" text=\"총작업&#13;&#10;시간\" font-size=\"9\" font-weight=\"normal\"/><Cell col=\"6\" text=\"기술&#13;&#10;담당자\" font-size=\"9\" font-weight=\"normal\"/><Cell col=\"7\" text=\"원가&#13;&#10;반영\" font-size=\"9\" font-weight=\"normal\"/></Band><Band id=\"body\"><Cell/><Cell col=\"1\"/><Cell col=\"2\"/><Cell col=\"3\"/><Cell col=\"4\"/><Cell col=\"5\"/><Cell col=\"6\"/><Cell col=\"7\"/></Band><Band id=\"summary\"><Cell/><Cell col=\"1\"/><Cell col=\"2\"/><Cell col=\"3\"/><Cell col=\"4\"/><Cell col=\"5\"/><Cell col=\"6\"/><Cell col=\"7\"/></Band></Format></Formats>");
             });
             this.addChild(obj.name, obj);
 
@@ -49,7 +49,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Grid("grdFile","absolute","5","432",null,null,"370","5",this);
+            obj = new Grid("grdFile","absolute","5","432","525",null,null,"5",this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");

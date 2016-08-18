@@ -201,7 +201,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Button("btnPrint","absolute",null,"5","50","30","167",null,this);
+            obj = new Button("btnPrint","absolute",null,"5","50","30","62",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
@@ -209,7 +209,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Button("btnExcel","absolute",null,"5","50","30","59",null,this);
+            obj = new Button("btnExcel","absolute",null,"5","50","30","6",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
@@ -217,7 +217,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Button("btnSearch","absolute",null,"5","50","30","113",null,this);
+            obj = new Button("btnSearch","absolute",null,"5","50","30","6",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
@@ -314,7 +314,7 @@
             this.btnClose.set_rightbase("");
             this.btnClose.set_widthbase("");
             this.btnClose.set_heightbase("");
-            this.btnPrint.set_rightbase("btnClose.left");
+            this.btnPrint.set_rightbase("");
             this.btnPrint.set_leftbase("");
             this.btnPrint.set_topbase("");
             this.btnPrint.set_bottombase("");

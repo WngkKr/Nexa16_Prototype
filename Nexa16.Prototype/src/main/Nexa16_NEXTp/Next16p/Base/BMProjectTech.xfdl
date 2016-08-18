@@ -4,7 +4,7 @@
     <Layouts>
       <Layout height="648" width="900">
         <Static id="Static00" taborder="0" text="지원내용" left="5" top="5" width="120" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Grid id="grdApproval" taborder="1" left="5" top="40" width="" height="352" right="370" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" nodatatext="데이터가 없습니다.">
+        <Grid id="grdApproval" taborder="1" left="5" top="40" width="525" height="352" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" nodatatext="데이터가 없습니다.">
           <Formats>
             <Format id="default">
               <Columns>
@@ -13,7 +13,7 @@
                 <Column size="130"/>
                 <Column size="80"/>
                 <Column size="80"/>
-                <Column size="40"/>
+                <Column size="45"/>
                 <Column size="80"/>
                 <Column size="40"/>
               </Columns>
@@ -56,7 +56,7 @@
           </Formats>
         </Grid>
         <Static id="Static01" taborder="0" text="첨부파일(더블클릭하세요)" left="5" top="397" width="163" height="30" right="" bottom="" topbase="" leftbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Grid id="grdFile" taborder="2" left="5" top="432" width="" height="" right="370" bottom="5" topbase="" leftbase="" bottombase="" rightbase="" widthbase="" heightbase="" nodatatext="데이터가 없습니다.">
+        <Grid id="grdFile" taborder="2" left="5" top="432" width="525" height="" right="" bottom="5" topbase="" leftbase="" bottombase="" rightbase="" widthbase="" heightbase="" nodatatext="데이터가 없습니다.">
           <Formats>
             <Format id="default">
               <Columns>
