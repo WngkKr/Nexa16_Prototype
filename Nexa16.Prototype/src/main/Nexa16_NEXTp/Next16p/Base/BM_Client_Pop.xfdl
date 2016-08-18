@@ -3,7 +3,7 @@
   <Form id="BM_Client_Pop" left="0" top="0" width="660" height="495" titletext="고객사 검색">
     <Layouts>
       <Layout height="495" width="660">
-        <Radio id="Radio00" taborder="0" left="10" top="42" width="280" height="54" right="" bottom="" innerdataset="@dsCDCondition" codecolumn="CODE" datacolumn="DATA" direction="vertical" columncount="3" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Radio id="Radio00" taborder="0" left="10" top="42" width="280" height="54" right="" bottom="" innerdataset="@dsCDCondition" codecolumn="CODE" datacolumn="DATA" direction="horizontal" columncount="3" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
         <CheckBox id="CheckBox00" taborder="1" text="영업담당자 미입력건 포함" left="300" top="42" width="180" height="22" right="" bottom=""/>
         <CheckBox id="CheckBox01" taborder="2" text="가계약포함" left="490" top="42" width="150" height="22" right="" bottom=""/>
         <Edit id="Edit00" taborder="3" left="300" top="74" width="" height="22" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
@@ -62,20 +62,8 @@
             <Col id="DATA">프로젝트</Col>
           </Row>
           <Row>
-            <Col id="CODE">N</Col>
-            <Col id="DATA">매출계약명</Col>
-          </Row>
-          <Row>
-            <Col id="CODE">A</Col>
-            <Col id="DATA">매출계약처</Col>
-          </Row>
-          <Row>
             <Col id="CODE">M</Col>
-            <Col id="DATA">매입계약명</Col>
-          </Row>
-          <Row>
-            <Col id="CODE">B</Col>
-            <Col id="DATA">매입계약처</Col>
+            <Col id="DATA">매출계약명</Col>
           </Row>
         </Rows>
       </Dataset>
