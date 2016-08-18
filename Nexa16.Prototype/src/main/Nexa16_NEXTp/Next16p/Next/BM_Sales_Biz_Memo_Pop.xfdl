@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.0">
-  <Form id="BMSalesBizMemoPop" left="0" top="0" width="600" height="400" titletext="New Form">
+  <Form id="BM_Sales_Biz_Memo_Pop" left="0" top="0" width="600" height="400" titletext="New Form">
     <Layouts>
       <Layout height="400" width="600">
         <Div id="Div00" taborder="0" text="Div00" left="5" top="7" width="590" height="43" right="" bottom="">

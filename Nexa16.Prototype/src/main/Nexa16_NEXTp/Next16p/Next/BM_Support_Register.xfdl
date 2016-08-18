@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.0">
-  <Form id="BMSupportRegister" left="0" top="0" width="800" height="768" titletext="New Form">
+  <Form id="BM_Support_Register" left="0" top="0" width="800" height="768" titletext="New Form">
     <Layouts>
       <Layout height="768" width="800">
         <Calendar id="calCopyTargetDate" taborder="1" left="110" top="5" width="100" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>

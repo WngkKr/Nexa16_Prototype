@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.0">
-  <Form id="BmSalesReportPrint" left="0" top="0" width="1000" height="600" titletext="New Form">
+  <Form id="BM_Sales_ReportPrint" left="0" top="0" width="1000" height="600" titletext="New Form">
     <Layouts>
       <Layout height="600" width="1000">
         <Div id="Div00" taborder="0" text="Div00" left="6" top="6" width="" height="30" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">

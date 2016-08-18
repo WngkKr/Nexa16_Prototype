@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.0">
-  <Form id="BMSalesProgram" left="0" top="0" width="1078" height="810" titletext="New Form" onload="Form_onload">
+  <Form id="BM_Sales_Program" left="0" top="0" width="1078" height="810" titletext="New Form" onload="Form_onload">
     <Layouts>
       <Layout height="810" width="1078">
         <Tab id="tabMain" taborder="0" tabindex="0" left="5" top="48" width="" height="" right="5" bottom="5" leftbase="" topbase="btnClose.bottom" bottombase="" rightbase="" widthbase="" heightbase="" text="Tab00">

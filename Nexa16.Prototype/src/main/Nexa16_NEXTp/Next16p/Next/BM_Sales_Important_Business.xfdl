@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.0">
-  <Form id="BMSalesImportantBusiness" left="0" top="0" width="800" height="600" titletext="New Form">
+  <Form id="BM_Sales_Important_Business" left="0" top="0" width="800" height="600" titletext="New Form">
     <Layouts>
       <Layout height="600" width="800">
         <Grid id="Grid00" taborder="0" left="5" top="34" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.0">
-  <Form id="BMSupportRegisterDET" left="0" top="0" width="1024" height="768" titletext="New Form">
+  <Form id="BM_Support_RegisterDET" left="0" top="0" width="1024" height="768" titletext="New Form">
     <Layouts>
       <Layout height="768" width="1024">
         <Button id="Button00" taborder="0" text="닫기" left="" top="5" width="50" height="30" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>

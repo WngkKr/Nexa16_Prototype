@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.0">
-  <Form id="BMSalesProgramContract" left="0" top="0" width="900" height="648" titletext="New Form">
+  <Form id="BM_Sales_Program_Contract" left="0" top="0" width="900" height="648" titletext="New Form">
     <Layouts>
       <Layout height="648" width="900">
         <Grid id="Grid00" taborder="0" left="10" top="5" width="" height="" right="5" bottom="5" binddataset="dsList" leftbase="" topbase="Button00.bottom" bottombase="" rightbase="" widthbase="" heightbase="">
