@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_Maeip_ContractReqLis" left="0" top="0" width="920" height="392" titletext="New Form">
+    <Layouts>
+      <Layout height="392" width="920"/>
+    </Layouts>
+  </Form>
+</FDL>
