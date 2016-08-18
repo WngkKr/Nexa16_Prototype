@@ -18,7 +18,10 @@
         nexacro._setTypeDefinitionURL("typedefinition.xml");
         nexacro._addService("initvalue", "file", "./_initvalue_/", "", null, "", "0", "0");
         nexacro._addService("Base", "form", "./Base/", "session", null, "", "0", "0");
-        nexacro._addService("Frame", "form", "./Frame/", "session", null, "", "", "");
+        nexacro._addService("Frame", "form", "./Frame/", "session", null, "", "0", "0");
+        nexacro._addService("Next", "form", "./Next/", "session", null, "", "0", "0");
+        nexacro._addService("System", "form", "./System/", "session", null, "", "0", "0");
+        nexacro._addService("test", "form", "./test/", "session", null, "", "0", "0");
 
     	nexacro._component_uri = (nexacro._arg_compurl ? nexacro._arg_compurl : "./nexacro16lib/component/");
 
