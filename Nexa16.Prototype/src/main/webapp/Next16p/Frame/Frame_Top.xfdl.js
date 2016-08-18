@@ -9,10 +9,14 @@
         
         this.on_create = function()
         {
+            this._setPropInitFunc(function (obj)
+            {
+                obj.set_name("Frame_Top");
+                obj.set_titletext("Frame_Top");
+                obj.set_background("azure");
+            });
             if (Form == this.constructor)
             {
-                this.set_name("Frame_Top");
-                this.set_titletext("Frame_Top");
                 this._setFormPosition(0,0,1078,33);
             }
             

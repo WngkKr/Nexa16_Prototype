@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.0">
-  <Form id="Frame_Tab" left="0" top="0" width="1078" height="33" titletext="New Form" background="whitesmoke" onload="Form_onload">
+  <Form id="Frame_Tab" left="0" top="0" width="1078" height="33" titletext="New Form" background="darkgray" onload="Form_onload">
     <Layouts>
       <Layout height="33" width="1078">
-        <Tab id="TabMenu" taborder="0" tabindex="0" left="0" top="" width="" height="23" right="0" bottom="0" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onchanged="TabMenu_onchanged" onextrabuttonclick="TabMenu_onextrabuttonclick" showextrabutton="true" text="">
+        <Tab id="TabMenu" taborder="0" tabindex="0" left="0" top="" width="" height="23" right="0" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onchanged="TabMenu_onchanged" onextrabuttonclick="TabMenu_onextrabuttonclick" showextrabutton="true" text="">
           <Tabpages>
             <Tabpage id="Tabpage1" text="Tabpage1">
               <Layouts>
@@ -17,7 +17,6 @@
             </Tabpage>
           </Tabpages>
         </Tab>
-        <Static id="Static00" taborder="1" text="Static00" left="562" top="1" width="503" height="28" right="" bottom=""/>
       </Layout>
     </Layouts>
     <Script type="xscript5.0"><![CDATA[/******************************************************************************************
@@ -32,7 +31,6 @@ this.Form_onload = function(obj,e)
 {
 	this.TabMenu.removeTabpage(1);
 	this.TabMenu.removeTabpage(0);
-	this.Static00.set_text("가로 : " + this.width + " 세로 : " + this.height);
 };
 /******************************************************************************************
 tab change event

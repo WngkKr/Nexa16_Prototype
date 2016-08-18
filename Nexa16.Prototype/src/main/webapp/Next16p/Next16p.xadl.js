@@ -32,10 +32,10 @@
             var mainframe = this.createMainFrame("mainframe","absolute","0","0","1280","880",null,null,this);
             mainframe._setPropInitFunc(function (mainframe)
             {
-                mainframe.set_showtitlebar("false");
+                mainframe.set_showtitlebar("true");
                 mainframe.set_showstatusbar("false");
                 mainframe.set_titletext("LeftTopFrame");
-                mainframe.set_showtitleicon("false");
+                mainframe.set_showtitleicon("true");
                 mainframe.set_showcascadetitletext("false");
             });
             mainframe.on_createBodyFrame = this.mainframe_createBodyFrame;        

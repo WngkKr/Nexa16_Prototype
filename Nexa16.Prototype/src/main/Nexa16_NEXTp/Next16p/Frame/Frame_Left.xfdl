@@ -43,28 +43,12 @@
             <Col id="PGM_ID"/>
           </Row>
           <Row>
-            <Col id="MENU_CD">a0000002</Col>
-            <Col id="UP_MENU_CD">a0000001</Col>
-            <Col id="MENU_NM">영업현황</Col>
-            <Col id="MENU_LVL">2</Col>
-            <Col id="PGM_ID">Acce</Col>
-            <Col id="PGM_PATH">Base::TEST01.xfdl</Col>
-          </Row>
-          <Row>
-            <Col id="MENU_CD">a0000003</Col>
-            <Col id="UP_MENU_CD">a0000001</Col>
-            <Col id="MENU_NM">영업일정</Col>
-            <Col id="MENU_LVL">2</Col>
-            <Col id="PGM_ID">Acce</Col>
-            <Col id="PGM_PATH">Base::TEST02.xfdl</Col>
-          </Row>
-          <Row>
             <Col id="MENU_CD">a0000004</Col>
             <Col id="UP_MENU_CD">a0000001</Col>
             <Col id="MENU_NM">영업관리</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="PGM_ID">Acce</Col>
-            <Col id="PGM_PATH">Base::BMSalesProgram.xfdl</Col>
+            <Col id="PGM_PATH">Next::BM_Sales_Program.xfdl</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">a0000005</Col>

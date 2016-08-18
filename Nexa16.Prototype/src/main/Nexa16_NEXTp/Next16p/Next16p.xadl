@@ -2,7 +2,7 @@
 <ADL version="2.0">
   <Application id="Next16p" screenid="desktop_D">
     <Layout>
-      <MainFrame id="mainframe" showtitlebar="false" showstatusbar="false" left="0" top="0" width="1280" height="880" titletext="LeftTopFrame" showtitleicon="false" showcascadetitletext="false">
+      <MainFrame id="mainframe" showtitlebar="true" showstatusbar="false" left="0" top="0" width="1280" height="880" titletext="LeftTopFrame" showtitleicon="true" showcascadetitletext="false">
         <HFrameSet id="HFrameSet" separatesize="200,*" showtitlebar="false" showtitleicon="false" showcascadetitletext="false">
           <Frames>
             <ChildFrame id="LeftFrame" showtitlebar="false" showstatusbar="false" formurl="Frame::Frame_Left.xfdl" showcascadetitletext="false" showtitleicon="false"/>

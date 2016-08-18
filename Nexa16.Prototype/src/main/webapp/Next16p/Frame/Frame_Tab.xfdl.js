@@ -9,11 +9,14 @@
         
         this.on_create = function()
         {
+            this._setPropInitFunc(function (obj)
+            {
+                obj.set_name("Frame_Tab");
+                obj.set_titletext("New Form");
+                obj.set_background("darkgray");
+            });
             if (Form == this.constructor)
             {
-                this.set_name("Frame_Tab");
-                this.set_titletext("New Form");
-                this.set_background("whitesmoke");
                 this._setFormPosition(0,0,1078,33);
             }
             
@@ -21,7 +24,7 @@
 
             
             // UI Components Initialize
-            obj = new Tab("TabMenu","absolute","0",null,null,"23","0","0",this);
+            obj = new Tab("TabMenu","absolute","0",null,null,"23","0","5",this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("0");
@@ -44,14 +47,6 @@
                 obj.set_text("Tabpage2");
             });
             this.TabMenu.addChild(obj.name, obj);
-
-            obj = new Static("Static00","absolute","562","1","503","28",null,null,this);
-            obj._setPropInitFunc(function (obj)
-            {
-                obj.set_taborder("1");
-                obj.set_text("Static00");
-            });
-            this.addChild(obj.name, obj);
             
             // Positionbase Setting
             this.TabMenu.set_leftbase("");
@@ -89,7 +84,6 @@
         {
         	this.TabMenu.removeTabpage(1);
         	this.TabMenu.removeTabpage(0);
-        	this.Static00.set_text("가로 : " + this.width + " 세로 : " + this.height);
         };
         /******************************************************************************************
         tab change event
