@@ -36,7 +36,7 @@
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_text("영업현황");
-                obj.set_url("Base::TEST03.xfdl");
+                obj.set_url("Next::BM_Sales_Program_Info.xfdl");
             });
             this.tabMain.addChild(obj.name, obj);
 
@@ -44,7 +44,7 @@
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_text("PreSales");
-                obj.set_url("Base::BMSalesProgramPresales.xfdl");
+                obj.set_url("Next::BM_Sales_Program_Presales.xfdl");
             });
             this.tabMain.addChild(obj.name, obj);
 
@@ -52,7 +52,7 @@
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_text("수주");
-                obj.set_url("Base::BMSaleProgramSuju.xfdl");
+                obj.set_url("Next::BM_Sales_Program_Suju.xfdl");
             });
             this.tabMain.addChild(obj.name, obj);
 
@@ -60,7 +60,7 @@
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_text("계약");
-                obj.set_url("Base::BMSalesProgramContract.xfdl");
+                obj.set_url("Next::BM_Sales_Program_Contract.xfdl");
             });
             this.tabMain.addChild(obj.name, obj);
 
@@ -118,7 +118,7 @@
             });
             this.tabMain.Tabpage5.addChild(obj.name, obj);
 
-            obj = new Static("Static03","absolute","5","386","120",null,null,"5",this.tabMain.Tabpage5.form);
+            obj = new Static("Static03","absolute","5","386","120","30",null,null,this.tabMain.Tabpage5.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
@@ -189,7 +189,7 @@
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_text("프리/컨설팅");
-                obj.set_url("Base::BMProjectTech.xfdl");
+                obj.set_url("Next::BM_Project_Tech.xfdl");
             });
             this.tabMain.addChild(obj.name, obj);
 
@@ -356,11 +356,11 @@
         
         this.loadPreloadList = function()
         {
-            this._addPreloadList("fdl","Base::TEST03.xfdl");
-            this._addPreloadList("fdl","Base::BMSalesProgramPresales.xfdl");
-            this._addPreloadList("fdl","Base::BMSaleProgramSuju.xfdl");
-            this._addPreloadList("fdl","Base::BMSalesProgramContract.xfdl");
-            this._addPreloadList("fdl","Base::BMProjectTech.xfdl");
+            this._addPreloadList("fdl","Next::BM_Sales_Program_Info.xfdl");
+            this._addPreloadList("fdl","Next::BM_Sales_Program_Presales.xfdl");
+            this._addPreloadList("fdl","Next::BM_Sales_Program_Suju.xfdl");
+            this._addPreloadList("fdl","Next::BM_Sales_Program_Contract.xfdl");
+            this._addPreloadList("fdl","Next::BM_Project_Tech.xfdl");
         };
         
         // User Script

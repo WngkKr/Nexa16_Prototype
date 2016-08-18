@@ -5,7 +5,7 @@
       <Layout width="200" height="843">
         <Button id="Button00" taborder="1" text="Menu" left="5" top="120" width="91" height="46" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
         <Button id="Button01" taborder="1" text="My Menu" left="" top="120" width="91" height="46" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Grid id="grdMenu" taborder="2" left="5" top="171" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" binddataset="dsMenu" treeinitstatus="expand,all" treeusecheckbox="false" oncellclick="grdMenu_oncellclick">
+        <Grid id="grdMenu" taborder="2" left="5" top="171" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" binddataset="dsMenu" treeinitstatus="expand,all" treeusecheckbox="false" oncellclick="grdMenu_oncellclick" text="">
           <Formats>
             <Format id="default">
               <Columns>
@@ -64,7 +64,7 @@
             <Col id="MENU_NM">영업관리</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="PGM_ID">Acce</Col>
-            <Col id="PGM_PATH">Base::BMSalesProgram.xfdl</Col>
+            <Col id="PGM_PATH">Next::BM_Sales_Program.xfdl</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">a0000005</Col>

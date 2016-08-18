@@ -5,10 +5,10 @@
       <Layout height="810" width="1078">
         <Tab id="tabMain" taborder="0" tabindex="0" left="5" top="48" width="" height="" right="5" bottom="5" leftbase="" topbase="btnClose.bottom" bottombase="" rightbase="" widthbase="" heightbase="" text="Tab00">
           <Tabpages>
-            <Tabpage id="Tabpage1" text="영업현황" url="Base::TEST03.xfdl"/>
-            <Tabpage id="Tabpage2" text="PreSales" url="Base::BMSalesProgramPresales.xfdl"/>
-            <Tabpage id="Tabpage3" text="수주" url="Base::BMSaleProgramSuju.xfdl"/>
-            <Tabpage id="Tabpage4" text="계약" url="Base::BMSalesProgramContract.xfdl"/>
+            <Tabpage id="Tabpage1" text="영업현황" url="Next::BM_Sales_Program_Info.xfdl"/>
+            <Tabpage id="Tabpage2" text="PreSales" url="Next::BM_Sales_Program_Presales.xfdl"/>
+            <Tabpage id="Tabpage3" text="수주" url="Next::BM_Sales_Program_Suju.xfdl"/>
+            <Tabpage id="Tabpage4" text="계약" url="Next::BM_Sales_Program_Contract.xfdl"/>
             <Tabpage id="Tabpage5" text="기술지원">
               <Layouts>
                 <Layout>
@@ -54,7 +54,7 @@
                       </Format>
                     </Formats>
                   </Grid>
-                  <Static id="Static03" taborder="2" text="인력요청내역" left="5" top="386" width="120" height="" right="" bottom="5" bottombase="Grid01.top" leftbase="" topbase="" rightbase="" widthbase="" heightbase=""/>
+                  <Static id="Static03" taborder="2" text="인력요청내역" left="5" top="386" width="120" height="30" right="" bottom="" bottombase="Grid01.top" leftbase="" topbase="" rightbase="" widthbase="" heightbase=""/>
                   <Grid id="grd_proc" taborder="3" left="5" top="349" height="" right="5" topbase="Static02.bottom" width="" bottom="5" leftbase="" bottombase="" rightbase="" widthbase="" heightbase="" binddataset="dsTech2">
                     <Formats>
                       <Format id="default">
@@ -171,7 +171,7 @@
                 </Layout>
               </Layouts>
             </Tabpage>
-            <Tabpage id="Tabpage7" text="프리/컨설팅" url="Base::BMProjectTech.xfdl"/>
+            <Tabpage id="Tabpage7" text="프리/컨설팅" url="Next::BM_Project_Tech.xfdl"/>
           </Tabpages>
         </Tab>
         <Button id="btnClose" taborder="1" text="닫기" left="" top="5" width="50" height="30" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
