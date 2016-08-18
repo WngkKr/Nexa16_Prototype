@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_Project_Management_Chart" left="0" top="0" width="1015" height="598" titletext="프로젝트관리표">
+    <Layouts>
+      <Layout height="598" width="1015">
+        <Static id="Static00" taborder="0" text="□" left="10" top="10" width="16" height="16" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="" textAlign="center" font="" padding=""/>
+        <Static id="Static01" taborder="0" text="■" left="10" top="26" width="16" height="16" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="" textAlign="center" font="" padding=""/>
+        <Static id="Static02" taborder="0" text="▣" left="10" top="42" width="16" height="16" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="" textAlign="center" font="" padding=""/>
+        <Static id="Static03" taborder="1" text="입금전/결제전" left="36" top="10" width="100" height="16" right="" bottom="" font="7pt 굴림"/>
+        <Static id="Static04" taborder="1" text="입금확인/결제확인" left="36" top="26" width="100" height="16" right="" bottom="" font="7pt 굴림"/>
+        <Static id="Static05" taborder="1" text="프로젝트입금/결제완료" left="36" top="42" width="100" height="16" right="" bottom="" font="7pt 굴림"/>
+        <Static id="Static06" taborder="2" text="대표고객사" left="156" top="10" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit00" taborder="10" left="271" top="10" width="250" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static07" taborder="2" text="프로젝트명" left="156" top="37" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit01" taborder="10" left="271" top="37" width="250" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static08" taborder="2" text="담당영업" left="526" top="37" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit02" taborder="10" left="641" top="37" width="150" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static09" taborder="2" text="소속팀" left="526" top="10" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit03" taborder="10" left="641" top="10" width="150" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static10" taborder="11" text="(VAT별도, 단위:원)" left="" top="37" width="110" height="22" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Grid id="Grid00" taborder="12" left="10" top="69" width="" height="150" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="35" band="left"/>
+                <Column size="50" band="left"/>
+                <Column size="180" band="left"/>
+                <Column size="100" band="left"/>
+                <Column size="120" band="left"/>
+                <Column size="90"/>
+                <Column size="90"/>
+                <Column size="85"/>
+                <Column size="80"/>
+                <Column size="120"/>
+                <Column size="130"/>
+                <Column size="100"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="170"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="확인"/>
+                <Cell col="1" text="구분"/>
+                <Cell col="2" text="매출내역"/>
+                <Cell col="3" text="매출금액"/>
+                <Cell col="4" text="업체명"/>
+                <Cell col="5" text="영업채널담당"/>
+                <Cell col="6" text="프로젝트담당"/>
+                <Cell col="7" text="시작일"/>
+                <Cell col="8" text="종료일"/>
+                <Cell col="9" text="세금계산서금액"/>
+                <Cell col="10" text="세금계산서발급일"/>
+                <Cell col="11" text="대금입금예정"/>
+                <Cell col="12" text="입금일"/>
+                <Cell col="13" text="발송일"/>
+                <Cell col="14" text="비고"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+                <Cell col="6"/>
+                <Cell col="7"/>
+                <Cell col="8"/>
+                <Cell col="9"/>
+                <Cell col="10"/>
+                <Cell col="11"/>
+                <Cell col="12"/>
+                <Cell col="13"/>
+                <Cell col="14"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid01" taborder="12" left="10" top="229" width="" height="140" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="35" band="left"/>
+                <Column size="50" band="left"/>
+                <Column size="180" band="left"/>
+                <Column size="100" band="left"/>
+                <Column size="120" band="left"/>
+                <Column size="90"/>
+                <Column size="85"/>
+                <Column size="80"/>
+                <Column size="120"/>
+                <Column size="130"/>
+                <Column size="100"/>
+                <Column size="80"/>
+                <Column size="170"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="확인"/>
+                <Cell col="1" text="구분"/>
+                <Cell col="2" text="매입내역"/>
+                <Cell col="3" text="매입금액"/>
+                <Cell col="4" text="업체명"/>
+                <Cell col="5" text="업체영업담당"/>
+                <Cell col="6" text="시작일"/>
+                <Cell col="7" text="종료일"/>
+                <Cell col="8" text="세금계산서금액"/>
+                <Cell col="9" text="세금계산서발급일"/>
+                <Cell col="10" text="대금입금예정"/>
+                <Cell col="11" text="입금일"/>
+                <Cell col="12" text="비고/보고일"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+                <Cell col="6"/>
+                <Cell col="7"/>
+                <Cell col="8"/>
+                <Cell col="9"/>
+                <Cell col="10"/>
+                <Cell col="11"/>
+                <Cell col="12"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static11" taborder="0" text="■ 보증보험증권" left="10" top="379" width="120" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static12" taborder="2" text="투입기간" left="10" top="406" width="" height="22" right="10" bottom="" border="1px solid #999999" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" background="#F0F0F0"/>
+        <Edit id="Edit04" taborder="13" left="10" top="427" width="30" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static13" taborder="2" text="선급금이행보증보험증권" left="39" top="427" width="150" height="22" right="" bottom="" border="1px solid #999999" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" background=""/>
+        <Edit id="Edit05" taborder="13" left="188" top="427" width="120" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static14" taborder="2" text="보험가입금액" left="307" top="427" width="120" height="22" right="" bottom="" border="1px solid #999999" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" background=""/>
+        <Edit id="Edit06" taborder="13" left="426" top="427" width="120" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static15" taborder="2" text="보험료" left="545" top="427" width="70" height="22" right="" bottom="" border="1px solid #999999" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" background=""/>
+        <Edit id="Edit07" taborder="13" left="614" top="427" width="120" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static16" taborder="2" text="보험기간" left="733" top="427" width="70" height="22" right="" bottom="" border="1px solid #999999" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" background=""/>
+        <MaskEdit id="MaskEdit00" taborder="14" left="802" top="427" width="90" height="22" right="" bottom="" mask="####/##/##" value="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static17" taborder="2" text="~" left="891" top="427" width="25" height="22" right="" bottom="" border="1px solid #999999" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" background=""/>
+        <MaskEdit id="MaskEdit01" taborder="14" left="915" top="427" width="90" height="22" right="" bottom="" mask="####/##/##"/>
+        <Edit id="Edit08" taborder="13" left="10" top="448" width="30" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static18" taborder="2" text="계약이행보증보험증권" left="39" top="448" width="150" height="22" right="" bottom="" border="1px solid #999999" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" background=""/>
+        <Edit id="Edit09" taborder="13" left="188" top="448" width="120" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static19" taborder="2" text="보험가입금액" left="307" top="448" width="120" height="22" right="" bottom="" border="1px solid #999999" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" background=""/>
+        <Edit id="Edit10" taborder="13" left="426" top="448" width="120" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static20" taborder="2" text="보험료" left="545" top="448" width="70" height="22" right="" bottom="" border="1px solid #999999" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" background=""/>
+        <Edit id="Edit11" taborder="13" left="614" top="448" width="120" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static21" taborder="2" text="보험기간" left="733" top="448" width="70" height="22" right="" bottom="" border="1px solid #999999" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" background=""/>
+        <MaskEdit id="MaskEdit02" taborder="14" left="802" top="448" width="90" height="22" right="" bottom="" mask="####/##/##" value="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static22" taborder="2" text="~" left="891" top="448" width="25" height="22" right="" bottom="" border="1px solid #999999" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" background=""/>
+        <MaskEdit id="MaskEdit03" taborder="14" left="915" top="448" width="90" height="22" right="" bottom="" mask="####/##/##"/>
+        <Edit id="Edit12" taborder="13" left="10" top="469" width="30" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static23" taborder="2" text="하자이행보증보험증권" left="39" top="469" width="150" height="22" right="" bottom="" border="1px solid #999999" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" background=""/>
+        <Edit id="Edit13" taborder="13" left="188" top="469" width="120" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static24" taborder="2" text="보험가입금액" left="307" top="469" width="120" height="22" right="" bottom="" border="1px solid #999999" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" background=""/>
+        <Edit id="Edit14" taborder="13" left="426" top="469" width="120" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static25" taborder="2" text="보험료" left="545" top="469" width="70" height="22" right="" bottom="" border="1px solid #999999" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" background=""/>
+        <Edit id="Edit15" taborder="13" left="614" top="469" width="120" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static26" taborder="2" text="보험기간" left="733" top="469" width="70" height="22" right="" bottom="" border="1px solid #999999" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" background=""/>
+        <MaskEdit id="MaskEdit04" taborder="14" left="802" top="469" width="90" height="22" right="" bottom="" mask="####/##/##" value="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static27" taborder="2" text="~" left="891" top="469" width="25" height="22" right="" bottom="" border="1px solid #999999" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" background=""/>
+        <MaskEdit id="MaskEdit05" taborder="14" left="915" top="469" width="90" height="22" right="" bottom="" mask="####/##/##"/>
+        <Static id="Static28" taborder="0" text="■ 비고" left="10" top="501" width="120" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <TextArea id="TextArea00" taborder="15" left="10" top="528" width="" height="" right="10" bottom="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

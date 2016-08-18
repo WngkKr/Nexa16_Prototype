@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_Project_Info" left="0" top="0" width="1056" height="660" titletext="프로젝트 진행">
+    <Layouts>
+      <Layout height="660" width="1056">
+        <CheckBox id="CheckBox00" taborder="0" text="프로젝트 종결" left="10" top="10" width="110" height="22" right="" bottom="" value="true" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button00" taborder="1" text="Presale로 등록" left="" top="10" width="110" height="22" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static00" taborder="2" text="고객사" left="10" top="37" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit00" taborder="10" left="125" top="37" width="250" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button01" taborder="4" text="검색" left="377" top="37" width="40" height="22" right="" bottom=""/>
+        <Static id="Static01" taborder="2" text="프로젝트코드" left="10" top="64" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit01" taborder="10" left="125" top="64" width="90" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit02" taborder="10" left="220" top="64" width="233" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button02" taborder="4" text="중복확인" left="455" top="64" width="80" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static02" taborder="11" text="프로젝트 중복을 꼭!! 확인하세요." left="540" top="64" width="" height="22" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static03" taborder="2" text="프로젝트구분" left="10" top="91" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static04" taborder="2" text="영업담당자" left="10" top="118" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static05" taborder="2" text="이관요청상태" left="10" top="145" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="Combo00" taborder="12" text="Combo00" left="125" top="91" width="145" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" innerdataset="@dsProjectType" codecolumn="CODE" datacolumn="NAME"/>
+        <Static id="Static06" taborder="2" text="프로젝트코드" left="275" top="91" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="Combo01" taborder="12" text="Combo00" left="390" top="91" width="145" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static07" taborder="2" text="영업상태" left="540" top="91" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="Combo02" taborder="12" text="Combo00" left="655" top="91" width="145" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static08" taborder="2" text="영업구분" left="805" top="91" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="Combo03" taborder="12" text="Combo00" left="920" top="91" width="" height="22" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" innerdataset="@dsBizType" codecolumn="CODE" datacolumn="NAME"/>
+        <Combo id="Combo04" taborder="12" text="Combo00" left="125" top="118" width="145" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="Combo05" taborder="12" text="Combo00" left="125" top="145" width="145" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" innerdataset="@dsPassReqStatus" codecolumn="CODE" datacolumn="NAME"/>
+        <Static id="Static09" taborder="2" text="프리세일즈담당자" left="540" top="118" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="Combo06" taborder="12" text="Combo00" left="655" top="118" width="145" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static10" taborder="2" text="컨설팅담당자" left="805" top="118" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="Combo07" taborder="12" text="Combo00" left="920" top="118" width="" height="22" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static11" taborder="13" text="매출담당자는 계약탭에서 계약건별로 선택" left="275" top="118" width="260" height="22" right="" bottom=""/>
+        <Edit id="Edit03" taborder="10" left="275" top="145" width="178" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button03" taborder="4" text="이관요청" left="455" top="145" width="80" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static12" taborder="2" text="OPEN일자" left="540" top="145" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Calendar id="Calendar00" taborder="14" left="655" top="145" width="145" height="22" right="" bottom=""/>
+        <Tab id="Tab00" taborder="15" tabindex="0" left="10" top="177" width="" height="300" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Tabpages>
+            <Tabpage id="Tabpage1" text="담당자">
+              <Layouts>
+                <Layout>
+                  <Grid id="Grid00" taborder="0" left="5" top="5" width="" height="" right="5" bottom="5" text="Grid00" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" autofittype="col">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="130"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="100"/>
+                          <Column size="150"/>
+                          <Column size="80"/>
+                          <Column size="202"/>
+                          <Column size="40"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="회사"/>
+                          <Cell col="1" text="부서"/>
+                          <Cell col="2" text="담당자"/>
+                          <Cell col="3" text="직급"/>
+                          <Cell col="4" text="역할"/>
+                          <Cell col="5" text="핸드폰"/>
+                          <Cell col="6" text="이메일"/>
+                          <Cell col="7" text="유선"/>
+                          <Cell col="8" text="비고"/>
+                          <Cell col="9" text="현황"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell/>
+                          <Cell col="1"/>
+                          <Cell col="2"/>
+                          <Cell col="3"/>
+                          <Cell col="4"/>
+                          <Cell col="5"/>
+                          <Cell col="6"/>
+                          <Cell col="7"/>
+                          <Cell col="8"/>
+                          <Cell col="9"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="Tabpage2" text="솔루션">
+              <Layouts>
+                <Layout>
+                  <Grid id="Grid00" taborder="0" left="5" top="5" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" autofittype="col">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="100" band="left"/>
+                          <Column size="200"/>
+                          <Column size="400"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="구분"/>
+                          <Cell col="1" text="사용 솔루션"/>
+                          <Cell col="2" text="비고"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell/>
+                          <Cell col="1"/>
+                          <Cell col="2"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+          </Tabpages>
+        </Tab>
+        <Static id="Static13" taborder="2" text="주요공유사항" left="10" top="487" width="110" height="" right="" bottom="10" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Tab id="Tab01" taborder="16" tabindex="0" left="125" top="487" width="" height="" right="10" bottom="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Tabpages>
+            <Tabpage id="Tabpage1" text="진계약">
+              <Layouts>
+                <Layout>
+                  <TextArea id="TextArea00" taborder="0" left="5" top="5" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="Tabpage2" text="가계약">
+              <Layouts>
+                <Layout>
+                  <TextArea id="TextArea00" taborder="0" left="5" top="5" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+          </Tabpages>
+        </Tab>
+        <Button id="Button04" taborder="3" text="+" left="" top="175" width="22" height="22" right="34" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button05" taborder="3" text="-" left="" top="175" width="22" height="22" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsBizType">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">001</Col>
+            <Col id="NAME">장기</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">002</Col>
+            <Col id="NAME">집중</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">003</Col>
+            <Col id="NAME">장기/집중</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">004</Col>
+            <Col id="NAME">일반</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsProjectType">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">1</Col>
+            <Col id="NAME">제품</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">2</Col>
+            <Col id="NAME">SI</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">3</Col>
+            <Col id="NAME">제품+SI</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsPassReqStatus">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">0</Col>
+            <Col id="NAME">이관요청</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">1</Col>
+            <Col id="NAME">이관승인</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">9</Col>
+            <Col id="NAME">요청반려</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_Client_Pop" left="0" top="0" width="660" height="495" titletext="고객사 검색">
+    <Layouts>
+      <Layout height="495" width="660">
+        <Radio id="Radio00" taborder="0" left="10" top="42" width="280" height="54" right="" bottom="" innerdataset="@dsCDCondition" codecolumn="CODE" datacolumn="DATA" direction="vertical" columncount="3" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <CheckBox id="CheckBox00" taborder="1" text="영업담당자 미입력건 포함" left="300" top="42" width="180" height="22" right="" bottom=""/>
+        <CheckBox id="CheckBox01" taborder="2" text="가계약포함" left="490" top="42" width="150" height="22" right="" bottom=""/>
+        <Edit id="Edit00" taborder="3" left="300" top="74" width="" height="22" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button00" taborder="3" text="조회" left="" top="10" width="40" height="22" right="94" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button01" taborder="4" text="닫기" left="" top="10" width="40" height="22" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button02" taborder="4" text="확인" left="" top="10" width="40" height="22" right="52" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Grid id="Grid00" taborder="5" left="10" top="106" width="" height="" right="10" bottom="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="90"/>
+                <Column size="105"/>
+                <Column size="130"/>
+                <Column size="180"/>
+                <Column size="70"/>
+                <Column size="50"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="고객사"/>
+                <Cell col="1" text="계약처"/>
+                <Cell col="2" text="프로젝트명"/>
+                <Cell col="3" text="계약명"/>
+                <Cell col="4" text="계약일자"/>
+                <Cell col="5" text="영업"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsCDCondition">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="DATA" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">C</Col>
+            <Col id="DATA">고객사</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">P</Col>
+            <Col id="DATA">프로젝트</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">N</Col>
+            <Col id="DATA">매출계약명</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">A</Col>
+            <Col id="DATA">매출계약처</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">M</Col>
+            <Col id="DATA">매입계약명</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">B</Col>
+            <Col id="DATA">매입계약처</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

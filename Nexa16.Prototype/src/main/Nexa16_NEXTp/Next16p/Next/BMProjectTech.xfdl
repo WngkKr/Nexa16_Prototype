@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BMProjectTech" left="0" top="0" width="900" height="648" titletext="New Form">
+    <Layouts>
+      <Layout height="648" width="900">
+        <Static id="Static00" taborder="0" text="지원내용" left="5" top="5" width="120" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Grid id="grdApproval" taborder="1" left="5" top="40" width="525" height="352" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" nodatatext="데이터가 없습니다.">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="30"/>
+                <Column size="40"/>
+                <Column size="130"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="45"/>
+                <Column size="80"/>
+                <Column size="40"/>
+              </Columns>
+              <Rows>
+                <Row size="36" band="head"/>
+                <Row size="24"/>
+                <Row size="24" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="NO" font-size="9" font-weight="normal"/>
+                <Cell col="1" text="승인&#13;&#10;상태" font-size="9" font-weight="normal"/>
+                <Cell col="2" text="매출계약명" font-size="9" font-weight="normal"/>
+                <Cell col="3" text="작업&#13;&#10;시작일자" font-size="9" font-weight="normal"/>
+                <Cell col="4" text="작업&#13;&#10;완료일자" font-size="9" font-weight="normal"/>
+                <Cell col="5" text="총작업&#13;&#10;시간" font-size="9" font-weight="normal"/>
+                <Cell col="6" text="기술&#13;&#10;담당자" font-size="9" font-weight="normal"/>
+                <Cell col="7" text="원가&#13;&#10;반영" font-size="9" font-weight="normal"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+                <Cell col="6"/>
+                <Cell col="7"/>
+              </Band>
+              <Band id="summary">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+                <Cell col="6"/>
+                <Cell col="7"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static01" taborder="0" text="첨부파일(더블클릭하세요)" left="5" top="397" width="163" height="30" right="" bottom="" topbase="" leftbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Grid id="grdFile" taborder="2" left="5" top="432" width="525" height="" right="" bottom="5" topbase="" leftbase="" bottombase="" rightbase="" widthbase="" heightbase="" nodatatext="데이터가 없습니다.">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="48"/>
+                <Column size="450"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="NO"/>
+                <Cell col="1" text="첨부파일"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="btnSave" taborder="3" text="저장" left="485" top="5" width="45" height="29" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static02" taborder="0" text="작업요청내용" left="540" top="5" width="120" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <TextArea id="TextArea00" taborder="4" left="540" top="40" width="" height="280" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static03" taborder="0" text="작업완료내용" left="540" top="328" width="120" height="30" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <TextArea id="TextArea01" taborder="4" left="540" top="363" height="" right="5" width="" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <CheckBox id="wbFileDown" taborder="5" text="" left="159" top="403" width="150" height="20" right="" bottom=""/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

@@ -1,0 +1,545 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="HM_Staff_Register" left="0" top="0" width="1078" height="810" titletext="New Form">
+    <Layouts>
+      <Layout height="810" width="1078">
+        <Div id="Div00" taborder="0" text="Div00" left="10" top="10" width="" height="34" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Layouts>
+            <Layout>
+              <Button id="Button00" taborder="7" text="Word로 저장" left="" top="5" width="100" height="22" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Button id="Button01" taborder="6" text="Excel로 저장" left="" top="5" width="100" height="22" right="107" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Button id="Button02" taborder="5" text="저장" left="" top="5" width="100" height="22" right="209" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static00" taborder="0" text="검색" left="5" top="5" width="25" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <CheckBox id="CheckBox00" taborder="2" text="성명" left="40" top="5" width="50" height="22" right="" bottom=""/>
+              <CheckBox id="CheckBox01" taborder="1" text="회사명" left="100" top="5" width="60" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="Edit00" taborder="3" left="170" top="5" width="150" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Button id="Button03" taborder="4" text="검색" left="322" top="5" width="40" height="22" right="" bottom=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Tab id="Tab00" taborder="1" tabindex="0" left="10" top="54" width="" height="" right="10" bottom="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Tabpages>
+            <Tabpage id="Tabpage1" text="인력기본정보">
+              <Layouts>
+                <Layout>
+                  <Div id="Div00" taborder="0" text="" left="5" top="5" width="" height="277" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" background="">
+                    <Layouts>
+                      <Layout>
+                        <ImageViewer id="ImageViewer00" taborder="0" text="ImageViewer00" left="5" top="5" width="120" height="140" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <Button id="Button00" taborder="1" text="Button00" left="5" top="150" width="120" height="22" right="" bottom=""/>
+                        <Static id="Static00" taborder="2" text="회사명" left="130" top="5" width="120" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static01" taborder="3" text="성명" left="130" top="32" width="120" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static02" taborder="4" text="주민등록번호" left="130" top="59" width="120" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static03" taborder="5" text="성별" left="130" top="86" width="120" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static04" taborder="6" text="생년월일" left="130" top="113" width="120" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static05" taborder="7" text="전화번호(집)" left="130" top="140" width="120" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static06" taborder="8" text="전화번호(사무실)" left="130" top="167" width="120" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static07" taborder="9" text="핸드폰" left="130" top="194" width="120" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static08" taborder="9" text="이메일" left="5" top="248" width="120" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static09" taborder="8" text="주소" left="5" top="221" width="120" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Edit id="Edit00" taborder="10" left="255" top="5" width="178" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <Button id="Button01" taborder="11" text="검색" left="435" top="5" width="40" height="22" right="" bottom=""/>
+                        <Edit id="Edit01" taborder="12" left="255" top="32" width="220" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <MaskEdit id="MaskEdit00" taborder="13" left="255" top="59" width="220" height="22" right="" bottom=""/>
+                        <Radio id="Radio00" taborder="14" left="255" top="86" width="120" height="22" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical">
+                          <Dataset id="innerdataset">
+                            <ColumnInfo>
+                              <Column id="codecolumn" size="256"/>
+                              <Column id="datacolumn" size="256"/>
+                            </ColumnInfo>
+                            <Rows>
+                              <Row>
+                                <Col id="codecolumn">1</Col>
+                                <Col id="datacolumn">남</Col>
+                              </Row>
+                              <Row>
+                                <Col id="codecolumn">2</Col>
+                                <Col id="datacolumn">여</Col>
+                              </Row>
+                            </Rows>
+                          </Dataset>
+                        </Radio>
+                        <Calendar id="Calendar00" taborder="15" left="255" top="113" width="100" height="22" right="" bottom=""/>
+                        <Radio id="Radio01" taborder="16" left="365" top="113" width="110" height="22" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical">
+                          <Dataset id="innerdataset">
+                            <ColumnInfo>
+                              <Column id="codecolumn" size="256"/>
+                              <Column id="datacolumn" size="256"/>
+                            </ColumnInfo>
+                            <Rows>
+                              <Row>
+                                <Col id="codecolumn">1</Col>
+                                <Col id="datacolumn">양력</Col>
+                              </Row>
+                              <Row>
+                                <Col id="codecolumn">2</Col>
+                                <Col id="datacolumn">음력</Col>
+                              </Row>
+                            </Rows>
+                          </Dataset>
+                        </Radio>
+                        <Edit id="Edit02" taborder="17" left="255" top="140" width="220" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <Edit id="Edit03" taborder="18" left="255" top="167" width="220" height="22" right="" bottom=""/>
+                        <Edit id="Edit04" taborder="19" left="255" top="194" width="220" height="22" right="" bottom=""/>
+                        <Edit id="Edit05" taborder="20" left="130" top="221" width="345" height="22" right="" bottom=""/>
+                        <Edit id="Edit06" taborder="21" left="130" top="248" width="345" height="22" right="" bottom=""/>
+                        <Static id="Static10" taborder="2" text="사번" left="495" top="5" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static11" taborder="3" text="직급" left="495" top="32" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static12" taborder="4" text="인력구분" left="495" top="59" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static13" taborder="5" text="등급" left="495" top="86" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static14" taborder="6" text="과기처 등급" left="495" top="113" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static15" taborder="7" text="입사일자" left="495" top="140" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static16" taborder="8" text="퇴사일자" left="495" top="167" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static17" taborder="9" text="경력시작일" left="495" top="194" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static18" taborder="8" text="최종학력" left="495" top="221" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static19" taborder="9" text="병역관계" left="495" top="248" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static20" taborder="5" text="자격증보유" left="775" top="86" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static21" taborder="6" text="퇴사여부" left="775" top="113" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static22" taborder="7" text="퇴사사유" left="775" top="140" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static23" taborder="8" text="경력일수" left="775" top="167" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static24" taborder="9" text="최종졸업일" left="775" top="194" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Static id="Static25" taborder="8" text="결혼여부" left="775" top="221" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Combo id="Combo00" taborder="4" text="Combo00" left="610" top="86" width="155" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <Combo id="Combo01" taborder="4" text="Combo00" left="610" top="113" width="155" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <Calendar id="Calendar01" taborder="4" left="610" top="140" width="155" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <Calendar id="Calendar02" taborder="4" left="610" top="167" width="155" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <Calendar id="Calendar03" taborder="4" left="610" top="194" width="155" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <Combo id="Combo02" taborder="4" text="Combo00" left="610" top="221" width="155" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <Radio id="Radio02" taborder="1" left="610" top="248" width="154" height="22" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                          <Dataset id="innerdataset">
+                            <ColumnInfo>
+                              <Column id="codecolumn" size="256"/>
+                              <Column id="datacolumn" size="256"/>
+                            </ColumnInfo>
+                            <Rows>
+                              <Row>
+                                <Col id="datacolumn">필</Col>
+                                <Col id="codecolumn">1</Col>
+                              </Row>
+                              <Row>
+                                <Col id="datacolumn">미필</Col>
+                                <Col id="codecolumn">0</Col>
+                              </Row>
+                            </Rows>
+                          </Dataset>
+                        </Radio>
+                        <Radio id="Radio03" taborder="1" left="890" top="221" width="149" height="22" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                          <Dataset id="innerdataset">
+                            <ColumnInfo>
+                              <Column id="codecolumn" size="256"/>
+                              <Column id="datacolumn" size="256"/>
+                            </ColumnInfo>
+                            <Rows>
+                              <Row>
+                                <Col id="datacolumn">기혼</Col>
+                                <Col id="codecolumn">1</Col>
+                              </Row>
+                              <Row>
+                                <Col id="datacolumn">미혼</Col>
+                                <Col id="codecolumn">0</Col>
+                              </Row>
+                            </Rows>
+                          </Dataset>
+                        </Radio>
+                        <Calendar id="Calendar04" taborder="4" left="890" top="194" width="149" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <Edit id="Edit07" taborder="4" left="890" top="167" width="" height="22" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <Edit id="Edit08" taborder="4" left="890" top="140" width="" height="22" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <Radio id="Radio04" taborder="1" left="890" top="113" width="149" height="22" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                          <Dataset id="innerdataset">
+                            <ColumnInfo>
+                              <Column id="codecolumn" size="256"/>
+                              <Column id="datacolumn" size="256"/>
+                            </ColumnInfo>
+                            <Rows>
+                              <Row>
+                                <Col id="datacolumn">재직중</Col>
+                                <Col id="codecolumn">0</Col>
+                              </Row>
+                              <Row>
+                                <Col id="datacolumn">퇴사</Col>
+                                <Col id="codecolumn">1</Col>
+                              </Row>
+                            </Rows>
+                          </Dataset>
+                        </Radio>
+                        <Radio id="Radio05" taborder="1" left="" top="86" width="149" height="22" right="5" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                          <Dataset id="innerdataset">
+                            <ColumnInfo>
+                              <Column id="codecolumn" size="256"/>
+                              <Column id="datacolumn" size="256"/>
+                            </ColumnInfo>
+                            <Rows>
+                              <Row>
+                                <Col id="datacolumn">보유</Col>
+                                <Col id="codecolumn">1</Col>
+                              </Row>
+                              <Row>
+                                <Col id="datacolumn">미보유</Col>
+                                <Col id="codecolumn">0</Col>
+                              </Row>
+                            </Rows>
+                          </Dataset>
+                        </Radio>
+                        <Static id="Static26" taborder="5" text="부서명" left="775" top="5" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Edit id="Edit09" taborder="22" left="610" top="5" width="93" height="22" right="" bottom=""/>
+                        <Button id="Button02" taborder="23" text="사번발급" left="705" top="5" width="60" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <Edit id="Edit10" taborder="24" left="890" top="5" width="" height="22" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <Combo id="Combo03" taborder="25" text="Combo03" left="610" top="32" width="80" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <Static id="Static27" taborder="3" text="직책" left="700" top="32" width="65" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Combo id="Combo04" taborder="25" text="Combo03" left="770" top="32" width="80" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <Static id="Static28" taborder="3" text="진급일" left="860" top="32" width="65" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center"/>
+                        <Calendar id="Calendar05" taborder="4" left="" top="32" width="109" height="22" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <Radio id="Radio06" taborder="26" left="610" top="59" width="429" height="22" right="" bottom="" innerdataset="@Dataset00" codecolumn="CODE" datacolumn="DATA" direction="vertical"/>
+                      </Layout>
+                    </Layouts>
+                  </Div>
+                  <Static id="Static00" taborder="1" text="학력사항" left="5" top="302" width="120" height="22" right="" bottom="" font="bold 12pt Arial"/>
+                  <Grid id="Grid00" taborder="2" left="5" top="329" width="520" height="150" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" autofittype="col">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="73"/>
+                          <Column size="33"/>
+                          <Column size="71"/>
+                          <Column size="123"/>
+                          <Column size="48"/>
+                          <Column size="75"/>
+                          <Column size="83"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell colspan="3" text="기간"/>
+                          <Cell col="3" text="학교명"/>
+                          <Cell col="4" text="과명"/>
+                          <Cell col="5" text="졸업,수료"/>
+                          <Cell col="6" text="소재지"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell/>
+                          <Cell col="1" text="~"/>
+                          <Cell col="2"/>
+                          <Cell col="3"/>
+                          <Cell col="4"/>
+                          <Cell col="5"/>
+                          <Cell col="6"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Button id="Button00" taborder="3" text="+" left="479" top="302" width="22" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <Button id="Button01" taborder="3" text="-" left="503" top="302" width="22" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <Static id="Static01" taborder="1" text="자격사항" left="545" top="305" width="120" height="22" right="" bottom="" font="bold 12pt Arial"/>
+                  <Grid id="Grid01" taborder="2" left="545" top="332" width="" height="150" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" autofittype="col">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="70"/>
+                          <Column size="125"/>
+                          <Column size="110"/>
+                          <Column size="30"/>
+                          <Column size="95"/>
+                          <Column size="30"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="취득년월"/>
+                          <Cell col="1" text="종류"/>
+                          <Cell col="2" text="발행처"/>
+                          <Cell col="3" colspan="3" text="파일"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell/>
+                          <Cell col="1"/>
+                          <Cell col="2"/>
+                          <Cell col="3"/>
+                          <Cell col="4"/>
+                          <Cell col="5"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Button id="Button02" taborder="3" text="+" left="" top="305" width="22" height="22" right="29" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <Button id="Button03" taborder="3" text="-" left="" top="305" width="22" height="22" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <Static id="Static02" taborder="4" text="다운로드: 파일명 더블클릭" left="" top="305" width="110" height="22" right="56" bottom="" font="7pt Arial" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <Grid id="Grid02" taborder="2" left="5" top="526" width="520" height="" right="" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" autofittype="col">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="150"/>
+                          <Column size="130"/>
+                          <Column size="60"/>
+                          <Column size="370"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="재직기간"/>
+                          <Cell col="1" text="재직회사"/>
+                          <Cell col="2" text="직위"/>
+                          <Cell col="3" text="담당업무"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell/>
+                          <Cell col="1"/>
+                          <Cell col="2"/>
+                          <Cell col="3"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Static id="Static04" taborder="1" text="첨부파일" left="551" top="499" width="120" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" font="bold 12pt Arial"/>
+                  <Grid id="Grid03" taborder="2" left="551" top="532" width="" height="94" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" autofittype="col">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="200"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="졸업증명서"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Static id="Static05" taborder="4" text="다운로드: 파일명 더블클릭" left="" top="499" width="110" height="22" right="5" bottom="" font="7pt Arial" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <Grid id="Grid04" taborder="2" left="551" top="625" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" autofittype="col">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="200"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="소프트웨어 기술자 자격증"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Button id="Button04" taborder="3" text="-" left="503" top="499" width="22" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <Button id="Button05" taborder="3" text="+" left="479" top="499" width="22" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <Static id="Static03" taborder="1" text="경력사항" left="5" top="499" width="120" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" font="bold 12pt Arial"/>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="Tabpage2" text="기술사항">
+              <Layouts>
+                <Layout>
+                  <Div id="Div00" taborder="0" text="Div00" left="5" top="5" width="433" height="152" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                    <Layouts>
+                      <Layout>
+                        <ImageViewer id="ImageViewer00" taborder="0" text="ImageViewer00" left="5" top="5" width="120" height="140" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <Static id="Static00" taborder="4" text="성명" left="131" top="5" width="120" height="22" textAlign="center" border="1px solid #e5e5e5" right="" bottom=""/>
+                        <Edit id="Edit00" taborder="4" left="256" top="5" width="170" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <Static id="Static01" taborder="4" text="생년월일" left="131" top="32" width="120" height="22" textAlign="center" border="1px solid #e5e5e5" right="" bottom=""/>
+                        <Static id="Static02" taborder="4" text="회사명" left="131" top="59" width="120" height="22" textAlign="center" border="1px solid #e5e5e5" right="" bottom=""/>
+                        <Static id="Static03" taborder="4" text="부서명" left="131" top="86" width="120" height="22" textAlign="center" border="1px solid #e5e5e5" right="" bottom=""/>
+                        <Static id="Static04" taborder="4" text="등급" left="131" top="113" width="120" height="22" textAlign="center" border="1px solid #e5e5e5" right="" bottom=""/>
+                        <Calendar id="Calendar00" taborder="4" left="256" top="32" width="170" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <Edit id="Edit01" taborder="4" left="256" top="59" width="170" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <Edit id="Edit02" taborder="4" left="256" top="86" width="170" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                        <Combo id="Combo00" taborder="1" text="Combo00" left="256" top="113" width="170" height="22" right="" bottom=""/>
+                      </Layout>
+                    </Layouts>
+                  </Div>
+                  <Static id="Static00" taborder="1" text="기술사항" left="448" top="5" width="120" height="33" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" font="bold 12pt Arial"/>
+                  <Grid id="Grid00" taborder="2" left="448" top="38" width="152" height="119" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" autofittype="col">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="55"/>
+                          <Column size="25"/>
+                          <Column size="25"/>
+                          <Column size="25"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="언어"/>
+                          <Cell col="1" text="상"/>
+                          <Cell col="2" text="중"/>
+                          <Cell col="3" text="하"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell/>
+                          <Cell col="1"/>
+                          <Cell col="2"/>
+                          <Cell col="3"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Button id="Button00" taborder="3" text="+" left="" top="11" width="22" height="22" right="29" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <Button id="Button01" taborder="3" text="-" left="" top="11" width="22" height="22" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <Grid id="Grid01" taborder="2" left="599" top="38" width="152" height="119" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" autofittype="col">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="55"/>
+                          <Column size="25"/>
+                          <Column size="25"/>
+                          <Column size="25"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="DB"/>
+                          <Cell col="1" text="상"/>
+                          <Cell col="2" text="중"/>
+                          <Cell col="3" text="하"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell/>
+                          <Cell col="1"/>
+                          <Cell col="2"/>
+                          <Cell col="3"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Grid id="Grid02" taborder="2" left="901" top="38" width="" height="119" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" autofittype="col">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="55"/>
+                          <Column size="25"/>
+                          <Column size="25"/>
+                          <Column size="25"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="TOOL"/>
+                          <Cell col="1" text="상"/>
+                          <Cell col="2" text="중"/>
+                          <Cell col="3" text="하"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell/>
+                          <Cell col="1"/>
+                          <Cell col="2"/>
+                          <Cell col="3"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Grid id="Grid03" taborder="2" left="750" top="38" width="152" height="119" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" autofittype="col">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="55"/>
+                          <Column size="25"/>
+                          <Column size="25"/>
+                          <Column size="25"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="WAS"/>
+                          <Cell col="1" text="상"/>
+                          <Cell col="2" text="중"/>
+                          <Cell col="3" text="하"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell/>
+                          <Cell col="1"/>
+                          <Cell col="2"/>
+                          <Cell col="3"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Static id="Static01" taborder="1" text="프로젝트 경력사항" left="5" top="177" width="190" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" font="bold 12pt Arial"/>
+                  <Grid id="Grid04" taborder="2" left="5" top="204" width="" height="" right="5" bottom="16" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" autofittype="col">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="48"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell/>
+                        </Band>
+                        <Band id="body">
+                          <Cell/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Button id="Button02" taborder="3" text="엑셀다운로드" left="" top="177" width="100" height="22" right="259" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <Button id="Button03" taborder="3" text="엑셀업로드" left="" top="177" width="100" height="22" right="157" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <Button id="Button04" taborder="3" text="ReSet" left="" top="177" width="50" height="22" right="105" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <Button id="Button05" taborder="3" text="삭제" left="" top="177" width="50" height="22" right="53" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <Button id="Button06" taborder="3" text="+" left="" top="177" width="22" height="22" right="29" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <Button id="Button07" taborder="3" text="-" left="" top="177" width="22" height="22" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+          </Tabpages>
+        </Tab>
+        <Button id="Button00" taborder="7" text="불러오기" left="" top="55" width="100" height="22" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button01" taborder="6" text="포부등록" left="" top="55" width="100" height="22" right="112" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="DATA" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">S</Col>
+            <Col id="DATA">SI인력</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">T</Col>
+            <Col id="DATA">기술지원인력</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">L</Col>
+            <Col id="DATA">연구소</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">O</Col>
+            <Col id="DATA">사무</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">A</Col>
+            <Col id="DATA">영업</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>
