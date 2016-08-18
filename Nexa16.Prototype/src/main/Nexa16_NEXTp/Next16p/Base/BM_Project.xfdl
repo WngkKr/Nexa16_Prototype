@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_Project" left="0" top="0" width="1087" height="810" titletext="New Form">
+    <Layouts>
+      <Layout height="810" width="1087">
+        <ImageViewer id="ImageViewer00" taborder="0" text="" left="1.47%" top="16" width="97.88%" height="29" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" right="" background="aliceblue"/>
+        <Static id="Static00" taborder="1" text="고객사" left="2.39%" top="19" width="4.88%" height="20" right="" bottom=""/>
+        <Edit id="Edit00" taborder="2" left="7.64%" top="20" width="19.5%" height="21" right="" bottom=""/>
+        <Button id="Button00" taborder="4" text="" left="27.51%" top="23" width="1.38%" height="14" right="" bottom=""/>
+        <Button id="Button01" taborder="4" text="고객요청현황" left="30.36%" top="20" width="10.95%" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="Button01_onclick"/>
+        <Button id="Button02" taborder="4" text="가계약용역현황" left="41.77%" top="20" width="10.95%" height="21" right="" bottom=""/>
+        <Button id="Button03" taborder="4" text="미계약용역현황" left="53.17%" top="20" width="10.95%" height="21" right="" bottom=""/>
+        <Button id="Button04" taborder="4" text="세금계산서대장" left="64.58%" top="20" width="10.95%" height="21" right="" bottom=""/>
+        <Button id="Button05" taborder="4" text="미발행세금계산서" left="75.99%" top="20" width="10.95%" height="21" right="" bottom="" onclick="Button05_onclick"/>
+        <Button id="Button06" taborder="4" text="프로젝트관리표" left="87.4%" top="20" width="10.95%" height="21" right="" bottom=""/>
+        <Static id="Static01" taborder="5" text="고객사" left="-0.09%" top="58" width="11.13%" height="28" right="" bottom="" color="" textAlign="center" border="1px none  , 0px none #ffffff , 0px none #ffffff , 0px none #ffffff"/>
+        <Edit id="Edit01" taborder="2" left="11.22%" top="59" width="16.56%" height="21" right="" bottom=""/>
+        <Edit id="Edit02" taborder="2" left="11.22%" top="85" width="16.56%" height="21" right="" bottom=""/>
+        <Static id="Static02" taborder="5" text="프로젝트명" left="-0.09%" top="82" width="11.13%" height="28" textAlign="center" border="1px none  , 0px none #ffffff , 0px none #ffffff , 0px none #ffffff" right="" bottom=""/>
+        <Static id="Static03" taborder="5" text="영업상태" left="28.33%" top="58" width="8.19%" height="28" textAlign="center" border="1px none  , 0px none #ffffff , 0px none #ffffff , 0px none #ffffff" right="" bottom=""/>
+        <Edit id="Edit03" taborder="2" left="36.25%" top="59" width="13.71%" height="21" right="" bottom=""/>
+        <Edit id="Edit04" taborder="2" left="36.25%" top="85" width="13.71%" height="21" right="" bottom=""/>
+        <Static id="Static04" taborder="5" text="프로젝트상태" left="28.33%" top="82" width="8.19%" height="28" textAlign="center" border="1px none  , 0px none #ffffff , 0px none #ffffff , 0px none #ffffff" right="" bottom=""/>
+        <Static id="Static05" taborder="5" text="영업구분" left="50.23%" top="58" width="8.19%" height="28" textAlign="center" border="1px none  , 0px none #ffffff , 0px none #ffffff , 0px none #ffffff" right="" bottom=""/>
+        <Edit id="Edit05" taborder="2" left="58.88%" top="59" width="13.71%" height="21" right="" bottom=""/>
+        <Edit id="Edit06" taborder="2" left="58.88%" top="85" width="13.71%" height="21" right="" bottom=""/>
+        <Static id="Static06" taborder="5" text="영업담당자" left="50.23%" top="82" width="8.19%" height="28" textAlign="center" border="1px none  , 0px none #ffffff , 0px none #ffffff , 0px none #ffffff" right="" bottom=""/>
+        <Static id="Static07" taborder="5" text="프리세일즈담당자" left="73.23%" top="58" width="10.67%" height="28" textAlign="center" border="1px none  , 0px none #ffffff , 0px none #ffffff , 0px none #ffffff" right="" bottom=""/>
+        <Edit id="Edit07" taborder="2" left="84.27%" top="59" width="13.71%" height="21" right="" bottom=""/>
+        <Edit id="Edit08" taborder="2" left="84.27%" top="85" width="13.71%" height="21" right="" bottom=""/>
+        <Static id="Static08" taborder="5" text="컨설팅담당자" left="73.23%" top="82" width="8.19%" height="28" textAlign="center" border="1px none  , 0px none #ffffff , 0px none #ffffff , 0px none #ffffff" right="" bottom=""/>
+        <Tab id="Tab00" taborder="6" tabindex="0" left="1.38%" top="115" width="97.79%" height="685" right="" bottom="" text="Tab00" onchanged="Tab00_onchanged">
+          <Tabpages>
+            <Tabpage id="Tabpage1" text="프로젝트 진행" url="Base::BM_Project_Info.xfdl"/>
+            <Tabpage id="Tabpage2" text="프리/컨설팅" url="Base::BM_Project_Tech.xfdl"/>
+            <Tabpage id="Tabpage3" text="투입인력"/>
+            <Tabpage id="Tabpage4" text="견적서"/>
+            <Tabpage id="Tabpage5" text="유지보수"/>
+            <Tabpage id="Tabpage6" text="지출"/>
+            <Tabpage id="Tabpage7" text="보증보험증권"/>
+          </Tabpages>
+        </Tab>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[]]></Script>
+  </Form>
+</FDL>
