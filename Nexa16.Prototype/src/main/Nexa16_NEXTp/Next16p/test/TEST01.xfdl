@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="TEST01" left="0" top="0" width="1078" height="810" titletext="New Form">
+    <Layouts>
+      <Layout height="810" width="1078">
+        <Calendar id="Calendar00" taborder="0" left="5" top="5" width="" height="" right="5" bottom="5" type="monthonly" usecontextmenu="true" showmonthspin="false" showyearspin="false" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

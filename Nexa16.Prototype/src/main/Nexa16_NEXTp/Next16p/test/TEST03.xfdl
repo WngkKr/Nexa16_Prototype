@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="TEST03" left="0" top="0" width="900" height="648" titletext="New Form" onload="Form_onload">
+    <Layouts>
+      <Layout height="648" width="900">
+        <Grid id="Grid00" taborder="0" left="5" top="5" width="" height="" right="5" bottom="5" topbase="Div00.bottom" leftbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="70"/>
+                <Column size="139"/>
+                <Column size="70"/>
+                <Column size="70"/>
+                <Column size="84"/>
+                <Column size="84"/>
+                <Column size="84"/>
+                <Column size="84"/>
+                <Column size="84"/>
+                <Column size="84"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell rowspan="2" text="고객사"/>
+                <Cell col="1" rowspan="2" text="프로젝트"/>
+                <Cell col="2" rowspan="2" text="영업대표"/>
+                <Cell col="3" rowspan="2" text="계약일자"/>
+                <Cell col="4" colspan="3" text="매출" background-color="aqua"/>
+                <Cell col="7" colspan="3" text="매입" background-color="cornflowerblue"/>
+                <Cell col="10" rowspan="2" text="예상율"/>
+                <Cell col="11" colspan="3" text="투입예정"/>
+                <Cell row="1" col="4" text="매출계약처" background-color="cadetblue"/>
+                <Cell row="1" col="5" text="매출내역" background-color="aqua"/>
+                <Cell row="1" col="6" text="예상금액" background-color="aqua"/>
+                <Cell row="1" col="7" text="매입계약처" background-color="cornflowerblue"/>
+                <Cell row="1" col="8" text="매입내역" background-color="cornflowerblue"/>
+                <Cell row="1" col="9" text="예상금액" background-color="cornflowerblue"/>
+                <Cell row="1" col="11" text="인원"/>
+                <Cell row="1" col="12" text="기간"/>
+                <Cell row="1" col="13" text="월"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+                <Cell col="6"/>
+                <Cell col="7"/>
+                <Cell col="8"/>
+                <Cell col="9"/>
+                <Cell col="10"/>
+                <Cell col="11"/>
+                <Cell col="12"/>
+                <Cell col="13"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Div id="Div00" taborder="1" text="Div00" left="5" top="5" width="" height="75" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="기간" left="5" top="5" width="34" height="30" right="" bottom=""/>
+              <Calendar id="CalFrom" taborder="1" left="35" top="8" width="84" height="22" right="" bottom="" dateformat="yyyy-MM" editformat="yyyy-MM"/>
+              <Static id="Static01" taborder="0" text="~" left="120" top="4" width="34" height="30" right="" bottom=""/>
+              <Calendar id="CalTo" taborder="1" left="131" top="8" width="84" height="22" dateformat="yyyy-MM" editformat="yyyy-MM" right="" bottom=""/>
+              <Static id="Static02" taborder="0" text="고객사" left="237" top="5" width="45" height="30" right="" bottom=""/>
+              <Edit id="Edit00" taborder="2" left="279" top="8" width="237" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <CheckBox id="CheckBox00" taborder="3" text="영업대표전체대상" left="5" top="42" width="153" height="26" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <CheckBox id="CheckBox01" taborder="3" text="예상율반영" left="147" top="42" width="113" height="26" right="" bottom=""/>
+              <Radio id="Radio00" taborder="4" left="253" top="42" width="413" height="26" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" verticalAlign="middle" textAlign="left" wordSpacing="300px">
+                <Dataset id="innerdataset">
+                  <ColumnInfo>
+                    <Column id="codecolumn" size="256"/>
+                    <Column id="datacolumn" size="256"/>
+                  </ColumnInfo>
+                  <Rows>
+                    <Row>
+                      <Col id="codecolumn">all</Col>
+                      <Col id="datacolumn">전체</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">01</Col>
+                      <Col id="datacolumn">PreSales</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">02</Col>
+                      <Col id="datacolumn">수주</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">03</Col>
+                      <Col id="datacolumn">계약</Col>
+                    </Row>
+                  </Rows>
+                </Dataset>
+              </Radio>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[]]></Script>
+  </Form>
+</FDL>
