@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="TEST04" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="Button00" taborder="0" text="Button00" left="7" top="13" width="483" height="199" right="" bottom=""/>
+        <CheckBox id="CheckBox00" taborder="1" text="CheckBox00" left="19" top="231" width="472" height="76" right="" bottom=""/>
+        <Spin id="Spin00" taborder="2" left="549" top="55" width="212" height="341" right="" bottom=""/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>
