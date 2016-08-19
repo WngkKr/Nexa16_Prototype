@@ -112,7 +112,7 @@
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new CheckBox("chkPreSales","absolute","327","42","60","20",null,null,this.Div00.form);
+            obj = new CheckBox("chkPreSales","absolute","327","42","80","20",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("5");
@@ -120,7 +120,7 @@
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new CheckBox("chkSooju","absolute","399","42","60","20",null,null,this.Div00.form);
+            obj = new CheckBox("chkSooju","absolute","412","42","60","20",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("6");
@@ -128,7 +128,7 @@
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new CheckBox("chkContract","absolute","456","42","60","20",null,null,this.Div00.form);
+            obj = new CheckBox("chkContract","absolute","469","42","60","20",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("7");

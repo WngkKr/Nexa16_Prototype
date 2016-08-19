@@ -40,14 +40,14 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new TextArea("TextArea00","absolute","5",null,null,"114","5","30",this);
+            obj = new TextArea("ta_Confirm","absolute","5",null,null,"114","5","30",this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
             });
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button01","absolute",null,null,"50","20","5","5",this);
+            obj = new Button("btn_Cancel","absolute",null,null,"50","20","5","5",this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("3");
@@ -55,7 +55,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button00","absolute",null,null,"55","20","61","5",this);
+            obj = new Button("btn_Confirm","absolute",null,null,"55","20","61","5",this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("3");
@@ -76,24 +76,24 @@
             this.Static01.set_rightbase("");
             this.Static01.set_widthbase("");
             this.Static01.set_heightbase("");
-            this.TextArea00.set_leftbase("");
-            this.TextArea00.set_topbase("");
-            this.TextArea00.set_bottombase("");
-            this.TextArea00.set_rightbase("");
-            this.TextArea00.set_widthbase("");
-            this.TextArea00.set_heightbase("");
-            this.Button01.set_leftbase("");
-            this.Button01.set_topbase("");
-            this.Button01.set_bottombase("");
-            this.Button01.set_rightbase("");
-            this.Button01.set_widthbase("");
-            this.Button01.set_heightbase("");
-            this.Button00.set_leftbase("");
-            this.Button00.set_topbase("");
-            this.Button00.set_bottombase("");
-            this.Button00.set_rightbase("");
-            this.Button00.set_widthbase("");
-            this.Button00.set_heightbase("");
+            this.ta_Confirm.set_leftbase("");
+            this.ta_Confirm.set_topbase("");
+            this.ta_Confirm.set_bottombase("");
+            this.ta_Confirm.set_rightbase("");
+            this.ta_Confirm.set_widthbase("");
+            this.ta_Confirm.set_heightbase("");
+            this.btn_Cancel.set_leftbase("");
+            this.btn_Cancel.set_topbase("");
+            this.btn_Cancel.set_bottombase("");
+            this.btn_Cancel.set_rightbase("");
+            this.btn_Cancel.set_widthbase("");
+            this.btn_Cancel.set_heightbase("");
+            this.btn_Confirm.set_leftbase("");
+            this.btn_Confirm.set_topbase("");
+            this.btn_Confirm.set_bottombase("");
+            this.btn_Confirm.set_rightbase("");
+            this.btn_Confirm.set_widthbase("");
+            this.btn_Confirm.set_heightbase("");
 
             // Layout Functions
             //-- Default Layout : this

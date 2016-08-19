@@ -77,9 +77,9 @@
               <CheckBox id="chb_sales_all" taborder="3" text="영업대표전체대상" left="5" top="42" width="153" height="26" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
               <CheckBox id="chb_EstRate" taborder="3" text="예상율반영" left="147" top="42" width="113" height="26" right="" bottom=""/>
               <CheckBox id="chkAll" taborder="4" text="전체" left="267" top="42" width="60" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <CheckBox id="chkPreSales" taborder="5" text="PreSales" left="327" top="42" width="60" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <CheckBox id="chkSooju" taborder="6" text="수주" left="399" top="42" width="60" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <CheckBox id="chkContract" taborder="7" text="계약" left="456" top="42" width="60" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <CheckBox id="chkPreSales" taborder="5" text="PreSales" left="327" top="42" width="80" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <CheckBox id="chkSooju" taborder="6" text="수주" left="412" top="42" width="60" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <CheckBox id="chkContract" taborder="7" text="계약" left="469" top="42" width="60" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
             </Layout>
           </Layouts>
         </Div>

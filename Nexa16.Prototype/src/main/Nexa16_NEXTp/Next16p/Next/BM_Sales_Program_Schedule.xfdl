@@ -22,22 +22,22 @@
               <Static id="Static08" taborder="2" text="영업예정내용" left="5" top="221" width="110" height="130" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
               <Static id="Static09" taborder="2" text="영업예정내용" left="5" top="356" width="110" height="130" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
               <Static id="Static10" taborder="2" text="영업 구분" left="5" top="491" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <Combo id="Combo00" taborder="3" text="Combo00" left="120" top="5" width="160" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <Calendar id="Calendar00" taborder="4" left="120" top="32" width="100" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <Button id="Button00" taborder="5" text="날짜변경" left="222" top="32" width="58" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Combo id="cmbStaff" taborder="3" text="Combo00" left="120" top="5" width="160" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Calendar id="calDate" taborder="4" left="120" top="32" width="100" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Button id="btnchangedate" taborder="5" text="날짜변경" left="222" top="32" width="58" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
               <Static id="Static11" taborder="2" text="시  간" left="290" top="32" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <Combo id="Combo01" taborder="3" text="Combo00" left="405" top="32" width="120" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <Edit id="Edit00" taborder="6" left="120" top="59" width="405" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <Edit id="Edit01" taborder="7" left="120" top="86" width="405" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <Edit id="Edit02" taborder="8" left="120" top="113" width="405" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <Edit id="Edit03" taborder="9" left="120" top="140" width="160" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Combo id="cmb_time" taborder="3" text="Combo00" left="405" top="32" width="120" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="edtClientName" taborder="6" left="120" top="59" width="405" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="edtProjectName" taborder="7" left="120" top="86" width="405" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="edtTitle" taborder="8" left="120" top="113" width="405" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="edtStaffinCharge" taborder="9" left="120" top="140" width="160" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
               <Static id="Static12" taborder="2" text="전화번호" left="290" top="140" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <Edit id="Edit04" taborder="9" left="405" top="140" width="120" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <Combo id="Combo02" taborder="3" text="Combo00" left="120" top="167" width="160" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <Combo id="Combo03" taborder="3" text="Combo00" left="120" top="194" width="160" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <TextArea id="TextArea00" taborder="10" left="120" top="221" width="405" height="130" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <TextArea id="TextArea01" taborder="10" left="120" top="356" width="405" height="130" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <Edit id="Edit05" taborder="6" left="120" top="491" width="405" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="edt_tel" taborder="9" left="405" top="140" width="120" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Combo id="cbbCore" taborder="3" text="Combo00" left="120" top="167" width="160" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Combo id="cbbSalesPart" taborder="3" text="Combo00" left="120" top="194" width="160" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <TextArea id="txtContent" taborder="10" left="120" top="221" width="405" height="130" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <TextArea id="TextArea0" taborder="10" left="120" top="356" width="405" height="130" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="edtRemark" taborder="6" left="120" top="491" width="405" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
             </Layout>
           </Layouts>
         </Div>

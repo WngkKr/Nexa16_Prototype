@@ -181,7 +181,7 @@
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Combo("Combo00","absolute","120","5","160","22",null,null,this.Div00.form);
+            obj = new Combo("cmbStaff","absolute","120","5","160","22",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("3");
@@ -189,14 +189,14 @@
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Calendar("Calendar00","absolute","120","32","100","22",null,null,this.Div00.form);
+            obj = new Calendar("calDate","absolute","120","32","100","22",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("4");
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Button("Button00","absolute","222","32","58","22",null,null,this.Div00.form);
+            obj = new Button("btnchangedate","absolute","222","32","58","22",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("5");
@@ -214,7 +214,7 @@
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Combo("Combo01","absolute","405","32","120","22",null,null,this.Div00.form);
+            obj = new Combo("cmb_time","absolute","405","32","120","22",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("3");
@@ -222,28 +222,28 @@
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Edit("Edit00","absolute","120","59","405","22",null,null,this.Div00.form);
+            obj = new Edit("edtClientName","absolute","120","59","405","22",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("6");
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Edit("Edit01","absolute","120","86","405","22",null,null,this.Div00.form);
+            obj = new Edit("edtProjectName","absolute","120","86","405","22",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("7");
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Edit("Edit02","absolute","120","113","405","22",null,null,this.Div00.form);
+            obj = new Edit("edtTitle","absolute","120","113","405","22",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("8");
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Edit("Edit03","absolute","120","140","160","22",null,null,this.Div00.form);
+            obj = new Edit("edtStaffinCharge","absolute","120","140","160","22",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("9");
@@ -260,14 +260,14 @@
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Edit("Edit04","absolute","405","140","120","22",null,null,this.Div00.form);
+            obj = new Edit("edt_tel","absolute","405","140","120","22",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("9");
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Combo("Combo02","absolute","120","167","160","22",null,null,this.Div00.form);
+            obj = new Combo("cbbCore","absolute","120","167","160","22",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("3");
@@ -275,7 +275,7 @@
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Combo("Combo03","absolute","120","194","160","22",null,null,this.Div00.form);
+            obj = new Combo("cbbSalesPart","absolute","120","194","160","22",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("3");
@@ -283,21 +283,21 @@
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new TextArea("TextArea00","absolute","120","221","405","130",null,null,this.Div00.form);
+            obj = new TextArea("txtContent","absolute","120","221","405","130",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("10");
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new TextArea("TextArea01","absolute","120","356","405","130",null,null,this.Div00.form);
+            obj = new TextArea("TextArea0","absolute","120","356","405","130",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("10");
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Edit("Edit05","absolute","120","491","405","22",null,null,this.Div00.form);
+            obj = new Edit("edtRemark","absolute","120","491","405","22",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("6");
@@ -407,102 +407,102 @@
             this.Div00.form.Static10.set_rightbase("");
             this.Div00.form.Static10.set_widthbase("");
             this.Div00.form.Static10.set_heightbase("");
-            this.Div00.form.Combo00.set_leftbase("");
-            this.Div00.form.Combo00.set_topbase("");
-            this.Div00.form.Combo00.set_bottombase("");
-            this.Div00.form.Combo00.set_rightbase("");
-            this.Div00.form.Combo00.set_widthbase("");
-            this.Div00.form.Combo00.set_heightbase("");
-            this.Div00.form.Calendar00.set_leftbase("");
-            this.Div00.form.Calendar00.set_topbase("");
-            this.Div00.form.Calendar00.set_bottombase("");
-            this.Div00.form.Calendar00.set_rightbase("");
-            this.Div00.form.Calendar00.set_widthbase("");
-            this.Div00.form.Calendar00.set_heightbase("");
-            this.Div00.form.Button00.set_leftbase("");
-            this.Div00.form.Button00.set_topbase("");
-            this.Div00.form.Button00.set_bottombase("");
-            this.Div00.form.Button00.set_rightbase("");
-            this.Div00.form.Button00.set_widthbase("");
-            this.Div00.form.Button00.set_heightbase("");
+            this.Div00.form.cmbStaff.set_leftbase("");
+            this.Div00.form.cmbStaff.set_topbase("");
+            this.Div00.form.cmbStaff.set_bottombase("");
+            this.Div00.form.cmbStaff.set_rightbase("");
+            this.Div00.form.cmbStaff.set_widthbase("");
+            this.Div00.form.cmbStaff.set_heightbase("");
+            this.Div00.form.calDate.set_leftbase("");
+            this.Div00.form.calDate.set_topbase("");
+            this.Div00.form.calDate.set_bottombase("");
+            this.Div00.form.calDate.set_rightbase("");
+            this.Div00.form.calDate.set_widthbase("");
+            this.Div00.form.calDate.set_heightbase("");
+            this.Div00.form.btnchangedate.set_leftbase("");
+            this.Div00.form.btnchangedate.set_topbase("");
+            this.Div00.form.btnchangedate.set_bottombase("");
+            this.Div00.form.btnchangedate.set_rightbase("");
+            this.Div00.form.btnchangedate.set_widthbase("");
+            this.Div00.form.btnchangedate.set_heightbase("");
             this.Div00.form.Static11.set_leftbase("");
             this.Div00.form.Static11.set_topbase("");
             this.Div00.form.Static11.set_bottombase("");
             this.Div00.form.Static11.set_rightbase("");
             this.Div00.form.Static11.set_widthbase("");
             this.Div00.form.Static11.set_heightbase("");
-            this.Div00.form.Combo01.set_leftbase("");
-            this.Div00.form.Combo01.set_topbase("");
-            this.Div00.form.Combo01.set_bottombase("");
-            this.Div00.form.Combo01.set_rightbase("");
-            this.Div00.form.Combo01.set_widthbase("");
-            this.Div00.form.Combo01.set_heightbase("");
-            this.Div00.form.Edit00.set_leftbase("");
-            this.Div00.form.Edit00.set_topbase("");
-            this.Div00.form.Edit00.set_bottombase("");
-            this.Div00.form.Edit00.set_rightbase("");
-            this.Div00.form.Edit00.set_widthbase("");
-            this.Div00.form.Edit00.set_heightbase("");
-            this.Div00.form.Edit01.set_leftbase("");
-            this.Div00.form.Edit01.set_topbase("");
-            this.Div00.form.Edit01.set_bottombase("");
-            this.Div00.form.Edit01.set_rightbase("");
-            this.Div00.form.Edit01.set_widthbase("");
-            this.Div00.form.Edit01.set_heightbase("");
-            this.Div00.form.Edit02.set_leftbase("");
-            this.Div00.form.Edit02.set_topbase("");
-            this.Div00.form.Edit02.set_bottombase("");
-            this.Div00.form.Edit02.set_rightbase("");
-            this.Div00.form.Edit02.set_widthbase("");
-            this.Div00.form.Edit02.set_heightbase("");
-            this.Div00.form.Edit03.set_leftbase("");
-            this.Div00.form.Edit03.set_topbase("");
-            this.Div00.form.Edit03.set_bottombase("");
-            this.Div00.form.Edit03.set_rightbase("");
-            this.Div00.form.Edit03.set_widthbase("");
-            this.Div00.form.Edit03.set_heightbase("");
+            this.Div00.form.cmb_time.set_leftbase("");
+            this.Div00.form.cmb_time.set_topbase("");
+            this.Div00.form.cmb_time.set_bottombase("");
+            this.Div00.form.cmb_time.set_rightbase("");
+            this.Div00.form.cmb_time.set_widthbase("");
+            this.Div00.form.cmb_time.set_heightbase("");
+            this.Div00.form.edtClientName.set_leftbase("");
+            this.Div00.form.edtClientName.set_topbase("");
+            this.Div00.form.edtClientName.set_bottombase("");
+            this.Div00.form.edtClientName.set_rightbase("");
+            this.Div00.form.edtClientName.set_widthbase("");
+            this.Div00.form.edtClientName.set_heightbase("");
+            this.Div00.form.edtProjectName.set_leftbase("");
+            this.Div00.form.edtProjectName.set_topbase("");
+            this.Div00.form.edtProjectName.set_bottombase("");
+            this.Div00.form.edtProjectName.set_rightbase("");
+            this.Div00.form.edtProjectName.set_widthbase("");
+            this.Div00.form.edtProjectName.set_heightbase("");
+            this.Div00.form.edtTitle.set_leftbase("");
+            this.Div00.form.edtTitle.set_topbase("");
+            this.Div00.form.edtTitle.set_bottombase("");
+            this.Div00.form.edtTitle.set_rightbase("");
+            this.Div00.form.edtTitle.set_widthbase("");
+            this.Div00.form.edtTitle.set_heightbase("");
+            this.Div00.form.edtStaffinCharge.set_leftbase("");
+            this.Div00.form.edtStaffinCharge.set_topbase("");
+            this.Div00.form.edtStaffinCharge.set_bottombase("");
+            this.Div00.form.edtStaffinCharge.set_rightbase("");
+            this.Div00.form.edtStaffinCharge.set_widthbase("");
+            this.Div00.form.edtStaffinCharge.set_heightbase("");
             this.Div00.form.Static12.set_leftbase("");
             this.Div00.form.Static12.set_topbase("");
             this.Div00.form.Static12.set_bottombase("");
             this.Div00.form.Static12.set_rightbase("");
             this.Div00.form.Static12.set_widthbase("");
             this.Div00.form.Static12.set_heightbase("");
-            this.Div00.form.Edit04.set_leftbase("");
-            this.Div00.form.Edit04.set_topbase("");
-            this.Div00.form.Edit04.set_bottombase("");
-            this.Div00.form.Edit04.set_rightbase("");
-            this.Div00.form.Edit04.set_widthbase("");
-            this.Div00.form.Edit04.set_heightbase("");
-            this.Div00.form.Combo02.set_leftbase("");
-            this.Div00.form.Combo02.set_topbase("");
-            this.Div00.form.Combo02.set_bottombase("");
-            this.Div00.form.Combo02.set_rightbase("");
-            this.Div00.form.Combo02.set_widthbase("");
-            this.Div00.form.Combo02.set_heightbase("");
-            this.Div00.form.Combo03.set_leftbase("");
-            this.Div00.form.Combo03.set_topbase("");
-            this.Div00.form.Combo03.set_bottombase("");
-            this.Div00.form.Combo03.set_rightbase("");
-            this.Div00.form.Combo03.set_widthbase("");
-            this.Div00.form.Combo03.set_heightbase("");
-            this.Div00.form.TextArea00.set_leftbase("");
-            this.Div00.form.TextArea00.set_topbase("");
-            this.Div00.form.TextArea00.set_bottombase("");
-            this.Div00.form.TextArea00.set_rightbase("");
-            this.Div00.form.TextArea00.set_widthbase("");
-            this.Div00.form.TextArea00.set_heightbase("");
-            this.Div00.form.TextArea01.set_leftbase("");
-            this.Div00.form.TextArea01.set_topbase("");
-            this.Div00.form.TextArea01.set_bottombase("");
-            this.Div00.form.TextArea01.set_rightbase("");
-            this.Div00.form.TextArea01.set_widthbase("");
-            this.Div00.form.TextArea01.set_heightbase("");
-            this.Div00.form.Edit05.set_leftbase("");
-            this.Div00.form.Edit05.set_topbase("");
-            this.Div00.form.Edit05.set_bottombase("");
-            this.Div00.form.Edit05.set_rightbase("");
-            this.Div00.form.Edit05.set_widthbase("");
-            this.Div00.form.Edit05.set_heightbase("");
+            this.Div00.form.edt_tel.set_leftbase("");
+            this.Div00.form.edt_tel.set_topbase("");
+            this.Div00.form.edt_tel.set_bottombase("");
+            this.Div00.form.edt_tel.set_rightbase("");
+            this.Div00.form.edt_tel.set_widthbase("");
+            this.Div00.form.edt_tel.set_heightbase("");
+            this.Div00.form.cbbCore.set_leftbase("");
+            this.Div00.form.cbbCore.set_topbase("");
+            this.Div00.form.cbbCore.set_bottombase("");
+            this.Div00.form.cbbCore.set_rightbase("");
+            this.Div00.form.cbbCore.set_widthbase("");
+            this.Div00.form.cbbCore.set_heightbase("");
+            this.Div00.form.cbbSalesPart.set_leftbase("");
+            this.Div00.form.cbbSalesPart.set_topbase("");
+            this.Div00.form.cbbSalesPart.set_bottombase("");
+            this.Div00.form.cbbSalesPart.set_rightbase("");
+            this.Div00.form.cbbSalesPart.set_widthbase("");
+            this.Div00.form.cbbSalesPart.set_heightbase("");
+            this.Div00.form.txtContent.set_leftbase("");
+            this.Div00.form.txtContent.set_topbase("");
+            this.Div00.form.txtContent.set_bottombase("");
+            this.Div00.form.txtContent.set_rightbase("");
+            this.Div00.form.txtContent.set_widthbase("");
+            this.Div00.form.txtContent.set_heightbase("");
+            this.Div00.form.TextArea0.set_leftbase("");
+            this.Div00.form.TextArea0.set_topbase("");
+            this.Div00.form.TextArea0.set_bottombase("");
+            this.Div00.form.TextArea0.set_rightbase("");
+            this.Div00.form.TextArea0.set_widthbase("");
+            this.Div00.form.TextArea0.set_heightbase("");
+            this.Div00.form.edtRemark.set_leftbase("");
+            this.Div00.form.edtRemark.set_topbase("");
+            this.Div00.form.edtRemark.set_bottombase("");
+            this.Div00.form.edtRemark.set_rightbase("");
+            this.Div00.form.edtRemark.set_widthbase("");
+            this.Div00.form.edtRemark.set_heightbase("");
 
             // Layout Functions
             //-- Default Layout : this
