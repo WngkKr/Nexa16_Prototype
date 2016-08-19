@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_Staff_Approval_Free_Pop" left="0" top="0" width="800" height="768" titletext="프리/컨설팅 인력요청승인">
+    <Layouts>
+      <Layout height="768" width="800">
+        <Static id="st_title00" taborder="0" text="프리/컨설팅 인력요청승인" left="1.5%" top="24" width="27.5%" height="24" right="" bottom=""/>
+        <Button id="btnSave" taborder="1" text="저장" left="81.63%" top="14" width="9%" height="21" right="" bottom=""/>
+        <Button id="btnClose" taborder="1" text="닫기" left="91.25%" top="14" width="7.63%" height="21" right="" bottom=""/>
+        <Div id="Div00" taborder="2" text="Div00" left="0.75%" top="55" width="98.25%" height="705" right="" bottom="">
+          <Layouts>
+            <Layout>
+              <Static id="Static1" taborder="0" text="고객사" left="0.77%" top="57" width="12.76%" height="23" right="" bottom="" border="1px solid black"/>
+              <Static id="Static16" taborder="0" text="요청구분" left="0.77%" top="169" width="12.76%" height="23" right="" bottom="" border="1px solid black"/>
+              <Static id="Static21" taborder="0" text="요청일자" left="0.77%" top="197" width="12.76%" height="23" right="" bottom="" border="1px solid black"/>
+              <Static id="Static23" taborder="0" text="프로젝트" left="0.77%" top="85" width="12.76%" height="23" right="" bottom="" border="1px solid black"/>
+              <Static id="Static14" taborder="0" text="계약명" left="0.77%" top="113" width="12.76%" height="23" right="" bottom="" border="1px solid black"/>
+              <Static id="Static3" taborder="0" text="시작일시" left="0.77%" top="141" width="12.76%" height="23" right="" bottom="" border="1px solid black"/>
+              <Edit id="Edit5" taborder="1" left="14.8%" top="57" width="23.6%" height="23" right="" bottom=""/>
+              <Edit id="Edit4" taborder="1" left="14.8%" top="85" width="23.6%" height="23" right="" bottom=""/>
+              <Edit id="Edit1" taborder="1" left="14.8%" top="113" width="23.6%" height="23" right="" bottom=""/>
+              <Calendar id="calRequestSDate" taborder="2" left="14.8%" top="141" width="9.44%" height="24" right="" bottom=""/>
+              <MaskEdit id="me_s_hour" taborder="3" left="24.87%" top="141" width="4.59%" height="24" right="" bottom="" mask="##:##" type="string" value="00:00"/>
+              <Static id="Static2" taborder="0" text="~" left="29.85%" top="141" width="1.79%" height="23" right="" bottom="" border=""/>
+              <Calendar id="calRequestEDate" taborder="2" left="31.38%" top="141" width="9.31%" height="24" right="" bottom=""/>
+              <Combo id="Combo1" taborder="4" text="" left="14.8%" top="169" width="23.6%" height="24" right="" bottom=""/>
+              <Static id="Static4" taborder="0" text="요청기술담당자" left="0.77%" top="225" width="12.76%" height="23" right="" bottom="" border="1px solid black"/>
+              <Radio id="rdo_gubun" taborder="5" left="23.6%" top="197" width="58.8%" height="25" right="" bottom="" innerdataset="@dsCDType" codecolumn="CODE" datacolumn="DATA" direction="vertical"/>
+              <TextArea id="TextArea00" taborder="6" left="14.8%" top="253" width="83.93%" height="275" right="" bottom=""/>
+              <Static id="Static8" taborder="0" text="요청내용" left="0.77%" top="253" width="12.76%" height="275" right="" bottom="" border="1px solid black"/>
+              <Static id="Static6" taborder="9" text="요청" left="0.77%" top="12" width="42.6%" height="35" right="" bottom="" background="gainsboro" border="1 thick solid" textAlign="center" verticalAlign="middle"/>
+              <Static id="Static7" taborder="9" text="승인" left="50.51%" top="12" width="42.6%" height="35" right="" bottom="" background="gainsboro" border="1 thick solid" textAlign="center" verticalAlign="middle"/>
+              <TextArea id="work_remark" taborder="6" left="14.8%" top="541" width="83.93%" height="147" right="" bottom=""/>
+              <Static id="Static17" taborder="0" text="결과(반려사유)" left="0.77%" top="541" width="13.27%" height="147" right="" bottom="" border="1px solid black"/>
+              <Calendar id="Calendar3" taborder="2" left="14.8%" top="197" width="9.44%" height="24" right="" bottom=""/>
+              <Button id="btnAttachFile" taborder="10" text="지원요청서 보기" left="25.64%" top="197" width="12.63%" height="23" right="" bottom=""/>
+              <Edit id="edtLicense_No" taborder="1" left="14.8%" top="225" width="9.31%" height="23" right="" bottom=""/>
+              <Static id="Static13" taborder="0" text="등록자" left="25.64%" top="225" width="7.14%" height="23" right="" bottom="" border="1px solid black"/>
+              <Edit id="Edit0" taborder="1" left="33.55%" top="225" width="9.31%" height="23" right="" bottom=""/>
+              <Static id="Static11" taborder="0" text="승인여부" left="50.51%" top="57" width="12.76%" height="23" right="" bottom="" border="1px solid black"/>
+              <Static id="Static0" taborder="0" text="승인일자" left="50.51%" top="169" width="12.76%" height="23" right="" bottom="" border="1px solid black"/>
+              <Static id="Static15" taborder="0" text="원가반영여부" left="50.51%" top="197" width="12.76%" height="23" right="" bottom="" border="1px solid black"/>
+              <Static id="Static10" taborder="0" text="시작일시" left="50.51%" top="85" width="12.76%" height="23" right="" bottom="" border="1px solid black"/>
+              <Static id="Static5" taborder="0" text="종료일시" left="50.51%" top="113" width="12.76%" height="23" right="" bottom="" border="1px solid black"/>
+              <Static id="Static30" taborder="0" text="처리담당자" left="50.51%" top="141" width="12.76%" height="23" right="" bottom="" border="1px solid black"/>
+              <Static id="Static9" taborder="0" text="승인자" left="50.51%" top="225" width="12.76%" height="23" right="" bottom="" border="1px solid black"/>
+              <Combo id="cmb_Commit" taborder="4" text="" left="64.54%" top="57" width="23.6%" height="24" right="" bottom=""/>
+              <Calendar id="calWorkFromDate" taborder="2" left="64.54%" top="85" width="9.44%" height="24" right="" bottom=""/>
+              <Calendar id="me_w_e_hour" taborder="2" left="64.54%" top="113" width="9.31%" height="24" right="" bottom=""/>
+              <Calendar id="calConfirmDate" taborder="2" left="64.54%" top="169" width="9.44%" height="24" right="" bottom=""/>
+              <Edit id="edtSignStaff" taborder="1" left="64.54%" top="225" width="9.31%" height="23" right="" bottom=""/>
+              <Combo id="cmbApprovalStaff" taborder="4" text="" left="64.54%" top="141" width="19.64%" height="24" right="" bottom=""/>
+              <Combo id="Combo0" taborder="4" text="" left="85.08%" top="141" width="13.65%" height="24" right="" bottom=""/>
+              <CheckBox id="CheckBox0" taborder="11" text="반영 : 매입계약에 의해 지원하는 경우는 N " left="64.54%" top="197" width="35.71%" height="27" right="" bottom=""/>
+              <MaskEdit id="me_e_hour" taborder="3" left="41.2%" top="141" width="4.46%" height="24" right="" bottom="" mask="##:##" type="string" value="00:00"/>
+              <MaskEdit id="me_w_s_hour" taborder="3" left="74.49%" top="85" width="4.46%" height="24" right="" bottom="" type="string" mask="##:##" value="00:00"/>
+              <MaskEdit id="med_end_hour00" taborder="3" left="74.49%" top="113" width="4.46%" height="24" right="" bottom="" mask="##:##" type="string" value="00:00"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="btnCS" taborder="1" text="요청내용" left="69.75%" top="14" width="11.25%" height="21" right="" bottom=""/>
+        <Button id="Button2" taborder="1" text="지원스케줄확인" left="55%" top="14" width="14.13%" height="21" right="" bottom=""/>
+        <WebBrowser id="WebBrowser00" taborder="3" left="1.13%" top="1" width="8%" height="19" right="" bottom=""/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>
