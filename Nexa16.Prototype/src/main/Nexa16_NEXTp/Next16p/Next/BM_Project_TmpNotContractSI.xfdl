@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.0">
-  <Form id="BM_Project_TmpNotContractSI" left="0" top="0" width="744" height="384" titletext="미계약 SI 현황">
+  <Form id="BM_Project_TmpNotContractSI" left="0" top="0" width="744" height="384" titletext="미계약용역현황">
     <Layouts>
       <Layout height="384" width="744">
         <Static id="Static00" taborder="0" text="■ 미계약 SI 현황" left="10" top="10" width="120" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>

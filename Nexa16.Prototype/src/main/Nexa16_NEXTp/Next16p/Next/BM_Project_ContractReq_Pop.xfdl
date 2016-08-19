@@ -4,7 +4,7 @@
     <Layouts>
       <Layout height="568" width="992">
         <Static id="Static00" taborder="0" text="■ 계약요청 현황" left="10" top="10" width="120" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Grid id="Grid00" taborder="1" left="10" top="37" width="" height="" right="10" bottom="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" autofittype="col">
+        <Grid id="grdList" taborder="5" left="10" top="37" width="" height="" right="10" bottom="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" oncelldblclick="grdList_oncelldblclick" binddataset="dsContractMain">
           <Formats>
             <Format id="default">
               <Columns>
@@ -25,27 +25,545 @@
                 <Cell text="고객사"/>
                 <Cell col="1" text="프로젝트명"/>
                 <Cell col="2" text="담당자"/>
-                <Cell col="3" text="계약금액"/>
+                <Cell col="3" text="계약금액" background="darkred" color="#ffffff"/>
                 <Cell col="4" text="납품예정일"/>
                 <Cell col="5" text="비고"/>
                 <Cell col="6" text="si"/>
                 <Cell col="7"/>
               </Band>
               <Band id="body">
-                <Cell/>
-                <Cell col="1"/>
-                <Cell col="2"/>
-                <Cell col="3"/>
-                <Cell col="4"/>
-                <Cell col="5"/>
-                <Cell col="6"/>
-                <Cell col="7"/>
+                <Cell text="bind:CLIENT_NAME"/>
+                <Cell col="1" text="bind:PROJECT_NAME"/>
+                <Cell col="2" text="bind:BIZ_STAFF"/>
+                <Cell col="3" text="bind:CONTRACT_AMT"/>
+                <Cell col="4" text="bind:EST_DELIVERY"/>
+                <Cell col="5" text="bind:CLOSE_REMARK"/>
+                <Cell col="6" text="bind:CLASS_TYPE"/>
+                <Cell col="7" text="bind:SI_PARENTS_PROJECT_CODE"/>
               </Band>
             </Format>
           </Formats>
         </Grid>
-        <Button id="Button00" taborder="4" text="닫기" left="942" top="10" width="40" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnClose" taborder="4" text="닫기" left="942" top="10" width="40" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="btnClose_onclick"/>
       </Layout>
     </Layouts>
+    <Objects>
+      <Dataset id="dsContractMain">
+        <ColumnInfo>
+          <Column id="CLIENT_CODE" size="255" type="STRING"/>
+          <Column id="COMPANY_CODE" size="255" type="STRING"/>
+          <Column id="CLIENT_NAME" size="255" type="STRING"/>
+          <Column id="COMPANY_NAME" size="255" type="STRING"/>
+          <Column id="PROJECT_CODE" size="255" type="STRING"/>
+          <Column id="PROJECT_NAME" size="255" type="STRING"/>
+          <Column id="CONTRACT_NAME" size="255" type="STRING"/>
+          <Column id="CONTRACT_NO" size="255" type="STRING"/>
+          <Column id="PRE_CONTRACT_NO" size="255" type="STRING"/>
+          <Column id="BIZ_STAFF" size="255" type="STRING"/>
+          <Column id="DIRECT_YN" size="255" type="STRING"/>
+          <Column id="BIZ_STATUS" size="255" type="STRING"/>
+          <Column id="PROC_STATUS" size="255" type="STRING"/>
+          <Column id="EST_DELIVERY" size="255" type="STRING"/>
+          <Column id="EST_TAX" size="255" type="STRING"/>
+          <Column id="CLOSE_YN" size="255" type="STRING"/>
+          <Column id="CLOSE_REMARK" size="255" type="STRING"/>
+          <Column id="REPORT_YN" size="255" type="STRING"/>
+          <Column id="FILE_KEY" size="255" type="STRING"/>
+          <Column id="FILE_KEY2" size="255" type="STRING"/>
+          <Column id="SALE_STAFF" size="255" type="STRING"/>
+          <Column id="SALE_STEP" size="255" type="STRING"/>
+          <Column id="CO_MOVE_DATE" size="255" type="STRING"/>
+          <Column id="CO_START_YM" size="255" type="STRING"/>
+          <Column id="CO_CONTRACT_YM" size="255" type="STRING"/>
+          <Column id="CO_SALES_MAN" size="255" type="STRING"/>
+          <Column id="CO_APPROVAL_YN" size="255" type="STRING"/>
+          <Column id="CO_REQ_DATE" size="255" type="STRING"/>
+          <Column id="CO_APPROVAL_DATE" size="255" type="STRING"/>
+          <Column id="CO_CONTRACT_YN" size="255" type="STRING"/>
+          <Column id="CO_REMARK" size="255" type="STRING"/>
+          <Column id="CONTRACT_AMT" size="20" type="DECIMAL"/>
+          <Column id="REMARKS" size="255" type="STRING"/>
+          <Column id="IMPBUSI_DATE" size="255" type="STRING"/>
+          <Column id="IMPBUSI_DET" size="255" type="STRING"/>
+          <Column id="CREATE_DATA_USER" size="255" type="STRING"/>
+          <Column id="GOODSITEM" size="255" type="STRING"/>
+          <Column id="CLASS_TYPE" size="20" type="INT"/>
+          <Column id="SI_PARENTS_PROJECT_CODE" size="255" type="STRING"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="BIZ_STAFF">0000001</Col>
+            <Col id="BIZ_STATUS">006</Col>
+            <Col id="CLASS_TYPE">0</Col>
+            <Col id="CLIENT_CODE">Z01234</Col>
+            <Col id="CLIENT_NAME">Shinto-Village</Col>
+            <Col id="CLOSE_REMARK"/>
+            <Col id="CLOSE_YN">0</Col>
+            <Col id="CO_APPROVAL_DATE"/>
+            <Col id="CO_APPROVAL_YN"/>
+            <Col id="CO_CONTRACT_YM"/>
+            <Col id="CO_CONTRACT_YN"/>
+            <Col id="CO_MOVE_DATE"/>
+            <Col id="CO_REMARK"/>
+            <Col id="CO_REQ_DATE"/>
+            <Col id="CO_SALES_MAN"/>
+            <Col id="CO_START_YM"/>
+            <Col id="COMPANY_CODE"/>
+            <Col id="COMPANY_NAME"/>
+            <Col id="CONTRACT_AMT">9000000</Col>
+            <Col id="CONTRACT_NAME">Shinto-Village G.Be_U Introduction</Col>
+            <Col id="CONTRACT_NO">I201307032</Col>
+            <Col id="CREATE_DATA_USER"/>
+            <Col id="DIRECT_YN"/>
+            <Col id="EST_DELIVERY">20130716</Col>
+            <Col id="EST_TAX">20130731</Col>
+            <Col id="FILE_KEY"/>
+            <Col id="FILE_KEY2"/>
+            <Col id="GOODSITEM">0,0,0,0,0,0,0</Col>
+            <Col id="IMPBUSI_DATE"/>
+            <Col id="IMPBUSI_DET"/>
+            <Col id="PRE_CONTRACT_NO">I201307032</Col>
+            <Col id="PROC_STATUS">A</Col>
+            <Col id="PROJECT_CODE">I201307032</Col>
+            <Col id="PROJECT_NAME">Shinto-Village G.Be_U Introduction</Col>
+            <Col id="PROJECT_NAME"/>
+            <Col id="REPORT_YN">0</Col>
+            <Col id="SALE_STAFF">0609010</Col>
+            <Col id="SALE_STEP">2</Col>
+            <Col id="SI_PARENTS_PROJECT_CODE"/>
+          </Row>
+          <Row>
+            <Col id="BIZ_STAFF">07020603</Col>
+            <Col id="BIZ_STATUS">001</Col>
+            <Col id="CLASS_TYPE">0</Col>
+            <Col id="CLIENT_CODE">C00083</Col>
+            <Col id="CLIENT_NAME">한화테크윈(주)</Col>
+            <Col id="CLOSE_REMARK"/>
+            <Col id="CLOSE_YN">0</Col>
+            <Col id="CO_APPROVAL_DATE"/>
+            <Col id="CO_APPROVAL_YN"/>
+            <Col id="CO_CONTRACT_YM"/>
+            <Col id="CO_CONTRACT_YN"/>
+            <Col id="CO_MOVE_DATE"/>
+            <Col id="CO_REMARK"/>
+            <Col id="CO_REQ_DATE"/>
+            <Col id="CO_SALES_MAN"/>
+            <Col id="CO_START_YM"/>
+            <Col id="COMPANY_CODE"/>
+            <Col id="COMPANY_NAME"/>
+            <Col id="CONTRACT_AMT">15000000</Col>
+            <Col id="CONTRACT_NAME">사외 특허관리시스템 구축</Col>
+            <Col id="CONTRACT_NO">I201504055</Col>
+            <Col id="CREATE_DATA_USER"/>
+            <Col id="DIRECT_YN"/>
+            <Col id="EST_DELIVERY"/>
+            <Col id="EST_TAX"/>
+            <Col id="FILE_KEY"/>
+            <Col id="FILE_KEY2"/>
+            <Col id="GOODSITEM">0,0,0,0,0,0,0</Col>
+            <Col id="IMPBUSI_DATE"/>
+            <Col id="IMPBUSI_DET"/>
+            <Col id="PRE_CONTRACT_NO">I201504055</Col>
+            <Col id="PROC_STATUS">A</Col>
+            <Col id="PROJECT_CODE">I201504055</Col>
+            <Col id="PROJECT_NAME">사외 특허관리시스템 구축</Col>
+            <Col id="PROJECT_NAME"/>
+            <Col id="REPORT_YN">1</Col>
+            <Col id="SALE_STAFF">07020603</Col>
+            <Col id="SALE_STEP">2</Col>
+            <Col id="SI_PARENTS_PROJECT_CODE"/>
+          </Row>
+          <Row>
+            <Col id="BIZ_STAFF">10011102</Col>
+            <Col id="BIZ_STATUS">001</Col>
+            <Col id="CLASS_TYPE">0</Col>
+            <Col id="CLIENT_CODE">Z03060</Col>
+            <Col id="CLIENT_NAME">(주)약진통상</Col>
+            <Col id="CLOSE_REMARK"/>
+            <Col id="CLOSE_YN">0</Col>
+            <Col id="CO_APPROVAL_DATE"/>
+            <Col id="CO_APPROVAL_YN"/>
+            <Col id="CO_CONTRACT_YM"/>
+            <Col id="CO_CONTRACT_YN"/>
+            <Col id="CO_MOVE_DATE"/>
+            <Col id="CO_REMARK"/>
+            <Col id="CO_REQ_DATE"/>
+            <Col id="CO_SALES_MAN"/>
+            <Col id="CO_START_YM"/>
+            <Col id="COMPANY_CODE"/>
+            <Col id="COMPANY_NAME"/>
+            <Col id="CONTRACT_AMT">42000000</Col>
+            <Col id="CONTRACT_NAME">ERP시스템 구축 인력지원</Col>
+            <Col id="CONTRACT_NO">I201602006</Col>
+            <Col id="CREATE_DATA_USER"/>
+            <Col id="DIRECT_YN"/>
+            <Col id="EST_DELIVERY"/>
+            <Col id="EST_TAX"/>
+            <Col id="FILE_KEY"/>
+            <Col id="FILE_KEY2"/>
+            <Col id="GOODSITEM">0,0,0,0,0,0,0</Col>
+            <Col id="IMPBUSI_DATE"/>
+            <Col id="IMPBUSI_DET"/>
+            <Col id="PRE_CONTRACT_NO">I201602006</Col>
+            <Col id="PROC_STATUS">A</Col>
+            <Col id="PROJECT_CODE">I201602006</Col>
+            <Col id="PROJECT_NAME">ERP시스템 구축 인력지원</Col>
+            <Col id="PROJECT_NAME"/>
+            <Col id="REPORT_YN">1</Col>
+            <Col id="SALE_STAFF">10011102</Col>
+            <Col id="SALE_STEP">2</Col>
+            <Col id="SI_PARENTS_PROJECT_CODE"/>
+          </Row>
+          <Row>
+            <Col id="BIZ_STAFF">10081601</Col>
+            <Col id="BIZ_STATUS">001</Col>
+            <Col id="CLASS_TYPE">0</Col>
+            <Col id="CLIENT_CODE">B027</Col>
+            <Col id="CLIENT_NAME">동부화재해상보험(주)</Col>
+            <Col id="CLOSE_REMARK"/>
+            <Col id="CLOSE_YN">0</Col>
+            <Col id="CO_APPROVAL_DATE"/>
+            <Col id="CO_APPROVAL_YN"/>
+            <Col id="CO_CONTRACT_YM"/>
+            <Col id="CO_CONTRACT_YN"/>
+            <Col id="CO_MOVE_DATE"/>
+            <Col id="CO_REMARK"/>
+            <Col id="CO_REQ_DATE"/>
+            <Col id="CO_SALES_MAN"/>
+            <Col id="CO_START_YM"/>
+            <Col id="COMPANY_CODE"/>
+            <Col id="COMPANY_NAME"/>
+            <Col id="CONTRACT_AMT">45000000</Col>
+            <Col id="CONTRACT_NAME">경계서버 운영 효율화 </Col>
+            <Col id="CONTRACT_NO">I201602039</Col>
+            <Col id="CREATE_DATA_USER"/>
+            <Col id="DIRECT_YN"/>
+            <Col id="EST_DELIVERY"/>
+            <Col id="EST_TAX"/>
+            <Col id="FILE_KEY"/>
+            <Col id="FILE_KEY2"/>
+            <Col id="GOODSITEM">0,0,0,0,0,0,0</Col>
+            <Col id="IMPBUSI_DATE"/>
+            <Col id="IMPBUSI_DET"/>
+            <Col id="PRE_CONTRACT_NO">I201602039</Col>
+            <Col id="PROC_STATUS">A</Col>
+            <Col id="PROJECT_CODE">I201602039</Col>
+            <Col id="PROJECT_NAME">경계서버 운영 효율화 </Col>
+            <Col id="PROJECT_NAME"/>
+            <Col id="REPORT_YN">1</Col>
+            <Col id="SALE_STAFF">10081601</Col>
+            <Col id="SALE_STEP">2</Col>
+            <Col id="SI_PARENTS_PROJECT_CODE"/>
+          </Row>
+          <Row>
+            <Col id="BIZ_STAFF">0609250</Col>
+            <Col id="BIZ_STATUS">001</Col>
+            <Col id="CLASS_TYPE">0</Col>
+            <Col id="CLIENT_CODE">C00004</Col>
+            <Col id="CLIENT_NAME">LG전자</Col>
+            <Col id="CLOSE_REMARK">이광준차장(PM)</Col>
+            <Col id="CLOSE_YN">0</Col>
+            <Col id="CO_APPROVAL_DATE"/>
+            <Col id="CO_APPROVAL_YN"/>
+            <Col id="CO_CONTRACT_YM"/>
+            <Col id="CO_CONTRACT_YN"/>
+            <Col id="CO_MOVE_DATE"/>
+            <Col id="CO_REMARK"/>
+            <Col id="CO_REQ_DATE"/>
+            <Col id="CO_SALES_MAN"/>
+            <Col id="CO_START_YM"/>
+            <Col id="COMPANY_CODE"/>
+            <Col id="COMPANY_NAME"/>
+            <Col id="CONTRACT_AMT">24800000</Col>
+            <Col id="CONTRACT_NAME">GERP GSFS RENEWAL</Col>
+            <Col id="CONTRACT_NO">I201605060</Col>
+            <Col id="CREATE_DATA_USER"/>
+            <Col id="DIRECT_YN"/>
+            <Col id="EST_DELIVERY"/>
+            <Col id="EST_TAX"/>
+            <Col id="FILE_KEY"/>
+            <Col id="FILE_KEY2"/>
+            <Col id="GOODSITEM">0,0,0,0,0,0,0</Col>
+            <Col id="IMPBUSI_DATE"/>
+            <Col id="IMPBUSI_DET"/>
+            <Col id="PRE_CONTRACT_NO">I201605060</Col>
+            <Col id="PROC_STATUS">A</Col>
+            <Col id="PROJECT_CODE">I201605060</Col>
+            <Col id="PROJECT_NAME">GERP GSFS RENEWAL</Col>
+            <Col id="PROJECT_NAME"/>
+            <Col id="REPORT_YN">1</Col>
+            <Col id="SALE_STAFF">0609250</Col>
+            <Col id="SALE_STEP">2</Col>
+            <Col id="SI_PARENTS_PROJECT_CODE"/>
+          </Row>
+          <Row>
+            <Col id="BIZ_STAFF">0404012</Col>
+            <Col id="BIZ_STATUS">007</Col>
+            <Col id="CLASS_TYPE">0</Col>
+            <Col id="CLIENT_CODE">A845</Col>
+            <Col id="CLIENT_NAME">현대카드(주)</Col>
+            <Col id="CLOSE_REMARK"/>
+            <Col id="CLOSE_YN">0</Col>
+            <Col id="CO_APPROVAL_DATE"/>
+            <Col id="CO_APPROVAL_YN"/>
+            <Col id="CO_CONTRACT_YM"/>
+            <Col id="CO_CONTRACT_YN"/>
+            <Col id="CO_MOVE_DATE"/>
+            <Col id="CO_REMARK"/>
+            <Col id="CO_REQ_DATE"/>
+            <Col id="CO_SALES_MAN"/>
+            <Col id="CO_START_YM"/>
+            <Col id="COMPANY_CODE"/>
+            <Col id="COMPANY_NAME"/>
+            <Col id="CONTRACT_AMT">345100000</Col>
+            <Col id="CONTRACT_NAME">스튜디오블랙 웹사이트구축 2차</Col>
+            <Col id="CONTRACT_NO">I201606002</Col>
+            <Col id="CREATE_DATA_USER"/>
+            <Col id="DIRECT_YN"/>
+            <Col id="EST_DELIVERY"/>
+            <Col id="EST_TAX"/>
+            <Col id="FILE_KEY"/>
+            <Col id="FILE_KEY2"/>
+            <Col id="GOODSITEM">0,0,0,0,0,0,0</Col>
+            <Col id="IMPBUSI_DATE"/>
+            <Col id="IMPBUSI_DET"/>
+            <Col id="PRE_CONTRACT_NO">I201606002</Col>
+            <Col id="PROC_STATUS">A</Col>
+            <Col id="PROJECT_CODE">I201606002</Col>
+            <Col id="PROJECT_NAME">스튜디오블랙 웹사이트구축 2차</Col>
+            <Col id="PROJECT_NAME"/>
+            <Col id="REPORT_YN">1</Col>
+            <Col id="SALE_STAFF">0404012</Col>
+            <Col id="SALE_STEP">2</Col>
+            <Col id="SI_PARENTS_PROJECT_CODE"/>
+          </Row>
+          <Row>
+            <Col id="BIZ_STAFF">0609250</Col>
+            <Col id="BIZ_STATUS">001</Col>
+            <Col id="CLASS_TYPE">0</Col>
+            <Col id="CLIENT_CODE">Z02278</Col>
+            <Col id="CLIENT_NAME">비엔이파트너스</Col>
+            <Col id="CLOSE_REMARK"/>
+            <Col id="CLOSE_YN">0</Col>
+            <Col id="CO_APPROVAL_DATE"/>
+            <Col id="CO_APPROVAL_YN"/>
+            <Col id="CO_CONTRACT_YM"/>
+            <Col id="CO_CONTRACT_YN"/>
+            <Col id="CO_MOVE_DATE"/>
+            <Col id="CO_REMARK"/>
+            <Col id="CO_REQ_DATE"/>
+            <Col id="CO_SALES_MAN"/>
+            <Col id="CO_START_YM"/>
+            <Col id="COMPANY_CODE"/>
+            <Col id="COMPANY_NAME"/>
+            <Col id="CONTRACT_AMT">2000000</Col>
+            <Col id="CONTRACT_NAME">교육지원</Col>
+            <Col id="CONTRACT_NO">I201606028</Col>
+            <Col id="CREATE_DATA_USER"/>
+            <Col id="DIRECT_YN"/>
+            <Col id="EST_DELIVERY"/>
+            <Col id="EST_TAX"/>
+            <Col id="FILE_KEY"/>
+            <Col id="FILE_KEY2"/>
+            <Col id="GOODSITEM">0,0,0,0,0,0,0</Col>
+            <Col id="IMPBUSI_DATE"/>
+            <Col id="IMPBUSI_DET"/>
+            <Col id="PRE_CONTRACT_NO">I201606028</Col>
+            <Col id="PROC_STATUS">A</Col>
+            <Col id="PROJECT_CODE">I201606028</Col>
+            <Col id="PROJECT_NAME">교육지원</Col>
+            <Col id="PROJECT_NAME"/>
+            <Col id="REPORT_YN">1</Col>
+            <Col id="SALE_STAFF">0609250</Col>
+            <Col id="SALE_STEP">2</Col>
+            <Col id="SI_PARENTS_PROJECT_CODE"/>
+          </Row>
+          <Row>
+            <Col id="BIZ_STAFF">0609250</Col>
+            <Col id="BIZ_STATUS">001</Col>
+            <Col id="CLASS_TYPE">0</Col>
+            <Col id="CLIENT_CODE">C00004</Col>
+            <Col id="CLIENT_NAME">LG전자</Col>
+            <Col id="CLOSE_REMARK"/>
+            <Col id="CLOSE_YN">0</Col>
+            <Col id="CO_APPROVAL_DATE"/>
+            <Col id="CO_APPROVAL_YN"/>
+            <Col id="CO_CONTRACT_YM"/>
+            <Col id="CO_CONTRACT_YN"/>
+            <Col id="CO_MOVE_DATE"/>
+            <Col id="CO_REMARK"/>
+            <Col id="CO_REQ_DATE"/>
+            <Col id="CO_SALES_MAN"/>
+            <Col id="CO_START_YM"/>
+            <Col id="COMPANY_CODE"/>
+            <Col id="COMPANY_NAME"/>
+            <Col id="CONTRACT_AMT">2000000</Col>
+            <Col id="CONTRACT_NAME">B2B Sales Incentive 시스템 구축(chart)</Col>
+            <Col id="CONTRACT_NO">I201607051</Col>
+            <Col id="CREATE_DATA_USER"/>
+            <Col id="DIRECT_YN"/>
+            <Col id="EST_DELIVERY"/>
+            <Col id="EST_TAX"/>
+            <Col id="FILE_KEY"/>
+            <Col id="FILE_KEY2"/>
+            <Col id="GOODSITEM">0,0,0,0,0,0,0</Col>
+            <Col id="IMPBUSI_DATE"/>
+            <Col id="IMPBUSI_DET"/>
+            <Col id="PRE_CONTRACT_NO">I201607051</Col>
+            <Col id="PROC_STATUS">A</Col>
+            <Col id="PROJECT_CODE">I201607051</Col>
+            <Col id="PROJECT_NAME">B2B Sales Incentive 시스템 구축(chart)</Col>
+            <Col id="PROJECT_NAME"/>
+            <Col id="REPORT_YN">1</Col>
+            <Col id="SALE_STAFF">0609250</Col>
+            <Col id="SALE_STEP">2</Col>
+            <Col id="SI_PARENTS_PROJECT_CODE"/>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsPreSalesList"/>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[/*
+**********************************************************************
+ * 01. 업무구분		: 프로젝트관리
+ * 02. 화면명		: BM_Project_ContractReq_Pop
+ * 03. 화면설명		: 계약요청현황 조회
+ * 04. 작성일		: 2016-08-22
+ * 05. 작성자		: 김윤정
+ * 06. 수정이력
+ *********************************************************************
+ *     수정일          이  름    사유
+ *********************************************************************
+ *     2016-08-22    김윤정    최초 작성
+ *********************************************************************
+*/
+
+/**********************************************************************
+ * 공통 라이브러리 INCLUDE 영역
+**********************************************************************/
+
+/**********************************************************************
+ * 전역변수 영역
+**********************************************************************/
+this.fv_arrRat = [];
+
+/**********************************************************************
+ * FORM FUNCTION 영역
+**********************************************************************/
+this.form_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	//공통코드 조회 필요
+}
+
+/**********************************************************************
+ * 공통 FUNCTION 영역
+**********************************************************************/
+// 선매출 고객사 최용호 부사장님으로 설정된 건 처리 
+this.fn_SetClientProjectName = function(nRow)
+{
+	var ret;
+	if (this.dsContractMain.getColumn(nRow, "CLIENT_CODE") != "Z01234")
+	{
+		return false;	//선매출 아닌 경우
+	}
+	else
+	{
+		this.alert("팝업호출");
+// 		ret = Dialog("system::sys_SetClientProjectName.xml","ARG_CLIENT_CODE=" + quote(dsContractMain.GetColumn(nRow, "CLIENT_CODE")) + " ARG_CLIENT_NAME=" + quote(dsContractMain.GetColumn(nRow, "CLIENT_NAME")) + " ARG_PROJECT_NAME="+quote(dsContractMain.GetColumn(nRow, "PROJECT_NAME")),-1,-1,false,-1,-1);	
+// 		if(ret == null){
+// 				return "CANCEL";	//선매출 인데 고객사 프로젝트 지정하지 않은 경우
+// 		}
+// 		this.dsContractMain.SetColumn(nRow, "REMARKS", 1);
+// 		this.dsContractMain.SetColumn(nRow, "CLIENT_CODE", ret[0]);
+// 		this.dsContractMain.SetColumn(nRow, "CLIENT_NAME", ret[1]);
+// 		this.dsContractMain.SetColumn(dnRow, "PROJECT_NAME", ret[3]);
+		return true;
+	}	
+}
+
+// 계약확정처리 : SALE_STEP = 3
+this.fn_SetSaleStep = function(nRow)
+{
+	this.dsPreSalesList.copyData(this.dsContractMain);
+	this.dsPreSalesList.setColumn(nRow,"SALE_STEP", "3");
+}
+
+
+/**********************************************************************
+ * TRANSACTION 및 추가 FUNCTION 영역
+**********************************************************************/
+//조회
+this.fn_QueryData = function ()
+{
+	this.alert("조회");
+};
+
+//저장
+this.fn_SaveData = function (nRow)
+{
+	var args = "";
+	var inds = "";
+	var ds;
+	
+	this.dsContractMain.applyChange();
+	
+	if (this.confirm("계약확정 처리하시겠습니까?")) 
+	{
+		if (this.fn_SetClientProjectName(nRow)=="CANCEL") {
+			alert("계약확정을 진행하시려면 실제 고객사를 선택해주세요.");
+			return;
+		}
+		
+		this.fn_SetSaleStep(nRow);
+		
+		this.dsPreSalesList.set_updatecontrol(false);
+		this.dsPreSalesList.setRowType(nRow, "U");		
+		this.dsPreSalesList.set_updatecontrol(false);		
+		
+	}
+	
+};
+
+
+this.fn_Callback = function (sSvcId, nErrorCode, sErrorMsg)
+{
+	if(nErrorCode < 0)
+	{
+		this.gfn_Message("error", nErrorCode, sErrorMsg);
+	}
+	else 
+	{
+		switch(sSvcId)
+		{
+			case "InitCodeList" :		
+				//공통코드 조회 후 조회
+				break;
+			case "select" :
+				application.alert("저장완료");
+				this.fn_Search();
+				break;				
+			case "save" :
+				// PRESALES SALE_STEP = '3' 으로 세팅
+				//부모창에 문자열 전송밖에 안되기 때문에 함수 필요
+				//if (this.fv_arrRat != n	ull)  this.close(this.fv_arrRat);	
+				break;
+				
+		}
+	}
+};
+
+/**********************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+**********************************************************************/
+this.grdList_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	this.fn_SaveData(e.row);
+};
+
+this.btnClose_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close();
+};
+]]></Script>
   </Form>
 </FDL>
