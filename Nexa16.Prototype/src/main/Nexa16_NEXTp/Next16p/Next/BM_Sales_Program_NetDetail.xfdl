@@ -5,7 +5,7 @@
       <Layout height="600" width="800">
         <Static id="Static00" taborder="1" text="매출계약" left="405" top="5" width="242" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
         <Static id="Static01" taborder="1" text="영업매입계약" left="405" top="155" width="242" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Grid id="Grid00" taborder="0" left="405" top="30" height="120" right="5" binddataset="dsList3" width="" bottom="" nodatatext="데이터가 없습니다.">
+        <Grid id="grdSale" taborder="0" left="405" top="30" height="120" right="5" binddataset="dsList3" width="" bottom="" nodatatext="데이터가 없습니다.">
           <Formats>
             <Format id="default">
               <Columns>
@@ -27,7 +27,7 @@
             </Format>
           </Formats>
         </Grid>
-        <Grid id="Grid01" taborder="0" left="405" top="180" height="120" right="5" width="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" binddataset="dsList4" nodatatext="데이터가 없습니다.">
+        <Grid id="grdPurchase" taborder="0" left="405" top="180" height="120" right="5" width="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" binddataset="dsList4" nodatatext="데이터가 없습니다.">
           <Formats>
             <Format id="default">
               <Columns>
@@ -56,7 +56,7 @@
           </Formats>
         </Grid>
         <Static id="Static02" taborder="1" text="용역매입계약" left="405" top="305" width="242" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Grid id="Grid02" taborder="0" left="405" top="330" height="120" right="5" width="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" binddataset="dsList5" nodatatext="데이터가 없습니다.">
+        <Grid id="grdSI" taborder="0" left="405" top="330" height="120" right="5" width="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" binddataset="dsList5" nodatatext="데이터가 없습니다.">
           <Formats>
             <Format id="default">
               <Columns>
@@ -88,7 +88,7 @@
           </Formats>
         </Grid>
         <Static id="Static03" taborder="1" text="기술지원비용" left="405" top="455" width="242" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Grid id="Grid03" taborder="0" left="405" top="480" height="115" right="5" width="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" binddataset="dsList6" nodatatext="데이터가 없습니다.">
+        <Grid id="grdTech" taborder="0" left="405" top="480" height="115" right="5" width="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" binddataset="dsList6" nodatatext="데이터가 없습니다.">
           <Formats>
             <Format id="default">
               <Columns>
@@ -123,7 +123,7 @@
           </Formats>
         </Grid>
         <Static id="Static04" taborder="1" text="투비직원" left="5" top="455" width="242" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Grid id="Grid04" taborder="0" left="5" top="480" height="115" right="405" width="" bottom="" binddataset="dsList2" nodatatext="데이터가 없습니다." leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+        <Grid id="grdTobe" taborder="0" left="5" top="480" height="115" right="405" width="" bottom="" binddataset="dsList2" nodatatext="데이터가 없습니다." leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
           <Formats>
             <Format id="default">
               <Columns>
@@ -157,7 +157,7 @@
             </Format>
           </Formats>
         </Grid>
-        <Grid id="Grid05" taborder="0" left="5" top="30" height="420" right="405" width="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" binddataset="dsList1" nodatatext="데이터가 없습니다.">
+        <Grid id="grdNet" taborder="0" left="5" top="30" height="420" right="405" width="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" binddataset="dsList1" nodatatext="데이터가 없습니다.">
           <Formats>
             <Format id="default">
               <Columns>
@@ -182,7 +182,7 @@
             </Format>
           </Formats>
         </Grid>
-        <Button id="Button00" taborder="2" text="프로젝트화면" left="628" top="5" width="" height="20" right="77" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnProject" taborder="2" text="프로젝트화면" left="628" top="5" width="" height="20" right="77" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
         <Static id="Static05" taborder="1" text="순매출" left="728" top="5" width="" height="20" right="32" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" color="red"/>
       </Layout>
     </Layouts>

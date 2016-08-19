@@ -9,25 +9,25 @@
         <Static id="Static03" taborder="2" text=" 영업상태" left="5" top="89" width="65" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080"/>
         <Static id="Static04" taborder="2" text=" 납품일자" left="5" top="117" width="65" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080"/>
         <Static id="Static05" taborder="2" text=" 비고" left="5" top="145" width="65" height="55" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080"/>
-        <Edit id="Edit00" taborder="3" left="71" top="5" width="321" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Edit id="Edit01" taborder="3" left="71" top="33" width="121" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Edit id="Edit02" taborder="3" left="193" top="33" width="" height="27" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Edit id="Edit03" taborder="3" left="71" top="61" width="" height="27" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Combo id="Combo00" taborder="4" text="Combo00" left="71" top="89" width="100" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="edtClientName" taborder="3" left="71" top="5" width="321" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="edtProjectCode" taborder="3" left="71" top="33" width="121" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="edtProjectName" taborder="3" left="193" top="33" width="" height="27" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="edtContract_Name" taborder="3" left="71" top="61" width="" height="27" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="cmbBizStatus" taborder="4" text="Combo00" left="71" top="89" width="100" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
         <Static id="Static06" taborder="2" text=" 진척도" left="173" top="89" width="65" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080"/>
-        <Combo id="Combo01" taborder="4" text="Combo00" left="239" top="89" width="60" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="cmbProcStatus" taborder="4" text="Combo00" left="239" top="89" width="60" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
         <Static id="Static07" taborder="2" text=" 영업" left="301" top="89" width="65" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080"/>
-        <Combo id="Combo02" taborder="4" text="Combo00" left="367" top="89" width="60" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="cmbBizStaff" taborder="4" text="Combo00" left="367" top="89" width="60" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
         <Static id="Static08" taborder="2" text=" 진척도" left="429" top="89" width="65" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080"/>
         <Combo id="Combo03" taborder="4" text="Combo00" left="495" top="89" width="60" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Calendar id="Calendar00" taborder="5" left="71" top="117" width="110" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Calendar id="calEstDelevery" taborder="5" left="71" top="117" width="110" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
         <Static id="Static09" taborder="2" text="계산서 발행일" left="183" top="117" width="90" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080" onclick="Static09_onclick"/>
-        <Calendar id="Calendar01" taborder="5" left="274" top="117" width="110" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <CheckBox id="CheckBox00" taborder="6" text="완료처리" left="391" top="117" width="74" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <CheckBox id="CheckBox01" taborder="7" text="보고대상" left="471" top="120" width="74" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <TextArea id="TextArea00" taborder="8" left="71" top="146" width="" height="55" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Calendar id="calEstTax" taborder="5" left="274" top="117" width="110" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <CheckBox id="chkCloseYN" taborder="6" text="완료처리" left="391" top="117" width="74" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <CheckBox id="chkReportYN" taborder="7" text="보고대상" left="471" top="120" width="74" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <TextArea id="taCloseRemark" taborder="8" left="71" top="146" width="" height="55" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
         <Static id="Static10" taborder="9" text="* 상세내역" left="5" top="210" width="83" height="24" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Grid id="Grid00" taborder="10" left="5" top="236" width="" height="93" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+        <Grid id="grd_detail" taborder="10" left="5" top="236" width="" height="93" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
           <Formats>
             <Format id="default">
               <Columns>
@@ -66,22 +66,22 @@
         </Grid>
         <Static id="Static11" taborder="2" text="예상매출액" left="5" top="339" width="83" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080"/>
         <Static id="Static12" taborder="2" text="투입예정인원" left="5" top="367" width="83" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080"/>
-        <Edit id="Edit04" taborder="11" left="89" top="339" width="98" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Edit id="Edit05" taborder="11" left="89" top="367" width="98" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="medt_Sales_Amt" taborder="11" left="89" top="339" width="98" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="MaskEdit0" taborder="11" left="89" top="367" width="98" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
         <Static id="Static13" taborder="2" text="예상매입총액" left="189" top="339" width="83" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080"/>
         <Static id="Static14" taborder="2" text="투입기간" left="189" top="367" width="83" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080"/>
-        <Edit id="Edit06" taborder="11" left="273" top="339" width="98" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Edit id="Edit07" taborder="11" left="273" top="367" width="98" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="medt_Purchase_Amt" taborder="11" left="273" top="339" width="98" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="MaskEdit1" taborder="11" left="273" top="367" width="98" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
         <Static id="Static15" taborder="2" text="순매출" left="373" top="339" width="83" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080"/>
         <Static id="Static16" taborder="2" text="투입월" left="373" top="367" width="83" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080"/>
-        <Edit id="Edit08" taborder="11" left="457" top="339" width="98" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Edit id="Edit09" taborder="11" left="457" top="367" width="98" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="medt_Net_Sales_Amt" taborder="11" left="457" top="339" width="98" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="MaskEdit2" taborder="11" left="457" top="367" width="98" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
         <Tab id="Tab00" taborder="12" tabindex="0" left="5" top="404" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
           <Tabpages>
             <Tabpage id="Tabpage1" text="진행사항">
               <Layouts>
                 <Layout>
-                  <Grid id="Grid00" taborder="0" left="5" top="5" width="120" height="" right="" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                  <Grid id="T_grd_his" taborder="0" left="5" top="5" width="120" height="" right="" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
                     <Formats>
                       <Format id="default">
                         <Columns>
@@ -102,22 +102,22 @@
                   </Grid>
                   <Static id="Static00" taborder="2" text="구분" left="130" top="5" width="40" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080"/>
                   <Static id="Static01" taborder="2" text="일자" left="130" top="33" width="40" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080"/>
-                  <Combo id="Combo00" taborder="3" text="Combo00" left="171" top="5" width="110" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-                  <Calendar id="Calendar00" taborder="5" left="171" top="33" width="110" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <Combo id="cmbIssueGubun" taborder="3" text="Combo00" left="171" top="5" width="110" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <Calendar id="T_calDeliveryDate" taborder="5" left="171" top="33" width="110" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
                   <Static id="Static02" taborder="2" text="보고" left="285" top="5" width="40" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080"/>
                   <Static id="Static03" taborder="2" text="" left="326" top="5" width="" height="27" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080"/>
-                  <CheckBox id="CheckBox00" taborder="6" text="보고" left="330" top="5" width="72" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <CheckBox id="T_chk_report" taborder="6" text="보고" left="330" top="5" width="72" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
                   <Static id="Static04" taborder="7" text="* 중요도" left="397" top="5" width="88" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-                  <Combo id="Combo01" taborder="8" text="Combo01" left="449" top="8" width="89" height="20" right="" bottom=""/>
-                  <CheckBox id="CheckBox01" taborder="9" text="일정반영" left="286" top="33" width="256" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-                  <TextArea id="TextArea00" taborder="10" left="130" top="66" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <Combo id="Combo0" taborder="8" text="Combo01" left="449" top="8" width="89" height="20" right="" bottom=""/>
+                  <CheckBox id="chb_sch" taborder="9" text="일정반영" left="286" top="33" width="256" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  <TextArea id="T_txtRemarks" taborder="10" left="130" top="66" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
                 </Layout>
               </Layouts>
             </Tabpage>
             <Tabpage id="Tabpage2" text="담당자">
               <Layouts>
                 <Layout>
-                  <Grid id="Grid00" taborder="0" left="5" top="30" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                  <Grid id="grdBizMemo" taborder="0" left="5" top="30" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
                     <Formats>
                       <Format id="default">
                         <Columns>
@@ -157,16 +157,21 @@
                       </Format>
                     </Formats>
                   </Grid>
-                  <Button id="Button00" taborder="1" text="엑셀↓" left="49" top="5" width="43" height="20" right="" bottom=""/>
-                  <Button id="Button01" taborder="1" text="Reset" left="93" top="5" width="43" height="20" right="" bottom=""/>
-                  <Button id="Button02" taborder="1" text="엑셀↑" left="5" top="5" width="43" height="20" right="" bottom=""/>
+                  <Button id="Save_Excel" taborder="1" text="엑셀↓" left="49" top="5" width="43" height="20" right="" bottom=""/>
+                  <Button id="btnreset" taborder="1" text="Reset" left="93" top="5" width="43" height="20" right="" bottom=""/>
+                  <Button id="btnExcel" taborder="1" text="엑셀↑" left="5" top="5" width="43" height="20" right="" bottom=""/>
                 </Layout>
               </Layouts>
             </Tabpage>
           </Tabpages>
         </Tab>
-        <Button id="Button00" taborder="13" text="저장" left="419" top="5" width="63" height="24" right="" bottom=""/>
-        <Button id="Button01" taborder="13" text="닫기" left="491" top="5" width="63" height="24" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btn_Save" taborder="13" text="저장" left="419" top="5" width="63" height="24" right="" bottom=""/>
+        <Button id="btnClose" taborder="13" text="닫기" left="491" top="5" width="63" height="24" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnChannelIns" taborder="14" text="+" left="502" top="208" width="23" height="19" right="" bottom=""/>
+        <Button id="btnChannelDel" taborder="14" text="-" left="528" top="208" width="23" height="19" right="" bottom=""/>
+        <Button id="btnAddBottom" taborder="14" text="+" left="502" top="403" width="23" height="19" right="" bottom=""/>
+        <Button id="btnDeleteBottom" taborder="14" text="-" left="528" top="403" width="23" height="19" right="" bottom=""/>
+        <Button id="btnStaffReqApp" taborder="15" text="인력요청" left="443" top="403" width="58" height="21" right="" bottom=""/>
       </Layout>
     </Layouts>
     <Script type="xscript5.0"><![CDATA[]]></Script>

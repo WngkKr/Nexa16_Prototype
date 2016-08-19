@@ -3,7 +3,7 @@
   <Form id="BM_Sales_Program_Info" left="0" top="0" width="900" height="648" titletext="New Form" onload="Form_onload">
     <Layouts>
       <Layout height="648" width="900">
-        <Grid id="Grid00" taborder="0" left="5" top="5" width="" height="" right="5" bottom="5" topbase="Div00.bottom" leftbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+        <Grid id="grdList" taborder="0" left="5" top="5" width="" height="" right="5" bottom="5" topbase="Div00.bottom" leftbase="" bottombase="" rightbase="" widthbase="" heightbase="">
           <Formats>
             <Format id="default">
               <Columns>
@@ -73,35 +73,13 @@
               <Static id="Static01" taborder="0" text="~" left="120" top="4" width="34" height="30" right="" bottom=""/>
               <Calendar id="CalTo" taborder="1" left="131" top="8" width="84" height="22" dateformat="yyyy-MM" editformat="yyyy-MM" right="" bottom=""/>
               <Static id="Static02" taborder="0" text="고객사" left="237" top="5" width="45" height="30" right="" bottom=""/>
-              <Edit id="Edit00" taborder="2" left="279" top="8" width="237" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <CheckBox id="CheckBox00" taborder="3" text="영업대표전체대상" left="5" top="42" width="153" height="26" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <CheckBox id="CheckBox01" taborder="3" text="예상율반영" left="147" top="42" width="113" height="26" right="" bottom=""/>
-              <Radio id="Radio00" taborder="4" left="253" top="42" width="413" height="26" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" verticalAlign="middle" textAlign="left" wordSpacing="300px">
-                <Dataset id="innerdataset">
-                  <ColumnInfo>
-                    <Column id="codecolumn" size="256"/>
-                    <Column id="datacolumn" size="256"/>
-                  </ColumnInfo>
-                  <Rows>
-                    <Row>
-                      <Col id="codecolumn">all</Col>
-                      <Col id="datacolumn">전체</Col>
-                    </Row>
-                    <Row>
-                      <Col id="codecolumn">01</Col>
-                      <Col id="datacolumn">PreSales</Col>
-                    </Row>
-                    <Row>
-                      <Col id="codecolumn">02</Col>
-                      <Col id="datacolumn">수주</Col>
-                    </Row>
-                    <Row>
-                      <Col id="codecolumn">03</Col>
-                      <Col id="datacolumn">계약</Col>
-                    </Row>
-                  </Rows>
-                </Dataset>
-              </Radio>
+              <Edit id="edt_project" taborder="2" left="279" top="8" width="237" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <CheckBox id="chb_sales_all" taborder="3" text="영업대표전체대상" left="5" top="42" width="153" height="26" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <CheckBox id="chb_EstRate" taborder="3" text="예상율반영" left="147" top="42" width="113" height="26" right="" bottom=""/>
+              <CheckBox id="chkAll" taborder="4" text="전체" left="267" top="42" width="60" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <CheckBox id="chkPreSales" taborder="5" text="PreSales" left="327" top="42" width="60" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <CheckBox id="chkSooju" taborder="6" text="수주" left="399" top="42" width="60" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <CheckBox id="chkContract" taborder="7" text="계약" left="456" top="42" width="60" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
             </Layout>
           </Layouts>
         </Div>

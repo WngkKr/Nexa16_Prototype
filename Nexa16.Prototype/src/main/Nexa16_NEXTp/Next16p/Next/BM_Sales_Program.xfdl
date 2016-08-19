@@ -178,7 +178,7 @@
         <Button id="btnPrint" taborder="1" text="프린트" top="5" width="50" height="30" right="62" left="" bottom="" rightbase="" leftbase="" topbase="" bottombase="" widthbase="" heightbase=""/>
         <Button id="btnExcel" taborder="1" text="엑셀" top="5" width="50" height="30" right="6" rightbase="btnPrint.left" left="" bottom="" leftbase="" topbase="" bottombase="" widthbase="" heightbase=""/>
         <Button id="btnSearch" taborder="1" text="조회" top="5" width="50" height="30" right="6" rightbase="btnExcel.left" left="" bottom="" leftbase="" topbase="" bottombase="" widthbase="" heightbase=""/>
-        <Button id="btnImpSale" taborder="2" text="금월중요영업건" left="582" top="52" width="100" height="18" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnImpBusiness" taborder="2" text="금월중요영업건" left="582" top="52" width="100" height="18" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
         <Button id="btnSalesPrint" taborder="2" text="주간보고" left="684" top="52" width="80" height="18" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
         <Combo id="cmbFilter" taborder="3" text="Combo00" left="773" top="52" width="94" height="20" right="" bottom=""/>
         <Static id="Static00" taborder="4" text="영업대표" left="868" top="30" width="120" height="60" right="" bottom=""/>

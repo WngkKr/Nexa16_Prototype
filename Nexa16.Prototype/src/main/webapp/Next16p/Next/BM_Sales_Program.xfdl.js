@@ -225,7 +225,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Button("btnImpSale","absolute","582","52","100","18",null,null,this);
+            obj = new Button("btnImpBusiness","absolute","582","52","100","18",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
@@ -332,12 +332,12 @@
             this.btnSearch.set_bottombase("");
             this.btnSearch.set_widthbase("");
             this.btnSearch.set_heightbase("");
-            this.btnImpSale.set_leftbase("");
-            this.btnImpSale.set_topbase("");
-            this.btnImpSale.set_bottombase("");
-            this.btnImpSale.set_rightbase("");
-            this.btnImpSale.set_widthbase("");
-            this.btnImpSale.set_heightbase("");
+            this.btnImpBusiness.set_leftbase("");
+            this.btnImpBusiness.set_topbase("");
+            this.btnImpBusiness.set_bottombase("");
+            this.btnImpBusiness.set_rightbase("");
+            this.btnImpBusiness.set_widthbase("");
+            this.btnImpBusiness.set_heightbase("");
             this.btnSalesPrint.set_leftbase("");
             this.btnSalesPrint.set_topbase("");
             this.btnSalesPrint.set_bottombase("");

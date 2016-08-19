@@ -31,7 +31,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button00","absolute",null,"5","49","22","5",null,this);
+            obj = new Button("btnClose","absolute",null,"5","49","22","5",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
@@ -39,7 +39,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button01","absolute",null,"5","49","22","59",null,this);
+            obj = new Button("btnSave","absolute",null,"5","49","22","59",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
@@ -47,7 +47,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button02","absolute",null,"5","49","22","113",null,this);
+            obj = new Button("btnDel","absolute",null,"5","49","22","113",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
@@ -55,7 +55,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button03","absolute",null,"5","49","22","167",null,this);
+            obj = new Button("btnAdd","absolute",null,"5","49","22","167",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
@@ -311,30 +311,30 @@
             this.Static00.set_rightbase("");
             this.Static00.set_widthbase("");
             this.Static00.set_heightbase("");
-            this.Button00.set_leftbase("");
-            this.Button00.set_topbase("");
-            this.Button00.set_bottombase("");
-            this.Button00.set_rightbase("");
-            this.Button00.set_widthbase("");
-            this.Button00.set_heightbase("");
-            this.Button01.set_leftbase("");
-            this.Button01.set_topbase("");
-            this.Button01.set_bottombase("");
-            this.Button01.set_rightbase("");
-            this.Button01.set_widthbase("");
-            this.Button01.set_heightbase("");
-            this.Button02.set_leftbase("");
-            this.Button02.set_topbase("");
-            this.Button02.set_bottombase("");
-            this.Button02.set_rightbase("");
-            this.Button02.set_widthbase("");
-            this.Button02.set_heightbase("");
-            this.Button03.set_leftbase("");
-            this.Button03.set_topbase("");
-            this.Button03.set_bottombase("");
-            this.Button03.set_rightbase("");
-            this.Button03.set_widthbase("");
-            this.Button03.set_heightbase("");
+            this.btnClose.set_leftbase("");
+            this.btnClose.set_topbase("");
+            this.btnClose.set_bottombase("");
+            this.btnClose.set_rightbase("");
+            this.btnClose.set_widthbase("");
+            this.btnClose.set_heightbase("");
+            this.btnSave.set_leftbase("");
+            this.btnSave.set_topbase("");
+            this.btnSave.set_bottombase("");
+            this.btnSave.set_rightbase("");
+            this.btnSave.set_widthbase("");
+            this.btnSave.set_heightbase("");
+            this.btnDel.set_leftbase("");
+            this.btnDel.set_topbase("");
+            this.btnDel.set_bottombase("");
+            this.btnDel.set_rightbase("");
+            this.btnDel.set_widthbase("");
+            this.btnDel.set_heightbase("");
+            this.btnAdd.set_leftbase("");
+            this.btnAdd.set_topbase("");
+            this.btnAdd.set_bottombase("");
+            this.btnAdd.set_rightbase("");
+            this.btnAdd.set_widthbase("");
+            this.btnAdd.set_heightbase("");
             this.Div00.set_leftbase("");
             this.Div00.set_topbase("");
             this.Div00.set_bottombase("");

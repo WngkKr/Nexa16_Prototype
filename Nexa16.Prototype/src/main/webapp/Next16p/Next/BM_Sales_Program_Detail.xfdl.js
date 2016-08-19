@@ -77,35 +77,35 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Edit("Edit00","absolute","71","5","321","27",null,null,this);
+            obj = new Edit("edtClientName","absolute","71","5","321","27",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("3");
             });
             this.addChild(obj.name, obj);
 
-            obj = new Edit("Edit01","absolute","71","33","121","27",null,null,this);
+            obj = new Edit("edtProjectCode","absolute","71","33","121","27",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("3");
             });
             this.addChild(obj.name, obj);
 
-            obj = new Edit("Edit02","absolute","193","33",null,"27","5",null,this);
+            obj = new Edit("edtProjectName","absolute","193","33",null,"27","5",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("3");
             });
             this.addChild(obj.name, obj);
 
-            obj = new Edit("Edit03","absolute","71","61",null,"27","5",null,this);
+            obj = new Edit("edtContract_Name","absolute","71","61",null,"27","5",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("3");
             });
             this.addChild(obj.name, obj);
 
-            obj = new Combo("Combo00","absolute","71","89","100","27",null,null,this);
+            obj = new Combo("cmbBizStatus","absolute","71","89","100","27",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("4");
@@ -122,7 +122,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Combo("Combo01","absolute","239","89","60","27",null,null,this);
+            obj = new Combo("cmbProcStatus","absolute","239","89","60","27",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("4");
@@ -139,7 +139,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Combo("Combo02","absolute","367","89","60","27",null,null,this);
+            obj = new Combo("cmbBizStaff","absolute","367","89","60","27",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("4");
@@ -164,7 +164,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Calendar("Calendar00","absolute","71","117","110","27",null,null,this);
+            obj = new Calendar("calEstDelevery","absolute","71","117","110","27",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("5");
@@ -180,14 +180,14 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Calendar("Calendar01","absolute","274","117","110","27",null,null,this);
+            obj = new Calendar("calEstTax","absolute","274","117","110","27",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("5");
             });
             this.addChild(obj.name, obj);
 
-            obj = new CheckBox("CheckBox00","absolute","391","117","74","27",null,null,this);
+            obj = new CheckBox("chkCloseYN","absolute","391","117","74","27",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("6");
@@ -195,7 +195,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new CheckBox("CheckBox01","absolute","471","120","74","20",null,null,this);
+            obj = new CheckBox("chkReportYN","absolute","471","120","74","20",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("7");
@@ -203,7 +203,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new TextArea("TextArea00","absolute","71","146",null,"55","5",null,this);
+            obj = new TextArea("taCloseRemark","absolute","71","146",null,"55","5",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("8");
@@ -218,7 +218,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Grid("Grid00","absolute","5","236",null,"93","5",null,this);
+            obj = new Grid("grd_detail","absolute","5","236",null,"93","5",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("10");
@@ -244,14 +244,14 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Edit("Edit04","absolute","89","339","98","27",null,null,this);
+            obj = new Edit("medt_Sales_Amt","absolute","89","339","98","27",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("11");
             });
             this.addChild(obj.name, obj);
 
-            obj = new Edit("Edit05","absolute","89","367","98","27",null,null,this);
+            obj = new Edit("MaskEdit0","absolute","89","367","98","27",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("11");
@@ -276,14 +276,14 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Edit("Edit06","absolute","273","339","98","27",null,null,this);
+            obj = new Edit("medt_Purchase_Amt","absolute","273","339","98","27",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("11");
             });
             this.addChild(obj.name, obj);
 
-            obj = new Edit("Edit07","absolute","273","367","98","27",null,null,this);
+            obj = new Edit("MaskEdit1","absolute","273","367","98","27",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("11");
@@ -308,14 +308,14 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Edit("Edit08","absolute","457","339","98","27",null,null,this);
+            obj = new Edit("medt_Net_Sales_Amt","absolute","457","339","98","27",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("11");
             });
             this.addChild(obj.name, obj);
 
-            obj = new Edit("Edit09","absolute","457","367","98","27",null,null,this);
+            obj = new Edit("MaskEdit2","absolute","457","367","98","27",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("11");
@@ -337,7 +337,7 @@
             });
             this.Tab00.addChild(obj.name, obj);
 
-            obj = new Grid("Grid00","absolute","5","5","120",null,null,"5",this.Tab00.Tabpage1.form);
+            obj = new Grid("T_grd_his","absolute","5","5","120",null,null,"5",this.Tab00.Tabpage1.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("0");
@@ -363,7 +363,7 @@
             });
             this.Tab00.Tabpage1.addChild(obj.name, obj);
 
-            obj = new Combo("Combo00","absolute","171","5","110","27",null,null,this.Tab00.Tabpage1.form);
+            obj = new Combo("cmbIssueGubun","absolute","171","5","110","27",null,null,this.Tab00.Tabpage1.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("3");
@@ -371,7 +371,7 @@
             });
             this.Tab00.Tabpage1.addChild(obj.name, obj);
 
-            obj = new Calendar("Calendar00","absolute","171","33","110","27",null,null,this.Tab00.Tabpage1.form);
+            obj = new Calendar("T_calDeliveryDate","absolute","171","33","110","27",null,null,this.Tab00.Tabpage1.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("5");
@@ -396,7 +396,7 @@
             });
             this.Tab00.Tabpage1.addChild(obj.name, obj);
 
-            obj = new CheckBox("CheckBox00","absolute","330","5","72","27",null,null,this.Tab00.Tabpage1.form);
+            obj = new CheckBox("T_chk_report","absolute","330","5","72","27",null,null,this.Tab00.Tabpage1.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("6");
@@ -412,7 +412,7 @@
             });
             this.Tab00.Tabpage1.addChild(obj.name, obj);
 
-            obj = new Combo("Combo01","absolute","449","8","89","20",null,null,this.Tab00.Tabpage1.form);
+            obj = new Combo("Combo0","absolute","449","8","89","20",null,null,this.Tab00.Tabpage1.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("8");
@@ -420,7 +420,7 @@
             });
             this.Tab00.Tabpage1.addChild(obj.name, obj);
 
-            obj = new CheckBox("CheckBox01","absolute","286","33","256","27",null,null,this.Tab00.Tabpage1.form);
+            obj = new CheckBox("chb_sch","absolute","286","33","256","27",null,null,this.Tab00.Tabpage1.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("9");
@@ -428,7 +428,7 @@
             });
             this.Tab00.Tabpage1.addChild(obj.name, obj);
 
-            obj = new TextArea("TextArea00","absolute","130","66",null,null,"5","5",this.Tab00.Tabpage1.form);
+            obj = new TextArea("T_txtRemarks","absolute","130","66",null,null,"5","5",this.Tab00.Tabpage1.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("10");
@@ -442,7 +442,7 @@
             });
             this.Tab00.addChild(obj.name, obj);
 
-            obj = new Grid("Grid00","absolute","5","30",null,null,"5","5",this.Tab00.Tabpage2.form);
+            obj = new Grid("grdBizMemo","absolute","5","30",null,null,"5","5",this.Tab00.Tabpage2.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("0");
@@ -450,7 +450,7 @@
             });
             this.Tab00.Tabpage2.addChild(obj.name, obj);
 
-            obj = new Button("Button00","absolute","49","5","43","20",null,null,this.Tab00.Tabpage2.form);
+            obj = new Button("Save_Excel","absolute","49","5","43","20",null,null,this.Tab00.Tabpage2.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
@@ -458,7 +458,7 @@
             });
             this.Tab00.Tabpage2.addChild(obj.name, obj);
 
-            obj = new Button("Button01","absolute","93","5","43","20",null,null,this.Tab00.Tabpage2.form);
+            obj = new Button("btnreset","absolute","93","5","43","20",null,null,this.Tab00.Tabpage2.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
@@ -466,7 +466,7 @@
             });
             this.Tab00.Tabpage2.addChild(obj.name, obj);
 
-            obj = new Button("Button02","absolute","5","5","43","20",null,null,this.Tab00.Tabpage2.form);
+            obj = new Button("btnExcel","absolute","5","5","43","20",null,null,this.Tab00.Tabpage2.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
@@ -474,7 +474,7 @@
             });
             this.Tab00.Tabpage2.addChild(obj.name, obj);
 
-            obj = new Button("Button00","absolute","419","5","63","24",null,null,this);
+            obj = new Button("btn_Save","absolute","419","5","63","24",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("13");
@@ -482,11 +482,51 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button01","absolute","491","5","63","24",null,null,this);
+            obj = new Button("btnClose","absolute","491","5","63","24",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("13");
                 obj.set_text("닫기");
+            });
+            this.addChild(obj.name, obj);
+
+            obj = new Button("btnChannelIns","absolute","502","208","23","19",null,null,this);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_taborder("14");
+                obj.set_text("+");
+            });
+            this.addChild(obj.name, obj);
+
+            obj = new Button("btnChannelDel","absolute","528","208","23","19",null,null,this);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_taborder("14");
+                obj.set_text("-");
+            });
+            this.addChild(obj.name, obj);
+
+            obj = new Button("btnAddBottom","absolute","502","403","23","19",null,null,this);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_taborder("14");
+                obj.set_text("+");
+            });
+            this.addChild(obj.name, obj);
+
+            obj = new Button("btnDeleteBottom","absolute","528","403","23","19",null,null,this);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_taborder("14");
+                obj.set_text("-");
+            });
+            this.addChild(obj.name, obj);
+
+            obj = new Button("btnStaffReqApp","absolute","443","403","58","21",null,null,this);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_taborder("15");
+                obj.set_text("인력요청");
             });
             this.addChild(obj.name, obj);
             
@@ -527,60 +567,60 @@
             this.Static05.set_rightbase("");
             this.Static05.set_widthbase("");
             this.Static05.set_heightbase("");
-            this.Edit00.set_leftbase("");
-            this.Edit00.set_topbase("");
-            this.Edit00.set_bottombase("");
-            this.Edit00.set_rightbase("");
-            this.Edit00.set_widthbase("");
-            this.Edit00.set_heightbase("");
-            this.Edit01.set_leftbase("");
-            this.Edit01.set_topbase("");
-            this.Edit01.set_bottombase("");
-            this.Edit01.set_rightbase("");
-            this.Edit01.set_widthbase("");
-            this.Edit01.set_heightbase("");
-            this.Edit02.set_leftbase("");
-            this.Edit02.set_topbase("");
-            this.Edit02.set_bottombase("");
-            this.Edit02.set_rightbase("");
-            this.Edit02.set_widthbase("");
-            this.Edit02.set_heightbase("");
-            this.Edit03.set_leftbase("");
-            this.Edit03.set_topbase("");
-            this.Edit03.set_bottombase("");
-            this.Edit03.set_rightbase("");
-            this.Edit03.set_widthbase("");
-            this.Edit03.set_heightbase("");
-            this.Combo00.set_leftbase("");
-            this.Combo00.set_topbase("");
-            this.Combo00.set_bottombase("");
-            this.Combo00.set_rightbase("");
-            this.Combo00.set_widthbase("");
-            this.Combo00.set_heightbase("");
+            this.edtClientName.set_leftbase("");
+            this.edtClientName.set_topbase("");
+            this.edtClientName.set_bottombase("");
+            this.edtClientName.set_rightbase("");
+            this.edtClientName.set_widthbase("");
+            this.edtClientName.set_heightbase("");
+            this.edtProjectCode.set_leftbase("");
+            this.edtProjectCode.set_topbase("");
+            this.edtProjectCode.set_bottombase("");
+            this.edtProjectCode.set_rightbase("");
+            this.edtProjectCode.set_widthbase("");
+            this.edtProjectCode.set_heightbase("");
+            this.edtProjectName.set_leftbase("");
+            this.edtProjectName.set_topbase("");
+            this.edtProjectName.set_bottombase("");
+            this.edtProjectName.set_rightbase("");
+            this.edtProjectName.set_widthbase("");
+            this.edtProjectName.set_heightbase("");
+            this.edtContract_Name.set_leftbase("");
+            this.edtContract_Name.set_topbase("");
+            this.edtContract_Name.set_bottombase("");
+            this.edtContract_Name.set_rightbase("");
+            this.edtContract_Name.set_widthbase("");
+            this.edtContract_Name.set_heightbase("");
+            this.cmbBizStatus.set_leftbase("");
+            this.cmbBizStatus.set_topbase("");
+            this.cmbBizStatus.set_bottombase("");
+            this.cmbBizStatus.set_rightbase("");
+            this.cmbBizStatus.set_widthbase("");
+            this.cmbBizStatus.set_heightbase("");
             this.Static06.set_leftbase("");
             this.Static06.set_topbase("");
             this.Static06.set_bottombase("");
             this.Static06.set_rightbase("");
             this.Static06.set_widthbase("");
             this.Static06.set_heightbase("");
-            this.Combo01.set_leftbase("");
-            this.Combo01.set_topbase("");
-            this.Combo01.set_bottombase("");
-            this.Combo01.set_rightbase("");
-            this.Combo01.set_widthbase("");
-            this.Combo01.set_heightbase("");
+            this.cmbProcStatus.set_leftbase("");
+            this.cmbProcStatus.set_topbase("");
+            this.cmbProcStatus.set_bottombase("");
+            this.cmbProcStatus.set_rightbase("");
+            this.cmbProcStatus.set_widthbase("");
+            this.cmbProcStatus.set_heightbase("");
             this.Static07.set_leftbase("");
             this.Static07.set_topbase("");
             this.Static07.set_bottombase("");
             this.Static07.set_rightbase("");
             this.Static07.set_widthbase("");
             this.Static07.set_heightbase("");
-            this.Combo02.set_leftbase("");
-            this.Combo02.set_topbase("");
-            this.Combo02.set_bottombase("");
-            this.Combo02.set_rightbase("");
-            this.Combo02.set_widthbase("");
-            this.Combo02.set_heightbase("");
+            this.cmbBizStaff.set_leftbase("");
+            this.cmbBizStaff.set_topbase("");
+            this.cmbBizStaff.set_bottombase("");
+            this.cmbBizStaff.set_rightbase("");
+            this.cmbBizStaff.set_widthbase("");
+            this.cmbBizStaff.set_heightbase("");
             this.Static08.set_leftbase("");
             this.Static08.set_topbase("");
             this.Static08.set_bottombase("");
@@ -593,54 +633,54 @@
             this.Combo03.set_rightbase("");
             this.Combo03.set_widthbase("");
             this.Combo03.set_heightbase("");
-            this.Calendar00.set_leftbase("");
-            this.Calendar00.set_topbase("");
-            this.Calendar00.set_bottombase("");
-            this.Calendar00.set_rightbase("");
-            this.Calendar00.set_widthbase("");
-            this.Calendar00.set_heightbase("");
+            this.calEstDelevery.set_leftbase("");
+            this.calEstDelevery.set_topbase("");
+            this.calEstDelevery.set_bottombase("");
+            this.calEstDelevery.set_rightbase("");
+            this.calEstDelevery.set_widthbase("");
+            this.calEstDelevery.set_heightbase("");
             this.Static09.set_leftbase("");
             this.Static09.set_topbase("");
             this.Static09.set_bottombase("");
             this.Static09.set_rightbase("");
             this.Static09.set_widthbase("");
             this.Static09.set_heightbase("");
-            this.Calendar01.set_leftbase("");
-            this.Calendar01.set_topbase("");
-            this.Calendar01.set_bottombase("");
-            this.Calendar01.set_rightbase("");
-            this.Calendar01.set_widthbase("");
-            this.Calendar01.set_heightbase("");
-            this.CheckBox00.set_leftbase("");
-            this.CheckBox00.set_topbase("");
-            this.CheckBox00.set_bottombase("");
-            this.CheckBox00.set_rightbase("");
-            this.CheckBox00.set_widthbase("");
-            this.CheckBox00.set_heightbase("");
-            this.CheckBox01.set_leftbase("");
-            this.CheckBox01.set_topbase("");
-            this.CheckBox01.set_bottombase("");
-            this.CheckBox01.set_rightbase("");
-            this.CheckBox01.set_widthbase("");
-            this.CheckBox01.set_heightbase("");
-            this.TextArea00.set_leftbase("");
-            this.TextArea00.set_topbase("");
-            this.TextArea00.set_bottombase("");
-            this.TextArea00.set_rightbase("");
-            this.TextArea00.set_widthbase("");
-            this.TextArea00.set_heightbase("");
+            this.calEstTax.set_leftbase("");
+            this.calEstTax.set_topbase("");
+            this.calEstTax.set_bottombase("");
+            this.calEstTax.set_rightbase("");
+            this.calEstTax.set_widthbase("");
+            this.calEstTax.set_heightbase("");
+            this.chkCloseYN.set_leftbase("");
+            this.chkCloseYN.set_topbase("");
+            this.chkCloseYN.set_bottombase("");
+            this.chkCloseYN.set_rightbase("");
+            this.chkCloseYN.set_widthbase("");
+            this.chkCloseYN.set_heightbase("");
+            this.chkReportYN.set_leftbase("");
+            this.chkReportYN.set_topbase("");
+            this.chkReportYN.set_bottombase("");
+            this.chkReportYN.set_rightbase("");
+            this.chkReportYN.set_widthbase("");
+            this.chkReportYN.set_heightbase("");
+            this.taCloseRemark.set_leftbase("");
+            this.taCloseRemark.set_topbase("");
+            this.taCloseRemark.set_bottombase("");
+            this.taCloseRemark.set_rightbase("");
+            this.taCloseRemark.set_widthbase("");
+            this.taCloseRemark.set_heightbase("");
             this.Static10.set_leftbase("");
             this.Static10.set_topbase("");
             this.Static10.set_bottombase("");
             this.Static10.set_rightbase("");
             this.Static10.set_widthbase("");
             this.Static10.set_heightbase("");
-            this.Grid00.set_leftbase("");
-            this.Grid00.set_topbase("");
-            this.Grid00.set_bottombase("");
-            this.Grid00.set_rightbase("");
-            this.Grid00.set_widthbase("");
-            this.Grid00.set_heightbase("");
+            this.grd_detail.set_leftbase("");
+            this.grd_detail.set_topbase("");
+            this.grd_detail.set_bottombase("");
+            this.grd_detail.set_rightbase("");
+            this.grd_detail.set_widthbase("");
+            this.grd_detail.set_heightbase("");
             this.Static11.set_leftbase("");
             this.Static11.set_topbase("");
             this.Static11.set_bottombase("");
@@ -653,18 +693,18 @@
             this.Static12.set_rightbase("");
             this.Static12.set_widthbase("");
             this.Static12.set_heightbase("");
-            this.Edit04.set_leftbase("");
-            this.Edit04.set_topbase("");
-            this.Edit04.set_bottombase("");
-            this.Edit04.set_rightbase("");
-            this.Edit04.set_widthbase("");
-            this.Edit04.set_heightbase("");
-            this.Edit05.set_leftbase("");
-            this.Edit05.set_topbase("");
-            this.Edit05.set_bottombase("");
-            this.Edit05.set_rightbase("");
-            this.Edit05.set_widthbase("");
-            this.Edit05.set_heightbase("");
+            this.medt_Sales_Amt.set_leftbase("");
+            this.medt_Sales_Amt.set_topbase("");
+            this.medt_Sales_Amt.set_bottombase("");
+            this.medt_Sales_Amt.set_rightbase("");
+            this.medt_Sales_Amt.set_widthbase("");
+            this.medt_Sales_Amt.set_heightbase("");
+            this.MaskEdit0.set_leftbase("");
+            this.MaskEdit0.set_topbase("");
+            this.MaskEdit0.set_bottombase("");
+            this.MaskEdit0.set_rightbase("");
+            this.MaskEdit0.set_widthbase("");
+            this.MaskEdit0.set_heightbase("");
             this.Static13.set_leftbase("");
             this.Static13.set_topbase("");
             this.Static13.set_bottombase("");
@@ -677,18 +717,18 @@
             this.Static14.set_rightbase("");
             this.Static14.set_widthbase("");
             this.Static14.set_heightbase("");
-            this.Edit06.set_leftbase("");
-            this.Edit06.set_topbase("");
-            this.Edit06.set_bottombase("");
-            this.Edit06.set_rightbase("");
-            this.Edit06.set_widthbase("");
-            this.Edit06.set_heightbase("");
-            this.Edit07.set_leftbase("");
-            this.Edit07.set_topbase("");
-            this.Edit07.set_bottombase("");
-            this.Edit07.set_rightbase("");
-            this.Edit07.set_widthbase("");
-            this.Edit07.set_heightbase("");
+            this.medt_Purchase_Amt.set_leftbase("");
+            this.medt_Purchase_Amt.set_topbase("");
+            this.medt_Purchase_Amt.set_bottombase("");
+            this.medt_Purchase_Amt.set_rightbase("");
+            this.medt_Purchase_Amt.set_widthbase("");
+            this.medt_Purchase_Amt.set_heightbase("");
+            this.MaskEdit1.set_leftbase("");
+            this.MaskEdit1.set_topbase("");
+            this.MaskEdit1.set_bottombase("");
+            this.MaskEdit1.set_rightbase("");
+            this.MaskEdit1.set_widthbase("");
+            this.MaskEdit1.set_heightbase("");
             this.Static15.set_leftbase("");
             this.Static15.set_topbase("");
             this.Static15.set_bottombase("");
@@ -701,30 +741,30 @@
             this.Static16.set_rightbase("");
             this.Static16.set_widthbase("");
             this.Static16.set_heightbase("");
-            this.Edit08.set_leftbase("");
-            this.Edit08.set_topbase("");
-            this.Edit08.set_bottombase("");
-            this.Edit08.set_rightbase("");
-            this.Edit08.set_widthbase("");
-            this.Edit08.set_heightbase("");
-            this.Edit09.set_leftbase("");
-            this.Edit09.set_topbase("");
-            this.Edit09.set_bottombase("");
-            this.Edit09.set_rightbase("");
-            this.Edit09.set_widthbase("");
-            this.Edit09.set_heightbase("");
+            this.medt_Net_Sales_Amt.set_leftbase("");
+            this.medt_Net_Sales_Amt.set_topbase("");
+            this.medt_Net_Sales_Amt.set_bottombase("");
+            this.medt_Net_Sales_Amt.set_rightbase("");
+            this.medt_Net_Sales_Amt.set_widthbase("");
+            this.medt_Net_Sales_Amt.set_heightbase("");
+            this.MaskEdit2.set_leftbase("");
+            this.MaskEdit2.set_topbase("");
+            this.MaskEdit2.set_bottombase("");
+            this.MaskEdit2.set_rightbase("");
+            this.MaskEdit2.set_widthbase("");
+            this.MaskEdit2.set_heightbase("");
             this.Tab00.set_leftbase("");
             this.Tab00.set_topbase("");
             this.Tab00.set_bottombase("");
             this.Tab00.set_rightbase("");
             this.Tab00.set_widthbase("");
             this.Tab00.set_heightbase("");
-            this.Tab00.Tabpage1.form.Grid00.set_leftbase("");
-            this.Tab00.Tabpage1.form.Grid00.set_topbase("");
-            this.Tab00.Tabpage1.form.Grid00.set_bottombase("");
-            this.Tab00.Tabpage1.form.Grid00.set_rightbase("");
-            this.Tab00.Tabpage1.form.Grid00.set_widthbase("");
-            this.Tab00.Tabpage1.form.Grid00.set_heightbase("");
+            this.Tab00.Tabpage1.form.T_grd_his.set_leftbase("");
+            this.Tab00.Tabpage1.form.T_grd_his.set_topbase("");
+            this.Tab00.Tabpage1.form.T_grd_his.set_bottombase("");
+            this.Tab00.Tabpage1.form.T_grd_his.set_rightbase("");
+            this.Tab00.Tabpage1.form.T_grd_his.set_widthbase("");
+            this.Tab00.Tabpage1.form.T_grd_his.set_heightbase("");
             this.Tab00.Tabpage1.form.Static00.set_leftbase("");
             this.Tab00.Tabpage1.form.Static00.set_topbase("");
             this.Tab00.Tabpage1.form.Static00.set_bottombase("");
@@ -737,18 +777,18 @@
             this.Tab00.Tabpage1.form.Static01.set_rightbase("");
             this.Tab00.Tabpage1.form.Static01.set_widthbase("");
             this.Tab00.Tabpage1.form.Static01.set_heightbase("");
-            this.Tab00.Tabpage1.form.Combo00.set_leftbase("");
-            this.Tab00.Tabpage1.form.Combo00.set_topbase("");
-            this.Tab00.Tabpage1.form.Combo00.set_bottombase("");
-            this.Tab00.Tabpage1.form.Combo00.set_rightbase("");
-            this.Tab00.Tabpage1.form.Combo00.set_widthbase("");
-            this.Tab00.Tabpage1.form.Combo00.set_heightbase("");
-            this.Tab00.Tabpage1.form.Calendar00.set_leftbase("");
-            this.Tab00.Tabpage1.form.Calendar00.set_topbase("");
-            this.Tab00.Tabpage1.form.Calendar00.set_bottombase("");
-            this.Tab00.Tabpage1.form.Calendar00.set_rightbase("");
-            this.Tab00.Tabpage1.form.Calendar00.set_widthbase("");
-            this.Tab00.Tabpage1.form.Calendar00.set_heightbase("");
+            this.Tab00.Tabpage1.form.cmbIssueGubun.set_leftbase("");
+            this.Tab00.Tabpage1.form.cmbIssueGubun.set_topbase("");
+            this.Tab00.Tabpage1.form.cmbIssueGubun.set_bottombase("");
+            this.Tab00.Tabpage1.form.cmbIssueGubun.set_rightbase("");
+            this.Tab00.Tabpage1.form.cmbIssueGubun.set_widthbase("");
+            this.Tab00.Tabpage1.form.cmbIssueGubun.set_heightbase("");
+            this.Tab00.Tabpage1.form.T_calDeliveryDate.set_leftbase("");
+            this.Tab00.Tabpage1.form.T_calDeliveryDate.set_topbase("");
+            this.Tab00.Tabpage1.form.T_calDeliveryDate.set_bottombase("");
+            this.Tab00.Tabpage1.form.T_calDeliveryDate.set_rightbase("");
+            this.Tab00.Tabpage1.form.T_calDeliveryDate.set_widthbase("");
+            this.Tab00.Tabpage1.form.T_calDeliveryDate.set_heightbase("");
             this.Tab00.Tabpage1.form.Static02.set_leftbase("");
             this.Tab00.Tabpage1.form.Static02.set_topbase("");
             this.Tab00.Tabpage1.form.Static02.set_bottombase("");
@@ -761,42 +801,42 @@
             this.Tab00.Tabpage1.form.Static03.set_rightbase("");
             this.Tab00.Tabpage1.form.Static03.set_widthbase("");
             this.Tab00.Tabpage1.form.Static03.set_heightbase("");
-            this.Tab00.Tabpage1.form.CheckBox00.set_leftbase("");
-            this.Tab00.Tabpage1.form.CheckBox00.set_topbase("");
-            this.Tab00.Tabpage1.form.CheckBox00.set_bottombase("");
-            this.Tab00.Tabpage1.form.CheckBox00.set_rightbase("");
-            this.Tab00.Tabpage1.form.CheckBox00.set_widthbase("");
-            this.Tab00.Tabpage1.form.CheckBox00.set_heightbase("");
+            this.Tab00.Tabpage1.form.T_chk_report.set_leftbase("");
+            this.Tab00.Tabpage1.form.T_chk_report.set_topbase("");
+            this.Tab00.Tabpage1.form.T_chk_report.set_bottombase("");
+            this.Tab00.Tabpage1.form.T_chk_report.set_rightbase("");
+            this.Tab00.Tabpage1.form.T_chk_report.set_widthbase("");
+            this.Tab00.Tabpage1.form.T_chk_report.set_heightbase("");
             this.Tab00.Tabpage1.form.Static04.set_leftbase("");
             this.Tab00.Tabpage1.form.Static04.set_topbase("");
             this.Tab00.Tabpage1.form.Static04.set_bottombase("");
             this.Tab00.Tabpage1.form.Static04.set_rightbase("");
             this.Tab00.Tabpage1.form.Static04.set_widthbase("");
             this.Tab00.Tabpage1.form.Static04.set_heightbase("");
-            this.Tab00.Tabpage1.form.CheckBox01.set_leftbase("");
-            this.Tab00.Tabpage1.form.CheckBox01.set_topbase("");
-            this.Tab00.Tabpage1.form.CheckBox01.set_bottombase("");
-            this.Tab00.Tabpage1.form.CheckBox01.set_rightbase("");
-            this.Tab00.Tabpage1.form.CheckBox01.set_widthbase("");
-            this.Tab00.Tabpage1.form.CheckBox01.set_heightbase("");
-            this.Tab00.Tabpage1.form.TextArea00.set_leftbase("");
-            this.Tab00.Tabpage1.form.TextArea00.set_topbase("");
-            this.Tab00.Tabpage1.form.TextArea00.set_bottombase("");
-            this.Tab00.Tabpage1.form.TextArea00.set_rightbase("");
-            this.Tab00.Tabpage1.form.TextArea00.set_widthbase("");
-            this.Tab00.Tabpage1.form.TextArea00.set_heightbase("");
-            this.Tab00.Tabpage2.form.Grid00.set_leftbase("");
-            this.Tab00.Tabpage2.form.Grid00.set_topbase("");
-            this.Tab00.Tabpage2.form.Grid00.set_bottombase("");
-            this.Tab00.Tabpage2.form.Grid00.set_rightbase("");
-            this.Tab00.Tabpage2.form.Grid00.set_widthbase("");
-            this.Tab00.Tabpage2.form.Grid00.set_heightbase("");
-            this.Button01.set_leftbase("");
-            this.Button01.set_topbase("");
-            this.Button01.set_bottombase("");
-            this.Button01.set_rightbase("");
-            this.Button01.set_widthbase("");
-            this.Button01.set_heightbase("");
+            this.Tab00.Tabpage1.form.chb_sch.set_leftbase("");
+            this.Tab00.Tabpage1.form.chb_sch.set_topbase("");
+            this.Tab00.Tabpage1.form.chb_sch.set_bottombase("");
+            this.Tab00.Tabpage1.form.chb_sch.set_rightbase("");
+            this.Tab00.Tabpage1.form.chb_sch.set_widthbase("");
+            this.Tab00.Tabpage1.form.chb_sch.set_heightbase("");
+            this.Tab00.Tabpage1.form.T_txtRemarks.set_leftbase("");
+            this.Tab00.Tabpage1.form.T_txtRemarks.set_topbase("");
+            this.Tab00.Tabpage1.form.T_txtRemarks.set_bottombase("");
+            this.Tab00.Tabpage1.form.T_txtRemarks.set_rightbase("");
+            this.Tab00.Tabpage1.form.T_txtRemarks.set_widthbase("");
+            this.Tab00.Tabpage1.form.T_txtRemarks.set_heightbase("");
+            this.Tab00.Tabpage2.form.grdBizMemo.set_leftbase("");
+            this.Tab00.Tabpage2.form.grdBizMemo.set_topbase("");
+            this.Tab00.Tabpage2.form.grdBizMemo.set_bottombase("");
+            this.Tab00.Tabpage2.form.grdBizMemo.set_rightbase("");
+            this.Tab00.Tabpage2.form.grdBizMemo.set_widthbase("");
+            this.Tab00.Tabpage2.form.grdBizMemo.set_heightbase("");
+            this.btnClose.set_leftbase("");
+            this.btnClose.set_topbase("");
+            this.btnClose.set_bottombase("");
+            this.btnClose.set_rightbase("");
+            this.btnClose.set_widthbase("");
+            this.btnClose.set_heightbase("");
 
             // Layout Functions
             //-- Default Layout : this

@@ -4,10 +4,10 @@
     <Layouts>
       <Layout height="555" width="544">
         <Static id="Static00" taborder="0" text="영업일정" left="5" top="5" width="140" height="23" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Button id="Button00" taborder="1" text="닫기" left="" top="5" width="49" height="22" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Button id="Button01" taborder="1" text="저장" left="" top="5" width="49" height="22" right="59" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Button id="Button02" taborder="1" text="삭제" left="" top="5" width="49" height="22" right="113" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Button id="Button03" taborder="1" text="신규" left="" top="5" width="49" height="22" right="167" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnClose" taborder="1" text="닫기" left="" top="5" width="49" height="22" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnSave" taborder="1" text="저장" left="" top="5" width="49" height="22" right="59" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnDel" taborder="1" text="삭제" left="" top="5" width="49" height="22" right="113" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnAdd" taborder="1" text="신규" left="" top="5" width="49" height="22" right="167" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
         <Div id="Div00" taborder="2" text="Div00" left="5" top="32" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
           <Layouts>
             <Layout>

@@ -23,7 +23,7 @@
 
             
             // UI Components Initialize
-            obj = new Grid("Grid00","absolute","5","5",null,null,"5","5",this);
+            obj = new Grid("grdList","absolute","5","5",null,null,"5","5",this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("0");
@@ -81,14 +81,14 @@
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Edit("Edit00","absolute","279","8","237","22",null,null,this.Div00.form);
+            obj = new Edit("edt_project","absolute","279","8","237","22",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new CheckBox("CheckBox00","absolute","5","42","153","26",null,null,this.Div00.form);
+            obj = new CheckBox("chb_sales_all","absolute","5","42","153","26",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("3");
@@ -96,7 +96,7 @@
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new CheckBox("CheckBox01","absolute","147","42","113","26",null,null,this.Div00.form);
+            obj = new CheckBox("chb_EstRate","absolute","147","42","113","26",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("3");
@@ -104,47 +104,87 @@
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Radio("Radio00","absolute","253","42","413","26",null,null,this.Div00.form);
+            obj = new CheckBox("chkAll","absolute","267","42","60","20",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("4");
-                obj.set_codecolumn("codecolumn");
-                obj.set_datacolumn("datacolumn");
-                obj.set_direction("vertical");
-                obj.set_verticalAlign("middle");
-                obj.set_textAlign("left");
-                obj.set_wordSpacing("300px");
-                var Div00_form_Radio00_innerdataset = new nexacro.NormalDataset("Div00_form_Radio00_innerdataset", obj);
-                Div00_form_Radio00_innerdataset._setContents("<ColumnInfo><Column id=\"codecolumn\" size=\"256\"/><Column id=\"datacolumn\" size=\"256\"/></ColumnInfo><Rows><Row><Col id=\"codecolumn\">all</Col><Col id=\"datacolumn\">전체</Col></Row><Row><Col id=\"codecolumn\">01</Col><Col id=\"datacolumn\">PreSales</Col></Row><Row><Col id=\"codecolumn\">02</Col><Col id=\"datacolumn\">수주</Col></Row><Row><Col id=\"codecolumn\">03</Col><Col id=\"datacolumn\">계약</Col></Row></Rows>");
-                obj.set_innerdataset(Div00_form_Radio00_innerdataset);
+                obj.set_text("전체");
+            });
+            this.Div00.addChild(obj.name, obj);
+
+            obj = new CheckBox("chkPreSales","absolute","327","42","60","20",null,null,this.Div00.form);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_taborder("5");
+                obj.set_text("PreSales");
+            });
+            this.Div00.addChild(obj.name, obj);
+
+            obj = new CheckBox("chkSooju","absolute","399","42","60","20",null,null,this.Div00.form);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_taborder("6");
+                obj.set_text("수주");
+            });
+            this.Div00.addChild(obj.name, obj);
+
+            obj = new CheckBox("chkContract","absolute","456","42","60","20",null,null,this.Div00.form);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_taborder("7");
+                obj.set_text("계약");
             });
             this.Div00.addChild(obj.name, obj);
             
             // Positionbase Setting
-            this.Grid00.set_topbase("Div00.bottom");
-            this.Grid00.set_leftbase("");
-            this.Grid00.set_bottombase("");
-            this.Grid00.set_rightbase("");
-            this.Grid00.set_widthbase("");
-            this.Grid00.set_heightbase("");
+            this.grdList.set_topbase("Div00.bottom");
+            this.grdList.set_leftbase("");
+            this.grdList.set_bottombase("");
+            this.grdList.set_rightbase("");
+            this.grdList.set_widthbase("");
+            this.grdList.set_heightbase("");
             this.Div00.set_leftbase("");
             this.Div00.set_topbase("");
             this.Div00.set_bottombase("");
             this.Div00.set_rightbase("");
             this.Div00.set_widthbase("");
             this.Div00.set_heightbase("");
-            this.Div00.form.Edit00.set_leftbase("");
-            this.Div00.form.Edit00.set_topbase("");
-            this.Div00.form.Edit00.set_bottombase("");
-            this.Div00.form.Edit00.set_rightbase("");
-            this.Div00.form.Edit00.set_widthbase("");
-            this.Div00.form.Edit00.set_heightbase("");
-            this.Div00.form.CheckBox00.set_leftbase("");
-            this.Div00.form.CheckBox00.set_topbase("");
-            this.Div00.form.CheckBox00.set_bottombase("");
-            this.Div00.form.CheckBox00.set_rightbase("");
-            this.Div00.form.CheckBox00.set_widthbase("");
-            this.Div00.form.CheckBox00.set_heightbase("");
+            this.Div00.form.edt_project.set_leftbase("");
+            this.Div00.form.edt_project.set_topbase("");
+            this.Div00.form.edt_project.set_bottombase("");
+            this.Div00.form.edt_project.set_rightbase("");
+            this.Div00.form.edt_project.set_widthbase("");
+            this.Div00.form.edt_project.set_heightbase("");
+            this.Div00.form.chb_sales_all.set_leftbase("");
+            this.Div00.form.chb_sales_all.set_topbase("");
+            this.Div00.form.chb_sales_all.set_bottombase("");
+            this.Div00.form.chb_sales_all.set_rightbase("");
+            this.Div00.form.chb_sales_all.set_widthbase("");
+            this.Div00.form.chb_sales_all.set_heightbase("");
+            this.Div00.form.chkAll.set_leftbase("");
+            this.Div00.form.chkAll.set_topbase("");
+            this.Div00.form.chkAll.set_bottombase("");
+            this.Div00.form.chkAll.set_rightbase("");
+            this.Div00.form.chkAll.set_widthbase("");
+            this.Div00.form.chkAll.set_heightbase("");
+            this.Div00.form.chkPreSales.set_leftbase("");
+            this.Div00.form.chkPreSales.set_topbase("");
+            this.Div00.form.chkPreSales.set_bottombase("");
+            this.Div00.form.chkPreSales.set_rightbase("");
+            this.Div00.form.chkPreSales.set_widthbase("");
+            this.Div00.form.chkPreSales.set_heightbase("");
+            this.Div00.form.chkSooju.set_leftbase("");
+            this.Div00.form.chkSooju.set_topbase("");
+            this.Div00.form.chkSooju.set_bottombase("");
+            this.Div00.form.chkSooju.set_rightbase("");
+            this.Div00.form.chkSooju.set_widthbase("");
+            this.Div00.form.chkSooju.set_heightbase("");
+            this.Div00.form.chkContract.set_leftbase("");
+            this.Div00.form.chkContract.set_topbase("");
+            this.Div00.form.chkContract.set_bottombase("");
+            this.Div00.form.chkContract.set_rightbase("");
+            this.Div00.form.chkContract.set_widthbase("");
+            this.Div00.form.chkContract.set_heightbase("");
 
             // Layout Functions
             //-- Default Layout : this

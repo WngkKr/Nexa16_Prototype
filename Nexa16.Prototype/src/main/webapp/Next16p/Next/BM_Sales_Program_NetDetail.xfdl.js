@@ -66,7 +66,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Grid("Grid00","absolute","405","30",null,"120","5",null,this);
+            obj = new Grid("grdSale","absolute","405","30",null,"120","5",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("0");
@@ -76,7 +76,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Grid("Grid01","absolute","405","180",null,"120","5",null,this);
+            obj = new Grid("grdPurchase","absolute","405","180",null,"120","5",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("0");
@@ -94,7 +94,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Grid("Grid02","absolute","405","330",null,"120","5",null,this);
+            obj = new Grid("grdSI","absolute","405","330",null,"120","5",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("0");
@@ -112,7 +112,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Grid("Grid03","absolute","405","480",null,"115","5",null,this);
+            obj = new Grid("grdTech","absolute","405","480",null,"115","5",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("0");
@@ -130,7 +130,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Grid("Grid04","absolute","5","480",null,"115","405",null,this);
+            obj = new Grid("grdTobe","absolute","5","480",null,"115","405",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("0");
@@ -140,7 +140,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Grid("Grid05","absolute","5","30",null,"420","405",null,this);
+            obj = new Grid("grdNet","absolute","5","30",null,"420","405",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("0");
@@ -150,7 +150,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button00","absolute","628","5",null,"20","77",null,this);
+            obj = new Button("btnProject","absolute","628","5",null,"20","77",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
@@ -180,60 +180,60 @@
             this.Static01.set_rightbase("");
             this.Static01.set_widthbase("");
             this.Static01.set_heightbase("");
-            this.Grid01.set_leftbase("");
-            this.Grid01.set_topbase("");
-            this.Grid01.set_bottombase("");
-            this.Grid01.set_rightbase("");
-            this.Grid01.set_widthbase("");
-            this.Grid01.set_heightbase("");
+            this.grdPurchase.set_leftbase("");
+            this.grdPurchase.set_topbase("");
+            this.grdPurchase.set_bottombase("");
+            this.grdPurchase.set_rightbase("");
+            this.grdPurchase.set_widthbase("");
+            this.grdPurchase.set_heightbase("");
             this.Static02.set_leftbase("");
             this.Static02.set_topbase("");
             this.Static02.set_bottombase("");
             this.Static02.set_rightbase("");
             this.Static02.set_widthbase("");
             this.Static02.set_heightbase("");
-            this.Grid02.set_leftbase("");
-            this.Grid02.set_topbase("");
-            this.Grid02.set_bottombase("");
-            this.Grid02.set_rightbase("");
-            this.Grid02.set_widthbase("");
-            this.Grid02.set_heightbase("");
+            this.grdSI.set_leftbase("");
+            this.grdSI.set_topbase("");
+            this.grdSI.set_bottombase("");
+            this.grdSI.set_rightbase("");
+            this.grdSI.set_widthbase("");
+            this.grdSI.set_heightbase("");
             this.Static03.set_leftbase("");
             this.Static03.set_topbase("");
             this.Static03.set_bottombase("");
             this.Static03.set_rightbase("");
             this.Static03.set_widthbase("");
             this.Static03.set_heightbase("");
-            this.Grid03.set_leftbase("");
-            this.Grid03.set_topbase("");
-            this.Grid03.set_bottombase("");
-            this.Grid03.set_rightbase("");
-            this.Grid03.set_widthbase("");
-            this.Grid03.set_heightbase("");
+            this.grdTech.set_leftbase("");
+            this.grdTech.set_topbase("");
+            this.grdTech.set_bottombase("");
+            this.grdTech.set_rightbase("");
+            this.grdTech.set_widthbase("");
+            this.grdTech.set_heightbase("");
             this.Static04.set_leftbase("");
             this.Static04.set_topbase("");
             this.Static04.set_bottombase("");
             this.Static04.set_rightbase("");
             this.Static04.set_widthbase("");
             this.Static04.set_heightbase("");
-            this.Grid04.set_leftbase("");
-            this.Grid04.set_topbase("");
-            this.Grid04.set_bottombase("");
-            this.Grid04.set_rightbase("");
-            this.Grid04.set_widthbase("");
-            this.Grid04.set_heightbase("");
-            this.Grid05.set_leftbase("");
-            this.Grid05.set_topbase("");
-            this.Grid05.set_bottombase("");
-            this.Grid05.set_rightbase("");
-            this.Grid05.set_widthbase("");
-            this.Grid05.set_heightbase("");
-            this.Button00.set_leftbase("");
-            this.Button00.set_topbase("");
-            this.Button00.set_bottombase("");
-            this.Button00.set_rightbase("");
-            this.Button00.set_widthbase("");
-            this.Button00.set_heightbase("");
+            this.grdTobe.set_leftbase("");
+            this.grdTobe.set_topbase("");
+            this.grdTobe.set_bottombase("");
+            this.grdTobe.set_rightbase("");
+            this.grdTobe.set_widthbase("");
+            this.grdTobe.set_heightbase("");
+            this.grdNet.set_leftbase("");
+            this.grdNet.set_topbase("");
+            this.grdNet.set_bottombase("");
+            this.grdNet.set_rightbase("");
+            this.grdNet.set_widthbase("");
+            this.grdNet.set_heightbase("");
+            this.btnProject.set_leftbase("");
+            this.btnProject.set_topbase("");
+            this.btnProject.set_bottombase("");
+            this.btnProject.set_rightbase("");
+            this.btnProject.set_widthbase("");
+            this.btnProject.set_heightbase("");
             this.Static05.set_leftbase("");
             this.Static05.set_topbase("");
             this.Static05.set_bottombase("");

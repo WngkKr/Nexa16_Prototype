@@ -25,7 +25,7 @@
             this.addChild(obj.name, obj);
             
             // UI Components Initialize
-            obj = new Grid("Grid00","absolute","10","5",null,null,"5","5",this);
+            obj = new Grid("grdProjectList","absolute","10","5",null,null,"5","5",this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("0");
@@ -76,7 +76,7 @@
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new CheckBox("CheckBox00","absolute","232","8","468","20",null,null,this.Div00.form);
+            obj = new CheckBox("cbk_step3","absolute","232","8","468","20",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
@@ -84,7 +84,7 @@
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Button("Button00","absolute",null,"53","100","27","5",null,this);
+            obj = new Button("btnConfirmCancel","absolute",null,"53","100","27","5",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
@@ -93,24 +93,24 @@
             this.addChild(obj.name, obj);
             
             // Positionbase Setting
-            this.Grid00.set_leftbase("");
-            this.Grid00.set_topbase("Button00.bottom");
-            this.Grid00.set_bottombase("");
-            this.Grid00.set_rightbase("");
-            this.Grid00.set_widthbase("");
-            this.Grid00.set_heightbase("");
+            this.grdProjectList.set_leftbase("");
+            this.grdProjectList.set_topbase("Button00.bottom");
+            this.grdProjectList.set_bottombase("");
+            this.grdProjectList.set_rightbase("");
+            this.grdProjectList.set_widthbase("");
+            this.grdProjectList.set_heightbase("");
             this.Div00.set_leftbase("");
             this.Div00.set_topbase("");
             this.Div00.set_bottombase("");
             this.Div00.set_rightbase("");
             this.Div00.set_widthbase("");
             this.Div00.set_heightbase("");
-            this.Button00.set_leftbase("");
-            this.Button00.set_topbase("");
-            this.Button00.set_bottombase("");
-            this.Button00.set_rightbase("");
-            this.Button00.set_widthbase("");
-            this.Button00.set_heightbase("");
+            this.btnConfirmCancel.set_leftbase("");
+            this.btnConfirmCancel.set_topbase("");
+            this.btnConfirmCancel.set_bottombase("");
+            this.btnConfirmCancel.set_rightbase("");
+            this.btnConfirmCancel.set_widthbase("");
+            this.btnConfirmCancel.set_heightbase("");
 
             // Layout Functions
             //-- Default Layout : this

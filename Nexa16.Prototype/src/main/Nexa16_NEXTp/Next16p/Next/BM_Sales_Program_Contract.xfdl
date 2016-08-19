@@ -3,7 +3,7 @@
   <Form id="BM_Sales_Program_Contract" left="0" top="0" width="900" height="648" titletext="New Form">
     <Layouts>
       <Layout height="648" width="900">
-        <Grid id="Grid00" taborder="0" left="10" top="5" width="" height="" right="5" bottom="5" binddataset="dsList" leftbase="" topbase="Button00.bottom" bottombase="" rightbase="" widthbase="" heightbase="">
+        <Grid id="grdProjectList" taborder="0" left="10" top="5" width="" height="" right="5" bottom="5" binddataset="dsList" leftbase="" topbase="Button00.bottom" bottombase="" rightbase="" widthbase="" heightbase="">
           <Formats>
             <Format id="default">
               <Columns>
@@ -56,11 +56,11 @@
               <Calendar id="CalFrom" taborder="1" left="35" top="8" width="84" height="22" right="" bottom="" dateformat="yyyy-MM" editformat="yyyy-MM"/>
               <Static id="Static01" taborder="0" text="~" left="120" top="4" width="34" height="30" right="" bottom=""/>
               <Calendar id="CalTo" taborder="1" left="131" top="8" width="84" height="22" dateformat="yyyy-MM" editformat="yyyy-MM" right="" bottom=""/>
-              <CheckBox id="CheckBox00" taborder="2" text="계약이 완료된 예상계약건만 표시(STEP 3)" left="232" top="8" width="468" height="20" right="" bottom=""/>
+              <CheckBox id="cbk_step3" taborder="2" text="계약이 완료된 예상계약건만 표시(STEP 3)" left="232" top="8" width="468" height="20" right="" bottom=""/>
             </Layout>
           </Layouts>
         </Div>
-        <Button id="Button00" taborder="2" text="계약확정취소" left="" top="53" width="100" height="27" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnConfirmCancel" taborder="2" text="계약확정취소" left="" top="53" width="100" height="27" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
       </Layout>
     </Layouts>
     <Objects>
