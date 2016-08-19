@@ -114,9 +114,53 @@
                 </Layout>
               </Layouts>
             </Tabpage>
-            <Tabpage id="Tabpage2" text="Tabpage2">
+            <Tabpage id="Tabpage2" text="담당자">
               <Layouts>
-                <Layout/>
+                <Layout>
+                  <Grid id="Grid00" taborder="0" left="5" top="30" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="60"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="60"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell colspan="3" text="회사"/>
+                          <Cell col="3" colspan="3" text="주소"/>
+                          <Cell col="6" rowspan="2" text="비고"/>
+                          <Cell row="1" text="부서"/>
+                          <Cell row="1" col="1" text="담당자"/>
+                          <Cell row="1" col="2" text="직급"/>
+                          <Cell row="1" col="3" text="핸드폰"/>
+                          <Cell row="1" col="4" text="이메일"/>
+                          <Cell row="1" col="5" text="유선"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell/>
+                          <Cell col="1"/>
+                          <Cell col="2"/>
+                          <Cell col="3"/>
+                          <Cell col="4"/>
+                          <Cell col="5"/>
+                          <Cell col="6"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Button id="Button00" taborder="1" text="엑셀↓" left="49" top="5" width="43" height="20" right="" bottom=""/>
+                  <Button id="Button01" taborder="1" text="Reset" left="93" top="5" width="43" height="20" right="" bottom=""/>
+                  <Button id="Button02" taborder="1" text="엑셀↑" left="5" top="5" width="43" height="20" right="" bottom=""/>
+                </Layout>
               </Layouts>
             </Tabpage>
           </Tabpages>

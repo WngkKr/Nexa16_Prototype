@@ -438,9 +438,41 @@
             obj = new Tabpage("Tabpage2",this.Tab00);
             obj._setPropInitFunc(function (obj)
             {
-                obj.set_text("Tabpage2");
+                obj.set_text("담당자");
             });
             this.Tab00.addChild(obj.name, obj);
+
+            obj = new Grid("Grid00","absolute","5","30",null,null,"5","5",this.Tab00.Tabpage2.form);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_taborder("0");
+                obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"80\"/><Column size=\"80\"/><Column size=\"60\"/><Column size=\"80\"/><Column size=\"80\"/><Column size=\"80\"/><Column size=\"60\"/></Columns><Rows><Row size=\"24\" band=\"head\"/><Row size=\"24\" band=\"head\"/><Row size=\"24\"/></Rows><Band id=\"head\"><Cell colspan=\"3\" text=\"회사\"/><Cell col=\"3\" colspan=\"3\" text=\"주소\"/><Cell col=\"6\" rowspan=\"2\" text=\"비고\"/><Cell row=\"1\" text=\"부서\"/><Cell row=\"1\" col=\"1\" text=\"담당자\"/><Cell row=\"1\" col=\"2\" text=\"직급\"/><Cell row=\"1\" col=\"3\" text=\"핸드폰\"/><Cell row=\"1\" col=\"4\" text=\"이메일\"/><Cell row=\"1\" col=\"5\" text=\"유선\"/></Band><Band id=\"body\"><Cell/><Cell col=\"1\"/><Cell col=\"2\"/><Cell col=\"3\"/><Cell col=\"4\"/><Cell col=\"5\"/><Cell col=\"6\"/></Band></Format></Formats>");
+            });
+            this.Tab00.Tabpage2.addChild(obj.name, obj);
+
+            obj = new Button("Button00","absolute","49","5","43","20",null,null,this.Tab00.Tabpage2.form);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_taborder("1");
+                obj.set_text("엑셀↓");
+            });
+            this.Tab00.Tabpage2.addChild(obj.name, obj);
+
+            obj = new Button("Button01","absolute","93","5","43","20",null,null,this.Tab00.Tabpage2.form);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_taborder("1");
+                obj.set_text("Reset");
+            });
+            this.Tab00.Tabpage2.addChild(obj.name, obj);
+
+            obj = new Button("Button02","absolute","5","5","43","20",null,null,this.Tab00.Tabpage2.form);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_taborder("1");
+                obj.set_text("엑셀↑");
+            });
+            this.Tab00.Tabpage2.addChild(obj.name, obj);
 
             obj = new Button("Button00","absolute","419","5","63","24",null,null,this);
             obj._setPropInitFunc(function (obj)
@@ -753,6 +785,12 @@
             this.Tab00.Tabpage1.form.TextArea00.set_rightbase("");
             this.Tab00.Tabpage1.form.TextArea00.set_widthbase("");
             this.Tab00.Tabpage1.form.TextArea00.set_heightbase("");
+            this.Tab00.Tabpage2.form.Grid00.set_leftbase("");
+            this.Tab00.Tabpage2.form.Grid00.set_topbase("");
+            this.Tab00.Tabpage2.form.Grid00.set_bottombase("");
+            this.Tab00.Tabpage2.form.Grid00.set_rightbase("");
+            this.Tab00.Tabpage2.form.Grid00.set_widthbase("");
+            this.Tab00.Tabpage2.form.Grid00.set_heightbase("");
             this.Button01.set_leftbase("");
             this.Button01.set_topbase("");
             this.Button01.set_bottombase("");
