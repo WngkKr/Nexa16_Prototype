@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sys_staffSearchPop" left="0" top="0" width="600" height="400" titletext="직원 선택">
+    <Layouts>
+      <Layout height="400" width="600">
+        <Div id="Div00" taborder="11" text="Div00" left="0.83%" top="4" width="98.52%" height="49" right="" bottom="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="회사구분" left="0.17%" top="13" width="9.85%" height="25" right="" bottom=""/>
+              <Button id="btnClose" taborder="5" text="닫기" left="90.83%" top="13" width="7.74%" height="25" right="" bottom=""/>
+              <Radio id="rdoCompanyType" taborder="6" left="11.04%" top="10" width="32.6%" height="30" right="" bottom="" innerdataset="@dsCDCompanyType" codecolumn="CODE" datacolumn="DATA" direction="vertical" background="gainsboro"/>
+              <Static id="Static01" taborder="0" text="성명" left="44.14%" top="13" width="5.94%" height="25" right="" bottom=""/>
+              <Button id="btnSearch" taborder="5" text="조회" left="73.01%" top="13" width="7.74%" height="25" right="" bottom=""/>
+              <Button id="btnEnter" taborder="5" text="확인" left="81.66%" top="13" width="7.74%" height="25" right="" bottom=""/>
+              <Edit id="edtSearch" taborder="7" left="51.1%" top="13" width="18.85%" height="26" right="" bottom=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="btnStaffRegister" taborder="12" text="사원등록 &gt;&gt;" left="78.33%" top="61" width="21.17%" height="29" right="" bottom=""/>
+        <Grid id="grdSubList" taborder="13" left="0.83%" top="96" width="36.67%" height="298" right="" bottom="" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="48"/>
+                <Column size="48"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="코드"/>
+                <Cell col="1" text="협력사명"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="grdList" taborder="13" left="39.83%" top="96" width="58.83%" height="298" right="" bottom="" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="회사명"/>
+                <Cell col="1" text="부서명"/>
+                <Cell col="2" text="사원번호"/>
+                <Cell col="3" text="이름"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Div id="divStaffRegister" taborder="14" text="Div01" left="100.83%" top="54" width="70%" height="339" right="" bottom="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="사번" left="1.64%" top="12" width="23.01%" height="24" right="" bottom="" border="1 solid black" textAlign="center"/>
+              <Static id="Static01" taborder="0" text="회사명" left="1.64%" top="46" width="23.01%" height="24" right="" bottom="" border="1 solid black" textAlign="center"/>
+              <Static id="Static02" taborder="0" text="성명" left="1.64%" top="80" width="23.01%" height="24" right="" bottom="" border="1 solid black" textAlign="center"/>
+              <Static id="Static03" taborder="0" text="인력구분" left="1.64%" top="114" width="23.01%" height="24" right="" bottom="" border="1 solid black" textAlign="center"/>
+              <Edit id="edtEmployNo" taborder="1" left="26.34%" top="12" width="30.41%" height="26" right="" bottom=""/>
+              <Edit id="edtCompanyName" taborder="1" left="26.34%" top="45" width="59.76%" height="24" right="" bottom=""/>
+              <Edit id="edtEmployName" taborder="1" left="26.34%" top="80" width="30.41%" height="26" right="" bottom=""/>
+              <Radio id="rdoStaffClass" taborder="2" left="26.34%" top="114" width="72.01%" height="25" right="" bottom="" innerdataset="@dsCDStaffClass" codecolumn="CODE" datacolumn="DATA" direction="vertical" border="1 solid black , 1 solid black , 1 solid black , 1 solid black"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="st_title" taborder="15" text="인력정보" left="101%" top="18" width="21.83%" height="22" right="" bottom=""/>
+        <Button id="Button00" taborder="16" text="저장" left="157.5%" top="18" width="12.67%" height="22" right="" bottom=""/>
+        <Button id="btnCompanySearch" taborder="16" text="" left="162%" top="100" width="3.33%" height="24" right="" bottom=""/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsCDCompanyType">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="DATA" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">0</Col>
+            <Col id="DATA">투비소프트</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">1</Col>
+            <Col id="DATA">협력사</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsCDStaffClass">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="DATA" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">S</Col>
+            <Col id="DATA">SI인력</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">T</Col>
+            <Col id="DATA">기술지원인력</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">E</Col>
+            <Col id="DATA">기타</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>
