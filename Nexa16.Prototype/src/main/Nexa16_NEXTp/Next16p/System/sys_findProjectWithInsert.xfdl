@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sys_findProjectWithInsert" left="0" top="0" width="800" height="544" titletext="New Form">
+    <Layouts>
+      <Layout height="544" width="800">
+        <Div id="Div00" taborder="11" text="Div00" left="0.83%" top="4" width="45.25%" height="44" right="" bottom="">
+          <Layouts>
+            <Layout>
+              <Combo id="cmb_gbn" taborder="3" text="" left="1.91%" top="8" width="20.23%" height="25" right="" bottom=""/>
+              <Edit id="edt_search" taborder="6" left="24.55%" top="8" width="42.95%" height="25" right="" bottom=""/>
+              <Button id="btn_close" taborder="7" text="닫기" left="71.36%" top="8" width="12.27%" height="25" right="" bottom=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Grid id="ds_client" taborder="1" left="0.75%" top="49" width="45.38%" height="215" right="" bottom="" autofittype="col" binddataset="dsList">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="번호"/>
+                <Cell col="1" text="파일명"/>
+                <Cell col="2" text="경로명"/>
+              </Band>
+              <Band id="body">
+                <Cell text=""/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="grd_project" taborder="1" left="0.75%" top="307" width="45.38%" height="215" right="" bottom="" autofittype="col" binddataset="dsList">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="번호"/>
+                <Cell col="1" text="파일명"/>
+                <Cell col="2" text="경로명"/>
+              </Band>
+              <Band id="body">
+                <Cell text=""/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="btn_clientAdd" taborder="12" text="고객사추가" left="24%" top="273" width="10.13%" height="26" right="" bottom=""/>
+        <Button id="btn_ProjectAdd" taborder="12" text="Project추가" left="35%" top="273" width="10.13%" height="26" right="" bottom=""/>
+        <Div id="Div_Proc" taborder="13" text="" left="48.13%" top="49" width="50.5%" height="479" right="" bottom="">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+        <Button id="btnExcel" taborder="12" text="Excell" left="88.5%" top="13" width="10.13%" height="26" right="" bottom=""/>
+        <Static id="st_title" taborder="14" text="프로젝트" left="48.38%" top="7" width="16.63%" height="34" right="" bottom=""/>
+        <Button id="btn_divClose" taborder="12" text="&lt;&lt;" left="88.5%" top="-11" width="10.13%" height="26" right="" bottom=""/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>
