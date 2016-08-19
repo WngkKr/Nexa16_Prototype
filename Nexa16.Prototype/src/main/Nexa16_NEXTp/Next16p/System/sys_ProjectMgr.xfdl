@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sys_ProjectMgr" left="0" top="0" width="494" height="420" titletext="프로젝트 추가">
+    <Layouts>
+      <Layout height="420" width="494">
+        <Button id="Button00" taborder="12" text="저장" left="" top="10" width="40" height="22" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" visible="false"/>
+        <Static id="Static00" taborder="2" text="고객사" left="10" top="42" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit00" taborder="10" left="125" top="42" width="" height="22" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static01" taborder="2" text="프로젝트코드" left="10" top="74" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit01" taborder="10" left="125" top="74" width="" height="22" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static02" taborder="2" text="프로젝트명" left="10" top="106" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit02" taborder="10" left="125" top="106" width="" height="22" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static03" taborder="2" text="프로젝트구분" left="10" top="138" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static04" taborder="2" text="프로젝트 상태" left="10" top="168" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="Combo01" taborder="13" text="Combo00" left="125" top="168" width="" height="20" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static05" taborder="2" text="영업상태" left="10" top="198" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="Combo02" taborder="13" text="Combo00" left="125" top="198" width="" height="20" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static06" taborder="2" text="영업구분" left="10" top="228" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="Combo03" taborder="13" text="Combo00" left="125" top="228" width="" height="20" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" innerdataset="@dsBizType" codecolumn="CODE" datacolumn="DATA"/>
+        <Static id="Static07" taborder="2" text="영업담당자" left="10" top="258" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="Combo04" taborder="13" text="Combo00" left="125" top="258" width="" height="20" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static08" taborder="2" text="매출담당자" left="10" top="288" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="Combo05" taborder="13" text="Combo00" left="125" top="288" width="" height="20" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="Combo00" taborder="14" text="Combo00" left="125" top="138" width="" height="20" right="10" bottom="" innerdataset="@dsProjectType" codecolumn="CODE" datacolumn="DATA" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsBizType">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="DATA" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">001</Col>
+            <Col id="DATA">장기</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">002</Col>
+            <Col id="DATA">집중</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">003</Col>
+            <Col id="DATA">장기/집중</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">004</Col>
+            <Col id="DATA">일반</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsProjectType">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="DATA" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">1</Col>
+            <Col id="DATA">제품</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">2</Col>
+            <Col id="DATA">SI</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">3</Col>
+            <Col id="DATA">제품+SI</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

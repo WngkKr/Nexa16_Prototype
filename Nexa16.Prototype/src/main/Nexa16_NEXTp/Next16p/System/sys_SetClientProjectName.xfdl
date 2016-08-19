@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sys_SetClientProjectName" left="0" top="0" width="460" height="170" titletext="실계약 고객사 및 프로젝트 선택">
+    <Layouts>
+      <Layout height="170" width="460">
+        <Static id="Static01" taborder="13" text="" left="10" top="32" width="" height="76" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #000000" background="#ECF3F6"/>
+        <Static id="Static00" taborder="0" text="■ 실계약 고객사 및 프로젝트 선택" left="10" top="5" width="210" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button00" taborder="12" text="취소" left="" top="5" width="40" height="22" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" visible="false"/>
+        <Button id="Button01" taborder="12" text="확인" left="" top="5" width="40" height="22" right="47" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" visible="false"/>
+        <Edit id="Edit00" taborder="1" left="90" top="43" width="297" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static02" taborder="0" text="고객사명" left="20" top="43" width="65" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button02" taborder="12" text="검색" left="" top="43" width="50" height="22" right="21" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" visible="false"/>
+        <Static id="Static04" taborder="14" text="※인력 선투입 계약건 입니다. 고객사를 '최용호'로 하여 별도 관리하였습니다.&#10;계약을 확정하기 전에 계약한 실고객사명과 실프로젝트명을 선택해주세요." left="10" top="118" width="440" height="33" right="" bottom="" wordWrap="" font="8pt Arial" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit01" taborder="1" left="90" top="75" width="297" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static03" taborder="0" text="프로젝트명" left="20" top="75" width="65" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

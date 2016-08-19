@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sys_Customer_Register" left="0" top="0" width="494" height="420" titletext="고객사추가">
+    <Layouts>
+      <Layout height="420" width="494">
+        <Button id="Button00" taborder="12" text="저장" left="" top="10" width="40" height="22" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" visible="false"/>
+        <Static id="Static00" taborder="2" text="국가" left="10" top="42" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static01" taborder="2" text="산업구분" left="10" top="74" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static02" taborder="2" text="상위업체" left="10" top="106" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static03" taborder="2" text="업체명" left="10" top="138" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static04" taborder="2" text="사업자등록번호" left="10" top="168" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static05" taborder="2" text="대표자명" left="10" top="198" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static06" taborder="2" text="우편번호" left="10" top="228" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static07" taborder="2" text="주소" left="10" top="258" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static08" taborder="2" text="업태" left="10" top="288" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="Combo00" taborder="13" text="Combo00" left="125" top="42" width="120" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static09" taborder="2" text="고객구분" left="255" top="42" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="Combo01" taborder="13" text="Combo00" left="370" top="42" width="" height="20" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="Combo02" taborder="14" text="Combo02" left="125" top="74" width="" height="20" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static10" taborder="2" text="비고" left="10" top="375" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static11" taborder="2" text="전화번호" left="10" top="345" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static12" taborder="2" text="업종" left="10" top="315" width="110" height="22" right="" bottom="" border="1px solid #e5e5e5" textAlign="center" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit00" taborder="10" left="125" top="106" width="317" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button01" taborder="4" text="검색" left="" top="106" width="40" height="22" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit01" taborder="10" left="125" top="138" width="155" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static13" taborder="15" text="KT =&gt; 케이티 처럼 한글로 입력" left="290" top="138" width="" height="22" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit02" taborder="10" left="125" top="168" width="155" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit03" taborder="10" left="125" top="198" width="155" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit04" taborder="10" left="125" top="229" width="155" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit05" taborder="10" left="125" top="258" width="" height="22" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static14" taborder="16" text="업체명을 입력후 Tab키를 눌러야 저장할수 있습니다." left="290" top="164" width="" height="30" right="10" bottom="" wordWrap="char" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <CheckBox id="CheckBox00" taborder="17" text="블랙리스트" left="287" top="198" width="150" height="22" right="" bottom="" value="true"/>
+        <Combo id="Combo03" taborder="14" text="Combo02" left="125" top="288" width="" height="20" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="Combo04" taborder="14" text="Combo02" left="125" top="315" width="" height="20" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit06" taborder="10" left="125" top="345" width="155" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit07" taborder="10" left="125" top="375" width="" height="22" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

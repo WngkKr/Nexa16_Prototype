@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sys_findProject" left="0" top="0" width="944" height="472" titletext="Project찾기">
+    <Layouts>
+      <Layout height="472" width="944">
+        <Div id="Div00" taborder="0" text="" left="10" top="10" width="420" height="34" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="고객사명" left="5" top="5" width="50" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Button id="Button00" taborder="12" text="조회" left="" top="5" width="40" height="22" right="47" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" visible="false"/>
+              <Button id="Button08" taborder="12" text="닫기" left="" top="5" width="40" height="22" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" visible="false"/>
+              <Edit id="Edit00" taborder="1" left="65" top="5" width="264" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Grid id="Grid00" taborder="1" left="10" top="54" width="420" height="180" right="" bottom="" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="60"/>
+                <Column size="60"/>
+                <Column size="277"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="구분"/>
+                <Cell col="1" text="코드"/>
+                <Cell col="2" text="고객사명"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static00" taborder="0" text="■ 프로젝트" left="10" top="244" width="120" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Grid id="Grid01" taborder="1" left="10" top="271" width="420" height="" right="" bottom="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="프로젝트코드"/>
+                <Cell col="1" text="프로젝트명"/>
+                <Cell col="2" text="영업담당자"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static01" taborder="0" text="■ 프로젝트 추가" left="440" top="10" width="120" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button00" taborder="12" text="닫기" left="" top="-25" width="25" height="14" right="610" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" visible="false"/>
+        <Button id="Button01" taborder="12" text="&lt;&lt;" left="" top="10" width="40" height="22" right="10" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" visible="false"/>
+        <Button id="Button02" taborder="14" text="Project추가" left="350" top="244" width="80" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button03" taborder="14" text="고객사추가" left="268" top="244" width="80" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Div id="Div01" taborder="13" text="" left="440" top="42" width="494" height="420" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" url="">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>
