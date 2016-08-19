@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="HM_Staff_List_SetProject_new_pop" left="0" top="0" width="384" height="432" titletext="New Form">
+    <Layouts>
+      <Layout height="432" width="384">
+        <Static id="Static00" taborder="1" text="조회년도" left="2.08%" top="8" width="14.84%" height="20" right="" bottom="" textAlign="center"/>
+        <Combo id="Combo00" taborder="2" text="" left="73" top="8" width="70" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button00" taborder="4" text="담당부서제거" left="68.75%" top="8" width="113" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Div id="Div00" taborder="5" text="" left="7" top="38" width="371" height="386" right="" bottom="">
+          <Layouts>
+            <Layout>
+              <Grid id="Grid00" taborder="0" left="4" top="6" width="362" height="375" right="" bottom="">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="48"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell displaytype="tree" edittype="normal"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

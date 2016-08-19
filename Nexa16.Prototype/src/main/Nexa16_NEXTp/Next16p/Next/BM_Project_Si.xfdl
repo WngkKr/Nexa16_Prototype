@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_Project_Si" left="0" top="0" width="1062" height="664" titletext="New Form">
+    <Layouts>
+      <Layout height="664" width="1062">
+        <Grid id="grdProjectSi" taborder="2" left="1.51%" top="11" width="97.38%" height="621" right="" bottom="" text="" binddataset="dsProjectSi">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="44"/>
+                <Column size="119"/>
+                <Column size="67"/>
+                <Column size="0"/>
+                <Column size="85"/>
+                <Column size="108"/>
+                <Column size="87"/>
+                <Column size="72"/>
+                <Column size="48"/>
+                <Column size="224"/>
+                <Column size="87"/>
+                <Column size="87"/>
+              </Columns>
+              <Rows>
+                <Row size="35" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="순번" displaytype="text" autosizecol="none"/>
+                <Cell col="1" text="소속사" displaytype="text" autosizecol="none"/>
+                <Cell col="2" text="성명" displaytype="text" autosizecol="none"/>
+                <Cell col="3" text=""/>
+                <Cell col="4" text="투입일자" displaytype="text" autosizecol="none"/>
+                <Cell col="5" text="종료예정일자" autosizecol="none"/>
+                <Cell col="6" text="종료일자" displaytype="text" autosizecol="none"/>
+                <Cell col="7" text="무상지원" displaytype="text" autosizecol="none"/>
+                <Cell col="8" text="MM" autosizecol="none" displaytype="text"/>
+                <Cell col="9" text="매출계약명(수정시 더블클릭)" displaytype="text" autosizecol="none"/>
+                <Cell col="10" text="계약금액" autosizecol="none" textAlign="left"/>
+                <Cell col="11" text="파일" autosizecol="none"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="text" text="bind:STAFF_SEQUENCE"/>
+                <Cell col="1" displaytype="text" text="bind:COMPANY_NAME" expandimage="theme://images\btn_GridExpand.png" autosizecol="default"/>
+                <Cell col="2" text="bind:EMPLOY_NAME" displaytype="text"/>
+                <Cell col="3"/>
+                <Cell col="4" displaytype="date" edittype="date" text="bind:START_DATE" expandimage="bind:theme://images\btn_GridExpand.png"/>
+                <Cell col="5" expandimage="theme://images\btn_GridExpand.png" displaytype="date" edittype="date" text="bind:END_PLAN_DATE"/>
+                <Cell col="6" text="bind:END_DATE" displaytype="date" edittype="date" expandimage="theme://images\btn_GridExpand.png"/>
+                <Cell col="7" displaytype="text" textAlign="center"/>
+                <Cell col="8" displaytype="number" edittype="masknumber" text="bind:MEN_MONTH" mask="##0.0" textAlign="right"/>
+                <Cell col="9" textAlign="left" displaytype="text"/>
+                <Cell col="10"/>
+                <Cell col="11"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsProjectSi">
+        <ColumnInfo>
+          <Column id="PROJECT_CODE" type="STRING" size="256"/>
+          <Column id="STAFF_SEQUENCE" type="FLOAT" size="256"/>
+          <Column id="EMPLOY_NO" type="STRING" size="256"/>
+          <Column id="GRADE_CODE" type="STRING" size="256"/>
+          <Column id="ROLE_TYPE" type="STRING" size="256"/>
+          <Column id="START_DATE" type="STRING" size="256"/>
+          <Column id="END_PLAN_DATE" type="STRING" size="256"/>
+          <Column id="END_DATE" type="STRING" size="256"/>
+          <Column id="MANAGER_AMOUNT" type="STRING" size="256"/>
+          <Column id="COMPANY_CODE" type="STRING" size="256"/>
+          <Column id="COMPANY_NAME" type="STRING" size="256"/>
+          <Column id="MEN_MONTH" type="STRING" size="256"/>
+          <Column id="EMPLOY_NAME" type="STRING" size="256"/>
+          <Column id="P_TOBESUB_COMPANY_CODE" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsRole">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">001</Col>
+            <Col id="NAME">개발</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">002</Col>
+            <Col id="NAME">설계</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">003</Col>
+            <Col id="NAME">PM</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">004</Col>
+            <Col id="NAME">디자인</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsGarde">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">100</Col>
+            <Col id="NAME">초급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">200</Col>
+            <Col id="NAME">중급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">300</Col>
+            <Col id="NAME">고급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">400</Col>
+            <Col id="NAME">특급</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_si_grade">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="code_nm" type="STRING" size="256"/>
+          <Column id="code_nm2" type="STRING" size="256"/>
+          <Column id="code_nation2" type="STRING" size="256"/>
+          <Column id="chk" type="STRING" size="256"/>
+          <Column id="use_yn" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

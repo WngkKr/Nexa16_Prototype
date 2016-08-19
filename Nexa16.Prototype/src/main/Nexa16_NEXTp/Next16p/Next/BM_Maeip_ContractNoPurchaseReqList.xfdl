@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_Maeip_ContractNoPurchaseReqList" left="0" top="0" width="920" height="392" titletext="New Form">
+    <Layouts>
+      <Layout height="392" width="920">
+        <Static id="Static00" taborder="0" text="" left="2" top="2" width="916" height="29" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button00" taborder="4" text="조회" left="81.41%" top="8" width="50" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button01" taborder="4" text="확인" left="87.61%" top="8" width="50" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button02" taborder="4" text="닫기" left="93.91%" top="8" width="50" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <ImageViewer id="ImageViewer00" taborder="5" text="ImageViewer00" left="24" top="8" width="21" height="20" right="" bottom=""/>
+        <Static id="Static01" taborder="1" text="고객사명" left="4.35%" top="8" width="9.32%" height="20" right="" bottom="" textAlign="center"/>
+        <Edit id="Edit00" taborder="2" left="12.72%" top="8" width="22.07%" height="21" right="" bottom=""/>
+        <Grid id="Grid00" taborder="6" left="4" top="37" width="911" height="345" right="" bottom="">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="152"/>
+                <Column size="252"/>
+                <Column size="161"/>
+                <Column size="123"/>
+                <Column size="110"/>
+                <Column size="110"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="고객사"/>
+                <Cell col="1" text="프로젝트명"/>
+                <Cell col="2" text="업체명"/>
+                <Cell col="3" text="이름"/>
+                <Cell col="4" text="시작일"/>
+                <Cell col="5" text="종료일"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>
