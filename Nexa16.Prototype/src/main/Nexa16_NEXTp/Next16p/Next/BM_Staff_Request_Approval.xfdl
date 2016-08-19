@@ -252,7 +252,7 @@
         </PopupDiv>
         <Static id="Static13" taborder="6" text="시작일시" left="0.74%" top="-9" width="0%" height="0" right="" bottom="" border="1px solid black"/>
         <TextArea id="TextArea02" taborder="13" left="0.74%" top="-9" width="0%" height="0" right="" bottom=""/>
-        <Grid id="Grid00" taborder="14" left="1.58%" top="139" width="97.03%" height="549" right="" bottom="" binddataset="dsTech_E">
+        <Grid id="Grid00" taborder="14" left="1.58%" top="139" width="97.03%" height="657" right="" bottom="" binddataset="dsTech_E">
           <Formats>
             <Format id="default">
               <Columns>
