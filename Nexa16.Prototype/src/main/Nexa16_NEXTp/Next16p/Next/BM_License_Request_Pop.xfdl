@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_License_Request_Pop" left="0" top="0" width="848" height="488" titletext="라이센스발급요청">
+    <Layouts>
+      <Layout height="488" width="848">
+        <Button id="btnClose" taborder="12" text="닫기" left="87.36%" top="13" width="12.07%" height="29" right="" bottom=""/>
+        <Button id="btnReissue" taborder="16" text="재발급" left="140.09%" top="10" width="12.67%" height="22" right="" bottom=""/>
+        <Button id="btnSave" taborder="12" text="저장" left="74.57%" top="13" width="12.07%" height="29" right="" bottom=""/>
+        <Button id="Button00" taborder="12" text="Button00" left="61.64%" top="13" width="12.07%" height="29" right="" bottom=""/>
+        <Static id="stcLicense" taborder="17" text="라이센스발급요청" left="0.72%" top="5" width="31.18%" height="26" right="" bottom=""/>
+        <Static id="stRejReasonHelp" taborder="17" text="(반려 사유를 보시려면 해당 내역을 더블클릭 하세요.)" left="15.09%" top="13" width="45.83%" height="26" right="" bottom=""/>
+        <Div id="divMain" taborder="18" text="Div00" left="1.01%" top="48" width="98.13%" height="432" right="" bottom="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="라이센스 요청내역" left="0.48%" top="5" width="17.33%" height="23" right="" bottom="" border="1 solid black"/>
+              <Button id="btnCopyXProw" taborder="1" text="복사 추가" left="19.04%" top="5" width="11.56%" height="23" right="" bottom=""/>
+              <Button id="btnListAdd" taborder="2" text="+" left="37.47%" top="5" width="3.11%" height="23" right="" bottom=""/>
+              <Button id="btnListDel" taborder="2" text="-" left="41.69%" top="5" width="2.96%" height="23" right="" bottom=""/>
+              <Grid id="Grid2" taborder="3" left="0.36%" top="264" width="14.94%" height="154" right="" bottom="">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="68"/>
+                      <Column size="29"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="제품"/>
+                      <Cell col="1"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell/>
+                      <Cell col="1"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static01" taborder="0" text="라이센스 요청내역" left="48.19%" top="2" width="29.26%" height="23" right="" bottom="" border="1 solid black"/>
+              <Static id="Static02" taborder="0" text="Project" left="48.19%" top="29" width="16.76%" height="21" right="" bottom="" border="1 solid black"/>
+              <Static id="Static03" taborder="0" text="Company" left="48.19%" top="56" width="16.76%" height="21" right="" bottom="" border="1 solid black"/>
+              <Static id="Static04" taborder="0" text="영업대표" left="48.19%" top="83" width="16.76%" height="21" right="" bottom="" border="1 solid black"/>
+              <Static id="Static05" taborder="0" text="비고" left="48.19%" top="110" width="16.76%" height="21" right="" bottom="" border="1 solid black"/>
+              <Static id="Static06" taborder="0" text="요청일자" left="48.19%" top="137" width="16.76%" height="21" right="" bottom="" border="1 solid black"/>
+              <Static id="Static07" taborder="0" text="제품" left="48.19%" top="164" width="16.76%" height="21" right="" bottom="" border="1 solid black"/>
+              <Static id="Static08" taborder="0" text="서버IP" left="48.19%" top="191" width="16.76%" height="21" right="" bottom="" border="1 solid black"/>
+              <Static id="Static09" taborder="0" text="도메인" left="48.19%" top="218" width="16.76%" height="21" right="" bottom="" border="1 solid black"/>
+              <Static id="Static10" taborder="0" text="E-Mail" left="48.19%" top="245" width="16.76%" height="21" right="" bottom="" border="1 solid black"/>
+              <Static id="Static11" taborder="0" text="라이센스&#13;&#10;유형" left="48.19%" top="272" width="16.62%" height="48" right="" bottom="" border="1 solid black"/>
+              <Static id="Static12" taborder="0" text="App/Svc(s)" left="48.19%" top="324" width="16.76%" height="21" right="" bottom="" border="1 solid black"/>
+              <Static id="Static13" taborder="0" text="사용기간" left="48.19%" top="348" width="16.76%" height="21" right="" bottom="" border="1 solid black"/>
+              <Static id="Static14" taborder="0" text="서버사양" left="48.19%" top="374" width="16.62%" height="49" right="" bottom="" border="1 solid black"/>
+              <Edit id="edtProjectName" taborder="4" left="65.42%" top="29" width="33.86%" height="21" right="" bottom=""/>
+              <Edit id="edtClient" taborder="4" left="65.3%" top="56" width="33.86%" height="21" right="" bottom=""/>
+              <Edit id="edt_IP" taborder="4" left="65.3%" top="191" width="20.72%" height="21" right="" bottom=""/>
+              <Edit id="edt_Domain" taborder="4" left="65.3%" top="218" width="20.72%" height="21" right="" bottom=""/>
+              <Edit id="edt_Email" taborder="4" left="65.3%" top="245" width="33.86%" height="21" right="" bottom=""/>
+              <Combo id="CmbStaff" taborder="5" text="" left="65.3%" top="83" width="13.24%" height="21" right="" bottom="" value="" index="-1"/>
+              <Combo id="cmbLicType" taborder="5" text="" left="65.18%" top="272" width="20.84%" height="23" right="" bottom="" value="" index="-1"/>
+              <Combo id="Combo0" taborder="5" text="" left="65.3%" top="324" width="33.86%" height="21" right="" bottom="" value="" index="-1"/>
+              <Static id="Static15" taborder="0" text="납품일자" left="78.92%" top="83" width="8.38%" height="21" right="" bottom="" border="1 solid black"/>
+              <Calendar id="calRDate" taborder="6" left="88.07%" top="83" width="11.18%" height="21" right="" bottom=""/>
+              <TextArea id="TextArea00" taborder="7" left="65.3%" top="110" width="33.86%" height="46" right="" bottom=""/>
+              <CheckBox id="ckb_Dev" taborder="8" text="개발" left="82.17%" top="165" width="6.87%" height="21" right="" bottom=""/>
+              <Static id="Static18" taborder="0" text="코어수" left="86.75%" top="191" width="6.47%" height="21" right="" bottom="" border="1 solid black"/>
+              <MaskEdit id="medt_CoreCnt" taborder="9" left="94.46%" top="191" width="4.71%" height="21" right="" bottom=""/>
+              <MaskEdit id="medt_DevCnt" taborder="9" left="94.46%" top="218" width="4.71%" height="21" right="" bottom=""/>
+              <Static id="Static19" taborder="0" text="개발자수" left="86.87%" top="218" width="6.47%" height="21" right="" bottom="" border="1 solid black"/>
+              <MaskEdit id="medt_EndUserCnt" taborder="9" left="94.46%" top="272" width="4.71%" height="23" right="" bottom=""/>
+              <Static id="Static20" taborder="0" text="사용자수" left="86.75%" top="272" width="6.47%" height="21" right="" bottom="" border="1 solid black"/>
+              <Static id="Static21" taborder="0" text="직접입력" left="65.18%" top="298" width="11.47%" height="21" right="" bottom="" border="1 solid black"/>
+              <Calendar id="calStartDate" taborder="6" left="65.18%" top="348" width="11.2%" height="21" right="" bottom=""/>
+              <Static id="Static22" taborder="10" text="~" left="77.11%" top="348" width="2.06%" height="21" right="" bottom=""/>
+              <Combo id="cmbTimeCond" taborder="5" text="" left="83.98%" top="348" width="15.29%" height="21" right="" bottom="" value="" index="-1"/>
+              <TextArea id="taServerSpec" taborder="7" left="65.3%" top="374" width="33.86%" height="50" right="" bottom=""/>
+              <MaskEdit id="medtLimitDuration" taborder="9" left="79.4%" top="348" width="4.71%" height="21" right="" bottom=""/>
+              <Grid id="Grid1" taborder="3" left="0.38%" top="39" width="44.96%" height="217" right="" bottom="" autofittype="col" text="">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="34"/>
+                      <Column size="57"/>
+                      <Column size="57"/>
+                      <Column size="60"/>
+                      <Column size="50"/>
+                      <Column size="57"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="NO"/>
+                      <Cell col="1" text="발급상태"/>
+                      <Cell col="2" text="납품일자"/>
+                      <Cell col="3" text="요청일자"/>
+                      <Cell col="4" text="발급일자"/>
+                      <Cell col="5" text="폐기"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell/>
+                      <Cell col="1"/>
+                      <Cell col="2"/>
+                      <Cell col="3"/>
+                      <Cell col="4"/>
+                      <Cell col="5"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Grid id="Grid0" taborder="3" left="15.18%" top="264" width="14.94%" height="154" right="" bottom="">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="50"/>
+                      <Column size="48"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="플랫폼"/>
+                      <Cell col="1"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell/>
+                      <Cell col="1"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Grid id="Grid3" taborder="3" left="30%" top="264" width="15.3%" height="154" right="" bottom="">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="66"/>
+                      <Column size="31"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="기능"/>
+                      <Cell col="1"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell/>
+                      <Cell col="1"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static4" taborder="0" text="" left="76.51%" top="164" width="3.49%" height="24" right="" bottom="" border="1 solid black"/>
+              <Static id="Static5" taborder="0" text="" left="65.3%" top="164" width="11.47%" height="24" right="" bottom="" border="1 solid black"/>
+              <Edit id="edt_Duration" taborder="11" left="88.55%" top="164" width="3.86%" height="24" right="" bottom=""/>
+              <Edit id="edtLicTypeTxt" taborder="4" left="77.59%" top="298" width="21.57%" height="21" right="" bottom=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="st_day" taborder="19" text="Months" left="92.1%" top="215" width="6.13%" height="21" right="" bottom=""/>
+        <Button id="btnCReissue" taborder="16" text="재발급 취소" left="153.74%" top="10" width="12.67%" height="22" right="" bottom=""/>
+        <Button id="btnPrintView" taborder="16" text="미리보기" left="126.58%" top="10" width="12.67%" height="22" right="" bottom=""/>
+        <Static id="Static01" taborder="20" text="라이센스 상세내역" left="139.08%" top="41" width="22.41%" height="23" right="" bottom="" border="1 solid black"/>
+        <Grid id="grdListDet" taborder="21" left="139.08%" top="81" width="59.48%" height="138" right="" bottom="" autofittype="col" text="">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="72"/>
+                <Column size="101"/>
+                <Column size="94"/>
+                <Column size="94"/>
+                <Column size="455"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="발급상태"/>
+                <Cell col="1" text="발급일자"/>
+                <Cell col="2" text="요청일자"/>
+                <Cell col="3" text="폐기"/>
+                <Cell col="4" text="라이센스 번호"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+                <Cell col="4"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="grdTobe" taborder="21" left="139.08%" top="271" width="59.34%" height="138" right="" bottom="" autofittype="none" text="">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="64"/>
+                <Column size="64"/>
+                <Column size="55"/>
+                <Column size="205"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="제품명"/>
+                <Cell col="1" text="단위"/>
+                <Cell col="2" text="수량"/>
+                <Cell col="3" text="PID USER"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="grdCompanyprod" taborder="21" left="139.08%" top="473" width="59.34%" height="138" right="" bottom="" autofittype="none" text="">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="75"/>
+                <Column size="101"/>
+                <Column size="209"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="제품명"/>
+                <Cell col="1" text="단위"/>
+                <Cell col="2" text="수량"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static02" taborder="20" text="투비제품" left="139.08%" top="243" width="22.41%" height="23" right="" bottom="" border="1 solid black"/>
+        <Static id="Static03" taborder="20" text="타사제품" left="139.08%" top="441" width="22.41%" height="23" right="" bottom="" border="1 solid black"/>
+        <Button id="btnEnableModify" taborder="22" text="제품 내역 수정" left="174.43%" top="246" width="14.51%" height="21" right="" bottom=""/>
+        <Button id="btnTobeprodAdd" taborder="22" text="+" left="190.09%" top="246" width="3.02%" height="21" right="" bottom=""/>
+        <Button id="btnTobeprodDel" taborder="22" text="-" left="193.53%" top="246" width="3.02%" height="21" right="" bottom=""/>
+        <Button id="btnCompanyprodAdd" taborder="22" text="+" left="190.8%" top="444" width="3.02%" height="21" right="" bottom=""/>
+        <Button id="btnCompanyprodDel" taborder="22" text="-" left="193.53%" top="444" width="3.02%" height="21" right="" bottom=""/>
+        <PopupDiv id="pDivRejReason" text="PopupDiv00" visible="false" left="23.13%" top="649" width="91.52%" height="279" right="" bottom="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="반려사유" left="1.74%" top="7" width="21.29%" height="30" right="" bottom=""/>
+              <Static id="Static01" taborder="0" text="요청사유" left="52.68%" top="7" width="21.29%" height="30" right="" bottom=""/>
+              <TextArea id="TextArea00" taborder="1" left="0.95%" top="42" width="44.32%" height="196" right="" bottom=""/>
+              <TextArea id="TextArea01" taborder="1" left="54.26%" top="42" width="44.32%" height="196" right="" bottom=""/>
+              <Static id="Static02" taborder="0" text="[ESC]를 누르면 닫힙니다." left="67.03%" top="240" width="28.86%" height="30" right="" bottom=""/>
+            </Layout>
+          </Layouts>
+        </PopupDiv>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

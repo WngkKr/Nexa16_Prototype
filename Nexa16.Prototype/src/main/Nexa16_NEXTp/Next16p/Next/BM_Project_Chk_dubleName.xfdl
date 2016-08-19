@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_Project_Chk_dubleName" left="0" top="0" width="552" height="304" titletext="프로젝트명 중복확인">
+    <Layouts>
+      <Layout height="304" width="552">
+        <Grid id="Grid00" taborder="6" left="4.71%" top="48" width="93.98%" height="248" right="" bottom="" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="70"/>
+                <Column size="55"/>
+                <Column size="119"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="프로젝트명"/>
+                <Cell col="1" text="고객사명"/>
+                <Cell col="2" text="협력사명"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Edit id="edtprojectname" taborder="2" left="26.5%" top="15" width="46.45%" height="21" right="" bottom=""/>
+        <Static id="Static00" taborder="1" text="프로젝트 검색" left="3.86%" top="16" width="18.36%" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnclose" taborder="4" text="닫기" left="90.9%" top="16" width="7.6%" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnuse" taborder="4" text="사용" left="82.95%" top="16" width="7.6%" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button02" taborder="4" text="조회" left="75%" top="16" width="7.6%" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

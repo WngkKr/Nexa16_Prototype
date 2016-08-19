@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_TECH_SUPPORT_POSSIBLE" left="0" top="0" width="1078" height="810" titletext="New Form">
+    <Layouts>
+      <Layout height="810" width="1078">
+        <Div id="Div00" taborder="0" text="Div00" left="0.65%" top="9" width="85.16%" height="64" right="" bottom="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="기준일" left="2.51%" top="11" width="5.68%" height="31" right="" bottom=""/>
+              <Calendar id="cal_Date" taborder="1" left="8.95%" top="13" width="9.61%" height="25" right="" bottom=""/>
+              <Button id="btnReg" taborder="2" text="기술지원 인력등록" left="84.83%" top="18" width="13.76%" height="30" right="" bottom=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="Button01" taborder="1" text="Button00" left="-0.09%" top="0" width="0%" height="0" right="" bottom=""/>
+        <Button id="Button06" taborder="1" text="Button00" left="-0.09%" top="0" width="0%" height="0" right="" bottom=""/>
+        <Div id="Div01" taborder="2" text="Div01" left="0.83%" top="90" width="84.97%" height="716" right="" bottom="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="기술지원 일정" left="1.75%" top="10" width="21.58%" height="44" right="" bottom=""/>
+              <Grid id="Grid0" taborder="1" left="1.31%" top="405" width="95.84%" height="273" right="" bottom="" binddataset="ds_Schedule_Tmp" autofittype="col">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="48"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="일자"/>
+                      <Cell col="1" text="기술지원사원"/>
+                      <Cell col="2" text="기술지원구분"/>
+                      <Cell col="3" text="고객사"/>
+                      <Cell col="4" text="프로젝트"/>
+                      <Cell col="5" text="담당영업"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text=""/>
+                      <Cell col="1" text=""/>
+                      <Cell col="2" text=""/>
+                      <Cell col="3" text=""/>
+                      <Cell col="4" text=""/>
+                      <Cell col="5"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static01" taborder="0" text="기술지원 상세 내역" left="1.53%" top="354" width="16.87%" height="44" right="" bottom=""/>
+              <Grid id="grd_Schedule" taborder="2" left="1.2%" top="60" width="97.59%" height="273" right="" bottom="" binddataset="ds_Schedule">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="회사명"/>
+                      <Cell col="1" text="부서"/>
+                      <Cell col="2" text="이름"/>
+                      <Cell col="3" text="일"/>
+                      <Cell col="4" text="월"/>
+                      <Cell col="5" text="화"/>
+                      <Cell col="6" text="수"/>
+                      <Cell col="7" text="목"/>
+                      <Cell col="8" text="금"/>
+                      <Cell col="9" text="토"/>
+                      <Cell col="10" text="일"/>
+                      <Cell col="11" text="월"/>
+                      <Cell col="12" text="화"/>
+                      <Cell col="13" text="수"/>
+                      <Cell col="14" text="목"/>
+                      <Cell col="15" text="금"/>
+                      <Cell col="16" text="토"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:COMPANY_NAME"/>
+                      <Cell col="1" text="bind:DEPARTMENT_NAME"/>
+                      <Cell col="2" text="bind:EMPLOY_NAME"/>
+                      <Cell col="3" text="bind:S0"/>
+                      <Cell col="4" text="bind:S1"/>
+                      <Cell col="5" text="bind:S2"/>
+                      <Cell col="6" text="bind:S3"/>
+                      <Cell col="7" text="bind:S4"/>
+                      <Cell col="8" text="bind:S5"/>
+                      <Cell col="9" text="bind:S6"/>
+                      <Cell col="10" text="bind:S7"/>
+                      <Cell col="11" text="bind:S8"/>
+                      <Cell col="12" text="bind:S9"/>
+                      <Cell col="13" text="bind:S10"/>
+                      <Cell col="14" text="bind:S11"/>
+                      <Cell col="15" text="bind:S12"/>
+                      <Cell col="16" text="bind:S13"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_Schedule">
+        <ColumnInfo>
+          <Column id="EMPLOY_NO" type="STRING" size="256"/>
+          <Column id="EMPLOY_NAME" type="STRING" size="256"/>
+          <Column id="COMPANY_CODE" type="STRING" size="256"/>
+          <Column id="COMPANY_NAME" type="STRING" size="256"/>
+          <Column id="DEPARTMENT_CODE" type="STRING" size="256"/>
+          <Column id="DEPARTMENT_NAME" type="STRING" size="256"/>
+          <Column id="SWEEK" type="STRING" size="256"/>
+          <Column id="EWEEK" type="STRING" size="256"/>
+          <Column id="S0" type="STRING" size="256"/>
+          <Column id="S1" type="STRING" size="256"/>
+          <Column id="S2" type="STRING" size="256"/>
+          <Column id="S3" type="STRING" size="256"/>
+          <Column id="S4" type="STRING" size="256"/>
+          <Column id="S5" type="STRING" size="256"/>
+          <Column id="S6" type="STRING" size="256"/>
+          <Column id="S7" type="STRING" size="256"/>
+          <Column id="S8" type="STRING" size="256"/>
+          <Column id="S9" type="STRING" size="256"/>
+          <Column id="S10" type="STRING" size="256"/>
+          <Column id="S11" type="STRING" size="256"/>
+          <Column id="S12" type="STRING" size="256"/>
+          <Column id="S13" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+          <Row/>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_Schedule_Tmp">
+        <ColumnInfo>
+          <Column id="I" type="INT" size="20"/>
+          <Column id="D" type="STRING" size="256"/>
+          <Column id="REQ_NAME" type="STRING" size="256"/>
+          <Column id="PROJECT_CODE" type="STRING" size="256"/>
+          <Column id="REQUEST_SEQUENCE" type="INT" size="20"/>
+          <Column id="REQUEST_TYPE" type="STRING" size="256"/>
+          <Column id="CONFIRM_FLAG" type="STRING" size="256"/>
+          <Column id="CLIENT_NAME" type="STRING" size="256"/>
+          <Column id="REQUEST_TYPE_NM" type="STRING" size="256"/>
+          <Column id="DEPARTMENT_CODE" type="STRING" size="256"/>
+          <Column id="COMPANY_CODE" type="STRING" size="256"/>
+          <Column id="BIZ_STAFF" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

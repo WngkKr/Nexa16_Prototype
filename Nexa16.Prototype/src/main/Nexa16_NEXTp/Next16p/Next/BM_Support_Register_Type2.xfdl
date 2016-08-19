@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_Support_Register_Type2" left="0" top="0" width="600" height="500" titletext="New Form">
+    <Layouts>
+      <Layout height="500" width="600">
+        <Static id="st_title" taborder="0" text="지원내용 등록" left="1.5%" top="10" width="27.5%" height="38" right="" bottom=""/>
+        <Button id="btnSave" taborder="1" text="저장" left="66%" top="15" width="15.67%" height="32" right="" bottom=""/>
+        <Button id="btnClose" taborder="1" text="닫기" left="83.33%" top="15" width="15.67%" height="32" right="" bottom=""/>
+        <Div id="Div00" taborder="2" text="Div00" left="1.33%" top="55" width="98%" height="438" right="" bottom="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="고객사" left="5.29%" top="9" width="20.65%" height="23" right="" bottom="" border="1px solid black"/>
+              <Static id="Static01" taborder="0" text="지원구분" left="5.29%" top="121" width="20.65%" height="23" right="" bottom="" border="1px solid black"/>
+              <Static id="Static02" taborder="0" text="소속" left="5.29%" top="149" width="20.65%" height="23" right="" bottom="" border="1px solid black"/>
+              <Static id="Static03" taborder="0" text="프로젝트명" left="5.29%" top="37" width="20.65%" height="23" right="" bottom="" border="1px solid black"/>
+              <Static id="Static04" taborder="0" text="계약명" left="5.29%" top="65" width="20.65%" height="23" right="" bottom="" border="1px solid black"/>
+              <Static id="Static05" taborder="0" text="시작일시" left="5.46%" top="93" width="20.65%" height="23" right="" bottom="" border="1px solid black"/>
+              <Edit id="edtClientName" taborder="1" left="28.16%" top="9" width="32.08%" height="23" right="" bottom=""/>
+              <Edit id="edtProjectName" taborder="1" left="28.16%" top="37" width="32.08%" height="23" right="" bottom=""/>
+              <Edit id="Edit0" taborder="1" left="28.16%" top="65" width="32.08%" height="23" right="" bottom=""/>
+              <Calendar id="calDate" taborder="2" left="28.16%" top="93" width="13.65%" height="24" right="" bottom=""/>
+              <MaskEdit id="med_start_hour" taborder="3" left="42.49%" top="93" width="7%" height="24" right="" bottom=""/>
+              <Static id="Static06" taborder="0" text="종료일시" left="50.34%" top="93" width="15.19%" height="23" right="" bottom="" border="1px solid black"/>
+              <Calendar id="calEndDate" taborder="2" left="66.38%" top="93" width="13.48%" height="24" right="" bottom=""/>
+              <MaskEdit id="med_end_hour" taborder="3" left="80.55%" top="93" width="7%" height="24" right="" bottom=""/>
+              <Combo id="cmbConfirm" taborder="4" text="" left="28.16%" top="121" width="28.16%" height="24" right="" bottom=""/>
+              <Combo id="cmb_techMan" taborder="4" text="" left="28.16%" top="177" width="28.16%" height="24" right="" bottom=""/>
+              <Static id="Static07" taborder="0" text="지원담당자" left="4.95%" top="177" width="20.65%" height="23" right="" bottom="" border="1px solid black"/>
+              <Radio id="rdo_gubun" taborder="5" left="28.16%" top="149" width="59.56%" height="25" right="" bottom="" innerdataset="@dsCDType" codecolumn="CODE" datacolumn="DATA" direction="vertical"/>
+              <TextArea id="TextArea00" taborder="6" left="28.16%" top="205" width="70.14%" height="216" right="" bottom=""/>
+              <Static id="Static08" taborder="0" text="요청내용" left="4.78%" top="205" width="20.65%" height="23" right="" bottom="" border="1px solid black"/>
+              <Button id="btnClientSearch" taborder="7" text="선택" left="61.26%" top="9" width="10.07%" height="23" right="" bottom=""/>
+              <CheckBox id="chkUserDept" taborder="8" text="소속부서 보기" left="58.19%" top="176" width="32.42%" height="28" right="" bottom=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsCDType">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="DATA" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">TOBE</Col>
+            <Col id="DATA">투비소프트</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">00</Col>
+            <Col id="DATA">협력사</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">A104</Col>
+            <Col id="DATA">프리랜서</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

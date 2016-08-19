@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_Project_SetInfo" left="0" top="0" width="600" height="500" titletext="New Form">
+    <Layouts>
+      <Layout height="500" width="600">
+        <Button id="btnIns" taborder="0" text="+" left="2%" top="15" width="4.67%" height="24" right="" bottom=""/>
+        <Button id="btnDel" taborder="0" text="-" left="8.33%" top="15" width="4.67%" height="24" right="" bottom=""/>
+        <Button id="btnSave" taborder="0" text="저장" left="78%" top="15" width="9.67%" height="24" right="" bottom=""/>
+        <Button id="btnCancel" taborder="0" text="닫기" left="88.5%" top="15" width="9.67%" height="24" right="" bottom=""/>
+        <Grid id="grdInfo" taborder="1" left="1.67%" top="43" width="96.17%" height="453" right="" bottom="" autofittype="col" binddataset="dsInfo">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="구분"/>
+                <Cell col="1" text="운영정보"/>
+                <Cell col="2" text="비고"/>
+              </Band>
+              <Band id="body">
+                <Cell text=""/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsInfo"/>
+    </Objects>
+  </Form>
+</FDL>
