@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_Confirm_Popup" left="0" top="0" width="360" height="272" titletext="New Form">
+    <Layouts>
+      <Layout height="272" width="360">
+        <Static id="Static00" taborder="0" text="※라이센스 승인 요청 사유를 입력해 주세요." left="0" top="0" width="" height="52" right="0" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" font="bold 13pt Arial"/>
+        <Static id="Static01" taborder="1" text="제품 내역을 수정할 경우&#13;&#10;[부사장님의 승인]이 필요합니다. &#13;&#10;▶계속하시려면 내용을 입력하시고 확인 버튼을 눌러주세요." left="5" top="48" width="" height="97" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <TextArea id="TextArea00" taborder="2" left="5" top="" width="" height="114" right="5" bottom="30" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button01" taborder="3" text="취소" left="" top="" width="50" height="20" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button00" taborder="3" text="승인요청" left="" top="" width="55" height="20" right="61" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

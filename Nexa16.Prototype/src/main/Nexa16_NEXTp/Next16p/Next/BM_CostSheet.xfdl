@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_CostSheet" left="0" top="0" width="1078" height="810" titletext="New Form">
+    <Layouts>
+      <Layout height="810" width="1078">
+        <Static id="Static00" taborder="2" text="고 객 사" left="5" top="30" width="100" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080" textAlign="center"/>
+        <Static id="Static01" taborder="2" text="계 약 처" left="5" top="60" width="100" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080" textAlign="center"/>
+        <Static id="Static02" taborder="2" text="계 약 일 자" left="5" top="90" width="100" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080" textAlign="center"/>
+        <Static id="Static03" taborder="2" text="고객사 담당자" left="5" top="120" width="100" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080" textAlign="center"/>
+        <Edit id="Edit01" taborder="3" left="106" top="60" width="389" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Calendar id="Calendar00" taborder="4" left="106" top="90" width="100" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit02" taborder="3" left="106" top="120" width="161" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit00" taborder="3" left="106" top="30" width="264" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static04" taborder="2" text="계 약 명" left="395" top="30" width="100" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080" textAlign="center"/>
+        <Static id="Static05" taborder="2" text="결 제 조 건" left="211" top="90" width="100" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080" textAlign="center"/>
+        <Radio id="Radio00" taborder="5" left="316" top="91" width="179" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" direction="vertical" codecolumn="codecolumn" datacolumn="datacolumn">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">01</Col>
+                <Col id="datacolumn">일시지급</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">02</Col>
+                <Col id="datacolumn">분할지급</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Static id="Static06" taborder="2" text="연 락 처" left="272" top="120" width="100" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080" textAlign="center"/>
+        <Edit id="Edit03" taborder="3" left="373" top="120" width="121" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static07" taborder="2" text="계약금액(VAT별도)" left="496" top="60" width="120" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080" textAlign="center"/>
+        <Static id="Static08" taborder="2" text="수금(예정)일" left="496" top="90" width="120" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080" textAlign="center"/>
+        <Static id="Static09" taborder="2" text="비 고" left="496" top="120" width="120" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080" textAlign="center"/>
+        <Edit id="Edit04" taborder="6" left="617" top="60" width="455" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit05" taborder="6" left="617" top="90" width="455" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit06" taborder="6" left="617" top="120" width="455" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static10" taborder="2" text="영 업 대 표" left="859" top="30" width="100" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080" textAlign="center"/>
+        <Edit id="Edit07" taborder="6" left="960" top="30" width="112" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit08" taborder="7" left="496" top="30" width="360" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Radio id="Radio01" taborder="8" left="748" top="5" width="220" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" direction="vertical" codecolumn="codecolumn" datacolumn="datacolumn">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">01</Col>
+                <Col id="datacolumn">사전원가표</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">02</Col>
+                <Col id="datacolumn">사후원가표</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Button id="Button00" taborder="9" text="원가표" left="972" top="5" width="100" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button01" taborder="10" text="+" left="652" top="152" width="20" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button02" taborder="10" text="-" left="676" top="152" width="20" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Grid id="Grid00" taborder="11" left="5" top="177" width="691" height="230" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="60"/>
+                <Column size="250"/>
+                <Column size="100"/>
+                <Column size="48"/>
+                <Column size="60"/>
+                <Column size="48"/>
+                <Column size="100"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+                <Row size="24" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell rowspan="2" text="구분"/>
+                <Cell col="1" colspan="6" text="제품 및 상품 매출"/>
+                <Cell row="1" col="1" text="제품명"/>
+                <Cell row="1" col="2" text="소비자단가"/>
+                <Cell row="1" col="3" text="단위"/>
+                <Cell row="1" col="4" text="수량"/>
+                <Cell row="1" col="5" text="D/C율"/>
+                <Cell row="1" col="6" text="금액"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+                <Cell col="6"/>
+              </Band>
+              <Band id="summary">
+                <Cell colspan="6" text="제 품 매 출 총 계"/>
+                <Cell col="6"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid01" taborder="12" left="704" top="177" width="368" height="230" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="100"/>
+                <Column size="150"/>
+                <Column size="100"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+                <Row size="24" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell colspan="3" text="제품 및 상품 매입"/>
+                <Cell row="1" text="항목"/>
+                <Cell row="1" col="1" text="업체명"/>
+                <Cell row="1" col="2" text="금액"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+              </Band>
+              <Band id="summary">
+                <Cell colspan="2" text="제 품 매 입 총 계"/>
+                <Cell col="2"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button03" taborder="10" text="+" left="1028" top="152" width="20" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button04" taborder="10" text="-" left="1052" top="152" width="20" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static11" taborder="2" text="제품 예상 이익" left="5" top="412" width="100" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080" textAlign="center"/>
+        <Edit id="Edit09" taborder="13" left="106" top="412" width="230" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Grid id="Grid02" taborder="14" left="5" top="439" width="489" height="199" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="50"/>
+                <Column size="100"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+                <Row size="24" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell rowspan="2" text="구분"/>
+                <Cell col="1" colspan="4" text="용역 매출"/>
+                <Cell row="1" col="1" text="등급"/>
+                <Cell row="1" col="2" text="단가"/>
+                <Cell row="1" col="3" text="MM"/>
+                <Cell row="1" col="4" text="금액"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+                <Cell col="4"/>
+              </Band>
+              <Band id="summary">
+                <Cell colspan="4" text="용 역 매 출 총 계"/>
+                <Cell col="4"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button05" taborder="10" text="+" left="450" top="416" width="20" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button06" taborder="10" text="-" left="474" top="416" width="20" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button07" taborder="10" text="▲" left="386" top="416" width="20" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button08" taborder="10" text="▼" left="410" top="416" width="20" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button09" taborder="10" text="▲" left="963" top="416" width="20" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button10" taborder="10" text="▼" left="987" top="416" width="20" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button11" taborder="10" text="+" left="1027" top="416" width="20" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="Button12" taborder="10" text="-" left="1051" top="416" width="20" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Grid id="Grid03" taborder="14" left="496" top="439" width="576" height="199" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="50"/>
+                <Column size="150"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="50"/>
+                <Column size="100"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+                <Row size="24" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell colspan="6" text="용역 매입"/>
+                <Cell row="1" text="등급"/>
+                <Cell row="1" col="1" text="업체명"/>
+                <Cell row="1" col="2" text="투입인력"/>
+                <Cell row="1" col="3" text="단가"/>
+                <Cell row="1" col="4" text="MM"/>
+                <Cell row="1" col="5" text="금액"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+              </Band>
+              <Band id="summary">
+                <Cell colspan="5" text="용 역 매 출 총 계"/>
+                <Cell col="5"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static12" taborder="2" text="용역 예상 이익" left="5" top="643" width="124" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080" textAlign="center"/>
+        <Static id="Static13" taborder="2" text="계약 투입 MM" left="5" top="675" width="124" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080" textAlign="center"/>
+        <Static id="Static15" taborder="2" text="고 객 사" left="5" top="739" width="124" height="59" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080" textAlign="center"/>
+        <Static id="Static16" taborder="2" text="실 투입 MM" left="130" top="675" width="124" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080" textAlign="center"/>
+        <Static id="Static17" taborder="2" text="오차" left="255" top="675" width="124" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080" textAlign="center"/>
+        <Edit id="Edit10" taborder="3" left="130" top="643" width="198" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static14" taborder="2" text="투비소프트 직원비용" left="336" top="643" width="124" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080" textAlign="center"/>
+        <Edit id="Edit11" taborder="3" left="5" top="707" width="124" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit12" taborder="3" left="130" top="707" width="124" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit13" taborder="3" left="255" top="707" width="124" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit14" taborder="3" left="130" top="771" width="177" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Radio id="Radio02" taborder="15" left="130" top="739" width="177" height="22" right="" bottom="" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">01</Col>
+                <Col id="datacolumn">1년</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">02</Col>
+                <Col id="datacolumn">2년</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">03</Col>
+                <Col id="datacolumn">3년</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Static id="Static18" taborder="2" text="사   유" left="384" top="675" width="76" height="59" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080" textAlign="center"/>
+        <Static id="Static19" taborder="2" text="사   유" left="315" top="739" width="145" height="59" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080" textAlign="center"/>
+        <TextArea id="TextArea00" taborder="16" left="461" top="739" width="611" height="59" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <TextArea id="TextArea01" taborder="16" left="461" top="675" width="611" height="59" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit15" taborder="3" left="461" top="643" width="198" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Edit id="Edit16" taborder="3" left="789" top="643" width="283" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static20" taborder="2" text="예상 실이익" left="664" top="643" width="124" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080" textAlign="center"/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>
