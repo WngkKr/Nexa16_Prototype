@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_Pre_Project" left="0" top="0" width="1078" height="810" titletext="프로젝트">
+    <Layouts>
+      <Layout height="810" width="1078">
+        <Div id="Div00" taborder="0" text="Div00" left="1.02%" top="10" width="98.24%" height="77" right="" bottom="">
+          <Layouts>
+            <Layout>
+              <Static id="Static5" taborder="0" text="고객사" left="1.23%" top="10" width="6.81%" height="30" right="" bottom=""/>
+              <Edit id="Edit00" taborder="1" left="9.65%" top="10" width="18.07%" height="30" right="" bottom=""/>
+              <Button id="btnSearch" taborder="2" text="" left="28.29%" top="10" width="2.74%" height="30" right="" bottom=""/>
+              <Button id="btnAdd" taborder="3" text="추가" left="78.15%" top="10" width="6.53%" height="30" right="" bottom=""/>
+              <Button id="btnSave" taborder="3" text="저장" left="85.34%" top="10" width="6.53%" height="30" right="" bottom=""/>
+              <Button id="btnClose" taborder="3" text="닫기" left="92.72%" top="10" width="6.53%" height="30" right="" bottom=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static4" taborder="0" text="고객사" left="0.83%" top="101" width="7.42%" height="28" right="" bottom="" border="1px solid black"/>
+        <Static id="Static0" taborder="0" text="프로젝트명" left="34.42%" top="101" width="7.42%" height="28" right="" bottom="" border="1px solid black"/>
+        <Static id="Static6" taborder="0" text="계약명" left="68.09%" top="101" width="7.42%" height="28" right="" bottom="" border="1px solid black"/>
+        <Edit id="edtClientName00" taborder="1" left="10.95%" top="101" width="20.69%" height="28" right="" bottom=""/>
+        <Edit id="edtProjectName00" taborder="1" left="44.62%" top="101" width="20.69%" height="28" right="" bottom=""/>
+        <Edit id="Edit00" taborder="1" left="78.29%" top="101" width="20.69%" height="28" right="" bottom=""/>
+        <Tab id="tabProjectSi" taborder="2" tabindex="0" left="0.83%" top="138" width="98.79%" height="665" right="" bottom="">
+          <Tabpages>
+            <Tabpage id="Tabpage1" text="프리/컨설팅">
+              <Layouts>
+                <Layout>
+                  <Div id="divProjectTech" taborder="0" text="" left="0.09%" top="1" width="99.81%" height="635" right="" bottom="">
+                    <Layouts>
+                      <Layout/>
+                    </Layouts>
+                  </Div>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="Tabpage2" text="투입 인력">
+              <Layouts>
+                <Layout>
+                  <Div id="divProjectSi" taborder="0" text="" left="-0.09%" top="1" width="99.81%" height="627" right="" bottom="">
+                    <Layouts>
+                      <Layout/>
+                    </Layouts>
+                  </Div>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+          </Tabpages>
+        </Tab>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>
