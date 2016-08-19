@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_Support_stat" left="0" top="0" width="946" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" width="946">
+        <Div id="Div00" taborder="0" text="Div00" left="0.95%" top="7" width="97.89%" height="65" right="" bottom="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="검색년도" left="1.1%" top="9" width="6.69%" height="30" right="" bottom="" border=""/>
+              <Static id="Static01" taborder="0" text="팀구분" left="19.91%" top="10" width="6.69%" height="30" right="" bottom="" border=""/>
+              <Static id="Static02" taborder="0" text="지원구분" left="66.34%" top="10" width="6.69%" height="30" right="" bottom="" border=""/>
+              <Static id="Static03" taborder="0" text="조회구분" left="43.18%" top="10" width="6.69%" height="30" right="" bottom="" border=""/>
+              <Combo id="cmbTeam" taborder="1" text="" left="27.6%" top="10" width="14.61%" height="30" right="" bottom="" value="" index="-1"/>
+              <Combo id="Combo02" taborder="1" text="" left="50.87%" top="10" width="14.5%" height="30" right="" bottom=""/>
+              <Combo id="Combo03" taborder="1" text="" left="74.03%" top="10" width="14.5%" height="30" right="" bottom=""/>
+              <Spin id="Spin00" taborder="2" left="8.77%" top="10" width="10.09%" height="30" right="" bottom=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Tab id="Tab00" taborder="1" tabindex="0" left="0.95%" top="88" width="97.89%" height="652" right="" bottom="">
+          <Tabpages>
+            <Tabpage id="Tabpage1" text="지원구분">
+              <Layouts>
+                <Layout>
+                  <Grid id="Grid00" taborder="0" left="0.54%" top="6" width="99.03%" height="616" right="" bottom="" autofittype="col">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="61"/>
+                          <Column size="95"/>
+                          <Column size="98"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="53" band="head"/>
+                          <Row size="117"/>
+                          <Row size="24" band="summ"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="팀구분"/>
+                          <Cell col="1" text="이름"/>
+                          <Cell col="2" text="1월"/>
+                          <Cell col="3" text="2월"/>
+                          <Cell col="4" text="3월"/>
+                          <Cell col="5" text="4월"/>
+                          <Cell col="6" text="5월"/>
+                          <Cell col="7" text="6월"/>
+                          <Cell col="8" text="7월"/>
+                          <Cell col="9" text="8월"/>
+                          <Cell col="10" text="9월"/>
+                          <Cell col="11" text="10월"/>
+                          <Cell col="12" text="11월"/>
+                          <Cell col="13" text="12월"/>
+                          <Cell col="14" text="년합계"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell text=""/>
+                          <Cell col="1" text=""/>
+                          <Cell col="2" text=""/>
+                          <Cell col="3"/>
+                          <Cell col="4"/>
+                          <Cell col="5"/>
+                          <Cell col="6"/>
+                          <Cell col="7"/>
+                          <Cell col="8"/>
+                          <Cell col="9"/>
+                          <Cell col="10"/>
+                          <Cell col="11"/>
+                          <Cell col="12"/>
+                          <Cell col="13"/>
+                          <Cell col="14"/>
+                        </Band>
+                        <Band id="summary">
+                          <Cell/>
+                          <Cell col="1" text="합계"/>
+                          <Cell col="2"/>
+                          <Cell col="3"/>
+                          <Cell col="4"/>
+                          <Cell col="5"/>
+                          <Cell col="6"/>
+                          <Cell col="7"/>
+                          <Cell col="8"/>
+                          <Cell col="9"/>
+                          <Cell col="10"/>
+                          <Cell col="11"/>
+                          <Cell col="12"/>
+                          <Cell col="13"/>
+                          <Cell col="14"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="Tabpage2" text="프로젝트별">
+              <Layouts>
+                <Layout>
+                  <Grid id="Grid00" taborder="0" left="0.54%" top="6" width="98.7%" height="602" right="" bottom="" autofittype="col">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="61"/>
+                          <Column size="95"/>
+                          <Column size="98"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="53" band="head"/>
+                          <Row size="117"/>
+                          <Row size="24" band="summ"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="팀구분"/>
+                          <Cell col="1" text="이름"/>
+                          <Cell col="2" text="1월"/>
+                          <Cell col="3" text="2월"/>
+                          <Cell col="4" text="3월"/>
+                          <Cell col="5" text="4월"/>
+                          <Cell col="6" text="5월"/>
+                          <Cell col="7" text="6월"/>
+                          <Cell col="8" text="7월"/>
+                          <Cell col="9" text="8월"/>
+                          <Cell col="10" text="9월"/>
+                          <Cell col="11" text="10월"/>
+                          <Cell col="12" text="11월"/>
+                          <Cell col="13" text="12월"/>
+                          <Cell col="14" text="년합계"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell text=""/>
+                          <Cell col="1" text=""/>
+                          <Cell col="2" text=""/>
+                          <Cell col="3"/>
+                          <Cell col="4"/>
+                          <Cell col="5"/>
+                          <Cell col="6"/>
+                          <Cell col="7"/>
+                          <Cell col="8"/>
+                          <Cell col="9"/>
+                          <Cell col="10"/>
+                          <Cell col="11"/>
+                          <Cell col="12"/>
+                          <Cell col="13"/>
+                          <Cell col="14"/>
+                        </Band>
+                        <Band id="summary">
+                          <Cell/>
+                          <Cell col="1" text="합계"/>
+                          <Cell col="2"/>
+                          <Cell col="3"/>
+                          <Cell col="4"/>
+                          <Cell col="5"/>
+                          <Cell col="6"/>
+                          <Cell col="7"/>
+                          <Cell col="8"/>
+                          <Cell col="9"/>
+                          <Cell col="10"/>
+                          <Cell col="11"/>
+                          <Cell col="12"/>
+                          <Cell col="13"/>
+                          <Cell col="14"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+          </Tabpages>
+        </Tab>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsList"/>
+      <Dataset id="dsTeam">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsGbn">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="data" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">c</Col>
+            <Col id="data">건수</Col>
+          </Row>
+          <Row>
+            <Col id="code">h</Col>
+            <Col id="data">시간</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsCDRequestTechType"/>
+    </Objects>
+  </Form>
+</FDL>

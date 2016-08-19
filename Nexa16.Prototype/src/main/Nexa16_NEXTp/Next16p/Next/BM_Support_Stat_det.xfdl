@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_Project_SetInfo" left="0" top="0" width="600" height="500" titletext="New Form">
+    <Layouts>
+      <Layout height="500" width="600">
+        <Button id="Button02" taborder="0" text="Excell" left="78%" top="15" width="9.67%" height="24" right="" bottom=""/>
+        <Button id="btnClose" taborder="0" text="닫기" left="88.5%" top="15" width="9.67%" height="24" right="" bottom=""/>
+        <Grid id="grdProjectList" taborder="1" left="1.67%" top="43" width="96.17%" height="453" right="" bottom="" autofittype="col" binddataset="dsList">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="고객사"/>
+                <Cell col="1" text="프로젝트명"/>
+                <Cell col="2" text="성명"/>
+                <Cell col="3" text="시작일시"/>
+                <Cell col="4" text="종료일시"/>
+                <Cell col="5" text="지원시간"/>
+              </Band>
+              <Band id="body">
+                <Cell text=""/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsList"/>
+    </Objects>
+  </Form>
+</FDL>

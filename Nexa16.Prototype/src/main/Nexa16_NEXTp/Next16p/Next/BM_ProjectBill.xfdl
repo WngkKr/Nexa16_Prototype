@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_ProjectBill" left="0" top="0" width="990" height="470" titletext="프로젝트 수금">
+    <Layouts>
+      <Layout height="470" width="990">
+        <Button id="btnIssueBill" taborder="4" text="세금계산서발행" left="88.89%" top="8" width="9.8%" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnBillSave" taborder="4" text="저장" left="80.4%" top="8" width="7.6%" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btn_selectdel" taborder="4" text="삭제" left="72.42%" top="8" width="7.6%" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btndel" taborder="4" text="초기화" left="64.34%" top="8" width="7.6%" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btn_supply" taborder="4" text="거래명세서인쇄" left="53.23%" top="8" width="10.71%" height="21" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Grid id="grdContractList" taborder="6" left="1.21%" top="32" width="25.56%" height="424" right="" bottom="" autofittype="col" text="">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="70"/>
+                <Column size="55"/>
+                <Column size="119"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+                <Row size="24" band="summ"/>
+                <Row size="24" band="summ"/>
+                <Row size="24" band="summ"/>
+                <Row size="24" band="summ"/>
+                <Row size="24" band="summ"/>
+                <Row size="24" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="계약구분"/>
+                <Cell col="1" text="계약번호"/>
+                <Cell col="2" text="계약금액"/>
+                <Cell row="1" colspan="3" text="계약처" textAlign="left"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+              </Band>
+              <Band id="summary">
+                <Cell colspan="2" text="계약금액 합계"/>
+                <Cell col="2"/>
+                <Cell row="1" colspan="2" text="세금계산서 발행합계"/>
+                <Cell row="1" col="2"/>
+                <Cell row="2" colspan="2" text="세금계산서 미발행합계"/>
+                <Cell row="2" col="2"/>
+                <Cell row="3" colspan="2" text="(부가세 포함) 총 합계"/>
+                <Cell row="3" col="2"/>
+                <Cell row="4" colspan="2" text="수금액 합계"/>
+                <Cell row="4" col="2"/>
+                <Cell row="5" colspan="2" text="미수금 합계"/>
+                <Cell row="5" col="2"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Tab id="TabBill" taborder="7" tabindex="0" left="28.28%" top="32" width="70.4%" height="424" right="" bottom="">
+          <Tabpages>
+            <Tabpage id="Tabpage1" text="세금계산서 전체">
+              <Layouts>
+                <Layout>
+                  <Grid id="grdProjectBill" taborder="0" left="0.14%" top="0" width="98.6%" height="389" right="" bottom="" autofittype="col">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="56"/>
+                          <Column size="48"/>
+                          <Column size="59"/>
+                          <Column size="48"/>
+                          <Column size="63"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="53"/>
+                          <Column size="70"/>
+                          <Column size="152"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="35" band="head"/>
+                          <Row size="37" band="head"/>
+                          <Row size="48"/>
+                          <Row size="24" band="summ"/>
+                          <Row size="24" band="summ"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell colspan="2" text="순번"/>
+                          <Cell col="2" rowspan="2" text="수금상태"/>
+                          <Cell col="3" rowspan="2" text="결재수단"/>
+                          <Cell col="4" colspan="4" text="세금계산서"/>
+                          <Cell col="8" rowspan="2" text="수금예정일"/>
+                          <Cell col="9" rowspan="2" text="수금액"/>
+                          <Cell col="10" rowspan="2" text="수금일자"/>
+                          <Cell col="11" rowspan="2" text="수금일자"/>
+                          <Cell col="12" rowspan="2" text="수금 제외"/>
+                          <Cell col="13" rowspan="2" text="수금내역"/>
+                          <Cell col="14" rowspan="2" text="청구 비고"/>
+                          <Cell row="1"/>
+                          <Cell row="1" col="1"/>
+                          <Cell row="1" col="4" text="발행액"/>
+                          <Cell row="1" col="5" text="부가세액"/>
+                          <Cell row="1" col="6" text="발급예정일"/>
+                          <Cell row="1" col="7" text="발급일"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell/>
+                          <Cell col="1"/>
+                          <Cell col="2"/>
+                          <Cell col="3"/>
+                          <Cell col="4"/>
+                          <Cell col="5"/>
+                          <Cell col="6"/>
+                          <Cell col="7"/>
+                          <Cell col="8"/>
+                          <Cell col="9"/>
+                          <Cell col="10"/>
+                          <Cell col="11"/>
+                          <Cell col="12"/>
+                          <Cell col="13"/>
+                          <Cell col="14"/>
+                        </Band>
+                        <Band id="summary">
+                          <Cell colspan="3" text="총발행액"/>
+                          <Cell col="3"/>
+                          <Cell col="4" text="계산서발행액"/>
+                          <Cell col="5"/>
+                          <Cell col="6" text="미발행금액"/>
+                          <Cell col="7"/>
+                          <Cell col="8" colspan="5"/>
+                          <Cell col="13"/>
+                          <Cell col="14"/>
+                          <Cell row="1" colspan="3" text="총금액"/>
+                          <Cell row="1" col="3"/>
+                          <Cell row="1" col="4" text="수금액"/>
+                          <Cell row="1" col="5"/>
+                          <Cell row="1" col="6" text="미수금액"/>
+                          <Cell row="1" col="7"/>
+                          <Cell row="1" col="8" colspan="5"/>
+                          <Cell row="1" col="13"/>
+                          <Cell row="1" col="14"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Calendar id="Calendar00" taborder="1" left="22.06%" top="90" width="12.22%" height="127" right="" bottom=""/>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="Tabpage2" text="세금계산서 발행">
+              <Layouts>
+                <Layout>
+                  <Static id="Static00" taborder="1" text="업체정보" left="0.89%" top="209" width="20.27%" height="25" right="" bottom=""/>
+                  <Static id="Static01" taborder="1" text="업체정보" left="1.04%" top="237" width="20.27%" height="25" right="" bottom="" border="1px solid black"/>
+                  <Static id="Static02" taborder="1" text="업체정보" left="0.89%" top="263" width="20.27%" height="25" right="" bottom="" border="1px solid black"/>
+                  <Static id="Static03" taborder="1" text="업체정보" left="0.75%" top="315" width="20.27%" height="25" right="" bottom="" border="1px solid black"/>
+                  <Static id="Static04" taborder="1" text="업체정보" left="0.89%" top="289" width="20.27%" height="25" right="" bottom="" border="1px solid black"/>
+                  <Static id="Static05" taborder="1" text="업체정보" left="50.52%" top="315" width="20.27%" height="25" right="" bottom="" border="1px solid black"/>
+                  <Static id="Static06" taborder="1" text="업체정보" left="50.52%" top="263" width="20.27%" height="25" right="" bottom="" border="1px solid black"/>
+                  <Static id="Static07" taborder="1" text="업체정보" left="50.37%" top="237" width="20.27%" height="25" right="" bottom="" border="1px solid black"/>
+                  <Edit id="Edit00" taborder="2" left="22.21%" top="237" width="26.97%" height="25" right="" bottom=""/>
+                  <Edit id="Edit01" taborder="2" left="71.54%" top="237" width="26.97%" height="25" right="" bottom=""/>
+                  <Edit id="Edit02" taborder="2" left="71.54%" top="263" width="26.97%" height="25" right="" bottom=""/>
+                  <Edit id="Edit03" taborder="2" left="22.21%" top="263" width="26.97%" height="25" right="" bottom=""/>
+                  <Edit id="Edit04" taborder="2" left="22.21%" top="289" width="76.45%" height="25" right="" bottom=""/>
+                  <Combo id="Combo00" taborder="3" text="Combo00" left="22.35%" top="315" width="27.12%" height="25" right="" bottom=""/>
+                  <Combo id="Combo01" taborder="3" text="Combo00" left="71.54%" top="315" width="27.12%" height="25" right="" bottom=""/>
+                  <Grid id="Grid00" taborder="0" left="0.45%" top="2" width="99.55%" height="204" right="" bottom="" text="" autofittype="col">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="92"/>
+                          <Column size="126"/>
+                          <Column size="88"/>
+                          <Column size="61"/>
+                          <Column size="112"/>
+                          <Column size="85"/>
+                          <Column size="106"/>
+                          <Column size="124"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                          <Row size="24" band="summ"/>
+                          <Row size="24" band="summ"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="월 일"/>
+                          <Cell col="1" text="품 목 / 규 격"/>
+                          <Cell col="2" text="단위"/>
+                          <Cell col="3" text="수량"/>
+                          <Cell col="4" text="단 가"/>
+                          <Cell col="5" text="공급가액"/>
+                          <Cell col="6" text="세 액"/>
+                          <Cell col="7" text="비고"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell/>
+                          <Cell col="1"/>
+                          <Cell col="2"/>
+                          <Cell col="3"/>
+                          <Cell col="4"/>
+                          <Cell col="5"/>
+                          <Cell col="6"/>
+                          <Cell col="7"/>
+                        </Band>
+                        <Band id="summary">
+                          <Cell rowspan="2" text="작성일"/>
+                          <Cell col="1" rowspan="2"/>
+                          <Cell col="2" rowspan="2" text="청구"/>
+                          <Cell col="3" colspan="2" text="합계"/>
+                          <Cell col="5"/>
+                          <Cell col="6"/>
+                          <Cell col="7"/>
+                          <Cell row="1" col="3" colspan="2"/>
+                          <Cell row="1" col="5" colspan="2"/>
+                          <Cell row="1" col="7"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Button id="btnUpdate" taborder="4" text="수정" left="89.12%" top="209" width="9.24%" height="25" right="" bottom=""/>
+                  <Calendar id="Calendar00" taborder="5" left="11.62%" top="63" width="20.42%" height="85" right="" bottom=""/>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+          </Tabpages>
+        </Tab>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

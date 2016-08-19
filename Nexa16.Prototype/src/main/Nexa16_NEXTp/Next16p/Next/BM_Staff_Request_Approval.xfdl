@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_Staff_Request_Approval" left="0" top="0" width="1078" height="810" titletext="New Form">
+    <Layouts>
+      <Layout height="810" width="1078">
+        <Div id="Div00" taborder="0" text="Div00" left="0.93%" top="13" width="97.4%" height="44" right="" bottom="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="고객사" left="0.76%" top="7" width="4.39%" height="27" right="" bottom=""/>
+              <Edit id="Edit00" taborder="1" left="5.25%" top="9" width="13.56%" height="25" right="" bottom=""/>
+              <Button id="Button00" taborder="2" text="Button00" left="19.58%" top="9" width="2.2%" height="26" right="" bottom=""/>
+              <Static id="Static01" taborder="0" text="승인상태" left="22.92%" top="7" width="5.16%" height="27" right="" bottom=""/>
+              <Combo id="Combo00" taborder="3" text="Combo00" left="29.8%" top="9" width="9.65%" height="29" right="" bottom=""/>
+              <Static id="Static02" taborder="0" text="요청일자" left="40.88%" top="7" width="5.16%" height="27" right="" bottom=""/>
+              <Calendar id="Calendar00" taborder="4" left="46.9%" top="9" width="9.36%" height="25" right="" bottom=""/>
+              <Calendar id="Calendar01" taborder="4" left="59.5%" top="9" width="9.36%" height="25" right="" bottom=""/>
+              <Static id="Static03" taborder="5" text="~" left="56.73%" top="8" width="2.01%" height="25" right="" bottom=""/>
+              <CheckBox id="CheckBox00" taborder="6" text="기간무시" left="69.44%" top="8" width="7.45%" height="27" right="" bottom=""/>
+              <Button id="Button01" taborder="7" text="지원스케줄확인" left="79.66%" top="7" width="12.23%" height="30" right="" bottom=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Combo id="Combo00" taborder="1" text="" left="78.85%" top="66" width="9.93%" height="26" right="" bottom="" value="" index="-1"/>
+        <Button id="Button00" taborder="2" text="복사추가" left="90.63%" top="67" width="7.24%" height="32" right="" bottom=""/>
+        <Tab id="Tab00" taborder="3" tabindex="0" left="1.21%" top="110" width="97.5%" height="690" right="" bottom="" onchanged="Tab00_onchanged">
+          <Tabpages>
+            <Tabpage id="Tabpage1" text="프리/컨설팅">
+              <Layouts>
+                <Layout>
+                  <Grid id="Grid00" taborder="0" left="0.19%" top="5" width="99.14%" height="291" right="" bottom="">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="48"/>
+                          <Column size="71"/>
+                          <Column size="81"/>
+                          <Column size="70"/>
+                          <Column size="48"/>
+                          <Column size="62"/>
+                          <Column size="65"/>
+                          <Column size="64"/>
+                          <Column size="118"/>
+                          <Column size="171"/>
+                          <Column size="237"/>
+                          <Column size="335"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="59" band="head"/>
+                          <Row size="80" band="head"/>
+                          <Row size="83"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell rowspan="2" text="고객사"/>
+                          <Cell col="1" rowspan="2" text="프로젝트명"/>
+                          <Cell col="2" rowspan="2" text="영업담당"/>
+                          <Cell col="3" rowspan="2" text="승인여부"/>
+                          <Cell col="4" colspan="2" text="시작일"/>
+                          <Cell col="6" colspan="2" text="종료일"/>
+                          <Cell col="8" rowspan="2" text="요청일자"/>
+                          <Cell col="9" rowspan="2" text="요청기술담당자"/>
+                          <Cell col="10" rowspan="2" text="요청구분"/>
+                          <Cell col="11" rowspan="2" text="SMS"/>
+                          <Cell row="1" col="4" text="일자"/>
+                          <Cell row="1" col="5" text="시간"/>
+                          <Cell row="1" col="6" text="일자"/>
+                          <Cell row="1" col="7" text="시간"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell/>
+                          <Cell col="1"/>
+                          <Cell col="2"/>
+                          <Cell col="3"/>
+                          <Cell col="4"/>
+                          <Cell col="5"/>
+                          <Cell col="6"/>
+                          <Cell col="7"/>
+                          <Cell col="8"/>
+                          <Cell col="9"/>
+                          <Cell col="10"/>
+                          <Cell col="11" displaytype="" edittype=""/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Calendar id="Calendar00" taborder="1" left="23.97%" top="157" width="12.18%" height="75" right="" bottom=""/>
+                  <Calendar id="Calendar01" taborder="1" left="61.07%" top="162" width="12.18%" height="75" right="" bottom=""/>
+                  <Static id="Static00" taborder="2" text="시작일시" left="1.89%" top="303" width="10.97%" height="49" right="" bottom=""/>
+                  <Static id="Static01" taborder="2" text="승인 및 작업 내용" left="54.68%" top="303" width="10.97%" height="49" right="" bottom=""/>
+                  <CheckBox id="chb_visible_pis" taborder="3" text="요청내용, 승인 및 작업내용 공개" left="70.1%" top="311" width="22.61%" height="38" right="" bottom=""/>
+                  <Static id="Static02" taborder="2" text="시작일시" left="1.32%" top="359" width="8.8%" height="25" right="" bottom="" border="1px solid black"/>
+                  <Static id="Static03" taborder="2" text="요청기술담당자" left="1.23%" top="391" width="8.8%" height="25" right="" bottom="" border="1px solid black"/>
+                  <Static id="Static04" taborder="2" text="요청내용" left="1.23%" top="431" width="8.8%" height="56" right="" bottom="" border="1px solid black"/>
+                  <Static id="Static05" taborder="2" text="주요공유사항" left="1.23%" top="495" width="8.8%" height="81" right="" bottom="" border="1px solid black"/>
+                  <Calendar id="Calendar02" taborder="4" left="10.97%" top="359" width="6.24%" height="26" right="" bottom=""/>
+                  <MaskEdit id="MaskEdit00" taborder="5" left="17.31%" top="359" width="4.07%" height="27" right="" bottom="" mask="##:##" type="string" value="00:00"/>
+                  <MaskEdit id="MaskEdit01" taborder="5" left="42.01%" top="361" width="4.07%" height="27" right="" bottom="" type="string" mask="##:##" value="00:00"/>
+                  <Calendar id="Calendar03" taborder="4" left="33.68%" top="360" width="7.47%" height="26" right="" bottom=""/>
+                  <Static id="Static06" taborder="2" text="종료일시" left="24.5%" top="361" width="8.33%" height="25" right="" bottom="" border="1px solid black"/>
+                  <Combo id="Combo00" taborder="6" text="Combo00" left="10.97%" top="391" width="10.41%" height="27" right="" bottom=""/>
+                  <Calendar id="Calendar04" taborder="7" left="33.68%" top="392" width="12.58%" height="29" right="" bottom=""/>
+                  <Static id="Static07" taborder="2" text="요청일자" left="24.5%" top="391" width="8.33%" height="25" right="" bottom="" border="1px solid black"/>
+                  <TextArea id="TextArea00" taborder="8" left="11.16%" top="431" width="35%" height="56" right="" bottom=""/>
+                  <TextArea id="TextArea01" taborder="8" left="11.07%" top="495" width="88.17%" height="81" right="" bottom=""/>
+                  <TextArea id="TextArea02" taborder="8" left="64.14%" top="428" width="35%" height="56" right="" bottom=""/>
+                  <Calendar id="Calendar05" taborder="7" left="86.57%" top="389" width="12.58%" height="29" right="" bottom=""/>
+                  <MaskEdit id="MaskEdit02" taborder="5" left="95.08%" top="358" width="4.07%" height="27" right="" bottom="" type="string" mask="##:##" value="00:00"/>
+                  <Calendar id="Calendar06" taborder="4" left="86.57%" top="357" width="7.47%" height="26" right="" bottom=""/>
+                  <Static id="Static08" taborder="2" text="종료일시" left="77.48%" top="358" width="8.33%" height="25" right="" bottom="" border="1px solid black"/>
+                  <Static id="Static09" taborder="2" text="요청일자" left="77.48%" top="388" width="8.33%" height="25" right="" bottom="" border="1px solid black"/>
+                  <Combo id="Combo01" taborder="6" text="Combo00" left="63.95%" top="388" width="10.41%" height="27" right="" bottom=""/>
+                  <Static id="Static10" taborder="2" text="승인기술담당자" left="54.3%" top="388" width="8.8%" height="25" right="" bottom="" border="1px solid black"/>
+                  <Static id="Static11" taborder="2" text="시작일시" left="54.3%" top="356" width="8.8%" height="25" right="" bottom="" border="1px solid black"/>
+                  <Calendar id="Calendar07" taborder="4" left="63.95%" top="356" width="6.24%" height="26" right="" bottom=""/>
+                  <MaskEdit id="MaskEdit03" taborder="5" left="70.29%" top="356" width="4.07%" height="27" right="" bottom="" mask="##:##" type="string" value="00:00"/>
+                  <Static id="Static12" taborder="2" text="작업내용" left="54.3%" top="428" width="8.8%" height="56" right="" bottom="" border="1px solid black"/>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="Tabpage2" text="SI 인력">
+              <Layouts>
+                <Layout>
+                  <Grid id="Grid00" taborder="0" left="0.58%" top="4" width="99.42%" height="304" right="" bottom=""/>
+                  <Static id="Static00" taborder="1" text="프로젝트내용" left="0.76%" top="322" width="20.81%" height="69" right="" bottom="" border="1px solid black"/>
+                  <TextArea id="TextArea00" taborder="2" left="23.18%" top="323" width="76.06%" height="109" right="" bottom=""/>
+                  <Static id="Static01" taborder="3" text="상세 요청 정보" left="0.28%" top="433" width="14.38%" height="53" right="" bottom=""/>
+                  <Button id="Button00" taborder="4" text="+" left="79.28%" top="445" width="3.5%" height="26" right="" bottom=""/>
+                  <Button id="Button01" taborder="4" text="-" left="86.28%" top="445" width="3.41%" height="26" right="" bottom=""/>
+                  <Grid id="Grid01" taborder="5" left="0.76%" top="492" width="98.11%" height="90" right="" bottom="">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="77"/>
+                          <Column size="76"/>
+                          <Column size="74"/>
+                          <Column size="73"/>
+                          <Column size="65"/>
+                          <Column size="71"/>
+                          <Column size="83"/>
+                          <Column size="80"/>
+                          <Column size="107"/>
+                          <Column size="90"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="body">
+                          <Cell text="순번"/>
+                          <Cell col="1" text="역할"/>
+                          <Cell col="2" text="등급"/>
+                          <Cell col="3" text="단가"/>
+                          <Cell col="4" text="MM"/>
+                          <Cell col="5" text="인원수"/>
+                          <Cell col="6" text="필수기술1"/>
+                          <Cell col="7" text="필수기술2"/>
+                          <Cell col="8" text="개시(예정)일"/>
+                          <Cell col="9" text="비고"/>
+                          <Cell row="1"/>
+                          <Cell row="1" col="1"/>
+                          <Cell row="1" col="2"/>
+                          <Cell row="1" col="3"/>
+                          <Cell row="1" col="4"/>
+                          <Cell row="1" col="5"/>
+                          <Cell row="1" col="6"/>
+                          <Cell row="1" col="7"/>
+                          <Cell row="1" col="8"/>
+                          <Cell row="1" col="9"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Static id="Static02" taborder="1" text="주요공유사항" left="0.85%" top="594" width="15.7%" height="69" right="" bottom="" border="1px solid black"/>
+                  <TextArea id="TextArea01" taborder="6" left="18.73%" top="593" width="80.23%" height="67" right="" bottom=""/>
+                  <Grid id="Grid02" taborder="0" left="0.19%" top="5" width="99.14%" height="291" right="" bottom="">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="48"/>
+                          <Column size="71"/>
+                          <Column size="81"/>
+                          <Column size="70"/>
+                          <Column size="48"/>
+                          <Column size="62"/>
+                          <Column size="65"/>
+                          <Column size="64"/>
+                          <Column size="118"/>
+                          <Column size="171"/>
+                          <Column size="237"/>
+                          <Column size="335"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="59" band="head"/>
+                          <Row size="80" band="head"/>
+                          <Row size="83"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell rowspan="2" text="고객사"/>
+                          <Cell col="1" rowspan="2" text="프로젝트명"/>
+                          <Cell col="2" rowspan="2" text="영업담당"/>
+                          <Cell col="3" rowspan="2" text="승인여부"/>
+                          <Cell col="4" colspan="2" text="시작일"/>
+                          <Cell col="6" colspan="2" text="종료일"/>
+                          <Cell col="8" rowspan="2" text="요청일자"/>
+                          <Cell col="9" rowspan="2" text="요청기술담당자"/>
+                          <Cell col="10" rowspan="2" text="요청구분"/>
+                          <Cell col="11" rowspan="2" text="SMS"/>
+                          <Cell row="1" col="4" text="일자"/>
+                          <Cell row="1" col="5" text="시간"/>
+                          <Cell row="1" col="6" text="일자"/>
+                          <Cell row="1" col="7" text="시간"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell/>
+                          <Cell col="1"/>
+                          <Cell col="2"/>
+                          <Cell col="3"/>
+                          <Cell col="4"/>
+                          <Cell col="5"/>
+                          <Cell col="6"/>
+                          <Cell col="7"/>
+                          <Cell col="8"/>
+                          <Cell col="9"/>
+                          <Cell col="10"/>
+                          <Cell col="11" displaytype="" edittype=""/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Calendar id="Calendar00" taborder="1" left="23.97%" top="157" width="12.18%" height="75" right="" bottom=""/>
+                  <Calendar id="Calendar01" taborder="1" left="61.07%" top="162" width="12.18%" height="75" right="" bottom=""/>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="Tabpage3" text="교 육">
+              <Layouts>
+                <Layout>
+                  <Static id="Static00" taborder="0" text="Static00" left="0.57%" top="568" width="14.19%" height="78" right="" bottom="" border="1px solid black"/>
+                  <TextArea id="TextArea00" taborder="1" left="15.7%" top="568" width="83.07%" height="78" right="" bottom=""/>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+          </Tabpages>
+        </Tab>
+        <PopupDiv id="PopupDiv00" text="PopupDiv00" visible="false" left="103.43%" top="2" width="45.92%" height="401" right="" bottom="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="Static00" left="1.42%" top="8" width="83.98%" height="383" right="" bottom="" border="1px solid black"/>
+              <TextArea id="TextArea00" taborder="1" left="3.04%" top="30" width="78.5%" height="344" right="" bottom=""/>
+              <TextArea id="TextArea01" taborder="2" left="6.69%" top="51" width="65.72%" height="286" right="" bottom=""/>
+            </Layout>
+          </Layouts>
+        </PopupDiv>
+        <Static id="Static13" taborder="6" text="시작일시" left="0.74%" top="-9" width="0%" height="0" right="" bottom="" border="1px solid black"/>
+        <TextArea id="TextArea02" taborder="13" left="0.74%" top="-9" width="0%" height="0" right="" bottom=""/>
+        <Grid id="Grid00" taborder="14" left="1.58%" top="139" width="97.03%" height="549" right="" bottom="" binddataset="dsTech_E">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+                <Column size="48"/>
+              </Columns>
+              <Rows>
+                <Row size="116"/>
+                <Row size="158"/>
+              </Rows>
+              <Band id="body">
+                <Cell text="신청자"/>
+                <Cell col="1" text="제품"/>
+                <Cell col="2" text="고객사"/>
+                <Cell col="3" text="프로젝트명"/>
+                <Cell col="4" text="구분"/>
+                <Cell col="5" text="승인"/>
+                <Cell col="6" text="시작일자"/>
+                <Cell col="7" text="시작시간"/>
+                <Cell col="8" text="료일자"/>
+                <Cell col="9" text="종료시간"/>
+                <Cell col="10" text="요청일자"/>
+                <Cell col="11" text="요청교육담당자"/>
+                <Cell col="12" text="SMS"/>
+                <Cell row="1"/>
+                <Cell row="1" col="1"/>
+                <Cell row="1" col="2"/>
+                <Cell row="1" col="3"/>
+                <Cell row="1" col="4"/>
+                <Cell row="1" col="5"/>
+                <Cell row="1" col="6"/>
+                <Cell row="1" col="7"/>
+                <Cell row="1" col="8"/>
+                <Cell row="1" col="9"/>
+                <Cell row="1" col="10"/>
+                <Cell row="1" col="11"/>
+                <Cell row="1" col="12"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+]]></Script>
+    <Objects>
+      <Dataset id="dsTech_E"/>
+    </Objects>
+  </Form>
+</FDL>

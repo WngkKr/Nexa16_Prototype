@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_ClientSearch_pop" left="0" top="0" width="600" height="500" titletext="New Form">
+    <Layouts>
+      <Layout height="500" width="600">
+        <Button id="btnSearch" taborder="0" text="조회" left="52.5%" top="18" width="14.83%" height="29" right="" bottom=""/>
+        <Button id="btnConfirm" taborder="0" text="확인" left="68%" top="18" width="14.83%" height="29" right="" bottom=""/>
+        <Button id="btnCancel" taborder="0" text="취소" left="83.5%" top="18" width="14.83%" height="29" right="" bottom=""/>
+        <Static id="Static00" taborder="1" text="고객사" left="3.83%" top="67" width="17.83%" height="25" right="" bottom=""/>
+        <Edit id="edtClient" taborder="2" left="21.83%" top="67" width="53.17%" height="25" right="" bottom=""/>
+        <CheckBox id="chkClient" taborder="3" text="상위고객사" left="78.83%" top="67" width="17.67%" height="25" right="" bottom=""/>
+        <Grid id="grdClient" taborder="4" left="2.67%" top="107" width="96.33%" height="385" right="" bottom="" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="48"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell expr="" text="고객사"/>
+              </Band>
+              <Band id="body">
+                <Cell expr="고객사"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BM_SupportSchedule" left="0" top="0" width="1078" height="810" titletext="영업일정">
+    <Layouts>
+      <Layout height="810" width="1078">
+        <Combo id="Combo02" taborder="1" text="" left="52.88%" top="65" width="12.01%" height="26" right="" bottom=""/>
+        <Combo id="Combo03" taborder="1" text="" left="65.96%" top="65" width="12.01%" height="26" right="" bottom=""/>
+        <Static id="Static03" taborder="6" text="* 일정 추가시 날짜(head)를 더블클릭  " left="78.66%" top="66" width="20.78%" height="38" right="" bottom=""/>
+        <Tab id="tabMain" taborder="7" tabindex="0" left="0.74%" top="104" width="98.52%" height="696" right="" bottom="" text="">
+          <Tabpages>
+            <Tabpage id="Tabpage1" text="기술지원일정">
+              <Layouts>
+                <Layout>
+                  <Static id="Static00" taborder="0" text="SUN" left="0.71%" top="6" width="14.14%" height="18" right="" bottom="" color="red" border="1px solid black" font="bold 0 Arial" onclick="tabMain_Tabpage1_Static00_onclick"/>
+                  <Static id="Static01" taborder="0" text="SUN" left="67.91%" top="40" width="0%" height="0" color="red" border="1px solid black" font="bold 0 Arial" right="" bottom=""/>
+                  <Static id="Static02" taborder="0" text="THU" left="56.83%" top="6" width="14.14%" height="18" color="black" border="1px solid black" font="bold 0 Arial" right="" bottom=""/>
+                  <Static id="Static03" taborder="0" text="MON" left="14.8%" top="6" width="14.14%" height="18" color="black" border="1px solid black" font="bold 0 Arial" right="" bottom=""/>
+                  <Static id="Static04" taborder="0" text="TUES" left="28.84%" top="6" width="14.14%" height="18" color="black" border="1px solid black" font="bold 0 Arial" right="" bottom=""/>
+                  <Static id="Static05" taborder="0" text="WED" left="42.88%" top="6" width="14.14%" height="18" color="black" border="1px solid black" font="bold 0 Arial" right="" bottom=""/>
+                  <Static id="Static06" taborder="0" text="SAT" left="84.81%" top="6" width="14.14%" height="18" color="blue" border="1px solid black" font="bold 0 Arial" right="" bottom=""/>
+                  <Static id="Static07" taborder="0" text="FRI" left="70.87%" top="6" width="14.14%" height="18" color="black" border="1px solid black" font="bold 0 Arial" right="" bottom=""/>
+                  <Div id="divCalendar" taborder="1" text="Div00" left="0.09%" top="30" width="99.62%" height="632" right="" bottom="">
+                    <Layouts>
+                      <Layout/>
+                    </Layouts>
+                  </Div>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="Tabpage2" text="지원현황">
+              <Layouts>
+                <Layout>
+                  <Static id="Static00" taborder="0" text="기간" left="0.57%" top="5" width="3.92%" height="21" right="" bottom=""/>
+                  <Radio id="Radio00" taborder="2" left="25.69%" top="7" width="33.81%" height="23" right="" bottom="" onitemchanged="tabMain_Tabpage2_Radio00_onitemchanged" columncount="" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" color="" border="1px solid black">
+                    <Dataset id="innerdataset">
+                      <ColumnInfo>
+                        <Column id="codecolumn" size="256"/>
+                        <Column id="datacolumn" size="256"/>
+                      </ColumnInfo>
+                      <Rows>
+                        <Row>
+                          <Col id="codecolumn">D</Col>
+                          <Col id="datacolumn">지원건별</Col>
+                        </Row>
+                        <Row>
+                          <Col id="codecolumn">E</Col>
+                          <Col id="datacolumn">약별,처리자별</Col>
+                        </Row>
+                        <Row>
+                          <Col id="codecolumn">C</Col>
+                          <Col id="datacolumn">계약별</Col>
+                        </Row>
+                      </Rows>
+                    </Dataset>
+                  </Radio>
+                  <Calendar id="cal_sdate" taborder="4" left="3.53%" top="8" width="10.41%" height="27" right="" bottom="" dateformat="yyyy-MM" value="20160816" type="monthonly"/>
+                  <Calendar id="cal_edate" taborder="5" left="17.19%" top="7" width="8.31%" height="28" right="" bottom="" type="monthonly"/>
+                  <Static id="Static01" taborder="6" text="매입계약을 한 경우는 원가 항목에서 UnCheck하세요." left="61.51%" top="8" width="33.91%" height="31" right="" bottom=""/>
+                  <Grid id="grdTechGrid" taborder="7" left="0.96%" top="47" width="92.84%" height="439" right="" bottom="" binddataset="dsTechGrid">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                          <Column size="48"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="고객사"/>
+                          <Cell col="1" text="고객사1"/>
+                          <Cell col="2" text="계약명"/>
+                          <Cell col="3" text="계약여부"/>
+                          <Cell col="4" text="영업대표"/>
+                          <Cell col="5" text="시작일시"/>
+                          <Cell col="6" text="종료일시"/>
+                          <Cell col="7" text="상태"/>
+                          <Cell col="8" text="승인일자"/>
+                          <Cell col="9" text="처리자"/>
+                          <Cell col="10" text="지원구분"/>
+                          <Cell col="11" text="총작업시간"/>
+                          <Cell col="12" text="총작업일"/>
+                          <Cell col="13" text="원가"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell/>
+                          <Cell col="1"/>
+                          <Cell col="2"/>
+                          <Cell col="3"/>
+                          <Cell col="4"/>
+                          <Cell col="5"/>
+                          <Cell col="6"/>
+                          <Cell col="7"/>
+                          <Cell col="8"/>
+                          <Cell col="9"/>
+                          <Cell col="10"/>
+                          <Cell col="11"/>
+                          <Cell col="12"/>
+                          <Cell col="13"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+          </Tabpages>
+        </Tab>
+        <Div id="div_CopyPopup" taborder="8" text="" left="3.15%" top="847" width="74.03%" height="353" right="" bottom="">
+          <Layouts>
+            <Layout>
+              <Grid id="Grid00" taborder="0" left="0.75%" top="7" width="98.24%" height="305" right="" bottom="" binddataset="ds_ScheduleCopy">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="48"/>
+                      <Column size="179"/>
+                      <Column size="174"/>
+                      <Column size="182"/>
+                      <Column size="249"/>
+                      <Column size="148"/>
+                      <Column size="251"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell displaytype="checkbox" edittype="checkbox"/>
+                      <Cell col="1" text="시작일"/>
+                      <Cell col="2" text="종료일"/>
+                      <Cell col="3" text="변경시작일"/>
+                      <Cell col="4" text="변경종료일"/>
+                      <Cell col="5" text="고객사"/>
+                      <Cell col="6" text="계약명"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:CHK"/>
+                      <Cell col="1" text="bind:BEF_WORK_FROM_DATE"/>
+                      <Cell col="2" text="bind:BEF_WORK_TO_DATE"/>
+                      <Cell col="3" text="bind:WORK_FROM_DATE"/>
+                      <Cell col="4" text="bind:WORK_TO_DATE"/>
+                      <Cell col="5" text="bind:COMPANY_NAME"/>
+                      <Cell col="6" text="bind:CONTRACT_NAME"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="Button00" taborder="1" text="저장" left="82.16%" top="325" width="7.79%" height="20" right="" bottom=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="Button02" taborder="10" text="닫기" left="70.13%" top="1171" width="5.84%" height="22" right="" bottom=""/>
+        <Div id="Div00" taborder="11" text="Div00" left="0.83%" top="4" width="98.52%" height="60" right="" bottom="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="년월" left="0.28%" top="16" width="2.64%" height="25" right="" bottom=""/>
+              <Static id="Static01" taborder="0" text="구분" left="11.6%" top="16" width="2.74%" height="25" right="" bottom=""/>
+              <Static id="Static02" taborder="0" text="소속" left="24.62%" top="16" width="2.64%" height="25" right="" bottom=""/>
+              <Div id="Div00" taborder="1" text="Div00" left="45.66%" top="7" width="38.11%" height="39" right="" bottom="">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static00" taborder="0" text="프로젝트명" left="2.08%" top="8" width="17.71%" height="25" right="" bottom=""/>
+                    <Edit id="Edit00" taborder="2" left="19.79%" top="8" width="23.77%" height="25" right="" bottom=""/>
+                    <Button id="Button00" taborder="3" text="S" left="89.57%" top="8" width="4.99%" height="25" right="" bottom=""/>
+                    <Static id="Static01" taborder="0" text="프로젝트명" left="45.14%" top="8" width="17.46%" height="25" right="" bottom=""/>
+                    <Edit id="Edit01" taborder="2" left="63.59%" top="8" width="23.77%" height="25" right="" bottom=""/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Calendar id="Calendar00" taborder="2" left="3.3%" top="16" width="7.64%" height="25" right="" bottom=""/>
+              <Combo id="Combo00" taborder="3" text="" left="14.62%" top="16" width="9.06%" height="25" right="" bottom="" value="" index="-1"/>
+              <Combo id="Combo01" taborder="3" text="" left="27.64%" top="16" width="9.06%" height="25" right="" bottom=""/>
+              <CheckBox id="CheckBox00" taborder="4" text="휴가포함" left="84.62%" top="16" width="7.92%" height="25" right="" bottom=""/>
+              <Button id="Button00" taborder="5" text="검색옵션변경" left="37.08%" top="16" width="7.74%" height="25" right="" bottom=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="Button00" taborder="12" text="이월복사" left="92.67%" top="16" width="6.31%" height="25" right="" bottom=""/>
+        <Static id="Static00" taborder="6" text="blue-승인" left="79.22%" top="90" width="6.86%" height="38" right="" bottom="" color="blue"/>
+        <Static id="Static01" taborder="6" text="black-완료" left="88.13%" top="90" width="6.86%" height="38" right="" bottom=""/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsCDCorp">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="0"/>
+          <Column id="DATA" type="STRING" size="0"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">TOBE</Col>
+            <Col id="DATA">투비소프트</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">00</Col>
+            <Col id="DATA">협력사</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">A104</Col>
+            <Col id="DATA">프리랜서</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsCDType">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">4</Col>
+          </Row>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_ScheduleCopy">
+        <ColumnInfo>
+          <Column id="BEF_PROJECT_CODE" type="STRING" size="256"/>
+          <Column id="BEF_REQUEST_SEQUENCE" type="INT" size="20"/>
+          <Column id="PROJECT_CODE" type="STRING" size="256"/>
+          <Column id="REQUEST_SEQUENCE" type="INT" size="20"/>
+          <Column id="SALE_CONTRACT_NO" type="STRING" size="256"/>
+          <Column id="CONFIRM_FLAG" type="STRING" size="256"/>
+          <Column id="CONFIRM_DATE" type="STRING" size="256"/>
+          <Column id="PRODUCT_KIND" type="STRING" size="256"/>
+          <Column id="REQUEST_TYPE" type="STRING" size="256"/>
+          <Column id="REQUEST_TECH_TYPE" type="STRING" size="256"/>
+          <Column id="REQUEST_DATE" type="STRING" size="256"/>
+          <Column id="REQUEST_FROM_DATE" type="STRING" size="256"/>
+          <Column id="REQUEST_TO_DATE" type="STRING" size="256"/>
+          <Column id="REQUEST_TOTAL_TIME" type="INT" size="20"/>
+          <Column id="REQUEST_CONTENTS" type="STRING" size="256"/>
+          <Column id="REQUEST_STAFF" type="STRING" size="256"/>
+          <Column id="EDU_STAFF" type="STRING" size="256"/>
+          <Column id="EDU_COUNT" type="STRING" size="20"/>
+          <Column id="EDU_REAL_COUNT" type="INT" size="20"/>
+          <Column id="EDU_PLACE" type="STRING" size="256"/>
+          <Column id="EDU_CONTECT_NM" type="STRING" size="256"/>
+          <Column id="EDU_CON_COMP_NM" type="STRING" size="256"/>
+          <Column id="EDU_PART_NM" type="STRING" size="256"/>
+          <Column id="EDU_POS_NM" type="STRING" size="256"/>
+          <Column id="EDU_TEL_NO" type="STRING" size="256"/>
+          <Column id="EDU_EMAIL" type="STRING" size="256"/>
+          <Column id="EDU_CHECK1_FG" type="STRING" size="256"/>
+          <Column id="EDU_CHECK2_FG" type="STRING" size="256"/>
+          <Column id="EDU_CHECK3_FG" type="STRING" size="256"/>
+          <Column id="EDU_CHECK4_FG" type="STRING" size="256"/>
+          <Column id="APPROVAL_STAFF" type="STRING" size="256"/>
+          <Column id="MANAGEMENT_AMOUNT" type="BIGDECIMAL" size="20"/>
+          <Column id="BEF_WORK_FROM_DATE" type="STRING" size="256"/>
+          <Column id="BEF_WORK_TO_DATE" type="STRING" size="256"/>
+          <Column id="WORK_FROM_DATE" type="STRING" size="256"/>
+          <Column id="WORK_TO_DATE" type="STRING" size="256"/>
+          <Column id="WORK_TOTAL_TIME" type="BIGDECIMAL" size="20"/>
+          <Column id="FILE_KEY" type="STRING" size="256"/>
+          <Column id="FILE_KEY2" type="STRING" size="256"/>
+          <Column id="CS_CONNKEY" type="INT" size="20"/>
+          <Column id="SIGN_STAFF" type="STRING" size="256"/>
+          <Column id="FREE_SVC" type="STRING" size="256"/>
+          <Column id="GRADE_CODE" type="STRING" size="256"/>
+          <Column id="WORK_CONTENTS" type="STRING" size="256"/>
+          <Column id="REMARKS" type="STRING" size="256"/>
+          <Column id="VACATION_SEQ" type="INT" size="20"/>
+          <Column id="REQUEST_IDX" type="INT" size="20"/>
+          <Column id="PROC_RESULT" type="STRING" size="256"/>
+          <Column id="IS_PIS_VISIBLE" type="STRING" size="256"/>
+          <Column id="PROJECT_NAME" type="STRING" size="256"/>
+          <Column id="CONTRACT_NAME" type="STRING" size="256"/>
+          <Column id="COMPANY_NAME" type="STRING" size="256"/>
+          <Column id="CHK" type="INT" size="20"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsTechGrid"/>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+]]></Script>
+  </Form>
+</FDL>
