@@ -23,7 +23,7 @@
 
             
             // UI Components Initialize
-            obj = new Tab("tabMain","absolute","5","48",null,null,"5","5",this);
+            obj = new Tab("tabMain","absolute","5","30",null,null,"5","5",this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("0");
@@ -193,7 +193,7 @@
             });
             this.tabMain.addChild(obj.name, obj);
 
-            obj = new Button("btnClose","absolute",null,"5","50","30","5",null,this);
+            obj = new Button("btnClose","absolute",null,"68","50","30","-258",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
@@ -201,7 +201,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Button("btnPrint","absolute",null,"5","50","30","62",null,this);
+            obj = new Button("btnPrint","absolute",null,"68","50","30","-201",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
@@ -209,7 +209,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Button("btnExcel","absolute",null,"5","50","30","6",null,this);
+            obj = new Button("btnExcel","absolute",null,"68","50","30","6",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
@@ -217,7 +217,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Button("btnSearch","absolute",null,"5","50","30","6",null,this);
+            obj = new Button("btnSearch","absolute",null,"68","50","30","6",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
@@ -225,7 +225,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Button("btnImpBusiness","absolute","582","52","100","18",null,null,this);
+            obj = new Button("btnImpBusiness","absolute","584","5","100","18",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
@@ -233,7 +233,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Button("btnSalesPrint","absolute","684","52","80","18",null,null,this);
+            obj = new Button("btnSalesPrint","absolute","686","5","80","18",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
@@ -241,7 +241,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Combo("cmbFilter","absolute","773","52","94","20",null,null,this);
+            obj = new Combo("cmbFilter","absolute","775","5","94","20",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("3");
@@ -249,7 +249,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Static("Static00","absolute","868","30","120","60",null,null,this);
+            obj = new Static("Static00","absolute","872","5","120","18",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("4");
@@ -257,7 +257,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Combo("cmbBizStaff","absolute","923","50","150","20",null,null,this);
+            obj = new Combo("cmbBizStaff","absolute","925","5","150","20",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("5");
@@ -267,7 +267,7 @@
             
             // Positionbase Setting
             this.tabMain.set_leftbase("");
-            this.tabMain.set_topbase("btnClose.bottom");
+            this.tabMain.set_topbase("");
             this.tabMain.set_bottombase("");
             this.tabMain.set_rightbase("");
             this.tabMain.set_widthbase("");
@@ -344,6 +344,24 @@
             this.btnSalesPrint.set_rightbase("");
             this.btnSalesPrint.set_widthbase("");
             this.btnSalesPrint.set_heightbase("");
+            this.cmbFilter.set_leftbase("");
+            this.cmbFilter.set_topbase("");
+            this.cmbFilter.set_bottombase("");
+            this.cmbFilter.set_rightbase("");
+            this.cmbFilter.set_widthbase("");
+            this.cmbFilter.set_heightbase("");
+            this.Static00.set_leftbase("");
+            this.Static00.set_topbase("");
+            this.Static00.set_bottombase("");
+            this.Static00.set_rightbase("");
+            this.Static00.set_widthbase("");
+            this.Static00.set_heightbase("");
+            this.cmbBizStaff.set_leftbase("");
+            this.cmbBizStaff.set_topbase("");
+            this.cmbBizStaff.set_bottombase("");
+            this.cmbBizStaff.set_rightbase("");
+            this.cmbBizStaff.set_widthbase("");
+            this.cmbBizStaff.set_heightbase("");
 
             // Layout Functions
             //-- Default Layout : this

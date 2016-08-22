@@ -3,7 +3,7 @@
   <Form id="BM_Sales_Program" left="0" top="0" width="1078" height="810" titletext="New Form" onload="Form_onload">
     <Layouts>
       <Layout height="810" width="1078">
-        <Tab id="tabMain" taborder="0" tabindex="0" left="5" top="48" width="" height="" right="5" bottom="5" leftbase="" topbase="btnClose.bottom" bottombase="" rightbase="" widthbase="" heightbase="" text="Tab00">
+        <Tab id="tabMain" taborder="0" tabindex="0" left="5" top="30" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="Tab00">
           <Tabpages>
             <Tabpage id="Tabpage1" text="영업현황" url="Next::BM_Sales_Program_Info.xfdl"/>
             <Tabpage id="Tabpage2" text="PreSales" url="Next::BM_Sales_Program_Presales.xfdl"/>
@@ -174,15 +174,15 @@
             <Tabpage id="Tabpage7" text="프리/컨설팅" url="Next::BM_Project_Tech.xfdl"/>
           </Tabpages>
         </Tab>
-        <Button id="btnClose" taborder="1" text="닫기" left="" top="5" width="50" height="30" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Button id="btnPrint" taborder="1" text="프린트" top="5" width="50" height="30" right="62" left="" bottom="" rightbase="" leftbase="" topbase="" bottombase="" widthbase="" heightbase=""/>
-        <Button id="btnExcel" taborder="1" text="엑셀" top="5" width="50" height="30" right="6" rightbase="btnPrint.left" left="" bottom="" leftbase="" topbase="" bottombase="" widthbase="" heightbase=""/>
-        <Button id="btnSearch" taborder="1" text="조회" top="5" width="50" height="30" right="6" rightbase="btnExcel.left" left="" bottom="" leftbase="" topbase="" bottombase="" widthbase="" heightbase=""/>
-        <Button id="btnImpBusiness" taborder="2" text="금월중요영업건" left="582" top="52" width="100" height="18" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Button id="btnSalesPrint" taborder="2" text="주간보고" left="684" top="52" width="80" height="18" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Combo id="cmbFilter" taborder="3" text="Combo00" left="773" top="52" width="94" height="20" right="" bottom=""/>
-        <Static id="Static00" taborder="4" text="영업대표" left="868" top="30" width="120" height="60" right="" bottom=""/>
-        <Combo id="cmbBizStaff" taborder="5" text="Combo01" left="923" top="50" width="150" height="20" right="" bottom=""/>
+        <Button id="btnClose" taborder="1" text="닫기" left="" top="68" width="50" height="30" right="-258" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnPrint" taborder="1" text="프린트" top="68" width="50" height="30" right="-201" left="" bottom="" rightbase="" leftbase="" topbase="" bottombase="" widthbase="" heightbase=""/>
+        <Button id="btnExcel" taborder="1" text="엑셀" top="68" width="50" height="30" right="6" rightbase="btnPrint.left" left="" bottom="" leftbase="" topbase="" bottombase="" widthbase="" heightbase=""/>
+        <Button id="btnSearch" taborder="1" text="조회" top="68" width="50" height="30" right="6" rightbase="btnExcel.left" left="" bottom="" leftbase="" topbase="" bottombase="" widthbase="" heightbase=""/>
+        <Button id="btnImpBusiness" taborder="2" text="금월중요영업건" left="584" top="5" width="100" height="18" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnSalesPrint" taborder="2" text="주간보고" left="686" top="5" width="80" height="18" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="cmbFilter" taborder="3" text="Combo00" left="775" top="5" width="94" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Static id="Static00" taborder="4" text="영업대표" left="872" top="5" width="120" height="18" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Combo id="cmbBizStaff" taborder="5" text="Combo01" left="925" top="5" width="150" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
       </Layout>
     </Layouts>
     <Script type="xscript5.0"><![CDATA[/*************************************************************************
