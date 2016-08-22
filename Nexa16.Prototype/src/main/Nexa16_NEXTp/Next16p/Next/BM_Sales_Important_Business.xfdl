@@ -3,7 +3,7 @@
   <Form id="BM_Sales_Important_Business" left="0" top="0" width="800" height="600" titletext="New Form">
     <Layouts>
       <Layout height="600" width="800">
-        <Grid id="Grid00" taborder="0" left="5" top="34" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+        <Grid id="grdProjectList" taborder="0" left="5" top="34" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
           <Formats>
             <Format id="default">
               <Columns>
@@ -53,11 +53,11 @@
           </Formats>
         </Grid>
         <Static id="Static00" taborder="0" text="기간" left="5" top="5" width="34" height="30" right="" bottom=""/>
-        <Calendar id="Calendar00" taborder="1" left="35" top="9" width="100" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Calendar id="calStartDate" taborder="1" left="35" top="9" width="100" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
         <Static id="Static01" taborder="0" text="~" left="136" top="4" width="34" height="30" right="" bottom=""/>
-        <Calendar id="Calendar01" taborder="1" left="147" top="9" width="100" height="20" right="" bottom=""/>
-        <Button id="Button00" taborder="2" text="조회" left="619" top="7" width="85" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-        <Button id="Button01" taborder="2" text="엑셀" left="707" top="7" width="" height="20" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Calendar id="calEndDate" taborder="1" left="147" top="9" width="100" height="20" right="" bottom=""/>
+        <Button id="btnSearch" taborder="2" text="조회" left="619" top="7" width="85" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnExcel" taborder="2" text="엑셀" left="707" top="7" width="" height="20" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
       </Layout>
     </Layouts>
   </Form>

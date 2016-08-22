@@ -39,14 +39,14 @@
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Edit("Edit00","absolute","49","9","278","22",null,null,this.Div00.form);
+            obj = new Edit("edtClient","absolute","49","9","278","22",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Button("Button00","absolute","329","9","22","22",null,null,this.Div00.form);
+            obj = new Button("btnSearch","absolute","329","9","22","22",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
@@ -55,7 +55,7 @@
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Button("Button01","absolute","471","5","53","30",null,null,this.Div00.form);
+            obj = new Button("btn_save","absolute","471","5","53","30",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("3");
@@ -63,7 +63,7 @@
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Button("Button02","absolute",null,"5","53","30","5",null,this.Div00.form);
+            obj = new Button("btn_close","absolute",null,"5","53","30","5",null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("3");
@@ -95,7 +95,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Combo("Combo00","absolute","85","60","150","40",null,null,this);
+            obj = new Combo("cmbIssueGubun","absolute","85","60","150","40",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
@@ -103,7 +103,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Calendar("Calendar00","absolute","84","107","150","40",null,null,this);
+            obj = new Calendar("T_calDeliveryDate","absolute","84","107","150","40",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("3");
@@ -126,14 +126,14 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Edit("Edit00","absolute","320","60","275","40",null,null,this);
+            obj = new Edit("edtClientName","absolute","320","60","275","40",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("4");
             });
             this.addChild(obj.name, obj);
 
-            obj = new Edit("Edit01","absolute","320","105","275","40",null,null,this);
+            obj = new Edit("edtProjectName","absolute","320","105","275","40",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("4");
@@ -148,7 +148,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new CheckBox("CheckBox00","absolute","84","166","150","20",null,null,this);
+            obj = new CheckBox("T_chk_report","absolute","84","166","150","20",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("5");
@@ -164,7 +164,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Combo("Combo01","absolute","128","193","112","20",null,null,this);
+            obj = new Combo("Combo0","absolute","128","193","112","20",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("7");
@@ -172,7 +172,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new CheckBox("CheckBox01","absolute","323","160","150","20",null,null,this);
+            obj = new CheckBox("chb_sch","absolute","323","160","150","20",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("8");
@@ -180,7 +180,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new CheckBox("CheckBox02","absolute","323","191","150","20",null,null,this);
+            obj = new CheckBox("chb_visible_pis","absolute","323","191","150","20",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("9");
@@ -188,7 +188,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new TextArea("TextArea00","absolute","85","235",null,null,"5","5",this);
+            obj = new TextArea("T_txtRemarks","absolute","85","235",null,null,"5","5",this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("10");
@@ -202,24 +202,24 @@
             this.Div00.form.Static00.set_rightbase("");
             this.Div00.form.Static00.set_widthbase("");
             this.Div00.form.Static00.set_heightbase("");
-            this.Div00.form.Button00.set_leftbase("");
-            this.Div00.form.Button00.set_topbase("");
-            this.Div00.form.Button00.set_bottombase("");
-            this.Div00.form.Button00.set_rightbase("");
-            this.Div00.form.Button00.set_widthbase("");
-            this.Div00.form.Button00.set_heightbase("");
-            this.Div00.form.Button01.set_leftbase("");
-            this.Div00.form.Button01.set_topbase("");
-            this.Div00.form.Button01.set_bottombase("");
-            this.Div00.form.Button01.set_rightbase("");
-            this.Div00.form.Button01.set_widthbase("");
-            this.Div00.form.Button01.set_heightbase("");
-            this.Div00.form.Button02.set_leftbase("");
-            this.Div00.form.Button02.set_topbase("");
-            this.Div00.form.Button02.set_bottombase("");
-            this.Div00.form.Button02.set_rightbase("");
-            this.Div00.form.Button02.set_widthbase("");
-            this.Div00.form.Button02.set_heightbase("");
+            this.Div00.form.btnSearch.set_leftbase("");
+            this.Div00.form.btnSearch.set_topbase("");
+            this.Div00.form.btnSearch.set_bottombase("");
+            this.Div00.form.btnSearch.set_rightbase("");
+            this.Div00.form.btnSearch.set_widthbase("");
+            this.Div00.form.btnSearch.set_heightbase("");
+            this.Div00.form.btn_save.set_leftbase("");
+            this.Div00.form.btn_save.set_topbase("");
+            this.Div00.form.btn_save.set_bottombase("");
+            this.Div00.form.btn_save.set_rightbase("");
+            this.Div00.form.btn_save.set_widthbase("");
+            this.Div00.form.btn_save.set_heightbase("");
+            this.Div00.form.btn_close.set_leftbase("");
+            this.Div00.form.btn_close.set_topbase("");
+            this.Div00.form.btn_close.set_bottombase("");
+            this.Div00.form.btn_close.set_rightbase("");
+            this.Div00.form.btn_close.set_widthbase("");
+            this.Div00.form.btn_close.set_heightbase("");
             this.Div01.set_leftbase("");
             this.Div01.set_topbase("");
             this.Div01.set_bottombase("");
@@ -238,18 +238,18 @@
             this.Div03.set_rightbase("");
             this.Div03.set_widthbase("");
             this.Div03.set_heightbase("");
-            this.Combo00.set_leftbase("");
-            this.Combo00.set_topbase("");
-            this.Combo00.set_bottombase("");
-            this.Combo00.set_rightbase("");
-            this.Combo00.set_widthbase("");
-            this.Combo00.set_heightbase("");
-            this.Calendar00.set_leftbase("");
-            this.Calendar00.set_topbase("");
-            this.Calendar00.set_bottombase("");
-            this.Calendar00.set_rightbase("");
-            this.Calendar00.set_widthbase("");
-            this.Calendar00.set_heightbase("");
+            this.cmbIssueGubun.set_leftbase("");
+            this.cmbIssueGubun.set_topbase("");
+            this.cmbIssueGubun.set_bottombase("");
+            this.cmbIssueGubun.set_rightbase("");
+            this.cmbIssueGubun.set_widthbase("");
+            this.cmbIssueGubun.set_heightbase("");
+            this.T_calDeliveryDate.set_leftbase("");
+            this.T_calDeliveryDate.set_topbase("");
+            this.T_calDeliveryDate.set_bottombase("");
+            this.T_calDeliveryDate.set_rightbase("");
+            this.T_calDeliveryDate.set_widthbase("");
+            this.T_calDeliveryDate.set_heightbase("");
             this.Div04.set_leftbase("");
             this.Div04.set_topbase("");
             this.Div04.set_bottombase("");
@@ -262,42 +262,42 @@
             this.Div05.set_rightbase("");
             this.Div05.set_widthbase("");
             this.Div05.set_heightbase("");
-            this.Edit00.set_leftbase("");
-            this.Edit00.set_topbase("");
-            this.Edit00.set_bottombase("");
-            this.Edit00.set_rightbase("");
-            this.Edit00.set_widthbase("");
-            this.Edit00.set_heightbase("");
-            this.Edit01.set_leftbase("");
-            this.Edit01.set_topbase("");
-            this.Edit01.set_bottombase("");
-            this.Edit01.set_rightbase("");
-            this.Edit01.set_widthbase("");
-            this.Edit01.set_heightbase("");
+            this.edtClientName.set_leftbase("");
+            this.edtClientName.set_topbase("");
+            this.edtClientName.set_bottombase("");
+            this.edtClientName.set_rightbase("");
+            this.edtClientName.set_widthbase("");
+            this.edtClientName.set_heightbase("");
+            this.edtProjectName.set_leftbase("");
+            this.edtProjectName.set_topbase("");
+            this.edtProjectName.set_bottombase("");
+            this.edtProjectName.set_rightbase("");
+            this.edtProjectName.set_widthbase("");
+            this.edtProjectName.set_heightbase("");
             this.Div06.set_leftbase("");
             this.Div06.set_topbase("");
             this.Div06.set_bottombase("");
             this.Div06.set_rightbase("");
             this.Div06.set_widthbase("");
             this.Div06.set_heightbase("");
-            this.CheckBox00.set_leftbase("");
-            this.CheckBox00.set_topbase("");
-            this.CheckBox00.set_bottombase("");
-            this.CheckBox00.set_rightbase("");
-            this.CheckBox00.set_widthbase("");
-            this.CheckBox00.set_heightbase("");
+            this.T_chk_report.set_leftbase("");
+            this.T_chk_report.set_topbase("");
+            this.T_chk_report.set_bottombase("");
+            this.T_chk_report.set_rightbase("");
+            this.T_chk_report.set_widthbase("");
+            this.T_chk_report.set_heightbase("");
             this.Static00.set_leftbase("");
             this.Static00.set_topbase("");
             this.Static00.set_bottombase("");
             this.Static00.set_rightbase("");
             this.Static00.set_widthbase("");
             this.Static00.set_heightbase("");
-            this.TextArea00.set_leftbase("");
-            this.TextArea00.set_topbase("");
-            this.TextArea00.set_bottombase("");
-            this.TextArea00.set_rightbase("");
-            this.TextArea00.set_widthbase("");
-            this.TextArea00.set_heightbase("");
+            this.T_txtRemarks.set_leftbase("");
+            this.T_txtRemarks.set_topbase("");
+            this.T_txtRemarks.set_bottombase("");
+            this.T_txtRemarks.set_rightbase("");
+            this.T_txtRemarks.set_widthbase("");
+            this.T_txtRemarks.set_heightbase("");
 
             // Layout Functions
             //-- Default Layout : this

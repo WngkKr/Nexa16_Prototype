@@ -23,7 +23,7 @@
 
             
             // UI Components Initialize
-            obj = new Grid("Grid00","absolute","5","34",null,null,"5","5",this);
+            obj = new Grid("grdProjectList","absolute","5","34",null,null,"5","5",this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("0");
@@ -39,7 +39,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Calendar("Calendar00","absolute","35","9","100","20",null,null,this);
+            obj = new Calendar("calStartDate","absolute","35","9","100","20",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
@@ -54,14 +54,14 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Calendar("Calendar01","absolute","147","9","100","20",null,null,this);
+            obj = new Calendar("calEndDate","absolute","147","9","100","20",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
             });
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button00","absolute","619","7","85","20",null,null,this);
+            obj = new Button("btnSearch","absolute","619","7","85","20",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
@@ -69,7 +69,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button01","absolute","707","7",null,"20","5",null,this);
+            obj = new Button("btnExcel","absolute","707","7",null,"20","5",null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
@@ -78,30 +78,30 @@
             this.addChild(obj.name, obj);
             
             // Positionbase Setting
-            this.Grid00.set_leftbase("");
-            this.Grid00.set_topbase("");
-            this.Grid00.set_bottombase("");
-            this.Grid00.set_rightbase("");
-            this.Grid00.set_widthbase("");
-            this.Grid00.set_heightbase("");
-            this.Calendar00.set_leftbase("");
-            this.Calendar00.set_topbase("");
-            this.Calendar00.set_bottombase("");
-            this.Calendar00.set_rightbase("");
-            this.Calendar00.set_widthbase("");
-            this.Calendar00.set_heightbase("");
-            this.Button00.set_leftbase("");
-            this.Button00.set_topbase("");
-            this.Button00.set_bottombase("");
-            this.Button00.set_rightbase("");
-            this.Button00.set_widthbase("");
-            this.Button00.set_heightbase("");
-            this.Button01.set_leftbase("");
-            this.Button01.set_topbase("");
-            this.Button01.set_bottombase("");
-            this.Button01.set_rightbase("");
-            this.Button01.set_widthbase("");
-            this.Button01.set_heightbase("");
+            this.grdProjectList.set_leftbase("");
+            this.grdProjectList.set_topbase("");
+            this.grdProjectList.set_bottombase("");
+            this.grdProjectList.set_rightbase("");
+            this.grdProjectList.set_widthbase("");
+            this.grdProjectList.set_heightbase("");
+            this.calStartDate.set_leftbase("");
+            this.calStartDate.set_topbase("");
+            this.calStartDate.set_bottombase("");
+            this.calStartDate.set_rightbase("");
+            this.calStartDate.set_widthbase("");
+            this.calStartDate.set_heightbase("");
+            this.btnSearch.set_leftbase("");
+            this.btnSearch.set_topbase("");
+            this.btnSearch.set_bottombase("");
+            this.btnSearch.set_rightbase("");
+            this.btnSearch.set_widthbase("");
+            this.btnSearch.set_heightbase("");
+            this.btnExcel.set_leftbase("");
+            this.btnExcel.set_topbase("");
+            this.btnExcel.set_bottombase("");
+            this.btnExcel.set_rightbase("");
+            this.btnExcel.set_widthbase("");
+            this.btnExcel.set_heightbase("");
 
             // Layout Functions
             //-- Default Layout : this

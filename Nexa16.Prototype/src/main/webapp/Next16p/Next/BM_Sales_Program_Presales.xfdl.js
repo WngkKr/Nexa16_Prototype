@@ -61,14 +61,14 @@
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Edit("Edit00","absolute","55","7","150","29",null,null,this.Div00.form);
+            obj = new Edit("edtClientNameF","absolute","55","7","150","29",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Edit("Edit01","absolute","259","7","150","29",null,null,this.Div00.form);
+            obj = new Edit("edtContractNameF","absolute","259","7","150","29",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
@@ -83,7 +83,7 @@
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Button("Button00","absolute","186","12","16","18",null,null,this.Div00.form);
+            obj = new Button("btnSearchF","absolute","186","12","16","18",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
@@ -92,7 +92,7 @@
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Button("Button01","absolute","390","11","16","18",null,null,this.Div00.form);
+            obj = new Button("btnSearchF1","absolute","390","11","16","18",null,null,this.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
@@ -100,7 +100,7 @@
             });
             this.Div00.addChild(obj.name, obj);
 
-            obj = new Grid("Grid00","absolute","5","58","512","289",null,null,this);
+            obj = new Grid("grdProjectList","absolute","5","58","512","289",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
@@ -124,7 +124,7 @@
             });
             this.Tab00.addChild(obj.name, obj);
 
-            obj = new Grid("Grid00","absolute","2","5","87","210",null,null,this.Tab00.Tabpage1.form);
+            obj = new Grid("T_grd_his","absolute","2","5","87","210",null,null,this.Tab00.Tabpage1.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("0");
@@ -140,7 +140,7 @@
             });
             this.Tab00.Tabpage1.addChild(obj.name, obj);
 
-            obj = new Combo("Combo00","absolute","128","10","150","20",null,null,this.Tab00.Tabpage1.form);
+            obj = new Combo("cmbIssueGubun","absolute","128","10","150","20",null,null,this.Tab00.Tabpage1.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
@@ -156,14 +156,14 @@
             });
             this.Tab00.Tabpage1.addChild(obj.name, obj);
 
-            obj = new Calendar("Calendar00","absolute","128","37","150","20",null,null,this.Tab00.Tabpage1.form);
+            obj = new Calendar("T_calDeliveryDate","absolute","128","37","150","20",null,null,this.Tab00.Tabpage1.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("3");
             });
             this.Tab00.Tabpage1.addChild(obj.name, obj);
 
-            obj = new CheckBox("CheckBox00","absolute","287","9","150","20",null,null,this.Tab00.Tabpage1.form);
+            obj = new CheckBox("T_chk_report","absolute","287","9","150","20",null,null,this.Tab00.Tabpage1.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("4");
@@ -179,7 +179,7 @@
             });
             this.Tab00.Tabpage1.addChild(obj.name, obj);
 
-            obj = new Combo("Combo01","absolute","329","36","91","22",null,null,this.Tab00.Tabpage1.form);
+            obj = new Combo("Combo0","absolute","329","36","91","22",null,null,this.Tab00.Tabpage1.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("6");
@@ -187,7 +187,7 @@
             });
             this.Tab00.Tabpage1.addChild(obj.name, obj);
 
-            obj = new CheckBox("CheckBox01","absolute","99","67","150","20",null,null,this.Tab00.Tabpage1.form);
+            obj = new CheckBox("chb_sch","absolute","99","67","150","20",null,null,this.Tab00.Tabpage1.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("7");
@@ -195,7 +195,7 @@
             });
             this.Tab00.Tabpage1.addChild(obj.name, obj);
 
-            obj = new CheckBox("CheckBox02","absolute","291","67","117","20",null,null,this.Tab00.Tabpage1.form);
+            obj = new CheckBox("chb_visible_pis","absolute","291","67","117","20",null,null,this.Tab00.Tabpage1.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("8");
@@ -203,7 +203,7 @@
             });
             this.Tab00.Tabpage1.addChild(obj.name, obj);
 
-            obj = new TextArea("TextArea00","absolute","97","92",null,"118","5",null,this.Tab00.Tabpage1.form);
+            obj = new TextArea("T_txtRemarks","absolute","97","92",null,"118","5",null,this.Tab00.Tabpage1.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("9");
@@ -217,7 +217,7 @@
             });
             this.Tab00.addChild(obj.name, obj);
 
-            obj = new Grid("Grid00","absolute","5","5",null,null,"5","5",this.Tab00.Tabpage2.form);
+            obj = new Grid("grdBizMemo","absolute","5","5",null,null,"5","5",this.Tab00.Tabpage2.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("0");
@@ -244,7 +244,7 @@
             });
             this.Div01.addChild(obj.name, obj);
 
-            obj = new Combo("Combo00","absolute","86","5","90","25",null,null,this.Div01.form);
+            obj = new Combo("cmbContractType","absolute","86","5","90","25",null,null,this.Div01.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
@@ -297,7 +297,7 @@
             });
             this.Div01.addChild(obj.name, obj);
 
-            obj = new Combo("Combo01","absolute","258","5","90","25",null,null,this.Div01.form);
+            obj = new Combo("cmbContractProd","absolute","258","5","90","25",null,null,this.Div01.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
@@ -314,7 +314,7 @@
             });
             this.Div01.addChild(obj.name, obj);
 
-            obj = new Combo("Combo02","absolute","430","5","90","25",null,null,this.Div01.form);
+            obj = new Combo("cmbBizStatus","absolute","430","5","90","25",null,null,this.Div01.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
@@ -322,7 +322,7 @@
             });
             this.Div01.addChild(obj.name, obj);
 
-            obj = new Edit("Edit00","absolute","86","31","131","25",null,null,this.Div01.form);
+            obj = new Edit("edtClientName","absolute","86","31","131","25",null,null,this.Div01.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
@@ -338,21 +338,21 @@
             });
             this.Div01.addChild(obj.name, obj);
 
-            obj = new Edit("Edit01","absolute","299","31","66","25",null,null,this.Div01.form);
+            obj = new Edit("edtProjectCode","absolute","299","31","66","25",null,null,this.Div01.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
             });
             this.Div01.addChild(obj.name, obj);
 
-            obj = new Edit("Edit02","absolute","366","31","154","25",null,null,this.Div01.form);
+            obj = new Edit("edtProjectName","absolute","366","31","154","25",null,null,this.Div01.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
             });
             this.Div01.addChild(obj.name, obj);
 
-            obj = new Edit("Edit03","absolute","86","57","131","25",null,null,this.Div01.form);
+            obj = new Edit("edtContractMainName","absolute","86","57","131","25",null,null,this.Div01.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
@@ -368,14 +368,14 @@
             });
             this.Div01.addChild(obj.name, obj);
 
-            obj = new Edit("Edit04","absolute","299","57","221","25",null,null,this.Div01.form);
+            obj = new Edit("edtContract_Name","absolute","299","57","221","25",null,null,this.Div01.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("2");
             });
             this.Div01.addChild(obj.name, obj);
 
-            obj = new Calendar("Calendar00","absolute","86","83","90","25",null,null,this.Div01.form);
+            obj = new Calendar("calEstDelevery","absolute","86","83","90","25",null,null,this.Div01.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("3");
@@ -391,7 +391,7 @@
             });
             this.Div01.addChild(obj.name, obj);
 
-            obj = new MaskEdit("MaskEdit00","absolute","258","83","90","25",null,null,this.Div01.form);
+            obj = new MaskEdit("medt_Sales_Amt","absolute","258","83","90","25",null,null,this.Div01.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("4");
@@ -407,7 +407,7 @@
             });
             this.Div01.addChild(obj.name, obj);
 
-            obj = new Combo("Combo03","absolute","430","83","90","25",null,null,this.Div01.form);
+            obj = new Combo("cmbBizStaff","absolute","430","83","90","25",null,null,this.Div01.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
@@ -424,7 +424,7 @@
             });
             this.Div01.addChild(obj.name, obj);
 
-            obj = new Combo("Combo04","absolute","430","109","90","25",null,null,this.Div01.form);
+            obj = new Combo("cmbSalesStaff","absolute","430","109","90","25",null,null,this.Div01.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("1");
@@ -441,7 +441,7 @@
             });
             this.Div01.addChild(obj.name, obj);
 
-            obj = new CheckBox("CheckBox00","absolute","430","137","90","20",null,null,this.Div01.form);
+            obj = new CheckBox("chkPipe","absolute","430","137","90","20",null,null,this.Div01.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("5");
@@ -449,7 +449,7 @@
             });
             this.Div01.addChild(obj.name, obj);
 
-            obj = new TextArea("TextArea00","absolute","86","109","262","50",null,null,this.Div01.form);
+            obj = new TextArea("taCloseRemark","absolute","86","109","262","50",null,null,this.Div01.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("6");
@@ -472,7 +472,7 @@
             });
             this.Div01.form.Div00.addChild(obj.name, obj);
 
-            obj = new Grid("Grid00","absolute","0","20",null,null,"0","0",this.Div01.form.Div00.form);
+            obj = new Grid("grd_detail","absolute","0","20",null,null,"0","0",this.Div01.form.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("13");
@@ -481,7 +481,7 @@
             });
             this.Div01.form.Div00.addChild(obj.name, obj);
 
-            obj = new Button("Button00","absolute",null,"0","21","19","0",null,this.Div01.form.Div00.form);
+            obj = new Button("btnChannelDel","absolute",null,"0","21","19","0",null,this.Div01.form.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("15");
@@ -489,7 +489,7 @@
             });
             this.Div01.form.Div00.addChild(obj.name, obj);
 
-            obj = new Button("Button01","absolute",null,"0","21","19","22",null,this.Div01.form.Div00.form);
+            obj = new Button("btnChannelIns","absolute",null,"0","21","19","22",null,this.Div01.form.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("15");
@@ -497,7 +497,7 @@
             });
             this.Div01.form.Div00.addChild(obj.name, obj);
 
-            obj = new CheckBox("CheckBox00","absolute","101","0","239","20",null,null,this.Div01.form.Div00.form);
+            obj = new CheckBox("chkProduct","absolute","101","0","239","20",null,null,this.Div01.form.Div00.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("12");
@@ -515,7 +515,7 @@
             });
             this.Div01.addChild(obj.name, obj);
 
-            obj = new Button("Button00","absolute",null,"0","21","19","22",null,this.Div01.form.Div01.form);
+            obj = new Button("btnChannelInsS","absolute",null,"0","21","19","22",null,this.Div01.form.Div01.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("15");
@@ -523,7 +523,7 @@
             });
             this.Div01.form.Div01.addChild(obj.name, obj);
 
-            obj = new Button("Button01","absolute",null,"0","21","19","0",null,this.Div01.form.Div01.form);
+            obj = new Button("btnChannelDelS","absolute",null,"0","21","19","0",null,this.Div01.form.Div01.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("15");
@@ -531,7 +531,7 @@
             });
             this.Div01.form.Div01.addChild(obj.name, obj);
 
-            obj = new Grid("Grid00","absolute","0","20",null,null,"0","0",this.Div01.form.Div01.form);
+            obj = new Grid("grd_detailS","absolute","0","20",null,null,"0","0",this.Div01.form.Div01.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("13");
@@ -548,7 +548,7 @@
             });
             this.Div01.form.Div01.addChild(obj.name, obj);
 
-            obj = new Combo("Combo00","absolute","123","0","231","19",null,null,this.Div01.form.Div01.form);
+            obj = new Combo("cmbProduct","absolute","123","0","231","19",null,null,this.Div01.form.Div01.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("14");
@@ -564,7 +564,7 @@
             });
             this.Div01.addChild(obj.name, obj);
 
-            obj = new Button("Button00","absolute",null,"0","21","19","0",null,this.Div01.form.Div02.form);
+            obj = new Button("btnChannelDelP","absolute",null,"0","21","19","0",null,this.Div01.form.Div02.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("15");
@@ -572,7 +572,7 @@
             });
             this.Div01.form.Div02.addChild(obj.name, obj);
 
-            obj = new Button("Button01","absolute",null,"0","21","19","22",null,this.Div01.form.Div02.form);
+            obj = new Button("btnChannelInsP","absolute",null,"0","21","19","22",null,this.Div01.form.Div02.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("15");
@@ -588,7 +588,7 @@
             });
             this.Div01.form.Div02.addChild(obj.name, obj);
 
-            obj = new Grid("Grid00","absolute","0","20",null,null,"0","0",this.Div01.form.Div02.form);
+            obj = new Grid("grd_detailP","absolute","0","20",null,null,"0","0",this.Div01.form.Div02.form);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("13");
@@ -596,6 +596,22 @@
                 obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"80\"/><Column size=\"80\"/><Column size=\"80\"/><Column size=\"102\"/></Columns><Rows><Row size=\"24\" band=\"head\"/><Row size=\"24\"/></Rows><Band id=\"head\"><Cell text=\"항목\"/><Cell col=\"1\" text=\"예상매입액\"/><Cell col=\"2\" text=\"매입처\"/><Cell col=\"3\" text=\"판매수수료율\"/></Band><Band id=\"body\"><Cell text=\"bind:항목\"/><Cell col=\"1\" text=\"bind:예상매입액\"/><Cell col=\"2\" text=\"bind:매입처\"/><Cell col=\"3\" text=\"bind:판매수수료율\"/></Band></Format></Formats>");
             });
             this.Div01.form.Div02.addChild(obj.name, obj);
+
+            obj = new Button("btnSearch","absolute","197","34","16","18",null,null,this.Div01.form);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_taborder("2");
+                obj.set_background("URL(\"theme://images\\ico_zoom.png\")");
+            });
+            this.Div01.addChild(obj.name, obj);
+
+            obj = new Button("btnSearch1","absolute","197","61","16","18",null,null,this.Div01.form);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_taborder("2");
+                obj.set_background("URL(\"theme://images\\ico_zoom.png\")");
+            });
+            this.Div01.addChild(obj.name, obj);
 
             obj = new Button("btnChgGrdFormat00","absolute","11","63","66","16",null,null,this);
             obj._setPropInitFunc(function (obj)
@@ -666,48 +682,48 @@
             this.Div00.form.Static00.set_rightbase("");
             this.Div00.form.Static00.set_widthbase("");
             this.Div00.form.Static00.set_heightbase("");
-            this.Div00.form.Edit00.set_leftbase("");
-            this.Div00.form.Edit00.set_topbase("");
-            this.Div00.form.Edit00.set_bottombase("");
-            this.Div00.form.Edit00.set_rightbase("");
-            this.Div00.form.Edit00.set_widthbase("");
-            this.Div00.form.Edit00.set_heightbase("");
-            this.Div00.form.Edit01.set_leftbase("");
-            this.Div00.form.Edit01.set_topbase("");
-            this.Div00.form.Edit01.set_bottombase("");
-            this.Div00.form.Edit01.set_rightbase("");
-            this.Div00.form.Edit01.set_widthbase("");
-            this.Div00.form.Edit01.set_heightbase("");
+            this.Div00.form.edtClientNameF.set_leftbase("");
+            this.Div00.form.edtClientNameF.set_topbase("");
+            this.Div00.form.edtClientNameF.set_bottombase("");
+            this.Div00.form.edtClientNameF.set_rightbase("");
+            this.Div00.form.edtClientNameF.set_widthbase("");
+            this.Div00.form.edtClientNameF.set_heightbase("");
+            this.Div00.form.edtContractNameF.set_leftbase("");
+            this.Div00.form.edtContractNameF.set_topbase("");
+            this.Div00.form.edtContractNameF.set_bottombase("");
+            this.Div00.form.edtContractNameF.set_rightbase("");
+            this.Div00.form.edtContractNameF.set_widthbase("");
+            this.Div00.form.edtContractNameF.set_heightbase("");
             this.Div00.form.Static01.set_leftbase("");
             this.Div00.form.Static01.set_topbase("");
             this.Div00.form.Static01.set_bottombase("");
             this.Div00.form.Static01.set_rightbase("");
             this.Div00.form.Static01.set_widthbase("");
             this.Div00.form.Static01.set_heightbase("");
-            this.Grid00.set_leftbase("");
-            this.Grid00.set_topbase("");
-            this.Grid00.set_bottombase("");
-            this.Grid00.set_rightbase("");
-            this.Grid00.set_widthbase("");
-            this.Grid00.set_heightbase("");
+            this.grdProjectList.set_leftbase("");
+            this.grdProjectList.set_topbase("");
+            this.grdProjectList.set_bottombase("");
+            this.grdProjectList.set_rightbase("");
+            this.grdProjectList.set_widthbase("");
+            this.grdProjectList.set_heightbase("");
             this.Tab00.set_leftbase("");
             this.Tab00.set_topbase("");
             this.Tab00.set_bottombase("");
             this.Tab00.set_rightbase("");
             this.Tab00.set_widthbase("");
             this.Tab00.set_heightbase("");
-            this.Tab00.Tabpage1.form.TextArea00.set_leftbase("");
-            this.Tab00.Tabpage1.form.TextArea00.set_topbase("");
-            this.Tab00.Tabpage1.form.TextArea00.set_bottombase("");
-            this.Tab00.Tabpage1.form.TextArea00.set_rightbase("");
-            this.Tab00.Tabpage1.form.TextArea00.set_widthbase("");
-            this.Tab00.Tabpage1.form.TextArea00.set_heightbase("");
-            this.Tab00.Tabpage2.form.Grid00.set_leftbase("");
-            this.Tab00.Tabpage2.form.Grid00.set_topbase("");
-            this.Tab00.Tabpage2.form.Grid00.set_bottombase("");
-            this.Tab00.Tabpage2.form.Grid00.set_rightbase("");
-            this.Tab00.Tabpage2.form.Grid00.set_widthbase("");
-            this.Tab00.Tabpage2.form.Grid00.set_heightbase("");
+            this.Tab00.Tabpage1.form.T_txtRemarks.set_leftbase("");
+            this.Tab00.Tabpage1.form.T_txtRemarks.set_topbase("");
+            this.Tab00.Tabpage1.form.T_txtRemarks.set_bottombase("");
+            this.Tab00.Tabpage1.form.T_txtRemarks.set_rightbase("");
+            this.Tab00.Tabpage1.form.T_txtRemarks.set_widthbase("");
+            this.Tab00.Tabpage1.form.T_txtRemarks.set_heightbase("");
+            this.Tab00.Tabpage2.form.grdBizMemo.set_leftbase("");
+            this.Tab00.Tabpage2.form.grdBizMemo.set_topbase("");
+            this.Tab00.Tabpage2.form.grdBizMemo.set_bottombase("");
+            this.Tab00.Tabpage2.form.grdBizMemo.set_rightbase("");
+            this.Tab00.Tabpage2.form.grdBizMemo.set_widthbase("");
+            this.Tab00.Tabpage2.form.grdBizMemo.set_heightbase("");
             this.Div01.set_leftbase("");
             this.Div01.set_topbase("");
             this.Div01.set_bottombase("");
@@ -720,12 +736,12 @@
             this.Div01.form.Static00.set_rightbase("");
             this.Div01.form.Static00.set_widthbase("");
             this.Div01.form.Static00.set_heightbase("");
-            this.Div01.form.Combo00.set_leftbase("");
-            this.Div01.form.Combo00.set_topbase("");
-            this.Div01.form.Combo00.set_bottombase("");
-            this.Div01.form.Combo00.set_rightbase("");
-            this.Div01.form.Combo00.set_widthbase("");
-            this.Div01.form.Combo00.set_heightbase("");
+            this.Div01.form.cmbContractType.set_leftbase("");
+            this.Div01.form.cmbContractType.set_topbase("");
+            this.Div01.form.cmbContractType.set_bottombase("");
+            this.Div01.form.cmbContractType.set_rightbase("");
+            this.Div01.form.cmbContractType.set_widthbase("");
+            this.Div01.form.cmbContractType.set_heightbase("");
             this.Div01.form.Static01.set_leftbase("");
             this.Div01.form.Static01.set_topbase("");
             this.Div01.form.Static01.set_bottombase("");
@@ -756,120 +772,120 @@
             this.Div01.form.Static05.set_rightbase("");
             this.Div01.form.Static05.set_widthbase("");
             this.Div01.form.Static05.set_heightbase("");
-            this.Div01.form.Combo01.set_leftbase("");
-            this.Div01.form.Combo01.set_topbase("");
-            this.Div01.form.Combo01.set_bottombase("");
-            this.Div01.form.Combo01.set_rightbase("");
-            this.Div01.form.Combo01.set_widthbase("");
-            this.Div01.form.Combo01.set_heightbase("");
+            this.Div01.form.cmbContractProd.set_leftbase("");
+            this.Div01.form.cmbContractProd.set_topbase("");
+            this.Div01.form.cmbContractProd.set_bottombase("");
+            this.Div01.form.cmbContractProd.set_rightbase("");
+            this.Div01.form.cmbContractProd.set_widthbase("");
+            this.Div01.form.cmbContractProd.set_heightbase("");
             this.Div01.form.Static06.set_leftbase("");
             this.Div01.form.Static06.set_topbase("");
             this.Div01.form.Static06.set_bottombase("");
             this.Div01.form.Static06.set_rightbase("");
             this.Div01.form.Static06.set_widthbase("");
             this.Div01.form.Static06.set_heightbase("");
-            this.Div01.form.Combo02.set_leftbase("");
-            this.Div01.form.Combo02.set_topbase("");
-            this.Div01.form.Combo02.set_bottombase("");
-            this.Div01.form.Combo02.set_rightbase("");
-            this.Div01.form.Combo02.set_widthbase("");
-            this.Div01.form.Combo02.set_heightbase("");
-            this.Div01.form.Edit00.set_leftbase("");
-            this.Div01.form.Edit00.set_topbase("");
-            this.Div01.form.Edit00.set_bottombase("");
-            this.Div01.form.Edit00.set_rightbase("");
-            this.Div01.form.Edit00.set_widthbase("");
-            this.Div01.form.Edit00.set_heightbase("");
+            this.Div01.form.cmbBizStatus.set_leftbase("");
+            this.Div01.form.cmbBizStatus.set_topbase("");
+            this.Div01.form.cmbBizStatus.set_bottombase("");
+            this.Div01.form.cmbBizStatus.set_rightbase("");
+            this.Div01.form.cmbBizStatus.set_widthbase("");
+            this.Div01.form.cmbBizStatus.set_heightbase("");
+            this.Div01.form.edtClientName.set_leftbase("");
+            this.Div01.form.edtClientName.set_topbase("");
+            this.Div01.form.edtClientName.set_bottombase("");
+            this.Div01.form.edtClientName.set_rightbase("");
+            this.Div01.form.edtClientName.set_widthbase("");
+            this.Div01.form.edtClientName.set_heightbase("");
             this.Div01.form.Static07.set_leftbase("");
             this.Div01.form.Static07.set_topbase("");
             this.Div01.form.Static07.set_bottombase("");
             this.Div01.form.Static07.set_rightbase("");
             this.Div01.form.Static07.set_widthbase("");
             this.Div01.form.Static07.set_heightbase("");
-            this.Div01.form.Edit01.set_leftbase("");
-            this.Div01.form.Edit01.set_topbase("");
-            this.Div01.form.Edit01.set_bottombase("");
-            this.Div01.form.Edit01.set_rightbase("");
-            this.Div01.form.Edit01.set_widthbase("");
-            this.Div01.form.Edit01.set_heightbase("");
-            this.Div01.form.Edit02.set_leftbase("");
-            this.Div01.form.Edit02.set_topbase("");
-            this.Div01.form.Edit02.set_bottombase("");
-            this.Div01.form.Edit02.set_rightbase("");
-            this.Div01.form.Edit02.set_widthbase("");
-            this.Div01.form.Edit02.set_heightbase("");
-            this.Div01.form.Edit03.set_leftbase("");
-            this.Div01.form.Edit03.set_topbase("");
-            this.Div01.form.Edit03.set_bottombase("");
-            this.Div01.form.Edit03.set_rightbase("");
-            this.Div01.form.Edit03.set_widthbase("");
-            this.Div01.form.Edit03.set_heightbase("");
+            this.Div01.form.edtProjectCode.set_leftbase("");
+            this.Div01.form.edtProjectCode.set_topbase("");
+            this.Div01.form.edtProjectCode.set_bottombase("");
+            this.Div01.form.edtProjectCode.set_rightbase("");
+            this.Div01.form.edtProjectCode.set_widthbase("");
+            this.Div01.form.edtProjectCode.set_heightbase("");
+            this.Div01.form.edtProjectName.set_leftbase("");
+            this.Div01.form.edtProjectName.set_topbase("");
+            this.Div01.form.edtProjectName.set_bottombase("");
+            this.Div01.form.edtProjectName.set_rightbase("");
+            this.Div01.form.edtProjectName.set_widthbase("");
+            this.Div01.form.edtProjectName.set_heightbase("");
+            this.Div01.form.edtContractMainName.set_leftbase("");
+            this.Div01.form.edtContractMainName.set_topbase("");
+            this.Div01.form.edtContractMainName.set_bottombase("");
+            this.Div01.form.edtContractMainName.set_rightbase("");
+            this.Div01.form.edtContractMainName.set_widthbase("");
+            this.Div01.form.edtContractMainName.set_heightbase("");
             this.Div01.form.Static08.set_leftbase("");
             this.Div01.form.Static08.set_topbase("");
             this.Div01.form.Static08.set_bottombase("");
             this.Div01.form.Static08.set_rightbase("");
             this.Div01.form.Static08.set_widthbase("");
             this.Div01.form.Static08.set_heightbase("");
-            this.Div01.form.Edit04.set_leftbase("");
-            this.Div01.form.Edit04.set_topbase("");
-            this.Div01.form.Edit04.set_bottombase("");
-            this.Div01.form.Edit04.set_rightbase("");
-            this.Div01.form.Edit04.set_widthbase("");
-            this.Div01.form.Edit04.set_heightbase("");
-            this.Div01.form.Calendar00.set_leftbase("");
-            this.Div01.form.Calendar00.set_topbase("");
-            this.Div01.form.Calendar00.set_bottombase("");
-            this.Div01.form.Calendar00.set_rightbase("");
-            this.Div01.form.Calendar00.set_widthbase("");
-            this.Div01.form.Calendar00.set_heightbase("");
+            this.Div01.form.edtContract_Name.set_leftbase("");
+            this.Div01.form.edtContract_Name.set_topbase("");
+            this.Div01.form.edtContract_Name.set_bottombase("");
+            this.Div01.form.edtContract_Name.set_rightbase("");
+            this.Div01.form.edtContract_Name.set_widthbase("");
+            this.Div01.form.edtContract_Name.set_heightbase("");
+            this.Div01.form.calEstDelevery.set_leftbase("");
+            this.Div01.form.calEstDelevery.set_topbase("");
+            this.Div01.form.calEstDelevery.set_bottombase("");
+            this.Div01.form.calEstDelevery.set_rightbase("");
+            this.Div01.form.calEstDelevery.set_widthbase("");
+            this.Div01.form.calEstDelevery.set_heightbase("");
             this.Div01.form.Static09.set_leftbase("");
             this.Div01.form.Static09.set_topbase("");
             this.Div01.form.Static09.set_bottombase("");
             this.Div01.form.Static09.set_rightbase("");
             this.Div01.form.Static09.set_widthbase("");
             this.Div01.form.Static09.set_heightbase("");
-            this.Div01.form.MaskEdit00.set_leftbase("");
-            this.Div01.form.MaskEdit00.set_topbase("");
-            this.Div01.form.MaskEdit00.set_bottombase("");
-            this.Div01.form.MaskEdit00.set_rightbase("");
-            this.Div01.form.MaskEdit00.set_widthbase("");
-            this.Div01.form.MaskEdit00.set_heightbase("");
+            this.Div01.form.medt_Sales_Amt.set_leftbase("");
+            this.Div01.form.medt_Sales_Amt.set_topbase("");
+            this.Div01.form.medt_Sales_Amt.set_bottombase("");
+            this.Div01.form.medt_Sales_Amt.set_rightbase("");
+            this.Div01.form.medt_Sales_Amt.set_widthbase("");
+            this.Div01.form.medt_Sales_Amt.set_heightbase("");
             this.Div01.form.Static10.set_leftbase("");
             this.Div01.form.Static10.set_topbase("");
             this.Div01.form.Static10.set_bottombase("");
             this.Div01.form.Static10.set_rightbase("");
             this.Div01.form.Static10.set_widthbase("");
             this.Div01.form.Static10.set_heightbase("");
-            this.Div01.form.Combo03.set_leftbase("");
-            this.Div01.form.Combo03.set_topbase("");
-            this.Div01.form.Combo03.set_bottombase("");
-            this.Div01.form.Combo03.set_rightbase("");
-            this.Div01.form.Combo03.set_widthbase("");
-            this.Div01.form.Combo03.set_heightbase("");
+            this.Div01.form.cmbBizStaff.set_leftbase("");
+            this.Div01.form.cmbBizStaff.set_topbase("");
+            this.Div01.form.cmbBizStaff.set_bottombase("");
+            this.Div01.form.cmbBizStaff.set_rightbase("");
+            this.Div01.form.cmbBizStaff.set_widthbase("");
+            this.Div01.form.cmbBizStaff.set_heightbase("");
             this.Div01.form.Static11.set_leftbase("");
             this.Div01.form.Static11.set_topbase("");
             this.Div01.form.Static11.set_bottombase("");
             this.Div01.form.Static11.set_rightbase("");
             this.Div01.form.Static11.set_widthbase("");
             this.Div01.form.Static11.set_heightbase("");
-            this.Div01.form.Combo04.set_leftbase("");
-            this.Div01.form.Combo04.set_topbase("");
-            this.Div01.form.Combo04.set_bottombase("");
-            this.Div01.form.Combo04.set_rightbase("");
-            this.Div01.form.Combo04.set_widthbase("");
-            this.Div01.form.Combo04.set_heightbase("");
+            this.Div01.form.cmbSalesStaff.set_leftbase("");
+            this.Div01.form.cmbSalesStaff.set_topbase("");
+            this.Div01.form.cmbSalesStaff.set_bottombase("");
+            this.Div01.form.cmbSalesStaff.set_rightbase("");
+            this.Div01.form.cmbSalesStaff.set_widthbase("");
+            this.Div01.form.cmbSalesStaff.set_heightbase("");
             this.Div01.form.Static12.set_leftbase("");
             this.Div01.form.Static12.set_topbase("");
             this.Div01.form.Static12.set_bottombase("");
             this.Div01.form.Static12.set_rightbase("");
             this.Div01.form.Static12.set_widthbase("");
             this.Div01.form.Static12.set_heightbase("");
-            this.Div01.form.TextArea00.set_leftbase("");
-            this.Div01.form.TextArea00.set_topbase("");
-            this.Div01.form.TextArea00.set_bottombase("");
-            this.Div01.form.TextArea00.set_rightbase("");
-            this.Div01.form.TextArea00.set_widthbase("");
-            this.Div01.form.TextArea00.set_heightbase("");
+            this.Div01.form.taCloseRemark.set_leftbase("");
+            this.Div01.form.taCloseRemark.set_topbase("");
+            this.Div01.form.taCloseRemark.set_bottombase("");
+            this.Div01.form.taCloseRemark.set_rightbase("");
+            this.Div01.form.taCloseRemark.set_widthbase("");
+            this.Div01.form.taCloseRemark.set_heightbase("");
             this.Div01.form.Div00.set_leftbase("");
             this.Div01.form.Div00.set_topbase("");
             this.Div01.form.Div00.set_bottombase("");
@@ -882,90 +898,90 @@
             this.Div01.form.Div00.form.Static00.set_rightbase("");
             this.Div01.form.Div00.form.Static00.set_widthbase("");
             this.Div01.form.Div00.form.Static00.set_heightbase("");
-            this.Div01.form.Div00.form.Grid00.set_leftbase("");
-            this.Div01.form.Div00.form.Grid00.set_topbase("");
-            this.Div01.form.Div00.form.Grid00.set_bottombase("");
-            this.Div01.form.Div00.form.Grid00.set_rightbase("");
-            this.Div01.form.Div00.form.Grid00.set_widthbase("");
-            this.Div01.form.Div00.form.Grid00.set_heightbase("");
-            this.Div01.form.Div00.form.Button00.set_leftbase("");
-            this.Div01.form.Div00.form.Button00.set_topbase("");
-            this.Div01.form.Div00.form.Button00.set_bottombase("");
-            this.Div01.form.Div00.form.Button00.set_rightbase("");
-            this.Div01.form.Div00.form.Button00.set_widthbase("");
-            this.Div01.form.Div00.form.Button00.set_heightbase("");
-            this.Div01.form.Div00.form.Button01.set_leftbase("");
-            this.Div01.form.Div00.form.Button01.set_topbase("");
-            this.Div01.form.Div00.form.Button01.set_bottombase("");
-            this.Div01.form.Div00.form.Button01.set_rightbase("");
-            this.Div01.form.Div00.form.Button01.set_widthbase("");
-            this.Div01.form.Div00.form.Button01.set_heightbase("");
+            this.Div01.form.Div00.form.grd_detail.set_leftbase("");
+            this.Div01.form.Div00.form.grd_detail.set_topbase("");
+            this.Div01.form.Div00.form.grd_detail.set_bottombase("");
+            this.Div01.form.Div00.form.grd_detail.set_rightbase("");
+            this.Div01.form.Div00.form.grd_detail.set_widthbase("");
+            this.Div01.form.Div00.form.grd_detail.set_heightbase("");
+            this.Div01.form.Div00.form.btnChannelDel.set_leftbase("");
+            this.Div01.form.Div00.form.btnChannelDel.set_topbase("");
+            this.Div01.form.Div00.form.btnChannelDel.set_bottombase("");
+            this.Div01.form.Div00.form.btnChannelDel.set_rightbase("");
+            this.Div01.form.Div00.form.btnChannelDel.set_widthbase("");
+            this.Div01.form.Div00.form.btnChannelDel.set_heightbase("");
+            this.Div01.form.Div00.form.btnChannelIns.set_leftbase("");
+            this.Div01.form.Div00.form.btnChannelIns.set_topbase("");
+            this.Div01.form.Div00.form.btnChannelIns.set_bottombase("");
+            this.Div01.form.Div00.form.btnChannelIns.set_rightbase("");
+            this.Div01.form.Div00.form.btnChannelIns.set_widthbase("");
+            this.Div01.form.Div00.form.btnChannelIns.set_heightbase("");
             this.Div01.form.Div01.set_leftbase("");
             this.Div01.form.Div01.set_topbase("");
             this.Div01.form.Div01.set_bottombase("");
             this.Div01.form.Div01.set_rightbase("");
             this.Div01.form.Div01.set_widthbase("");
             this.Div01.form.Div01.set_heightbase("");
-            this.Div01.form.Div01.form.Button00.set_leftbase("");
-            this.Div01.form.Div01.form.Button00.set_topbase("");
-            this.Div01.form.Div01.form.Button00.set_bottombase("");
-            this.Div01.form.Div01.form.Button00.set_rightbase("");
-            this.Div01.form.Div01.form.Button00.set_widthbase("");
-            this.Div01.form.Div01.form.Button00.set_heightbase("");
-            this.Div01.form.Div01.form.Button01.set_leftbase("");
-            this.Div01.form.Div01.form.Button01.set_topbase("");
-            this.Div01.form.Div01.form.Button01.set_bottombase("");
-            this.Div01.form.Div01.form.Button01.set_rightbase("");
-            this.Div01.form.Div01.form.Button01.set_widthbase("");
-            this.Div01.form.Div01.form.Button01.set_heightbase("");
-            this.Div01.form.Div01.form.Grid00.set_leftbase("");
-            this.Div01.form.Div01.form.Grid00.set_topbase("");
-            this.Div01.form.Div01.form.Grid00.set_bottombase("");
-            this.Div01.form.Div01.form.Grid00.set_rightbase("");
-            this.Div01.form.Div01.form.Grid00.set_widthbase("");
-            this.Div01.form.Div01.form.Grid00.set_heightbase("");
+            this.Div01.form.Div01.form.btnChannelInsS.set_leftbase("");
+            this.Div01.form.Div01.form.btnChannelInsS.set_topbase("");
+            this.Div01.form.Div01.form.btnChannelInsS.set_bottombase("");
+            this.Div01.form.Div01.form.btnChannelInsS.set_rightbase("");
+            this.Div01.form.Div01.form.btnChannelInsS.set_widthbase("");
+            this.Div01.form.Div01.form.btnChannelInsS.set_heightbase("");
+            this.Div01.form.Div01.form.btnChannelDelS.set_leftbase("");
+            this.Div01.form.Div01.form.btnChannelDelS.set_topbase("");
+            this.Div01.form.Div01.form.btnChannelDelS.set_bottombase("");
+            this.Div01.form.Div01.form.btnChannelDelS.set_rightbase("");
+            this.Div01.form.Div01.form.btnChannelDelS.set_widthbase("");
+            this.Div01.form.Div01.form.btnChannelDelS.set_heightbase("");
+            this.Div01.form.Div01.form.grd_detailS.set_leftbase("");
+            this.Div01.form.Div01.form.grd_detailS.set_topbase("");
+            this.Div01.form.Div01.form.grd_detailS.set_bottombase("");
+            this.Div01.form.Div01.form.grd_detailS.set_rightbase("");
+            this.Div01.form.Div01.form.grd_detailS.set_widthbase("");
+            this.Div01.form.Div01.form.grd_detailS.set_heightbase("");
             this.Div01.form.Div01.form.Static00.set_leftbase("");
             this.Div01.form.Div01.form.Static00.set_topbase("");
             this.Div01.form.Div01.form.Static00.set_bottombase("");
             this.Div01.form.Div01.form.Static00.set_rightbase("");
             this.Div01.form.Div01.form.Static00.set_widthbase("");
             this.Div01.form.Div01.form.Static00.set_heightbase("");
-            this.Div01.form.Div01.form.Combo00.set_leftbase("");
-            this.Div01.form.Div01.form.Combo00.set_topbase("");
-            this.Div01.form.Div01.form.Combo00.set_bottombase("");
-            this.Div01.form.Div01.form.Combo00.set_rightbase("");
-            this.Div01.form.Div01.form.Combo00.set_widthbase("");
-            this.Div01.form.Div01.form.Combo00.set_heightbase("");
+            this.Div01.form.Div01.form.cmbProduct.set_leftbase("");
+            this.Div01.form.Div01.form.cmbProduct.set_topbase("");
+            this.Div01.form.Div01.form.cmbProduct.set_bottombase("");
+            this.Div01.form.Div01.form.cmbProduct.set_rightbase("");
+            this.Div01.form.Div01.form.cmbProduct.set_widthbase("");
+            this.Div01.form.Div01.form.cmbProduct.set_heightbase("");
             this.Div01.form.Div02.set_leftbase("");
             this.Div01.form.Div02.set_topbase("");
             this.Div01.form.Div02.set_bottombase("");
             this.Div01.form.Div02.set_rightbase("");
             this.Div01.form.Div02.set_widthbase("");
             this.Div01.form.Div02.set_heightbase("");
-            this.Div01.form.Div02.form.Button00.set_leftbase("");
-            this.Div01.form.Div02.form.Button00.set_topbase("");
-            this.Div01.form.Div02.form.Button00.set_bottombase("");
-            this.Div01.form.Div02.form.Button00.set_rightbase("");
-            this.Div01.form.Div02.form.Button00.set_widthbase("");
-            this.Div01.form.Div02.form.Button00.set_heightbase("");
-            this.Div01.form.Div02.form.Button01.set_leftbase("");
-            this.Div01.form.Div02.form.Button01.set_topbase("");
-            this.Div01.form.Div02.form.Button01.set_bottombase("");
-            this.Div01.form.Div02.form.Button01.set_rightbase("");
-            this.Div01.form.Div02.form.Button01.set_widthbase("");
-            this.Div01.form.Div02.form.Button01.set_heightbase("");
+            this.Div01.form.Div02.form.btnChannelDelP.set_leftbase("");
+            this.Div01.form.Div02.form.btnChannelDelP.set_topbase("");
+            this.Div01.form.Div02.form.btnChannelDelP.set_bottombase("");
+            this.Div01.form.Div02.form.btnChannelDelP.set_rightbase("");
+            this.Div01.form.Div02.form.btnChannelDelP.set_widthbase("");
+            this.Div01.form.Div02.form.btnChannelDelP.set_heightbase("");
+            this.Div01.form.Div02.form.btnChannelInsP.set_leftbase("");
+            this.Div01.form.Div02.form.btnChannelInsP.set_topbase("");
+            this.Div01.form.Div02.form.btnChannelInsP.set_bottombase("");
+            this.Div01.form.Div02.form.btnChannelInsP.set_rightbase("");
+            this.Div01.form.Div02.form.btnChannelInsP.set_widthbase("");
+            this.Div01.form.Div02.form.btnChannelInsP.set_heightbase("");
             this.Div01.form.Div02.form.Static00.set_leftbase("");
             this.Div01.form.Div02.form.Static00.set_topbase("");
             this.Div01.form.Div02.form.Static00.set_bottombase("");
             this.Div01.form.Div02.form.Static00.set_rightbase("");
             this.Div01.form.Div02.form.Static00.set_widthbase("");
             this.Div01.form.Div02.form.Static00.set_heightbase("");
-            this.Div01.form.Div02.form.Grid00.set_leftbase("");
-            this.Div01.form.Div02.form.Grid00.set_topbase("");
-            this.Div01.form.Div02.form.Grid00.set_bottombase("");
-            this.Div01.form.Div02.form.Grid00.set_rightbase("");
-            this.Div01.form.Div02.form.Grid00.set_widthbase("");
-            this.Div01.form.Div02.form.Grid00.set_heightbase("");
+            this.Div01.form.Div02.form.grd_detailP.set_leftbase("");
+            this.Div01.form.Div02.form.grd_detailP.set_topbase("");
+            this.Div01.form.Div02.form.grd_detailP.set_bottombase("");
+            this.Div01.form.Div02.form.grd_detailP.set_rightbase("");
+            this.Div01.form.Div02.form.grd_detailP.set_widthbase("");
+            this.Div01.form.Div02.form.grd_detailP.set_heightbase("");
             this.btnStaffReqApp.set_leftbase("");
             this.btnStaffReqApp.set_topbase("");
             this.btnStaffReqApp.set_bottombase("");
@@ -1017,7 +1033,7 @@
         // Regist UI Components Event
         this.on_initEvent = function()
         {
-            this.Div00.form.Edit01.addEventHandler("onchanged",this.Div00_Edit01_onchanged,this);
+            this.Div00.form.edtContractNameF.addEventHandler("onchanged",this.Div00_Edit01_onchanged,this);
             this.Div01.form.Static01.addEventHandler("onclick",this.Div02_Static01_onclick,this);
             this.Div01.form.Static02.addEventHandler("onclick",this.Div02_Static02_onclick,this);
             this.Div01.form.Static07.addEventHandler("onclick",this.Div02_Static01_onclick,this);

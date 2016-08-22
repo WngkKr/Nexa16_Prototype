@@ -25,7 +25,7 @@
             this.addChild(obj.name, obj);
             
             // UI Components Initialize
-            obj = new Grid("grdProjectList","absolute","10","5",null,null,"5","5",this);
+            obj = new Grid("grdProjectList","absolute","10","88",null,null,"5","5",this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("0");

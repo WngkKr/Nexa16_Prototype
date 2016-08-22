@@ -3,7 +3,7 @@
   <Form id="BM_Sales_Program_Contract" left="0" top="0" width="900" height="648" titletext="New Form">
     <Layouts>
       <Layout height="648" width="900">
-        <Grid id="grdProjectList" taborder="0" left="10" top="5" width="" height="" right="5" bottom="5" binddataset="dsList" leftbase="" topbase="Button00.bottom" bottombase="" rightbase="" widthbase="" heightbase="">
+        <Grid id="grdProjectList" taborder="0" left="10" top="88" width="" height="" right="5" bottom="5" binddataset="dsList" leftbase="" topbase="Button00.bottom" bottombase="" rightbase="" widthbase="" heightbase="">
           <Formats>
             <Format id="default">
               <Columns>
