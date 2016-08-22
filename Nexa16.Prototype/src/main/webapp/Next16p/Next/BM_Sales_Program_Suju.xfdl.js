@@ -646,6 +646,22 @@
                 obj.set_text("엑셀");
             });
             this.addChild(obj.name, obj);
+
+            obj = new Button("btnChannelInsS00","absolute",null,"359","21","19","567",null,this);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_taborder("15");
+                obj.set_text("+");
+            });
+            this.addChild(obj.name, obj);
+
+            obj = new Button("btnChannelDelS00","absolute",null,"359","21","19","545",null,this);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_taborder("15");
+                obj.set_text("-");
+            });
+            this.addChild(obj.name, obj);
             
             // Positionbase Setting
             this.Div00.set_leftbase("");
@@ -996,6 +1012,18 @@
             this.btnSave_Excel.set_rightbase("");
             this.btnSave_Excel.set_widthbase("");
             this.btnSave_Excel.set_heightbase("");
+            this.btnChannelInsS00.set_leftbase("");
+            this.btnChannelInsS00.set_topbase("");
+            this.btnChannelInsS00.set_bottombase("");
+            this.btnChannelInsS00.set_rightbase("");
+            this.btnChannelInsS00.set_widthbase("");
+            this.btnChannelInsS00.set_heightbase("");
+            this.btnChannelDelS00.set_leftbase("");
+            this.btnChannelDelS00.set_topbase("");
+            this.btnChannelDelS00.set_bottombase("");
+            this.btnChannelDelS00.set_rightbase("");
+            this.btnChannelDelS00.set_widthbase("");
+            this.btnChannelDelS00.set_heightbase("");
 
             // Layout Functions
             //-- Default Layout : this

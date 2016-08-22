@@ -308,6 +308,8 @@
         <Button id="btnCostSheet" taborder="7" text="매출원가표" left="" top="" width="78" height="20" right="254" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
         <Combo id="cmbGrade" taborder="8" text="Combo00" left="" top="" width="78" height="20" right="337" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
         <Button id="btnSave_Excel" taborder="9" text="엑셀" left="524" top="" width="51" height="20" right="" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnChannelInsS00" taborder="15" text="+" left="" top="359" width="21" height="19" right="567" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnChannelDelS00" taborder="15" left="" top="359" width="21" height="19" right="545" bottom="" text="-" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
       </Layout>
     </Layouts>
     <Script type="xscript5.0"><![CDATA[]]></Script>

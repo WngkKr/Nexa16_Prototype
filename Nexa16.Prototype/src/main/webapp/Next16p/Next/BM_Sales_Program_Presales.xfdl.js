@@ -668,6 +668,22 @@
                 obj.set_text("추가용역");
             });
             this.addChild(obj.name, obj);
+
+            obj = new Button("btnChannelIns00","absolute",null,"357","21","19","569",null,this);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_taborder("15");
+                obj.set_text("+");
+            });
+            this.addChild(obj.name, obj);
+
+            obj = new Button("btnChannelDel00","absolute",null,"357","21","19","547",null,this);
+            obj._setPropInitFunc(function (obj)
+            {
+                obj.set_taborder("15");
+                obj.set_text("-");
+            });
+            this.addChild(obj.name, obj);
             
             // Positionbase Setting
             this.Div00.set_leftbase("");
@@ -1012,6 +1028,18 @@
             this.btnSave_Excel.set_rightbase("");
             this.btnSave_Excel.set_widthbase("");
             this.btnSave_Excel.set_heightbase("");
+            this.btnChannelIns00.set_leftbase("");
+            this.btnChannelIns00.set_topbase("");
+            this.btnChannelIns00.set_bottombase("");
+            this.btnChannelIns00.set_rightbase("");
+            this.btnChannelIns00.set_widthbase("");
+            this.btnChannelIns00.set_heightbase("");
+            this.btnChannelDel00.set_leftbase("");
+            this.btnChannelDel00.set_topbase("");
+            this.btnChannelDel00.set_bottombase("");
+            this.btnChannelDel00.set_rightbase("");
+            this.btnChannelDel00.set_widthbase("");
+            this.btnChannelDel00.set_heightbase("");
 
             // Layout Functions
             //-- Default Layout : this

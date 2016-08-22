@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="CM_Company_AddressBookPop" left="0" top="0" width="910" height="280" titletext="New Form">
+    <Layouts>
+      <Layout height="280" width="910">
+        <Static id="Static00" taborder="0" text="담당자정보" left="5" top="5" width="130" height="19" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnClose" taborder="1" text="닫기" left="" top="4" width="68" height="20" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnConfirm" taborder="1" text="반영" left="" top="4" width="68" height="20" right="77" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Div id="Div00" taborder="2" text="Div00" left="5" top="25" width="" height="36" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Layouts>
+            <Layout>
+              <Edit id="Edit00" taborder="0" left="700" top="8" width="120" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Button id="btnSearch" taborder="1" text="조회" left="" top="8" width="68" height="20" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static00" taborder="0" text="회 사 명" left="5" top="8" width="69" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="Edit01" taborder="2" left="63" top="8" width="213" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Button id="btnSearchF00" taborder="2" text="" left="277" top="9" width="16" height="18" right="" bottom="" background="URL(&quot;theme://images\ico_zoom.png&quot;)"/>
+              <Static id="Static01" taborder="0" text="담당자명" left="317" top="8" width="69" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="Edit02" taborder="2" left="375" top="8" width="213" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Grid id="Grid0" taborder="3" left="5" top="66" width="" height="" right="5" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="35"/>
+                <Column size="48"/>
+                <Column size="150"/>
+                <Column size="120"/>
+                <Column size="48"/>
+                <Column size="100"/>
+                <Column size="48"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="120"/>
+                <Column size="200"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="선택"/>
+                <Cell col="1" text="현황"/>
+                <Cell col="2" text="회사명"/>
+                <Cell col="3" text="부서"/>
+                <Cell col="4" text="역할"/>
+                <Cell col="5" text="담당자명"/>
+                <Cell col="6" text="직급"/>
+                <Cell col="7" text="유선번호"/>
+                <Cell col="8" text="휴대폰"/>
+                <Cell col="9" text="이메일"/>
+                <Cell col="10" text="비고"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="checkbox" edittype="checkbox"/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+                <Cell col="6"/>
+                <Cell col="7"/>
+                <Cell col="8"/>
+                <Cell col="9"/>
+                <Cell col="10"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

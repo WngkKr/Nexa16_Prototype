@@ -308,6 +308,8 @@
         <Combo id="cmbGrade" taborder="8" text="Combo00" left="" top="" width="78" height="20" right="254" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
         <Button id="btnSave_Excel" taborder="9" text="엑셀" left="524" top="" width="51" height="20" right="" bottom="5" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
         <CheckBox id="chkAdd" taborder="10" text="추가용역" left="428" top="12" width="90" height="29" right="" bottom=""/>
+        <Button id="btnChannelIns00" taborder="15" text="+" left="" top="357" width="21" height="19" right="569" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnChannelDel00" taborder="15" left="" top="357" width="21" height="19" right="547" bottom="" text="-" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
       </Layout>
     </Layouts>
     <Objects>
