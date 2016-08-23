@@ -127,12 +127,37 @@
         };
         
         // User Script
+        this.registerScript("BM_Sales_Program_Contract.xfdl", function() {
+        /************************************************************************
+         * 전역변수선언
+         ************************************************************************/
 
+
+        /************************************************************************
+         *  BM_SALES_PROGRAM_CONTRACT FORM ONLOAD
+         ************************************************************************/
+        this.Form_onload = function(obj,e)
+        {
+        	var objDateYYYY = new Date();
+        	var nYear = objDateYYYY.getFullYear();
+        	var objDateMM = new Date();
+        	var nMonth = objDateMM.getMonth();
+
+        	var objDate = new Date();
+        	var strDate = objDate.toDateString("YYYYMMDD");
+
+        	trace(nYear);
+        	trace(nMonth);
+        	trace(strDate);
+        	this.Div00.form.CalFrom.set_value(nYear+nMonth);
+        };
+
+        });
         
         // Regist UI Components Event
         this.on_initEvent = function()
         {
-
+            this.addEventHandler("onload",this.Form_onload,this);
         };
 
         this.loadIncludeScript("BM_Sales_Program_Contract.xfdl");
