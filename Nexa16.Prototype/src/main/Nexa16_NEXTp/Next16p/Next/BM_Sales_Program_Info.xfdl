@@ -32,13 +32,13 @@
                 <Cell col="1" rowspan="2" text="프로젝트"/>
                 <Cell col="2" rowspan="2" text="영업대표"/>
                 <Cell col="3" rowspan="2" text="계약일자"/>
-                <Cell col="4" colspan="3" text="매출" background-color="aqua"/>
+                <Cell col="4" colspan="3" text="매출" background-color="mediumvioletred"/>
                 <Cell col="7" colspan="3" text="매입" background-color="cornflowerblue"/>
                 <Cell col="10" rowspan="2" text="예상율"/>
                 <Cell col="11" colspan="3" text="투입예정"/>
-                <Cell row="1" col="4" text="매출계약처" background-color="cadetblue"/>
-                <Cell row="1" col="5" text="매출내역" background-color="aqua"/>
-                <Cell row="1" col="6" text="예상금액" background-color="aqua"/>
+                <Cell row="1" col="4" text="매출계약처" background-color="mediumvioletred"/>
+                <Cell row="1" col="5" text="매출내역" background-color="mediumvioletred"/>
+                <Cell row="1" col="6" text="예상금액" background-color="mediumvioletred"/>
                 <Cell row="1" col="7" text="매입계약처" background-color="cornflowerblue"/>
                 <Cell row="1" col="8" text="매입내역" background-color="cornflowerblue"/>
                 <Cell row="1" col="9" text="예상금액" background-color="cornflowerblue"/>
@@ -65,26 +65,43 @@
             </Format>
           </Formats>
         </Grid>
-        <Div id="Div00" taborder="1" text="Div00" left="5" top="5" width="" height="75" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
+        <Div id="Div00" taborder="1" text="Div00" left="5" top="5" width="" height="35" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="">
           <Layouts>
             <Layout>
-              <Static id="Static00" taborder="0" text="기간" left="5" top="5" width="34" height="30" right="" bottom=""/>
-              <Calendar id="CalFrom" taborder="1" left="35" top="8" width="84" height="22" right="" bottom="" dateformat="yyyy-MM" editformat="yyyy-MM"/>
-              <Static id="Static01" taborder="0" text="~" left="120" top="4" width="34" height="30" right="" bottom=""/>
-              <Calendar id="CalTo" taborder="1" left="131" top="8" width="84" height="22" dateformat="yyyy-MM" editformat="yyyy-MM" right="" bottom=""/>
-              <Static id="Static02" taborder="0" text="고객사" left="237" top="5" width="45" height="30" right="" bottom=""/>
-              <Edit id="edt_project" taborder="2" left="279" top="8" width="237" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <CheckBox id="chb_sales_all" taborder="3" text="영업대표전체대상" left="5" top="42" width="153" height="26" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <CheckBox id="chb_EstRate" taborder="3" text="예상율반영" left="147" top="42" width="113" height="26" right="" bottom=""/>
-              <CheckBox id="chkAll" taborder="4" text="전체" left="267" top="42" width="60" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <CheckBox id="chkPreSales" taborder="5" text="PreSales" left="327" top="42" width="80" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <CheckBox id="chkSooju" taborder="6" text="수주" left="412" top="42" width="60" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
-              <CheckBox id="chkContract" taborder="7" text="계약" left="469" top="42" width="60" height="20" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static00" taborder="0" text="기간" left="5" top="5" width="34" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Calendar id="CalFrom" taborder="1" left="35" top="5" width="84" height="22" right="" bottom="" dateformat="yyyy-MM" editformat="yyyy-MM" type="spin" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static01" taborder="0" text="~" left="120" top="5" width="34" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Calendar id="CalTo" taborder="1" left="131" top="5" width="84" height="22" dateformat="yyyy-MM" editformat="yyyy-MM" right="" bottom="" type="spin" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Static id="Static02" taborder="0" text="고객사" left="224" top="5" width="45" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Edit id="edt_project" taborder="2" left="266" top="5" width="128" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <CheckBox id="chb_sales_all" taborder="3" text="영업대표전체대상" left="406" top="5" width="153" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <CheckBox id="chb_EstRate" taborder="3" text="예상율반영" left="540" top="5" width="113" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <CheckBox id="chkAll" taborder="4" text="전체" left="635" top="5" width="60" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <CheckBox id="chkPreSales" taborder="5" text="PreSales" left="686" top="5" width="80" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <CheckBox id="chkSooju" taborder="6" text="수주" left="763" top="5" width="60" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <CheckBox id="chkContract" taborder="7" text="계약" left="818" top="5" width="52" height="22" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
             </Layout>
           </Layouts>
         </Div>
       </Layout>
     </Layouts>
-    <Script type="xscript5.0"><![CDATA[]]></Script>
+    <Script type="xscript5.0"><![CDATA[/************************************************************************
+ * 전역변수선언
+ ************************************************************************/
+	var objDateYYYY = new Date();
+	var sYear = objDateYYYY.getFullYear().toString();
+	var objDateMM = new Date();
+	var sMonth = objDateMM.getMonth().toString();
+
+/************************************************************************
+ * BM_Sales_Program_Info FORM ONLOAD
+ ************************************************************************/
+this.Form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	/*디폴트 날짜 세팅*/
+	this.Div00.form.CalFrom.set_value(sYear+sMonth);
+	this.Div00.form.CalTo.set_value(sYear+sMonth);
+};
+]]></Script>
   </Form>
 </FDL>

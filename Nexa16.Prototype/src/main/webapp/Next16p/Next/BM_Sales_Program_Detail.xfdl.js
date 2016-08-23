@@ -522,7 +522,7 @@
             });
             this.addChild(obj.name, obj);
 
-            obj = new Button("btnStaffReqApp","absolute","443","403","58","21",null,null,this);
+            obj = new Button("btnStaffReqApp","absolute","442","403","58","19",null,null,this);
             obj._setPropInitFunc(function (obj)
             {
                 obj.set_taborder("15");
@@ -837,6 +837,12 @@
             this.btnClose.set_rightbase("");
             this.btnClose.set_widthbase("");
             this.btnClose.set_heightbase("");
+            this.btnStaffReqApp.set_leftbase("");
+            this.btnStaffReqApp.set_topbase("");
+            this.btnStaffReqApp.set_bottombase("");
+            this.btnStaffReqApp.set_rightbase("");
+            this.btnStaffReqApp.set_widthbase("");
+            this.btnStaffReqApp.set_heightbase("");
 
             // Layout Functions
             //-- Default Layout : this
@@ -853,12 +859,43 @@
         };
         
         // User Script
+        this.registerScript("BM_Sales_Program_Detail.xfdl", function() {
+        /************************************************************************
+         * 전역변수선언
+         ************************************************************************/
 
+
+        /************************************************************************
+         * BM_Sales_Program_Detail FORM ONLOAD
+         ************************************************************************/
+        this.Form_onload = function(obj,e)
+        {
+
+        };
+        /************************************************************************
+         * btn_Save_onclick
+         ************************************************************************/
+        this.btn_Save_onclick = function(obj,e)
+        {
+
+        };
+        /************************************************************************
+         * btnClose_onclick
+         ************************************************************************/
+        this.btnClose_onclick = function(obj,e)
+        {
+
+        };
+
+        });
         
         // Regist UI Components Event
         this.on_initEvent = function()
         {
+            this.addEventHandler("onload",this.Form_onload,this);
             this.Static09.addEventHandler("onclick",this.Static09_onclick,this);
+            this.btn_Save.addEventHandler("onclick",this.btn_Save_onclick,this);
+            this.btnClose.addEventHandler("onclick",this.btnClose_onclick,this);
         };
 
         this.loadIncludeScript("BM_Sales_Program_Detail.xfdl");

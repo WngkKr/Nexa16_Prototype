@@ -3,7 +3,7 @@
   <Form id="BM_Sales_Program_Contract" left="0" top="0" width="900" height="648" titletext="New Form" onload="Form_onload">
     <Layouts>
       <Layout height="648" width="900">
-        <Grid id="grdProjectList" taborder="0" left="10" top="88" width="" height="" right="5" bottom="5" binddataset="dsList" leftbase="" topbase="Button00.bottom" bottombase="" rightbase="" widthbase="" heightbase="">
+        <Grid id="grdProjectList" taborder="0" left="10" top="88" width="" height="" right="5" bottom="5" binddataset="dsList" leftbase="" topbase="Button00.bottom" bottombase="" rightbase="" widthbase="" heightbase="" oncelldblclick="grdProjectList_oncelldblclick" onrbuttonup="grdProjectList_onrbuttonup">
           <Formats>
             <Format id="default">
               <Columns>
@@ -53,14 +53,14 @@
           <Layouts>
             <Layout>
               <Static id="Static00" taborder="0" text="기간" left="5" top="5" width="34" height="30" right="" bottom=""/>
-              <Calendar id="CalFrom" taborder="1" left="35" top="8" width="84" height="22" right="" bottom="" dateformat="yyyy-MM" editformat="yyyy-MM"/>
+              <Calendar id="CalFrom" taborder="1" left="35" top="8" width="84" height="22" right="" bottom="" dateformat="yyyy-MM" editformat="yyyy-MM" type="spin"/>
               <Static id="Static01" taborder="0" text="~" left="120" top="4" width="34" height="30" right="" bottom=""/>
-              <Calendar id="CalTo" taborder="1" left="131" top="8" width="84" height="22" dateformat="yyyy-MM" editformat="yyyy-MM" right="" bottom=""/>
+              <Calendar id="CalTo" taborder="1" left="131" top="8" width="84" height="22" dateformat="yyyy-MM" editformat="yyyy-MM" right="" bottom="" type="spin"/>
               <CheckBox id="cbk_step3" taborder="2" text="계약이 완료된 예상계약건만 표시(STEP 3)" left="232" top="8" width="468" height="20" right="" bottom=""/>
             </Layout>
           </Layouts>
         </Div>
-        <Button id="btnConfirmCancel" taborder="2" text="계약확정취소" left="" top="53" width="100" height="27" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btnConfirmCancel" taborder="2" text="계약확정취소" left="" top="53" width="100" height="27" right="5" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="btnConfirmCancel_onclick"/>
       </Layout>
     </Layouts>
     <Objects>
@@ -82,25 +82,61 @@
     <Script type="xscript5.0"><![CDATA[/************************************************************************
  * 전역변수선언
  ************************************************************************/
-
+	var objDateYYYY = new Date();
+	var sYear = objDateYYYY.getFullYear().toString();
+	var objDateMM = new Date();
+	var sMonth = objDateMM.getMonth().toString();
 
 /************************************************************************
  *  BM_SALES_PROGRAM_CONTRACT FORM ONLOAD
  ************************************************************************/
 this.Form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
-	var objDateYYYY = new Date();
-	var nYear = objDateYYYY.getFullYear();
-	var objDateMM = new Date();
-	var nMonth = objDateMM.getMonth();
-	
-	var objDate = new Date();
-	var strDate = objDate.toDateString("YYYYMMDD");
+	/*디폴트 날짜 세팅*/
+	this.Div00.form.CalFrom.set_value(sYear+sMonth);
+	this.Div00.form.CalTo.set_value(sYear+sMonth);
+};
 
-	trace(nYear);
-	trace(nMonth);
-	trace(strDate);
-	this.Div00.form.CalFrom.set_value(nYear+nMonth);
+
+/************************************************************************
+ *  GRID CELL DUBBLE CLICK EVENT
+ ************************************************************************/
+this.grdProjectList_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	/************************************************************************
+	 *  계약완료나 계약확정일 경우 
+	     -> Next::BM_Sales_Program_Detail.xml
+	 *  계약완료나 계약확정이 아닐 경우 
+	     -> NEXT::BM_Project.xml
+	 
+	 ************************************************************************/
+	trace("grdProjectList_oncelldblclick");
+};
+
+
+/************************************************************************
+ * MOUSE RIGHT BUTTON CLICK EVENT ON GRID
+ ************************************************************************/
+this.grdProjectList_onrbuttonup = function(obj:nexacro.Grid,e:nexacro.GridMouseEventInfo)
+{
+	/************************************************************************
+	 *  오른쪽버튼 클릭 시 특랙팝업메뉴를 띄우고 [프로젝트(계약) 검색]이 뜨지만 
+	   다른 팝업메뉴를 띄우고 하는 fn_getContratList(); 함수가 없음 
+	 ************************************************************************/
+	trace("grdProjectList_onrbuttonup");
+};
+
+
+/************************************************************************
+ * BUTTON(btnConfirmCancel,계약확정취소) CLICK EVENT
+ ************************************************************************/
+this.btnConfirmCancel_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	/************************************************************************
+	 * ISCONTRACT == "완료" 일 경우 완료된건은 계약확정 취소를 할 수 없다.
+	    완료가 아닐 경 우 SALE_STEP을 1로 변경해서 저장
+	 ************************************************************************/
+	 trace("btnConfirmCancel_onclick");
 };
 ]]></Script>
   </Form>

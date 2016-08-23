@@ -56,6 +56,7 @@
                 obj.set_taborder("1");
                 obj.set_dateformat("yyyy-MM");
                 obj.set_editformat("yyyy-MM");
+                obj.set_type("spin");
             });
             this.Div00.addChild(obj.name, obj);
 
@@ -73,6 +74,7 @@
                 obj.set_taborder("1");
                 obj.set_dateformat("yyyy-MM");
                 obj.set_editformat("yyyy-MM");
+                obj.set_type("spin");
             });
             this.Div00.addChild(obj.name, obj);
 
@@ -131,25 +133,61 @@
         /************************************************************************
          * 전역변수선언
          ************************************************************************/
-
+        	var objDateYYYY = new Date();
+        	var sYear = objDateYYYY.getFullYear().toString();
+        	var objDateMM = new Date();
+        	var sMonth = objDateMM.getMonth().toString();
 
         /************************************************************************
          *  BM_SALES_PROGRAM_CONTRACT FORM ONLOAD
          ************************************************************************/
         this.Form_onload = function(obj,e)
         {
-        	var objDateYYYY = new Date();
-        	var nYear = objDateYYYY.getFullYear();
-        	var objDateMM = new Date();
-        	var nMonth = objDateMM.getMonth();
+        	/*디폴트 날짜 세팅*/
+        	this.Div00.form.CalFrom.set_value(sYear+sMonth);
+        	this.Div00.form.CalTo.set_value(sYear+sMonth);
+        };
 
-        	var objDate = new Date();
-        	var strDate = objDate.toDateString("YYYYMMDD");
 
-        	trace(nYear);
-        	trace(nMonth);
-        	trace(strDate);
-        	this.Div00.form.CalFrom.set_value(nYear+nMonth);
+        /************************************************************************
+         *  GRID CELL DUBBLE CLICK EVENT
+         ************************************************************************/
+        this.grdProjectList_oncelldblclick = function(obj,e)
+        {
+        	/************************************************************************
+        	 *  계약완료나 계약확정일 경우
+        	     -> Next::BM_Sales_Program_Detail.xml
+        	 *  계약완료나 계약확정이 아닐 경우
+        	     -> NEXT::BM_Project.xml
+
+        	 ************************************************************************/
+        	trace("grdProjectList_oncelldblclick");
+        };
+
+
+        /************************************************************************
+         * MOUSE RIGHT BUTTON CLICK EVENT ON GRID
+         ************************************************************************/
+        this.grdProjectList_onrbuttonup = function(obj,e)
+        {
+        	/************************************************************************
+        	 *  오른쪽버튼 클릭 시 특랙팝업메뉴를 띄우고 [프로젝트(계약) 검색]이 뜨지만
+        	   다른 팝업메뉴를 띄우고 하는 fn_getContratList(); 함수가 없음
+        	 ************************************************************************/
+        	trace("grdProjectList_onrbuttonup");
+        };
+
+
+        /************************************************************************
+         * BUTTON(btnConfirmCancel,계약확정취소) CLICK EVENT
+         ************************************************************************/
+        this.btnConfirmCancel_onclick = function(obj,e)
+        {
+        	/************************************************************************
+        	 * ISCONTRACT == "완료" 일 경우 완료된건은 계약확정 취소를 할 수 없다.
+        	    완료가 아닐 경 우 SALE_STEP을 1로 변경해서 저장
+        	 ************************************************************************/
+        	 trace("btnConfirmCancel_onclick");
         };
 
         });
@@ -158,6 +196,9 @@
         this.on_initEvent = function()
         {
             this.addEventHandler("onload",this.Form_onload,this);
+            this.grdProjectList.addEventHandler("oncelldblclick",this.grdProjectList_oncelldblclick,this);
+            this.grdProjectList.addEventHandler("onrbuttonup",this.grdProjectList_onrbuttonup,this);
+            this.btnConfirmCancel.addEventHandler("onclick",this.btnConfirmCancel_onclick,this);
         };
 
         this.loadIncludeScript("BM_Sales_Program_Contract.xfdl");

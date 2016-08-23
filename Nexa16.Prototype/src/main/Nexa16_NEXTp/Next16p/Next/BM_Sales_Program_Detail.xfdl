@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.0">
-  <Form id="BM_Sales_Program_Detail" left="0" top="0" width="560" height="600" titletext="New Form">
+  <Form id="BM_Sales_Program_Detail" left="0" top="0" width="560" height="600" titletext="New Form" onload="Form_onload">
     <Layouts>
       <Layout height="600" width="560">
         <Static id="Static00" taborder="2" text=" 고객사" left="5" top="5" width="65" height="27" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" border="1px solid #808080 , 1px solid #808080 , 1px solid #808080 , 1px solid #808080"/>
@@ -165,15 +165,41 @@
             </Tabpage>
           </Tabpages>
         </Tab>
-        <Button id="btn_Save" taborder="13" text="저장" left="419" top="5" width="63" height="24" right="" bottom=""/>
-        <Button id="btnClose" taborder="13" text="닫기" left="491" top="5" width="63" height="24" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+        <Button id="btn_Save" taborder="13" text="저장" left="419" top="5" width="63" height="24" right="" bottom="" onclick="btn_Save_onclick"/>
+        <Button id="btnClose" taborder="13" text="닫기" left="491" top="5" width="63" height="24" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="btnClose_onclick"/>
         <Button id="btnChannelIns" taborder="14" text="+" left="502" top="208" width="23" height="19" right="" bottom=""/>
         <Button id="btnChannelDel" taborder="14" text="-" left="528" top="208" width="23" height="19" right="" bottom=""/>
         <Button id="btnAddBottom" taborder="14" text="+" left="502" top="403" width="23" height="19" right="" bottom=""/>
         <Button id="btnDeleteBottom" taborder="14" text="-" left="528" top="403" width="23" height="19" right="" bottom=""/>
-        <Button id="btnStaffReqApp" taborder="15" text="인력요청" left="443" top="403" width="58" height="21" right="" bottom=""/>
+        <Button id="btnStaffReqApp" taborder="15" text="인력요청" left="442" top="403" width="58" height="19" right="" bottom="" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
       </Layout>
     </Layouts>
-    <Script type="xscript5.0"><![CDATA[]]></Script>
+    <Script type="xscript5.0"><![CDATA[/************************************************************************
+ * 전역변수선언
+ ************************************************************************/
+
+
+/************************************************************************
+ * BM_Sales_Program_Detail FORM ONLOAD
+ ************************************************************************/
+this.Form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	
+};
+/************************************************************************
+ * btn_Save_onclick
+ ************************************************************************/
+this.btn_Save_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	
+};
+/************************************************************************
+ * btnClose_onclick
+ ************************************************************************/
+this.btnClose_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	
+};
+]]></Script>
   </Form>
 </FDL>
